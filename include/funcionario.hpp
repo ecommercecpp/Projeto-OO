@@ -24,6 +24,9 @@ class Funcionario : public Pessoa
 		Funcionario();
 		Funcionario(std::string nome, std::string cpf_cnpj, std::string endereco, std::string email, int tipo, int matricula, Data nascimento, Data admissao, bool situacao, std::vector<Salario> salario, Departamento departamento, Cargo cargo);
 		void demitir();
+		//Adicionados para testes
+       // bool cadastro();
+       // Funcionario * buscarFuncionario(int matricula);
 };
 
 #endif
