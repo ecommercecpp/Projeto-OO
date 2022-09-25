@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+# main
+main
+
+# folder and subfolders of .vscode
+.vscode/*
