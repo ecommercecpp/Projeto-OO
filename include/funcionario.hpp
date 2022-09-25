@@ -3,12 +3,12 @@
 
 #include <vector>
 
+#include "data.hpp"
 #include "pessoa.hpp"
 #include "cargo.hpp"
+#include "departamento.hpp"
 
-class Departamento{};
 class Salario{};
-class Data{};
 
 class Funcionario
 {
