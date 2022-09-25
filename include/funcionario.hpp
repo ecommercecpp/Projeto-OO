@@ -5,10 +5,9 @@
 
 #include "data.hpp"
 #include "pessoa.hpp"
+#include "salario.hpp"
 #include "cargo.hpp"
 #include "departamento.hpp"
-
-class Salario{};
 
 class Funcionario
 {
