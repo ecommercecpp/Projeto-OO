@@ -9,7 +9,7 @@
 #include "cargo.hpp"
 #include "departamento.hpp"
 
-class Funcionario
+class Funcionario : public Pessoa
 {
 	protected:
 		int matricula;
@@ -22,8 +22,7 @@ class Funcionario
 		Cargo cargo;
 	public:
 		Funcionario();
-		Funcionario(int matricula, Data nascimento, Data admissao, bool situacao, std::vector<Salario> salario, Departamento departamento, Cargo cargo);
-		Funcionario(int matricula, Data nascimento, Data admissao, Data demissao, bool situacao, std::vector<Salario> salario, Departamento departamento, Cargo cargo);
+		Funcionario(std::string nome, std::string cpf_cnpj, std::string endereco, std::string email, int tipo, int matricula, Data nascimento, Data admissao, bool situacao, std::vector<Salario> salario, Departamento departamento, Cargo cargo);
 		void demitir();
 };
 

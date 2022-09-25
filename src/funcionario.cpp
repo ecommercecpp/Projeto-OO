@@ -5,14 +5,9 @@ Funcionario::Funcionario()
 
 }
 
-Funcionario::Funcionario(int matricula, Data nascimento, Data admissao, bool situacao, std::vector<Salario> salario, Departamento departamento, Cargo cargo) :
-	matricula(matricula), nascimento(nascimento), admissao(admissao), situacao(situacao), salario(salario), departamento(departamento), cargo(cargo)
+Funcionario::Funcionario(std::string nome, std::string cpf_cnpj, std::string endereco, std::string email, int tipo, int matricula, Data nascimento, Data admissao, bool situacao, std::vector<Salario> salario, Departamento departamento, Cargo cargo) : Pessoa(nome, cpf_cnpj, endereco, email, tipo), matricula(matricula), nascimento(nascimento), admissao(admissao), situacao(situacao), salario(salario), departamento(departamento), cargo(cargo)
 {
-}
 
-Funcionario::Funcionario(int matricula, Data nascimento, Data admissao, Data demissao, bool situacao, std::vector<Salario> salario, Departamento departamento, Cargo cargo) :
-	matricula(matricula), nascimento(nascimento), admissao(admissao), demissao(demissao), situacao(situacao), salario(salario), departamento(departamento), cargo(cargo)
-{
 }
 
 void Funcionario::demitir()
