@@ -4,9 +4,9 @@
 #include <vector>
 
 #include "pessoa.hpp"
+#include "cargo.hpp"
 
 class Departamento{};
-class Cargo{};
 class Salario{};
 class Data{};
 
