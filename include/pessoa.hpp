@@ -1,30 +1,16 @@
 #ifndef _PESSOA_HPP_
 #define _PESSOA_HPP_
 
-#include <iostream>
-
-using namespace std;
+#include <string>
 
 class Pessoa
 {
 	protected:
-        string nome;
-        string cpfCnpj;
-        string endereco;
-        string email;
-        int tipo;
+		std::string nome, cpf_cnpj, endereco, email;
+		int tipo; // 0 - Física, 1 - Jurídica
 	public:
 		Pessoa();
-		Pessoa(string nome, string cpfCnpj, string endereco, string email, int tipo);
-        bool validaCpfCnpj();
-        string getNome();
-        void setNome(string);
-        string getCpfCnpj();
-        void setCpfCnpj(string);
-        string getEndereco();
-        void setEndereco(string);
-        string getEmail();
-        void setEmail(string);
+		Pessoa(std::string nome, std::string cpf_cnpj, std::string endereco, std::string email, int tipo);
 };
 
 #endif
