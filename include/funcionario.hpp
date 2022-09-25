@@ -4,11 +4,11 @@
 #include <vector>
 
 #include "pessoa.hpp"
-#include "Data.h"
 
 class Departamento{};
 class Cargo{};
 class Salario{};
+class Data{};
 
 class Funcionario
 {
