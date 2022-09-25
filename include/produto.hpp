@@ -4,8 +4,7 @@
 #include <string>
 #include <map>
 
-class Lote{
-};
+#include "lote.hpp"
 
 class Produto
 {
