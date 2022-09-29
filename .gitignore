@@ -36,3 +36,7 @@ main
 
 # folder and subfolders of .vscode
 .vscode/*
+
+# folder of replit's cache
+.ccls-cache/*
+
