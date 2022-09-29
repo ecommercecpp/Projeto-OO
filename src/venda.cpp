@@ -2,20 +2,30 @@
 
 int Venda::getId()
 {
-  return _id;
+  return id;
 }
 
-void Venda::setId(int id)
+void Venda::setId(int _id)
 {
-  _id = id;
+  id = _id;
 }
 int Venda::getQuantidade()
 {
-  return _quantidade;
+  return quantidade;
 }
 
 void Venda::setQuantidade(int qnt)
 {
   quantidade = qnt;
+
+}
+Data Venda::getDataVenda()
+{
+  return quantidade;
+}
+
+void Venda::setDataVenda(Data dataV)
+{
+  dataVe = dataV;
 
 }
