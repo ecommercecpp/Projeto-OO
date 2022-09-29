@@ -5,6 +5,7 @@
 #include "data.hpp"
 #include "cliente.hpp"
 #include "produto.hpp"
+#include "lote.hpp"
 
 class Venda
 {

@@ -3,6 +3,16 @@
 #include "produto.hpp"
 #include <map>
 
+#include <numeric>
+ 
+struct AccumulateMapValues
+{
+    template<class V, class Lote>
+    V operator()(V value, const Pair &pair) const {
+        return value + pair.second->quantidade;
+    }
+};
+
 int Venda::getId()
 {
     return id;
@@ -57,7 +67,9 @@ void Venda::verificaQtdLote()
 bool Venda::produtoDisponivel()
 {
   std::map<int, Lote> lotes = this->produto.getLotes();
-  
+
+  int total_sum = std::accumulate(map.begin(), map.end(), 0, AccumulateMapValues());
+  return total_sum > 0;
 }
 
  void atualizaLote(Lote* lote, int qtd)
