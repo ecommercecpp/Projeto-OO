@@ -56,7 +56,8 @@ void Venda::verificaQtdLote()
 
 bool Venda::produtoDisponivel()
 {
-  std::map<int, Lote>  = this->produto.getLotes();
+  std::map<int, Lote> lotes = this->produto.getLotes();
+  
 }
 
  void atualizaLote(Lote* lote, int qtd)

@@ -1,14 +1,9 @@
-# Trabalho de POO - UFMG
-
-Link do diagrama UML: https://lucid.app/lucidchart/ecc498fa-4b8b-4a83-9361-f97e5f102d18/edit?view_items=UzBRbrNMmFt5&invitationId=inv_89b65fc5-d561-4541-88b8-711632819975#
-
-
-
 <div id="top"></div>
 
 # Projeto POO
 
-> O Projeto POO é uma abstração de um sistema de e-commerce.
+> O Projeto POO é uma abstração de um sistema.
+> Diagrama: https://lucid.app/lucidchart/ecc498fa-4b8b-4a83-9361-f97e5f102d18/edit?view_items=UzBRbrNMmFt5&invitationId=inv_89b65fc5-d561-4541-88b8-711632819975#
 
 [![Contributors][contributors-shield]][contributors-url]
 [![Tamanho][tamanho-shield]][tamanho-url]
@@ -159,17 +154,17 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
 
 [documentacao-shield]: https://img.shields.io/badge/Documentação%20Doxygen-clique%20aqui-blue
 [documentacao-url]: https://ecommercecpp.github.io/ecommercecpp/annotated.html
-[linguagens-shield]: https://img.shields.io/github/languages/count/ecommercecpp/ecommercecpp?style=for-the-badge
-[linguagens-url]: https://github.com/ecommercecpp/ecommercecpp/
-[tamanho-shield]: https://img.shields.io/github/repo-size/ecommercecpp/ecommercecpp?style=for-the-badge
-[tamanho-url]: https://github.com/ecommercecpp/ecommercecpp/
-[contributors-shield]: https://img.shields.io/github/contributors/ecommercecpp/ecommercecpp.svg?style=for-the-badge
-[contributors-url]: https://github.com/ecommercecpp/ecommercecpp/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/ecommercecpp/ecommercecpp.svg?style=for-the-badge
-[forks-url]: https://github.com/ecommercecpp/ecommercecpp/network/members
-[stars-shield]: https://img.shields.io/github/stars/ecommercecpp/ecommercecpp.svg?style=for-the-badge
-[stars-url]: https://github.com/ecommercecpp/ecommercecpp/stargazers
-[issues-shield]: https://img.shields.io/github/issues/ecommercecpp/ecommercecpp.svg?style=for-the-badge
-[issues-url]: https://github.com/ecommercecpp/ecommercecpp/issues
-[license-shield]: https://img.shields.io/github/license/ecommercecpp/ecommercecpp.svg?style=for-the-badge
-[license-url]: https://github.com/ecommercecpp/ecommercecpp/blob/master/LICENSE.txt
+[linguagens-shield]: https://img.shields.io/github/languages/count/ecommercecpp/Projeto-OO?style=for-the-badge
+[linguagens-url]: https://github.com/ecommercecpp/Projeto-OO/
+[tamanho-shield]: https://img.shields.io/github/repo-size/ecommercecpp/Projeto-OO?style=for-the-badge
+[tamanho-url]: https://github.com/ecommercecpp/Projeto-OO/
+[contributors-shield]: https://img.shields.io/github/contributors/ecommercecpp/Projeto-OO.svg?style=for-the-badge
+[contributors-url]: https://github.com/ecommercecpp/Projeto-OO/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/ecommercecpp/Projeto-OO.svg?style=for-the-badge
+[forks-url]: https://github.com/ecommercecpp/Projeto-OO/network/members
+[stars-shield]: https://img.shields.io/github/stars/ecommercecpp/Projeto-OO.svg?style=for-the-badge
+[stars-url]: https://github.com/ecommercecpp/Projeto-OO/stargazers
+[issues-shield]: https://img.shields.io/github/issues/ecommercecpp/Projeto-OO.svg?style=for-the-badge
+[issues-url]: https://github.com/ecommercecpp/Projeto-OO/issues
+[license-shield]: https://img.shields.io/github/license/ecommercecpp/Projeto-OO.svg?style=for-the-badge
+[license-url]: https://github.com/ecommercecpp/Projeto-OO/blob/master/LICENSE.txt
