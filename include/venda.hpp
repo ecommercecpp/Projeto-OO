@@ -26,8 +26,8 @@ class Venda
         void setDataVenda(Data data);
         int getQuantidade();
         void setQuantidade(int qtd);
-        int getID();
-        void setID(int id);
+        int getId();
+        void setId(int id);
 };
 
 #endif
