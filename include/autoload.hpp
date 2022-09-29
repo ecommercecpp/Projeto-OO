@@ -18,9 +18,4 @@
 #include "departamento.hpp"
 #include "produto.hpp"
 
-
-// include third_party
-#include "../third_party/json"
-//#include "Data.h"
-
 #endif
