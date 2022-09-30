@@ -71,7 +71,7 @@ Para começar a utilizar o repositório, você precisa cumprir todos os requisit
     ```
 <p align="right">(<a href="#top">Voltar para o topo</a>)</p>
 
-## Como utilizar o EcommerceCPP
+## Como utilizar o Projeto POO
 
 Para começar a utilizar, após a instalação, basta rodar:
 
