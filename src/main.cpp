@@ -8,17 +8,17 @@ void testaCliente(){
 	Cliente c;
 	Cliente lojao;
 	c.setNome("João");
-	c.setcpf_cnpj("123456789");
+	c.setTipo(0);// 0 - Física, 1 - Jurídica
+	c.setcpf_cnpj("73118815019");
 	c.setEndereco("Rua 1");
 	c.setEmail("jao@jao.jao");
-	c.setTipo(0);// 0 - Física, 1 - Jurídica
 	c.setTelefone("123456789");
 	
 	lojao.setNome("Lojão");
-	lojao.setcpf_cnpj("987654321");
 	lojao.setEndereco("Rua 2");
 	lojao.setEmail("lojao@gamil.com");
 	lojao.setTipo(1);// 0 - Física, 1 - Jurídica
+	lojao.setcpf_cnpj("50324999000100");
 	lojao.setTelefone("987654321");
 
 	std::cout << c.getNome() << ", " << c.getcpf_cnpj() << ", " << c.getEmail() << std::endl;	

@@ -5,15 +5,6 @@
 
 #include <numeric>
  
- /*
-struct AccumulateMapValues
-{
-    template<class V, class Lote>
-    V operator()(V value, const Pair &pair) const {
-        return value + pair.second->quantidade;
-    }
-};
-*/
 int Venda::getId()
 {
     return id;
@@ -64,24 +55,3 @@ void Venda::setProduto(Produto produto)
 void Venda::verificaQtdLote()
 {  
 }
-/*
-bool Venda::produtoDisponivel()
-{
-  std::map<int, Lote> lotes = this->produto.getLotes();
-
-  int total_sum = std::accumulate(map.begin(), map.end(), 0, AccumulateMapValues());
-  return total_sum > 0;
-}
-
- void atualizaLote(Lote* lote, int qtd)
- {
-    //Verifica se o lote está vazio
-    if(( lote->qtd - qtd) < 0)
-    {
-        lote->qtd = 0;
-    }
-    else
-    {
-        lote->qtd -= qtd;
-    }
- }*/
