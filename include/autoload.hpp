@@ -18,5 +18,6 @@
 #include "departamento.hpp"
 #include "produto.hpp"
 #include "venda.hpp"
+#include "exceptions.hpp"
 
 #endif
