@@ -73,4 +73,15 @@ class InvalidMotivoException : public std::exception
 		}
 };
 
+
+class InvalidTelefoneException : public std::exception
+{
+	public:
+		InvalidTelefoneException() {}
+		const char* what() const throw()
+		{
+			return "Telefone inválido";
+		}
+};
+
 #endif
