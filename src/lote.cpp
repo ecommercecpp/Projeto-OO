@@ -39,3 +39,8 @@ int Lote::getCodigoLote()
 {
 	return codigoLote;
 }
+
+int Lote::getQuantidade()
+{
+	return quantidade;
+}

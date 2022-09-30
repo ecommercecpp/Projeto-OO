@@ -4,65 +4,31 @@ Produto::Produto()
 {
 }
 
-Produto::Produto(std::string nome, int codigo, double preco) : nome(nome), codigo(codigo), preco(preco)
-{
-}
-
-std::string Produto::getNome()
-{
-	return nome;
-}
-
-void Produto::setNome(std::string nome)
-{
-	this->nome = nome;
-}
-
-int Produto::getCodigo()
-{
-	return codigo;
-}
-
-void Produto::setCodigo(int codigo)
-{
-	this->codigo = codigo;
-}
-
-double Produto::getPreco()
-{
-	return preco;
-}
-
-void Produto::setPreco(double preco)
-{
-	this->preco = preco;
-}
-
-std::map<int, Lote> Produto::getLotes()
-{
-	return lotes;
-}
-
-void Produto::adicionaLote(Lote lote)
+Produto::Produto(std::string nome, int codigo, double preco, Lote lote, Categoria categoria)
+: nome(nome), codigo(codigo), preco(preco), categoria(categoria)
 {
 	lotes.insert(std::pair<int, Lote>(lote.getCodigoLote(), lote));
+	atualizarEstoque();
 }
 
-bool Produto::removeLote(int codigo)
+Produto::Produto(std::string nome, int codigo, double preco, std::map<int, Lote> lotes, Categoria categoria)
+: nome(nome), codigo(codigo), preco(preco), lotes(lotes), categoria(categoria)
 {
-	if (lotes.find(codigo) != lotes.end())
-	{
-		lotes.erase(codigo);
-		return true;
-	}
-	return false;
+	atualizarEstoque();
 }
 
-Lote Produto::buscarLote(int codigo)
+Produto::Produto(std::string nome, int codigo, double preco, Lote lote)
+: nome(nome), codigo(codigo), preco(preco)
 {
-	if (lotes.find(codigo) != lotes.end())
+	lotes.insert(std::pair<int, Lote>(lote.getCodigoLote(), lote));
+	atualizarEstoque();
+}
+
+void Produto::atualizarEstoque()
+{
+	estoque = 0;
+	for (std::map<int, Lote>::iterator it = lotes.begin(); it != lotes.end(); ++it)
 	{
-		return lotes[codigo];
+		estoque += it->second.getQuantidade();
 	}
-	return Lote();
 }
