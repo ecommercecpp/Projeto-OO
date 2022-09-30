@@ -13,7 +13,8 @@ class Produto
 {
 	private:
 		std::string nome;
-		int codigo;
+		unsigned int codigo;
+		unsigned int quantidadeMinima;
 		double preco;
 		std::map<int, Lote> lotes;
 		Categoria categoria;
@@ -21,9 +22,10 @@ class Produto
 		void atualizarEstoque();
 	public:
 		Produto();
-		Produto(std::string nome, int codigo, double preco, Lote lote, Categoria categoria);
-		Produto(std::string nome, int codigo, double preco, std::map<int, Lote> lotes, Categoria categoria);
-		Produto(std::string nome, int codigo, double preco, Lote lote);
+		Produto(std::string nome, unsigned int codigo, unsigned int quantidadeMinima, double preco, Lote lote, Categoria categoria);
+		Produto(std::string nome, unsigned int codigo, unsigned int quantidadeMinima, double preco, std::map<int, Lote> lotes, Categoria categoria);
+		Produto(std::string nome, unsigned int codigo, unsigned int quantidadeMinima ,double preco, Lote lote);
+		void atualizaCategoria(Categoria categoria);
 };
 
 #endif

@@ -4,28 +4,14 @@ Lote::Lote()
 {
 }
 
-Lote::Lote(ec::Date data, int quantidade, int quantidadeMinima, int codigoLote, int codigoProduto) : data(data), codigoLote(codigoLote), codigoProduto(codigoProduto)
+Lote::Lote(ec::Date data, int quantidade, int codigoLote, int codigoProduto) : data(data), codigoLote(codigoLote), codigoProduto(codigoProduto)
 {
-	setQuantidadeMinima(quantidadeMinima);
 	setQuantidade(quantidade);
-}
-
-
-void Lote::setQuantidadeMinima(int quantidadeMinima)
-{
-	if (quantidadeMinima >= 0)
-	{
-		this->quantidadeMinima = quantidadeMinima;
-	}
-	else
-	{
-		throw InvalidQuantidadeLoteException();
-	}
 }
 
 void Lote::setQuantidade(int quantidade)
 {
-	if (quantidade >= 0 && quantidade >= quantidadeMinima)
+	if (quantidade >= 0)
 	{
 		this->quantidade = quantidade;
 	}
