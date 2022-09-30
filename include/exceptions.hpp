@@ -84,4 +84,14 @@ class InvalidTelefoneException : public std::exception
 		}
 };
 
+class InvalidQuantidadeLoteException : public std::exception
+{
+	public:
+		InvalidQuantidadeLoteException() {}
+		const char* what() const throw()
+		{
+			return "Quantidade inválida";
+		}
+};
+
 #endif

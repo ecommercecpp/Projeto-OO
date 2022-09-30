@@ -1,16 +1,18 @@
 #ifndef _LOTE_HPP_
 #define _LOTE_HPP_
 
-#include "data.hpp"
+#include "date.h"
+#include "exceptions.hpp"
 
 class Lote
 {
 	private:
-		Data data;
+		ec::Date data;
 		int quantidade, codigoLote, codigoProduto;
+		void setQuantidade(int quantidade);
 	public:
 		Lote();
-		Lote(Data data, int quantidade, int codigoLote, int codigoProduto);
+		Lote(ec::Date data, int quantidade, int codigoLote, int codigoProduto);
 		int getCodigoLote();
 };
 
