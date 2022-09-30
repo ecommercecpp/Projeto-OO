@@ -53,4 +53,24 @@ class InvalidTypeException : public std::exception
 		}
 };
 
+class InvalidSalarioException : public std::exception
+{
+	public:
+		InvalidSalarioException() {}
+		const char* what() const throw()
+		{
+			return "Salário inválido";
+		}
+};
+
+class InvalidMotivoException : public std::exception
+{
+	public:
+		InvalidMotivoException() {}
+		const char* what() const throw()
+		{
+			return "Motivo inválido";
+		}
+};
+
 #endif
