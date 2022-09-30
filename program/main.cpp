@@ -1,7 +1,4 @@
 #include <iostream>
-//Tá uma baguncinha aqui, mas é só pra testar 
-//copilot que sugeriu escrever isso ^ 
-
 #include "autoload.hpp"
 
 void testaCliente(){
