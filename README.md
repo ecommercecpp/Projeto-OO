@@ -5,6 +5,12 @@
 > O Projeto POO é uma abstração de um sistema.
 > Diagrama: https://lucid.app/lucidchart/ecc498fa-4b8b-4a83-9361-f97e5f102d18/edit?view_items=UzBRbrNMmFt5&invitationId=inv_89b65fc5-d561-4541-88b8-711632819975#
 
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Diagrama UML do projeto</summary>
+![UML_Industria](https://user-images.githubusercontent.com/60450622/193287026-3a6453bf-dd3d-429b-bbf8-1eab0e6ee964.png)
+</details>
+
 [![Contributors][contributors-shield]][contributors-url]
 [![Tamanho][tamanho-shield]][tamanho-url]
 [![Linguagens][linguagens-shield]][linguagens-url]
@@ -37,7 +43,6 @@
     <li><a href="#-links-úteis">🔗 Links Úteis</a></li>
   </ol>
 </details>
-
 
 ## Começando 🚀
 
