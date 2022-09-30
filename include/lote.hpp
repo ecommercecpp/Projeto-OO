@@ -15,6 +15,7 @@ class Lote
 		Lote(ec::Date data, int quantidade, int codigoLote, int codigoProduto);
 		int getCodigoLote();
 		int getQuantidade();
+		void atualizaQuantidade(int quantidade);
 };
 
 #endif

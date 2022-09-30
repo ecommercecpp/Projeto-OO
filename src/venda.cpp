@@ -1,57 +1,47 @@
 #include "venda.hpp"
-#include "cliente.hpp"
-#include "produto.hpp"
-#include <map>
 
-#include <numeric>
- 
-int Venda::getId()
+Venda::Venda()
 {
-    return id;
 }
 
-void Venda::setId(int id)
+Venda::Venda(ec::Date dataVenda, int quantidade, int id, Produto produto, Cliente cliente)
 {
-    this->id = id;
-}
-int Venda::getQuantidade()
-{    
-    return quantidade;
+    // verifica a disponibilidade do produto para venda
+	if (produto.disponivel(quantidade))
+	{
+		this->dataVenda = dataVenda;
+		this->quantidade = quantidade;
+		this->id = id;
+		this->produto = produto;
+		this->cliente = cliente;
+		realizaVenda();
+	}
+	else
+	{
+		throw QuantidadeDeVendaIndisponivelException();
+	}
 }
 
-void Venda::setQuantidade(int quantidade)
+void Venda::realizaVenda()
 {
-    this->quantidade = quantidade;
-}
-Data Venda::getDataVenda()
-{
-    return dataVenda;
-}
-
-void Venda::setDataVenda(Data dataVenda)
-{
-    this->dataVenda = dataVenda;
-}
-
-Cliente Venda::getCliente()
-{
-    return cliente;
-}
-
-void Venda::setCliente(Cliente cliente)
-{
-    this->cliente = cliente;
-}
-Produto Venda::getProduto()
-{
-    return produto;
-}
-
-void Venda::setProduto(Produto produto)
-{
-    this->produto = produto;
-}
-
-void Venda::verificaQtdLote()
-{  
+	// descobre os lotes que serão utilizados na venda
+	int quantidadeRestante = quantidade;
+	for (std::map<int, Lote>::iterator it = produto.getLotes().begin(); it != produto.getLotes().end(); ++it)
+	{
+		if (quantidadeRestante > 0)
+		{
+			if (quantidadeRestante >= it->second.getQuantidade())
+			{
+				lotes_venda.insert(std::pair<int, Lote>(it->second.getCodigoLote(), it->second));
+				quantidadeRestante -= it->second.getQuantidade();
+			}
+			else
+			{
+				Lote lote = it->second;
+				lote.atualizaQuantidade(quantidadeRestante);
+				lotes_venda.insert(std::pair<int, Lote>(lote.getCodigoLote(), lote));
+				quantidadeRestante = 0;
+			}
+		}
+	}
 }

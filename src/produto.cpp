@@ -36,3 +36,15 @@ void Produto::atualizaCategoria(Categoria categoria)
 {
 	this->categoria = categoria;
 }
+
+bool Produto::disponivel(int quantidade)
+{
+	// converte quantidade para unsigned int
+	unsigned int quantidadeConvertida = static_cast<unsigned int>(quantidade);
+	return estoque >= quantidadeConvertida;
+}
+
+std::map<int, Lote> Produto::getLotes()
+{
+	return lotes;
+}

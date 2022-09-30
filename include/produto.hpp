@@ -16,7 +16,7 @@ class Produto
 		unsigned int codigo;
 		unsigned int quantidadeMinima;
 		double preco;
-		std::map<int, Lote> lotes;
+		std::map<int, Lote, std::less<int>> lotes;
 		Categoria categoria;
 		unsigned int estoque;
 		void atualizarEstoque();
@@ -26,6 +26,8 @@ class Produto
 		Produto(std::string nome, unsigned int codigo, unsigned int quantidadeMinima, double preco, std::map<int, Lote> lotes, Categoria categoria);
 		Produto(std::string nome, unsigned int codigo, unsigned int quantidadeMinima ,double preco, Lote lote);
 		void atualizaCategoria(Categoria categoria);
+		bool disponivel(int quantidade);
+		std::map<int, Lote> getLotes();
 };
 
 #endif

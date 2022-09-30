@@ -94,4 +94,15 @@ class InvalidQuantidadeLoteException : public std::exception
 		}
 };
 
+
+class QuantidadeDeVendaIndisponivelException : public std::exception
+{
+	public:
+		QuantidadeDeVendaIndisponivelException() {}
+		const char* what() const throw()
+		{
+			return "Quantidade de venda indisponível";
+		}
+};
+
 #endif

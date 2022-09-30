@@ -30,3 +30,8 @@ int Lote::getQuantidade()
 {
 	return quantidade;
 }
+
+void Lote::atualizaQuantidade(int quantidade)
+{
+	setQuantidade(this->quantidade - quantidade);
+}

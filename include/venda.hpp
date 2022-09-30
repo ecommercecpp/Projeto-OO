@@ -2,33 +2,28 @@
 #ifndef _VENDA_HPP_
 #define _VENDA_HPP_
 
-#include "data.hpp"
+#include "date.h"
 #include "cliente.hpp"
 #include "produto.hpp"
 #include "lote.hpp"
+#include "exceptions.hpp"
+
+#include <map>
 
 class Venda
 {
 	protected:
 		Produto produto;
         Cliente cliente;
-        Data dataVenda;
+        ec::Date dataVenda;
 		int quantidade;
         int id;
+        std::map<int, Lote> lotes_venda;
 	public:
-        bool produtoDisponivel();
-        void atualizaLote(Lote* lote, int qtd);
-        void verificaQtdLote();
-        Produto getProduto();
-        void setProduto(Produto produto);
-        Cliente getCliente();
-        void setCliente(Cliente cliente);
-        Data getDataVenda();
-        void setDataVenda(Data data);
-        int getQuantidade();
-        void setQuantidade(int qtd);
-        int getId();
-        void setId(int id);
+        Venda();
+        Venda(ec::Date dataVenda, int quantidade, int id, Produto produto, Cliente cliente);
+        void atualizaLote();
+        void realizaVenda();
 };
 
 #endif
