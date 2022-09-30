@@ -6,12 +6,14 @@
 class Cargo
 {
 	protected:
+		int id;
+		static int current_id;
 		std::string nome;
 	public:
 		Cargo();
 		Cargo(std::string nome);
 		std::string getNome();
-		void setNome(std::string nome);
+		int getId();
 };
 
 #endif

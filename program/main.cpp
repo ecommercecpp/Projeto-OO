@@ -1,6 +1,7 @@
 #include <iostream>
 #include "autoload.hpp"
 
+/*
 void testaCliente(){
 	Cliente c;
 	Cliente lojao;
@@ -48,9 +49,10 @@ void testaFuncionario()
 	std::cout << f1.getNome() << ", " << f1.getMatricula() << ", " << f1.getEmail() << std::endl;
 	std::cout << f1.getCargo().getNome() << ", " << f1.getDepartamento().getNome() << std::endl;
 }
-
+*/
 int main()
 {
+	/*
 	int a = 0;
 	std::cout << "+-----------------+"<<std::endl;
 	std::cout<<"Bem vindo ao sistema de testes do sistema CEFILa(eh so as iniciais dos nomes dos integrantes do grupo!)"<<std::endl;
@@ -69,6 +71,6 @@ int main()
 		std::cout<<"Opcao invalida"<<std::endl;
 		break;
 	}							
-
+	*/
 	return 0;
 }

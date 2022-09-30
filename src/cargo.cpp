@@ -1,19 +1,17 @@
 #include "cargo.hpp"
 
-Cargo::Cargo()
-{
-}
+int Cargo::current_id;
 
-Cargo::Cargo(std::string nome) : nome(nome)
-{
-}
+Cargo::Cargo() : id(++current_id) {}
+
+Cargo::Cargo(std::string nome) : id(++current_id), nome(nome) {}
 
 std::string Cargo::getNome()
 {
 	return nome;
 }
 
-void Cargo::setNome(std::string s)
+int Cargo::getId()
 {
-	nome = s;
+	return id;
 }

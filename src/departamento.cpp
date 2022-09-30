@@ -1,28 +1,17 @@
 #include "departamento.hpp"
 
-Departamento::Departamento()
+int Departamento::current_id;
+
+Departamento::Departamento() : id(++current_id) {}
+
+Departamento::Departamento(std::string nome) : id(++current_id), nome(nome) {}
+
+int Departamento::getId()
 {
-
-}
-
-Departamento::Departamento(std::string nome, std::vector<Cargo> cargos) : nome(nome), cargos(cargos)
-{
-
+	return this->id;
 }
 
 std::string Departamento::getNome()
 {
-	return nome;
-}
-
-void Departamento::setNome(std::string s)
-{
-	nome = s;
-}
-
-std::vector<Cargo> Departamento::getCargos(){
-	return cargos;
-}
-void Departamento::setCargos(std::vector<Cargo> cargos){
-	this->cargos = cargos;
+	return this->nome;
 }

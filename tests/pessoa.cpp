@@ -1,7 +1,7 @@
 #include "autoload.hpp"
 #include "doctest"
 
-TEST_CASE("Testando dados inválidos")
+TEST_CASE("Testando dados inválidos - PESSOA")
 {
 	// testa construção com cpf invalido
 	CHECK_THROWS_AS(Pessoa("João", "12312312312", "Rua 1", "email@email.com", 0), InvalidCPFException);
@@ -11,7 +11,7 @@ TEST_CASE("Testando dados inválidos")
 	CHECK_THROWS_AS(Pessoa("João", "18130552035", "Rua 1", "emailemail.com", 0), InvalidEmailException);
 }
 
-TEST_CASE("Testando dados válidos")
+TEST_CASE("Testando dados válidos - PESSOA")
 {
 	// testa construção com cpf valido e email valido
 	CHECK_NOTHROW(Pessoa("João", "18130552035", "Rua 1", "email@email.com", 0));
