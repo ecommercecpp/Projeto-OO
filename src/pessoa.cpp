@@ -1,4 +1,7 @@
 #include "pessoa.hpp"
+#include "validaCpf_Cnpj.hpp"
+
+#include <iostream>
 
 Pessoa::Pessoa()
 {
@@ -35,7 +38,16 @@ void Pessoa::setNome(std::string nome)
 }
 void Pessoa::setcpf_cnpj(std::string cpf_cnpj)
 {
-	this->cpf_cnpj = cpf_cnpj;
+	/*ValidarCpf_Cnpj validar;
+	if(!validar.verificaQual(cpf_cnpj))
+	{
+		std::cout << "CPF/CNPJ invalido" << std::endl;
+		return;
+	}
+	else
+	{*/
+		this->cpf_cnpj = cpf_cnpj;
+	//}
 }
 void Pessoa::setEndereco(std::string endereco)
 {

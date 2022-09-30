@@ -5,6 +5,7 @@
 
 #include <numeric>
  
+ /*
 struct AccumulateMapValues
 {
     template<class V, class Lote>
@@ -12,7 +13,7 @@ struct AccumulateMapValues
         return value + pair.second->quantidade;
     }
 };
-
+*/
 int Venda::getId()
 {
     return id;
@@ -63,7 +64,7 @@ void Venda::setProduto(Produto produto)
 void Venda::verificaQtdLote()
 {  
 }
-
+/*
 bool Venda::produtoDisponivel()
 {
   std::map<int, Lote> lotes = this->produto.getLotes();
@@ -83,4 +84,4 @@ bool Venda::produtoDisponivel()
     {
         lote->qtd -= qtd;
     }
- }
+ }*/

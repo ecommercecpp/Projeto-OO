@@ -6,7 +6,14 @@
 #include "funcionario.hpp"
 
 void testaCliente(){
-	
+	Cliente c;
+	c.setNome("João");
+	c.setcpf_cnpj("123456789");
+	c.setEndereco("Rua 1");
+	c.setEmail("jao@jao.jao");
+	c.setTipo(1);
+	c.setTelefone("123456789");
+	std::cout << c.getNome() << ", " << c.getcpf_cnpj() << ", " << c.getEmail() << std::endl;	
 }
 
 void testaFuncionario()

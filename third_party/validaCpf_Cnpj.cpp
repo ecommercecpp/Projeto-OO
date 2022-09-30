@@ -1,8 +1,13 @@
 #include "autoload.hpp"
+#include "validaCpf_Cnpj.hpp"
 
 using namespace std;
 
-bool verificaQual(std::string cpf_cnpj){
+ValidarCpf_Cnpj::ValidarCpf_Cnpj()
+{
+}
+
+bool ValidarCpf_Cnpj::verificaQual(std::string cpf_cnpj){
     if (cpf_cnpj.length() == 11)
         return validaCPF(cpf_cnpj);
     else if (cpf_cnpj.length() == 14)
