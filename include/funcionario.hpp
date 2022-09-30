@@ -3,7 +3,7 @@
 
 #include <vector>
 
-#include "data.hpp"
+#include "date.h"
 #include "pessoa.hpp"
 #include "salario.hpp"
 #include "cargo.hpp"
@@ -13,16 +13,18 @@ class Funcionario : public Pessoa
 {
 	protected:
 		int matricula;
-		Data nascimento;
-		Data admissao;
-		Data demissao;
+		ec::Date nascimento;
+		ec::Date admissao;
+		ec::Date demissao;
+		bool status;
 		std::vector<Salario> salario;
 		Departamento departamento;
 		Cargo cargo;
 	public:
 		Funcionario();
-		Funcionario(std::string nome, std::string cpf, std::string endereco, std::string email, Data nascimento, Data admissao, std::vector<Salario> salario, Departamento departamento, Cargo cargo);
+		Funcionario(std::string nome, std::string cpf, std::string endereco, std::string email, ec::Date nascimento, ec::Date admissao, std::vector<Salario> salario, Departamento departamento, Cargo cargo);
 		void demitir();
+		bool empregado();
 };
 
 #endif

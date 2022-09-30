@@ -9,6 +9,8 @@
 #include <iomanip>
 #include <fstream>
 
+#include "date.h"
+
 // include de classes
 #include "funcionario.hpp"
 #include "cliente.hpp"

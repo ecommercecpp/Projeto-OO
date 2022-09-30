@@ -1,12 +1,41 @@
 #include "salario.hpp"
+#include "exceptions.hpp"
 
 Salario::Salario()
 {
 }
 
-Salario::Salario(double valor, bool status, int motivo, Data data) :
-	valor(valor), status(status), motivo(motivo), data(data)
+Salario::Salario(double valor, bool status, int motivo)
+: status(status)
 {
+	setValor(valor);
+	setMotivo(motivo);
+	this->status = status;
+	data = ec::Date();
+}
+
+void Salario::setMotivo(int motivo)
+{
+	if (motivo != 1 && motivo != 2)
+	{
+		throw InvalidSalarioException();
+	}
+	else
+	{
+		this->motivo = motivo;
+	}
+}
+
+void Salario::setValor(double valor)
+{
+	if (valor < 0)
+	{
+		throw InvalidSalarioException();
+	}
+	else
+	{
+		this->valor = valor;
+	}
 }
 
 double Salario::getValor()
@@ -14,17 +43,17 @@ double Salario::getValor()
 	return valor;
 }
 
-void Salario::setValor(double v)
-{
-	valor = v;
-}
-
 bool Salario::getStatus()
 {
 	return status;
 }
 
-void Salario::setStatus(bool s)
+int Salario::getMotivo()
 {
-	status = s;
+	return motivo;
+}
+
+ec::Date Salario::getDataAlteracao()
+{
+	return data;
 }
