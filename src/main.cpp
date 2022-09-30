@@ -3,7 +3,6 @@
 //copilot que sugeriu escrever isso ^ 
 
 #include "autoload.hpp"
-#include "funcionario.hpp"
 
 void testaCliente(){
 	Cliente c;
@@ -18,11 +17,29 @@ void testaCliente(){
 
 void testaFuncionario()
 {
-	Funcionario f1("Leonardo", "123456789", "Rua 1", "leo@leo.leo", 1, 123, Data(), Data(), true, std::vector<Salario>(), Departamento(), Cargo());
+	Cargo c1, c2, c3, c4, c5;
+	c1.setNome("Chefao");
+	c2.setNome("Engenheiro");
+	c3.setNome("Pedreiro");
+	c4.setNome("ADM");
+	c5.setNome("Analista");
+	std::vector<Cargo> cargos1;
+	std::vector<Cargo> cargos2;
+	cargos2.push_back(c1);
+	cargos1.push_back(c2);
+	cargos1.push_back(c3);
+	cargos2.push_back(c4);
+	cargos2.push_back(c5);
+	Departamento construcao("Departamento de Construcao", cargos1);
+	Departamento gestao("Departamento de Gestao", cargos2);
+	Funcionario f1;
 	f1.setNome("Leonardo");
 	f1.setMatricula(123456789);
 	f1.setEmail("leo@leo.leo");
-	std::cout << f1.getNome() << ", " << f1.getMatricula() << ", "<< f1.getEmail() << std::endl;
+	f1.setCargo(c1);
+	f1.setDepartamento(gestao);
+	std::cout << f1.getNome() << ", " << f1.getMatricula() << ", " << f1.getEmail() << std::endl;
+	std::cout << f1.getCargo().getNome() << ", " << f1.getDepartamento().getNome() << std::endl;
 }
 
 int main()

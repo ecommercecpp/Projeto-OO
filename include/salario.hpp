@@ -17,6 +17,10 @@ class Salario
 		void setValor(double valor);
 		bool getStatus();
 		void setStatus(bool status);
+		int getMotivo();
+		void setMotivo(int motivo);
+		Data getDataAlteracao();
+		void setDataAlteracao(Data data);
 };
 
 #endif

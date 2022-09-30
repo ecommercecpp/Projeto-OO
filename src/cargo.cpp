@@ -2,7 +2,6 @@
 
 Cargo::Cargo()
 {
-
 }
 
 Cargo::Cargo(std::string nome) : nome(nome)
