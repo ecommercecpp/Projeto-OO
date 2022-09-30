@@ -8,11 +8,13 @@ class Lote
 {
 	private:
 		ec::Date data;
-		int quantidade, codigoLote, codigoProduto;
+		int quantidade, quantidadeMinima, codigoLote, codigoProduto;
 		void setQuantidade(int quantidade);
+		void setQuantidadeMinima(int quantidadeMinima);
+
 	public:
 		Lote();
-		Lote(ec::Date data, int quantidade, int codigoLote, int codigoProduto);
+		Lote(ec::Date data, int quantidade, int quantidadeMinima, int codigoLote, int codigoProduto);
 		int getCodigoLote();
 };
 
