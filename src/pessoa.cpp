@@ -16,35 +16,6 @@ Pessoa::Pessoa(std::string nome, std::string cpf_cnpj, std::string endereco, std
 	setEmail(email);
 }
 
-std::string Pessoa::getNome()
-{
-	return nome;
-}
-
-std::string Pessoa::getcpf_cnpj()
-{
-	return cpf_cnpj;
-}
-
-std::string Pessoa::getEndereco()
-{
-	return endereco;
-}
-
-std::string Pessoa::getEmail()
-{
-	return email;
-}
-
-int Pessoa::getTipo()
-{
-	return tipo;
-}
-
-void Pessoa::setNome(std::string nome)
-{
-	this->nome = nome;
-}
 
 void Pessoa::setcpf_cnpj(std::string cpf_cnpj)
 {
@@ -70,10 +41,6 @@ void Pessoa::setcpf_cnpj(std::string cpf_cnpj)
 			throw InvalidCNPJException();
 		}
 	}
-}
-void Pessoa::setEndereco(std::string endereco)
-{
-	this->endereco = endereco;
 }
 
 void Pessoa::setEmail(std::string email)

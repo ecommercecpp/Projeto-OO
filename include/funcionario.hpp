@@ -16,30 +16,13 @@ class Funcionario : public Pessoa
 		Data nascimento;
 		Data admissao;
 		Data demissao;
-		bool situacao;
 		std::vector<Salario> salario;
 		Departamento departamento;
 		Cargo cargo;
 	public:
 		Funcionario();
-		Funcionario(std::string nome, std::string cpf_cnpj, std::string endereco, std::string email, int tipo, int matricula, Data nascimento, Data admissao, bool situacao, std::vector<Salario> salario, Departamento departamento, Cargo cargo);
+		Funcionario(std::string nome, std::string cpf, std::string endereco, std::string email, Data nascimento, Data admissao, std::vector<Salario> salario, Departamento departamento, Cargo cargo);
 		void demitir();
-		int getMatricula();
-		Data getNascimento();
-		Data getAdmissao();
-		Data getDemissao();
-		bool getSituacao();
-		std::vector<Salario> getSalario();
-		Departamento getDepartamento();
-		Cargo getCargo();
-		void setMatricula(int matricula);
-		void setNascimento(Data nascimento);
-		void setAdmissao(Data admissao);
-		void setDemissao(Data demissao);
-		void setSituacao(bool situacao);
-		void setSalario(std::vector<Salario> salario);
-		void setDepartamento(Departamento departamento);
-		void setCargo(Cargo cargo);
 };
 
 #endif
