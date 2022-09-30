@@ -15,6 +15,7 @@ Venda::Venda(ec::Date dataVenda, int quantidade, int id, Produto produto, Client
 		this->produto = produto;
 		this->cliente = cliente;
 		realizaVenda();
+		this->produto.validaEstoqueMinimo();
 	}
 	else
 	{

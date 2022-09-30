@@ -48,3 +48,16 @@ std::map<int, Lote> Produto::getLotes()
 {
 	return lotes;
 }
+
+void Produto::validaEstoqueMinimo()
+{
+	if (estoque < quantidadeMinima)
+	{
+		emiteOrdemProducao();
+	}
+}
+
+void Produto::emiteOrdemProducao()
+{
+	std::cout << "Ordem de produção" << std::endl;
+}

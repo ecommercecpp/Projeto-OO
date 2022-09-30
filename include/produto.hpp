@@ -3,6 +3,7 @@
 
 #include <string>
 #include <map>
+#include <iostream>
 
 #include "lote.hpp"
 
@@ -28,6 +29,8 @@ class Produto
 		void atualizaCategoria(Categoria categoria);
 		bool disponivel(int quantidade);
 		std::map<int, Lote> getLotes();
+		void validaEstoqueMinimo();
+		void emiteOrdemProducao();
 };
 
 #endif
