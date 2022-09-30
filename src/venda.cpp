@@ -1,4 +1,4 @@
-#include "venda.hpp"
+/*#include "venda.hpp"
 
 int Venda::getId()
 {
@@ -28,4 +28,4 @@ void Venda::setDataVenda(Data dataV)
 {
   dataVe = dataV;
 
-}
+}*/
