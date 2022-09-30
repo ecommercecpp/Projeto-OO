@@ -154,6 +154,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
 ## 🔗 Links Úteis
 
 - [Parser Json](https://github.com/eteran/cpp-json)
+- [Validação CPF e CNPJ](https://github.com/srgoogle23/valida-cpf-cnpj)
 - [UUID](https://github.com/mariusbancila/stduuid)
 - [GLS](https://github.com/microsoft/GSL)
 
