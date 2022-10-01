@@ -1,10 +1,3 @@
-/*
- * date.cpp
- *
- *  Created on: 2016年6月7日
- *      Author: havesnag
- */
-
 #include "date.h"
 #include <limits.h>
 #include <sstream>
@@ -35,7 +28,7 @@ int gettimeofday(struct timeval *tp, void *tzp)
 	tp->tv_usec = wtm.wMilliseconds * 1000;
 	return (0);
 }
-#endif // PLATFORM_WINDOWS
+#endif
 
 namespace ec
 {
@@ -298,7 +291,6 @@ int Date::yearMonthDays(int year, int month)
 	case 11:
 		return 30;
 	case 2:
-		//Need to consider a leap year in February
 		return isLeapYear(year) ? 29 : 28;
 	default:
 		return 0;
@@ -420,8 +412,8 @@ int Date::timeZone() const
 	return static_cast<int>(_tm.tm_gmtoff / 3600);
 # else
 	return static_cast<int>(_tm.__tm_gmtoff / 3600);
-# endif//__USE_BSD __USE_MISC 
-#endif // PLATFORM_WINDOWS
+# endif
+#endif
 }
 
 time_t Date::timeZoneOffset() const
@@ -766,7 +758,7 @@ void Date::_set(time_t stamp)
 	}
 #else
 	_isUTC ? gmtime_r(&stamp, &_tm) : localtime_r(&stamp, &_tm);
-#endif // PLATFORM_WINDOWS
+#endif
 }
 
 void Date::_update()
@@ -1097,4 +1089,4 @@ bool Time::operator = (const Time & other)
 	return (_tv.tv_sec == other._tv.tv_sec) && (_tv.tv_usec == other._tv.tv_usec);
 }
 
-} /* namespace ec */
+}

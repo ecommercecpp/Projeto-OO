@@ -1,17 +1,11 @@
-/*
- * date.h
- *
- *  Created on: 2016年6月7日
- *      Author: havesnag
- */
-
-#ifndef INCLUDE_EC_DATE_H_
-#define INCLUDE_EC_DATE_H_
+#ifndef _RAMON_DATE_H_
+#define _RAMON_DATE_H_
 
 #include <time.h>
 #include <string>
 #include <cstdint>
 
+// busca a plataforma do cliente
 #if (defined _WIN32) || (defined WIN32) || (defined _WIN64) || (defined WIN64)
 #define PLATFORM_WINDOWS
 #endif
@@ -20,7 +14,7 @@
 #include <Windows.h>
 #else
 #include <sys/time.h>
-#endif // PLATFORM_WINDOWS
+#endif
 
 typedef int64_t int64;
 
@@ -31,70 +25,150 @@ class Time;
 class Date;
 class Duration;
 
+
 /**
-* @brief 表示时间段
-*/
+ * @brief Classe que representa um intervalo de tempo.
+ */
 class Duration
 {
 public:
-	/** @brief 时间类型，级别依次上升，精度依次下降 */
+	/**
+	 * @brief Tipo de tempo, o nível sobe, a precisão cai.
+	 */
 	enum Period
 	{
-		/** @brief 微秒 1/1000000秒 */
+		/**
+		 * @brief Microsegundo 1/1000000 seconds
+		 */
 		MicroSecond = 5,
-		/** @brief 毫秒 1/1000秒 */
+		/**
+		 * @brief Milisegundos 1/1000 seconds
+		 */
 		MilliSecond = 6,
-		/** @brief 秒 */
+		/**
+		 * @brief Segundos
+		 */
 		Second = 11,
-		/** @brief 分 60秒 */
+		/**
+		 * @brief Minutos
+		 */
 		Minute = 12,
-		/** @brief 小时 3600秒 */
+		/**
+		 * @brief Horas
+		 */
 		Hour = 13,
-		/** @brief 天 86400秒 */
+		/**
+		 * @brief Dias
+		 */
 		Day = 14,
-		/** @brief 周 604800秒 */
+		/**
+		 * @brief Semanas
+		 */
 		Week = 15,
-		/** @brief 月 周与月相互转换比例为1:4 */
+		/**
+		 * @brief Meses
+		 */
 		Month = 22,
-		/** @brief 年 */
+		/**
+		 * @brief Anos
+		 */
 		Year = 23,
 	};
 
+	/**
+	 * @brief Construtor de um intervalo de tempo.
+	 * 
+	 * @param value 
+	 * @param period 
+	 */
 	Duration(int64 value = 1, Period period = Second);
+
+	/**
+	 * @brief Construtor de um intervalo de tempo.
+	 * 
+	 * @param duration 
+	 */
 	Duration(const Duration &duration);
+
+	/**
+	 * @brief Destrói o intervalo de tempo.
+	 */
 	~Duration();
 
-	/** @brief 克隆当前对象 */
+	/**
+	 * @brief Clona o intervalo de tempo.
+	 * 
+	 * @return Duration 
+	 */
 	Duration clone() const;
 
-	/** @brief 获取数值 */
+	/**
+	 * @brief Retorna o valor do intervalo de tempo.
+	 * 
+	 * @return int64 
+	 */
 	inline int64 value() const
 	{
 		return _value;
 	}
 
-	/** @brief 获取周期 */
+	/**
+	 * @brief Retorna o tipo do intervalo de tempo.
+	 * 
+	 * @return Period 
+	 */
 	inline Period period() const
 	{
 		return _period;
 	}
 
-	/** @brief 设置时间段的数值和周期 */
+	/**
+	 * @brief Retorna o valor do intervalo de tempo em segundos.
+	 * 
+	 * @return int64 
+	 */
 	Duration & set(int64 value, Period period = Second);
-	/** @brief 设置时间段的数值 */
+	
+	/**
+	 * @brief Retorna o valor do intervalo de tempo em segundos.
+	 * 
+	 * @return int64 
+	 */
 	Duration & setValue(int64 value);
-	/** @brief 设置时间段的周期 */
+	
+	/**
+	 * @brief Retorna o tipo do intervalo de tempo.
+	 * 
+	 * @return Period 
+	 */	
 	Duration & setPeriod(Period period);
 
-	/** @brief 提升级别，降低精度，这种转换方式并不是准确的，周与月转换时换1:4换算 */
+	/**
+	 * @brief Promove o nível, reduz a precisão, esta conversão não é precisa, quando a conversão da semana para o mês, a conversão é 1:4.
+	 */
 	Duration & rase();
-	/** @brief 降低级别，提升精度，这种转换方式并不是准确的，周与月转换时换1:4换算 */
+
+	/**
+	 * @brief Reduz o nível, aumenta a precisão, esta conversão não é precisa, quando a conversão do mês para a semana, a conversão é 1:4.
+	 */
 	Duration & down();
-	/** @brief 转换成指定类型的时间段 */
+
+	/**
+	 * @brief Converte para o tipo especificado.
+	 *
+	 * @param period
+	 * @return Duration
+	 */
 	Duration & as(Period period);
-	/** @brief 获取值转换成某种类型后的值 */
+
+	/**
+	 * @brief Retorna o valor do intervalo de tempo em segundos.
+	 * 
+	 * @return int64 
+	 */
 	int64 valueAs(Period period) const;
 
+	// define os operadores
 	Duration operator + (const Duration &other);
 	Duration operator + (int64 value);
 	Duration operator - (const Duration &other);
@@ -110,206 +184,427 @@ public:
 	bool operator < (const Duration & other);
 	bool operator <= (const Duration & other);
 private:
+	/**
+	 * @brief Valor do intervalo de tempo.
+	 */
 	int64 _value;
+
+	/**
+	 * @brief  Tipo do intervalo de tempo.
+	 */
 	Period _period;
 };
 
+
 /**
- * @brief 日期类
- * @details 精确到秒，Windows下仅能表示1970-01-01 00:00:00之前的日期，Linux不受此限制。
+ * @brief Classe que representa uma data.
  */
 class Date
 {
 public:
-	/** @brief 返回当前系统时区，比如UTC+8的时区为8 */
+	/**
+	 * @brief retorna o timezone local
+	 * 
+	 * @return int 
+	 */
 	static int localTimeZone();
-	/** @brief 返回当前系统时区偏移，以秒为单位，比如UTC+8的时区为-28800 */
+
+	/**
+	 * @brief Retorna o timezone local em segundos.
+	 * 
+	 * @return int 
+	 */
 	static time_t localTimeZoneOffset();
-	/** @brief 判断是否是闰年 */
+
+	/**
+	 * @brief Retorna se é um ano bissexto.
+	 * 
+	 * @param year
+	 * @return true
+	 * @return false 
+	 */
 	static bool isLeapYear(int year);
-	/** @brief 某年某月一共有多少天 */
+
+	/**
+	 * @brief Retorna o número de dias do mês.
+	 * 
+	 * @param year
+	 * @param month
+	 * @return int 
+	 */
 	static int yearMonthDays(int year, int month);
 
 public:
-	/** @brief 以当前时间构造 */
+	/*
+	 * @brief Construtor de uma data.
+	 */
 	Date();
+
 	/**
-	 * @brief 以时间戳(秒)构造
-	 * @param stamp 时间戳
-	 * @param utc 是否为UTC基准时间，为false则按本地日历时间构造
+	 * @brief Construtor de uma data.
+	 * 
+	 * @param stamp
+	 * @param utc
 	 */
 	Date(time_t stamp, bool utc = false);
-	/** @brief 以Time对象构造 */
+
+	/**
+	 * @brief Construtor de uma data.
+	 * 
+	 * @param time
+	 * @param utc
+	 */
 	Date(const Time &time);
-	/** @brief 以Date对象复制 */
+
+	/**
+	 * @brief Construtor de uma data.
+	 * 
+	 * @param date
+	 */
 	Date(const Date &other);
 
 	/**
-	 * @brief 以指定时间构造
-	 * @note Windows下最小为1970-01-01 00:00:00
-	 * @param year 年，取值范围[1970, )
-	 * @param month 月，取值范围[1,12]
-	 * @param day 日，取值范围[1,31]
-	 * @param hour 时，取值范围[0,23]，默认为0
-	 * @param minute 分，取值范围[0,59]，默认为0
-	 * @param second 秒，取值范围[0,60]，默认为0
+	 * @brief Construtor de uma data.
+	 * 
+	 * @param year
+	 * @param month
+	 * @param day
+	 * @param hour
+	 * @param minute
+	 * @param second
 	 */
 	Date(int year, int month, int day, int hour = 0, int minute = 0, int second = 0);
 
 	~Date();
 
-	/** @brief 克隆当前对象 */
+	/**
+	 * @brief Clona a data.
+	 * 
+	 * @return Date 
+	 */
 	Date clone() const;
-	/** @brief 转换为UTC时间 */
+	/**
+	 * @brief Converte para UTC.
+	 * 
+	 * @return Date 
+	 */
 	Date toUTC() const;
 
-	/** @brief 转换为Time对象 */
+	/**
+	 * @brief Converte para Time.
+	 * 
+	 * @return Time 
+	 */
 	Time toTime() const;
-	/** @brief 转换为字符串，格式为1970-01-01 00:00:00 */
+
+	/**
+	 * @brief Converte para string, o formato é 1970-01-01 00:00:00.
+	 * 
+	 * @return String 
+	 */
 	std::string toString() const;
 
 	/**
-	 * @brief 格式化为字符串
-	 * @param fmt 格式
+	 * @brief Formata a string
+	 * @param fmt format
 	 * @details
-	 *     %Y 用CCYY表示的年（如：2004）
-	 *     %m 月份 (01-12)
-	 *     %d 月中的第几天(01-31)
-	 *     %H 小时, 24小时格式 (00-23)
-	 *     %M 分钟(00-59)
-	 *     %S 秒钟(00-59)
-	 *     %X标准时间字符串（如：23:01:59）
-	 *     %% 百分号
-	 *
-	 * @return 如果发生错误返回空字符串
+	 * %Y ano (e.g. 2004)
+	 * %m mês (01-12)
+	 * %d dia do mês (01-31)
+	 * %H hora (00-23)
+	 * %M minuto (00-59)
+	 * %S segundo (00-59)
+	 * %X string de tempo padrão (e.g. 23:01:59)
+	 * %% simbolo de porcentagem
+	 * @return se um erro ocorrer, retorna uma string vazia
 	 */
+
 	std::string format(const char * fmt = "%Y-%m-%d %H:%M:%S") const;
 
-	/** @brief 年，[1970, ) */
+	/**
+	 * @brief Retorna o ano.
+	 * 
+	 * @return int 
+	 */
 	inline int year() const
 	{
 		return _tm.tm_year + 1900;
 	}
 
-	/** @brief 月，[1,12] */
+	/**
+	 * @brief Retorna o mês.
+	 * 
+	 * @return int 
+	 */
 	inline int month() const
 	{
 		return _tm.tm_mon + 1;
 	}
 
-	/** @brief 日，[1,31] */
+	/**
+	 * @brief Retorna o dia.
+	 * 	
+	 * @return int 
+	 */
 	inline int day() const
 	{
 		return _tm.tm_mday;
 	}
 
-	/** @brief 时，[0,23] */
+	/**
+	 * @brief Retorna a hora.
+	 * 
+	 * @return int 
+	 */
 	inline int hour() const
 	{
 		return _tm.tm_hour;
 	}
 
-	/** @brief 分，[0,59] */
+	/**
+	 * @brief 	Retorna o minuto.
+	 * 
+	 * @return int 
+	 */
 	inline int minute() const
 	{
 		return _tm.tm_min;
 	}
 
-	/** @brief 秒，[0,60] */
+	/**
+	 * @brief Retorna o segundo.
+	 * 
+	 * @return int 
+	 */
 	inline int second() const
 	{
 		return _tm.tm_sec;
 	}
 
-	/** @brief 星期，[1,7] */
+	/**
+	 * @brief  Retorna o dia da semana.
+	 * 
+	 * @return int 
+	 */
 	inline int week() const
 	{
 		return (_tm.tm_wday > 0) ? _tm.tm_wday : 7;
 	}
 
-	/** @brief 是否是UTC基准时间 */
+	/**
+	 * @brief  Retorna o dia do ano.
+	 * 
+	 * @return true 
+	 * @return false 
+	 */
 	inline bool isUTC() const
 	{
 		return _isUTC;
 	}
 
-	/** @brief 转换为时间戳 @note 按本地时间（时区）转换，比如在东8区(UTC+8)时1970-01-01 00:00:00为-28800 */
+	/**
+	 * @brief Retorna o timestamp.
+	 * 
+	 * @return time_t 
+	 */
 	time_t stamp() const;
-	/** @brief 转换为UTC时间戳 @note 比如1970-01-01 00:00:00为0 */
+
+	/**
+	 * @brief  Retorna o timestamp em milisegundos.
+	 * 
+	 * @return time_t 
+	 */
 	time_t utcStamp() const;
-	/** @brief 时区，比如UTC+8的时区为8 */
+
+	/**
+	 * @brief  Retorna o timestamp em milisegundos.
+	 * 
+	 * @return int 
+	 */
 	int timeZone() const;
-	/** @brief 时区偏移，以秒为单位，比如UTC+8的时区为-28800 */
+
+    /**
+     * @brief  Retorna o timestamp em milisegundos.
+     * 
+     * @return time_t 
+     */
 	time_t timeZoneOffset() const;
 
-	/** @brief 统一设置年月日时分秒 @note 比单独设置年/月/日/时/分/秒更高效 */
+	/**
+	 * @brief  Retorna o timestamp em milisegundos.
+	 * 
+	 * @param year 
+	 * @param month 
+	 * @param day 
+	 * @param hour 
+	 * @param minute 
+	 * @param second 
+	 * @return Date& 
+	 */
 	Date & set(int year, int month, int day, int hour, int minute, int second);
-	/** @brief 统一设置年月日 @note 比单独设置年/月/日更高效 */
+
+	/**
+	 * @brief Configura a data.
+	 * 
+	 * @param year 
+	 * @param month 
+	 * @param day 
+	 * @return Date& 
+	 */
 	Date & setDate(int year, int month, int day);
-	/** @brief 设置年，[1970, ) @note 建议使用setDate统一设置年月日 @see setDate */
+
+	/**
+	 * @brief Configura o ano.
+	 * 
+	 * @param hour 
+	 * @param minute 
+	 * @param second 
+	 * @return Date& 
+	 */
 	Date & setYear(int year);
-	/** @brief 设置月，[1,12] @note 建议使用setDate统一设置年月日 @see setDate */
+
+	/**
+	 * @brief Configura o mês
+	 * 
+	 * @param month 
+	 * @return Date& 
+	 */
 	Date & setMonth(int month);
-	/** @brief 设置日，[1,31] @note 建议使用setDate统一设置年月日 @see setDate*/
+
+	/**
+	 * @brief Configura o dia.
+	 * 
+	 * @param day 
+	 * @return Date& 
+	 */
 	Date & setDay(int day);
-	/** @brief 设置时，[0,23] */
+
+	/**
+	 * @brief Configura a hora.
+	 * 
+	 * @param hour 
+	 * @return Date& 
+	 */
 	Date & setHour(int hour);
-	/** @brief 设置分，[0,59] */
+
+	/**
+	 * @brief Configura o minuto.
+	 * 
+	 * @param minute 
+	 * @return Date& 
+	 */
 	Date & setMinute(int minute);
-	/** @brief 设置秒，[0,60] */
+
+	/**
+	 * @brief Configura o segundo.
+	 * 
+	 * @param second 
+	 * @return Date& 
+	 */
 	Date & setSecond(int second);
 
 	/**
-	 * @brief 设置为某个时间的开始
-	 * @param period 时间类型，
+	 * @brief Configura o início do período.
 	 * @details
-	 *      为Year时置零为一年的开始，
-	 *      为Month时置零为一月的开始，
-	 *      为Day时置零为一天的开始，
-	 *      为Hour时置零为一小时的开始，
-	 *      为Minute时置零为一分钟的开始，
-	 *      为Second/MilliSecond/MicroSecond时无效果，
+	 * 	Para Year, configura o início do ano,
+	 * 	Para Month, configura o início do mês,
+	 * 	Para Day, configura o início do dia,
+	 * 	Para Hour, configura o início da hora,
+	 * 	Para Minute, configura o início do minuto,
+	 * 	Para Second/MilliSecond/MicroSecond, não tem efeito.
+	 * 
+	 * @param period
+	 * @return Date& 
 	 */
 	Date & zeroSet(Duration::Period period);
 
-	/** @brief 加/减 一段时间 */
+	/**
+	 * @brief  Configura o fim do período.
+	 * 
+	 * @param value 
+	 * @param period 
+	 * @return Date& 
+	 */
 	Date & add(int64 value, Duration::Period period);
-	/** @brief 加/减 一段时间 */
+
+	/** 
+	 * @brief  Configura o fim do período.
+	 * 
+	 * @param value 
+	 * @param period 
+	 * @return Date& 
+	 */
 	Date & add(const Duration & duration);
-	/** @brief 加/减 年 */
+
+	/** 
+	 * @brief adiciona um ano
+	 * 
+	 * @param value 
+	 * @param period 
+	 * @return Date& 
+	 */
 	Date & addYear(int value);
-	/** @brief 加/减 月 */
+
+	/**
+	 * @brief Adiciona um mês.
+	 * 
+	 * @param value 
+	 * @return Date& 
+	 */
 	Date & addMonth(int value);
 
 	/**
-	 * @brief 比较两时间之间的差异
-	 * @param period 结果时间类型
-	 * @param other 要比较的对象
-	 * @details
-	 *     为Year表示两者相差年份，不是绝对差值，2015-01-01与2014-12-30相差1年
-	 *     为Month表示两者相差说数，不是绝对差值，2015-01-01与2014-12-30相差1月
-	 *     为Day表示两者相差天数，不是绝对差值，2015-01-01 23:59:59与2015-01-02 00:00:00相差1天
-	 *     为Hour表示两者相差小时数，不是绝对差值，2015-01-01 23:59:59与2015-01-02 00:00:00相差1小时
-	 *     为Minute表示两者相差分钟数，不是绝对差值，2015-01-01 23:59:59与2015-01-02 00:00:00相差1分钟
-	 *     为Second表示两者相差秒数
-	 *     为MilliSecond表示两者相差毫秒数，Date的精度为秒，所以只是将相差秒数*1000
-	 *     为MicroSecond表示两者相差微秒数，Date的精度为秒，所以只是将相差秒数*1000000
-	 * @return 返回this - other的相应差值
+	 * @brief  Retorna a diferença entre duas datas.
+	 * @param period
+	 * 	Para Year, retorna a diferença de anos,
+	 * 	Para Month, retorna a diferença de meses,
+	 * 	Para Day, retorna a diferença de dias,
+	 * 	Para Hour, retorna a diferença de horas,
+	 * 	Para Minute, retorna a diferença de minutos,
+	 * 	Para Second, retorna a diferença de segundos,
+	 * 	Para MilliSecond, retorna a diferença de milisegundos,
+	 * 	Para MicroSecond, retorna a diferença de microsegundos.
+	 * @param other
+	 * @return int64 
 	 */
 	int64 diff(const Date & other, Duration::Period period = Duration::Second);
 
-	/** @brief 获取一年中的天，[1,366] */
+	/**
+	 * @brief Retorna o dia do ano.
+	 * 
+	 * @return int 
+	 */
 	int getYearDay() const;
-	/** @brief 距离1970-01-01 00:00:00的月数 */
+	/**
+	 * @brief Retorna o número de meses desde 1970-01-01 00:00:00.
+	 * 
+	 * @return int 
+	 */
 	int getUTCFullMonths() const;
-	/** @brief 距离1970-01-01 00:00:00的年数 */
+	/**
+	 * @brief Retorna o número de anos desde 1970-01-01 00:00:00.
+	 * 
+	 * @return int 
+	 */
 	int getUTCFullYears() const;
 
-	/** @brief 是否是闰年 */
+	/**
+	 * @brief Retorna se é ano bissexto.
+	 * 
+	 * @return true
+	 * @return false 
+	 */
 	bool isLeapYear() const;
-	/** @brief 是否是一月的最后一天 */
+
+	/**
+	 * @brief Retorna se é o último dia do mês.
+	 * 
+	 * @return true
+	 * @return false 
+	 */
 	bool isLastDayOfMonth() const;
 
+	// configura os operadores
 	Date operator + (const Duration & duration);
 	Date operator - (const Duration & duration);
 	Duration operator - (const Date & other);
@@ -328,136 +623,87 @@ private:
 };
 
 /**
- * @brief 时间类
- * @details 精确到微秒，可与Date相互转换，转换为Date将损失精度到秒
- * @see Date
+ * @brief  Representa um período de tempo.
+ * 
  */
 class Time
 {
 public:
 	Time();
-	/** @brief 以时间戳构造 */
 	Time(time_t stamp);
-	/** @brief 以Date对象构造 */
 	Time(const Date &date);
-	/** @brief 以Time对象复制 */
 	Time(const Time &time);
 	~Time();
-
-	/** @brief 克隆当前对象 */
 	Time clone() const;
-
 	/** @brief 转换成本地日历时间的Date对象 */
+	/**
+	 * @brief Retorna a data.
+	 * 
+	 * @return Date 
+	 */
 	Date toDate() const;
-	/** @brief 转换成UTC基准时间的Date对象 */
+
+	/**
+	 * @brief Retorna a data UTC.
+	 * 
+	 * @return Date 
+	 */
 	Date utcDate() const;
 
-	/** @brief 获取秒数，等同于时间戳 */
+	/**
+	 * @brief Retorna o tempo em segundos.
+	 * 
+	 * @return time_t 
+	 */
 	inline time_t seconds() const
 	{
 		return _tv.tv_sec;
 	}
 
-	/** @brief 获取微秒数, [0,1000000) @details 微秒部分小于一秒 */
+	/**
+	 * @brief Retorna o tempo em microsegundos.
+	 * 
+	 * @return suseconds_t 
+	 */
 	inline long microSeconds() const
 	{
 		return _tv.tv_sec;
 	}
-
-	/** @brief 获取毫秒时间戳 */
 	inline int64 milliStamp() const
 	{
 		return _tv.tv_sec * 1000 + _tv.tv_usec / 1000;
 	}
-
-	/** @brief 获取微秒时间戳 */
 	inline int64 microStamp() const
 	{
 		return _tv.tv_sec * 1000000 + _tv.tv_usec;
 	}
-
-	/** @brief 获取时间戳 */
 	inline time_t stamp() const
 	{
 		return _tv.tv_sec;
 	}
-
-	/** @brief 获取UTC时间戳 */
 	time_t utcStamp() const;
-
-	/** @brief 设置秒数和微秒数 */
 	Time & set(time_t seconds, long microSeconds = 0);
-	/** @brief 获取微秒数, [0,1000) */
 	Time & setSeconds(time_t seconds);
-	/** @brief 获取微秒数, [0,1000000) */
 	Time & setMicroSeconds(long microSeconds);
-
-	/** 
-	 * @brief 设置为某个时间的开始
-	 * @param period 时间类型，
-	 * @details
-	 *     为Year时置零为一年的开始，
-	 *	   为Month时置零为一月的开始，
-	 *	   为Day时置零为一天的开始，
-	 *	   为Hour时置零为一小时的开始，
-	 *	   为Minute时置零为一分钟的开始，
-	 *	   为Second时置零为一秒的开始，
-	 *	   为MilliSecond时置零为一毫秒的开始，
-	 *	   为MicroSecond时置零为一微秒的开始
-	 */
 	Time & zeroSet(Duration::Period period);
-
-	/** @brief 加/减 一段时间 */
 	Time & add(int64 value, Duration::Period period = Duration::Period::MilliSecond);
-	/** @brief 加/减 一段时间 */
 	Time & add(const Duration & duration);
-	/** @brief 加/减 周 */
 	Time & addWeek(int value);
-	/** @brief 加/减 天 */
 	Time & addDay(int value);
-	/** @brief 加/减 时 */
 	Time & addHour(int value);
-	/** @brief 加/减 分 */
 	Time & addMinute(int value);
-	/** @brief 加/减 秒 */
 	Time & addSecond(long value);
-	/** @brief 加/减 毫秒 */
 	Time & addMilliSecond(long value);
-	/** @brief 加/减 微秒 */
 	Time & addMicroSecond(long value);
-
-	/**
-	 * @brief 比较两时间之间的差异
-	 * @param period 结果时间类型
-	 * @param other 要比较的对象
-	 * @details
-	 *     为Year表示两者相差年份，不是绝对差值，2015-01-01与2014-12-30相差1年
-	 *     为Month表示两者相差说数，不是绝对差值，2015-01-01与2014-12-30相差1月
-	 *     为Day表示两者相差天数，不是绝对差值，2015-01-01 23:59:59与2015-01-02 00:00:00相差1天
-	 *     为Hour表示两者相差小时数，不是绝对差值，2015-01-01 23:59:59与2015-01-02 00:00:00相差1小时
-	 *     为Minute表示两者相差分钟数，不是绝对差值，2015-01-01 23:59:59与2015-01-02 00:00:00相差1分钟
-	 *     为Second表示两者相差秒数
-	 *     为MilliSecond表示两者相差毫秒数
-	 *     为MicroSecond表示两者相差微秒数
-	 * @return 返回this - other的相应差值
-	 */
 	int64 diff(const Time & other, Duration::Period period = Duration::Second);
-
-	/** @brief 距离1970-01-01 00:00:00的微秒数 */
 	int64 getUTCFullMicroSeconds() const;
-	/** @brief 距离1970-01-01 00:00:00的毫秒数 */
 	int64 getUTCFullMilliSeconds() const;
-	/** @brief 距离1970-01-01 00:00:00的秒数 @note 与getUTCStamp()含义相同 @see getUTCStamp */
 	time_t getUTCFullSeconds() const;
-	/** @brief 距离1970-01-01 00:00:00的分钟 */
 	int getUTCFullMinutes() const;
-	/** @brief 距离1970-01-01 00:00:00的小时 */
 	int getUTCFullHours() const;
-	/** @brief 距离1970-01-01 00:00:00的天数 */
 	int getUTCFullDays() const;
-	/** @brief 距离1970-01-01 00:00:00的周数 @note 从0开始，1970-01-01 00:00:00为第0周星期4 */
 	int getUTCFullWeeks() const;
-
+	// adiciona os operadores
 	Time operator + (const Duration & duration);
 	Time operator - (const Duration & duration);
 	Duration operator - (const Time & other);
@@ -470,6 +716,6 @@ private:
 	struct timeval _tv;
 };
 
-} /* namespace ec */
+}
 
-#endif /* INCLUDE_EC_DATE_H_ */
+#endif
