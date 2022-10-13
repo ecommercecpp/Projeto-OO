@@ -147,6 +147,14 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
         </sub>
       </a>
     </td>
+    <td align="center">
+      <a href="#">
+        <img src="https://avatars3.githubusercontent.com/u/83346689" width="100px;" alt="IsraelJulio"/><br>
+        <sub>
+          <b>CaioHosken</b>
+        </sub>
+      </a>
+    </td>
   </tr>
 </table>
 
