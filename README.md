@@ -151,7 +151,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
       <a href="#">
         <img src="https://avatars3.githubusercontent.com/u/83346689" width="100px;" alt="IsraelJulio"/><br>
         <sub>
-          <b>CaioHosken</b>
+          <b>IsraelJulio</b>
         </sub>
       </a>
     </td>
