@@ -165,6 +165,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
 - [Validação CPF e CNPJ](https://github.com/srgoogle23/valida-cpf-cnpj)
 - [UUID](https://github.com/mariusbancila/stduuid)
 - [GLS](https://github.com/microsoft/GSL)
+- [Relacionamentos UML](http://www.linhadecodigo.com.br/artigo/943/uml-unified-modeling-language-generalizacao-agregacao-composicao-e-dependencia.aspx)
 
 [documentacao-shield]: https://img.shields.io/badge/Documentação%20Doxygen-clique%20aqui-blue
 [documentacao-url]: https://ecommercecpp.github.io/ecommercecpp/annotated.html
