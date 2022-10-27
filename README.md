@@ -3,7 +3,7 @@
 # Projeto POO
 
 > O Projeto POO é uma abstração de um sistema.
-> Diagrama: https://lucid.app/lucidchart/ecc498fa-4b8b-4a83-9361-f97e5f102d18/edit?view_items=UzBRbrNMmFt5&invitationId=inv_89b65fc5-d561-4541-88b8-711632819975#
+> Diagrama: https://lucid.app/lucidspark/67d84e7a-1928-4db6-8f41-c2cf7df4773a/edit?viewport_loc=-6913%2C-3823%2C13960%2C6849%2C0_0&invitationId=inv_f02af824-5850-4265-b7ef-f0f2c010a1d1
 
 <!-- TABLE OF CONTENTS -->
 <details>
