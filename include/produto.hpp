@@ -6,9 +6,10 @@
 #include <iostream>
 
 #include "lote.hpp"
+#include "categoria.hpp"
 
-class Categoria{
-};
+//class Categoria{
+//};
 
 class Produto
 {

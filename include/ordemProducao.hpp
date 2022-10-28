@@ -1,15 +1,18 @@
 #ifndef _ORDEM_PRODUCAO_HPP_
 #define _ORDEM_PRODUCAO_HPP_
 
-#inculde "autoload.hpp"
+#include "autoload.hpp"
+//#include "data.hpp"
+#include "date.h"
 
 class OrdemProducao
 {
 	private:
 		Lote lote;
-    Data data;
+    //Data data;
+    ec::Date data;
 	public:
-		OrdemProducao(Lote lote, Data data);
+		OrdemProducao(Lote lote, ec::Date data);
 };
 
 #endif

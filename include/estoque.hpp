@@ -21,7 +21,6 @@ class Estoque
         int estoqueProduto(unsigned int);
         void atualizaEstoque(unsigned int, unsigned int);
         bool disponivel(unsigned int, unsigned int);
-        void validaEstoqueMinimo(unsigned int);
 };
 
 #endif

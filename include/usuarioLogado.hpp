@@ -1,16 +1,20 @@
-#ifndef _USUARIO_HPP_
-#define _USUARIO_HPP_
+#ifndef _USUARIOLOGADO_HPP_
+#define _USUARIOLOGADO_HPP_
 
-#include "pessoa.hpp"
+#include "usuario.hpp"
 #include <string>
 
-class Usuario : public Pessoa
+class UsuarioLogado : public Usuario
 {
 	private:
-		std::string login;
-		std::string senha;
+		static Usuario *usuario;
+		
 	public:
-		Usuario();
-		Usuario(std::string nome, std::string cpf_cnpj, std::string endereco, std::string email, int tipo, std::string login, std::string senha);
+		UsuarioLogado();
+    		UsuarioLogado(UsuarioLogado &other) = delete;
+		void operator=(const UsuarioLogado &) = delete;
+		static UsuarioLogado *GetInstance();
 		
 };
+
+#endif

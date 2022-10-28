@@ -2,6 +2,9 @@
 #define _EMPRESA_HPP_
 
 #include "autoload.hpp"
+#include "estoque.hpp"
+#include "permissao.hpp"
+#include "categoria.hpp"
 
 class Empresa
 {

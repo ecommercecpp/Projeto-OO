@@ -6,10 +6,10 @@
 class Categoria
 {
 	private:
-		string nome;
+		std::string nome;
 	public:
-		Categoria(string name);
-		string getNome();
+		Categoria(std::string name);
+		std::string getNome();
 };
 
 #endif

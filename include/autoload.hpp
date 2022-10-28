@@ -21,5 +21,12 @@
 #include "produto.hpp"
 #include "venda.hpp"
 #include "exceptions.hpp"
+#include "categoria.hpp"
+#include "empresa.hpp"
+#include "estoque.hpp"
+#include "ordemProducao.hpp"
+#include "permissao.hpp"
+#include "usuario.hpp"
+#include "usuarioLogado.hpp"
 
 #endif

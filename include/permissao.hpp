@@ -15,6 +15,7 @@ class Permissao
     void editaPermissao(std::string, bool);
     void editaPermissao(std::map<std::string, bool>);
     bool temPermisssao(std::string);
+    void gerarLog();
 };
 
 #endif
