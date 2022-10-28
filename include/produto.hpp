@@ -7,6 +7,7 @@
 
 #include "lote.hpp"
 #include "categoria.hpp"
+#include "autoload.hpp"
 
 //class Categoria{
 //};
