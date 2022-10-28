@@ -7,6 +7,8 @@
 
 >Link do repositório no Replit: https://replit.com/join/ybusxwuwsw-fileppevoleso
 
+>Token para push no github: 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
+
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Diagrama UML do projeto</summary>
