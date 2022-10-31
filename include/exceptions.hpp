@@ -3,6 +3,15 @@
 
 #include <exception>
 
+class AcessDeniedException : public std::exception
+{
+	public:
+		AcessDeniedException() {}
+		const char* what() const throw()
+		{
+			return "Permissao de acesso negada";
+		}
+};
 class InvalidCPFException : public std::exception
 {
 	public:
