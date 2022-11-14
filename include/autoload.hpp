@@ -33,16 +33,22 @@
 
 // ***Sprint 3***
 #include "permissao.hpp"
-//#include "empresa.hpp"
+#include "empresa.hpp"
 //#include "usuario.hpp"
 //#include "usuarioLogado.hpp"
 
-/*
+
 // ***Sprint 4***
 #include "logs.hpp"
 #include "logExcecao.hpp"
 #include "logLeitura.hpp"
 #include "logEscrita.hpp"
-*/
+
+
+// ***Sprint 5***
+#include "pedidoDeCompra.hpp"
+#include "boleto.hpp"
+#include "credito.hpp"
+//#include "metodoPagamento.hpp"
 
 #endif
