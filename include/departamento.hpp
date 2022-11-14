@@ -14,6 +14,7 @@ class Departamento
 		Departamento(std::string nome);
 		int getId();
 		std::string getNome();
+		void setNome(std::string nome);
 };
 
 #endif

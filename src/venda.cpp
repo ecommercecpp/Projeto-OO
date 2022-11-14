@@ -1,48 +1,89 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <map>
+
 #include "venda.hpp"
 
 Venda::Venda()
 {
 }
 
-Venda::Venda(ec::Date dataVenda, int quantidade, int id, Produto produto, Cliente cliente)
+Venda::Venda(Data dataVenda, int quantidade, int id, Produto produto, Cliente cliente)
 {
-    // verifica a disponibilidade do produto para venda
-	if (produto.disponivel(quantidade))
-	{
-		this->dataVenda = dataVenda;
-		this->quantidade = quantidade;
-		this->id = id;
-		this->produto = produto;
-		this->cliente = cliente;
-		realizaVenda();
-		this->produto.validaEstoqueMinimo();
-	}
-	else
-	{
-		throw QuantidadeDeVendaIndisponivelException();
-	}
+    this->dataVenda = dataVenda;
+    this->quantidade = quantidade;
+    this->id = id;
+    this->produto = produto;
+    this->cliente = cliente;
+}
+
+Venda::~Venda()
+{
+}
+
+void Venda::setDataVenda(Data dataVenda)
+{
+    this->dataVenda = dataVenda;
+}
+
+void Venda::setQuantidade(int quantidade)
+{
+    this->quantidade = quantidade;
+}
+
+void Venda::setId(int id)
+{
+    this->id = id;
+}
+
+void Venda::setProduto(Produto produto)
+{
+    this->produto = produto;
+}
+
+void Venda::setCliente(Cliente cliente)
+{
+    this->cliente = cliente;
+}
+
+void Venda::setLotesVenda(std::vector<int> lotes_venda)
+{
+    this->lotes_venda = lotes_venda;
+}
+
+Data Venda::getDataVenda()
+{
+    return dataVenda;
+}
+
+int Venda::getQuantidade()
+{
+    return quantidade;
+}
+
+int Venda::getId()
+{
+    return id;
+}
+
+Produto Venda::getProduto()
+{
+    return produto;
+}
+
+Cliente Venda::getCliente()
+{
+    return cliente;
+}
+
+std::vector<int> Venda::getLotesVenda()
+{
+    return lotes_venda;
 }
 
 void Venda::realizaVenda()
 {
-	// descobre os lotes que serão utilizados na venda
-	int quantidadeRestante = quantidade;
-	for (std::map<int, Lote>::iterator it = produto.getLotes().begin(); it != produto.getLotes().end(); ++it)
-	{
-		if (quantidadeRestante > 0)
-		{
-			if (quantidadeRestante >= it->second.getQuantidade())
-			{
-				lotes_venda.insert(std::pair<int, Lote>(it->second.getCodigoLote(), it->second));
-				quantidadeRestante -= it->second.getQuantidade();
-			}
-			else
-			{
-				Lote lote = it->second;
-				lote.atualizaQuantidade(quantidadeRestante);
-				lotes_venda.insert(std::pair<int, Lote>(lote.getCodigoLote(), lote));
-				quantidadeRestante = 0;
-			}
-		}
-	}
+    //this->atualizaLote();
+    //this->atualizaEstoque();
 }

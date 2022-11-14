@@ -1,4 +1,4 @@
-#include "autoload.hpp"
+#include "pessoa.hpp"
 #include "doctest"
 
 TEST_CASE("Testando dados inválidos - PESSOA")

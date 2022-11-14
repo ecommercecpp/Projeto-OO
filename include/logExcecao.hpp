@@ -4,21 +4,26 @@
 #include <string>
 #include <vector>
 
-#include "date.h"
+#include "Data.h"
 #include "exceptions.hpp"
-#include "autoload.hpp"
+#include "logs.hpp"
 
 class LogExcecao: public Logs
 {
-    private:
+    protected:
+        std::string funcionalidade;
         std::vector<std::string> historicoLogExcecao;
 
     public:
-    LogExcecao();
-    LogExcecao(Usuario, ec::Date, std::string, std::string);
-    std::string getLog();
-    void setHistoricoLogExcecao(std::vector<std::string>);
-    std::vector<std::string> getHistoricoLogExcecao();
+        LogExcecao();
+        ~LogExcecao();
+        LogExcecao(Usuario, Data, std::string, std::string);
+        //std::string getLog();
+        void setHistoricoLogExcecao(std::vector<std::string>);
+        std::vector<std::string> getHistoricoLogExcecao();
+        void setFuncionalidade(std::string);
+        std::string getFuncionalidade();
+        
 };
 
 #endif

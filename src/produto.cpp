@@ -1,63 +1,175 @@
+#include <iostream>
+
 #include "produto.hpp"
+#include "Data.h"
 
 Produto::Produto()
 {
 }
 
-Produto::Produto(std::string nome, unsigned int codigo, unsigned int quantidadeMinima, double preco, Lote lote, Categoria categoria)
-: nome(nome), codigo(codigo), quantidadeMinima(quantidadeMinima), preco(preco), categoria(categoria)
+Produto::Produto(std::string nome, int codigo, double valorDeVenda, int tamanhoDoLoteMinimo, Categoria* categoria, int estoqueMinimo)
 {
-	lotes.insert(std::pair<int, Lote>(lote.getCodigoLote(), lote));
-	atualizarEstoque();
-}
-Produto::Produto(std::string nome, unsigned int codigo, unsigned int quantidadeMinima, double preco, std::map<int, Lote> lotes, Categoria categoria)
-: nome(nome), codigo(codigo), quantidadeMinima(quantidadeMinima), preco(preco), lotes(lotes), categoria(categoria)
-{
-	atualizarEstoque();
+    setNome(nome);
+    setCodigo(codigo);
+    setValorDeVenda(valorDeVenda);
+    setTamanhoDoLoteMinimo(tamanhoDoLoteMinimo);
+    setCategoria(categoria);
+    setEstoqueMinimo(estoqueMinimo);
 }
 
-Produto::Produto(std::string nome, unsigned int codigo, unsigned int quantidadeMinima ,double preco, Lote lote)
-: nome(nome), codigo(codigo), quantidadeMinima(quantidadeMinima), preco(preco)
+Produto::~Produto()
 {
-	lotes.insert(std::pair<int, Lote>(lote.getCodigoLote(), lote));
-	atualizarEstoque();
 }
 
-void Produto::atualizarEstoque()
+void Produto::setNome(std::string nome)
 {
-	estoque = 0;
-	for (std::map<int, Lote>::iterator it = lotes.begin(); it != lotes.end(); ++it)
-	{
-		estoque += it->second.getQuantidade();
-	}
+    this->nome = nome;
 }
 
-void Produto::atualizaCategoria(Categoria categoria)
+void Produto::setCodigo(int codigo)
 {
-	this->categoria = categoria;
+    this->codigo = codigo;
 }
 
-bool Produto::disponivel(int quantidade)
+void Produto::setValorDeVenda(double valorDeVenda)
 {
-	// converte quantidade para unsigned int
-	unsigned int quantidadeConvertida = static_cast<unsigned int>(quantidade);
-	return estoque >= quantidadeConvertida;
+    this->valorDeVenda = valorDeVenda;
 }
 
-std::map<int, Lote> Produto::getLotes()
+void Produto::setTamanhoDoLoteMinimo(int tamanhoDoLoteMinimo)
 {
-	return lotes;
+    this->tamanhoDoLoteMinimo = tamanhoDoLoteMinimo;
 }
 
-void Produto::validaEstoqueMinimo()
+void Produto::setCategoria(Categoria* categoria)
 {
-	if (estoque < quantidadeMinima)
-	{
-		emiteOrdemProducao();
-	}
+    this->categoria = categoria;
 }
 
-void Produto::emiteOrdemProducao()
+void Produto::setEstoqueMinimo(int estoqueMinimo)
 {
-	std::cout << "Ordem de produção" << std::endl;
+    this->estoqueMinimo = estoqueMinimo;
+}
+
+void Produto::setQtdEstoque(int qtdEstoque)
+{
+    this->qtdEstoque = qtdEstoque;
+}
+
+void Produto::setOrdem(OrdemProducao* ordem)
+{
+    this->ordem = ordem;
+}
+
+std::string Produto::getNome()
+{
+    return nome;
+}
+
+int Produto::getCodigo()
+{
+    return codigo;
+}
+
+double Produto::getValorDeVenda()
+{
+    return valorDeVenda;
+}
+
+int Produto::getTamanhoDoLoteMinimo()
+{
+    return tamanhoDoLoteMinimo;
+}
+
+Categoria* Produto::getCategoria()
+{
+    return categoria;
+}
+
+int Produto::getEstoqueMinimo()
+{
+    return estoqueMinimo;
+}
+
+int Produto::getQtdEstoque()
+{
+    return qtdEstoque;
+}
+
+OrdemProducao* Produto::getOrdem()
+{
+    return ordem;
+}
+
+void Produto::adicionarEstoque(int qtd)
+{
+    qtdEstoque += qtd;
+}
+
+void Produto::removerEstoque(int qtd)
+{
+    qtdEstoque -= qtd;
+}
+
+bool Produto::verificarEstoque()
+{
+    if (qtdEstoque < estoqueMinimo)
+    {
+        return true;
+    }
+    else
+    {
+        return false;//trocar pra uma exceção
+    }
+}
+
+bool Produto::verificarOrdem()
+{
+    if (ordem == NULL)
+    {
+        return true;
+    }
+    else
+    {
+        return false;//trocar pra uma exceção
+    }
+}
+/*
+void Produto::criarOrdem()
+{
+    if (verificarOrdem())
+    {
+        Data data;
+        ordem = new OrdemProducao(this, data, tamanhoDoLoteMinimo);
+    }
+    else
+    {
+        std::cout << "Já existe uma ordem de produção para este produto" << std::endl;//criar excecaopra isso
+    }
+    ordem = new OrdemProducao(this, data, tamanhoDoLoteMinimo);
+}
+
+void Produto::removerOrdem()
+{
+    delete ordem;
+    ordem = NULL;
+}
+*/
+void Produto::imprimir()
+{
+    std::cout << "Nome: " << nome << std::endl;
+    std::cout << "Codigo: " << codigo << std::endl;
+    std::cout << "Valor de venda: " << valorDeVenda << std::endl;
+    std::cout << "Tamanho do lote minimo: " << tamanhoDoLoteMinimo << std::endl;
+    std::cout << "Categoria: " << categoria->getNome() << std::endl;
+    std::cout << "Estoque minimo: " << estoqueMinimo << std::endl;
+    std::cout << "Quantidade em estoque: " << qtdEstoque << std::endl;
+    if (ordem != NULL)
+    {
+        std::cout << "Ordem de producao: " << ordem->getCodigo() << std::endl;
+    }
+    else
+    {
+        std::cout << "Ordem de producao: Nao ha ordem de producao" << std::endl;
+    }
 }

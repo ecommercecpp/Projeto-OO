@@ -1,11 +1,15 @@
-#include "autoload.hpp"
+#include "funcionario.hpp"
+#include "salario.hpp"
+#include "cargo.hpp"
+#include "departamento.hpp"
+#include "Data.h"
 #include "doctest"
 
 TEST_CASE("Testa a inserção de valores no Funcionário - FUNCIONÁRIO")
 {
 	// instacia suas datas
-	ec::Date data_nascimento = ec::Date(1, 1, 1990);
-	ec::Date data_admissao = ec::Date(1, 1, 2010);
+	Data data_nascimento = Data(1, 1, 1990);
+	Data data_admissao = Data(1, 1, 2010);
 	// instancia seus salários
 	Salario salario1 = Salario(1100, true, 1);
 	Salario salario2 = Salario(1200, true, 1);

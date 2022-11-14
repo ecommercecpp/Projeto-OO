@@ -1,7 +1,7 @@
 #ifndef _SALARIO_HPP_
 #define _SALARIO_HPP_
 
-#include "date.h"
+#include "Data.h"
 
 class Salario
 {
@@ -9,7 +9,7 @@ class Salario
 		double valor;
 		bool status;
 		int motivo; // 1 - Promoção 2 - Reajuste (dissidio)
-		ec::Date data;
+		Data data;
 	private:
 		void setValor(double valor);
 		void setMotivo(int motivo);
@@ -19,7 +19,7 @@ class Salario
 		double getValor();
 		bool getStatus();
 		int getMotivo();
-		ec::Date getDataAlteracao();
+		Data getDataAlteracao();
 };
 
 #endif

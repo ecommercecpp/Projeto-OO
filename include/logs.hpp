@@ -4,22 +4,32 @@
 #include <string>
 #include <vector>
 
-#include "date.h"
+#include "Data.h"
+//#include "usuario.hpp"
 #include "exceptions.hpp"
-#include "autoload.hpp"
+
+class Usuario{};
 
 class Logs
 {
-	private:
+	protected:
     Usuario usuario;
-		ec::Date data;
-    std::string entidade, informacao, funcionalidade;
-    std::vector<std::string> atributosAnteriores;
+		Data data;
+    std::string entidade;
 
 	public:
     Logs();
     ~Logs();
-    virtual std::string getLog() = 0;
+    Logs(Usuario, Data, std::string);
+
+    void setUsuario(Usuario);
+    Usuario getUsuario();
+    void setData(Data);
+    Data getData();
+    void setEntidade(std::string);
+    std::string getEntidade();
+
+//    virtual std::string getLog() = 0;
     
 };
 

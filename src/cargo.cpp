@@ -15,3 +15,13 @@ int Cargo::getId()
 {
 	return id;
 }
+
+void Cargo::setNome(std::string nome)
+{
+	this->nome = nome;
+}
+
+void Cargo::setId(int id)
+{
+	this->id = id;
+}

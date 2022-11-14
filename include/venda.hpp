@@ -1,29 +1,44 @@
-
 #ifndef _VENDA_HPP_
 #define _VENDA_HPP_
-
-#include "date.h"
-#include "cliente.hpp"
+// Equivalente ao registro de vendas
 #include "produto.hpp"
-#include "lote.hpp"
-#include "exceptions.hpp"
+#include "cliente.hpp"
+#include "Data.h"
+#include <string>
 
-#include <map>
+#include <vector>
 
 class Venda
 {
 	protected:
-		Produto produto;
-        Cliente cliente;
-        ec::Date dataVenda;
-		int quantidade;
-        int id;
-        std::map<int, Lote> lotes_venda;
+                Produto produto;
+                Cliente cliente;
+                Data dataVenda;
+                int quantidade;
+                int id;
+                std::vector<int> lotes_venda;
 	public:
-        Venda();
-        Venda(ec::Date dataVenda, int quantidade, int id, Produto produto, Cliente cliente);
-        void atualizaLote();
-        void realizaVenda();
+                Venda();
+                Venda(Data dataVenda, int quantidade, int id, Produto produto, Cliente cliente);//, Cliente cliente
+                ~Venda();
+                void setDataVenda(Data dataVenda);
+                void setQuantidade(int quantidade);
+                void setId(int id);
+                void setProduto(Produto produto);
+                void setCliente(Cliente cliente);
+                void setLotesVenda(std::vector<int> lotes_venda);
+                Data getDataVenda();
+                int getQuantidade();
+                int getId();
+                Produto getProduto();
+                Cliente getCliente();
+                std::vector<int> getLotesVenda();
+        
+                //void atualizaLote();
+                //void atualizaEstoque();
+
+                void realizaVenda();
+    
 };
 
 #endif

@@ -4,22 +4,24 @@
 #include <string>
 #include <vector>
 
-#include "date.h"
-#include "exceptions.hpp"
-#include "autoload.hpp"
+#include "Data.h"
+#include "logs.hpp"
 
 class LogLeitura: public Logs
 {
-    private:
+    protected:
+        std::string informacao;
         std::vector<std::string> historicoLogLeitura;
 
     public:
-    LogLeitura();
-    ~LogLeitura();
-    LogLeitura(Usuario, ec::Date, std::string, std::string);
-    std::string getLog();
-    void setHistoricoLogLeitura(std::vector<std::string>);
-    std::vector<std::string> getHistoricoLogLeitura();
+        LogLeitura();
+        ~LogLeitura();
+        LogLeitura(Usuario, Data, std::string, std::string);
+        //std::string getLog();
+        void setHistoricoLogLeitura(std::vector<std::string>);
+        std::vector<std::string> getHistoricoLogLeitura();
+        void setInformacao(std::string);    
+        std::string getInformacao();
 };
 
 #endif

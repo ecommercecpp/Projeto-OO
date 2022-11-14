@@ -1,6 +1,5 @@
 #include "pessoa.hpp"
 #include "validacpfcnpj.hpp"
-#include "exceptions.hpp"
 
 #include <iostream>
 
@@ -66,4 +65,39 @@ void Pessoa::setTipo(int tipo)
 	{
 		throw InvalidTypeException();
 	}
+}
+
+std::string Pessoa::getNome()
+{
+	return nome;
+}
+
+std::string Pessoa::getCpf_cnpj()
+{
+	return cpf_cnpj;
+}
+
+std::string Pessoa::getEndereco()
+{
+	return endereco;
+}
+
+std::string Pessoa::getEmail()
+{
+	return email;
+}
+
+int Pessoa::getTipo()
+{
+	return tipo;
+}
+
+void Pessoa::setNome(std::string nome)
+{
+	this->nome = nome;
+}
+
+void Pessoa::setEndereco(std::string endereco)
+{
+	this->endereco = endereco;
 }

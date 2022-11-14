@@ -9,24 +9,40 @@
 #include <iomanip>
 #include <fstream>
 
-#include "date.h"
+#include "Data.h"
+
+#include "exceptions.hpp"
 
 // include de classes
+
+// ***Sprint 1***
 #include "funcionario.hpp"
 #include "cliente.hpp"
 #include "pessoa.hpp"
 #include "salario.hpp"
 #include "cargo.hpp"
 #include "departamento.hpp"
+
+// ***Sprint 2***
 #include "produto.hpp"
+#include "lote.hpp"
 #include "venda.hpp"
-#include "exceptions.hpp"
 #include "categoria.hpp"
-#include "empresa.hpp"
 #include "estoque.hpp"
 #include "ordemProducao.hpp"
+
+// ***Sprint 3***
 #include "permissao.hpp"
-#include "usuario.hpp"
-#include "usuarioLogado.hpp"
+//#include "empresa.hpp"
+//#include "usuario.hpp"
+//#include "usuarioLogado.hpp"
+
+/*
+// ***Sprint 4***
+#include "logs.hpp"
+#include "logExcecao.hpp"
+#include "logLeitura.hpp"
+#include "logEscrita.hpp"
+*/
 
 #endif

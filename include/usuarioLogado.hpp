@@ -2,7 +2,6 @@
 #define _USUARIOLOGADO_HPP_
 
 #include "usuario.hpp"
-#include <string>
 
 class UsuarioLogado : public Usuario
 {
@@ -11,7 +10,7 @@ class UsuarioLogado : public Usuario
 		
 	public:
 		UsuarioLogado();
-    		UsuarioLogado(UsuarioLogado &other) = delete;
+    	UsuarioLogado(UsuarioLogado &other) = delete;
 		void operator=(const UsuarioLogado &) = delete;
 		static UsuarioLogado *GetInstance();
 		

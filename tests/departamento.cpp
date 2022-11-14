@@ -1,4 +1,4 @@
-#include "autoload.hpp"
+#include "departamento.hpp"
 #include "doctest"
 
 TEST_CASE("Testando incrementação de IDs - DEPARTAMENTO")

@@ -3,6 +3,8 @@
 
 #include <string>
 
+#include "exceptions.hpp"
+
 class Pessoa
 {
 	protected:
@@ -15,6 +17,14 @@ class Pessoa
 	public:
 		Pessoa();
 		Pessoa(std::string nome, std::string cpf_cnpj, std::string endereco, std::string email, int tipo);
+		std::string getNome();
+		std::string getCpf_cnpj();
+		std::string getEndereco();
+		std::string getEmail();
+		int getTipo();
+		void setNome(std::string nome);
+		void setEndereco(std::string endereco);
+
 };
 
 #endif

@@ -9,18 +9,27 @@ class Estoque
 {
     protected:
         static Estoque* estoque;
-        std::map<unsigned int, Produto> produtos;
+        std::map<int, Produto> produtos;
     public:
         Estoque();
         Estoque(Estoque &other) = delete;
-        void operator=(const Estoque &) = delete;
-        static Estoque *GetInstance();
-        void validaEstoqueMinimo(unsigned int);
-        void addProduto(Produto);
-        Produto removeProduto(unsigned int);
-        int estoqueProduto(unsigned int);
-        void atualizaEstoque(unsigned int, unsigned int);
-        bool disponivel(unsigned int, unsigned int);
+        Estoque& operator=(Estoque &other) = delete;
+        ~Estoque();
+        static Estoque* getEstoque();
+        void addProduto(Produto produto);
+        void removeProduto(int codigo);
+        Produto getProduto(int codigo);
+        std::map<int, Produto> getProdutos();
+        void setProdutos(std::map<int, Produto> produtos);
+
+       // void operator=(const Estoque &) = delete;
+        //static Estoque *GetInstance();
+        void validaEstoqueMinimo(int);
+
+
+       //int estoqueProduto(unsigned int);
+        void atualizaEstoque(int, int);
+        bool disponivel(int, int);
 };
 
 #endif

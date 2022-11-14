@@ -14,6 +14,8 @@ class Cargo
 		Cargo(std::string nome);
 		std::string getNome();
 		int getId();
+		void setNome(std::string nome);
+		void setId(int id);
 };
 
 #endif

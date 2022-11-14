@@ -1,48 +1,92 @@
 #ifndef _EMPRESA_HPP_
 #define _EMPRESA_HPP_
 
-#include "autoload.hpp"
+#include <string>
+#include <vector>
+
 #include "estoque.hpp"
+#include "produto.hpp"
 #include "permissao.hpp"
 #include "categoria.hpp"
+#include "produto.hpp"
+#include "departamento.hpp"
+#include "funcionario.hpp"
+#include "cargo.hpp"
+#include "cliente.hpp"
+#include "venda.hpp"
+#include "lote.hpp"
+#include "logs.hpp"
+#include "logEscrita.hpp"
+#include "logLeitura.hpp"
+#include "logExcecao.hpp"
 
 class Empresa
 {
 	private:
 		static Empresa *empresa;
-		std::map<int, Departamento> departamento;
-		std::map<int, Cargo> cargo;
-		std::map<int, Funcionario> funcionarios;
-		std::vector<Cliente> clientes;
-		Estoque estoque;
-		std::map<int, Venda> venda;
+		std::vector<Produto*> produtos;
+		std::vector<Categoria*> categorias;
+		std::vector<Lote*> lotes;
+		std::vector<Departamento*> departamentos;
+		std::vector<Cargo*> cargos;
+		std::vector<Funcionario*> funcionarios;
+		std::vector<Cliente*> clientes;
+		std::vector <OrdemProducao*> ordemProducaoLista;
+		//Estoque estoque;
+		std::vector<Venda*> vendas;
+		//Usuario* usuarioLogado;
+		std::vector <LogEscrita*> logsEscrita;
+    	std::vector <LogLeitura*> logsLeitura;
+		std::vector <LogExcecao*> logsExcecao;
+		//std::vector <Veiculo*> veiculos; 
+		//std::vector <MateriaPrima*> materiaPrimaLista;
+
 		bool online;
-		Pessoa usuarioLogado;
-		std::map<Cliente, Permissao> permissao;
+
+		//std::map<Cliente, Permissao> permissao;
 		Empresa();
 	public:
 		Empresa(Empresa &other) = delete;
-		void operator=(const Empresa &) = delete;
-		static Empresa *GetInstance();
-		void atualizaDepartamento(Departamento);
-		void atualizaCargo(Cargo);
-		void atualizaFuncionario(Funcionario);
-		void atualizaCliente(Cliente);
-		void atualizaProduto(Produto);
-		void atualizaVenda(Venda);
-		void deletaDepartamento(Departamento);
-		void deletaCargo(Cargo);
-		void deletaFuncionario(Funcionario);
-		void deletaCliente(Cliente);
-		void deletaProduto(Produto);
-		void deletaVenda(Venda);
-		Departamento getDepartamento();
-		std::map<int, Cargo> getCargos();
-		std::map<int, Funcionario> getFuncionarios();
-		std::vector<Cliente> getClientes();
-		Estoque getEstoque();
-		std::map<int, Venda> getVendas();
-		void login(Pessoa);
+		//void operator=(const Empresa &) = delete;
+		static Empresa* getEmpresa();
+		//void login(Usuario* usuario);
+		//void logout();
+		//Usuario* getUsuarioLogado();
+		//void setUsuarioLogado(Usuario* usuario);
+		//void adicionarPermissao(Cliente* cliente, Permissao permissao);
+		//void removerPermissao(Cliente* cliente);
+		//Permissao getPermissao(Cliente* cliente);
+		void adicionarDepartamento(Departamento* departamento);
+		void removerDepartamento(Departamento* departamento);
+		void adicionarCargo(Cargo* cargo);
+		void removerCargo(Cargo* cargo);
+		void adicionarLote(Lote* lote);
+		void removerLote(Lote* lote);
+		void adicionarFuncionario(Funcionario* funcionario);
+		void removerFuncionario(Funcionario* funcionario);
+		void adicionarCliente(Cliente* cliente);
+		void removerCliente(Cliente* cliente);
+		void adicionarOrdemProducao(OrdemProducao* ordemProducao);
+		void removerOrdemProducao(OrdemProducao* ordemProducao);
+		void adicionarVenda(Venda* venda);
+		void removerVenda(Venda* venda);
+		void adicionarLogEscrita(LogEscrita* logEscrita);
+		void removerLogEscrita(LogEscrita* logEscrita);
+		void adicionarLogLeitura(LogLeitura* logLeitura);
+		void removerLogLeitura(LogLeitura* logLeitura);
+		void adicionarLogExcecao(LogExcecao* logExcecao);
+		void removerLogExcecao(LogExcecao* logExcecao);
+		//void adicionarVeiculo(Veiculo* veiculo);
+		//void removerVeiculo(Veiculo* veiculo);
+		//void adicionarMateriaPrima(MateriaPrima* materiaPrima);
+		//void removerMateriaPrima(MateriaPrima* materiaPrima);
+		void adicionarProduto(Produto* produto);
+		void removerProduto(Produto* produto);
+		void adicionarCategoria(Categoria* categoria);
+		void removerCategoria(Categoria* categoria);
+		void adicionarEstoque(Estoque* estoque);
+		void removerEstoque(Estoque* estoque);
+
 };
 
 #endif

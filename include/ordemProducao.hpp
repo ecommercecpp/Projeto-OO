@@ -1,18 +1,29 @@
 #ifndef _ORDEM_PRODUCAO_HPP_
 #define _ORDEM_PRODUCAO_HPP_
 
-#include "autoload.hpp"
-//#include "data.hpp"
-#include "date.h"
+#include "Data.h"
+#include "lote.hpp"
 
 class OrdemProducao
 {
 	private:
+		int codigo; 
 		Lote lote;
-    //Data data;
-    ec::Date data;
+    	Data dataDaOrdem;
+		int quantidade;
 	public:
-		OrdemProducao(Lote lote, ec::Date data);
+		OrdemProducao();
+		OrdemProducao(Lote lote, Data data, int quantidade);
+		~OrdemProducao();
+		void setCodigo(int codigo);
+		int getCodigo();
+		void setLote(Lote lote);
+		void setData(Data data);
+		Lote getLote();
+		Data getData();
+		int getQuantidade();
+		void setQuantidade(int quantidade);
+		void imprimeOrdem();
 };
 
 #endif

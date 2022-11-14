@@ -1,5 +1,7 @@
-#include "salario.hpp"
+#include <iostream>
+
 #include "exceptions.hpp"
+#include "salario.hpp"
 
 Salario::Salario()
 {
@@ -11,7 +13,7 @@ Salario::Salario(double valor, bool status, int motivo)
 	setValor(valor);
 	setMotivo(motivo);
 	this->status = status;
-	data = ec::Date();
+	data = Data();
 }
 
 void Salario::setMotivo(int motivo)
@@ -53,7 +55,7 @@ int Salario::getMotivo()
 	return motivo;
 }
 
-ec::Date Salario::getDataAlteracao()
+Data Salario::getDataAlteracao()
 {
 	return data;
 }

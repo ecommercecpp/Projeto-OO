@@ -8,8 +8,11 @@ class Categoria
 	private:
 		std::string nome;
 	public:
-		Categoria(std::string name);
+		Categoria();
+		Categoria(std::string nome);
+		~Categoria();
 		std::string getNome();
+		void setNome(std::string name);
 };
 
 #endif

@@ -1,26 +1,13 @@
 #include <iostream>
 #include "autoload.hpp"
 
-/*
-void testaCliente(){
-	Cliente c;
-	Cliente lojao;
-	c.setNome("João");
-	c.setTipo(0);// 0 - Física, 1 - Jurídica
-	c.setcpf_cnpj("73118815019");
-	c.setEndereco("Rua 1");
-	c.setEmail("jao@jao.jao");
-	c.setTelefone("123456789");
-	
-	lojao.setNome("Lojão");
-	lojao.setEndereco("Rua 2");
-	lojao.setEmail("lojao@gamil.com");
-	lojao.setTipo(1);// 0 - Física, 1 - Jurídica
-	lojao.setcpf_cnpj("50324999000100");
-	lojao.setTelefone("987654321");
 
-	std::cout << c.getNome() << ", " << c.getcpf_cnpj() << ", " << c.getEmail() << std::endl;	
-	std::cout << lojao.getNome() << ", " << lojao.getcpf_cnpj() << ", " << lojao.getEmail() << std::endl;
+void testaCliente(){
+
+	Cliente lojao2("Lojao", "123456789", "Rua 1", "jao@jao.jao",1,"987654321");
+	//c.setTipo(0);// 0 - Física, 1 - Jurídica
+
+	std::cout << "Nome: " << lojao2.getNome() << std::endl;
 }
 
 void testaFuncionario()
@@ -38,24 +25,18 @@ void testaFuncionario()
 	cargos1.push_back(c3);
 	cargos2.push_back(c4);
 	cargos2.push_back(c5);
-	Departamento construcao("Departamento de Construcao", cargos1);
-	Departamento gestao("Departamento de Gestao", cargos2);
-	Funcionario f1;
-	f1.setNome("Leonardo");
-	f1.setMatricula(123456789);
-	f1.setEmail("leo@leo.leo");
-	f1.setCargo(c1);
-	f1.setDepartamento(gestao);
-	std::cout << f1.getNome() << ", " << f1.getMatricula() << ", " << f1.getEmail() << std::endl;
-	std::cout << f1.getCargo().getNome() << ", " << f1.getDepartamento().getNome() << std::endl;
+	//Departamento construcao("Departamento de Construcao", cargos1);
+	Departamento adm("Departamento de ADM");
+
+	//Funcionario f1("Joao", "123456789", "Rua 1", "a@a.com");
 }
-*/
+
 int main()
 {
-	/*
+
 	int a = 0;
 	std::cout << "+-----------------+"<<std::endl;
-	std::cout<<"Bem vindo ao sistema de testes do sistema CEFILa(eh so as iniciais dos nomes dos integrantes do grupo!)"<<std::endl;
+	std::cout<<"Bem vindo ao sistema de testes do sistema CEFIMl(eh so as iniciais dos nomes dos integrantes do grupo!)"<<std::endl;
 	std::cout<<"Digite 1 para funcionario e 2 para cliente: "<<std::endl;
 	std::cin>>a;
 	std::cout << "+-----------------+"<<std::endl;
@@ -71,6 +52,6 @@ int main()
 		std::cout<<"Opcao invalida"<<std::endl;
 		break;
 	}							
-	*/
+	
 	return 0;
 }

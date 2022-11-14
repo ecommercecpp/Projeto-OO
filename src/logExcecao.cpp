@@ -1,16 +1,10 @@
 #include <iostream>
-#include <string>
-#include <map>
 
-#include "date.h"
 
 #include "logExcecao.hpp"
 
-LogExcecao::LogExcecao(Usuario usuario, ec::Date data, std::string entidade, std::string funcionalidade): logs()
+LogExcecao::LogExcecao(Usuario usuario, Data data, std::string entidade, std::string funcionalidade): Logs(usuario, data, entidade)
 {
-    this->usuario = usuario;
-    this->data = data;
-    this->entidade = entidade;
     this->funcionalidade = funcionalidade;
 }
 
@@ -22,10 +16,11 @@ LogExcecao::~LogExcecao()
 {
 }
 
-std::string LogExcecao::getLog()
+/*std::string LogExcecao::getLog()
 {
-    return "***Log de Excecao***\n"+"Usuario da operacao: "+ this->usuario + "\n"+ "Data da operacao: "+this->data+ "\n"+"Entidade: " +this->entidade+"\n"+"Funcionalidade: "+this->funcionalidade;
-}
+    std::string log ("***Log de Excecao***\nUsuario da operacao: "+ this->usuario.getLogin() + "\nEntidade: " +this->entidade+"\n"+"Funcionalidade: "+this->funcionalidade);
+    return log;
+}*/
 
 void LogExcecao::setHistoricoLogExcecao(std::vector<std::string> historicoLogExcecao)
 {
@@ -35,4 +30,14 @@ void LogExcecao::setHistoricoLogExcecao(std::vector<std::string> historicoLogExc
 std::vector<std::string> LogExcecao::getHistoricoLogExcecao()
 {
     return this->historicoLogExcecao;
+}
+
+void LogExcecao::setFuncionalidade(std::string funcionalidade)
+{
+    this->funcionalidade = funcionalidade;
+}
+
+std::string LogExcecao::getFuncionalidade()
+{
+    return this->funcionalidade;
 }

@@ -1,17 +1,9 @@
 #include <iostream>
-#include <string>
-#include <map>
-#include <vector>
-
-#include "date.h"
 
 #include "logEscrita.hpp"
 
-LogEscrita::LogEscrita(Usuario usuario, ec::Date data, std::string entidade, std::vector<std::string> atributosAnteriores): logs()
+LogEscrita::LogEscrita(Usuario usuario, Data data, std::string entidade, std::vector<std::string> atributosAnteriores): Logs(usuario, data, entidade)
 {
-    this->usuario = usuario;
-    this->data = data;
-    this->entidade = entidade;
     this->atributosAnteriores = atributosAnteriores;
 }
 
@@ -22,18 +14,40 @@ LogEscrita::LogEscrita()
 LogEscrita::~LogEscrita()
 {
 }
-
+/*
 std::string LogEscrita::getLog()
 {
-    return "***Log de Escrita***\n"+"Usuario da operacao: "+ this->usuario + "\n"+ "Data da operacao: "+this->data+ "\n"+"Entidade: " +this->entidade+"\n"+"Atributos Anteriores: "+this->atributosAnteriores;
+    std::string log ("***Log de Escrita***\nUsuario da operacao: "+ this->usuario.getLogin() + "\nEntidade: " +this->entidade+"\n"+"Atributos Anteriores: "+this->atributosAnteriores);
+    return log;
+}
+*/
+
+void LogEscrita::setInformacoesAnteriores(std::map<std::string, std::string> informacoesAnteriores)
+{
+    this->informacoesAnteriores = informacoesAnteriores;
 }
 
-void LogEscrita::setHistoricoLogEscrita(std::vector<std::string> historicoLogEscrita)
+std::map<std::string, std::string> LogEscrita::getInformacoesAnteriores()
 {
-    this->historicoLogEscrita = historicoLogEscrita;
+    return this->informacoesAnteriores;
 }
 
-std::vector<std::string> LogEscrita::getHistoricoLogEscrita()
+void LogEscrita::setInformacoesNovas(std::map<std::string, std::string> informacoesNovas)
 {
-    return this->historicoLogEscrita;
+    this->informacoesNovas = informacoesNovas;
+}
+
+std::map<std::string, std::string> LogEscrita::getInformacoesNovas()
+{
+    return this->informacoesNovas;
+}
+
+void LogEscrita::setAtributosAnteriores(std::vector<std::string> atributosAnteriores)
+{
+    this->atributosAnteriores = atributosAnteriores;
+}
+
+std::vector<std::string> LogEscrita::getAtributosAnteriores()
+{
+    return this->atributosAnteriores;
 }

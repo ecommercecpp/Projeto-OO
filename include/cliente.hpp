@@ -3,7 +3,6 @@
 
 #include <string>
 
-#include "exceptions.hpp"
 #include "pessoa.hpp"
 
 class Cliente : public Pessoa
