@@ -3,12 +3,23 @@
 #include "exceptions.hpp"
 #include "salario.hpp"
 
+/**
+ * @brief Construct a new Salario:: Salario object
+ *
+ */
 Salario::Salario()
 {
 }
 
+/**
+ * @brief Construct a new Salario:: Salario object
+ *
+ * @param valor
+ * @param status
+ * @param motivo
+ */
 Salario::Salario(double valor, bool status, int motivo)
-: status(status)
+	: status(status)
 {
 	setValor(valor);
 	setMotivo(motivo);
@@ -16,6 +27,11 @@ Salario::Salario(double valor, bool status, int motivo)
 	data = Data();
 }
 
+/**
+ * @brief Seta o motivo para o salário
+ *
+ * @param motivo
+ */
 void Salario::setMotivo(int motivo)
 {
 	if (motivo != 1 && motivo != 2)
@@ -28,6 +44,11 @@ void Salario::setMotivo(int motivo)
 	}
 }
 
+/**
+ * @brief Seta o valor do salário
+ *
+ * @param valor
+ */
 void Salario::setValor(double valor)
 {
 	if (valor < 0)
@@ -40,21 +61,41 @@ void Salario::setValor(double valor)
 	}
 }
 
+/**
+ * @brief Retorna o valor do salário
+ *
+ * @return double
+ */
 double Salario::getValor()
 {
 	return valor;
 }
 
+/**
+ * @brief Retorna o status do salário
+ *
+ * @return bool
+ */
 bool Salario::getStatus()
 {
 	return status;
 }
 
+/**
+ * @brief Retorna o motivo do salário
+ *
+ * @return int
+ */
 int Salario::getMotivo()
 {
 	return motivo;
 }
 
+/**
+ * @brief Retorna a data do salário
+ *
+ * @return Data
+ */
 Data Salario::getDataAlteracao()
 {
 	return data;
