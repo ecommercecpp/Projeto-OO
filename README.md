@@ -180,7 +180,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
 - [Relacionamentos UML](http://www.linhadecodigo.com.br/artigo/943/uml-unified-modeling-language-generalizacao-agregacao-composicao-e-dependencia.aspx)
 
 [documentacao-shield]: https://img.shields.io/badge/Documentação%20Doxygen-clique%20aqui-blue
-[documentacao-url]: https://ecommercecpp.github.io/ecommercecpp/annotated.html
+[documentacao-url]: https://github.com/ecommercecpp/Projeto-OO/blob/main/docs/html/annotated.html
 [linguagens-shield]: https://img.shields.io/github/languages/count/ecommercecpp/Projeto-OO?style=for-the-badge
 [linguagens-url]: https://github.com/ecommercecpp/Projeto-OO/
 [tamanho-shield]: https://img.shields.io/github/repo-size/ecommercecpp/Projeto-OO?style=for-the-badge
