@@ -121,9 +121,9 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
   <tr>
     <td align="center">
       <a href="#">
-        <img src="https://avatars3.githubusercontent.com/u/62403037" width="100px;" alt="srgoogle23"/><br>
+        <img src="https://avatars3.githubusercontent.com/u/13923020" width="100px;" alt="miguelgoffredo"/><br>
         <sub>
-          <b>srgoogle23</b>
+          <b>miguelgoffredo</b>
         </sub>
       </a>
     </td>
