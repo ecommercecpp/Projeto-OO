@@ -129,6 +129,14 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
     </td>
     <td align="center">
       <a href="#">
+        <img src="https://avatars3.githubusercontent.com/u/62403037" width="100px;" alt="srgoogle23"/><br>
+        <sub>
+          <b>srgoogle23</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="#">
         <img src="https://avatars3.githubusercontent.com/u/102927669" width="100px;" alt="EduScf"/><br>
         <sub>
           <b>EduScf</b>
