@@ -3,15 +3,31 @@
 
 #include "logLeitura.hpp"
 
-LogLeitura::LogLeitura(Usuario usuario, Data data, std::string entidade, std::string informacao): Logs(usuario,data,entidade)
+/**
+ * @brief Construct a new Log Leitura:: Log Leitura object
+ *
+ * @param usuario
+ * @param data
+ * @param entidade
+ * @param informacao
+ */
+LogLeitura::LogLeitura(Usuario usuario, Data data, std::string entidade, std::string informacao) : Logs(usuario, data, entidade)
 {
     this->informacao = informacao;
 }
 
+/**
+ * @brief Construct a new Log Leitura:: Log Leitura object
+ *
+ */
 LogLeitura::LogLeitura()
 {
 }
 
+/**
+ * @brief Destroy the Log Leitura:: Log Leitura object
+ *
+ */
 LogLeitura::~LogLeitura()
 {
 }
@@ -23,11 +39,19 @@ std::string LogLeitura::getLog()
    // return "***Log de Leitura***\n"+"Usuario da operacao: " + this->usuario + "\n" + "Data da operacao: "+this->data+ "\n"+"Entidade: " +this->entidade+"\n"+"Informação "+this->informacao;
 }*/
 
+/**
+ * @brief Seta a informação da leitura
+ *
+ * @param informacao
+ */
 void LogLeitura::setInformacao(std::string informacao)
 {
     this->informacao = informacao;
 }
 
+/**
+ * @brief Retorna a informação da leitura
+ */
 std::string LogLeitura::getInformacao()
 {
     return this->informacao;
