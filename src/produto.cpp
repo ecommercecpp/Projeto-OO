@@ -3,11 +3,25 @@
 #include "produto.hpp"
 #include "Data.h"
 
+/**
+ * @brief Construct a new Produto:: Produto object
+ *
+ */
 Produto::Produto()
 {
 }
 
-Produto::Produto(std::string nome, int codigo, double valorDeVenda, int tamanhoDoLoteMinimo, Categoria* categoria, int estoqueMinimo)
+/**
+ * @brief Construct a new Produto:: Produto object
+ *
+ * @param nome
+ * @param codigo
+ * @param valorDeVenda
+ * @param tamanhoDoLoteMinimo
+ * @param categoria
+ * @param estoqueMinimo
+ */
+Produto::Produto(std::string nome, int codigo, double valorDeVenda, int tamanhoDoLoteMinimo, Categoria *categoria, int estoqueMinimo)
 {
     setNome(nome);
     setCodigo(codigo);
@@ -17,100 +31,200 @@ Produto::Produto(std::string nome, int codigo, double valorDeVenda, int tamanhoD
     setEstoqueMinimo(estoqueMinimo);
 }
 
+/**
+ * @brief Destroy the Produto:: Produto object
+ *
+ */
 Produto::~Produto()
 {
 }
 
+/**
+ * @brief Seta o nome do produto
+ *
+ * @param nome
+ */
 void Produto::setNome(std::string nome)
 {
     this->nome = nome;
 }
 
+/**
+ * @brief Seta o codigo do produto
+ *
+ * @param codigo
+ */
 void Produto::setCodigo(int codigo)
 {
     this->codigo = codigo;
 }
 
+/**
+ * @brief Seta o valor de venda do produto
+ *
+ * @param valorDeVenda
+ */
 void Produto::setValorDeVenda(double valorDeVenda)
 {
     this->valorDeVenda = valorDeVenda;
 }
 
+/**
+ * @brief Seta o tamanho do lote minimo do produto
+ *
+ * @param tamanhoDoLoteMinimo
+ */
 void Produto::setTamanhoDoLoteMinimo(int tamanhoDoLoteMinimo)
 {
     this->tamanhoDoLoteMinimo = tamanhoDoLoteMinimo;
 }
 
-void Produto::setCategoria(Categoria* categoria)
+/**
+ * @brief Seta a categoria do produto
+ *
+ * @param categoria
+ */
+void Produto::setCategoria(Categoria *categoria)
 {
     this->categoria = categoria;
 }
 
+/**
+ * @brief Seta o estoque minimo do produto
+ *
+ * @param estoqueMinimo
+ */
 void Produto::setEstoqueMinimo(int estoqueMinimo)
 {
     this->estoqueMinimo = estoqueMinimo;
 }
 
+/**
+ * @brief Seta a quantidade do estoque do produto
+ *
+ * @param qtdEstoque
+ */
 void Produto::setQtdEstoque(int qtdEstoque)
 {
     this->qtdEstoque = qtdEstoque;
 }
 
-void Produto::setOrdem(OrdemProducao* ordem)
+/**
+ * @brief Seta a ordem de produção do produto
+ *
+ * @param ordem
+ */
+void Produto::setOrdem(OrdemProducao *ordem)
 {
     this->ordem = ordem;
 }
 
+/**
+ * @brief Retorna o nome do produto
+ *
+ * @return std::string
+ */
 std::string Produto::getNome()
 {
     return nome;
 }
 
+/**
+ * @brief Retorna o codigo do produto
+ *
+ * @return int
+ */
 int Produto::getCodigo()
 {
     return codigo;
 }
 
+/**
+ * @brief Retorna o valor de venda do produto
+ *
+ * @return double
+ */
 double Produto::getValorDeVenda()
 {
     return valorDeVenda;
 }
 
+/**
+ * @brief Retorna o tamanho do lote minimo do produto
+ *
+ * @return int
+ */
 int Produto::getTamanhoDoLoteMinimo()
 {
     return tamanhoDoLoteMinimo;
 }
 
-Categoria* Produto::getCategoria()
+/**
+ * @brief Retorna a categoria do produto
+ *
+ * @return Categoria*
+ */
+Categoria *Produto::getCategoria()
 {
     return categoria;
 }
 
+/**
+ * @brief Retorna o estoque minimo do produto
+ *
+ * @return int
+ */
 int Produto::getEstoqueMinimo()
 {
     return estoqueMinimo;
 }
 
+/**
+ * @brief Retorna a quantidade do estoque do produto
+ *
+ * @return int
+ */
 int Produto::getQtdEstoque()
 {
     return qtdEstoque;
 }
 
-OrdemProducao* Produto::getOrdem()
+/**
+ * @brief Retorna a ordem de produção do produto
+ *
+ * @return OrdemProducao*
+ */
+OrdemProducao *Produto::getOrdem()
 {
     return ordem;
 }
 
+/**
+ * @brief Adiciona uma quantidade do de estoque ao produto
+ *
+ * @param qtd
+ */
 void Produto::adicionarEstoque(int qtd)
 {
     qtdEstoque += qtd;
 }
 
+/**
+ * @brief Remove uma quantidade do estoque do produto
+ *
+ * @param qtd
+ */
 void Produto::removerEstoque(int qtd)
 {
     qtdEstoque -= qtd;
 }
 
+/**
+ * @brief Retorna se a quantidade de estoque está de acordo com a quantidade minima permitida
+ *
+ * @return true
+ * @return false
+ */
 bool Produto::verificarEstoque()
 {
     if (qtdEstoque < estoqueMinimo)
@@ -119,10 +233,16 @@ bool Produto::verificarEstoque()
     }
     else
     {
-        return false;//trocar pra uma exceção
+        return false; // trocar pra uma exceção
     }
 }
 
+/**
+ * @brief Retorna se a ordem está correta
+ *
+ * @return true
+ * @return false
+ */
 bool Produto::verificarOrdem()
 {
     if (ordem == NULL)
@@ -131,7 +251,7 @@ bool Produto::verificarOrdem()
     }
     else
     {
-        return false;//trocar pra uma exceção
+        return false; // trocar pra uma exceção
     }
 }
 /*
@@ -155,6 +275,11 @@ void Produto::removerOrdem()
     ordem = NULL;
 }
 */
+
+/**
+ * @brief Imprime todas as informações sobre o produto
+ *
+ */
 void Produto::imprimir()
 {
     std::cout << "Nome: " << nome << std::endl;
