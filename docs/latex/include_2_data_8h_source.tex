@@ -1,0 +1,74 @@
+\hypertarget{include_2_data_8h_source}{}\doxysection{Data.\+h}
+\label{include_2_data_8h_source}\index{C:/Users/felip/OneDrive/Documentos/GitHub/poo/include/Data.h@{C:/Users/felip/OneDrive/Documentos/GitHub/poo/include/Data.h}}
+\mbox{\hyperlink{include_2_data_8h}{Vá para a documentação desse arquivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef DATA\_H\_INCLUDED}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define DATA\_H\_INCLUDED}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{third__party_2_classe_01_data_2_formato_8h}{Formato.h}}"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{third__party_2_classe_01_data_2_execao_customizada_8h}{ExecaoCustomizada.h}}"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{comment}{//Constantes de Conversao}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define YEAR\_TO\_SECONDS 31536000}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define DAY\_TO\_SECONDS 86400}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define HOURS\_TO\_SECONDS 3600}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define MINUTE\_TO\_SECONDS 60}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }\mbox{\hyperlink{class_data}{Data}}}
+\DoxyCodeLine{16 \{}
+\DoxyCodeLine{17 \textcolor{keyword}{private}:}
+\DoxyCodeLine{18     \textcolor{keywordtype}{int} ano;}
+\DoxyCodeLine{19     \textcolor{keywordtype}{int} mes;}
+\DoxyCodeLine{20     \textcolor{keywordtype}{int} dia;}
+\DoxyCodeLine{21     \textcolor{keywordtype}{int} hora;}
+\DoxyCodeLine{22     \textcolor{keywordtype}{int} minuto;}
+\DoxyCodeLine{23     \textcolor{keywordtype}{int} segundo;}
+\DoxyCodeLine{24     \textcolor{keywordtype}{long} ticks;     \textcolor{comment}{//Segundos desde 00:00:00 01/01/1970}}
+\DoxyCodeLine{25     \mbox{\hyperlink{class_formato}{Formato}} formatoData;}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27     \textcolor{keywordtype}{void} ticksToDate();}
+\DoxyCodeLine{28     \textcolor{keywordtype}{void} dateToTicks();}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{keyword}{public}:}
+\DoxyCodeLine{31     \mbox{\hyperlink{class_data_af11f741cb7f587e2e495452a8905a22a}{Data}}();     \textcolor{comment}{//Construtor default(PT-\/BR)}}
+\DoxyCodeLine{32     \mbox{\hyperlink{class_data_af11f741cb7f587e2e495452a8905a22a}{Data}}(\mbox{\hyperlink{class_formato}{Formato}} valFormato);       \textcolor{comment}{//Construtor default de formato de data especifico}}
+\DoxyCodeLine{33     \mbox{\hyperlink{class_data_af11f741cb7f587e2e495452a8905a22a}{Data}}(\textcolor{keywordtype}{int} valAno, \textcolor{keywordtype}{int} valMes, \textcolor{keywordtype}{int} valDia, \textcolor{keywordtype}{int} valHora=0, \textcolor{keywordtype}{int} valMin=0, \textcolor{keywordtype}{int} valSeg=0);      \textcolor{comment}{//Construtor com argumentos e formato default}}
+\DoxyCodeLine{34     \mbox{\hyperlink{class_data_af11f741cb7f587e2e495452a8905a22a}{Data}}(\textcolor{keywordtype}{long} valTicks);        \textcolor{comment}{//Construtor a partir de ticks}}
+\DoxyCodeLine{35     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_data_aab31956423290f0d62dcca47ab4d16dd}{\string~Data}}();        \textcolor{comment}{//Destrutor}}
+\DoxyCodeLine{36     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_data_a6cbc8fa291c6d72612f6e5057c9e1dd8}{operator==}}(\mbox{\hyperlink{class_data}{Data}} \&d2);       \textcolor{comment}{//Sobrecarga do operador de comparacao eq}}
+\DoxyCodeLine{37     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_data_a0c65a5fe0aa0085778367d3c31b2cef9}{operator<}}(\mbox{\hyperlink{class_data}{Data}} \&d2);        \textcolor{comment}{//Sobrecarga do operador de comparacao lt}}
+\DoxyCodeLine{38     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_data_a28ada487c9542242ca9f8858cdd43b67}{operator>}}(\mbox{\hyperlink{class_data}{Data}} \&d2);        \textcolor{comment}{//Sobrecarga do operator de comparacao gt}}
+\DoxyCodeLine{39     \mbox{\hyperlink{class_data}{Data}} \mbox{\hyperlink{class_data_a0fea8ab11c633b24f067ec81ffc17f1c}{operator-\/}}(\mbox{\hyperlink{class_data}{Data}} \&d2);         \textcolor{comment}{//Sobrecarga do operador de subtracao}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     \textcolor{comment}{//Metodos get:}}
+\DoxyCodeLine{42     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_data_a7d2fdbe9b9944becc3386b266d65bc4d}{getAno}}();}
+\DoxyCodeLine{43     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_data_ad8a045c146f1a6fdda7a276847e147bf}{getMes}}();}
+\DoxyCodeLine{44     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_data_a72d6bfb5a3bc9a8acb1d9df70de822b7}{getDia}}();}
+\DoxyCodeLine{45     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_data_a953c35f5e74d4ccb14a492c824ab5d7a}{getHora}}();}
+\DoxyCodeLine{46     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_data_a852dd13e2ccc3f57f2cf2a0bceb245cc}{getMin}}();}
+\DoxyCodeLine{47     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_data_ada52a0656404dc91ebba919381881599}{getSeg}}();}
+\DoxyCodeLine{48     \textcolor{keywordtype}{long} \mbox{\hyperlink{class_data_af0ec4f77ce26c73f9c7eaa739fdfc47e}{getTicks}}();}
+\DoxyCodeLine{49     \textcolor{keywordtype}{string} \mbox{\hyperlink{class_data_abb64a7ac7213c50f34bc31246b2b3ca6}{getFormato}}();}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51     \textcolor{comment}{//Metodos set:}}
+\DoxyCodeLine{52     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_data_a3d8013052396536133eaf7fa291d6786}{setAno}}(\textcolor{keywordtype}{int} valAno);}
+\DoxyCodeLine{53     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_data_a9ce212d943c2401216b6166327788abc}{setMes}}(\textcolor{keywordtype}{int} valMes);}
+\DoxyCodeLine{54     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_data_a214c69d37a8121c23a4f4b61e0f35709}{setDia}}(\textcolor{keywordtype}{int} valDia);}
+\DoxyCodeLine{55     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_data_a74adfb17ae152fec4a33338507e5a72f}{setHora}}(\textcolor{keywordtype}{int} valHora);}
+\DoxyCodeLine{56     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_data_a6910a5ffa00bad4c89454fa7f7133273}{setMin}}(\textcolor{keywordtype}{int} valMin);}
+\DoxyCodeLine{57     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_data_acb0c46ca275d202a5ca6a7fec009bc6b}{setSeg}}(\textcolor{keywordtype}{int} valSeg);}
+\DoxyCodeLine{58     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_data_ac053048d4db1f252a03688d636e7591a}{setTicks}}(\textcolor{keywordtype}{long} valTicks);}
+\DoxyCodeLine{59     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_data_a7f89bf16ab7a7d96e17b57b6c4d47931}{setFormato}}(\mbox{\hyperlink{class_formato}{Formato}} valFormato);}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_data_ac36125408c0f8e39ce09541ac25d308b}{validaData}}();      \textcolor{comment}{//Verifica se todos os valores dos atributos estao dentro dos limites possiveis}}
+\DoxyCodeLine{62     \textcolor{keyword}{static} \mbox{\hyperlink{class_data}{Data}} \mbox{\hyperlink{class_data_abdc8f9d7f8f676769bed29d42bc6cae4}{dateNow}}();     \textcolor{comment}{//Retorna a data do presente momento}}
+\DoxyCodeLine{63     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_data_add00ac9902acc8b6e506d83fbf24c819}{printData}}();       \textcolor{comment}{//Imprime a data na tela de acordo com o formato ja atribuido}}
+\DoxyCodeLine{64     \textcolor{keywordtype}{string} \mbox{\hyperlink{class_data_afc7b15a5e81334858e48709b2f45cdc3}{getData}}();       \textcolor{comment}{//Retorna a data no formato de string}}
+\DoxyCodeLine{65     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_data_ade05a40b4b75f2c66291446397576647}{diffData}}(\mbox{\hyperlink{class_data}{Data}});    \textcolor{comment}{// Retorna a diferença entre duas datas em dias}}
+\DoxyCodeLine{66 \};}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// DATA\_H\_INCLUDED}}
+
+\end{DoxyCode}

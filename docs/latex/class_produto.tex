@@ -1,0 +1,735 @@
+\hypertarget{class_produto}{}\doxysection{Referência da Classe Produto}
+\label{class_produto}\index{Produto@{Produto}}
+
+
+{\ttfamily \#include $<$produto.\+hpp$>$}
+
+\doxysubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_produto_adcd5834a1f04cc42fef88bf60217b8f4}{Produto}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_produto}{Produto}}\+:\+: \mbox{\hyperlink{class_produto}{Produto}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_produto_aca3298a03f6a75981ba6bc6ecfc16af7}{Produto}} (std\+::string nome, int codigo, double valor\+De\+Venda, int tamanho\+Do\+Lote\+Minimo, \mbox{\hyperlink{class_categoria}{Categoria}} $\ast$categoria, int estoque\+Minimo)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_produto}{Produto}}\+:\+: \mbox{\hyperlink{class_produto}{Produto}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_produto_a84a8b28176b743e8c74bfd89aee9a9b2}{$\sim$\+Produto}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{class_produto}{Produto}}\+:\+: \mbox{\hyperlink{class_produto}{Produto}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_produto_a5513a29009079af0954925220a760395}{set\+Nome}} (std\+::string nome)
+\begin{DoxyCompactList}\small\item\em Seta o nome do produto. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_produto_a962dd6a2b9b5c52eefdbda2e92ec67b6}{set\+Codigo}} (int codigo)
+\begin{DoxyCompactList}\small\item\em Seta o codigo do produto. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_produto_a80801d273b3ddbb20844a1c8977e01c8}{set\+Valor\+De\+Venda}} (double valor\+De\+Venda)
+\begin{DoxyCompactList}\small\item\em Seta o valor de venda do produto. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_produto_ae3a98b6fb676a14de2f63cd97ba2a67f}{set\+Tamanho\+Do\+Lote\+Minimo}} (int tamanho\+Do\+Lote\+Minimo)
+\begin{DoxyCompactList}\small\item\em Seta o tamanho do lote minimo do produto. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_produto_a9caf756459a41955c1a43706cef7f429}{set\+Categoria}} (\mbox{\hyperlink{class_categoria}{Categoria}} $\ast$categoria)
+\begin{DoxyCompactList}\small\item\em Seta a categoria do produto. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_produto_a237cc2d0ded565d23c9b1e47af41072d}{set\+Estoque\+Minimo}} (int estoque\+Minimo)
+\begin{DoxyCompactList}\small\item\em Seta o estoque minimo do produto. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_produto_ac53da7534279f3e1a6e629ebe150bbc0}{set\+Qtd\+Estoque}} (int qtd\+Estoque)
+\begin{DoxyCompactList}\small\item\em Seta a quantidade do estoque do produto. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_produto_a0935ec9aa8cda357974b3adde83be9bc}{set\+Ordem}} (\mbox{\hyperlink{class_ordem_producao}{Ordem\+Producao}} $\ast$ordem)
+\begin{DoxyCompactList}\small\item\em Seta a ordem de produção do produto. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_produto_a38b3347261d612e436233379af9831fd}{get\+Nome}} ()
+\begin{DoxyCompactList}\small\item\em Retorna o nome do produto. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_produto_a51aea266055a5718d8362b5c096976e7}{get\+Codigo}} ()
+\begin{DoxyCompactList}\small\item\em Retorna o codigo do produto. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_produto_a2df29430f94c2bac4ef802fb78a6564a}{get\+Valor\+De\+Venda}} ()
+\begin{DoxyCompactList}\small\item\em Retorna o valor de venda do produto. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_produto_af5917eadd29a49fab78d8fd3f20c301a}{get\+Tamanho\+Do\+Lote\+Minimo}} ()
+\begin{DoxyCompactList}\small\item\em Retorna o tamanho do lote minimo do produto. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_categoria}{Categoria}} $\ast$ \mbox{\hyperlink{class_produto_afb7b5d50ecba8a584563071165e05888}{get\+Categoria}} ()
+\begin{DoxyCompactList}\small\item\em Retorna a categoria do produto. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_produto_ac328a1594a964cd2ee05546af117ccdb}{get\+Estoque\+Minimo}} ()
+\begin{DoxyCompactList}\small\item\em Retorna o estoque minimo do produto. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_produto_a0e8a3413661028dc7a0d2b899ceefe78}{get\+Qtd\+Estoque}} ()
+\begin{DoxyCompactList}\small\item\em Retorna a quantidade do estoque do produto. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ordem_producao}{Ordem\+Producao}} $\ast$ \mbox{\hyperlink{class_produto_a991adcf17a8f932e82f92c63b888fe9f}{get\+Ordem}} ()
+\begin{DoxyCompactList}\small\item\em Retorna a ordem de produção do produto. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_produto_a638bf5a9d7d20017e0c2b8f9d584bda6}{adicionar\+Lote}} (\mbox{\hyperlink{class_lote}{Lote}} $\ast$lote)
+\item 
+void \mbox{\hyperlink{class_produto_a4a64345408508b019eea62971fc17d27}{remover\+Lote}} (\mbox{\hyperlink{class_lote}{Lote}} $\ast$lote)
+\item 
+void \mbox{\hyperlink{class_produto_aa807cba4e7a694dd0fda577d67ddad6a}{adicionar\+Estoque}} (int qtd)
+\begin{DoxyCompactList}\small\item\em Adiciona uma quantidade do de estoque ao produto. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_produto_a659e5e280b24c7d5f31f9935268cfe51}{remover\+Estoque}} (int qtd)
+\begin{DoxyCompactList}\small\item\em Remove uma quantidade do estoque do produto. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_produto_a303e08b36ed1e16fa446d25de5184957}{verificar\+Estoque}} ()
+\begin{DoxyCompactList}\small\item\em Retorna se a quantidade de estoque está de acordo com a quantidade minima permitida. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_produto_acd4ec4dcc11f3652cf826c462a9fd22b}{verifica\+Ordem}} ()
+\item 
+void \mbox{\hyperlink{class_produto_abf7a05a51c81338fe5fc1ba6fc76cd85}{criar\+Ordem}} ()
+\item 
+void \mbox{\hyperlink{class_produto_a5e52eb8f1c2726dc3e839ed460adaab6}{remover\+Ordem}} ()
+\item 
+bool \mbox{\hyperlink{class_produto_a579a01c54e03158438f9015f060d357b}{verificar\+Ordem}} ()
+\begin{DoxyCompactList}\small\item\em Retorna se a ordem está correta. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_produto_a8b9c8022522efc23314f7333d103767f}{adicionar\+Ordem}} (\mbox{\hyperlink{class_ordem_producao}{Ordem\+Producao}} $\ast$ordem)
+\item 
+void \mbox{\hyperlink{class_produto_a7ca3605140220ee1285b14b72a09ec46}{remover\+Ordem}} (\mbox{\hyperlink{class_ordem_producao}{Ordem\+Producao}} $\ast$ordem)
+\item 
+void \mbox{\hyperlink{class_produto_a3f1de2b40a413e4f1b7dd461f17a18ae}{adicionar\+Materia\+Prima}} (\mbox{\hyperlink{class_materia_prima}{Materia\+Prima}} $\ast$materia\+Prima)
+\item 
+void \mbox{\hyperlink{class_produto_ac842c090cf399de14da3e8fc1a0affe5}{remover\+Materia\+Prima}} (\mbox{\hyperlink{class_materia_prima}{Materia\+Prima}} $\ast$materia\+Prima)
+\item 
+void \mbox{\hyperlink{class_produto_aad01adc1d9effa05a7ae23f1c00b7bf8}{atualizar\+Estoque}} (int qtd)
+\item 
+void \mbox{\hyperlink{class_produto_a68d4e5a98658b992ce3da645f9f2eba5}{atualizar\+Estoque\+Minimo}} (int qtd)
+\item 
+void \mbox{\hyperlink{class_produto_a6614750f1a38c060fb486c217a015df8}{atualizar\+Tamanho\+Do\+Lote\+Minimo}} (int qtd)
+\item 
+void \mbox{\hyperlink{class_produto_a54967c65168dd8644902cc1bedad761e}{atualizar\+Valor\+De\+Venda}} (double valor)
+\item 
+void \mbox{\hyperlink{class_produto_a7c0579d829346aa7fe053271542d4763}{atualizar\+Categoria}} (\mbox{\hyperlink{class_categoria}{Categoria}} $\ast$categoria)
+\item 
+void \mbox{\hyperlink{class_produto_a86215a7e354391ab59fecab1ccac799e}{atualizar\+Ordem}} (\mbox{\hyperlink{class_ordem_producao}{Ordem\+Producao}} $\ast$ordem)
+\item 
+void \mbox{\hyperlink{class_produto_a2ab1eb7a59a3f73ddb1caef074406ee9}{atualizar\+Materia\+Prima}} (\mbox{\hyperlink{class_materia_prima}{Materia\+Prima}} $\ast$materia\+Prima)
+\item 
+void \mbox{\hyperlink{class_produto_a8804ebfff4f265c1c3c8adc00995c008}{imprimir}} ()
+\begin{DoxyCompactList}\small\item\em Imprime todas as informações sobre o produto. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Construtores e Destrutores}
+\mbox{\Hypertarget{class_produto_adcd5834a1f04cc42fef88bf60217b8f4}\label{class_produto_adcd5834a1f04cc42fef88bf60217b8f4}} 
+\index{Produto@{Produto}!Produto@{Produto}}
+\index{Produto@{Produto}!Produto@{Produto}}
+\doxysubsubsection{\texorpdfstring{Produto()}{Produto()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Produto\+::\+Produto (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{class_produto}{Produto}}\+:\+: \mbox{\hyperlink{class_produto}{Produto}} object. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11 \{}
+\DoxyCodeLine{12 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_produto_aca3298a03f6a75981ba6bc6ecfc16af7}\label{class_produto_aca3298a03f6a75981ba6bc6ecfc16af7}} 
+\index{Produto@{Produto}!Produto@{Produto}}
+\index{Produto@{Produto}!Produto@{Produto}}
+\doxysubsubsection{\texorpdfstring{Produto()}{Produto()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Produto\+::\+Produto (\begin{DoxyParamCaption}\item[{std\+::string}]{nome,  }\item[{int}]{codigo,  }\item[{double}]{valor\+De\+Venda,  }\item[{int}]{tamanho\+Do\+Lote\+Minimo,  }\item[{\mbox{\hyperlink{class_categoria}{Categoria}} $\ast$}]{categoria,  }\item[{int}]{estoque\+Minimo }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{class_produto}{Produto}}\+:\+: \mbox{\hyperlink{class_produto}{Produto}} object. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em nome} & \\
+\hline
+{\em codigo} & \\
+\hline
+{\em valor\+De\+Venda} & \\
+\hline
+{\em tamanho\+Do\+Lote\+Minimo} & \\
+\hline
+{\em categoria} & \\
+\hline
+{\em estoque\+Minimo} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{25 \{}
+\DoxyCodeLine{26     \mbox{\hyperlink{class_produto_a5513a29009079af0954925220a760395}{setNome}}(nome);}
+\DoxyCodeLine{27     \mbox{\hyperlink{class_produto_a962dd6a2b9b5c52eefdbda2e92ec67b6}{setCodigo}}(codigo);}
+\DoxyCodeLine{28     \mbox{\hyperlink{class_produto_a80801d273b3ddbb20844a1c8977e01c8}{setValorDeVenda}}(valorDeVenda);}
+\DoxyCodeLine{29     \mbox{\hyperlink{class_produto_ae3a98b6fb676a14de2f63cd97ba2a67f}{setTamanhoDoLoteMinimo}}(tamanhoDoLoteMinimo);}
+\DoxyCodeLine{30     \mbox{\hyperlink{class_produto_a9caf756459a41955c1a43706cef7f429}{setCategoria}}(categoria);}
+\DoxyCodeLine{31     \mbox{\hyperlink{class_produto_a237cc2d0ded565d23c9b1e47af41072d}{setEstoqueMinimo}}(estoqueMinimo);}
+\DoxyCodeLine{32 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_produto_a84a8b28176b743e8c74bfd89aee9a9b2}\label{class_produto_a84a8b28176b743e8c74bfd89aee9a9b2}} 
+\index{Produto@{Produto}!````~Produto@{$\sim$Produto}}
+\index{````~Produto@{$\sim$Produto}!Produto@{Produto}}
+\doxysubsubsection{\texorpdfstring{$\sim$Produto()}{~Produto()}}
+{\footnotesize\ttfamily Produto\+::$\sim$\+Produto (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the \mbox{\hyperlink{class_produto}{Produto}}\+:\+: \mbox{\hyperlink{class_produto}{Produto}} object. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{39 \{}
+\DoxyCodeLine{40 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Funções membros}
+\mbox{\Hypertarget{class_produto_aa807cba4e7a694dd0fda577d67ddad6a}\label{class_produto_aa807cba4e7a694dd0fda577d67ddad6a}} 
+\index{Produto@{Produto}!adicionarEstoque@{adicionarEstoque}}
+\index{adicionarEstoque@{adicionarEstoque}!Produto@{Produto}}
+\doxysubsubsection{\texorpdfstring{adicionarEstoque()}{adicionarEstoque()}}
+{\footnotesize\ttfamily void Produto\+::adicionar\+Estoque (\begin{DoxyParamCaption}\item[{int}]{qtd }\end{DoxyParamCaption})}
+
+
+
+Adiciona uma quantidade do de estoque ao produto. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em qtd} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{208 \{}
+\DoxyCodeLine{209     qtdEstoque += qtd;}
+\DoxyCodeLine{210 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_produto_a638bf5a9d7d20017e0c2b8f9d584bda6}\label{class_produto_a638bf5a9d7d20017e0c2b8f9d584bda6}} 
+\index{Produto@{Produto}!adicionarLote@{adicionarLote}}
+\index{adicionarLote@{adicionarLote}!Produto@{Produto}}
+\doxysubsubsection{\texorpdfstring{adicionarLote()}{adicionarLote()}}
+{\footnotesize\ttfamily void Produto\+::adicionar\+Lote (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_lote}{Lote}} $\ast$}]{lote }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_produto_a3f1de2b40a413e4f1b7dd461f17a18ae}\label{class_produto_a3f1de2b40a413e4f1b7dd461f17a18ae}} 
+\index{Produto@{Produto}!adicionarMateriaPrima@{adicionarMateriaPrima}}
+\index{adicionarMateriaPrima@{adicionarMateriaPrima}!Produto@{Produto}}
+\doxysubsubsection{\texorpdfstring{adicionarMateriaPrima()}{adicionarMateriaPrima()}}
+{\footnotesize\ttfamily void Produto\+::adicionar\+Materia\+Prima (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_materia_prima}{Materia\+Prima}} $\ast$}]{materia\+Prima }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_produto_a8b9c8022522efc23314f7333d103767f}\label{class_produto_a8b9c8022522efc23314f7333d103767f}} 
+\index{Produto@{Produto}!adicionarOrdem@{adicionarOrdem}}
+\index{adicionarOrdem@{adicionarOrdem}!Produto@{Produto}}
+\doxysubsubsection{\texorpdfstring{adicionarOrdem()}{adicionarOrdem()}}
+{\footnotesize\ttfamily void Produto\+::adicionar\+Ordem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ordem_producao}{Ordem\+Producao}} $\ast$}]{ordem }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_produto_a7c0579d829346aa7fe053271542d4763}\label{class_produto_a7c0579d829346aa7fe053271542d4763}} 
+\index{Produto@{Produto}!atualizarCategoria@{atualizarCategoria}}
+\index{atualizarCategoria@{atualizarCategoria}!Produto@{Produto}}
+\doxysubsubsection{\texorpdfstring{atualizarCategoria()}{atualizarCategoria()}}
+{\footnotesize\ttfamily void Produto\+::atualizar\+Categoria (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_categoria}{Categoria}} $\ast$}]{categoria }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_produto_aad01adc1d9effa05a7ae23f1c00b7bf8}\label{class_produto_aad01adc1d9effa05a7ae23f1c00b7bf8}} 
+\index{Produto@{Produto}!atualizarEstoque@{atualizarEstoque}}
+\index{atualizarEstoque@{atualizarEstoque}!Produto@{Produto}}
+\doxysubsubsection{\texorpdfstring{atualizarEstoque()}{atualizarEstoque()}}
+{\footnotesize\ttfamily void Produto\+::atualizar\+Estoque (\begin{DoxyParamCaption}\item[{int}]{qtd }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_produto_a68d4e5a98658b992ce3da645f9f2eba5}\label{class_produto_a68d4e5a98658b992ce3da645f9f2eba5}} 
+\index{Produto@{Produto}!atualizarEstoqueMinimo@{atualizarEstoqueMinimo}}
+\index{atualizarEstoqueMinimo@{atualizarEstoqueMinimo}!Produto@{Produto}}
+\doxysubsubsection{\texorpdfstring{atualizarEstoqueMinimo()}{atualizarEstoqueMinimo()}}
+{\footnotesize\ttfamily void Produto\+::atualizar\+Estoque\+Minimo (\begin{DoxyParamCaption}\item[{int}]{qtd }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_produto_a2ab1eb7a59a3f73ddb1caef074406ee9}\label{class_produto_a2ab1eb7a59a3f73ddb1caef074406ee9}} 
+\index{Produto@{Produto}!atualizarMateriaPrima@{atualizarMateriaPrima}}
+\index{atualizarMateriaPrima@{atualizarMateriaPrima}!Produto@{Produto}}
+\doxysubsubsection{\texorpdfstring{atualizarMateriaPrima()}{atualizarMateriaPrima()}}
+{\footnotesize\ttfamily void Produto\+::atualizar\+Materia\+Prima (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_materia_prima}{Materia\+Prima}} $\ast$}]{materia\+Prima }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_produto_a86215a7e354391ab59fecab1ccac799e}\label{class_produto_a86215a7e354391ab59fecab1ccac799e}} 
+\index{Produto@{Produto}!atualizarOrdem@{atualizarOrdem}}
+\index{atualizarOrdem@{atualizarOrdem}!Produto@{Produto}}
+\doxysubsubsection{\texorpdfstring{atualizarOrdem()}{atualizarOrdem()}}
+{\footnotesize\ttfamily void Produto\+::atualizar\+Ordem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ordem_producao}{Ordem\+Producao}} $\ast$}]{ordem }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_produto_a6614750f1a38c060fb486c217a015df8}\label{class_produto_a6614750f1a38c060fb486c217a015df8}} 
+\index{Produto@{Produto}!atualizarTamanhoDoLoteMinimo@{atualizarTamanhoDoLoteMinimo}}
+\index{atualizarTamanhoDoLoteMinimo@{atualizarTamanhoDoLoteMinimo}!Produto@{Produto}}
+\doxysubsubsection{\texorpdfstring{atualizarTamanhoDoLoteMinimo()}{atualizarTamanhoDoLoteMinimo()}}
+{\footnotesize\ttfamily void Produto\+::atualizar\+Tamanho\+Do\+Lote\+Minimo (\begin{DoxyParamCaption}\item[{int}]{qtd }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_produto_a54967c65168dd8644902cc1bedad761e}\label{class_produto_a54967c65168dd8644902cc1bedad761e}} 
+\index{Produto@{Produto}!atualizarValorDeVenda@{atualizarValorDeVenda}}
+\index{atualizarValorDeVenda@{atualizarValorDeVenda}!Produto@{Produto}}
+\doxysubsubsection{\texorpdfstring{atualizarValorDeVenda()}{atualizarValorDeVenda()}}
+{\footnotesize\ttfamily void Produto\+::atualizar\+Valor\+De\+Venda (\begin{DoxyParamCaption}\item[{double}]{valor }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_produto_abf7a05a51c81338fe5fc1ba6fc76cd85}\label{class_produto_abf7a05a51c81338fe5fc1ba6fc76cd85}} 
+\index{Produto@{Produto}!criarOrdem@{criarOrdem}}
+\index{criarOrdem@{criarOrdem}!Produto@{Produto}}
+\doxysubsubsection{\texorpdfstring{criarOrdem()}{criarOrdem()}}
+{\footnotesize\ttfamily void Produto\+::criar\+Ordem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_produto_afb7b5d50ecba8a584563071165e05888}\label{class_produto_afb7b5d50ecba8a584563071165e05888}} 
+\index{Produto@{Produto}!getCategoria@{getCategoria}}
+\index{getCategoria@{getCategoria}!Produto@{Produto}}
+\doxysubsubsection{\texorpdfstring{getCategoria()}{getCategoria()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_categoria}{Categoria}} $\ast$ Produto\+::get\+Categoria (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna a categoria do produto. 
+
+\begin{DoxyReturn}{Retorna}
+Categoria$\ast$ 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{168 \{}
+\DoxyCodeLine{169     \textcolor{keywordflow}{return} categoria;}
+\DoxyCodeLine{170 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_produto_a51aea266055a5718d8362b5c096976e7}\label{class_produto_a51aea266055a5718d8362b5c096976e7}} 
+\index{Produto@{Produto}!getCodigo@{getCodigo}}
+\index{getCodigo@{getCodigo}!Produto@{Produto}}
+\doxysubsubsection{\texorpdfstring{getCodigo()}{getCodigo()}}
+{\footnotesize\ttfamily int Produto\+::get\+Codigo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna o codigo do produto. 
+
+\begin{DoxyReturn}{Retorna}
+int 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{138 \{}
+\DoxyCodeLine{139     \textcolor{keywordflow}{return} codigo;}
+\DoxyCodeLine{140 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_produto_ac328a1594a964cd2ee05546af117ccdb}\label{class_produto_ac328a1594a964cd2ee05546af117ccdb}} 
+\index{Produto@{Produto}!getEstoqueMinimo@{getEstoqueMinimo}}
+\index{getEstoqueMinimo@{getEstoqueMinimo}!Produto@{Produto}}
+\doxysubsubsection{\texorpdfstring{getEstoqueMinimo()}{getEstoqueMinimo()}}
+{\footnotesize\ttfamily int Produto\+::get\+Estoque\+Minimo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna o estoque minimo do produto. 
+
+\begin{DoxyReturn}{Retorna}
+int 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{178 \{}
+\DoxyCodeLine{179     \textcolor{keywordflow}{return} estoqueMinimo;}
+\DoxyCodeLine{180 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_produto_a38b3347261d612e436233379af9831fd}\label{class_produto_a38b3347261d612e436233379af9831fd}} 
+\index{Produto@{Produto}!getNome@{getNome}}
+\index{getNome@{getNome}!Produto@{Produto}}
+\doxysubsubsection{\texorpdfstring{getNome()}{getNome()}}
+{\footnotesize\ttfamily std\+::string Produto\+::get\+Nome (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna o nome do produto. 
+
+\begin{DoxyReturn}{Retorna}
+std\+::string 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{128 \{}
+\DoxyCodeLine{129     \textcolor{keywordflow}{return} nome;}
+\DoxyCodeLine{130 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_produto_a991adcf17a8f932e82f92c63b888fe9f}\label{class_produto_a991adcf17a8f932e82f92c63b888fe9f}} 
+\index{Produto@{Produto}!getOrdem@{getOrdem}}
+\index{getOrdem@{getOrdem}!Produto@{Produto}}
+\doxysubsubsection{\texorpdfstring{getOrdem()}{getOrdem()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_ordem_producao}{Ordem\+Producao}} $\ast$ Produto\+::get\+Ordem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna a ordem de produção do produto. 
+
+\begin{DoxyReturn}{Retorna}
+Ordem\+Producao$\ast$ 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{198 \{}
+\DoxyCodeLine{199     \textcolor{keywordflow}{return} ordem;}
+\DoxyCodeLine{200 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_produto_a0e8a3413661028dc7a0d2b899ceefe78}\label{class_produto_a0e8a3413661028dc7a0d2b899ceefe78}} 
+\index{Produto@{Produto}!getQtdEstoque@{getQtdEstoque}}
+\index{getQtdEstoque@{getQtdEstoque}!Produto@{Produto}}
+\doxysubsubsection{\texorpdfstring{getQtdEstoque()}{getQtdEstoque()}}
+{\footnotesize\ttfamily int Produto\+::get\+Qtd\+Estoque (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna a quantidade do estoque do produto. 
+
+\begin{DoxyReturn}{Retorna}
+int 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{188 \{}
+\DoxyCodeLine{189     \textcolor{keywordflow}{return} qtdEstoque;}
+\DoxyCodeLine{190 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_produto_af5917eadd29a49fab78d8fd3f20c301a}\label{class_produto_af5917eadd29a49fab78d8fd3f20c301a}} 
+\index{Produto@{Produto}!getTamanhoDoLoteMinimo@{getTamanhoDoLoteMinimo}}
+\index{getTamanhoDoLoteMinimo@{getTamanhoDoLoteMinimo}!Produto@{Produto}}
+\doxysubsubsection{\texorpdfstring{getTamanhoDoLoteMinimo()}{getTamanhoDoLoteMinimo()}}
+{\footnotesize\ttfamily int Produto\+::get\+Tamanho\+Do\+Lote\+Minimo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna o tamanho do lote minimo do produto. 
+
+\begin{DoxyReturn}{Retorna}
+int 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{158 \{}
+\DoxyCodeLine{159     \textcolor{keywordflow}{return} tamanhoDoLoteMinimo;}
+\DoxyCodeLine{160 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_produto_a2df29430f94c2bac4ef802fb78a6564a}\label{class_produto_a2df29430f94c2bac4ef802fb78a6564a}} 
+\index{Produto@{Produto}!getValorDeVenda@{getValorDeVenda}}
+\index{getValorDeVenda@{getValorDeVenda}!Produto@{Produto}}
+\doxysubsubsection{\texorpdfstring{getValorDeVenda()}{getValorDeVenda()}}
+{\footnotesize\ttfamily double Produto\+::get\+Valor\+De\+Venda (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna o valor de venda do produto. 
+
+\begin{DoxyReturn}{Retorna}
+double 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{148 \{}
+\DoxyCodeLine{149     \textcolor{keywordflow}{return} valorDeVenda;}
+\DoxyCodeLine{150 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_produto_a8804ebfff4f265c1c3c8adc00995c008}\label{class_produto_a8804ebfff4f265c1c3c8adc00995c008}} 
+\index{Produto@{Produto}!imprimir@{imprimir}}
+\index{imprimir@{imprimir}!Produto@{Produto}}
+\doxysubsubsection{\texorpdfstring{imprimir()}{imprimir()}}
+{\footnotesize\ttfamily void Produto\+::imprimir (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Imprime todas as informações sobre o produto. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{284 \{}
+\DoxyCodeLine{285     std::cout << \textcolor{stringliteral}{"{}Nome: "{}} << nome << std::endl;}
+\DoxyCodeLine{286     std::cout << \textcolor{stringliteral}{"{}Codigo: "{}} << codigo << std::endl;}
+\DoxyCodeLine{287     std::cout << \textcolor{stringliteral}{"{}Valor de venda: "{}} << valorDeVenda << std::endl;}
+\DoxyCodeLine{288     std::cout << \textcolor{stringliteral}{"{}Tamanho do lote minimo: "{}} << tamanhoDoLoteMinimo << std::endl;}
+\DoxyCodeLine{289     std::cout << \textcolor{stringliteral}{"{}Categoria: "{}} << categoria-\/>\mbox{\hyperlink{class_categoria_adcb07ac98d4dfd5d6bf3c6b4d2374629}{getNome}}() << std::endl;}
+\DoxyCodeLine{290     std::cout << \textcolor{stringliteral}{"{}Estoque minimo: "{}} << estoqueMinimo << std::endl;}
+\DoxyCodeLine{291     std::cout << \textcolor{stringliteral}{"{}Quantidade em estoque: "{}} << qtdEstoque << std::endl;}
+\DoxyCodeLine{292     \textcolor{keywordflow}{if} (ordem != NULL)}
+\DoxyCodeLine{293     \{}
+\DoxyCodeLine{294         std::cout << \textcolor{stringliteral}{"{}Ordem de producao: "{}} << ordem-\/>\mbox{\hyperlink{class_ordem_producao_a5f3ad2087a604b6b6732fdb035666f88}{getCodigo}}() << std::endl;}
+\DoxyCodeLine{295     \}}
+\DoxyCodeLine{296     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{297     \{}
+\DoxyCodeLine{298         std::cout << \textcolor{stringliteral}{"{}Ordem de producao: Nao ha ordem de producao"{}} << std::endl;}
+\DoxyCodeLine{299     \}}
+\DoxyCodeLine{300 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_produto_a659e5e280b24c7d5f31f9935268cfe51}\label{class_produto_a659e5e280b24c7d5f31f9935268cfe51}} 
+\index{Produto@{Produto}!removerEstoque@{removerEstoque}}
+\index{removerEstoque@{removerEstoque}!Produto@{Produto}}
+\doxysubsubsection{\texorpdfstring{removerEstoque()}{removerEstoque()}}
+{\footnotesize\ttfamily void Produto\+::remover\+Estoque (\begin{DoxyParamCaption}\item[{int}]{qtd }\end{DoxyParamCaption})}
+
+
+
+Remove uma quantidade do estoque do produto. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em qtd} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{218 \{}
+\DoxyCodeLine{219     qtdEstoque -\/= qtd;}
+\DoxyCodeLine{220 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_produto_a4a64345408508b019eea62971fc17d27}\label{class_produto_a4a64345408508b019eea62971fc17d27}} 
+\index{Produto@{Produto}!removerLote@{removerLote}}
+\index{removerLote@{removerLote}!Produto@{Produto}}
+\doxysubsubsection{\texorpdfstring{removerLote()}{removerLote()}}
+{\footnotesize\ttfamily void Produto\+::remover\+Lote (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_lote}{Lote}} $\ast$}]{lote }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_produto_ac842c090cf399de14da3e8fc1a0affe5}\label{class_produto_ac842c090cf399de14da3e8fc1a0affe5}} 
+\index{Produto@{Produto}!removerMateriaPrima@{removerMateriaPrima}}
+\index{removerMateriaPrima@{removerMateriaPrima}!Produto@{Produto}}
+\doxysubsubsection{\texorpdfstring{removerMateriaPrima()}{removerMateriaPrima()}}
+{\footnotesize\ttfamily void Produto\+::remover\+Materia\+Prima (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_materia_prima}{Materia\+Prima}} $\ast$}]{materia\+Prima }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_produto_a5e52eb8f1c2726dc3e839ed460adaab6}\label{class_produto_a5e52eb8f1c2726dc3e839ed460adaab6}} 
+\index{Produto@{Produto}!removerOrdem@{removerOrdem}}
+\index{removerOrdem@{removerOrdem}!Produto@{Produto}}
+\doxysubsubsection{\texorpdfstring{removerOrdem()}{removerOrdem()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Produto\+::remover\+Ordem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_produto_a7ca3605140220ee1285b14b72a09ec46}\label{class_produto_a7ca3605140220ee1285b14b72a09ec46}} 
+\index{Produto@{Produto}!removerOrdem@{removerOrdem}}
+\index{removerOrdem@{removerOrdem}!Produto@{Produto}}
+\doxysubsubsection{\texorpdfstring{removerOrdem()}{removerOrdem()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Produto\+::remover\+Ordem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ordem_producao}{Ordem\+Producao}} $\ast$}]{ordem }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_produto_a9caf756459a41955c1a43706cef7f429}\label{class_produto_a9caf756459a41955c1a43706cef7f429}} 
+\index{Produto@{Produto}!setCategoria@{setCategoria}}
+\index{setCategoria@{setCategoria}!Produto@{Produto}}
+\doxysubsubsection{\texorpdfstring{setCategoria()}{setCategoria()}}
+{\footnotesize\ttfamily void Produto\+::set\+Categoria (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_categoria}{Categoria}} $\ast$}]{categoria }\end{DoxyParamCaption})}
+
+
+
+Seta a categoria do produto. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em categoria} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{88 \{}
+\DoxyCodeLine{89     this-\/>categoria = categoria;}
+\DoxyCodeLine{90 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_produto_a962dd6a2b9b5c52eefdbda2e92ec67b6}\label{class_produto_a962dd6a2b9b5c52eefdbda2e92ec67b6}} 
+\index{Produto@{Produto}!setCodigo@{setCodigo}}
+\index{setCodigo@{setCodigo}!Produto@{Produto}}
+\doxysubsubsection{\texorpdfstring{setCodigo()}{setCodigo()}}
+{\footnotesize\ttfamily void Produto\+::set\+Codigo (\begin{DoxyParamCaption}\item[{int}]{codigo }\end{DoxyParamCaption})}
+
+
+
+Seta o codigo do produto. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em codigo} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{58 \{}
+\DoxyCodeLine{59     this-\/>codigo = codigo;}
+\DoxyCodeLine{60 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_produto_a237cc2d0ded565d23c9b1e47af41072d}\label{class_produto_a237cc2d0ded565d23c9b1e47af41072d}} 
+\index{Produto@{Produto}!setEstoqueMinimo@{setEstoqueMinimo}}
+\index{setEstoqueMinimo@{setEstoqueMinimo}!Produto@{Produto}}
+\doxysubsubsection{\texorpdfstring{setEstoqueMinimo()}{setEstoqueMinimo()}}
+{\footnotesize\ttfamily void Produto\+::set\+Estoque\+Minimo (\begin{DoxyParamCaption}\item[{int}]{estoque\+Minimo }\end{DoxyParamCaption})}
+
+
+
+Seta o estoque minimo do produto. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em estoque\+Minimo} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{98 \{}
+\DoxyCodeLine{99     this-\/>estoqueMinimo = estoqueMinimo;}
+\DoxyCodeLine{100 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_produto_a5513a29009079af0954925220a760395}\label{class_produto_a5513a29009079af0954925220a760395}} 
+\index{Produto@{Produto}!setNome@{setNome}}
+\index{setNome@{setNome}!Produto@{Produto}}
+\doxysubsubsection{\texorpdfstring{setNome()}{setNome()}}
+{\footnotesize\ttfamily void Produto\+::set\+Nome (\begin{DoxyParamCaption}\item[{std\+::string}]{nome }\end{DoxyParamCaption})}
+
+
+
+Seta o nome do produto. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em nome} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{48 \{}
+\DoxyCodeLine{49     this-\/>nome = nome;}
+\DoxyCodeLine{50 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_produto_a0935ec9aa8cda357974b3adde83be9bc}\label{class_produto_a0935ec9aa8cda357974b3adde83be9bc}} 
+\index{Produto@{Produto}!setOrdem@{setOrdem}}
+\index{setOrdem@{setOrdem}!Produto@{Produto}}
+\doxysubsubsection{\texorpdfstring{setOrdem()}{setOrdem()}}
+{\footnotesize\ttfamily void Produto\+::set\+Ordem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ordem_producao}{Ordem\+Producao}} $\ast$}]{ordem }\end{DoxyParamCaption})}
+
+
+
+Seta a ordem de produção do produto. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em ordem} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{118 \{}
+\DoxyCodeLine{119     this-\/>ordem = ordem;}
+\DoxyCodeLine{120 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_produto_ac53da7534279f3e1a6e629ebe150bbc0}\label{class_produto_ac53da7534279f3e1a6e629ebe150bbc0}} 
+\index{Produto@{Produto}!setQtdEstoque@{setQtdEstoque}}
+\index{setQtdEstoque@{setQtdEstoque}!Produto@{Produto}}
+\doxysubsubsection{\texorpdfstring{setQtdEstoque()}{setQtdEstoque()}}
+{\footnotesize\ttfamily void Produto\+::set\+Qtd\+Estoque (\begin{DoxyParamCaption}\item[{int}]{qtd\+Estoque }\end{DoxyParamCaption})}
+
+
+
+Seta a quantidade do estoque do produto. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em qtd\+Estoque} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{108 \{}
+\DoxyCodeLine{109     this-\/>qtdEstoque = qtdEstoque;}
+\DoxyCodeLine{110 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_produto_ae3a98b6fb676a14de2f63cd97ba2a67f}\label{class_produto_ae3a98b6fb676a14de2f63cd97ba2a67f}} 
+\index{Produto@{Produto}!setTamanhoDoLoteMinimo@{setTamanhoDoLoteMinimo}}
+\index{setTamanhoDoLoteMinimo@{setTamanhoDoLoteMinimo}!Produto@{Produto}}
+\doxysubsubsection{\texorpdfstring{setTamanhoDoLoteMinimo()}{setTamanhoDoLoteMinimo()}}
+{\footnotesize\ttfamily void Produto\+::set\+Tamanho\+Do\+Lote\+Minimo (\begin{DoxyParamCaption}\item[{int}]{tamanho\+Do\+Lote\+Minimo }\end{DoxyParamCaption})}
+
+
+
+Seta o tamanho do lote minimo do produto. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em tamanho\+Do\+Lote\+Minimo} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{78 \{}
+\DoxyCodeLine{79     this-\/>tamanhoDoLoteMinimo = tamanhoDoLoteMinimo;}
+\DoxyCodeLine{80 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_produto_a80801d273b3ddbb20844a1c8977e01c8}\label{class_produto_a80801d273b3ddbb20844a1c8977e01c8}} 
+\index{Produto@{Produto}!setValorDeVenda@{setValorDeVenda}}
+\index{setValorDeVenda@{setValorDeVenda}!Produto@{Produto}}
+\doxysubsubsection{\texorpdfstring{setValorDeVenda()}{setValorDeVenda()}}
+{\footnotesize\ttfamily void Produto\+::set\+Valor\+De\+Venda (\begin{DoxyParamCaption}\item[{double}]{valor\+De\+Venda }\end{DoxyParamCaption})}
+
+
+
+Seta o valor de venda do produto. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em valor\+De\+Venda} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{68 \{}
+\DoxyCodeLine{69     this-\/>valorDeVenda = valorDeVenda;}
+\DoxyCodeLine{70 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_produto_acd4ec4dcc11f3652cf826c462a9fd22b}\label{class_produto_acd4ec4dcc11f3652cf826c462a9fd22b}} 
+\index{Produto@{Produto}!verificaOrdem@{verificaOrdem}}
+\index{verificaOrdem@{verificaOrdem}!Produto@{Produto}}
+\doxysubsubsection{\texorpdfstring{verificaOrdem()}{verificaOrdem()}}
+{\footnotesize\ttfamily bool Produto\+::verifica\+Ordem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_produto_a303e08b36ed1e16fa446d25de5184957}\label{class_produto_a303e08b36ed1e16fa446d25de5184957}} 
+\index{Produto@{Produto}!verificarEstoque@{verificarEstoque}}
+\index{verificarEstoque@{verificarEstoque}!Produto@{Produto}}
+\doxysubsubsection{\texorpdfstring{verificarEstoque()}{verificarEstoque()}}
+{\footnotesize\ttfamily bool Produto\+::verificar\+Estoque (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna se a quantidade de estoque está de acordo com a quantidade minima permitida. 
+
+\begin{DoxyReturn}{Retorna}
+true 
+
+false 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{229 \{}
+\DoxyCodeLine{230     \textcolor{keywordflow}{if} (qtdEstoque < estoqueMinimo)}
+\DoxyCodeLine{231     \{}
+\DoxyCodeLine{232         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{233     \}}
+\DoxyCodeLine{234     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{235     \{}
+\DoxyCodeLine{236         \textcolor{keywordflow}{return} \textcolor{keyword}{false}; \textcolor{comment}{// trocar pra uma exceção}}
+\DoxyCodeLine{237     \}}
+\DoxyCodeLine{238 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_produto_a579a01c54e03158438f9015f060d357b}\label{class_produto_a579a01c54e03158438f9015f060d357b}} 
+\index{Produto@{Produto}!verificarOrdem@{verificarOrdem}}
+\index{verificarOrdem@{verificarOrdem}!Produto@{Produto}}
+\doxysubsubsection{\texorpdfstring{verificarOrdem()}{verificarOrdem()}}
+{\footnotesize\ttfamily bool Produto\+::verificar\+Ordem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna se a ordem está correta. 
+
+\begin{DoxyReturn}{Retorna}
+true 
+
+false 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{247 \{}
+\DoxyCodeLine{248     \textcolor{keywordflow}{if} (ordem == NULL)}
+\DoxyCodeLine{249     \{}
+\DoxyCodeLine{250         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{251     \}}
+\DoxyCodeLine{252     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{253     \{}
+\DoxyCodeLine{254         \textcolor{keywordflow}{return} \textcolor{keyword}{false}; \textcolor{comment}{// trocar pra uma exceção}}
+\DoxyCodeLine{255     \}}
+\DoxyCodeLine{256 \}}
+
+\end{DoxyCode}
+
+
+A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/felip/\+One\+Drive/\+Documentos/\+Git\+Hub/poo/include/\mbox{\hyperlink{produto_8hpp}{produto.\+hpp}}\item 
+C\+:/\+Users/felip/\+One\+Drive/\+Documentos/\+Git\+Hub/poo/src/\mbox{\hyperlink{produto_8cpp}{produto.\+cpp}}\end{DoxyCompactItemize}

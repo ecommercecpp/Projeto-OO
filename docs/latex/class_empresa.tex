@@ -1,0 +1,718 @@
+\hypertarget{class_empresa}{}\doxysection{Referência da Classe Empresa}
+\label{class_empresa}\index{Empresa@{Empresa}}
+
+
+{\ttfamily \#include $<$empresa.\+hpp$>$}
+
+\doxysubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_empresa_a324546458f6c3bd52213873389816bfb}{Empresa}} (\mbox{\hyperlink{class_empresa}{Empresa}} \&other)=delete
+\item 
+void \mbox{\hyperlink{class_empresa_a129616a02326ba031e8f857147a5c954}{adicionar\+Departamento}} (\mbox{\hyperlink{class_departamento}{Departamento}} $\ast$departamento)
+\begin{DoxyCompactList}\small\item\em Adiciona um departamento a empresa. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_empresa_a12fd60228b35f6a51fda8d6fef4344db}{remover\+Departamento}} (\mbox{\hyperlink{class_departamento}{Departamento}} $\ast$departamento)
+\begin{DoxyCompactList}\small\item\em Remove um departamento da empresa. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_empresa_ab0928decfdb152bfc2bba313ebc6f1e0}{adicionar\+Cargo}} (\mbox{\hyperlink{class_cargo}{Cargo}} $\ast$cargo)
+\begin{DoxyCompactList}\small\item\em Adiciona um cargo a empresa. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_empresa_a45a013cd040c823191d017eea32e3434}{remover\+Cargo}} (\mbox{\hyperlink{class_cargo}{Cargo}} $\ast$cargo)
+\begin{DoxyCompactList}\small\item\em Remove um cargo da empresa. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_empresa_a0b4f35d0e56a83fa72dbf6e4b32680b1}{adicionar\+Lote}} (\mbox{\hyperlink{class_lote}{Lote}} $\ast$lote)
+\begin{DoxyCompactList}\small\item\em Adiciona um lote a empresa. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_empresa_ad2759e42cba1faef2071f9d96eca3887}{remover\+Lote}} (\mbox{\hyperlink{class_lote}{Lote}} $\ast$lote)
+\begin{DoxyCompactList}\small\item\em Remove um lote da empresa. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_empresa_ae7323c262b54a4049b56e6d79edd8805}{adicionar\+Funcionario}} (\mbox{\hyperlink{class_funcionario}{Funcionario}} $\ast$funcionario)
+\begin{DoxyCompactList}\small\item\em Adiciona um funcionario a empresa. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_empresa_a69a7bd7c7e37113ba051d12d057c03f4}{remover\+Funcionario}} (\mbox{\hyperlink{class_funcionario}{Funcionario}} $\ast$funcionario)
+\begin{DoxyCompactList}\small\item\em Remove um funcionario da empresa. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_empresa_a8f81dc800b412218257cc4baccd77cec}{adicionar\+Cliente}} (\mbox{\hyperlink{class_cliente}{Cliente}} $\ast$cliente)
+\begin{DoxyCompactList}\small\item\em Adiciona um cliente a empresa. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_empresa_abd9674f28a75be7b4be24a07326640f3}{remover\+Cliente}} (\mbox{\hyperlink{class_cliente}{Cliente}} $\ast$cliente)
+\begin{DoxyCompactList}\small\item\em Remove um cliente da empresa. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_empresa_ada6360d0b76593b256ca4f2841f969f2}{adicionar\+Ordem\+Producao}} (\mbox{\hyperlink{class_ordem_producao}{Ordem\+Producao}} $\ast$ordem\+Producao)
+\begin{DoxyCompactList}\small\item\em Adiciona uma ordem de produção a empresa. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_empresa_ade86b05818a9bd3b9d8de3dae7fb6d31}{remover\+Ordem\+Producao}} (\mbox{\hyperlink{class_ordem_producao}{Ordem\+Producao}} $\ast$ordem\+Producao)
+\begin{DoxyCompactList}\small\item\em Remove uma ordem de produção da empresa. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_empresa_a9faf4afa2fea4c79f9fd9368ed0538ca}{adicionar\+Venda}} (\mbox{\hyperlink{class_venda}{Venda}} $\ast$venda)
+\begin{DoxyCompactList}\small\item\em Adiciona uma venda a empresa. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_empresa_accb48eb6098c3632e3209e11e8b4570c}{remover\+Venda}} (\mbox{\hyperlink{class_venda}{Venda}} $\ast$venda)
+\begin{DoxyCompactList}\small\item\em Remove uma venda da empresa. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_empresa_a14093a0231f38aa135bc40bb52395c75}{adicionar\+Log\+Escrita}} (\mbox{\hyperlink{class_log_escrita}{Log\+Escrita}} $\ast$log\+Escrita)
+\begin{DoxyCompactList}\small\item\em Adiciona um Log de escrita a empresa. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_empresa_a3fac29d4233b9c9a7a198b58170b47ec}{remover\+Log\+Escrita}} (\mbox{\hyperlink{class_log_escrita}{Log\+Escrita}} $\ast$log\+Escrita)
+\begin{DoxyCompactList}\small\item\em Remove um Log de escrita da empresa. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_empresa_a92f90232bfbb9421f9ff8d555ea1b61a}{adicionar\+Log\+Leitura}} (\mbox{\hyperlink{class_log_leitura}{Log\+Leitura}} $\ast$log\+Leitura)
+\begin{DoxyCompactList}\small\item\em Adiciona um Log de leitura a empresa. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_empresa_a08a8a464c4f0304680cfc5d30c04039b}{remover\+Log\+Leitura}} (\mbox{\hyperlink{class_log_leitura}{Log\+Leitura}} $\ast$log\+Leitura)
+\begin{DoxyCompactList}\small\item\em Remove um Log de leitura da empresa. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_empresa_a30927cb6fa3dbd227bacbb3842a594a6}{adicionar\+Log\+Excecao}} (\mbox{\hyperlink{class_log_excecao}{Log\+Excecao}} $\ast$log\+Excecao)
+\begin{DoxyCompactList}\small\item\em Adiciona um Log de exceção a empresa. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_empresa_a7a910af42d6aee3190e70d7453742463}{remover\+Log\+Excecao}} (\mbox{\hyperlink{class_log_excecao}{Log\+Excecao}} $\ast$log\+Excecao)
+\begin{DoxyCompactList}\small\item\em Remove um Log de exceção da empresa. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_empresa_a15003489e89105d38deba03537c28804}{adicionar\+Produto}} (\mbox{\hyperlink{class_produto}{Produto}} $\ast$produto)
+\begin{DoxyCompactList}\small\item\em Adiciona um produto a empresa. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_empresa_a511d82756b58b14f063e580d2f72f6df}{remover\+Produto}} (\mbox{\hyperlink{class_produto}{Produto}} $\ast$produto)
+\begin{DoxyCompactList}\small\item\em Remove um produto da empresa. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_empresa_a9a77ce6389f72071cce38df795154bee}{adicionar\+Categoria}} (\mbox{\hyperlink{class_categoria}{Categoria}} $\ast$categoria)
+\begin{DoxyCompactList}\small\item\em Adiciona uma categoria a empresa. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_empresa_aec636cf5bb116fce5b0c918fc74d4a0a}{remover\+Categoria}} (\mbox{\hyperlink{class_categoria}{Categoria}} $\ast$categoria)
+\begin{DoxyCompactList}\small\item\em Remove uma categoria da empresa. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_empresa_aef283420f712c262c5cfa567bed3097c}{adicionar\+Estoque}} (\mbox{\hyperlink{class_estoque}{Estoque}} $\ast$estoque)
+\item 
+void \mbox{\hyperlink{class_empresa_acadd02ecef88718dadf10d6897a88684}{remover\+Estoque}} (\mbox{\hyperlink{class_estoque}{Estoque}} $\ast$estoque)
+\end{DoxyCompactItemize}
+\doxysubsection*{Membros Públicos Estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_empresa}{Empresa}} $\ast$ \mbox{\hyperlink{class_empresa_a31cee3bedc17ae907f3859ba959ec10a}{get\+Empresa}} ()
+\begin{DoxyCompactList}\small\item\em Retorna a instancia da empresa. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Construtores e Destrutores}
+\mbox{\Hypertarget{class_empresa_a324546458f6c3bd52213873389816bfb}\label{class_empresa_a324546458f6c3bd52213873389816bfb}} 
+\index{Empresa@{Empresa}!Empresa@{Empresa}}
+\index{Empresa@{Empresa}!Empresa@{Empresa}}
+\doxysubsubsection{\texorpdfstring{Empresa()}{Empresa()}}
+{\footnotesize\ttfamily Empresa\+::\+Empresa (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_empresa}{Empresa}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+\doxysubsection{Funções membros}
+\mbox{\Hypertarget{class_empresa_ab0928decfdb152bfc2bba313ebc6f1e0}\label{class_empresa_ab0928decfdb152bfc2bba313ebc6f1e0}} 
+\index{Empresa@{Empresa}!adicionarCargo@{adicionarCargo}}
+\index{adicionarCargo@{adicionarCargo}!Empresa@{Empresa}}
+\doxysubsubsection{\texorpdfstring{adicionarCargo()}{adicionarCargo()}}
+{\footnotesize\ttfamily void Empresa\+::adicionar\+Cargo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_cargo}{Cargo}} $\ast$}]{cargo }\end{DoxyParamCaption})}
+
+
+
+Adiciona um cargo a empresa. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em cargo} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{61 \{}
+\DoxyCodeLine{62     cargos.push\_back(cargo);}
+\DoxyCodeLine{63 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_empresa_a9a77ce6389f72071cce38df795154bee}\label{class_empresa_a9a77ce6389f72071cce38df795154bee}} 
+\index{Empresa@{Empresa}!adicionarCategoria@{adicionarCategoria}}
+\index{adicionarCategoria@{adicionarCategoria}!Empresa@{Empresa}}
+\doxysubsubsection{\texorpdfstring{adicionarCategoria()}{adicionarCategoria()}}
+{\footnotesize\ttfamily void Empresa\+::adicionar\+Categoria (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_categoria}{Categoria}} $\ast$}]{categoria }\end{DoxyParamCaption})}
+
+
+
+Adiciona uma categoria a empresa. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em categoria} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{191 \{}
+\DoxyCodeLine{192     categorias.push\_back(categoria);}
+\DoxyCodeLine{193 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_empresa_a8f81dc800b412218257cc4baccd77cec}\label{class_empresa_a8f81dc800b412218257cc4baccd77cec}} 
+\index{Empresa@{Empresa}!adicionarCliente@{adicionarCliente}}
+\index{adicionarCliente@{adicionarCliente}!Empresa@{Empresa}}
+\doxysubsubsection{\texorpdfstring{adicionarCliente()}{adicionarCliente()}}
+{\footnotesize\ttfamily void Empresa\+::adicionar\+Cliente (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_cliente}{Cliente}} $\ast$}]{cliente }\end{DoxyParamCaption})}
+
+
+
+Adiciona um cliente a empresa. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em cliente} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{113 \{}
+\DoxyCodeLine{114     clientes.push\_back(cliente);}
+\DoxyCodeLine{115 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_empresa_a129616a02326ba031e8f857147a5c954}\label{class_empresa_a129616a02326ba031e8f857147a5c954}} 
+\index{Empresa@{Empresa}!adicionarDepartamento@{adicionarDepartamento}}
+\index{adicionarDepartamento@{adicionarDepartamento}!Empresa@{Empresa}}
+\doxysubsubsection{\texorpdfstring{adicionarDepartamento()}{adicionarDepartamento()}}
+{\footnotesize\ttfamily void Empresa\+::adicionar\+Departamento (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_departamento}{Departamento}} $\ast$}]{departamento }\end{DoxyParamCaption})}
+
+
+
+Adiciona um departamento a empresa. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em departamento} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{35 \{}
+\DoxyCodeLine{36     departamentos.push\_back(departamento);}
+\DoxyCodeLine{37 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_empresa_aef283420f712c262c5cfa567bed3097c}\label{class_empresa_aef283420f712c262c5cfa567bed3097c}} 
+\index{Empresa@{Empresa}!adicionarEstoque@{adicionarEstoque}}
+\index{adicionarEstoque@{adicionarEstoque}!Empresa@{Empresa}}
+\doxysubsubsection{\texorpdfstring{adicionarEstoque()}{adicionarEstoque()}}
+{\footnotesize\ttfamily void Empresa\+::adicionar\+Estoque (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_estoque}{Estoque}} $\ast$}]{estoque }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_empresa_ae7323c262b54a4049b56e6d79edd8805}\label{class_empresa_ae7323c262b54a4049b56e6d79edd8805}} 
+\index{Empresa@{Empresa}!adicionarFuncionario@{adicionarFuncionario}}
+\index{adicionarFuncionario@{adicionarFuncionario}!Empresa@{Empresa}}
+\doxysubsubsection{\texorpdfstring{adicionarFuncionario()}{adicionarFuncionario()}}
+{\footnotesize\ttfamily void Empresa\+::adicionar\+Funcionario (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_funcionario}{Funcionario}} $\ast$}]{funcionario }\end{DoxyParamCaption})}
+
+
+
+Adiciona um funcionario a empresa. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em funcionario} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{87 \{}
+\DoxyCodeLine{88     funcionarios.push\_back(funcionario);}
+\DoxyCodeLine{89 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_empresa_a14093a0231f38aa135bc40bb52395c75}\label{class_empresa_a14093a0231f38aa135bc40bb52395c75}} 
+\index{Empresa@{Empresa}!adicionarLogEscrita@{adicionarLogEscrita}}
+\index{adicionarLogEscrita@{adicionarLogEscrita}!Empresa@{Empresa}}
+\doxysubsubsection{\texorpdfstring{adicionarLogEscrita()}{adicionarLogEscrita()}}
+{\footnotesize\ttfamily void Empresa\+::adicionar\+Log\+Escrita (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_log_escrita}{Log\+Escrita}} $\ast$}]{log\+Escrita }\end{DoxyParamCaption})}
+
+
+
+Adiciona um Log de escrita a empresa. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em \mbox{\hyperlink{class_log_escrita}{Log\+Escrita}}} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{269 \{}
+\DoxyCodeLine{270     logsEscrita.push\_back(logEscrita);}
+\DoxyCodeLine{271 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_empresa_a30927cb6fa3dbd227bacbb3842a594a6}\label{class_empresa_a30927cb6fa3dbd227bacbb3842a594a6}} 
+\index{Empresa@{Empresa}!adicionarLogExcecao@{adicionarLogExcecao}}
+\index{adicionarLogExcecao@{adicionarLogExcecao}!Empresa@{Empresa}}
+\doxysubsubsection{\texorpdfstring{adicionarLogExcecao()}{adicionarLogExcecao()}}
+{\footnotesize\ttfamily void Empresa\+::adicionar\+Log\+Excecao (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_log_excecao}{Log\+Excecao}} $\ast$}]{log\+Excecao }\end{DoxyParamCaption})}
+
+
+
+Adiciona um Log de exceção a empresa. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em Log\+Ececao} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{321 \{}
+\DoxyCodeLine{322     logsExcecao.push\_back(logExcecao);}
+\DoxyCodeLine{323 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_empresa_a92f90232bfbb9421f9ff8d555ea1b61a}\label{class_empresa_a92f90232bfbb9421f9ff8d555ea1b61a}} 
+\index{Empresa@{Empresa}!adicionarLogLeitura@{adicionarLogLeitura}}
+\index{adicionarLogLeitura@{adicionarLogLeitura}!Empresa@{Empresa}}
+\doxysubsubsection{\texorpdfstring{adicionarLogLeitura()}{adicionarLogLeitura()}}
+{\footnotesize\ttfamily void Empresa\+::adicionar\+Log\+Leitura (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_log_leitura}{Log\+Leitura}} $\ast$}]{log\+Leitura }\end{DoxyParamCaption})}
+
+
+
+Adiciona um Log de leitura a empresa. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em \mbox{\hyperlink{class_log_leitura}{Log\+Leitura}}} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{295 \{}
+\DoxyCodeLine{296     logsLeitura.push\_back(logLeitura);}
+\DoxyCodeLine{297 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_empresa_a0b4f35d0e56a83fa72dbf6e4b32680b1}\label{class_empresa_a0b4f35d0e56a83fa72dbf6e4b32680b1}} 
+\index{Empresa@{Empresa}!adicionarLote@{adicionarLote}}
+\index{adicionarLote@{adicionarLote}!Empresa@{Empresa}}
+\doxysubsubsection{\texorpdfstring{adicionarLote()}{adicionarLote()}}
+{\footnotesize\ttfamily void Empresa\+::adicionar\+Lote (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_lote}{Lote}} $\ast$}]{lote }\end{DoxyParamCaption})}
+
+
+
+Adiciona um lote a empresa. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em lote} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{217 \{}
+\DoxyCodeLine{218     lotes.push\_back(lote);}
+\DoxyCodeLine{219 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_empresa_ada6360d0b76593b256ca4f2841f969f2}\label{class_empresa_ada6360d0b76593b256ca4f2841f969f2}} 
+\index{Empresa@{Empresa}!adicionarOrdemProducao@{adicionarOrdemProducao}}
+\index{adicionarOrdemProducao@{adicionarOrdemProducao}!Empresa@{Empresa}}
+\doxysubsubsection{\texorpdfstring{adicionarOrdemProducao()}{adicionarOrdemProducao()}}
+{\footnotesize\ttfamily void Empresa\+::adicionar\+Ordem\+Producao (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ordem_producao}{Ordem\+Producao}} $\ast$}]{ordem\+Producao }\end{DoxyParamCaption})}
+
+
+
+Adiciona uma ordem de produção a empresa. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em ordem\+Producao} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{139 \{}
+\DoxyCodeLine{140     ordemProducaoLista.push\_back(ordemProducao);}
+\DoxyCodeLine{141 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_empresa_a15003489e89105d38deba03537c28804}\label{class_empresa_a15003489e89105d38deba03537c28804}} 
+\index{Empresa@{Empresa}!adicionarProduto@{adicionarProduto}}
+\index{adicionarProduto@{adicionarProduto}!Empresa@{Empresa}}
+\doxysubsubsection{\texorpdfstring{adicionarProduto()}{adicionarProduto()}}
+{\footnotesize\ttfamily void Empresa\+::adicionar\+Produto (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_produto}{Produto}} $\ast$}]{produto }\end{DoxyParamCaption})}
+
+
+
+Adiciona um produto a empresa. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em produto} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{165 \{}
+\DoxyCodeLine{166     produtos.push\_back(produto);}
+\DoxyCodeLine{167 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_empresa_a9faf4afa2fea4c79f9fd9368ed0538ca}\label{class_empresa_a9faf4afa2fea4c79f9fd9368ed0538ca}} 
+\index{Empresa@{Empresa}!adicionarVenda@{adicionarVenda}}
+\index{adicionarVenda@{adicionarVenda}!Empresa@{Empresa}}
+\doxysubsubsection{\texorpdfstring{adicionarVenda()}{adicionarVenda()}}
+{\footnotesize\ttfamily void Empresa\+::adicionar\+Venda (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_venda}{Venda}} $\ast$}]{venda }\end{DoxyParamCaption})}
+
+
+
+Adiciona uma venda a empresa. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em venda} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{243 \{}
+\DoxyCodeLine{244     vendas.push\_back(venda);}
+\DoxyCodeLine{245 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_empresa_a31cee3bedc17ae907f3859ba959ec10a}\label{class_empresa_a31cee3bedc17ae907f3859ba959ec10a}} 
+\index{Empresa@{Empresa}!getEmpresa@{getEmpresa}}
+\index{getEmpresa@{getEmpresa}!Empresa@{Empresa}}
+\doxysubsubsection{\texorpdfstring{getEmpresa()}{getEmpresa()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_empresa}{Empresa}} $\ast$ Empresa\+::get\+Empresa (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retorna a instancia da empresa. 
+
+\begin{DoxyReturn}{Retorna}
+Empresa$\ast$ 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{25 \{}
+\DoxyCodeLine{26     \textcolor{keywordflow}{return} empresa;}
+\DoxyCodeLine{27 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_empresa_a45a013cd040c823191d017eea32e3434}\label{class_empresa_a45a013cd040c823191d017eea32e3434}} 
+\index{Empresa@{Empresa}!removerCargo@{removerCargo}}
+\index{removerCargo@{removerCargo}!Empresa@{Empresa}}
+\doxysubsubsection{\texorpdfstring{removerCargo()}{removerCargo()}}
+{\footnotesize\ttfamily void Empresa\+::remover\+Cargo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_cargo}{Cargo}} $\ast$}]{cargo }\end{DoxyParamCaption})}
+
+
+
+Remove um cargo da empresa. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em cargo} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{71 \{}
+\DoxyCodeLine{72     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < cargos.size(); i++)}
+\DoxyCodeLine{73     \{}
+\DoxyCodeLine{74         \textcolor{keywordflow}{if} (cargos[i] == cargo)}
+\DoxyCodeLine{75         \{}
+\DoxyCodeLine{76             cargos.erase(cargos.begin() + i);}
+\DoxyCodeLine{77         \}}
+\DoxyCodeLine{78     \}}
+\DoxyCodeLine{79 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_empresa_aec636cf5bb116fce5b0c918fc74d4a0a}\label{class_empresa_aec636cf5bb116fce5b0c918fc74d4a0a}} 
+\index{Empresa@{Empresa}!removerCategoria@{removerCategoria}}
+\index{removerCategoria@{removerCategoria}!Empresa@{Empresa}}
+\doxysubsubsection{\texorpdfstring{removerCategoria()}{removerCategoria()}}
+{\footnotesize\ttfamily void Empresa\+::remover\+Categoria (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_categoria}{Categoria}} $\ast$}]{categoria }\end{DoxyParamCaption})}
+
+
+
+Remove uma categoria da empresa. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em categoria} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{201 \{}
+\DoxyCodeLine{202     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < categorias.size(); i++)}
+\DoxyCodeLine{203     \{}
+\DoxyCodeLine{204         \textcolor{keywordflow}{if} (categorias[i] == categoria)}
+\DoxyCodeLine{205         \{}
+\DoxyCodeLine{206             categorias.erase(categorias.begin() + i);}
+\DoxyCodeLine{207         \}}
+\DoxyCodeLine{208     \}}
+\DoxyCodeLine{209 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_empresa_abd9674f28a75be7b4be24a07326640f3}\label{class_empresa_abd9674f28a75be7b4be24a07326640f3}} 
+\index{Empresa@{Empresa}!removerCliente@{removerCliente}}
+\index{removerCliente@{removerCliente}!Empresa@{Empresa}}
+\doxysubsubsection{\texorpdfstring{removerCliente()}{removerCliente()}}
+{\footnotesize\ttfamily void Empresa\+::remover\+Cliente (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_cliente}{Cliente}} $\ast$}]{cliente }\end{DoxyParamCaption})}
+
+
+
+Remove um cliente da empresa. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em cliente} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{123 \{}
+\DoxyCodeLine{124     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < clientes.size(); i++)}
+\DoxyCodeLine{125     \{}
+\DoxyCodeLine{126         \textcolor{keywordflow}{if} (clientes[i] == cliente)}
+\DoxyCodeLine{127         \{}
+\DoxyCodeLine{128             clientes.erase(clientes.begin() + i);}
+\DoxyCodeLine{129         \}}
+\DoxyCodeLine{130     \}}
+\DoxyCodeLine{131 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_empresa_a12fd60228b35f6a51fda8d6fef4344db}\label{class_empresa_a12fd60228b35f6a51fda8d6fef4344db}} 
+\index{Empresa@{Empresa}!removerDepartamento@{removerDepartamento}}
+\index{removerDepartamento@{removerDepartamento}!Empresa@{Empresa}}
+\doxysubsubsection{\texorpdfstring{removerDepartamento()}{removerDepartamento()}}
+{\footnotesize\ttfamily void Empresa\+::remover\+Departamento (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_departamento}{Departamento}} $\ast$}]{departamento }\end{DoxyParamCaption})}
+
+
+
+Remove um departamento da empresa. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em departamento} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{45 \{}
+\DoxyCodeLine{46     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < departamentos.size(); i++)}
+\DoxyCodeLine{47     \{}
+\DoxyCodeLine{48         \textcolor{keywordflow}{if} (departamentos[i] == departamento)}
+\DoxyCodeLine{49         \{}
+\DoxyCodeLine{50             departamentos.erase(departamentos.begin() + i);}
+\DoxyCodeLine{51         \}}
+\DoxyCodeLine{52     \}}
+\DoxyCodeLine{53 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_empresa_acadd02ecef88718dadf10d6897a88684}\label{class_empresa_acadd02ecef88718dadf10d6897a88684}} 
+\index{Empresa@{Empresa}!removerEstoque@{removerEstoque}}
+\index{removerEstoque@{removerEstoque}!Empresa@{Empresa}}
+\doxysubsubsection{\texorpdfstring{removerEstoque()}{removerEstoque()}}
+{\footnotesize\ttfamily void Empresa\+::remover\+Estoque (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_estoque}{Estoque}} $\ast$}]{estoque }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_empresa_a69a7bd7c7e37113ba051d12d057c03f4}\label{class_empresa_a69a7bd7c7e37113ba051d12d057c03f4}} 
+\index{Empresa@{Empresa}!removerFuncionario@{removerFuncionario}}
+\index{removerFuncionario@{removerFuncionario}!Empresa@{Empresa}}
+\doxysubsubsection{\texorpdfstring{removerFuncionario()}{removerFuncionario()}}
+{\footnotesize\ttfamily void Empresa\+::remover\+Funcionario (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_funcionario}{Funcionario}} $\ast$}]{funcionario }\end{DoxyParamCaption})}
+
+
+
+Remove um funcionario da empresa. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em funcionario} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{97 \{}
+\DoxyCodeLine{98     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < funcionarios.size(); i++)}
+\DoxyCodeLine{99     \{}
+\DoxyCodeLine{100         \textcolor{keywordflow}{if} (funcionarios[i] == funcionario)}
+\DoxyCodeLine{101         \{}
+\DoxyCodeLine{102             funcionarios.erase(funcionarios.begin() + i);}
+\DoxyCodeLine{103         \}}
+\DoxyCodeLine{104     \}}
+\DoxyCodeLine{105 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_empresa_a3fac29d4233b9c9a7a198b58170b47ec}\label{class_empresa_a3fac29d4233b9c9a7a198b58170b47ec}} 
+\index{Empresa@{Empresa}!removerLogEscrita@{removerLogEscrita}}
+\index{removerLogEscrita@{removerLogEscrita}!Empresa@{Empresa}}
+\doxysubsubsection{\texorpdfstring{removerLogEscrita()}{removerLogEscrita()}}
+{\footnotesize\ttfamily void Empresa\+::remover\+Log\+Escrita (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_log_escrita}{Log\+Escrita}} $\ast$}]{log\+Escrita }\end{DoxyParamCaption})}
+
+
+
+Remove um Log de escrita da empresa. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em \mbox{\hyperlink{class_log_escrita}{Log\+Escrita}}} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{279 \{}
+\DoxyCodeLine{280     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < logsEscrita.size(); i++)}
+\DoxyCodeLine{281     \{}
+\DoxyCodeLine{282         \textcolor{keywordflow}{if} (logsEscrita[i] == logEscrita)}
+\DoxyCodeLine{283         \{}
+\DoxyCodeLine{284             logsEscrita.erase(logsEscrita.begin() + i);}
+\DoxyCodeLine{285         \}}
+\DoxyCodeLine{286     \}}
+\DoxyCodeLine{287 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_empresa_a7a910af42d6aee3190e70d7453742463}\label{class_empresa_a7a910af42d6aee3190e70d7453742463}} 
+\index{Empresa@{Empresa}!removerLogExcecao@{removerLogExcecao}}
+\index{removerLogExcecao@{removerLogExcecao}!Empresa@{Empresa}}
+\doxysubsubsection{\texorpdfstring{removerLogExcecao()}{removerLogExcecao()}}
+{\footnotesize\ttfamily void Empresa\+::remover\+Log\+Excecao (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_log_excecao}{Log\+Excecao}} $\ast$}]{log\+Excecao }\end{DoxyParamCaption})}
+
+
+
+Remove um Log de exceção da empresa. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em \mbox{\hyperlink{class_log_excecao}{Log\+Excecao}}} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{331 \{}
+\DoxyCodeLine{332     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < logsExcecao.size(); i++)}
+\DoxyCodeLine{333     \{}
+\DoxyCodeLine{334         \textcolor{keywordflow}{if} (logsExcecao[i] == logExcecao)}
+\DoxyCodeLine{335         \{}
+\DoxyCodeLine{336             logsExcecao.erase(logsExcecao.begin() + i);}
+\DoxyCodeLine{337         \}}
+\DoxyCodeLine{338     \}}
+\DoxyCodeLine{339 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_empresa_a08a8a464c4f0304680cfc5d30c04039b}\label{class_empresa_a08a8a464c4f0304680cfc5d30c04039b}} 
+\index{Empresa@{Empresa}!removerLogLeitura@{removerLogLeitura}}
+\index{removerLogLeitura@{removerLogLeitura}!Empresa@{Empresa}}
+\doxysubsubsection{\texorpdfstring{removerLogLeitura()}{removerLogLeitura()}}
+{\footnotesize\ttfamily void Empresa\+::remover\+Log\+Leitura (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_log_leitura}{Log\+Leitura}} $\ast$}]{log\+Leitura }\end{DoxyParamCaption})}
+
+
+
+Remove um Log de leitura da empresa. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em \mbox{\hyperlink{class_log_leitura}{Log\+Leitura}}} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{305 \{}
+\DoxyCodeLine{306     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < logsLeitura.size(); i++)}
+\DoxyCodeLine{307     \{}
+\DoxyCodeLine{308         \textcolor{keywordflow}{if} (logsLeitura[i] == logLeitura)}
+\DoxyCodeLine{309         \{}
+\DoxyCodeLine{310             logsLeitura.erase(logsLeitura.begin() + i);}
+\DoxyCodeLine{311         \}}
+\DoxyCodeLine{312     \}}
+\DoxyCodeLine{313 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_empresa_ad2759e42cba1faef2071f9d96eca3887}\label{class_empresa_ad2759e42cba1faef2071f9d96eca3887}} 
+\index{Empresa@{Empresa}!removerLote@{removerLote}}
+\index{removerLote@{removerLote}!Empresa@{Empresa}}
+\doxysubsubsection{\texorpdfstring{removerLote()}{removerLote()}}
+{\footnotesize\ttfamily void Empresa\+::remover\+Lote (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_lote}{Lote}} $\ast$}]{lote }\end{DoxyParamCaption})}
+
+
+
+Remove um lote da empresa. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em lote} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{227 \{}
+\DoxyCodeLine{228     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < lotes.size(); i++)}
+\DoxyCodeLine{229     \{}
+\DoxyCodeLine{230         \textcolor{keywordflow}{if} (lotes[i] == lote)}
+\DoxyCodeLine{231         \{}
+\DoxyCodeLine{232             lotes.erase(lotes.begin() + i);}
+\DoxyCodeLine{233         \}}
+\DoxyCodeLine{234     \}}
+\DoxyCodeLine{235 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_empresa_ade86b05818a9bd3b9d8de3dae7fb6d31}\label{class_empresa_ade86b05818a9bd3b9d8de3dae7fb6d31}} 
+\index{Empresa@{Empresa}!removerOrdemProducao@{removerOrdemProducao}}
+\index{removerOrdemProducao@{removerOrdemProducao}!Empresa@{Empresa}}
+\doxysubsubsection{\texorpdfstring{removerOrdemProducao()}{removerOrdemProducao()}}
+{\footnotesize\ttfamily void Empresa\+::remover\+Ordem\+Producao (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ordem_producao}{Ordem\+Producao}} $\ast$}]{ordem\+Producao }\end{DoxyParamCaption})}
+
+
+
+Remove uma ordem de produção da empresa. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em ordem\+Producao} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{149 \{}
+\DoxyCodeLine{150     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < ordemProducaoLista.size(); i++)}
+\DoxyCodeLine{151     \{}
+\DoxyCodeLine{152         \textcolor{keywordflow}{if} (ordemProducaoLista[i] == ordemProducao)}
+\DoxyCodeLine{153         \{}
+\DoxyCodeLine{154             ordemProducaoLista.erase(ordemProducaoLista.begin() + i);}
+\DoxyCodeLine{155         \}}
+\DoxyCodeLine{156     \}}
+\DoxyCodeLine{157 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_empresa_a511d82756b58b14f063e580d2f72f6df}\label{class_empresa_a511d82756b58b14f063e580d2f72f6df}} 
+\index{Empresa@{Empresa}!removerProduto@{removerProduto}}
+\index{removerProduto@{removerProduto}!Empresa@{Empresa}}
+\doxysubsubsection{\texorpdfstring{removerProduto()}{removerProduto()}}
+{\footnotesize\ttfamily void Empresa\+::remover\+Produto (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_produto}{Produto}} $\ast$}]{produto }\end{DoxyParamCaption})}
+
+
+
+Remove um produto da empresa. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em produto} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{175 \{}
+\DoxyCodeLine{176     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < produtos.size(); i++)}
+\DoxyCodeLine{177     \{}
+\DoxyCodeLine{178         \textcolor{keywordflow}{if} (produtos[i] == produto)}
+\DoxyCodeLine{179         \{}
+\DoxyCodeLine{180             produtos.erase(produtos.begin() + i);}
+\DoxyCodeLine{181         \}}
+\DoxyCodeLine{182     \}}
+\DoxyCodeLine{183 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_empresa_accb48eb6098c3632e3209e11e8b4570c}\label{class_empresa_accb48eb6098c3632e3209e11e8b4570c}} 
+\index{Empresa@{Empresa}!removerVenda@{removerVenda}}
+\index{removerVenda@{removerVenda}!Empresa@{Empresa}}
+\doxysubsubsection{\texorpdfstring{removerVenda()}{removerVenda()}}
+{\footnotesize\ttfamily void Empresa\+::remover\+Venda (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_venda}{Venda}} $\ast$}]{venda }\end{DoxyParamCaption})}
+
+
+
+Remove uma venda da empresa. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em venda} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{253 \{}
+\DoxyCodeLine{254     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < vendas.size(); i++)}
+\DoxyCodeLine{255     \{}
+\DoxyCodeLine{256         \textcolor{keywordflow}{if} (vendas[i] == venda)}
+\DoxyCodeLine{257         \{}
+\DoxyCodeLine{258             vendas.erase(vendas.begin() + i);}
+\DoxyCodeLine{259         \}}
+\DoxyCodeLine{260     \}}
+\DoxyCodeLine{261 \}}
+
+\end{DoxyCode}
+
+
+A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/felip/\+One\+Drive/\+Documentos/\+Git\+Hub/poo/include/\mbox{\hyperlink{empresa_8hpp}{empresa.\+hpp}}\item 
+C\+:/\+Users/felip/\+One\+Drive/\+Documentos/\+Git\+Hub/poo/src/\mbox{\hyperlink{empresa_8cpp}{empresa.\+cpp}}\end{DoxyCompactItemize}

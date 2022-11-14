@@ -1,0 +1,123 @@
+\hypertarget{exceptions_8hpp_source}{}\doxysection{exceptions.\+hpp}
+\label{exceptions_8hpp_source}\index{C:/Users/felip/OneDrive/Documentos/GitHub/poo/include/exceptions.hpp@{C:/Users/felip/OneDrive/Documentos/GitHub/poo/include/exceptions.hpp}}
+\mbox{\hyperlink{exceptions_8hpp}{Vá para a documentação desse arquivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_EXCEPTIONS\_HPP\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_EXCEPTIONS\_HPP\_}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <exception>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{class }\mbox{\hyperlink{class_acess_denied_exception}{AcessDeniedException}} : \textcolor{keyword}{public} std::exception}
+\DoxyCodeLine{7 \{}
+\DoxyCodeLine{8     \textcolor{keyword}{public}:}
+\DoxyCodeLine{9         \mbox{\hyperlink{class_acess_denied_exception_a040230c80e7f58ae0975c5902bfa8563}{AcessDeniedException}}() \{\}}
+\DoxyCodeLine{10         \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \mbox{\hyperlink{class_acess_denied_exception_a21aea233a906a5ad639c58159bb926a6}{what}}() \textcolor{keyword}{const} throw()}
+\DoxyCodeLine{11         \{}
+\DoxyCodeLine{12             \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}Permissao de acesso negada"{}};}
+\DoxyCodeLine{13         \}}
+\DoxyCodeLine{14 \};}
+\DoxyCodeLine{15 \textcolor{keyword}{class }\mbox{\hyperlink{class_invalid_c_p_f_exception}{InvalidCPFException}} : \textcolor{keyword}{public} std::exception}
+\DoxyCodeLine{16 \{}
+\DoxyCodeLine{17     \textcolor{keyword}{public}:}
+\DoxyCodeLine{18         \mbox{\hyperlink{class_invalid_c_p_f_exception_a86eea234b8c1c24a26f20dba0d13896b}{InvalidCPFException}}() \{\}}
+\DoxyCodeLine{19         \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \mbox{\hyperlink{class_invalid_c_p_f_exception_aa7e43c0c8ea1214e2b19abe3dde7f7c7}{what}}() \textcolor{keyword}{const} throw()}
+\DoxyCodeLine{20         \{}
+\DoxyCodeLine{21             \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}CPF inválido"{}};}
+\DoxyCodeLine{22         \}}
+\DoxyCodeLine{23 \};}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{class }\mbox{\hyperlink{class_invalid_c_n_p_j_exception}{InvalidCNPJException}} : \textcolor{keyword}{public} std::exception}
+\DoxyCodeLine{26 \{}
+\DoxyCodeLine{27     \textcolor{keyword}{public}:}
+\DoxyCodeLine{28         \mbox{\hyperlink{class_invalid_c_n_p_j_exception_ac96d8756565fc78742928cd0aaa571e8}{InvalidCNPJException}}() \{\}}
+\DoxyCodeLine{29         \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \mbox{\hyperlink{class_invalid_c_n_p_j_exception_aab4ea0abbd7d39d078fbe33479b70011}{what}}() \textcolor{keyword}{const} throw()}
+\DoxyCodeLine{30         \{}
+\DoxyCodeLine{31             \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}CNPJ inválido"{}};}
+\DoxyCodeLine{32         \}}
+\DoxyCodeLine{33 \};}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{keyword}{class }\mbox{\hyperlink{class_invalid_c_p_f_c_n_p_j_exception}{InvalidCPFCNPJException}} : \textcolor{keyword}{public} std::exception}
+\DoxyCodeLine{36 \{}
+\DoxyCodeLine{37     \textcolor{keyword}{public}:}
+\DoxyCodeLine{38         \mbox{\hyperlink{class_invalid_c_p_f_c_n_p_j_exception_a9a8429f1439b04d4b8bf02f63914c1a8}{InvalidCPFCNPJException}}() \{\}}
+\DoxyCodeLine{39         \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \mbox{\hyperlink{class_invalid_c_p_f_c_n_p_j_exception_ad8082fd1f8feacf531d7423ddd28be6d}{what}}() \textcolor{keyword}{const} throw()}
+\DoxyCodeLine{40         \{}
+\DoxyCodeLine{41             \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}CPF/CNPJ inválido"{}};}
+\DoxyCodeLine{42         \}}
+\DoxyCodeLine{43 \};}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{keyword}{class }\mbox{\hyperlink{class_invalid_email_exception}{InvalidEmailException}} : \textcolor{keyword}{public} std::exception}
+\DoxyCodeLine{46 \{}
+\DoxyCodeLine{47     \textcolor{keyword}{public}:}
+\DoxyCodeLine{48         \mbox{\hyperlink{class_invalid_email_exception_a609bd7772382d5debfe5e2b3adeefe46}{InvalidEmailException}}() \{\}}
+\DoxyCodeLine{49         \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \mbox{\hyperlink{class_invalid_email_exception_af97881502125bb4d15f7cc74f1ff0318}{what}}() \textcolor{keyword}{const} throw()}
+\DoxyCodeLine{50         \{}
+\DoxyCodeLine{51             \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}Email inválido"{}};}
+\DoxyCodeLine{52         \}}
+\DoxyCodeLine{53 \};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{keyword}{class }\mbox{\hyperlink{class_invalid_type_exception}{InvalidTypeException}} : \textcolor{keyword}{public} std::exception}
+\DoxyCodeLine{56 \{}
+\DoxyCodeLine{57     \textcolor{keyword}{public}:}
+\DoxyCodeLine{58         \mbox{\hyperlink{class_invalid_type_exception_ae561d723db44e09199498503c9cf367d}{InvalidTypeException}}() \{\}}
+\DoxyCodeLine{59         \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \mbox{\hyperlink{class_invalid_type_exception_a28dfa304d5ef00d47f373df3b92bf269}{what}}() \textcolor{keyword}{const} throw()}
+\DoxyCodeLine{60         \{}
+\DoxyCodeLine{61             \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}Tipo inválido"{}};}
+\DoxyCodeLine{62         \}}
+\DoxyCodeLine{63 \};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{keyword}{class }\mbox{\hyperlink{class_invalid_salario_exception}{InvalidSalarioException}} : \textcolor{keyword}{public} std::exception}
+\DoxyCodeLine{66 \{}
+\DoxyCodeLine{67     \textcolor{keyword}{public}:}
+\DoxyCodeLine{68         \mbox{\hyperlink{class_invalid_salario_exception_a028cb6f97f194feb9598fe180b497e46}{InvalidSalarioException}}() \{\}}
+\DoxyCodeLine{69         \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \mbox{\hyperlink{class_invalid_salario_exception_a465b90da13eefdb241c14520072899ae}{what}}() \textcolor{keyword}{const} throw()}
+\DoxyCodeLine{70         \{}
+\DoxyCodeLine{71             \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}Salário inválido"{}};}
+\DoxyCodeLine{72         \}}
+\DoxyCodeLine{73 \};}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \textcolor{keyword}{class }\mbox{\hyperlink{class_invalid_motivo_exception}{InvalidMotivoException}} : \textcolor{keyword}{public} std::exception}
+\DoxyCodeLine{76 \{}
+\DoxyCodeLine{77     \textcolor{keyword}{public}:}
+\DoxyCodeLine{78         \mbox{\hyperlink{class_invalid_motivo_exception_a29c105974207cfde7e398e7e01382ddd}{InvalidMotivoException}}() \{\}}
+\DoxyCodeLine{79         \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \mbox{\hyperlink{class_invalid_motivo_exception_ab751495b7780eea22c87605abc633fa2}{what}}() \textcolor{keyword}{const} throw()}
+\DoxyCodeLine{80         \{}
+\DoxyCodeLine{81             \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}Motivo inválido"{}};}
+\DoxyCodeLine{82         \}}
+\DoxyCodeLine{83 \};}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \textcolor{keyword}{class }\mbox{\hyperlink{class_invalid_telefone_exception}{InvalidTelefoneException}} : \textcolor{keyword}{public} std::exception}
+\DoxyCodeLine{87 \{}
+\DoxyCodeLine{88     \textcolor{keyword}{public}:}
+\DoxyCodeLine{89         \mbox{\hyperlink{class_invalid_telefone_exception_a11fb3891f8fb35264cef96ece4aa48b3}{InvalidTelefoneException}}() \{\}}
+\DoxyCodeLine{90         \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \mbox{\hyperlink{class_invalid_telefone_exception_a2960e84108c8dd3d76ca93e61a388d48}{what}}() \textcolor{keyword}{const} throw()}
+\DoxyCodeLine{91         \{}
+\DoxyCodeLine{92             \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}Telefone inválido"{}};}
+\DoxyCodeLine{93         \}}
+\DoxyCodeLine{94 \};}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 \textcolor{keyword}{class }\mbox{\hyperlink{class_invalid_quantidade_lote_exception}{InvalidQuantidadeLoteException}} : \textcolor{keyword}{public} std::exception}
+\DoxyCodeLine{97 \{}
+\DoxyCodeLine{98     \textcolor{keyword}{public}:}
+\DoxyCodeLine{99         \mbox{\hyperlink{class_invalid_quantidade_lote_exception_af117f92fb219087fd8c603c6f8537dee}{InvalidQuantidadeLoteException}}() \{\}}
+\DoxyCodeLine{100         \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \mbox{\hyperlink{class_invalid_quantidade_lote_exception_a435e5a91a9add875c5642a021b40d68e}{what}}() \textcolor{keyword}{const} throw()}
+\DoxyCodeLine{101         \{}
+\DoxyCodeLine{102             \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}Quantidade inválida"{}};}
+\DoxyCodeLine{103         \}}
+\DoxyCodeLine{104 \};}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107 \textcolor{keyword}{class }\mbox{\hyperlink{class_quantidade_de_venda_indisponivel_exception}{QuantidadeDeVendaIndisponivelException}} : \textcolor{keyword}{public} std::exception}
+\DoxyCodeLine{108 \{}
+\DoxyCodeLine{109     \textcolor{keyword}{public}:}
+\DoxyCodeLine{110         \mbox{\hyperlink{class_quantidade_de_venda_indisponivel_exception_a1d8b2f5f99c3741461055ce118a5cd0c}{QuantidadeDeVendaIndisponivelException}}() \{\}}
+\DoxyCodeLine{111         \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \mbox{\hyperlink{class_quantidade_de_venda_indisponivel_exception_ac289c94f5082e0e9c6415c59df10d38c}{what}}() \textcolor{keyword}{const} throw()}
+\DoxyCodeLine{112         \{}
+\DoxyCodeLine{113             \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}Quantidade de venda indisponível"{}};}
+\DoxyCodeLine{114         \}}
+\DoxyCodeLine{115 \};}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

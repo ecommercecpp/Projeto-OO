@@ -1,0 +1,137 @@
+\hypertarget{class_permissao}{}\doxysection{Referência da Classe Permissao}
+\label{class_permissao}\index{Permissao@{Permissao}}
+
+
+{\ttfamily \#include $<$permissao.\+hpp$>$}
+
+\doxysubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_permissao_a6c5557dc5d530f3773d38ba65f88dd9e}{Permissao}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_permissao}{Permissao}}\+:\+: \mbox{\hyperlink{class_permissao}{Permissao}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_permissao_ae248e88664dfc3fe15f36f0985578b3e}{edita\+Permissao}} (std\+::string, bool)
+\begin{DoxyCompactList}\small\item\em Edita a permissão que um usuário possui. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_permissao_acd24ea4ba5a9ca996827a0164db680b2}{edita\+Permissao}} (std\+::map$<$ std\+::string, bool $>$)
+\begin{DoxyCompactList}\small\item\em Edita a permissão que vários usuários possuem. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_permissao_a2d28282ce9a7fb612cc3b3b6b711ff6a}{tem\+Permisssao}} (std\+::string)
+\begin{DoxyCompactList}\small\item\em Retorna se o usuário tem permissão ou não. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_permissao_a1b88b816e7f0fd3fa69193c02237a41d}{gerar\+Log}} ()
+\begin{DoxyCompactList}\small\item\em Gera o log sobre as permissãos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Construtores e Destrutores}
+\mbox{\Hypertarget{class_permissao_a6c5557dc5d530f3773d38ba65f88dd9e}\label{class_permissao_a6c5557dc5d530f3773d38ba65f88dd9e}} 
+\index{Permissao@{Permissao}!Permissao@{Permissao}}
+\index{Permissao@{Permissao}!Permissao@{Permissao}}
+\doxysubsubsection{\texorpdfstring{Permissao()}{Permissao()}}
+{\footnotesize\ttfamily Permissao\+::\+Permissao (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{class_permissao}{Permissao}}\+:\+: \mbox{\hyperlink{class_permissao}{Permissao}} object. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{10 \{}
+\DoxyCodeLine{11 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Funções membros}
+\mbox{\Hypertarget{class_permissao_acd24ea4ba5a9ca996827a0164db680b2}\label{class_permissao_acd24ea4ba5a9ca996827a0164db680b2}} 
+\index{Permissao@{Permissao}!editaPermissao@{editaPermissao}}
+\index{editaPermissao@{editaPermissao}!Permissao@{Permissao}}
+\doxysubsubsection{\texorpdfstring{editaPermissao()}{editaPermissao()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Permissao\+::edita\+Permissao (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, bool $>$}]{permissao }\end{DoxyParamCaption})}
+
+
+
+Edita a permissão que vários usuários possuem. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em permissao} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{30 \{}
+\DoxyCodeLine{31     this-\/>permissao = permissao;}
+\DoxyCodeLine{32 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_permissao_ae248e88664dfc3fe15f36f0985578b3e}\label{class_permissao_ae248e88664dfc3fe15f36f0985578b3e}} 
+\index{Permissao@{Permissao}!editaPermissao@{editaPermissao}}
+\index{editaPermissao@{editaPermissao}!Permissao@{Permissao}}
+\doxysubsubsection{\texorpdfstring{editaPermissao()}{editaPermissao()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Permissao\+::edita\+Permissao (\begin{DoxyParamCaption}\item[{std\+::string}]{permissao,  }\item[{bool}]{valor }\end{DoxyParamCaption})}
+
+
+
+Edita a permissão que um usuário possui. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em permissao} & \\
+\hline
+{\em valor} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21     this-\/>permissao[permissao] = valor;}
+\DoxyCodeLine{22 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_permissao_a1b88b816e7f0fd3fa69193c02237a41d}\label{class_permissao_a1b88b816e7f0fd3fa69193c02237a41d}} 
+\index{Permissao@{Permissao}!gerarLog@{gerarLog}}
+\index{gerarLog@{gerarLog}!Permissao@{Permissao}}
+\doxysubsubsection{\texorpdfstring{gerarLog()}{gerarLog()}}
+{\footnotesize\ttfamily void Permissao\+::gerar\+Log (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gera o log sobre as permissãos. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{51 \{}
+\DoxyCodeLine{52     std::cout << \textcolor{stringliteral}{"{}Log gerado"{}} << std::endl;}
+\DoxyCodeLine{53 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_permissao_a2d28282ce9a7fb612cc3b3b6b711ff6a}\label{class_permissao_a2d28282ce9a7fb612cc3b3b6b711ff6a}} 
+\index{Permissao@{Permissao}!temPermisssao@{temPermisssao}}
+\index{temPermisssao@{temPermisssao}!Permissao@{Permissao}}
+\doxysubsubsection{\texorpdfstring{temPermisssao()}{temPermisssao()}}
+{\footnotesize\ttfamily bool Permissao\+::tem\+Permisssao (\begin{DoxyParamCaption}\item[{std\+::string}]{permissao }\end{DoxyParamCaption})}
+
+
+
+Retorna se o usuário tem permissão ou não. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em permissao} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+true 
+
+false 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{42 \{}
+\DoxyCodeLine{43     \textcolor{keywordflow}{return} this-\/>permissao[permissao];}
+\DoxyCodeLine{44 \}}
+
+\end{DoxyCode}
+
+
+A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/felip/\+One\+Drive/\+Documentos/\+Git\+Hub/poo/include/\mbox{\hyperlink{permissao_8hpp}{permissao.\+hpp}}\item 
+C\+:/\+Users/felip/\+One\+Drive/\+Documentos/\+Git\+Hub/poo/src/\mbox{\hyperlink{permissao_8cpp}{permissao.\+cpp}}\end{DoxyCompactItemize}

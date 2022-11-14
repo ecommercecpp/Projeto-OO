@@ -1,0 +1,204 @@
+\hypertarget{class_formato}{}\doxysection{Referência da Classe Formato}
+\label{class_formato}\index{Formato@{Formato}}
+
+
+{\ttfamily \#include $<$Formato.\+h$>$}
+
+\doxysubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_formato_a3507112bdcc4ad07bb50860990f96eb1}{Formato}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_formato}{Formato}}\+:\+: \mbox{\hyperlink{class_formato}{Formato}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_formato_ad96f47ef9ee5740a09cbb28f37186d22}{Formato}} (string val\+Nome)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_formato}{Formato}}\+:\+: \mbox{\hyperlink{class_formato}{Formato}} object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_formato_a29088719b22fa8487fed286981635c7d}{$\sim$\+Formato}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{class_formato}{Formato}}\+:\+: \mbox{\hyperlink{class_formato}{Formato}} object. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_formato_ab2e77bcf1e36e8d03e04289fe45564b5}{get\+Nome}} ()
+\begin{DoxyCompactList}\small\item\em Retorna o nome do formato. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_formato_a97c9de4de2452659242a05c1b9f29d42}{get\+Separador\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Retorna o separador de data. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_formato_ab9f09dc6bb64793046855c74f1305fa4}{get\+Separador\+Horario}} ()
+\begin{DoxyCompactList}\small\item\em Retorna o separador de horario. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_formato_a3507112bdcc4ad07bb50860990f96eb1}{Formato}} ()
+\item 
+\mbox{\hyperlink{class_formato_ad96f47ef9ee5740a09cbb28f37186d22}{Formato}} (string val\+Nome)
+\item 
+virtual \mbox{\hyperlink{class_formato_a88ec09216ef3c17e9d1c12f9b72787a9}{$\sim$\+Formato}} ()
+\item 
+string \mbox{\hyperlink{class_formato_ab2e77bcf1e36e8d03e04289fe45564b5}{get\+Nome}} ()
+\item 
+string \mbox{\hyperlink{class_formato_a97c9de4de2452659242a05c1b9f29d42}{get\+Separador\+Data}} ()
+\item 
+string \mbox{\hyperlink{class_formato_ab9f09dc6bb64793046855c74f1305fa4}{get\+Separador\+Horario}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Construtores e Destrutores}
+\mbox{\Hypertarget{class_formato_a3507112bdcc4ad07bb50860990f96eb1}\label{class_formato_a3507112bdcc4ad07bb50860990f96eb1}} 
+\index{Formato@{Formato}!Formato@{Formato}}
+\index{Formato@{Formato}!Formato@{Formato}}
+\doxysubsubsection{\texorpdfstring{Formato()}{Formato()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Formato\+::\+Formato (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{class_formato}{Formato}}\+:\+: \mbox{\hyperlink{class_formato}{Formato}} object. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{16 \{}
+\DoxyCodeLine{17     nome = \textcolor{stringliteral}{"{}PT-\/BR"{}};}
+\DoxyCodeLine{18     separadorData = \textcolor{charliteral}{'/'};}
+\DoxyCodeLine{19     separadorHorario = \textcolor{charliteral}{':'};}
+\DoxyCodeLine{20 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_formato_ad96f47ef9ee5740a09cbb28f37186d22}\label{class_formato_ad96f47ef9ee5740a09cbb28f37186d22}} 
+\index{Formato@{Formato}!Formato@{Formato}}
+\index{Formato@{Formato}!Formato@{Formato}}
+\doxysubsubsection{\texorpdfstring{Formato()}{Formato()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Formato\+::\+Formato (\begin{DoxyParamCaption}\item[{string}]{val\+Nome }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{class_formato}{Formato}}\+:\+: \mbox{\hyperlink{class_formato}{Formato}} object. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em val\+Nome} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{28 \{}
+\DoxyCodeLine{29     nome = valNome;}
+\DoxyCodeLine{30     \textcolor{keywordflow}{if} (strcmp(valNome.c\_str(), \textcolor{stringliteral}{"{}PT-\/BR"{}}) == 0)}
+\DoxyCodeLine{31         separadorData = \textcolor{charliteral}{'/'};}
+\DoxyCodeLine{32     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strcmp(valNome.c\_str(), \textcolor{stringliteral}{"{}EN-\/US"{}}) == 0)}
+\DoxyCodeLine{33         separadorData = \textcolor{charliteral}{'-\/'};}
+\DoxyCodeLine{34     separadorHorario = \textcolor{charliteral}{':'};}
+\DoxyCodeLine{35 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_formato_a29088719b22fa8487fed286981635c7d}\label{class_formato_a29088719b22fa8487fed286981635c7d}} 
+\index{Formato@{Formato}!````~Formato@{$\sim$Formato}}
+\index{````~Formato@{$\sim$Formato}!Formato@{Formato}}
+\doxysubsubsection{\texorpdfstring{$\sim$Formato()}{~Formato()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Formato\+::$\sim$\+Formato (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destroy the \mbox{\hyperlink{class_formato}{Formato}}\+:\+: \mbox{\hyperlink{class_formato}{Formato}} object. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{41 \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_formato_a3507112bdcc4ad07bb50860990f96eb1}\label{class_formato_a3507112bdcc4ad07bb50860990f96eb1}} 
+\index{Formato@{Formato}!Formato@{Formato}}
+\index{Formato@{Formato}!Formato@{Formato}}
+\doxysubsubsection{\texorpdfstring{Formato()}{Formato()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Formato\+::\+Formato (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_formato_ad96f47ef9ee5740a09cbb28f37186d22}\label{class_formato_ad96f47ef9ee5740a09cbb28f37186d22}} 
+\index{Formato@{Formato}!Formato@{Formato}}
+\index{Formato@{Formato}!Formato@{Formato}}
+\doxysubsubsection{\texorpdfstring{Formato()}{Formato()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Formato\+::\+Formato (\begin{DoxyParamCaption}\item[{string}]{val\+Nome }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_formato_a88ec09216ef3c17e9d1c12f9b72787a9}\label{class_formato_a88ec09216ef3c17e9d1c12f9b72787a9}} 
+\index{Formato@{Formato}!````~Formato@{$\sim$Formato}}
+\index{````~Formato@{$\sim$Formato}!Formato@{Formato}}
+\doxysubsubsection{\texorpdfstring{$\sim$Formato()}{~Formato()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual Formato\+::$\sim$\+Formato (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Funções membros}
+\mbox{\Hypertarget{class_formato_ab2e77bcf1e36e8d03e04289fe45564b5}\label{class_formato_ab2e77bcf1e36e8d03e04289fe45564b5}} 
+\index{Formato@{Formato}!getNome@{getNome}}
+\index{getNome@{getNome}!Formato@{Formato}}
+\doxysubsubsection{\texorpdfstring{getNome()}{getNome()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily string Formato\+::get\+Nome (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna o nome do formato. 
+
+\begin{DoxyReturn}{Retorna}
+string 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{49 \{}
+\DoxyCodeLine{50     \textcolor{keywordflow}{return} nome;}
+\DoxyCodeLine{51 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_formato_ab2e77bcf1e36e8d03e04289fe45564b5}\label{class_formato_ab2e77bcf1e36e8d03e04289fe45564b5}} 
+\index{Formato@{Formato}!getNome@{getNome}}
+\index{getNome@{getNome}!Formato@{Formato}}
+\doxysubsubsection{\texorpdfstring{getNome()}{getNome()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily string Formato\+::get\+Nome (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_formato_a97c9de4de2452659242a05c1b9f29d42}\label{class_formato_a97c9de4de2452659242a05c1b9f29d42}} 
+\index{Formato@{Formato}!getSeparadorData@{getSeparadorData}}
+\index{getSeparadorData@{getSeparadorData}!Formato@{Formato}}
+\doxysubsubsection{\texorpdfstring{getSeparadorData()}{getSeparadorData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily string Formato\+::get\+Separador\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna o separador de data. 
+
+\begin{DoxyReturn}{Retorna}
+string 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{59 \{}
+\DoxyCodeLine{60     \textcolor{keywordflow}{return} separadorData;}
+\DoxyCodeLine{61 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_formato_a97c9de4de2452659242a05c1b9f29d42}\label{class_formato_a97c9de4de2452659242a05c1b9f29d42}} 
+\index{Formato@{Formato}!getSeparadorData@{getSeparadorData}}
+\index{getSeparadorData@{getSeparadorData}!Formato@{Formato}}
+\doxysubsubsection{\texorpdfstring{getSeparadorData()}{getSeparadorData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily string Formato\+::get\+Separador\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_formato_ab9f09dc6bb64793046855c74f1305fa4}\label{class_formato_ab9f09dc6bb64793046855c74f1305fa4}} 
+\index{Formato@{Formato}!getSeparadorHorario@{getSeparadorHorario}}
+\index{getSeparadorHorario@{getSeparadorHorario}!Formato@{Formato}}
+\doxysubsubsection{\texorpdfstring{getSeparadorHorario()}{getSeparadorHorario()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily string Formato\+::get\+Separador\+Horario (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna o separador de horario. 
+
+\begin{DoxyReturn}{Retorna}
+string 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{69 \{}
+\DoxyCodeLine{70     \textcolor{keywordflow}{return} separadorHorario;}
+\DoxyCodeLine{71 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_formato_ab9f09dc6bb64793046855c74f1305fa4}\label{class_formato_ab9f09dc6bb64793046855c74f1305fa4}} 
+\index{Formato@{Formato}!getSeparadorHorario@{getSeparadorHorario}}
+\index{getSeparadorHorario@{getSeparadorHorario}!Formato@{Formato}}
+\doxysubsubsection{\texorpdfstring{getSeparadorHorario()}{getSeparadorHorario()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily string Formato\+::get\+Separador\+Horario (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/felip/\+One\+Drive/\+Documentos/\+Git\+Hub/poo/include/\mbox{\hyperlink{include_2_formato_8h}{Formato.\+h}}\item 
+C\+:/\+Users/felip/\+One\+Drive/\+Documentos/\+Git\+Hub/poo/third\+\_\+party/\+Classe Data/\mbox{\hyperlink{third__party_2_classe_01_data_2_formato_8h}{Formato.\+h}}\item 
+C\+:/\+Users/felip/\+One\+Drive/\+Documentos/\+Git\+Hub/poo/src/\mbox{\hyperlink{src_2_formato_8cpp}{Formato.\+cpp}}\item 
+C\+:/\+Users/felip/\+One\+Drive/\+Documentos/\+Git\+Hub/poo/third\+\_\+party/\+Classe Data/\mbox{\hyperlink{third__party_2_classe_01_data_2_formato_8cpp}{Formato.\+cpp}}\end{DoxyCompactItemize}

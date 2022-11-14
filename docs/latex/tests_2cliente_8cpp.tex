@@ -1,0 +1,32 @@
+\hypertarget{tests_2cliente_8cpp}{}\doxysection{Referência do Arquivo C\+:/\+Users/felip/\+One\+Drive/\+Documentos/\+Git\+Hub/poo/tests/cliente.cpp}
+\label{tests_2cliente_8cpp}\index{C:/Users/felip/OneDrive/Documentos/GitHub/poo/tests/cliente.cpp@{C:/Users/felip/OneDrive/Documentos/GitHub/poo/tests/cliente.cpp}}
+{\ttfamily \#include \char`\"{}cliente.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}doctest\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}exceptions.\+hpp\char`\"{}}\newline
+\doxysubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{tests_2cliente_8cpp_af9af44a4aa8fd29e41c92cdf98821cad}{TEST\+\_\+\+CASE}} (\char`\"{}Testando inialização do cliente\char`\"{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Funções}
+\mbox{\Hypertarget{tests_2cliente_8cpp_af9af44a4aa8fd29e41c92cdf98821cad}\label{tests_2cliente_8cpp_af9af44a4aa8fd29e41c92cdf98821cad}} 
+\index{cliente.cpp@{cliente.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!cliente.cpp@{cliente.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}}
+{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{\char`\"{}Testando inialização do cliente\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{6 \{}
+\DoxyCodeLine{7     CHECK\_NOTHROW(\mbox{\hyperlink{class_cliente}{Cliente}}());}
+\DoxyCodeLine{8     \textcolor{comment}{// testa um cliente cpf}}
+\DoxyCodeLine{9     CHECK\_NOTHROW(\mbox{\hyperlink{class_cliente}{Cliente}}(\textcolor{stringliteral}{"{}Cliente de Testes"{}}, \textcolor{stringliteral}{"{}18130552035"{}}, \textcolor{stringliteral}{"{}Rua de Testes"{}}, \textcolor{stringliteral}{"{}email@email.com"{}}, 0, \textcolor{stringliteral}{"{}3199999999"{}}));}
+\DoxyCodeLine{10     \textcolor{comment}{// testa um cliente com cnpj}}
+\DoxyCodeLine{11     CHECK\_NOTHROW(\mbox{\hyperlink{class_cliente}{Cliente}}(\textcolor{stringliteral}{"{}Cliente de Testes"{}}, \textcolor{stringliteral}{"{}16106859000110"{}}, \textcolor{stringliteral}{"{}Rua de Testes"{}}, \textcolor{stringliteral}{"{}email@email.com"{}}, 1, \textcolor{stringliteral}{"{}31999999999"{}}));}
+\DoxyCodeLine{12     \textcolor{comment}{// testa com um telefone invalido}}
+\DoxyCodeLine{13     CHECK\_THROWS\_AS(\mbox{\hyperlink{class_cliente}{Cliente}}(\textcolor{stringliteral}{"{}Cliente de Testes"{}}, \textcolor{stringliteral}{"{}16106859000110"{}}, \textcolor{stringliteral}{"{}Rua de Testes"{}}, \textcolor{stringliteral}{"{}email@email.com"{}}, 1, \textcolor{stringliteral}{"{}1"{}}), \mbox{\hyperlink{class_invalid_telefone_exception}{InvalidTelefoneException}});}
+\DoxyCodeLine{14 \}}
+
+\end{DoxyCode}

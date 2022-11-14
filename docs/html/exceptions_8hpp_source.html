@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.5"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Sistema de Gerenciamento de uma Indústria: Código-Fonte de C:/Users/felip/OneDrive/Documentos/GitHub/poo/include/exceptions.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Sistema de Gerenciamento de uma Indústria<span id="projectnumber">&#160;2.0</span>
+   </div>
+   <div id="projectbrief">Trabalho Prático POO | UFMG</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.5 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhum resultado encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">exceptions.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="exceptions_8hpp.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef _EXCEPTIONS_HPP_</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define _EXCEPTIONS_HPP_</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;exception&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="class_acess_denied_exception.html">    6</a></span><span class="keyword">class </span><a class="code hl_class" href="class_acess_denied_exception.html">AcessDeniedException</a> : <span class="keyword">public</span> std::exception</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="class_acess_denied_exception.html#a040230c80e7f58ae0975c5902bfa8563">    9</a></span>        <a class="code hl_function" href="class_acess_denied_exception.html#a040230c80e7f58ae0975c5902bfa8563">AcessDeniedException</a>() {}</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_acess_denied_exception.html#a21aea233a906a5ad639c58159bb926a6">   10</a></span>        <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_function" href="class_acess_denied_exception.html#a21aea233a906a5ad639c58159bb926a6">what</a>() <span class="keyword">const</span> throw()</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;Permissao de acesso negada&quot;</span>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        }</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>};</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_invalid_c_p_f_exception.html">   15</a></span><span class="keyword">class </span><a class="code hl_class" href="class_invalid_c_p_f_exception.html">InvalidCPFException</a> : <span class="keyword">public</span> std::exception</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_invalid_c_p_f_exception.html#a86eea234b8c1c24a26f20dba0d13896b">   18</a></span>        <a class="code hl_function" href="class_invalid_c_p_f_exception.html#a86eea234b8c1c24a26f20dba0d13896b">InvalidCPFException</a>() {}</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_invalid_c_p_f_exception.html#aa7e43c0c8ea1214e2b19abe3dde7f7c7">   19</a></span>        <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_function" href="class_invalid_c_p_f_exception.html#aa7e43c0c8ea1214e2b19abe3dde7f7c7">what</a>() <span class="keyword">const</span> throw()</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;CPF inválido&quot;</span>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        }</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>};</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_invalid_c_n_p_j_exception.html">   25</a></span><span class="keyword">class </span><a class="code hl_class" href="class_invalid_c_n_p_j_exception.html">InvalidCNPJException</a> : <span class="keyword">public</span> std::exception</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>{</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_invalid_c_n_p_j_exception.html#ac96d8756565fc78742928cd0aaa571e8">   28</a></span>        <a class="code hl_function" href="class_invalid_c_n_p_j_exception.html#ac96d8756565fc78742928cd0aaa571e8">InvalidCNPJException</a>() {}</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_invalid_c_n_p_j_exception.html#aab4ea0abbd7d39d078fbe33479b70011">   29</a></span>        <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_function" href="class_invalid_c_n_p_j_exception.html#aab4ea0abbd7d39d078fbe33479b70011">what</a>() <span class="keyword">const</span> throw()</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;CNPJ inválido&quot;</span>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        }</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>};</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="class_invalid_c_p_f_c_n_p_j_exception.html">   35</a></span><span class="keyword">class </span><a class="code hl_class" href="class_invalid_c_p_f_c_n_p_j_exception.html">InvalidCPFCNPJException</a> : <span class="keyword">public</span> std::exception</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>{</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="class_invalid_c_p_f_c_n_p_j_exception.html#a9a8429f1439b04d4b8bf02f63914c1a8">   38</a></span>        <a class="code hl_function" href="class_invalid_c_p_f_c_n_p_j_exception.html#a9a8429f1439b04d4b8bf02f63914c1a8">InvalidCPFCNPJException</a>() {}</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="class_invalid_c_p_f_c_n_p_j_exception.html#ad8082fd1f8feacf531d7423ddd28be6d">   39</a></span>        <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_function" href="class_invalid_c_p_f_c_n_p_j_exception.html#ad8082fd1f8feacf531d7423ddd28be6d">what</a>() <span class="keyword">const</span> throw()</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;CPF/CNPJ inválido&quot;</span>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        }</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>};</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="class_invalid_email_exception.html">   45</a></span><span class="keyword">class </span><a class="code hl_class" href="class_invalid_email_exception.html">InvalidEmailException</a> : <span class="keyword">public</span> std::exception</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>{</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="class_invalid_email_exception.html#a609bd7772382d5debfe5e2b3adeefe46">   48</a></span>        <a class="code hl_function" href="class_invalid_email_exception.html#a609bd7772382d5debfe5e2b3adeefe46">InvalidEmailException</a>() {}</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="class_invalid_email_exception.html#af97881502125bb4d15f7cc74f1ff0318">   49</a></span>        <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_function" href="class_invalid_email_exception.html#af97881502125bb4d15f7cc74f1ff0318">what</a>() <span class="keyword">const</span> throw()</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;Email inválido&quot;</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        }</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>};</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="class_invalid_type_exception.html">   55</a></span><span class="keyword">class </span><a class="code hl_class" href="class_invalid_type_exception.html">InvalidTypeException</a> : <span class="keyword">public</span> std::exception</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>{</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="class_invalid_type_exception.html#ae561d723db44e09199498503c9cf367d">   58</a></span>        <a class="code hl_function" href="class_invalid_type_exception.html#ae561d723db44e09199498503c9cf367d">InvalidTypeException</a>() {}</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="class_invalid_type_exception.html#a28dfa304d5ef00d47f373df3b92bf269">   59</a></span>        <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_function" href="class_invalid_type_exception.html#a28dfa304d5ef00d47f373df3b92bf269">what</a>() <span class="keyword">const</span> throw()</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;Tipo inválido&quot;</span>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        }</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>};</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="class_invalid_salario_exception.html">   65</a></span><span class="keyword">class </span><a class="code hl_class" href="class_invalid_salario_exception.html">InvalidSalarioException</a> : <span class="keyword">public</span> std::exception</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>{</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="class_invalid_salario_exception.html#a028cb6f97f194feb9598fe180b497e46">   68</a></span>        <a class="code hl_function" href="class_invalid_salario_exception.html#a028cb6f97f194feb9598fe180b497e46">InvalidSalarioException</a>() {}</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="class_invalid_salario_exception.html#a465b90da13eefdb241c14520072899ae">   69</a></span>        <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_function" href="class_invalid_salario_exception.html#a465b90da13eefdb241c14520072899ae">what</a>() <span class="keyword">const</span> throw()</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;Salário inválido&quot;</span>;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        }</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>};</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="class_invalid_motivo_exception.html">   75</a></span><span class="keyword">class </span><a class="code hl_class" href="class_invalid_motivo_exception.html">InvalidMotivoException</a> : <span class="keyword">public</span> std::exception</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>{</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="class_invalid_motivo_exception.html#a29c105974207cfde7e398e7e01382ddd">   78</a></span>        <a class="code hl_function" href="class_invalid_motivo_exception.html#a29c105974207cfde7e398e7e01382ddd">InvalidMotivoException</a>() {}</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="class_invalid_motivo_exception.html#ab751495b7780eea22c87605abc633fa2">   79</a></span>        <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_function" href="class_invalid_motivo_exception.html#ab751495b7780eea22c87605abc633fa2">what</a>() <span class="keyword">const</span> throw()</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        {</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;Motivo inválido&quot;</span>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        }</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>};</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="class_invalid_telefone_exception.html">   86</a></span><span class="keyword">class </span><a class="code hl_class" href="class_invalid_telefone_exception.html">InvalidTelefoneException</a> : <span class="keyword">public</span> std::exception</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>{</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="class_invalid_telefone_exception.html#a11fb3891f8fb35264cef96ece4aa48b3">   89</a></span>        <a class="code hl_function" href="class_invalid_telefone_exception.html#a11fb3891f8fb35264cef96ece4aa48b3">InvalidTelefoneException</a>() {}</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="class_invalid_telefone_exception.html#a2960e84108c8dd3d76ca93e61a388d48">   90</a></span>        <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_function" href="class_invalid_telefone_exception.html#a2960e84108c8dd3d76ca93e61a388d48">what</a>() <span class="keyword">const</span> throw()</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        {</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;Telefone inválido&quot;</span>;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        }</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>};</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="class_invalid_quantidade_lote_exception.html">   96</a></span><span class="keyword">class </span><a class="code hl_class" href="class_invalid_quantidade_lote_exception.html">InvalidQuantidadeLoteException</a> : <span class="keyword">public</span> std::exception</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>{</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="class_invalid_quantidade_lote_exception.html#af117f92fb219087fd8c603c6f8537dee">   99</a></span>        <a class="code hl_function" href="class_invalid_quantidade_lote_exception.html#af117f92fb219087fd8c603c6f8537dee">InvalidQuantidadeLoteException</a>() {}</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="class_invalid_quantidade_lote_exception.html#a435e5a91a9add875c5642a021b40d68e">  100</a></span>        <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_function" href="class_invalid_quantidade_lote_exception.html#a435e5a91a9add875c5642a021b40d68e">what</a>() <span class="keyword">const</span> throw()</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        {</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;Quantidade inválida&quot;</span>;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        }</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>};</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="class_quantidade_de_venda_indisponivel_exception.html">  107</a></span><span class="keyword">class </span><a class="code hl_class" href="class_quantidade_de_venda_indisponivel_exception.html">QuantidadeDeVendaIndisponivelException</a> : <span class="keyword">public</span> std::exception</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>{</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="class_quantidade_de_venda_indisponivel_exception.html#a1d8b2f5f99c3741461055ce118a5cd0c">  110</a></span>        <a class="code hl_function" href="class_quantidade_de_venda_indisponivel_exception.html#a1d8b2f5f99c3741461055ce118a5cd0c">QuantidadeDeVendaIndisponivelException</a>() {}</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="class_quantidade_de_venda_indisponivel_exception.html#ac289c94f5082e0e9c6415c59df10d38c">  111</a></span>        <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_function" href="class_quantidade_de_venda_indisponivel_exception.html#ac289c94f5082e0e9c6415c59df10d38c">what</a>() <span class="keyword">const</span> throw()</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        {</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;Quantidade de venda indisponível&quot;</span>;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        }</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>};</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_acess_denied_exception_html"><div class="ttname"><a href="class_acess_denied_exception.html">AcessDeniedException</a></div><div class="ttdef"><b>Definition:</b> exceptions.hpp:7</div></div>
+<div class="ttc" id="aclass_acess_denied_exception_html_a040230c80e7f58ae0975c5902bfa8563"><div class="ttname"><a href="class_acess_denied_exception.html#a040230c80e7f58ae0975c5902bfa8563">AcessDeniedException::AcessDeniedException</a></div><div class="ttdeci">AcessDeniedException()</div><div class="ttdef"><b>Definition:</b> exceptions.hpp:9</div></div>
+<div class="ttc" id="aclass_acess_denied_exception_html_a21aea233a906a5ad639c58159bb926a6"><div class="ttname"><a href="class_acess_denied_exception.html#a21aea233a906a5ad639c58159bb926a6">AcessDeniedException::what</a></div><div class="ttdeci">const char * what() const</div><div class="ttdef"><b>Definition:</b> exceptions.hpp:10</div></div>
+<div class="ttc" id="aclass_invalid_c_n_p_j_exception_html"><div class="ttname"><a href="class_invalid_c_n_p_j_exception.html">InvalidCNPJException</a></div><div class="ttdef"><b>Definition:</b> exceptions.hpp:26</div></div>
+<div class="ttc" id="aclass_invalid_c_n_p_j_exception_html_aab4ea0abbd7d39d078fbe33479b70011"><div class="ttname"><a href="class_invalid_c_n_p_j_exception.html#aab4ea0abbd7d39d078fbe33479b70011">InvalidCNPJException::what</a></div><div class="ttdeci">const char * what() const</div><div class="ttdef"><b>Definition:</b> exceptions.hpp:29</div></div>
+<div class="ttc" id="aclass_invalid_c_n_p_j_exception_html_ac96d8756565fc78742928cd0aaa571e8"><div class="ttname"><a href="class_invalid_c_n_p_j_exception.html#ac96d8756565fc78742928cd0aaa571e8">InvalidCNPJException::InvalidCNPJException</a></div><div class="ttdeci">InvalidCNPJException()</div><div class="ttdef"><b>Definition:</b> exceptions.hpp:28</div></div>
+<div class="ttc" id="aclass_invalid_c_p_f_c_n_p_j_exception_html"><div class="ttname"><a href="class_invalid_c_p_f_c_n_p_j_exception.html">InvalidCPFCNPJException</a></div><div class="ttdef"><b>Definition:</b> exceptions.hpp:36</div></div>
+<div class="ttc" id="aclass_invalid_c_p_f_c_n_p_j_exception_html_a9a8429f1439b04d4b8bf02f63914c1a8"><div class="ttname"><a href="class_invalid_c_p_f_c_n_p_j_exception.html#a9a8429f1439b04d4b8bf02f63914c1a8">InvalidCPFCNPJException::InvalidCPFCNPJException</a></div><div class="ttdeci">InvalidCPFCNPJException()</div><div class="ttdef"><b>Definition:</b> exceptions.hpp:38</div></div>
+<div class="ttc" id="aclass_invalid_c_p_f_c_n_p_j_exception_html_ad8082fd1f8feacf531d7423ddd28be6d"><div class="ttname"><a href="class_invalid_c_p_f_c_n_p_j_exception.html#ad8082fd1f8feacf531d7423ddd28be6d">InvalidCPFCNPJException::what</a></div><div class="ttdeci">const char * what() const</div><div class="ttdef"><b>Definition:</b> exceptions.hpp:39</div></div>
+<div class="ttc" id="aclass_invalid_c_p_f_exception_html"><div class="ttname"><a href="class_invalid_c_p_f_exception.html">InvalidCPFException</a></div><div class="ttdef"><b>Definition:</b> exceptions.hpp:16</div></div>
+<div class="ttc" id="aclass_invalid_c_p_f_exception_html_a86eea234b8c1c24a26f20dba0d13896b"><div class="ttname"><a href="class_invalid_c_p_f_exception.html#a86eea234b8c1c24a26f20dba0d13896b">InvalidCPFException::InvalidCPFException</a></div><div class="ttdeci">InvalidCPFException()</div><div class="ttdef"><b>Definition:</b> exceptions.hpp:18</div></div>
+<div class="ttc" id="aclass_invalid_c_p_f_exception_html_aa7e43c0c8ea1214e2b19abe3dde7f7c7"><div class="ttname"><a href="class_invalid_c_p_f_exception.html#aa7e43c0c8ea1214e2b19abe3dde7f7c7">InvalidCPFException::what</a></div><div class="ttdeci">const char * what() const</div><div class="ttdef"><b>Definition:</b> exceptions.hpp:19</div></div>
+<div class="ttc" id="aclass_invalid_email_exception_html"><div class="ttname"><a href="class_invalid_email_exception.html">InvalidEmailException</a></div><div class="ttdef"><b>Definition:</b> exceptions.hpp:46</div></div>
+<div class="ttc" id="aclass_invalid_email_exception_html_a609bd7772382d5debfe5e2b3adeefe46"><div class="ttname"><a href="class_invalid_email_exception.html#a609bd7772382d5debfe5e2b3adeefe46">InvalidEmailException::InvalidEmailException</a></div><div class="ttdeci">InvalidEmailException()</div><div class="ttdef"><b>Definition:</b> exceptions.hpp:48</div></div>
+<div class="ttc" id="aclass_invalid_email_exception_html_af97881502125bb4d15f7cc74f1ff0318"><div class="ttname"><a href="class_invalid_email_exception.html#af97881502125bb4d15f7cc74f1ff0318">InvalidEmailException::what</a></div><div class="ttdeci">const char * what() const</div><div class="ttdef"><b>Definition:</b> exceptions.hpp:49</div></div>
+<div class="ttc" id="aclass_invalid_motivo_exception_html"><div class="ttname"><a href="class_invalid_motivo_exception.html">InvalidMotivoException</a></div><div class="ttdef"><b>Definition:</b> exceptions.hpp:76</div></div>
+<div class="ttc" id="aclass_invalid_motivo_exception_html_a29c105974207cfde7e398e7e01382ddd"><div class="ttname"><a href="class_invalid_motivo_exception.html#a29c105974207cfde7e398e7e01382ddd">InvalidMotivoException::InvalidMotivoException</a></div><div class="ttdeci">InvalidMotivoException()</div><div class="ttdef"><b>Definition:</b> exceptions.hpp:78</div></div>
+<div class="ttc" id="aclass_invalid_motivo_exception_html_ab751495b7780eea22c87605abc633fa2"><div class="ttname"><a href="class_invalid_motivo_exception.html#ab751495b7780eea22c87605abc633fa2">InvalidMotivoException::what</a></div><div class="ttdeci">const char * what() const</div><div class="ttdef"><b>Definition:</b> exceptions.hpp:79</div></div>
+<div class="ttc" id="aclass_invalid_quantidade_lote_exception_html"><div class="ttname"><a href="class_invalid_quantidade_lote_exception.html">InvalidQuantidadeLoteException</a></div><div class="ttdef"><b>Definition:</b> exceptions.hpp:97</div></div>
+<div class="ttc" id="aclass_invalid_quantidade_lote_exception_html_a435e5a91a9add875c5642a021b40d68e"><div class="ttname"><a href="class_invalid_quantidade_lote_exception.html#a435e5a91a9add875c5642a021b40d68e">InvalidQuantidadeLoteException::what</a></div><div class="ttdeci">const char * what() const</div><div class="ttdef"><b>Definition:</b> exceptions.hpp:100</div></div>
+<div class="ttc" id="aclass_invalid_quantidade_lote_exception_html_af117f92fb219087fd8c603c6f8537dee"><div class="ttname"><a href="class_invalid_quantidade_lote_exception.html#af117f92fb219087fd8c603c6f8537dee">InvalidQuantidadeLoteException::InvalidQuantidadeLoteException</a></div><div class="ttdeci">InvalidQuantidadeLoteException()</div><div class="ttdef"><b>Definition:</b> exceptions.hpp:99</div></div>
+<div class="ttc" id="aclass_invalid_salario_exception_html"><div class="ttname"><a href="class_invalid_salario_exception.html">InvalidSalarioException</a></div><div class="ttdef"><b>Definition:</b> exceptions.hpp:66</div></div>
+<div class="ttc" id="aclass_invalid_salario_exception_html_a028cb6f97f194feb9598fe180b497e46"><div class="ttname"><a href="class_invalid_salario_exception.html#a028cb6f97f194feb9598fe180b497e46">InvalidSalarioException::InvalidSalarioException</a></div><div class="ttdeci">InvalidSalarioException()</div><div class="ttdef"><b>Definition:</b> exceptions.hpp:68</div></div>
+<div class="ttc" id="aclass_invalid_salario_exception_html_a465b90da13eefdb241c14520072899ae"><div class="ttname"><a href="class_invalid_salario_exception.html#a465b90da13eefdb241c14520072899ae">InvalidSalarioException::what</a></div><div class="ttdeci">const char * what() const</div><div class="ttdef"><b>Definition:</b> exceptions.hpp:69</div></div>
+<div class="ttc" id="aclass_invalid_telefone_exception_html"><div class="ttname"><a href="class_invalid_telefone_exception.html">InvalidTelefoneException</a></div><div class="ttdef"><b>Definition:</b> exceptions.hpp:87</div></div>
+<div class="ttc" id="aclass_invalid_telefone_exception_html_a11fb3891f8fb35264cef96ece4aa48b3"><div class="ttname"><a href="class_invalid_telefone_exception.html#a11fb3891f8fb35264cef96ece4aa48b3">InvalidTelefoneException::InvalidTelefoneException</a></div><div class="ttdeci">InvalidTelefoneException()</div><div class="ttdef"><b>Definition:</b> exceptions.hpp:89</div></div>
+<div class="ttc" id="aclass_invalid_telefone_exception_html_a2960e84108c8dd3d76ca93e61a388d48"><div class="ttname"><a href="class_invalid_telefone_exception.html#a2960e84108c8dd3d76ca93e61a388d48">InvalidTelefoneException::what</a></div><div class="ttdeci">const char * what() const</div><div class="ttdef"><b>Definition:</b> exceptions.hpp:90</div></div>
+<div class="ttc" id="aclass_invalid_type_exception_html"><div class="ttname"><a href="class_invalid_type_exception.html">InvalidTypeException</a></div><div class="ttdef"><b>Definition:</b> exceptions.hpp:56</div></div>
+<div class="ttc" id="aclass_invalid_type_exception_html_a28dfa304d5ef00d47f373df3b92bf269"><div class="ttname"><a href="class_invalid_type_exception.html#a28dfa304d5ef00d47f373df3b92bf269">InvalidTypeException::what</a></div><div class="ttdeci">const char * what() const</div><div class="ttdef"><b>Definition:</b> exceptions.hpp:59</div></div>
+<div class="ttc" id="aclass_invalid_type_exception_html_ae561d723db44e09199498503c9cf367d"><div class="ttname"><a href="class_invalid_type_exception.html#ae561d723db44e09199498503c9cf367d">InvalidTypeException::InvalidTypeException</a></div><div class="ttdeci">InvalidTypeException()</div><div class="ttdef"><b>Definition:</b> exceptions.hpp:58</div></div>
+<div class="ttc" id="aclass_quantidade_de_venda_indisponivel_exception_html"><div class="ttname"><a href="class_quantidade_de_venda_indisponivel_exception.html">QuantidadeDeVendaIndisponivelException</a></div><div class="ttdef"><b>Definition:</b> exceptions.hpp:108</div></div>
+<div class="ttc" id="aclass_quantidade_de_venda_indisponivel_exception_html_a1d8b2f5f99c3741461055ce118a5cd0c"><div class="ttname"><a href="class_quantidade_de_venda_indisponivel_exception.html#a1d8b2f5f99c3741461055ce118a5cd0c">QuantidadeDeVendaIndisponivelException::QuantidadeDeVendaIndisponivelException</a></div><div class="ttdeci">QuantidadeDeVendaIndisponivelException()</div><div class="ttdef"><b>Definition:</b> exceptions.hpp:110</div></div>
+<div class="ttc" id="aclass_quantidade_de_venda_indisponivel_exception_html_ac289c94f5082e0e9c6415c59df10d38c"><div class="ttname"><a href="class_quantidade_de_venda_indisponivel_exception.html#ac289c94f5082e0e9c6415c59df10d38c">QuantidadeDeVendaIndisponivelException::what</a></div><div class="ttdeci">const char * what() const</div><div class="ttdef"><b>Definition:</b> exceptions.hpp:111</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+</small></address>
+</body>
+</html>

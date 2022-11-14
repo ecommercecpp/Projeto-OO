@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.5"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Sistema de Gerenciamento de uma Indústria: Código-Fonte de C:/Users/felip/OneDrive/Documentos/GitHub/poo/include/usuario.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Sistema de Gerenciamento de uma Indústria<span id="projectnumber">&#160;2.0</span>
+   </div>
+   <div id="projectbrief">Trabalho Prático POO | UFMG</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.5 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhum resultado encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">usuario.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="usuario_8hpp.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef _USUARIO_HPP_</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define _USUARIO_HPP_</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="pessoa_8hpp.html">pessoa.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">class </span><a class="code hl_class" href="class_usuario.html">Usuario</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_pessoa.html">Pessoa</a></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        std::string login;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        std::string senha;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        std::vector&lt;std::string&gt; permissoes;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <a class="code hl_function" href="class_usuario.html#aa85a5371a098dfba5449140d9b8a472f">Usuario</a>();</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <a class="code hl_function" href="class_usuario.html#aa85a5371a098dfba5449140d9b8a472f">Usuario</a>(std::string <a class="code hl_variable" href="class_pessoa.html#a3d7ee683889ed031031beba721aa8470">nome</a>, std::string <a class="code hl_variable" href="class_pessoa.html#ac0ca58320930b185eea86cfee9e43033">cpf_cnpj</a>, std::string <a class="code hl_variable" href="class_pessoa.html#a5a6874bd941a396727a6424e4030f6bc">endereco</a>, std::string <a class="code hl_variable" href="class_pessoa.html#a4aae0b05d45c839f21a6fc3e9e8c71e6">email</a>, <span class="keywordtype">int</span> <a class="code hl_variable" href="class_pessoa.html#a8fb96e6244f2f005366e751bdb8aa0a4">tipo</a>, std::string login, std::string senha);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        std::string <a class="code hl_function" href="class_usuario.html#a7365b10dc6f45cde4b6ae89d2aac8194">getLogin</a>();</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_usuario.html#af467cee861412f12882b67baf4b7481b">setLogin</a>(std::string login);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        std::string <a class="code hl_function" href="class_usuario.html#afe5b8e2b50dcf24b109357fda3716f7f">getSenha</a>();</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_usuario.html#a28efaec1398906b6f43b12877bf59db7">setSenha</a>(std::string senha);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        std::vector&lt;std::string&gt; <a class="code hl_function" href="class_usuario.html#a0cd6bcd8b4e59b9c7cf7b660c616dcaf">getPermissoes</a>();</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_usuario.html#ab7317ea01c967280107335d8ad74ebc6">setPermissoes</a>(std::vector&lt;std::string&gt; permissoes);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>};</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_pessoa_html"><div class="ttname"><a href="class_pessoa.html">Pessoa</a></div><div class="ttdef"><b>Definition:</b> pessoa.hpp:9</div></div>
+<div class="ttc" id="aclass_pessoa_html_a3d7ee683889ed031031beba721aa8470"><div class="ttname"><a href="class_pessoa.html#a3d7ee683889ed031031beba721aa8470">Pessoa::nome</a></div><div class="ttdeci">std::string nome</div><div class="ttdef"><b>Definition:</b> pessoa.hpp:11</div></div>
+<div class="ttc" id="aclass_pessoa_html_a4aae0b05d45c839f21a6fc3e9e8c71e6"><div class="ttname"><a href="class_pessoa.html#a4aae0b05d45c839f21a6fc3e9e8c71e6">Pessoa::email</a></div><div class="ttdeci">std::string email</div><div class="ttdef"><b>Definition:</b> pessoa.hpp:11</div></div>
+<div class="ttc" id="aclass_pessoa_html_a5a6874bd941a396727a6424e4030f6bc"><div class="ttname"><a href="class_pessoa.html#a5a6874bd941a396727a6424e4030f6bc">Pessoa::endereco</a></div><div class="ttdeci">std::string endereco</div><div class="ttdef"><b>Definition:</b> pessoa.hpp:11</div></div>
+<div class="ttc" id="aclass_pessoa_html_a8fb96e6244f2f005366e751bdb8aa0a4"><div class="ttname"><a href="class_pessoa.html#a8fb96e6244f2f005366e751bdb8aa0a4">Pessoa::tipo</a></div><div class="ttdeci">int tipo</div><div class="ttdef"><b>Definition:</b> pessoa.hpp:12</div></div>
+<div class="ttc" id="aclass_pessoa_html_ac0ca58320930b185eea86cfee9e43033"><div class="ttname"><a href="class_pessoa.html#ac0ca58320930b185eea86cfee9e43033">Pessoa::cpf_cnpj</a></div><div class="ttdeci">std::string cpf_cnpj</div><div class="ttdef"><b>Definition:</b> pessoa.hpp:11</div></div>
+<div class="ttc" id="aclass_usuario_html"><div class="ttname"><a href="class_usuario.html">Usuario</a></div><div class="ttdef"><b>Definition:</b> logs.hpp:11</div></div>
+<div class="ttc" id="aclass_usuario_html_a0cd6bcd8b4e59b9c7cf7b660c616dcaf"><div class="ttname"><a href="class_usuario.html#a0cd6bcd8b4e59b9c7cf7b660c616dcaf">Usuario::getPermissoes</a></div><div class="ttdeci">std::vector&lt; std::string &gt; getPermissoes()</div><div class="ttdoc">Retorna as permissões que aquele usuário possui.</div><div class="ttdef"><b>Definition:</b> usuario.cpp:80</div></div>
+<div class="ttc" id="aclass_usuario_html_a28efaec1398906b6f43b12877bf59db7"><div class="ttname"><a href="class_usuario.html#a28efaec1398906b6f43b12877bf59db7">Usuario::setSenha</a></div><div class="ttdeci">void setSenha(std::string senha)</div><div class="ttdoc">Seta a senha do usuário.</div><div class="ttdef"><b>Definition:</b> usuario.cpp:70</div></div>
+<div class="ttc" id="aclass_usuario_html_a7365b10dc6f45cde4b6ae89d2aac8194"><div class="ttname"><a href="class_usuario.html#a7365b10dc6f45cde4b6ae89d2aac8194">Usuario::getLogin</a></div><div class="ttdeci">std::string getLogin()</div><div class="ttdoc">Retorna o login do usuário.</div><div class="ttdef"><b>Definition:</b> usuario.cpp:40</div></div>
+<div class="ttc" id="aclass_usuario_html_aa85a5371a098dfba5449140d9b8a472f"><div class="ttname"><a href="class_usuario.html#aa85a5371a098dfba5449140d9b8a472f">Usuario::Usuario</a></div><div class="ttdeci">Usuario()</div><div class="ttdoc">Construct a new Usuario:: Usuario object.</div><div class="ttdef"><b>Definition:</b> usuario.cpp:9</div></div>
+<div class="ttc" id="aclass_usuario_html_ab7317ea01c967280107335d8ad74ebc6"><div class="ttname"><a href="class_usuario.html#ab7317ea01c967280107335d8ad74ebc6">Usuario::setPermissoes</a></div><div class="ttdeci">void setPermissoes(std::vector&lt; std::string &gt; permissoes)</div><div class="ttdoc">Seta as permissões do usuário.</div><div class="ttdef"><b>Definition:</b> usuario.cpp:90</div></div>
+<div class="ttc" id="aclass_usuario_html_af467cee861412f12882b67baf4b7481b"><div class="ttname"><a href="class_usuario.html#af467cee861412f12882b67baf4b7481b">Usuario::setLogin</a></div><div class="ttdeci">void setLogin(std::string login)</div><div class="ttdoc">Seta o login do USuário.</div><div class="ttdef"><b>Definition:</b> usuario.cpp:50</div></div>
+<div class="ttc" id="aclass_usuario_html_afe5b8e2b50dcf24b109357fda3716f7f"><div class="ttname"><a href="class_usuario.html#afe5b8e2b50dcf24b109357fda3716f7f">Usuario::getSenha</a></div><div class="ttdeci">std::string getSenha()</div><div class="ttdoc">Retorna a senha do usuário.</div><div class="ttdef"><b>Definition:</b> usuario.cpp:60</div></div>
+<div class="ttc" id="apessoa_8hpp_html"><div class="ttname"><a href="pessoa_8hpp.html">pessoa.hpp</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+</small></address>
+</body>
+</html>

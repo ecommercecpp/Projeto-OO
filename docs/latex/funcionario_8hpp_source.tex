@@ -1,0 +1,54 @@
+\hypertarget{funcionario_8hpp_source}{}\doxysection{funcionario.\+hpp}
+\label{funcionario_8hpp_source}\index{C:/Users/felip/OneDrive/Documentos/GitHub/poo/include/funcionario.hpp@{C:/Users/felip/OneDrive/Documentos/GitHub/poo/include/funcionario.hpp}}
+\mbox{\hyperlink{funcionario_8hpp}{Vá para a documentação desse arquivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_FUNCIONARIO\_HPP\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_FUNCIONARIO\_HPP\_}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{third__party_2_classe_01_data_2_data_8h}{Data.h}}"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{pessoa_8hpp}{pessoa.hpp}}"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{salario_8hpp}{salario.hpp}}"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{cargo_8hpp}{cargo.hpp}}"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{departamento_8hpp}{departamento.hpp}}"{}}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{class }\mbox{\hyperlink{class_funcionario}{Funcionario}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_pessoa}{Pessoa}}}
+\DoxyCodeLine{14 \{}
+\DoxyCodeLine{15     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{16         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_funcionario_ae3a57c752060a17dcc00f1ba127660c8}{matricula}};}
+\DoxyCodeLine{17         \mbox{\hyperlink{class_data}{Data}} \mbox{\hyperlink{class_funcionario_aacc12363b7ce774af2d56d06760fa8ae}{nascimento}};}
+\DoxyCodeLine{18         \mbox{\hyperlink{class_data}{Data}} \mbox{\hyperlink{class_funcionario_aa82ab9187c9df7424c14b33a5d1d8ddb}{admissao}};}
+\DoxyCodeLine{19         \mbox{\hyperlink{class_data}{Data}} \mbox{\hyperlink{class_funcionario_ac80cb84c4cf6b1ea2ba16add6c632c60}{demissao}};}
+\DoxyCodeLine{20         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_funcionario_a3ffd40c82d198896e8c428aabb8f256b}{status}};}
+\DoxyCodeLine{21         std::vector<Salario> \mbox{\hyperlink{class_funcionario_ace666633764be8f7be1c51beb2769627}{salario}};}
+\DoxyCodeLine{22         \mbox{\hyperlink{class_departamento}{Departamento}} \mbox{\hyperlink{class_funcionario_ac24310b93738c001d65a2de7e14adb61}{departamento}};}
+\DoxyCodeLine{23         \mbox{\hyperlink{class_cargo}{Cargo}} \mbox{\hyperlink{class_funcionario_a48c3263916f1a68180b2d3f0945b7fea}{cargo}};}
+\DoxyCodeLine{24     \textcolor{keyword}{public}:}
+\DoxyCodeLine{25         \mbox{\hyperlink{class_funcionario_a7cd39b2c6cd2449162481a8c0e7a2429}{Funcionario}}();}
+\DoxyCodeLine{26         \mbox{\hyperlink{class_funcionario_a7cd39b2c6cd2449162481a8c0e7a2429}{Funcionario}}(std::string \mbox{\hyperlink{class_pessoa_a3d7ee683889ed031031beba721aa8470}{nome}}, std::string \mbox{\hyperlink{class_pessoa_ac0ca58320930b185eea86cfee9e43033}{cpf\_cnpj}}, std::string \mbox{\hyperlink{class_pessoa_a5a6874bd941a396727a6424e4030f6bc}{endereco}}, std::string \mbox{\hyperlink{class_pessoa_a4aae0b05d45c839f21a6fc3e9e8c71e6}{email}}, \mbox{\hyperlink{class_data}{Data}} \mbox{\hyperlink{class_funcionario_aacc12363b7ce774af2d56d06760fa8ae}{nascimento}}, \mbox{\hyperlink{class_data}{Data}} \mbox{\hyperlink{class_funcionario_aa82ab9187c9df7424c14b33a5d1d8ddb}{admissao}}, std::vector<Salario> \mbox{\hyperlink{class_funcionario_ace666633764be8f7be1c51beb2769627}{salario}}, \mbox{\hyperlink{class_departamento}{Departamento}} \mbox{\hyperlink{class_funcionario_ac24310b93738c001d65a2de7e14adb61}{departamento}}, \mbox{\hyperlink{class_cargo}{Cargo}} \mbox{\hyperlink{class_funcionario_a48c3263916f1a68180b2d3f0945b7fea}{cargo}});}
+\DoxyCodeLine{27         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_funcionario_aa62d8a45648d355c1868732aa6d5ce59}{demitir}}();}
+\DoxyCodeLine{28         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_funcionario_ab980e3293f2915f504f4da7d0f5744e4}{empregado}}();}
+\DoxyCodeLine{29         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_funcionario_a341ee41999c17ed63bbf2c3356767272}{setMatricula}}(\textcolor{keywordtype}{int} \mbox{\hyperlink{class_funcionario_ae3a57c752060a17dcc00f1ba127660c8}{matricula}});}
+\DoxyCodeLine{30         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_funcionario_ab31ec5c4cc0e1fa7e04acbe6b9421371}{getMatricula}}();}
+\DoxyCodeLine{31         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_funcionario_a9211adc5e9d567fdbb68db64a9478e30}{setNascimento}}(\mbox{\hyperlink{class_data}{Data}} \mbox{\hyperlink{class_funcionario_aacc12363b7ce774af2d56d06760fa8ae}{nascimento}});}
+\DoxyCodeLine{32         \mbox{\hyperlink{class_data}{Data}} \mbox{\hyperlink{class_funcionario_a6efbff30ea4aad550a7ea70c2c9914a5}{getNascimento}}();}
+\DoxyCodeLine{33         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_funcionario_a07ae11e4d4b798a21d43f98fb83be994}{setAdmissao}}(\mbox{\hyperlink{class_data}{Data}} \mbox{\hyperlink{class_funcionario_aa82ab9187c9df7424c14b33a5d1d8ddb}{admissao}});}
+\DoxyCodeLine{34         \mbox{\hyperlink{class_data}{Data}} \mbox{\hyperlink{class_funcionario_a694b1ffb17ee52bcf66a793682ec4ea6}{getAdmissao}}();}
+\DoxyCodeLine{35         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_funcionario_acdfba65abcc7aac42a0cd86d0b102a26}{setDemissao}}(\mbox{\hyperlink{class_data}{Data}} \mbox{\hyperlink{class_funcionario_ac80cb84c4cf6b1ea2ba16add6c632c60}{demissao}});}
+\DoxyCodeLine{36         \mbox{\hyperlink{class_data}{Data}} \mbox{\hyperlink{class_funcionario_a8f7975e6f725a5e3b3f71936d77d0a7d}{getDemissao}}();}
+\DoxyCodeLine{37         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_funcionario_a4af76d5632251545e74f4506c6f5cdd9}{setStatus}}(\textcolor{keywordtype}{bool} \mbox{\hyperlink{class_funcionario_a3ffd40c82d198896e8c428aabb8f256b}{status}});}
+\DoxyCodeLine{38         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_funcionario_aace25e24c4aef1f8eb3141064ea8e434}{getStatus}}();}
+\DoxyCodeLine{39         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_funcionario_a11c7c6981ccfc794b588202e290d5029}{setSalario}}(std::vector<Salario> \mbox{\hyperlink{class_funcionario_ace666633764be8f7be1c51beb2769627}{salario}});}
+\DoxyCodeLine{40         std::vector<Salario> \mbox{\hyperlink{class_funcionario_a1ac1051378fc8065eb45586618c4ab6f}{getSalario}}();}
+\DoxyCodeLine{41         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_funcionario_aa1751f57bf2666cf15d6cf9240dca180}{setDepartamento}}(\mbox{\hyperlink{class_departamento}{Departamento}} \mbox{\hyperlink{class_funcionario_ac24310b93738c001d65a2de7e14adb61}{departamento}});}
+\DoxyCodeLine{42         \mbox{\hyperlink{class_departamento}{Departamento}} \mbox{\hyperlink{class_funcionario_aa5e83d6b8a5beee0bed9150cdca23c8b}{getDepartamento}}();}
+\DoxyCodeLine{43         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_funcionario_aef9be2258e4e62765faee32b28ad1ac3}{setCargo}}(\mbox{\hyperlink{class_cargo}{Cargo}} \mbox{\hyperlink{class_funcionario_a48c3263916f1a68180b2d3f0945b7fea}{cargo}});}
+\DoxyCodeLine{44         \mbox{\hyperlink{class_cargo}{Cargo}} \mbox{\hyperlink{class_funcionario_abd3b4f38e320a80e9e95b5804d511f9e}{getCargo}}();}
+\DoxyCodeLine{45         }
+\DoxyCodeLine{46 \};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

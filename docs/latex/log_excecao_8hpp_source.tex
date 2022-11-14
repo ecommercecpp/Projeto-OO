@@ -1,0 +1,35 @@
+\hypertarget{log_excecao_8hpp_source}{}\doxysection{log\+Excecao.\+hpp}
+\label{log_excecao_8hpp_source}\index{C:/Users/felip/OneDrive/Documentos/GitHub/poo/include/logExcecao.hpp@{C:/Users/felip/OneDrive/Documentos/GitHub/poo/include/logExcecao.hpp}}
+\mbox{\hyperlink{log_excecao_8hpp}{Vá para a documentação desse arquivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_LOGEXCECAO\_HPP\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_LOGEXCECAO\_HPP\_}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{third__party_2_classe_01_data_2_data_8h}{Data.h}}"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{exceptions_8hpp}{exceptions.hpp}}"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{logs_8hpp}{logs.hpp}}"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_log_excecao}{LogExcecao}}: \textcolor{keyword}{public} \mbox{\hyperlink{class_logs}{Logs}}}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{14         std::string \mbox{\hyperlink{class_log_excecao_ab421bcf40ad17f297d641b43564f24b3}{funcionalidade}};}
+\DoxyCodeLine{15         std::vector<std::string> \mbox{\hyperlink{class_log_excecao_a4ffffe278c8f8cdc702ef5d5f63903a3}{historicoLogExcecao}};}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17     \textcolor{keyword}{public}:}
+\DoxyCodeLine{18         \mbox{\hyperlink{class_log_excecao_a42a9bd955f353feb63d6a04eda4a5ce9}{LogExcecao}}();}
+\DoxyCodeLine{19         \mbox{\hyperlink{class_log_excecao_a4a9bc874ca5402d3926a346a3b06da53}{\string~LogExcecao}}();}
+\DoxyCodeLine{20         \mbox{\hyperlink{class_log_excecao_a42a9bd955f353feb63d6a04eda4a5ce9}{LogExcecao}}(\mbox{\hyperlink{class_usuario}{Usuario}}, \mbox{\hyperlink{class_data}{Data}}, std::string, std::string);}
+\DoxyCodeLine{21         \textcolor{comment}{//std::string getLog();}}
+\DoxyCodeLine{22         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_log_excecao_a64d3a3c7e3c90b3d8181b9d585d0c77c}{setHistoricoLogExcecao}}(std::vector<std::string>);}
+\DoxyCodeLine{23         std::vector<std::string> \mbox{\hyperlink{class_log_excecao_a0e4eda680f350154d85fcbbbc74cd1ff}{getHistoricoLogExcecao}}();}
+\DoxyCodeLine{24         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_log_excecao_a81d92477fdb27bd75e88357f5edc73f5}{setFuncionalidade}}(std::string);}
+\DoxyCodeLine{25         std::string \mbox{\hyperlink{class_log_excecao_afc1317c7ec76d559b83621e119892007}{getFuncionalidade}}();}
+\DoxyCodeLine{26         }
+\DoxyCodeLine{27 \};}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

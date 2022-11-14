@@ -1,0 +1,187 @@
+\hypertarget{class_cargo}{}\doxysection{Referência da Classe Cargo}
+\label{class_cargo}\index{Cargo@{Cargo}}
+
+
+{\ttfamily \#include $<$cargo.\+hpp$>$}
+
+\doxysubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_cargo_a93ad244ef7f9fbe6cf2ed289eca69bd8}{Cargo}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_cargo_a93ad244ef7f9fbe6cf2ed289eca69bd8}{Cargo\+::\+Cargo}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_cargo_a352fc4101efb0e2a145b0be00ea3696a}{Cargo}} (std\+::string \mbox{\hyperlink{class_cargo_abacc38d978cd38de50832abd35f3b53f}{nome}})
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_cargo_a93ad244ef7f9fbe6cf2ed289eca69bd8}{Cargo\+::\+Cargo}} object. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_cargo_a660ed58ad2bf1b695844ff0dff5aef84}{get\+Nome}} ()
+\begin{DoxyCompactList}\small\item\em Retorna o nome do cargo. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_cargo_a5d2a4e7d70a7667ff505f69502defe1b}{get\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Retorna o id do cargo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cargo_a0a40589c8848e73b904b28a89b7bf74b}{set\+Nome}} (std\+::string \mbox{\hyperlink{class_cargo_abacc38d978cd38de50832abd35f3b53f}{nome}})
+\begin{DoxyCompactList}\small\item\em Seta o nome do cargo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cargo_a412a51408b3fd2dd9050985c7621bc1a}{set\+Id}} (int \mbox{\hyperlink{class_cargo_aa622dfe46d245487cef8e1543efc8c39}{id}})
+\begin{DoxyCompactList}\small\item\em Seta o id do cargo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atributos Protegidos}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_cargo_aa622dfe46d245487cef8e1543efc8c39}{id}}
+\item 
+std\+::string \mbox{\hyperlink{class_cargo_abacc38d978cd38de50832abd35f3b53f}{nome}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Atributos Estáticos Protegidos}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_cargo_adf3a99133ffbbc41fcb02c43d8737b78}{current\+\_\+id}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Construtores e Destrutores}
+\mbox{\Hypertarget{class_cargo_a93ad244ef7f9fbe6cf2ed289eca69bd8}\label{class_cargo_a93ad244ef7f9fbe6cf2ed289eca69bd8}} 
+\index{Cargo@{Cargo}!Cargo@{Cargo}}
+\index{Cargo@{Cargo}!Cargo@{Cargo}}
+\doxysubsubsection{\texorpdfstring{Cargo()}{Cargo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Cargo\+::\+Cargo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{class_cargo_a93ad244ef7f9fbe6cf2ed289eca69bd8}{Cargo\+::\+Cargo}} object. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{9 : \mbox{\hyperlink{class_cargo_aa622dfe46d245487cef8e1543efc8c39}{id}}(++\mbox{\hyperlink{class_cargo_adf3a99133ffbbc41fcb02c43d8737b78}{current\_id}}) \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cargo_a352fc4101efb0e2a145b0be00ea3696a}\label{class_cargo_a352fc4101efb0e2a145b0be00ea3696a}} 
+\index{Cargo@{Cargo}!Cargo@{Cargo}}
+\index{Cargo@{Cargo}!Cargo@{Cargo}}
+\doxysubsubsection{\texorpdfstring{Cargo()}{Cargo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Cargo\+::\+Cargo (\begin{DoxyParamCaption}\item[{std\+::string}]{nome }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{class_cargo_a93ad244ef7f9fbe6cf2ed289eca69bd8}{Cargo\+::\+Cargo}} object. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em nome} & \\
+\hline
+{\em current\+\_\+id} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{18 : \mbox{\hyperlink{class_cargo_aa622dfe46d245487cef8e1543efc8c39}{id}}(++\mbox{\hyperlink{class_cargo_adf3a99133ffbbc41fcb02c43d8737b78}{current\_id}}), \mbox{\hyperlink{class_cargo_abacc38d978cd38de50832abd35f3b53f}{nome}}(\mbox{\hyperlink{class_cargo_abacc38d978cd38de50832abd35f3b53f}{nome}}) \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Funções membros}
+\mbox{\Hypertarget{class_cargo_a5d2a4e7d70a7667ff505f69502defe1b}\label{class_cargo_a5d2a4e7d70a7667ff505f69502defe1b}} 
+\index{Cargo@{Cargo}!getId@{getId}}
+\index{getId@{getId}!Cargo@{Cargo}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily int Cargo\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna o id do cargo. 
+
+\begin{DoxyReturn}{Retorna}
+int 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{36 \{}
+\DoxyCodeLine{37     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_cargo_aa622dfe46d245487cef8e1543efc8c39}{id}};}
+\DoxyCodeLine{38 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cargo_a660ed58ad2bf1b695844ff0dff5aef84}\label{class_cargo_a660ed58ad2bf1b695844ff0dff5aef84}} 
+\index{Cargo@{Cargo}!getNome@{getNome}}
+\index{getNome@{getNome}!Cargo@{Cargo}}
+\doxysubsubsection{\texorpdfstring{getNome()}{getNome()}}
+{\footnotesize\ttfamily std\+::string Cargo\+::get\+Nome (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna o nome do cargo. 
+
+\begin{DoxyReturn}{Retorna}
+std\+::string 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{26 \{}
+\DoxyCodeLine{27     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_cargo_abacc38d978cd38de50832abd35f3b53f}{nome}};}
+\DoxyCodeLine{28 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cargo_a412a51408b3fd2dd9050985c7621bc1a}\label{class_cargo_a412a51408b3fd2dd9050985c7621bc1a}} 
+\index{Cargo@{Cargo}!setId@{setId}}
+\index{setId@{setId}!Cargo@{Cargo}}
+\doxysubsubsection{\texorpdfstring{setId()}{setId()}}
+{\footnotesize\ttfamily void Cargo\+::set\+Id (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Seta o id do cargo. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em id} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{56 \{}
+\DoxyCodeLine{57     this-\/>\textcolor{keywordtype}{id} = \mbox{\hyperlink{class_cargo_aa622dfe46d245487cef8e1543efc8c39}{id}};}
+\DoxyCodeLine{58 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cargo_a0a40589c8848e73b904b28a89b7bf74b}\label{class_cargo_a0a40589c8848e73b904b28a89b7bf74b}} 
+\index{Cargo@{Cargo}!setNome@{setNome}}
+\index{setNome@{setNome}!Cargo@{Cargo}}
+\doxysubsubsection{\texorpdfstring{setNome()}{setNome()}}
+{\footnotesize\ttfamily void Cargo\+::set\+Nome (\begin{DoxyParamCaption}\item[{std\+::string}]{nome }\end{DoxyParamCaption})}
+
+
+
+Seta o nome do cargo. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em nome} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{46 \{}
+\DoxyCodeLine{47     this-\/>\mbox{\hyperlink{class_cargo_abacc38d978cd38de50832abd35f3b53f}{nome}} = \mbox{\hyperlink{class_cargo_abacc38d978cd38de50832abd35f3b53f}{nome}};}
+\DoxyCodeLine{48 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Atributos}
+\mbox{\Hypertarget{class_cargo_adf3a99133ffbbc41fcb02c43d8737b78}\label{class_cargo_adf3a99133ffbbc41fcb02c43d8737b78}} 
+\index{Cargo@{Cargo}!current\_id@{current\_id}}
+\index{current\_id@{current\_id}!Cargo@{Cargo}}
+\doxysubsubsection{\texorpdfstring{current\_id}{current\_id}}
+{\footnotesize\ttfamily int Cargo\+::current\+\_\+id\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_cargo_aa622dfe46d245487cef8e1543efc8c39}\label{class_cargo_aa622dfe46d245487cef8e1543efc8c39}} 
+\index{Cargo@{Cargo}!id@{id}}
+\index{id@{id}!Cargo@{Cargo}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily int Cargo\+::id\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_cargo_abacc38d978cd38de50832abd35f3b53f}\label{class_cargo_abacc38d978cd38de50832abd35f3b53f}} 
+\index{Cargo@{Cargo}!nome@{nome}}
+\index{nome@{nome}!Cargo@{Cargo}}
+\doxysubsubsection{\texorpdfstring{nome}{nome}}
+{\footnotesize\ttfamily std\+::string Cargo\+::nome\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/felip/\+One\+Drive/\+Documentos/\+Git\+Hub/poo/include/\mbox{\hyperlink{cargo_8hpp}{cargo.\+hpp}}\item 
+C\+:/\+Users/felip/\+One\+Drive/\+Documentos/\+Git\+Hub/poo/src/\mbox{\hyperlink{src_2cargo_8cpp}{cargo.\+cpp}}\end{DoxyCompactItemize}

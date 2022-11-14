@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.5"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Sistema de Gerenciamento de uma Indústria: Código-Fonte de C:/Users/felip/OneDrive/Documentos/GitHub/poo/include/venda.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Sistema de Gerenciamento de uma Indústria<span id="projectnumber">&#160;2.0</span>
+   </div>
+   <div id="projectbrief">Trabalho Prático POO | UFMG</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.5 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhum resultado encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">venda.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="venda_8hpp.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef _VENDA_HPP_</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define _VENDA_HPP_</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">// Equivalente ao registro de vendas</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="produto_8hpp.html">produto.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="cliente_8hpp.html">cliente.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="third__party_2_classe_01_data_2_data_8h.html">Data.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="class_venda.html">   11</a></span><span class="keyword">class </span><a class="code hl_class" href="class_venda.html">Venda</a></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_venda.html#a759f8d9a2c6604859dbe396b3ca814f9">   14</a></span>                <a class="code hl_class" href="class_produto.html">Produto</a> <a class="code hl_variable" href="class_venda.html#a759f8d9a2c6604859dbe396b3ca814f9">produto</a>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_venda.html#a470da451bb642838e6a10d5d891f5d48">   15</a></span>                <a class="code hl_class" href="class_cliente.html">Cliente</a> <a class="code hl_variable" href="class_venda.html#a470da451bb642838e6a10d5d891f5d48">cliente</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="class_venda.html#a7686b130f72621bb059758a833275c31">   16</a></span>                <a class="code hl_class" href="class_data.html">Data</a> <a class="code hl_variable" href="class_venda.html#a7686b130f72621bb059758a833275c31">dataVenda</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_venda.html#a4fa1da78a9dd560c9a0ff28d1d261a8c">   17</a></span>                <span class="keywordtype">int</span> <a class="code hl_variable" href="class_venda.html#a4fa1da78a9dd560c9a0ff28d1d261a8c">quantidade</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_venda.html#aec3c37ee7234321965149d984cc6daf7">   18</a></span>                <span class="keywordtype">int</span> <a class="code hl_variable" href="class_venda.html#aec3c37ee7234321965149d984cc6daf7">id</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_venda.html#ab4b64f9ce168458f69aa7d97d5b10de9">   19</a></span>                std::vector&lt;int&gt; <a class="code hl_variable" href="class_venda.html#ab4b64f9ce168458f69aa7d97d5b10de9">lotes_venda</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>                <a class="code hl_function" href="class_venda.html#a80246070290a58d69d7b332134a16c53">Venda</a>();</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>                <a class="code hl_function" href="class_venda.html#a80246070290a58d69d7b332134a16c53">Venda</a>(<a class="code hl_class" href="class_data.html">Data</a> <a class="code hl_variable" href="class_venda.html#a7686b130f72621bb059758a833275c31">dataVenda</a>, <span class="keywordtype">int</span> <a class="code hl_variable" href="class_venda.html#a4fa1da78a9dd560c9a0ff28d1d261a8c">quantidade</a>, <span class="keywordtype">int</span> <span class="keywordtype">id</span>, <a class="code hl_class" href="class_produto.html">Produto</a> <a class="code hl_variable" href="class_venda.html#a759f8d9a2c6604859dbe396b3ca814f9">produto</a>, <a class="code hl_class" href="class_cliente.html">Cliente</a> <a class="code hl_variable" href="class_venda.html#a470da451bb642838e6a10d5d891f5d48">cliente</a>);<span class="comment">//, Cliente cliente</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>                <a class="code hl_function" href="class_venda.html#af7c9b4716b4c26765030439202bd038a">~Venda</a>();</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>                <span class="keywordtype">void</span> <a class="code hl_function" href="class_venda.html#a98c96a58b17911a664401eb5396fb743">setDataVenda</a>(<a class="code hl_class" href="class_data.html">Data</a> <a class="code hl_variable" href="class_venda.html#a7686b130f72621bb059758a833275c31">dataVenda</a>);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                <span class="keywordtype">void</span> <a class="code hl_function" href="class_venda.html#a104169ee9a93063b6db69c997f7c482f">setQuantidade</a>(<span class="keywordtype">int</span> <a class="code hl_variable" href="class_venda.html#a4fa1da78a9dd560c9a0ff28d1d261a8c">quantidade</a>);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                <span class="keywordtype">void</span> <a class="code hl_function" href="class_venda.html#a512d375467d3d811b3e4122cbe512b38">setId</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                <span class="keywordtype">void</span> <a class="code hl_function" href="class_venda.html#af8c03d995485dbece688c46a4bc5ea1d">setProduto</a>(<a class="code hl_class" href="class_produto.html">Produto</a> <a class="code hl_variable" href="class_venda.html#a759f8d9a2c6604859dbe396b3ca814f9">produto</a>);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                <span class="keywordtype">void</span> <a class="code hl_function" href="class_venda.html#a1fe634064c657530ba4d897e6a0308e8">setCliente</a>(<a class="code hl_class" href="class_cliente.html">Cliente</a> <a class="code hl_variable" href="class_venda.html#a470da451bb642838e6a10d5d891f5d48">cliente</a>);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                <span class="keywordtype">void</span> <a class="code hl_function" href="class_venda.html#ac6b03b5678ce9eb5140060a09bd00109">setLotesVenda</a>(std::vector&lt;int&gt; <a class="code hl_variable" href="class_venda.html#ab4b64f9ce168458f69aa7d97d5b10de9">lotes_venda</a>);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                <a class="code hl_class" href="class_data.html">Data</a> <a class="code hl_function" href="class_venda.html#acd6e46357aed7728bd5bfc7d66a8a021">getDataVenda</a>();</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                <span class="keywordtype">int</span> <a class="code hl_function" href="class_venda.html#a71fc015ba1ad85b81d5607d8e920158a">getQuantidade</a>();</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>                <span class="keywordtype">int</span> <a class="code hl_function" href="class_venda.html#a3206e66662e18797e1646e6b827e15d9">getId</a>();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>                <a class="code hl_class" href="class_produto.html">Produto</a> <a class="code hl_function" href="class_venda.html#ac99a55c1aafd105ef354706f2fd3af4f">getProduto</a>();</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                <a class="code hl_class" href="class_cliente.html">Cliente</a> <a class="code hl_function" href="class_venda.html#a79bcb57b1c36f30275f11b7e6455c6cb">getCliente</a>();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                std::vector&lt;int&gt; <a class="code hl_function" href="class_venda.html#a3495fda15c2403f074b228b826d8c773">getLotesVenda</a>();</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>                <span class="comment">//void atualizaLote();</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>                <span class="comment">//void atualizaEstoque();</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                <span class="keywordtype">void</span> <a class="code hl_function" href="class_venda.html#a775ea0880d931b59d17427cbbbc45ecd">realizaVenda</a>();</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>};</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_cliente_html"><div class="ttname"><a href="class_cliente.html">Cliente</a></div><div class="ttdef"><b>Definition:</b> cliente.hpp:9</div></div>
+<div class="ttc" id="aclass_data_html"><div class="ttname"><a href="class_data.html">Data</a></div><div class="ttdef"><b>Definition:</b> Data.h:16</div></div>
+<div class="ttc" id="aclass_produto_html"><div class="ttname"><a href="class_produto.html">Produto</a></div><div class="ttdef"><b>Definition:</b> produto.hpp:16</div></div>
+<div class="ttc" id="aclass_venda_html"><div class="ttname"><a href="class_venda.html">Venda</a></div><div class="ttdef"><b>Definition:</b> venda.hpp:12</div></div>
+<div class="ttc" id="aclass_venda_html_a104169ee9a93063b6db69c997f7c482f"><div class="ttname"><a href="class_venda.html#a104169ee9a93063b6db69c997f7c482f">Venda::setQuantidade</a></div><div class="ttdeci">void setQuantidade(int quantidade)</div><div class="ttdoc">Seta a quantidade da venda.</div><div class="ttdef"><b>Definition:</b> venda.cpp:57</div></div>
+<div class="ttc" id="aclass_venda_html_a1fe634064c657530ba4d897e6a0308e8"><div class="ttname"><a href="class_venda.html#a1fe634064c657530ba4d897e6a0308e8">Venda::setCliente</a></div><div class="ttdeci">void setCliente(Cliente cliente)</div><div class="ttdoc">Seta o cliente da venda.</div><div class="ttdef"><b>Definition:</b> venda.cpp:87</div></div>
+<div class="ttc" id="aclass_venda_html_a3206e66662e18797e1646e6b827e15d9"><div class="ttname"><a href="class_venda.html#a3206e66662e18797e1646e6b827e15d9">Venda::getId</a></div><div class="ttdeci">int getId()</div><div class="ttdoc">Retorna o id da venda.</div><div class="ttdef"><b>Definition:</b> venda.cpp:127</div></div>
+<div class="ttc" id="aclass_venda_html_a3495fda15c2403f074b228b826d8c773"><div class="ttname"><a href="class_venda.html#a3495fda15c2403f074b228b826d8c773">Venda::getLotesVenda</a></div><div class="ttdeci">std::vector&lt; int &gt; getLotesVenda()</div><div class="ttdoc">Retorna os lotes desta venda.</div><div class="ttdef"><b>Definition:</b> venda.cpp:157</div></div>
+<div class="ttc" id="aclass_venda_html_a470da451bb642838e6a10d5d891f5d48"><div class="ttname"><a href="class_venda.html#a470da451bb642838e6a10d5d891f5d48">Venda::cliente</a></div><div class="ttdeci">Cliente cliente</div><div class="ttdef"><b>Definition:</b> venda.hpp:15</div></div>
+<div class="ttc" id="aclass_venda_html_a4fa1da78a9dd560c9a0ff28d1d261a8c"><div class="ttname"><a href="class_venda.html#a4fa1da78a9dd560c9a0ff28d1d261a8c">Venda::quantidade</a></div><div class="ttdeci">int quantidade</div><div class="ttdef"><b>Definition:</b> venda.hpp:17</div></div>
+<div class="ttc" id="aclass_venda_html_a512d375467d3d811b3e4122cbe512b38"><div class="ttname"><a href="class_venda.html#a512d375467d3d811b3e4122cbe512b38">Venda::setId</a></div><div class="ttdeci">void setId(int id)</div><div class="ttdoc">Seta o id da venda.</div><div class="ttdef"><b>Definition:</b> venda.cpp:67</div></div>
+<div class="ttc" id="aclass_venda_html_a71fc015ba1ad85b81d5607d8e920158a"><div class="ttname"><a href="class_venda.html#a71fc015ba1ad85b81d5607d8e920158a">Venda::getQuantidade</a></div><div class="ttdeci">int getQuantidade()</div><div class="ttdoc">Retorna a quantidade da venda.</div><div class="ttdef"><b>Definition:</b> venda.cpp:117</div></div>
+<div class="ttc" id="aclass_venda_html_a759f8d9a2c6604859dbe396b3ca814f9"><div class="ttname"><a href="class_venda.html#a759f8d9a2c6604859dbe396b3ca814f9">Venda::produto</a></div><div class="ttdeci">Produto produto</div><div class="ttdef"><b>Definition:</b> venda.hpp:14</div></div>
+<div class="ttc" id="aclass_venda_html_a7686b130f72621bb059758a833275c31"><div class="ttname"><a href="class_venda.html#a7686b130f72621bb059758a833275c31">Venda::dataVenda</a></div><div class="ttdeci">Data dataVenda</div><div class="ttdef"><b>Definition:</b> venda.hpp:16</div></div>
+<div class="ttc" id="aclass_venda_html_a775ea0880d931b59d17427cbbbc45ecd"><div class="ttname"><a href="class_venda.html#a775ea0880d931b59d17427cbbbc45ecd">Venda::realizaVenda</a></div><div class="ttdeci">void realizaVenda()</div><div class="ttdoc">Efetua a venda.</div><div class="ttdef"><b>Definition:</b> venda.cpp:166</div></div>
+<div class="ttc" id="aclass_venda_html_a79bcb57b1c36f30275f11b7e6455c6cb"><div class="ttname"><a href="class_venda.html#a79bcb57b1c36f30275f11b7e6455c6cb">Venda::getCliente</a></div><div class="ttdeci">Cliente getCliente()</div><div class="ttdoc">Retorna o cliente da venda.</div><div class="ttdef"><b>Definition:</b> venda.cpp:147</div></div>
+<div class="ttc" id="aclass_venda_html_a80246070290a58d69d7b332134a16c53"><div class="ttname"><a href="class_venda.html#a80246070290a58d69d7b332134a16c53">Venda::Venda</a></div><div class="ttdeci">Venda()</div><div class="ttdoc">Construct a new Venda:: Venda object.</div><div class="ttdef"><b>Definition:</b> venda.cpp:12</div></div>
+<div class="ttc" id="aclass_venda_html_a98c96a58b17911a664401eb5396fb743"><div class="ttname"><a href="class_venda.html#a98c96a58b17911a664401eb5396fb743">Venda::setDataVenda</a></div><div class="ttdeci">void setDataVenda(Data dataVenda)</div><div class="ttdoc">Seta a data da venda.</div><div class="ttdef"><b>Definition:</b> venda.cpp:47</div></div>
+<div class="ttc" id="aclass_venda_html_ab4b64f9ce168458f69aa7d97d5b10de9"><div class="ttname"><a href="class_venda.html#ab4b64f9ce168458f69aa7d97d5b10de9">Venda::lotes_venda</a></div><div class="ttdeci">std::vector&lt; int &gt; lotes_venda</div><div class="ttdef"><b>Definition:</b> venda.hpp:19</div></div>
+<div class="ttc" id="aclass_venda_html_ac6b03b5678ce9eb5140060a09bd00109"><div class="ttname"><a href="class_venda.html#ac6b03b5678ce9eb5140060a09bd00109">Venda::setLotesVenda</a></div><div class="ttdeci">void setLotesVenda(std::vector&lt; int &gt; lotes_venda)</div><div class="ttdoc">Seta os lotes desta venda.</div><div class="ttdef"><b>Definition:</b> venda.cpp:97</div></div>
+<div class="ttc" id="aclass_venda_html_ac99a55c1aafd105ef354706f2fd3af4f"><div class="ttname"><a href="class_venda.html#ac99a55c1aafd105ef354706f2fd3af4f">Venda::getProduto</a></div><div class="ttdeci">Produto getProduto()</div><div class="ttdoc">Retorna o produto da venda.</div><div class="ttdef"><b>Definition:</b> venda.cpp:137</div></div>
+<div class="ttc" id="aclass_venda_html_acd6e46357aed7728bd5bfc7d66a8a021"><div class="ttname"><a href="class_venda.html#acd6e46357aed7728bd5bfc7d66a8a021">Venda::getDataVenda</a></div><div class="ttdeci">Data getDataVenda()</div><div class="ttdoc">Retorna a data da venda.</div><div class="ttdef"><b>Definition:</b> venda.cpp:107</div></div>
+<div class="ttc" id="aclass_venda_html_aec3c37ee7234321965149d984cc6daf7"><div class="ttname"><a href="class_venda.html#aec3c37ee7234321965149d984cc6daf7">Venda::id</a></div><div class="ttdeci">int id</div><div class="ttdef"><b>Definition:</b> venda.hpp:18</div></div>
+<div class="ttc" id="aclass_venda_html_af7c9b4716b4c26765030439202bd038a"><div class="ttname"><a href="class_venda.html#af7c9b4716b4c26765030439202bd038a">Venda::~Venda</a></div><div class="ttdeci">~Venda()</div><div class="ttdoc">Destroy the Venda:: Venda object.</div><div class="ttdef"><b>Definition:</b> venda.cpp:38</div></div>
+<div class="ttc" id="aclass_venda_html_af8c03d995485dbece688c46a4bc5ea1d"><div class="ttname"><a href="class_venda.html#af8c03d995485dbece688c46a4bc5ea1d">Venda::setProduto</a></div><div class="ttdeci">void setProduto(Produto produto)</div><div class="ttdoc">Seta o produto da venda.</div><div class="ttdef"><b>Definition:</b> venda.cpp:77</div></div>
+<div class="ttc" id="acliente_8hpp_html"><div class="ttname"><a href="cliente_8hpp.html">cliente.hpp</a></div></div>
+<div class="ttc" id="aproduto_8hpp_html"><div class="ttname"><a href="produto_8hpp.html">produto.hpp</a></div></div>
+<div class="ttc" id="athird__party_2_classe_01_data_2_data_8h_html"><div class="ttname"><a href="third__party_2_classe_01_data_2_data_8h.html">Data.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+</small></address>
+</body>
+</html>

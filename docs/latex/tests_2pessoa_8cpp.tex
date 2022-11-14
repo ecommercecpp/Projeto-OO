@@ -1,0 +1,48 @@
+\hypertarget{tests_2pessoa_8cpp}{}\doxysection{Referência do Arquivo C\+:/\+Users/felip/\+One\+Drive/\+Documentos/\+Git\+Hub/poo/tests/pessoa.cpp}
+\label{tests_2pessoa_8cpp}\index{C:/Users/felip/OneDrive/Documentos/GitHub/poo/tests/pessoa.cpp@{C:/Users/felip/OneDrive/Documentos/GitHub/poo/tests/pessoa.cpp}}
+{\ttfamily \#include \char`\"{}pessoa.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}doctest\char`\"{}}\newline
+\doxysubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{tests_2pessoa_8cpp_a0f1f90fbd845e9466956e1ed09bdb29e}{TEST\+\_\+\+CASE}} (\char`\"{}Testando dados inválidos -\/ PESSOA\char`\"{})
+\item 
+\mbox{\hyperlink{tests_2pessoa_8cpp_aeee628768d5b2241d54a39b5c034faf1}{TEST\+\_\+\+CASE}} (\char`\"{}Testando dados válidos -\/ PESSOA\char`\"{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Funções}
+\mbox{\Hypertarget{tests_2pessoa_8cpp_a0f1f90fbd845e9466956e1ed09bdb29e}\label{tests_2pessoa_8cpp_a0f1f90fbd845e9466956e1ed09bdb29e}} 
+\index{pessoa.cpp@{pessoa.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!pessoa.cpp@{pessoa.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{\char`\"{}Testando dados inválidos -\/ PESSOA\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{5 \{}
+\DoxyCodeLine{6     \textcolor{comment}{// testa construção com cpf invalido}}
+\DoxyCodeLine{7     CHECK\_THROWS\_AS(\mbox{\hyperlink{class_pessoa}{Pessoa}}(\textcolor{stringliteral}{"{}João"{}}, \textcolor{stringliteral}{"{}12312312312"{}}, \textcolor{stringliteral}{"{}Rua 1"{}}, \textcolor{stringliteral}{"{}email@email.com"{}}, 0), \mbox{\hyperlink{class_invalid_c_p_f_exception}{InvalidCPFException}});}
+\DoxyCodeLine{8     \textcolor{comment}{// testa construção com cnpj invalido}}
+\DoxyCodeLine{9     CHECK\_THROWS\_AS(\mbox{\hyperlink{class_pessoa}{Pessoa}}(\textcolor{stringliteral}{"{}João"{}}, \textcolor{stringliteral}{"{}12312312312312"{}}, \textcolor{stringliteral}{"{}Rua 1"{}}, \textcolor{stringliteral}{"{}email@email.com"{}}, 1), \mbox{\hyperlink{class_invalid_c_n_p_j_exception}{InvalidCNPJException}});}
+\DoxyCodeLine{10     \textcolor{comment}{// testa construção com email invalido}}
+\DoxyCodeLine{11     CHECK\_THROWS\_AS(\mbox{\hyperlink{class_pessoa}{Pessoa}}(\textcolor{stringliteral}{"{}João"{}}, \textcolor{stringliteral}{"{}18130552035"{}}, \textcolor{stringliteral}{"{}Rua 1"{}}, \textcolor{stringliteral}{"{}emailemail.com"{}}, 0), \mbox{\hyperlink{class_invalid_email_exception}{InvalidEmailException}});}
+\DoxyCodeLine{12 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{tests_2pessoa_8cpp_aeee628768d5b2241d54a39b5c034faf1}\label{tests_2pessoa_8cpp_aeee628768d5b2241d54a39b5c034faf1}} 
+\index{pessoa.cpp@{pessoa.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!pessoa.cpp@{pessoa.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{\char`\"{}Testando dados válidos -\/ PESSOA\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{15 \{}
+\DoxyCodeLine{16     \textcolor{comment}{// testa construção com cpf valido e email valido}}
+\DoxyCodeLine{17     CHECK\_NOTHROW(\mbox{\hyperlink{class_pessoa}{Pessoa}}(\textcolor{stringliteral}{"{}João"{}}, \textcolor{stringliteral}{"{}18130552035"{}}, \textcolor{stringliteral}{"{}Rua 1"{}}, \textcolor{stringliteral}{"{}email@email.com"{}}, 0));}
+\DoxyCodeLine{18     \textcolor{comment}{// testa construção com cnpj valido e email valido}}
+\DoxyCodeLine{19     CHECK\_NOTHROW(\mbox{\hyperlink{class_pessoa}{Pessoa}}(\textcolor{stringliteral}{"{}João"{}}, \textcolor{stringliteral}{"{}16106859000110"{}}, \textcolor{stringliteral}{"{}Rua 1"{}}, \textcolor{stringliteral}{"{}email@email.com"{}}, 1));}
+\DoxyCodeLine{20 \}}
+
+\end{DoxyCode}

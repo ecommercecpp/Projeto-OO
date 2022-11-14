@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.5"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Sistema de Gerenciamento de uma Indústria: Código-Fonte de C:/Users/felip/OneDrive/Documentos/GitHub/poo/include/departamento.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Sistema de Gerenciamento de uma Indústria<span id="projectnumber">&#160;2.0</span>
+   </div>
+   <div id="projectbrief">Trabalho Prático POO | UFMG</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.5 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhum resultado encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">departamento.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="departamento_8hpp.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef _DEPARTAMENTO_HPP_</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define _DEPARTAMENTO_HPP_</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="class_departamento.html">    6</a></span><span class="keyword">class </span><a class="code hl_class" href="class_departamento.html">Departamento</a></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="class_departamento.html#a009b0faa5de5dc84529eb93b8b8ec256">    9</a></span>        <span class="keywordtype">int</span> <a class="code hl_variable" href="class_departamento.html#a009b0faa5de5dc84529eb93b8b8ec256">id</a>;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_departamento.html#ad507421562b36526a935a2a8cad0b795">   10</a></span>        <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_departamento.html#ad507421562b36526a935a2a8cad0b795">current_id</a>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="class_departamento.html#a8f62dff306208b90eceed08c01abbb53">   11</a></span>        std::string <a class="code hl_variable" href="class_departamento.html#a8f62dff306208b90eceed08c01abbb53">nome</a>;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <a class="code hl_function" href="class_departamento.html#a845432a7287478a3c110d2cebdb83580">Departamento</a>();</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <a class="code hl_function" href="class_departamento.html#a845432a7287478a3c110d2cebdb83580">Departamento</a>(std::string <a class="code hl_variable" href="class_departamento.html#a8f62dff306208b90eceed08c01abbb53">nome</a>);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keywordtype">int</span> <a class="code hl_function" href="class_departamento.html#a34df61ca5fa6875c7727641df5f1add5">getId</a>();</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        std::string <a class="code hl_function" href="class_departamento.html#a3d8e40d35aa6b31f90a169e26ec56aad">getNome</a>();</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_departamento.html#abfdd4d66fbe9ec1ba6c5a135f49eb0a9">setNome</a>(std::string <a class="code hl_variable" href="class_departamento.html#a8f62dff306208b90eceed08c01abbb53">nome</a>);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>};</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_departamento_html"><div class="ttname"><a href="class_departamento.html">Departamento</a></div><div class="ttdef"><b>Definition:</b> departamento.hpp:7</div></div>
+<div class="ttc" id="aclass_departamento_html_a009b0faa5de5dc84529eb93b8b8ec256"><div class="ttname"><a href="class_departamento.html#a009b0faa5de5dc84529eb93b8b8ec256">Departamento::id</a></div><div class="ttdeci">int id</div><div class="ttdef"><b>Definition:</b> departamento.hpp:9</div></div>
+<div class="ttc" id="aclass_departamento_html_a34df61ca5fa6875c7727641df5f1add5"><div class="ttname"><a href="class_departamento.html#a34df61ca5fa6875c7727641df5f1add5">Departamento::getId</a></div><div class="ttdeci">int getId()</div><div class="ttdoc">Retorna o Id do Departamento.</div><div class="ttdef"><b>Definition:</b> departamento.cpp:28</div></div>
+<div class="ttc" id="aclass_departamento_html_a3d8e40d35aa6b31f90a169e26ec56aad"><div class="ttname"><a href="class_departamento.html#a3d8e40d35aa6b31f90a169e26ec56aad">Departamento::getNome</a></div><div class="ttdeci">std::string getNome()</div><div class="ttdoc">Retorna o nome do Departamento.</div><div class="ttdef"><b>Definition:</b> departamento.cpp:38</div></div>
+<div class="ttc" id="aclass_departamento_html_a845432a7287478a3c110d2cebdb83580"><div class="ttname"><a href="class_departamento.html#a845432a7287478a3c110d2cebdb83580">Departamento::Departamento</a></div><div class="ttdeci">Departamento()</div><div class="ttdoc">Construct a new Departamento::Departamento object.</div><div class="ttdef"><b>Definition:</b> departamento.cpp:11</div></div>
+<div class="ttc" id="aclass_departamento_html_a8f62dff306208b90eceed08c01abbb53"><div class="ttname"><a href="class_departamento.html#a8f62dff306208b90eceed08c01abbb53">Departamento::nome</a></div><div class="ttdeci">std::string nome</div><div class="ttdef"><b>Definition:</b> departamento.hpp:11</div></div>
+<div class="ttc" id="aclass_departamento_html_abfdd4d66fbe9ec1ba6c5a135f49eb0a9"><div class="ttname"><a href="class_departamento.html#abfdd4d66fbe9ec1ba6c5a135f49eb0a9">Departamento::setNome</a></div><div class="ttdeci">void setNome(std::string nome)</div><div class="ttdoc">Seta o Id do Departamento.</div><div class="ttdef"><b>Definition:</b> departamento.cpp:48</div></div>
+<div class="ttc" id="aclass_departamento_html_ad507421562b36526a935a2a8cad0b795"><div class="ttname"><a href="class_departamento.html#ad507421562b36526a935a2a8cad0b795">Departamento::current_id</a></div><div class="ttdeci">static int current_id</div><div class="ttdef"><b>Definition:</b> departamento.hpp:10</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+</small></address>
+</body>
+</html>

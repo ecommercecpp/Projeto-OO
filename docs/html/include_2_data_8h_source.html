@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.5"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Sistema de Gerenciamento de uma Indústria: Código-Fonte de C:/Users/felip/OneDrive/Documentos/GitHub/poo/include/Data.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Sistema de Gerenciamento de uma Indústria<span id="projectnumber">&#160;2.0</span>
+   </div>
+   <div id="projectbrief">Trabalho Prático POO | UFMG</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.5 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhum resultado encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">Data.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="include_2_data_8h.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef DATA_H_INCLUDED</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define DATA_H_INCLUDED</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="third__party_2_classe_01_data_2_formato_8h.html">Formato.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="third__party_2_classe_01_data_2_execao_customizada_8h.html">ExecaoCustomizada.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">//Constantes de Conversao</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="include_2_data_8h.html#a0db31c423606c1ec7025c2a476c797ad">    8</a></span><span class="preprocessor">#define YEAR_TO_SECONDS 31536000</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="include_2_data_8h.html#a501e9dbaa891b4f113be72bb3c30f73d">    9</a></span><span class="preprocessor">#define DAY_TO_SECONDS 86400</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="include_2_data_8h.html#a394fdbdcd9223b5b01bec61e3515a5cf">   10</a></span><span class="preprocessor">#define HOURS_TO_SECONDS 3600</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="include_2_data_8h.html#a7c330b010e567e33923d8483de2d7fb2">   11</a></span><span class="preprocessor">#define MINUTE_TO_SECONDS 60</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_data.html">   15</a></span><span class="keyword">class </span><a class="code hl_class" href="class_data.html">Data</a></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordtype">int</span> ano;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">int</span> mes;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordtype">int</span> dia;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordtype">int</span> hora;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">int</span> minuto;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordtype">int</span> segundo;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordtype">long</span> ticks;     <span class="comment">//Segundos desde 00:00:00 01/01/1970</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_class" href="class_formato.html">Formato</a> formatoData;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">void</span> ticksToDate();</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">void</span> dateToTicks();</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <a class="code hl_function" href="class_data.html#af11f741cb7f587e2e495452a8905a22a">Data</a>();     <span class="comment">//Construtor default(PT-BR)</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <a class="code hl_function" href="class_data.html#af11f741cb7f587e2e495452a8905a22a">Data</a>(<a class="code hl_class" href="class_formato.html">Formato</a> valFormato);       <span class="comment">//Construtor default de formato de data especifico</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <a class="code hl_function" href="class_data.html#af11f741cb7f587e2e495452a8905a22a">Data</a>(<span class="keywordtype">int</span> valAno, <span class="keywordtype">int</span> valMes, <span class="keywordtype">int</span> valDia, <span class="keywordtype">int</span> valHora=0, <span class="keywordtype">int</span> valMin=0, <span class="keywordtype">int</span> valSeg=0);      <span class="comment">//Construtor com argumentos e formato default</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_function" href="class_data.html#af11f741cb7f587e2e495452a8905a22a">Data</a>(<span class="keywordtype">long</span> valTicks);        <span class="comment">//Construtor a partir de ticks</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">virtual</span> <a class="code hl_function" href="class_data.html#aab31956423290f0d62dcca47ab4d16dd">~Data</a>();        <span class="comment">//Destrutor</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_data.html#a6cbc8fa291c6d72612f6e5057c9e1dd8">operator==</a>(<a class="code hl_class" href="class_data.html">Data</a> &amp;d2);       <span class="comment">//Sobrecarga do operador de comparacao eq</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_data.html#a0c65a5fe0aa0085778367d3c31b2cef9">operator&lt;</a>(<a class="code hl_class" href="class_data.html">Data</a> &amp;d2);        <span class="comment">//Sobrecarga do operador de comparacao lt</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_data.html#a28ada487c9542242ca9f8858cdd43b67">operator&gt;</a>(<a class="code hl_class" href="class_data.html">Data</a> &amp;d2);        <span class="comment">//Sobrecarga do operator de comparacao gt</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <a class="code hl_class" href="class_data.html">Data</a> <a class="code hl_function" href="class_data.html#a0fea8ab11c633b24f067ec81ffc17f1c">operator-</a>(<a class="code hl_class" href="class_data.html">Data</a> &amp;d2);         <span class="comment">//Sobrecarga do operador de subtracao</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="comment">//Metodos get:</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_data.html#a7d2fdbe9b9944becc3386b266d65bc4d">getAno</a>();</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_data.html#ad8a045c146f1a6fdda7a276847e147bf">getMes</a>();</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_data.html#a72d6bfb5a3bc9a8acb1d9df70de822b7">getDia</a>();</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_data.html#a953c35f5e74d4ccb14a492c824ab5d7a">getHora</a>();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_data.html#a852dd13e2ccc3f57f2cf2a0bceb245cc">getMin</a>();</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_data.html#ada52a0656404dc91ebba919381881599">getSeg</a>();</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">long</span> <a class="code hl_function" href="class_data.html#af0ec4f77ce26c73f9c7eaa739fdfc47e">getTicks</a>();</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordtype">string</span> <a class="code hl_function" href="class_data.html#abb64a7ac7213c50f34bc31246b2b3ca6">getFormato</a>();</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="comment">//Metodos set:</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_data.html#a3d8013052396536133eaf7fa291d6786">setAno</a>(<span class="keywordtype">int</span> valAno);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_data.html#a9ce212d943c2401216b6166327788abc">setMes</a>(<span class="keywordtype">int</span> valMes);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_data.html#a214c69d37a8121c23a4f4b61e0f35709">setDia</a>(<span class="keywordtype">int</span> valDia);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_data.html#a74adfb17ae152fec4a33338507e5a72f">setHora</a>(<span class="keywordtype">int</span> valHora);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_data.html#a6910a5ffa00bad4c89454fa7f7133273">setMin</a>(<span class="keywordtype">int</span> valMin);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_data.html#acb0c46ca275d202a5ca6a7fec009bc6b">setSeg</a>(<span class="keywordtype">int</span> valSeg);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_data.html#ac053048d4db1f252a03688d636e7591a">setTicks</a>(<span class="keywordtype">long</span> valTicks);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_data.html#a7f89bf16ab7a7d96e17b57b6c4d47931">setFormato</a>(<a class="code hl_class" href="class_formato.html">Formato</a> valFormato);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_data.html#ac36125408c0f8e39ce09541ac25d308b">validaData</a>();      <span class="comment">//Verifica se todos os valores dos atributos estao dentro dos limites possiveis</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keyword">static</span> <a class="code hl_class" href="class_data.html">Data</a> <a class="code hl_function" href="class_data.html#abdc8f9d7f8f676769bed29d42bc6cae4">dateNow</a>();     <span class="comment">//Retorna a data do presente momento</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_data.html#add00ac9902acc8b6e506d83fbf24c819">printData</a>();       <span class="comment">//Imprime a data na tela de acordo com o formato ja atribuido</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordtype">string</span> <a class="code hl_function" href="class_data.html#afc7b15a5e81334858e48709b2f45cdc3">getData</a>();       <span class="comment">//Retorna a data no formato de string</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_data.html#ade05a40b4b75f2c66291446397576647">diffData</a>(<a class="code hl_class" href="class_data.html">Data</a>);    <span class="comment">// Retorna a diferença entre duas datas em dias</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>};</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="preprocessor">#endif </span><span class="comment">// DATA_H_INCLUDED</span></div>
+<div class="ttc" id="aclass_data_html"><div class="ttname"><a href="class_data.html">Data</a></div><div class="ttdef"><b>Definition:</b> Data.h:16</div></div>
+<div class="ttc" id="aclass_data_html_a0c65a5fe0aa0085778367d3c31b2cef9"><div class="ttname"><a href="class_data.html#a0c65a5fe0aa0085778367d3c31b2cef9">Data::operator&lt;</a></div><div class="ttdeci">bool operator&lt;(Data &amp;d2)</div><div class="ttdef"><b>Definition:</b> Data.cpp:146</div></div>
+<div class="ttc" id="aclass_data_html_a0fea8ab11c633b24f067ec81ffc17f1c"><div class="ttname"><a href="class_data.html#a0fea8ab11c633b24f067ec81ffc17f1c">Data::operator-</a></div><div class="ttdeci">Data operator-(Data &amp;d2)</div><div class="ttdef"><b>Definition:</b> Data.cpp:162</div></div>
+<div class="ttc" id="aclass_data_html_a214c69d37a8121c23a4f4b61e0f35709"><div class="ttname"><a href="class_data.html#a214c69d37a8121c23a4f4b61e0f35709">Data::setDia</a></div><div class="ttdeci">void setDia(int valDia)</div><div class="ttdef"><b>Definition:</b> Data.cpp:231</div></div>
+<div class="ttc" id="aclass_data_html_a28ada487c9542242ca9f8858cdd43b67"><div class="ttname"><a href="class_data.html#a28ada487c9542242ca9f8858cdd43b67">Data::operator&gt;</a></div><div class="ttdeci">bool operator&gt;(Data &amp;d2)</div><div class="ttdef"><b>Definition:</b> Data.cpp:154</div></div>
+<div class="ttc" id="aclass_data_html_a3d8013052396536133eaf7fa291d6786"><div class="ttname"><a href="class_data.html#a3d8013052396536133eaf7fa291d6786">Data::setAno</a></div><div class="ttdeci">void setAno(int valAno)</div><div class="ttdef"><b>Definition:</b> Data.cpp:217</div></div>
+<div class="ttc" id="aclass_data_html_a6910a5ffa00bad4c89454fa7f7133273"><div class="ttname"><a href="class_data.html#a6910a5ffa00bad4c89454fa7f7133273">Data::setMin</a></div><div class="ttdeci">void setMin(int valMin)</div><div class="ttdef"><b>Definition:</b> Data.cpp:245</div></div>
+<div class="ttc" id="aclass_data_html_a6cbc8fa291c6d72612f6e5057c9e1dd8"><div class="ttname"><a href="class_data.html#a6cbc8fa291c6d72612f6e5057c9e1dd8">Data::operator==</a></div><div class="ttdeci">bool operator==(Data &amp;d2)</div><div class="ttdef"><b>Definition:</b> Data.cpp:140</div></div>
+<div class="ttc" id="aclass_data_html_a72d6bfb5a3bc9a8acb1d9df70de822b7"><div class="ttname"><a href="class_data.html#a72d6bfb5a3bc9a8acb1d9df70de822b7">Data::getDia</a></div><div class="ttdeci">int getDia()</div><div class="ttdef"><b>Definition:</b> Data.cpp:185</div></div>
+<div class="ttc" id="aclass_data_html_a74adfb17ae152fec4a33338507e5a72f"><div class="ttname"><a href="class_data.html#a74adfb17ae152fec4a33338507e5a72f">Data::setHora</a></div><div class="ttdeci">void setHora(int valHora)</div><div class="ttdef"><b>Definition:</b> Data.cpp:238</div></div>
+<div class="ttc" id="aclass_data_html_a7d2fdbe9b9944becc3386b266d65bc4d"><div class="ttname"><a href="class_data.html#a7d2fdbe9b9944becc3386b266d65bc4d">Data::getAno</a></div><div class="ttdeci">int getAno()</div><div class="ttdef"><b>Definition:</b> Data.cpp:175</div></div>
+<div class="ttc" id="aclass_data_html_a7f89bf16ab7a7d96e17b57b6c4d47931"><div class="ttname"><a href="class_data.html#a7f89bf16ab7a7d96e17b57b6c4d47931">Data::setFormato</a></div><div class="ttdeci">void setFormato(Formato valFormato)</div><div class="ttdef"><b>Definition:</b> Data.cpp:266</div></div>
+<div class="ttc" id="aclass_data_html_a852dd13e2ccc3f57f2cf2a0bceb245cc"><div class="ttname"><a href="class_data.html#a852dd13e2ccc3f57f2cf2a0bceb245cc">Data::getMin</a></div><div class="ttdeci">int getMin()</div><div class="ttdef"><b>Definition:</b> Data.cpp:195</div></div>
+<div class="ttc" id="aclass_data_html_a953c35f5e74d4ccb14a492c824ab5d7a"><div class="ttname"><a href="class_data.html#a953c35f5e74d4ccb14a492c824ab5d7a">Data::getHora</a></div><div class="ttdeci">int getHora()</div><div class="ttdef"><b>Definition:</b> Data.cpp:190</div></div>
+<div class="ttc" id="aclass_data_html_a9ce212d943c2401216b6166327788abc"><div class="ttname"><a href="class_data.html#a9ce212d943c2401216b6166327788abc">Data::setMes</a></div><div class="ttdeci">void setMes(int valMes)</div><div class="ttdef"><b>Definition:</b> Data.cpp:224</div></div>
+<div class="ttc" id="aclass_data_html_aab31956423290f0d62dcca47ab4d16dd"><div class="ttname"><a href="class_data.html#aab31956423290f0d62dcca47ab4d16dd">Data::~Data</a></div><div class="ttdeci">virtual ~Data()</div><div class="ttdef"><b>Definition:</b> Data.cpp:136</div></div>
+<div class="ttc" id="aclass_data_html_abb64a7ac7213c50f34bc31246b2b3ca6"><div class="ttname"><a href="class_data.html#abb64a7ac7213c50f34bc31246b2b3ca6">Data::getFormato</a></div><div class="ttdeci">string getFormato()</div><div class="ttdef"><b>Definition:</b> Data.cpp:210</div></div>
+<div class="ttc" id="aclass_data_html_abdc8f9d7f8f676769bed29d42bc6cae4"><div class="ttname"><a href="class_data.html#abdc8f9d7f8f676769bed29d42bc6cae4">Data::dateNow</a></div><div class="ttdeci">static Data dateNow()</div><div class="ttdef"><b>Definition:</b> Data.cpp:301</div></div>
+<div class="ttc" id="aclass_data_html_ac053048d4db1f252a03688d636e7591a"><div class="ttname"><a href="class_data.html#ac053048d4db1f252a03688d636e7591a">Data::setTicks</a></div><div class="ttdeci">void setTicks(long valTicks)</div><div class="ttdef"><b>Definition:</b> Data.cpp:259</div></div>
+<div class="ttc" id="aclass_data_html_ac36125408c0f8e39ce09541ac25d308b"><div class="ttname"><a href="class_data.html#ac36125408c0f8e39ce09541ac25d308b">Data::validaData</a></div><div class="ttdeci">bool validaData()</div><div class="ttdef"><b>Definition:</b> Data.cpp:273</div></div>
+<div class="ttc" id="aclass_data_html_acb0c46ca275d202a5ca6a7fec009bc6b"><div class="ttname"><a href="class_data.html#acb0c46ca275d202a5ca6a7fec009bc6b">Data::setSeg</a></div><div class="ttdeci">void setSeg(int valSeg)</div><div class="ttdef"><b>Definition:</b> Data.cpp:252</div></div>
+<div class="ttc" id="aclass_data_html_ad8a045c146f1a6fdda7a276847e147bf"><div class="ttname"><a href="class_data.html#ad8a045c146f1a6fdda7a276847e147bf">Data::getMes</a></div><div class="ttdeci">int getMes()</div><div class="ttdef"><b>Definition:</b> Data.cpp:180</div></div>
+<div class="ttc" id="aclass_data_html_ada52a0656404dc91ebba919381881599"><div class="ttname"><a href="class_data.html#ada52a0656404dc91ebba919381881599">Data::getSeg</a></div><div class="ttdeci">int getSeg()</div><div class="ttdef"><b>Definition:</b> Data.cpp:200</div></div>
+<div class="ttc" id="aclass_data_html_add00ac9902acc8b6e506d83fbf24c819"><div class="ttname"><a href="class_data.html#add00ac9902acc8b6e506d83fbf24c819">Data::printData</a></div><div class="ttdeci">void printData()</div><div class="ttdef"><b>Definition:</b> Data.cpp:309</div></div>
+<div class="ttc" id="aclass_data_html_ade05a40b4b75f2c66291446397576647"><div class="ttname"><a href="class_data.html#ade05a40b4b75f2c66291446397576647">Data::diffData</a></div><div class="ttdeci">int diffData(Data)</div><div class="ttdef"><b>Definition:</b> Data.cpp:345</div></div>
+<div class="ttc" id="aclass_data_html_af0ec4f77ce26c73f9c7eaa739fdfc47e"><div class="ttname"><a href="class_data.html#af0ec4f77ce26c73f9c7eaa739fdfc47e">Data::getTicks</a></div><div class="ttdeci">long getTicks()</div><div class="ttdef"><b>Definition:</b> Data.cpp:205</div></div>
+<div class="ttc" id="aclass_data_html_af11f741cb7f587e2e495452a8905a22a"><div class="ttname"><a href="class_data.html#af11f741cb7f587e2e495452a8905a22a">Data::Data</a></div><div class="ttdeci">Data()</div><div class="ttdef"><b>Definition:</b> Data.cpp:91</div></div>
+<div class="ttc" id="aclass_data_html_afc7b15a5e81334858e48709b2f45cdc3"><div class="ttname"><a href="class_data.html#afc7b15a5e81334858e48709b2f45cdc3">Data::getData</a></div><div class="ttdeci">string getData()</div><div class="ttdef"><b>Definition:</b> Data.cpp:327</div></div>
+<div class="ttc" id="aclass_formato_html"><div class="ttname"><a href="class_formato.html">Formato</a></div><div class="ttdef"><b>Definition:</b> Formato.h:11</div></div>
+<div class="ttc" id="athird__party_2_classe_01_data_2_execao_customizada_8h_html"><div class="ttname"><a href="third__party_2_classe_01_data_2_execao_customizada_8h.html">ExecaoCustomizada.h</a></div></div>
+<div class="ttc" id="athird__party_2_classe_01_data_2_formato_8h_html"><div class="ttname"><a href="third__party_2_classe_01_data_2_formato_8h.html">Formato.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+</small></address>
+</body>
+</html>

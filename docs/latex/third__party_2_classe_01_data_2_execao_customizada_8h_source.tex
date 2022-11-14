@@ -1,0 +1,32 @@
+\hypertarget{third__party_2_classe_01_data_2_execao_customizada_8h_source}{}\doxysection{Execao\+Customizada.\+h}
+\label{third__party_2_classe_01_data_2_execao_customizada_8h_source}\index{C:/Users/felip/OneDrive/Documentos/GitHub/poo/third\_party/Classe Data/ExecaoCustomizada.h@{C:/Users/felip/OneDrive/Documentos/GitHub/poo/third\_party/Classe Data/ExecaoCustomizada.h}}
+\mbox{\hyperlink{third__party_2_classe_01_data_2_execao_customizada_8h}{Vá para a documentação desse arquivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef EXECAOCUSTOMIZADA\_H\_INCLUDED}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define EXECAOCUSTOMIZADA\_H\_INCLUDED}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <exception>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{class }\mbox{\hyperlink{class_execao_customizada}{ExecaoCustomizada}} : \textcolor{keyword}{public} exception}
+\DoxyCodeLine{11 \{}
+\DoxyCodeLine{12 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{13     \textcolor{keywordtype}{char} \mbox{\hyperlink{class_execao_customizada_a6637b30251dacc15fd871e9cf973b93c}{msg}}[100];}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{public}:}
+\DoxyCodeLine{16     \mbox{\hyperlink{class_execao_customizada_afd21b247adf9d6f5d4693ff17a0fb4a8}{ExecaoCustomizada}}(\textcolor{keywordtype}{char}* e)}
+\DoxyCodeLine{17     \{}
+\DoxyCodeLine{18         strcpy(\mbox{\hyperlink{class_execao_customizada_a6637b30251dacc15fd871e9cf973b93c}{msg}}, e);}
+\DoxyCodeLine{19     \}}
+\DoxyCodeLine{20     \textcolor{keyword}{virtual} \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \mbox{\hyperlink{class_execao_customizada_ae7d4f638ff1966ba7502f5cf74149f0c}{what}}()}
+\DoxyCodeLine{21     \{}
+\DoxyCodeLine{22         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_execao_customizada_a6637b30251dacc15fd871e9cf973b93c}{msg}};}
+\DoxyCodeLine{23     \}}
+\DoxyCodeLine{24 \};}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// EXECAOCUSTOMIZADA\_H\_INCLUDED}}
+
+\end{DoxyCode}

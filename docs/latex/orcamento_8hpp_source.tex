@@ -1,0 +1,38 @@
+\hypertarget{orcamento_8hpp_source}{}\doxysection{orcamento.\+hpp}
+\label{orcamento_8hpp_source}\index{C:/Users/felip/OneDrive/Documentos/GitHub/poo/include/orcamento.hpp@{C:/Users/felip/OneDrive/Documentos/GitHub/poo/include/orcamento.hpp}}
+\mbox{\hyperlink{orcamento_8hpp}{Vá para a documentação desse arquivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_ORCAMENTO\_HPP\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_ORCAMENTO\_HPP\_}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{produto_8hpp}{produto.hpp}}"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{cliente_8hpp}{cliente.hpp}}"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_orcamento}{Orcamento}}}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13     \textcolor{keyword}{private}:}
+\DoxyCodeLine{14         std::map<int, Produto> produtos;}
+\DoxyCodeLine{15         \mbox{\hyperlink{class_cliente}{Cliente}} *cliente;}
+\DoxyCodeLine{16         \textcolor{keywordtype}{double} valorTotal;}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18     \textcolor{keyword}{public}:}
+\DoxyCodeLine{19         \mbox{\hyperlink{class_orcamento_ad499422bbe74fd0c2b4ca52916906d06}{Orcamento}}();}
+\DoxyCodeLine{20         \mbox{\hyperlink{class_orcamento_ad499422bbe74fd0c2b4ca52916906d06}{Orcamento}}(std::map<int, Produto> produtos, \mbox{\hyperlink{class_cliente}{Cliente}} *cliente, \textcolor{keywordtype}{double} valorTotal);}
+\DoxyCodeLine{21         std::map<int, Produto> \mbox{\hyperlink{class_orcamento_a18bc54aaadbd91d463559dfd1201bbab}{getProdutos}}();}
+\DoxyCodeLine{22         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_orcamento_aa3149bac10c9cc779e374f6d7e70aaaf}{setProdutos}}(std::map<int, Produto> produtos);}
+\DoxyCodeLine{23         \mbox{\hyperlink{class_cliente}{Cliente}} *\mbox{\hyperlink{class_orcamento_a3b4598fac843d1ed637d8da162ae3c94}{getCliente}}();}
+\DoxyCodeLine{24         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_orcamento_aa3477cd035d168a5d147d199082e59ee}{setCliente}}(\mbox{\hyperlink{class_cliente}{Cliente}} *cliente);}
+\DoxyCodeLine{25         \textcolor{keywordtype}{double} \mbox{\hyperlink{class_orcamento_aec0b3a858e476f7528dc005dababf02b}{getValorTotal}}();}
+\DoxyCodeLine{26         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_orcamento_a04119ec886d363725530b8df09760375}{setValorTotal}}(\textcolor{keywordtype}{double} valorTotal);}
+\DoxyCodeLine{27         }
+\DoxyCodeLine{28         }
+\DoxyCodeLine{29 \};}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

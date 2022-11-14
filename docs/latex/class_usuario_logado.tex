@@ -1,0 +1,91 @@
+\hypertarget{class_usuario_logado}{}\doxysection{Referência da Classe Usuario\+Logado}
+\label{class_usuario_logado}\index{UsuarioLogado@{UsuarioLogado}}
+
+
+{\ttfamily \#include $<$usuario\+Logado.\+hpp$>$}
+
+Diagrama de hierarquia para Usuario\+Logado\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_usuario_logado}
+\end{center}
+\end{figure}
+\doxysubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_usuario_logado_ae8970e9f890af7942dfe4bdba09c4953}{Usuario\+Logado}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_usuario}{Usuario}} Logado\+:\+: \mbox{\hyperlink{class_usuario}{Usuario}} Logado object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_usuario_logado_a45b59d05401bd3c7836a4861047af839}{Usuario\+Logado}} (\mbox{\hyperlink{class_usuario_logado}{Usuario\+Logado}} \&other)=delete
+\item 
+void \mbox{\hyperlink{class_usuario_logado_aaa7942420755666dc002e5919625a4b1}{operator=}} (const \mbox{\hyperlink{class_usuario_logado}{Usuario\+Logado}} \&)=delete
+\end{DoxyCompactItemize}
+\doxysubsection*{Membros Públicos Estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_usuario_logado}{Usuario\+Logado}} $\ast$ \mbox{\hyperlink{class_usuario_logado_a6889d8d2d8700b1a7234575d092b2b5c}{Get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Retorna a instancia do usuario que está logado (singleton) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Outros membros herdados}
+
+
+\doxysubsection{Construtores e Destrutores}
+\mbox{\Hypertarget{class_usuario_logado_ae8970e9f890af7942dfe4bdba09c4953}\label{class_usuario_logado_ae8970e9f890af7942dfe4bdba09c4953}} 
+\index{UsuarioLogado@{UsuarioLogado}!UsuarioLogado@{UsuarioLogado}}
+\index{UsuarioLogado@{UsuarioLogado}!UsuarioLogado@{UsuarioLogado}}
+\doxysubsubsection{\texorpdfstring{UsuarioLogado()}{UsuarioLogado()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Usuario\+Logado\+::\+Usuario\+Logado (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{class_usuario}{Usuario}} Logado\+:\+: \mbox{\hyperlink{class_usuario}{Usuario}} Logado object. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_usuario_logado_a45b59d05401bd3c7836a4861047af839}\label{class_usuario_logado_a45b59d05401bd3c7836a4861047af839}} 
+\index{UsuarioLogado@{UsuarioLogado}!UsuarioLogado@{UsuarioLogado}}
+\index{UsuarioLogado@{UsuarioLogado}!UsuarioLogado@{UsuarioLogado}}
+\doxysubsubsection{\texorpdfstring{UsuarioLogado()}{UsuarioLogado()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Usuario\+Logado\+::\+Usuario\+Logado (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_usuario_logado}{Usuario\+Logado}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+\doxysubsection{Funções membros}
+\mbox{\Hypertarget{class_usuario_logado_a6889d8d2d8700b1a7234575d092b2b5c}\label{class_usuario_logado_a6889d8d2d8700b1a7234575d092b2b5c}} 
+\index{UsuarioLogado@{UsuarioLogado}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!UsuarioLogado@{UsuarioLogado}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_usuario_logado}{Usuario\+Logado}} $\ast$ Usuario\+Logado\+::\+Get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retorna a instancia do usuario que está logado (singleton) 
+
+\begin{DoxyReturn}{Retorna}
+Usuario\+Logado$\ast$ 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{21 \{}
+\DoxyCodeLine{22     \textcolor{keywordflow}{if} (usuario == \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{23     \{}
+\DoxyCodeLine{24         usuario = \textcolor{keyword}{new} \mbox{\hyperlink{class_usuario_logado_ae8970e9f890af7942dfe4bdba09c4953}{UsuarioLogado}}();}
+\DoxyCodeLine{25     \}}
+\DoxyCodeLine{26     \textcolor{keywordflow}{return} (\mbox{\hyperlink{class_usuario_logado}{UsuarioLogado}} *)usuario;}
+\DoxyCodeLine{27 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_usuario_logado_aaa7942420755666dc002e5919625a4b1}\label{class_usuario_logado_aaa7942420755666dc002e5919625a4b1}} 
+\index{UsuarioLogado@{UsuarioLogado}!operator=@{operator=}}
+\index{operator=@{operator=}!UsuarioLogado@{UsuarioLogado}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily void Usuario\+Logado\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_usuario_logado}{Usuario\+Logado}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/felip/\+One\+Drive/\+Documentos/\+Git\+Hub/poo/include/\mbox{\hyperlink{usuario_logado_8hpp}{usuario\+Logado.\+hpp}}\item 
+C\+:/\+Users/felip/\+One\+Drive/\+Documentos/\+Git\+Hub/poo/src/\mbox{\hyperlink{usuario_logado_8cpp}{usuario\+Logado.\+cpp}}\end{DoxyCompactItemize}

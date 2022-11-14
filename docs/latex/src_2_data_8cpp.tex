@@ -1,0 +1,48 @@
+\hypertarget{src_2_data_8cpp}{}\doxysection{Referência do Arquivo C\+:/\+Users/felip/\+One\+Drive/\+Documentos/\+Git\+Hub/poo/src/\+Data.cpp}
+\label{src_2_data_8cpp}\index{C:/Users/felip/OneDrive/Documentos/GitHub/poo/src/Data.cpp@{C:/Users/felip/OneDrive/Documentos/GitHub/poo/src/Data.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$cstddef$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Data.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Execao\+Customizada.\+h\char`\"{}}\newline
+\doxysubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{src_2_data_8cpp_a401d81ac89363be05bdbe23d6c68d71c}{bissexto}} (int year)
+\item 
+int \mbox{\hyperlink{src_2_data_8cpp_af1dfc5b711039de3fc4908cc1166ce1b}{month\+To\+Days}} (int month)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Funções}
+\mbox{\Hypertarget{src_2_data_8cpp_a401d81ac89363be05bdbe23d6c68d71c}\label{src_2_data_8cpp_a401d81ac89363be05bdbe23d6c68d71c}} 
+\index{Data.cpp@{Data.cpp}!bissexto@{bissexto}}
+\index{bissexto@{bissexto}!Data.cpp@{Data.cpp}}
+\doxysubsubsection{\texorpdfstring{bissexto()}{bissexto()}}
+{\footnotesize\ttfamily int bissexto (\begin{DoxyParamCaption}\item[{int}]{year }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14                       \{}
+\DoxyCodeLine{15     \textcolor{keywordflow}{return} year \% 4 == 0 \&\& (year \% 400 == 0 || year \% 100 != 0) ? 1 : 0;}
+\DoxyCodeLine{16 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{src_2_data_8cpp_af1dfc5b711039de3fc4908cc1166ce1b}\label{src_2_data_8cpp_af1dfc5b711039de3fc4908cc1166ce1b}} 
+\index{Data.cpp@{Data.cpp}!monthToDays@{monthToDays}}
+\index{monthToDays@{monthToDays}!Data.cpp@{Data.cpp}}
+\doxysubsubsection{\texorpdfstring{monthToDays()}{monthToDays()}}
+{\footnotesize\ttfamily int month\+To\+Days (\begin{DoxyParamCaption}\item[{int}]{month }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{18                           \{}
+\DoxyCodeLine{19     \textcolor{keywordflow}{return} month == 2 ? 28 :}
+\DoxyCodeLine{20            month <= 7 ? 30 + (month \% 2) :}
+\DoxyCodeLine{21            month > 7 ? 31 -\/ (month \% 2) : 31;}
+\DoxyCodeLine{22 \}}
+
+\end{DoxyCode}
