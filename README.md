@@ -5,7 +5,7 @@
 > O Projeto POO é uma abstração de um sistema.
 > Diagrama: https://lucid.app/lucidspark/67d84e7a-1928-4db6-8f41-c2cf7df4773a/edit?viewport_loc=-6913%2C-3823%2C13960%2C6849%2C0_0&invitationId=inv_f02af824-5850-4265-b7ef-f0f2c010a1d1
 
->Link do repositório no Replit: [tem mais naum rsrs](https://replit.com/@FileppeVoleso/Projeto-OO-1)
+>Link do repositório no Replit: [tem mais naum rsrs](https://replit.com/join/mfgueahaau-fileppevoleso)
 
 >Token para push no github: asdasda
 
