@@ -3,6 +3,16 @@
 
 #include <exception>
 
+class UserOfflineException : public std::exception
+{
+	public:
+		UserOfflineException() {}
+		const char* what() const throw()
+		{
+			return "Nenhum usuario logado, porfavor faca login para continuar...";
+		}
+};
+
 class AcessDeniedException : public std::exception
 {
 	public:
@@ -18,7 +28,7 @@ class InvalidCPFException : public std::exception
 		InvalidCPFException() {}
 		const char* what() const throw()
 		{
-			return "CPF inválido";
+			return "CPF invalido";
 		}
 };
 
@@ -28,7 +38,7 @@ class InvalidCNPJException : public std::exception
 		InvalidCNPJException() {}
 		const char* what() const throw()
 		{
-			return "CNPJ inválido";
+			return "CNPJ invalido";
 		}
 };
 

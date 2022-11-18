@@ -21,6 +21,8 @@ class Funcionario : public Pessoa
 		std::vector<Salario> salario;
 		Departamento departamento;
 		Cargo cargo;
+		float latitude;
+		float longitude;
 	public:
 		Funcionario();
 		Funcionario(std::string nome, std::string cpf_cnpj, std::string endereco, std::string email, Data nascimento, Data admissao, std::vector<Salario> salario, Departamento departamento, Cargo cargo);

@@ -1,6 +1,23 @@
 #include <iostream>
-#include "autoload.hpp"
+#include "veiculo.hpp"
+#include "usuarioLogado.hpp"
+#include "cliente.hpp"
+#include "funcionario.hpp"
 
+void testUserSingleton(){
+	std::cout << "-----------------" << std::endl;
+	UsuarioLogado *U = UsuarioLogado::GetInstance();
+	U->setNome("User 1");
+	U->setTipo(0);
+	U->setcpf_cnpj("09169507700");
+	U->setEmail("email1@gmail.com");
+	
+	std::cout << U->getNome() << std::endl;
+	std::cout << "Carregando classe UsuarioLogado" << std::endl;
+	UsuarioLogado *usuarioLogado = UsuarioLogado::GetInstance();
+	std::cout << usuarioLogado->getNome() << std::endl;
+	std::cout << "-----------------" << std::endl;
+}
 
 void testaCliente(){
 
@@ -28,12 +45,15 @@ void testaFuncionario()
 	//Departamento construcao("Departamento de Construcao", cargos1);
 	Departamento adm("Departamento de ADM");
 
+	//Funcionario f1("Joao", "123456789", "Rua 1", "", 1, "joao", "123", cargos1, adm, 1000, );
+
 	//Funcionario f1("Joao", "123456789", "Rua 1", "a@a.com");
 }
 
 int main()
 {
-
+	std::cout << "testando usuarioLogado singleton" << std::endl;
+	testUserSingleton();
 	int a = 0;
 	std::cout << "+-----------------+"<<std::endl;
 	std::cout<<"Bem vindo ao sistema de testes do sistema CEFIMl(eh so as iniciais dos nomes dos integrantes do grupo!)"<<std::endl;

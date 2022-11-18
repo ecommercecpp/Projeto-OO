@@ -34,7 +34,7 @@ Pessoa::Pessoa(std::string nome, std::string cpf_cnpj, std::string endereco, std
  */
 void Pessoa::setcpf_cnpj(std::string cpf_cnpj)
 {
-	if (tipo == 0)
+	if (tipo == 0 || cpf_cnpj.length() == 12)
 	{
 		if (ValidaCPFCNPJ::validaCPF(cpf_cnpj))
 		{
@@ -54,6 +54,7 @@ void Pessoa::setcpf_cnpj(std::string cpf_cnpj)
 		else
 		{
 			throw InvalidCNPJException();
+			//std::cout << "CNPJ invalido"<< cpf_cnpj << std::endl;
 		}
 	}
 }

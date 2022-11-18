@@ -27,7 +27,7 @@ Usuario::Usuario(std::string nome, std::string cpf_cnpj, std::string endereco, s
     this->cpf_cnpj = cpf_cnpj;
     this->endereco = endereco;
     this->email = email;
-    this->tipo = 1; // conferir se eh 1 ou 0
+    this->tipo = tipo; // conferir se eh 1 ou 0
     this->login = login;
     this->senha = senha;
 }
