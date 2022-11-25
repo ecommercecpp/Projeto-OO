@@ -88,14 +88,15 @@ void testaPessoa()
 {
 	//criar um usuarioLogado
 	UsuarioLogado *U = UsuarioLogado::GetInstance();
+	U->setNome("Usuario funciona pfvr");
+	std::cout << "Nome do usuario logado: " << U->getNome() << std::endl;
 
 	std::vector<std::string> permissoes;
 	permissoes.push_back("cadastrarPessoa");
-
 	U->setPermissoes(permissoes);
 	//criar um usuario e adicionar a permissao cadastrarPessoa no vetor de permissões
 	Empresa *e = Empresa::getEmpresa();
-
+	
 	//logar usuario na empresa
 	e->logar(U);
 
@@ -138,7 +139,9 @@ void testaPessoa()
 int main()
 {
 	std::cout << "testando a pessoa" << std::endl;
+
 	testaPessoa();
+
 	//std::cout << "testando usuarioLogado singleton" << std::endl;
 	testUserSingleton();
 	int a = 0;

@@ -350,7 +350,7 @@ bool Empresa::verificaPermissao(std::string valor){
         std::cout << "Verificando permissao caaatapimbas(empresa)" << std::endl;
         //printar os valores do vetor de permissoes em usuario
         //printa getPermissoes.size
-       // std::cout << "Tamanho do vetor de permissoes de usuario logado(classe empresa): " << usuarioLogado->getPermissoes().size() << std::endl;
+        std::cout << "Tamanho do vetor de permissoes de usuario logado(classe empresa): " << usuarioLogado->getPermissoes().size() << std::endl;
         std::cout << "Tamanho do vetor de permissoes de usuario(classe empresa): " << usuario->getPermissoes().size() << std::endl;
         for (unsigned int i = 0; i < usuarioLogado->getPermissoes().size(); i++)
         {

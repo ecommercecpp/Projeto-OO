@@ -11,7 +11,7 @@ class UsuarioLogado : public Usuario
 		static UsuarioLogado *usuario;
 		//UsuarioLogado(std::string nome, std::string cpf_cnpj, std::string endereco, std::string email, int tipo, std::string login, std::string senha, std::vector<std::string> permissoes);
 		UsuarioLogado();
-		Usuario *user;
+		//Usuario *user;
 	public:
     	UsuarioLogado(UsuarioLogado &other) = delete;
 		void operator=(const UsuarioLogado &) = delete;

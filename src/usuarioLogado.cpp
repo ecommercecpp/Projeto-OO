@@ -31,6 +31,7 @@ UsuarioLogado* UsuarioLogado::GetInstance()
     if (usuario == nullptr)
     {
        usuario = new UsuarioLogado;
+       std::cout << "Usuario logado criado" << std::endl;
        // usuario = new UsuarioLogado("aaa", "09169507600", "Endereco", "email", 0, "admin", "admin", {"admin"});
         
     }
@@ -55,7 +56,9 @@ Usuario *UsuarioLogado::getUsuario()
  */
 std::string UsuarioLogado::getNome()
 {
-    return this->usuario->getNome();
+    //retorna o nome da pessoa logada
+
+    return this->nome;
 }
 
 /**
