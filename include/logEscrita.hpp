@@ -30,6 +30,7 @@ class LogEscrita: public Logs
     void setAtributosAnteriores(std::vector<std::string>);
     std::vector<std::string> getAtributosAnteriores();
     
+    std::string getLog();
 };
 
 #endif

@@ -18,7 +18,7 @@ void testUserSingleton(){
 	U->setcpf_cnpj("19169517711");
 	U->setEmail("email1@gmail.com");
 	
-	std::cout << "Nome do singleton: " << U->getNome() << "aaaaaa ;-;" << std::endl;
+	std::cout << "Nome do singleton (teste): " << U->getNome() << "aaaaaa ;-;" << std::endl;
 	std::cout << "Carregando classe UsuarioLogado" << std::endl;
 	
 	// Criando outro usuário pra ver se quando chama o singleton ele não cria outro
@@ -40,7 +40,7 @@ void testaFuncionario()
 	UsuarioLogado *U = UsuarioLogado::GetInstance();
 
 	//adicionar permisse de cadastrarPessoa ao usuarioLogado
-	U->addPermissao("cadastrarCliente");
+	//U->addPermissao("cadastrarCliente");
 	//printar o vector de permissoes
 	
 	std::cout << "Permissoes do usuario logado: " << std::endl;
@@ -86,26 +86,42 @@ void testaFuncionario()
 }
 void testaPessoa()
 {
-	//criar um usuario e adicionar a permissao cadastrarPessoa no vetor de permissões
-	//Empresa *e = Empresa::getEmpresa();
 	//criar um usuarioLogado
 	UsuarioLogado *U = UsuarioLogado::GetInstance();
 
-	//adicionar permisse de cadastrarPessoa ao usuarioLogado
-	U->addPermissao("cadastrarPessoa");
-	//printar o vector de permissoes
-	
-	std::cout << "Permissoes do usuario logado: " << std::endl;
-	//imprimir getPermissoes
+	std::vector<std::string> permissoes;
+	permissoes.push_back("cadastrarPessoa");
 
-	std::cout << U->getPermissoes().size() << std::endl;
+	U->setPermissoes(permissoes);
+	//criar um usuario e adicionar a permissao cadastrarPessoa no vetor de permissões
+	Empresa *e = Empresa::getEmpresa();
+
+	//logar usuario na empresa
+	e->logar(U);
+
+	U->setNome("Usuario funciona pfvr");
+	U->setSenha("123");
+	U->setTipo(0);
+	U->setcpf_cnpj("19169517711");
+	U->setEmail("user@user.com");
+
+	std::cout << "Nome do usuario logado de agr: " << U->getNome() << std::endl;
+
+	//imprime as permissoes do usuario logado
+	std::cout << "Permissoes do usuario logado: " << std::endl;
+	for (unsigned int i = 0; i < U->getPermissoes().size(); i++)
+	{
+		std::cout << U->getPermissoes()[i] << std::endl;
+	}
+
+
+	Usuario usuario("Joao", "1234567891", "Rua 1", "email@email.com", 0, "123456", "123456", permissoes);
+		std::cout << U->getPermissoes().size() << std::endl;
 	
 	for (unsigned int i = 0; i < U->getPermissoes().size(); i++)
 	{
 		std::cout << "aqui oh -> " << U->getPermissoes()[i] << std::endl;
 	}
-
-	Usuario usuario("Joao", "1234567891", "Rua 1", "email@email.com", 0, "123456", "123456");
 
 
 	std::cout<<"-------teste mil grau----------"<<std::endl;
@@ -121,10 +137,10 @@ void testaPessoa()
 
 int main()
 {
-	//std::cout << "testando a pessoa amada em 3 dias" << std::endl;
-	//testaPessoa();
+	std::cout << "testando a pessoa" << std::endl;
+	testaPessoa();
 	//std::cout << "testando usuarioLogado singleton" << std::endl;
-	//testUserSingleton();
+	testUserSingleton();
 	int a = 0;
 	std::cout << "+-----------------+"<<std::endl;
 	std::cout<<"Bem vindo ao sistema de testes do sistema CEFIMl(eh so as iniciais dos nomes dos integrantes do grupo!)"<<std::endl;

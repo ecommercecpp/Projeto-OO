@@ -9,8 +9,9 @@ class UsuarioLogado : public Usuario
 {
 	private:
 		static UsuarioLogado *usuario;
-		UsuarioLogado(std::string nome, std::string cpf_cnpj, std::string endereco, std::string email, int tipo, std::string login, std::string senha);
-		
+		//UsuarioLogado(std::string nome, std::string cpf_cnpj, std::string endereco, std::string email, int tipo, std::string login, std::string senha, std::vector<std::string> permissoes);
+		UsuarioLogado();
+		Usuario *user;
 	public:
     	UsuarioLogado(UsuarioLogado &other) = delete;
 		void operator=(const UsuarioLogado &) = delete;
@@ -24,13 +25,10 @@ class UsuarioLogado : public Usuario
 		int getTipo();
 		std::string getLogin();
 		std::string getSenha();
-		bool verificaPermissao(std::string valor);
-
-		void addPermissao(std::string valor);
-		void removePermissao(std::string valor);
-		//função que retorna o vetor de permissões da classe usuario
 		std::vector<std::string> getPermissoes();
+		void setPermissoes(std::vector<std::string> permissoes);
 
+		void removePermissao(std::string valor);
 
 };
 

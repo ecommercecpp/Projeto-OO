@@ -347,13 +347,14 @@ void Empresa::removerLogExcecao(LogExcecao *logExcecao)
 
 bool Empresa::verificaPermissao(std::string valor){
     //verificar se as permissoes do usuario logado contem o valor passado
-        std::cout << "Verificando permissao caaatapimbas" << std::endl;
+        std::cout << "Verificando permissao caaatapimbas(empresa)" << std::endl;
         //printar os valores do vetor de permissoes em usuario
         //printa getPermissoes.size
-        std::cout << "Tamanho do vetor de permissoes(classe empresa): " << usuario->getUsuarioPermissoes().size() << std::endl;
+       // std::cout << "Tamanho do vetor de permissoes de usuario logado(classe empresa): " << usuarioLogado->getPermissoes().size() << std::endl;
+        std::cout << "Tamanho do vetor de permissoes de usuario(classe empresa): " << usuario->getPermissoes().size() << std::endl;
         for (unsigned int i = 0; i < usuarioLogado->getPermissoes().size(); i++)
         {
-            std::cout << "Mostra aqui tamem: " << usuarioLogado->getPermissoes()[i] << std::endl;
+           std::cout << "Mostra aqui tamem: " << usuarioLogado->getPermissoes()[i] << std::endl;
         }
 
         std::cout << "Valor passado: " << valor << std::endl;
@@ -369,7 +370,7 @@ bool Empresa::verificaPermissao(std::string valor){
     }
     return false;*/
 }
-
+/*
 void Empresa::login(Usuario* usuario){
     //cria um log de leitura e adiciona a lista de logs de leitura
     Data data = Data();
@@ -383,8 +384,18 @@ void Empresa::login(Usuario* usuario){
     //usuarioLogado = new Usuario(usuario->getNome(), usuario->getSenha(), usuario->getPermissoes());
     this->usuario = usuario;
 }
+*/
 
 //criar uma função que retorna as permissoes do usuario logado
 std::vector<std::string> Empresa::getPermissoesUsuarioLogado(){
     return usuarioLogado->getPermissoes();
+}
+
+//criar uma função que retorna o nome do usuario logado
+std::string Empresa::getNomeUsuarioLogado(){
+    return usuarioLogado->getNome();
+}
+
+void Empresa::logar(UsuarioLogado *usuarioLogado){
+    this->usuarioLogado = usuarioLogado;
 }

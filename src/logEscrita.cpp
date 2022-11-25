@@ -33,7 +33,9 @@ LogEscrita::~LogEscrita()
 /*
 std::string LogEscrita::getLog()
 {
-    std::string log ("***Log de Escrita***\nUsuario da operacao: "+ this->usuario.getLogin() + "\nEntidade: " +this->entidade+"\n"+"Atributos Anteriores: "+this->atributosAnteriores);
+    //variavel que pega a data atual
+    std::string log ("***Log de Escrita***\nUsuario da operacao: "+ this->usuario.getLogin() + "\nData da operacao: " +  + "\nEntidade: " +this->entidade+"\n"+"Atributos Anteriores: "+this->atributosAnteriores);
+    
     return log;
 }
 */
@@ -97,3 +99,20 @@ std::vector<std::string> LogEscrita::getAtributosAnteriores()
 {
     return this->atributosAnteriores;
 }
+
+//gerar log de escrita
+/*
+void LogEscrita::gerarLogEscrita(std::string entidade, std::map<std::string, std::string> informacoesAnteriores, std::map<std::string, std::string> informacoesNovas, std::vector<std::string> atributosAnteriores)
+{
+    LogEscrita logEscrita;
+    logEscrita.setEntidade(entidade);
+    logEscrita.setInformacoesAnteriores(informacoesAnteriores);
+    logEscrita.setInformacoesNovas(informacoesNovas);
+    logEscrita.setAtributosAnteriores(atributosAnteriores);
+    logEscrita.setData(Data::getDataAtual());
+    logEscrita.setUsuario(Usuario::getUsuarioLogado());
+    logEscrita.setLog();
+    //printar log
+    std::cout << logEscrita.getLog() << std::endl;
+}
+*/

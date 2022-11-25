@@ -57,8 +57,8 @@ class Empresa
 		Empresa(Empresa &other) = delete;
 		//void operator=(const Empresa &) = delete;
 		static Empresa* getEmpresa();
-		//void login(UsuarioLogado* usuario);
-		//void logout();
+		
+		
 		//Usuario* getUsuarioLogado();
 		//void setUsuarioLogado(Usuario* usuario);
 		//void adicionarPermissao(Cliente* cliente, Permissao permissao);
@@ -97,7 +97,10 @@ class Empresa
 
 		bool verificaPermissao(std::string valor);
 		std::vector<std::string> getPermissoesUsuarioLogado();
-		void login(Usuario* usuario);
+		
+		std::string getNomeUsuarioLogado();
+
+		void logar(UsuarioLogado *usuarioLogado);
 };
 
 #endif

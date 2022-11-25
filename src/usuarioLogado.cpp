@@ -9,9 +9,14 @@ UsuarioLogado *UsuarioLogado::usuario = nullptr;
  * @brief Construct a new Usuario Logado:: Usuario Logado object
  *
  */
-UsuarioLogado::UsuarioLogado(std::string nome, std::string cpf_cnpj, std::string endereco, std::string email, int tipo, std::string login, std::string senha) : Usuario(nome, cpf_cnpj, endereco, email, tipo, login, senha)
+/*
+UsuarioLogado::UsuarioLogado(std::string nome, std::string cpf_cnpj, std::string endereco, std::string email, int tipo, std::string login, std::string senha, std::vector<std::string> permissoes) : Usuario(nome, cpf_cnpj, endereco, email, tipo, login, senha, permissoes)
 {
     
+
+}*/
+UsuarioLogado::UsuarioLogado()
+{
 
 }
 
@@ -25,11 +30,12 @@ UsuarioLogado* UsuarioLogado::GetInstance()
 {
     if (usuario == nullptr)
     {
-        usuario = new UsuarioLogado("aaa", "09169507600", "Endereco", "email", 0, "admin", "admin");
+       usuario = new UsuarioLogado;
+       // usuario = new UsuarioLogado("aaa", "09169507600", "Endereco", "email", 0, "admin", "admin", {"admin"});
         
     }
-    return (UsuarioLogado *)usuario;
-
+    //return (UsuarioLogado *)usuario;
+    return usuario;
 }
 
 /**
@@ -42,18 +48,6 @@ Usuario *UsuarioLogado::getUsuario()
     return this->usuario;
 }
 
-/**
- * @brief Verifica se o usuario logado tem acesso a determinada permissao
- *
- * @param valor
- * @return true
- * @return false
- *//*
-bool UsuarioLogado::getAcesso(std::string valor)
-{
-    return this->usuario->getPermissoes(valor);
-}
-*/
 /**
  * @brief Retorna o nome do usuario logado
  *
@@ -125,43 +119,28 @@ std::string UsuarioLogado::getSenha()
 }
 
 /**
- * @brief Verifica se o usuario logado tem acesso a determinada permissao
+ * @brief Retorna o vetor de permissoes do usuario logado
+ *
+ * @return std::vector<std::string>
+ */
+std::vector<std::string> UsuarioLogado::getPermissoes()
+{
+    return this->usuario->getPermissoes();
+}
+
+/**
+ * @brief Adiciona uma permissao ao usuario logado
  *
  * @param valor
- * @return true
- * @return false
- *//*
-bool UsuarioLogado::verificaPermissao(std::string valor)
+ */
+void UsuarioLogado::setPermissoes(std::vector<std::string> valor)
 {
-    //verifica se o valor é uma permissao dentro do vetor de permissoes de usuario
-    std::cout << "Verificando permissao catapimbas" << std::endl;
-    for (unsigned int i = 0; i < this->usuario->getPermissoes().size(); i++)
-    {
-        if (this->usuario->getPermissoes()[i] == valor)
-        {
-            return true;
-        }else{
-            std::cout << "Permissao nao encontrada" << std::endl;
-            return false;
-        }
-    }
-}*/
-
-//adicionar a permissao passada no parametro ao vector de permissoes de usuario
-void UsuarioLogado::addPermissao(std::string valor)
-{
-    //adicionar a permissao passada no parametro ao vector de permissoes da classe pai (usuario)
-    this->usuario->addPermissaoUsuario(valor);
+    this->usuario->setPermissoes(valor);
 }
 
 //remover a permissao passada no parametro do vector de permissoes de usuario
 void UsuarioLogado::removePermissao(std::string valor)
 {
-    this->usuario->removePermissaoUsuario(valor);
-}
-
-//retorna o vector de permissoes da classe pai (usuario)
-
-std::vector<std::string> UsuarioLogado::getPermissoes(){
-    return this->usuario->getUsuarioPermissoes();
+    //remover a permissao passada no parametro do vector de permissoes da classe pai (usuario)
+    this->usuario->removePermissao(valor);
 }
