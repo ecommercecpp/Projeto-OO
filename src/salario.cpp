@@ -16,8 +16,15 @@ Salario::Salario()
  *
  * @param valor
  * @param status
- * @param motivo
+ * @param motivo // 1 - Promoção 2 - Reajuste (dissidio)
  */
+Salario::Salario(double valor, bool status, int motivo)
+{
+	this->valor = valor;
+	this->status = status;
+	this->motivo = motivo;
+}
+/*
 Salario::Salario(double valor, bool status, int motivo)
 	: status(status)
 {
@@ -25,7 +32,7 @@ Salario::Salario(double valor, bool status, int motivo)
 	setMotivo(motivo);
 	this->status = status;
 	data = Data();
-}
+}*/
 
 /**
  * @brief Seta o motivo para o salário

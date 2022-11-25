@@ -11,10 +11,17 @@
  * @param entidade
  * @param informacao
  */
+LogLeitura::LogLeitura(Usuario usuario, Data data, std::string entidade, std::string informacao)
+{
+    this->usuario = usuario;
+    this->data = data;
+    this->entidade = entidade;
+    this->informacao = informacao;
+}/*
 LogLeitura::LogLeitura(Usuario usuario, Data data, std::string entidade, std::string informacao) : Logs(usuario, data, entidade)
 {
     this->informacao = informacao;
-}
+}*/
 
 /**
  * @brief Construct a new Log Leitura:: Log Leitura object

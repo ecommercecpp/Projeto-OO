@@ -1,12 +1,16 @@
 #include <iostream>
+#include <algorithm>  // std::find
 
+#include "Data.h"
 #include "empresa.hpp"
+#include "usuario.hpp"
+#include "usuarioLogado.hpp"
 
 /**
  * @brief Construct a new Empresa:: Empresa singleton object
  *
  */
-Empresa *Empresa::empresa = new Empresa();
+Empresa *Empresa::empresa = nullptr;
 
 /**
  * @brief Construct a new Empresa:: Empresa object
@@ -23,6 +27,9 @@ Empresa::Empresa()
  */
 Empresa *Empresa::getEmpresa()
 {
+    if(empresa == nullptr){
+        empresa = new Empresa;
+    }
     return empresa;
 }
 
@@ -336,4 +343,48 @@ void Empresa::removerLogExcecao(LogExcecao *logExcecao)
             logsExcecao.erase(logsExcecao.begin() + i);
         }
     }
+}
+
+bool Empresa::verificaPermissao(std::string valor){
+    //verificar se as permissoes do usuario logado contem o valor passado
+        std::cout << "Verificando permissao caaatapimbas" << std::endl;
+        //printar os valores do vetor de permissoes em usuario
+        //printa getPermissoes.size
+        std::cout << "Tamanho do vetor de permissoes(classe empresa): " << usuario->getUsuarioPermissoes().size() << std::endl;
+        for (unsigned int i = 0; i < usuarioLogado->getPermissoes().size(); i++)
+        {
+            std::cout << "Mostra aqui tamem: " << usuarioLogado->getPermissoes()[i] << std::endl;
+        }
+
+        std::cout << "Valor passado: " << valor << std::endl;
+
+    //verificar se o valor passado esta contido no vetor de permissoes do usuario logado
+    /*for (unsigned int i = 0; i < usuarioLogado->getPermissoes().size(); i++)
+    {
+        std::cout << "Permissao: " << usuarioLogado->getPermissoes()[i] << std::endl;
+        if (usuarioLogado->getPermissoes()[i] == valor)
+        {
+            return false;
+        }
+    }
+    return false;*/
+}
+
+void Empresa::login(Usuario* usuario){
+    //cria um log de leitura e adiciona a lista de logs de leitura
+    Data data = Data();
+    std::string descricao = "Login do usuario " + usuario->getNome();
+    std:: string tipo = "Login";
+    LogLeitura* log = new LogLeitura(*usuario, data, tipo, descricao);
+    //adiciona o log no vetor de setHistoricoLogLeitura
+    logsLeitura.push_back(log);
+
+    //cria uma instancia de usuario logado com os dados do usuario passado
+    //usuarioLogado = new Usuario(usuario->getNome(), usuario->getSenha(), usuario->getPermissoes());
+    this->usuario = usuario;
+}
+
+//criar uma função que retorna as permissoes do usuario logado
+std::vector<std::string> Empresa::getPermissoesUsuarioLogado(){
+    return usuarioLogado->getPermissoes();
 }

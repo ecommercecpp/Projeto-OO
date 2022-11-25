@@ -5,10 +5,8 @@
 #include <vector>
 
 #include "Data.h"
-//#include "usuario.hpp"
+#include "usuario.hpp"
 #include "exceptions.hpp"
-
-class Usuario{};
 
 class Logs
 {

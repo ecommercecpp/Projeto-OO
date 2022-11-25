@@ -44,6 +44,12 @@ class Funcionario : public Pessoa
 		Departamento getDepartamento();
 		void setCargo(Cargo cargo);
 		Cargo getCargo();
+
+		//Poderia ter criado a classe endereco
+		void setLatitude(float latitude);
+		float getLatitude();
+		void setLongitude(float longitude);
+		float getLongitude();
 		
 };
 

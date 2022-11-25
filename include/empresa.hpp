@@ -3,10 +3,11 @@
 
 #include <string>
 #include <vector>
+#include <algorithm>
 
 #include "estoque.hpp"
 #include "produto.hpp"
-#include "permissao.hpp"
+
 #include "categoria.hpp"
 #include "produto.hpp"
 #include "departamento.hpp"
@@ -20,10 +21,16 @@
 #include "logLeitura.hpp"
 #include "logExcecao.hpp"
 
+#include "usuario.hpp"
+#include "usuarioLogado.hpp"
+
 class Empresa
 {
 	private:
 		static Empresa *empresa;
+		UsuarioLogado* usuarioLogado;
+		Usuario* usuario;
+
 		std::vector<Produto*> produtos;
 		std::vector<Categoria*> categorias;
 		std::vector<Lote*> lotes;
@@ -42,6 +49,7 @@ class Empresa
 		//std::vector <MateriaPrima*> materiaPrimaLista;
 
 		bool online;
+		//std::vector <std::string> permissoes;//mudar pra um vetor de permissoes?
 
 		//std::map<Cliente, Permissao> permissao;
 		Empresa();
@@ -49,7 +57,7 @@ class Empresa
 		Empresa(Empresa &other) = delete;
 		//void operator=(const Empresa &) = delete;
 		static Empresa* getEmpresa();
-		//void login(Usuario* usuario);
+		//void login(UsuarioLogado* usuario);
 		//void logout();
 		//Usuario* getUsuarioLogado();
 		//void setUsuarioLogado(Usuario* usuario);
@@ -87,6 +95,9 @@ class Empresa
 		void adicionarEstoque(Estoque* estoque);
 		void removerEstoque(Estoque* estoque);
 
+		bool verificaPermissao(std::string valor);
+		std::vector<std::string> getPermissoesUsuarioLogado();
+		void login(Usuario* usuario);
 };
 
 #endif

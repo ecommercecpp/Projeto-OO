@@ -1,6 +1,7 @@
 #ifndef _SALARIO_HPP_
 #define _SALARIO_HPP_
 
+#include <string>
 #include "Data.h"
 
 class Salario

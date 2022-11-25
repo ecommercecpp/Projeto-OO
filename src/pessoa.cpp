@@ -1,4 +1,9 @@
 #include "pessoa.hpp"
+#include "empresa.hpp"
+#include "usuario.hpp"
+#include "usuarioLogado.hpp"
+#include "exceptions.hpp"
+#include "logEscrita.hpp"
 #include "validacpfcnpj.hpp"
 
 #include <iostream>
@@ -20,11 +25,28 @@ Pessoa::Pessoa()
  * @param email
  * @param tipo
  */
-Pessoa::Pessoa(std::string nome, std::string cpf_cnpj, std::string endereco, std::string email, int tipo) : nome(nome), endereco(endereco)
+Pessoa::Pessoa(std::string nome, std::string cpf_cnpj, std::string endereco, std::string email, int tipo)
 {
-	setTipo(tipo);
-	setcpf_cnpj(cpf_cnpj);
-	setEmail(email);
+	//criar uma string com a permissao de cadastrarPessoa
+	std::string permissao = "cadastrarPessoa";
+	//printar a permissao
+	std::cout <<"a permissao ai -> "<< permissao << std::endl;
+
+	//utiliza o ponteiro de usuarioLogado para verificar se o usuario logado tem a permissao de cadastrarPessoa
+	
+	//UsuarioLogado::verificaPermissao(permissao)
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		throw AcessDeniedException();
+	}else{
+		this->nome = nome;
+		this->cpf_cnpj = cpf_cnpj;
+		this->endereco = endereco;
+		this->email = email;
+		this->tipo = tipo;
+	}
+	//gerar log de escrita com a permissao de cadastrarPessoa
+
+	//LogEscrita::gerarLog(permissao);
 }
 
 /**
@@ -34,9 +56,9 @@ Pessoa::Pessoa(std::string nome, std::string cpf_cnpj, std::string endereco, std
  */
 void Pessoa::setcpf_cnpj(std::string cpf_cnpj)
 {
-	if (tipo == 0 || cpf_cnpj.length() == 12)
+	if ( cpf_cnpj.length() == 11)
 	{
-		if (ValidaCPFCNPJ::validaCPF(cpf_cnpj))
+		if (ValidaCPFCNPJ::validaCPF(cpf_cnpj))//Concertar 
 		{
 			this->cpf_cnpj = cpf_cnpj;
 		}
@@ -45,7 +67,7 @@ void Pessoa::setcpf_cnpj(std::string cpf_cnpj)
 			throw InvalidCPFException();
 		}
 	}
-	else
+	else if (cpf_cnpj.length() == 14)
 	{
 		if (ValidaCPFCNPJ::validaCNPJ(cpf_cnpj))
 		{
@@ -56,6 +78,9 @@ void Pessoa::setcpf_cnpj(std::string cpf_cnpj)
 			throw InvalidCNPJException();
 			//std::cout << "CNPJ invalido"<< cpf_cnpj << std::endl;
 		}
+	} else{
+		std::cout << "CPF ou CNPJ invalido" << cpf_cnpj.length() << " <- o tamain | o numero -> " << cpf_cnpj << std::endl;
+		throw InvalidCPFException();
 	}
 }
 
@@ -66,14 +91,14 @@ void Pessoa::setcpf_cnpj(std::string cpf_cnpj)
  */
 void Pessoa::setEmail(std::string email)
 {
-	if (email.find("@") != std::string::npos)
-	{
+	//if (email.find("@") != std::string::npos)
+	//{
 		this->email = email;
-	}
-	else
-	{
-		throw InvalidEmailException();
-	}
+	//}
+	//else
+	//{
+		//throw InvalidEmailException();
+	//}
 }
 
 /**
@@ -90,6 +115,7 @@ void Pessoa::setTipo(int tipo)
 	}
 	else
 	{
+		std::cout << "Tipo e esse: "<< tipo << std::endl;
 		throw InvalidTypeException();
 	}
 }

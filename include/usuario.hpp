@@ -19,9 +19,11 @@ class Usuario : public Pessoa
 		void setLogin(std::string login);
 		std::string getSenha();
 		void setSenha(std::string senha);
-		std::vector<std::string> getPermissoes();
+		std::vector<std::string> getUsuarioPermissoes();
 		void setPermissoes(std::vector<std::string> permissoes);
-		
+		void addPermissaoUsuario(std::string valor);
+		void removePermissaoUsuario(std::string valor);
+
 };
 
 

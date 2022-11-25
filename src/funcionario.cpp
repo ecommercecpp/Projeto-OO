@@ -1,7 +1,8 @@
 #include <iostream>
 
 #include "funcionario.hpp"
-
+#include "empresa.hpp"
+#include "exceptions.hpp"
 /**
  * @brief Construct a new Funcionario:: Funcionario object
  *
@@ -15,19 +16,27 @@
  * @param departamento
  * @param cargo
  */
-Funcionario::Funcionario(std::string nome, std::string cpf_cnpj, std::string endereco, std::string email, Data nascimento, Data admissao, std::vector<Salario> salario, Departamento departamento, Cargo cargo) : Pessoa(nome, cpf_cnpj, endereco, email, 1)
+Funcionario::Funcionario(std::string nome, std::string cpf_cnpj, std::string endereco, std::string email, Data nascimento, Data admissao, std::vector<Salario> salario, Departamento departamento, Cargo cargo) : Pessoa(nome, cpf_cnpj, endereco, email, tipo)
 {
-	this->status = true;
-	this->nome = nome;
-	this->cpf_cnpj = cpf_cnpj;
-	this->endereco = endereco;
-	this->email = email;
-	this->tipo = 1;
-	this->nascimento = nascimento;
-	this->admissao = admissao;
-	this->salario = salario;
-	this->departamento = departamento;
-	this->cargo = cargo;
+	std::string permissao = "cadastraFuncionario";
+	//criar uma variavel para armazenar o vetor de permissao do usuario logado
+	//usar o ponteiro de usuarioLogado da classe empresa para armazenar o vetor de permissao do usuario logado em uma variavel
+	//std::vector<std::string> permissao = Empresa::getEmpresa()->getPermissoesUsuarioLogado();
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		throw AcessDeniedException();
+	}else{
+		this->status = true;
+		this->nome = nome;
+		this->cpf_cnpj = cpf_cnpj;
+		this->endereco = endereco;
+		this->email = email;
+		this->nascimento = nascimento;
+		this->tipo = tipo;
+		this->admissao = admissao;
+		this->salario = salario;
+		this->departamento = departamento;
+		this->cargo = cargo;
+	}
 }
 
 /**
@@ -210,3 +219,4 @@ Cargo Funcionario::getCargo()
 {
 	return this->cargo;
 }
+

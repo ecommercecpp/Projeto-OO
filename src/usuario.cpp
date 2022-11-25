@@ -8,6 +8,13 @@
  */
 Usuario::Usuario()
 {
+    nome = "";
+    cpf_cnpj = "";
+    endereco = "";
+    email = "";
+    tipo = 0;
+    login = "";
+    senha = "";
 }
 
 /**
@@ -77,8 +84,8 @@ void Usuario::setSenha(std::string senha)
  *
  * @return std::vector<std::string>
  */
-std::vector<std::string> Usuario::getPermissoes()
-{
+std::vector<std::string> Usuario::getUsuarioPermissoes(){
+    //retorna as permissões que aquele usuário possui
     return this->permissoes;
 }
 
@@ -89,5 +96,33 @@ std::vector<std::string> Usuario::getPermissoes()
  */
 void Usuario::setPermissoes(std::vector<std::string> permissoes)
 {
-    this->permissoes = permissoes;
+    //adiciona as permissões ao vetor de permissões
+    for (unsigned int i = 0; i < permissoes.size(); i++)
+    {
+        this->permissoes.push_back(permissoes[i]);
+    }
+    //imprime as permissões
+    for (unsigned int i = 0; i < this->permissoes.size(); i++)
+    {
+        std::cout << this->permissoes[i] << std::endl;
+    }
+}
+
+/**
+ * @brief Adiciona uma permissão ao usuário
+ *
+ * @param valor
+ */
+void Usuario::addPermissaoUsuario(std::string valor){
+    this->permissoes.push_back(valor);
+}
+
+void Usuario::removePermissaoUsuario(std::string valor){
+    for (unsigned int i = 0; i < this->permissoes.size(); i++)
+    {
+        if (this->permissoes[i] == valor)
+        {
+            this->permissoes.erase(this->permissoes.begin() + i);
+        }
+    }
 }

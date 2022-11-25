@@ -9,11 +9,12 @@
 class Permissao
 {
 	private:
-		std::map<std::string, bool> permissao;
+    std::vector <std::string> permissoes;
+		//std::map<std::string, bool> permissao;
 	public:
 		Permissao();
     void editaPermissao(std::string, bool);
-    void editaPermissao(std::map<std::string, bool>);
+    void editaPermissao(std::vector<std::string>);
     bool temPermisssao(std::string);
     void gerarLog();
 };
