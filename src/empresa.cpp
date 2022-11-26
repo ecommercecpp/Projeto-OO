@@ -99,9 +99,15 @@ void Empresa::removerCargo(Cargo *cargo)
  *
  * @param funcionario
  */
-void Empresa::adicionarFuncionario(Funcionario *funcionario)
+void Empresa::adicionarFuncionario(Funcionario* funcionario)
 {
+    funcionario->admitir();
     funcionarios.push_back(funcionario);
+    //printar funcionarios no vetor de funcionarios
+    for (unsigned int i = 0; i < funcionarios.size(); i++)
+    {
+        std::cout <<"Funcao adicionarFuncionario "<< funcionarios[i]->getNome() << std::endl;
+    }
 }
 
 /**
@@ -109,14 +115,19 @@ void Empresa::adicionarFuncionario(Funcionario *funcionario)
  *
  * @param funcionario
  */
-void Empresa::removerFuncionario(Funcionario *funcionario)
-{
+void Empresa::removerFuncionario(Funcionario* funcionario)
+{  
+    funcionario->demitir();
     for (unsigned int i = 0; i < funcionarios.size(); i++)
     {
         if (funcionarios[i] == funcionario)
         {
             funcionarios.erase(funcionarios.begin() + i);
         }
+    }
+    for (unsigned int i = 0; i < funcionarios.size(); i++)
+    {
+        std::cout <<"Funcao removerFuncionario "<< funcionarios[i]->getNome() << std::endl;
     }
 }
 
@@ -387,4 +398,8 @@ std::string Empresa::getNomeUsuarioLogado(){
 
 void Empresa::logar(UsuarioLogado *usuarioLogado){
     this->usuarioLogado = usuarioLogado;
+}
+
+void Empresa::deslogar(){
+    this->usuarioLogado = NULL;
 }

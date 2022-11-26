@@ -37,12 +37,31 @@ Funcionario::Funcionario()//std::string nome, std::string cpf_cnpj, std::string 
 }
 
 /**
+ * @brief Admitir funcionario
+ *
+ */
+void Funcionario::admitir()
+{
+	std::string permissao = "admitirFuncionario";
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		throw AcessDeniedException();
+	}else{
+		this->status = true;
+	}
+}
+
+/**
  * @brief Demite um funcionario
  *
  */
 void Funcionario::demitir()
 {
-	this->status = false;
+	std::string permissao = "demitirFuncionario";
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		throw AcessDeniedException();
+	}else{
+		this->status = false;
+	}
 }
 
 /**
@@ -53,7 +72,12 @@ void Funcionario::demitir()
  */
 bool Funcionario::empregado()
 {
-	return this->status;
+	std::string permissao = "verificarStatusFuncionario";
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		throw AcessDeniedException();
+	}else{
+		return this->status;
+	}
 }
 
 /**
@@ -63,7 +87,12 @@ bool Funcionario::empregado()
  */
 void Funcionario::setMatricula(int matricula)
 {
-	this->matricula = matricula;
+	std::string permissao = "cadastrarMatriculaFuncionario";
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		throw AcessDeniedException();
+	}else{
+		this->matricula = matricula;
+	}
 }
 
 /**
@@ -73,7 +102,12 @@ void Funcionario::setMatricula(int matricula)
  */
 int Funcionario::getMatricula()
 {
-	return this->matricula;
+	std::string permissao = "verificarMatriculaFuncionario";
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		throw AcessDeniedException();
+	}else{
+		return this->matricula;
+	}
 }
 
 /**
@@ -83,7 +117,12 @@ int Funcionario::getMatricula()
  */
 void Funcionario::setNascimento(Data nascimento)
 {
-	this->nascimento = nascimento;
+	std::string permissao = "cadastrarNascimentoFuncionario";
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		throw AcessDeniedException();
+	}else{
+		this->nascimento = nascimento;
+	}
 }
 
 /**
@@ -93,7 +132,12 @@ void Funcionario::setNascimento(Data nascimento)
  */
 Data Funcionario::getNascimento()
 {
-	return this->nascimento;
+	std::string permissao = "verificarNascimentoFuncionario";
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		throw AcessDeniedException();
+	}else{
+		return this->nascimento;
+	}
 }
 
 /**
@@ -103,7 +147,12 @@ Data Funcionario::getNascimento()
  */
 void Funcionario::setAdmissao(Data admissao)
 {
-	this->admissao = admissao;
+	std::string permissao = "cadastrarAdmissaoFuncionario";
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		throw AcessDeniedException();
+	}else{
+		this->admissao = admissao;
+	}
 }
 
 /**
@@ -113,7 +162,12 @@ void Funcionario::setAdmissao(Data admissao)
  */
 Data Funcionario::getAdmissao()
 {
-	return this->admissao;
+	std::string permissao = "verificarAdmissaoFuncionario";
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		throw AcessDeniedException();
+	}else{
+		return this->admissao;
+	}
 }
 
 /**
@@ -123,7 +177,12 @@ Data Funcionario::getAdmissao()
  */
 void Funcionario::setDemissao(Data demissao)
 {
-	this->demissao = demissao;
+	std::string permissao = "cadastrarDemissaoFuncionario";
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		throw AcessDeniedException();
+	}else{
+		this->demissao = demissao;
+	}
 }
 
 /**
@@ -133,28 +192,12 @@ void Funcionario::setDemissao(Data demissao)
  */
 Data Funcionario::getDemissao()
 {
-	return this->demissao;
-}
-
-/**
- * @brief Seta o status do funcionário
- *
- * @param status
- */
-void Funcionario::setStatus(bool status)
-{
-	this->status = status;
-}
-
-/**
- * @brief Retorna o status do funcionário
- *
- * @return true
- * @return false
- */
-bool Funcionario::getStatus()
-{
-	return this->status;
+	std::string permissao = "verificarDemissaoFuncionario";
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		throw AcessDeniedException();
+	}else{
+		return this->demissao;
+	}
 }
 
 /**
@@ -164,7 +207,12 @@ bool Funcionario::getStatus()
  */
 void Funcionario::setSalario(std::vector<Salario> salario)
 {
-	this->salario = salario;
+	std::string permissao = "cadastrarSalarioFuncionario";
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		throw AcessDeniedException();
+	}else{
+		this->salario = salario;
+	}
 }
 
 /**
@@ -174,7 +222,12 @@ void Funcionario::setSalario(std::vector<Salario> salario)
  */
 std::vector<Salario> Funcionario::getSalario()
 {
-	return this->salario;
+	std::string permissao = "verificarSalarioFuncionario";
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		throw AcessDeniedException();
+	}else{
+		return this->salario;
+	}
 }
 
 /**
@@ -184,7 +237,12 @@ std::vector<Salario> Funcionario::getSalario()
  */
 void Funcionario::setDepartamento(Departamento departamento)
 {
-	this->departamento = departamento;
+	std::string permissao = "cadastrarDepartamentoFuncionario";
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		throw AcessDeniedException();
+	}else{
+		this->departamento = departamento;
+	}
 }
 
 /**
@@ -194,7 +252,12 @@ void Funcionario::setDepartamento(Departamento departamento)
  */
 Departamento Funcionario::getDepartamento()
 {
-	return this->departamento;
+	std::string permissao = "verificarDepartamentoFuncionario";
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		throw AcessDeniedException();
+	}else{
+		return this->departamento;
+	}
 }
 
 /**
@@ -204,7 +267,12 @@ Departamento Funcionario::getDepartamento()
  */
 void Funcionario::setCargo(Cargo cargo)
 {
-	this->cargo = cargo;
+	std::string permissao = "cadastrarCargoFuncionario";
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		throw AcessDeniedException();
+	}else{
+		this->cargo = cargo;
+	}
 }
 
 /**
@@ -214,6 +282,46 @@ void Funcionario::setCargo(Cargo cargo)
  */
 Cargo Funcionario::getCargo()
 {
-	return this->cargo;
+	std::string permissao = "verificarCargoFuncionario";
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		throw AcessDeniedException();
+	}else{
+		return this->cargo;
+	}
 }
 
+void Funcionario::setLatitude(float latitude){
+	std::string permissao = "cadastrarLatitudeFuncionario";
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		throw AcessDeniedException();
+	}else{
+		this->latitude = latitude;
+	}
+}
+
+float Funcionario::getLatitude(){
+	std::string permissao = "verificarLatitudeFuncionario";
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		throw AcessDeniedException();
+	}else{
+		return this->latitude;
+	}
+}
+
+void Funcionario::setLongitude(float longitude){
+	std::string permissao = "cadastrarLongitudeFuncionario";
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		throw AcessDeniedException();
+	}else{
+		this->longitude = longitude;
+	}
+}
+
+float Funcionario::getLongitude(){
+	std::string permissao = "verificarLongitudeFuncionario";
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		throw AcessDeniedException();
+	}else{
+		return this->longitude;
+	}
+}

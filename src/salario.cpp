@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "exceptions.hpp"
+#include "empresa.hpp"
 #include "salario.hpp"
 
 /**
@@ -20,9 +21,16 @@ Salario::Salario()
  */
 Salario::Salario(double valor, bool status, int motivo)
 {
-	this->valor = valor;
-	this->status = status;
-	this->motivo = motivo;
+	std::string permissao = "cadastrarSalario";
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao))
+	{
+		throw AcessDeniedException();
+	}else
+	{
+		this->valor = valor;
+		this->status = status;
+		this->motivo = motivo;
+	}
 }
 /*
 Salario::Salario(double valor, bool status, int motivo)
@@ -41,13 +49,20 @@ Salario::Salario(double valor, bool status, int motivo)
  */
 void Salario::setMotivo(int motivo)
 {
-	if (motivo != 1 && motivo != 2)
+	std::string permissao = "cadastrarMotivoSalario";
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao))
 	{
-		throw InvalidSalarioException();
-	}
-	else
+		throw AcessDeniedException();
+	}else
 	{
-		this->motivo = motivo;
+		if (motivo != 1 && motivo != 2)
+		{
+			throw InvalidSalarioException();
+		}
+		else
+		{
+			this->motivo = motivo;
+		}
 	}
 }
 
@@ -58,13 +73,20 @@ void Salario::setMotivo(int motivo)
  */
 void Salario::setValor(double valor)
 {
-	if (valor < 0)
+	std::string permissao = "cadastrarValorSalario";
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao))
 	{
-		throw InvalidSalarioException();
-	}
-	else
+		throw AcessDeniedException();
+	}else
 	{
-		this->valor = valor;
+		if (valor < 0)
+		{
+			throw InvalidSalarioException();
+		}
+		else
+		{
+			this->valor = valor;
+		}
 	}
 }
 
@@ -75,7 +97,14 @@ void Salario::setValor(double valor)
  */
 double Salario::getValor()
 {
-	return valor;
+	std::string permissao = "cadastrarValorSalario";
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao))
+	{
+		throw AcessDeniedException();
+	}else
+	{
+		return valor;
+	}
 }
 
 /**
@@ -85,8 +114,16 @@ double Salario::getValor()
  */
 bool Salario::getStatus()
 {
-	return status;
+	std::string permissao = "cadastrarStatusSalario";
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao))
+	{
+		throw AcessDeniedException();
+	}else
+	{
+		return status;
+	}
 }
+
 
 /**
  * @brief Retorna o motivo do salário
@@ -95,7 +132,14 @@ bool Salario::getStatus()
  */
 int Salario::getMotivo()
 {
-	return motivo;
+	std::string permissao = "verificarMotivoSalario";
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao))
+	{
+		throw AcessDeniedException();
+	}else
+	{
+		return motivo;
+	}
 }
 
 /**
@@ -105,5 +149,12 @@ int Salario::getMotivo()
  */
 Data Salario::getDataAlteracao()
 {
-	return data;
+	std::string permissao = "verificarDataSalario";
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao))
+	{
+		throw AcessDeniedException();
+	}else
+	{
+		return data;
+	}
 }

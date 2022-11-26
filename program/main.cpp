@@ -23,6 +23,45 @@ std::vector<string> permissao() {
 	permissoes.push_back("cadastrarDocumentoPessoa");
 
 	permissoes.push_back("cadastrarFuncionario");
+	permissoes.push_back("admitirFuncionario");
+	permissoes.push_back("demitirFuncionario");
+	permissoes.push_back("verificarStatusFuncionario");
+	permissoes.push_back("cadastrarMatriculaFuncionario");
+	permissoes.push_back("verificarMatriculaFuncionario");
+	permissoes.push_back("cadastrarNascimentoFuncionario");
+	permissoes.push_back("verificarNascimentoFuncionario");
+	permissoes.push_back("cadastrarAdmissaoFuncionario");
+	permissoes.push_back("verificarAdmissaoFuncionario");
+	permissoes.push_back("cadastrarDemissaoFuncionario");
+	permissoes.push_back("verificarDemissaoFuncionario");
+	permissoes.push_back("cadastrarSalarioFuncionario");
+	permissoes.push_back("verificarSalarioFuncionario");
+	permissoes.push_back("cadastrarDepartamentoFuncionario");
+	permissoes.push_back("verificarDepartamentoFuncionario");
+	permissoes.push_back("cadastrarCargoFuncionario");
+	permissoes.push_back("verificarCargoFuncionario");
+	permissoes.push_back("cadastrarLatitudeFuncionario");
+	permissoes.push_back("verificarLatitudeFuncionario");
+	permissoes.push_back("cadastrarLongitudeFuncionario");
+	permissoes.push_back("verificarLongitudeFuncionario");
+
+	permissoes.push_back("cadastrarSalario");
+	permissoes.push_back("verificarSalario");
+	permissoes.push_back("cadastrarValorSalario");
+	permissoes.push_back("cadastrarMotivoSalario");
+	permissoes.push_back("verificarMotivoSalario");
+	permissoes.push_back("cadastrarStatusSalario");
+	permissoes.push_back("verificarDataSalario");
+
+	permissoes.push_back("cadastrarDepartamento");
+	permissoes.push_back("verificarIdDepartamento");
+	permissoes.push_back("verificarNomeDepartamento");
+	permissoes.push_back("cadastrarNomeDepartamento");
+
+	permissoes.push_back("verificarNomeCargo");
+	permissoes.push_back("verificarIdCargo");
+	permissoes.push_back("cadastrarNomeCargo");
+	permissoes.push_back("cadastrarIdCargo");
 
 	permissoes.push_back("verificarTelefoneCliente");
 	permissoes.push_back("cadastrarTelefoneCliente");
@@ -108,10 +147,10 @@ void testaFuncionario()
 	U->setEmail("user1@user.com");
 
 	U->setPermissoes(permissao());
-	for (unsigned int i = 0; i < U->getPermissoes().size(); i++)
+	/*for (unsigned int i = 0; i < U->getPermissoes().size(); i++)
 	{
 		std::cout << "Permissoes(TestaFuncionario) -> " << U->getPermissoes()[i] << std::endl;
-	}
+	}*/
 	//logar usuario na empresa
 	e->logar(U);
 
@@ -137,11 +176,41 @@ void testaFuncionario()
 	f.setDepartamento(adm);
 	f.setCargo(gerente);
 
-	std::cout << "Nome do funcionario:(TestaFuncionario) " << f.getNome() << std::endl;
+	Funcionario f2;
+	f2.setNome("Joaozinho2");
+	f2.setTipo(0);
+	f2.setcpf_cnpj("12345678912");
+	f2.setEndereco("Rua 1");
+	f2.setEmail("j2@joao.com");
+	f2.setNascimento(nascimento);
+	f2.setAdmissao(admissao);
+	f2.setSalario(salario);
+	f2.setDepartamento(adm);
+	f2.setCargo(gerente);
 
-	//destroi as instancias
-	/*U->~UsuarioLogado();
-	e->~Empresa();*/
+	//imprime nome dos funcionarios
+	std::cout << "Nome dos Funcionarios atuais da empresa: " << std::endl;
+
+	std::cout << "Nome do funcionario 1: " << f.getNome() << std::endl;
+	std::cout << "Nome do funcionario 2: " << f2.getNome() << std::endl;
+
+	e->adicionarFuncionario(&f);
+	e->adicionarFuncionario(&f2);
+
+	e->removerFuncionario(&f);
+
+	if(f.empregado()){
+		std::cout << "Funcionario empregado: " << f.getNome() << std::endl;
+	}else{
+		std::cout << "Funcionario desempregado: " << f.getNome() << std::endl;
+	}
+
+	if(f2.empregado()){
+		std::cout << "Funcionario empregado: " << f2.getNome() << std::endl;
+	}else{
+		std::cout << "Funcionario desempregado: " << f2.getNome() << std::endl;
+	}
+
 }
 void testaPessoa()
 {

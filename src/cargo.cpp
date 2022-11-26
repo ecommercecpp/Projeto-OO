@@ -1,4 +1,7 @@
+#include <iostream>
+
 #include "cargo.hpp"
+#include "empresa.hpp"
 
 int Cargo::current_id;
 
@@ -24,7 +27,12 @@ Cargo::Cargo(std::string nome) : id(++current_id), nome(nome) {}
  */
 std::string Cargo::getNome()
 {
-	return nome;
+	std::string permissao = "verificarNomeCargo";
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		throw AcessDeniedException();
+	}else{	
+		return this->nome;
+	}
 }
 
 /**
@@ -34,7 +42,12 @@ std::string Cargo::getNome()
  */
 int Cargo::getId()
 {
-	return id;
+	std::string permissao = "verificarIdCargo";
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		throw AcessDeniedException();
+	}else{	
+		return this->id;
+	}
 }
 
 /**
@@ -44,7 +57,12 @@ int Cargo::getId()
  */
 void Cargo::setNome(std::string nome)
 {
-	this->nome = nome;
+	std::string permissao = "cadastrarNomeCargo";
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		throw AcessDeniedException();
+	}else{	
+		this->nome = nome;
+	}
 }
 
 /**
@@ -54,5 +72,10 @@ void Cargo::setNome(std::string nome)
  */
 void Cargo::setId(int id)
 {
-	this->id = id;
+	std::string permissao = "cadastrarIdCargo";
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		throw AcessDeniedException();
+	}else{	
+		this->id = id;
+	}
 }

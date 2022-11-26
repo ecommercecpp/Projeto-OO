@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "departamento.hpp"
+#include "empresa.hpp"
 
 int Departamento::current_id;
 
@@ -17,7 +18,12 @@ Departamento::Departamento() : id(++current_id) {}
  */
 Departamento::Departamento(std::string nome)
 {
-	this->nome = nome;
+	std::string permissao = "cadastrarDepartamento";
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		throw AcessDeniedException();
+	}else{
+		this->nome = nome;
+	}
 }
 
 /**
@@ -27,7 +33,12 @@ Departamento::Departamento(std::string nome)
  */
 int Departamento::getId()
 {
-	return this->id;
+	std::string permissao = "verificarIdDepartamento";
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		throw AcessDeniedException();
+	}else{	
+		return this->id;
+	}
 }
 
 /**
@@ -37,7 +48,12 @@ int Departamento::getId()
  */
 std::string Departamento::getNome()
 {
-	return this->nome;
+	std::string permissao = "verificarNomeDepartamento";
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		throw AcessDeniedException();
+	}else{	
+		return this->nome;
+	}
 }
 
 /**
@@ -47,5 +63,10 @@ std::string Departamento::getNome()
  */
 void Departamento::setNome(std::string nome)
 {
-	this->nome = nome;
+	std::string permissao = "cadastrarNomeDepartamento";
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		throw AcessDeniedException();
+	}else{	
+		this->nome = nome;
+	}
 }

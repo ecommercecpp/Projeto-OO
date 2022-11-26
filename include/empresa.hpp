@@ -30,6 +30,7 @@ class Empresa
 		static Empresa *empresa;
 		UsuarioLogado* usuarioLogado;
 		Usuario* usuario;
+		Funcionario* funcionario;
 
 		std::vector<Produto*> produtos;
 		std::vector<Categoria*> categorias;
@@ -70,8 +71,10 @@ class Empresa
 		void removerCargo(Cargo* cargo);
 		void adicionarLote(Lote* lote);
 		void removerLote(Lote* lote);
-		void adicionarFuncionario(Funcionario* funcionario);
+
+		void adicionarFuncionario(Funcionario* funcionario);	
 		void removerFuncionario(Funcionario* funcionario);
+		
 		void adicionarCliente(Cliente* cliente);
 		void removerCliente(Cliente* cliente);
 		void adicionarOrdemProducao(OrdemProducao* ordemProducao);
@@ -101,6 +104,8 @@ class Empresa
 		std::string getNomeUsuarioLogado();
 
 		void logar(UsuarioLogado *usuarioLogado);
+		void deslogar();
+	
 };
 
 #endif
