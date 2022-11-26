@@ -5,6 +5,8 @@
 #include <vector>
 #include <algorithm>
 
+#include "Data.h"
+
 #include "estoque.hpp"
 #include "produto.hpp"
 
@@ -105,6 +107,12 @@ class Empresa
 
 		void logar(UsuarioLogado *usuarioLogado);
 		void deslogar();
+
+		void gerarLogEscrita(std::string entidade, std::string atributoAlterado);
+		void gerarLogLeitura(std::string entidade, std::string informacao);
+		void gerarLogExcecao(std::string entidade, std::string funcionalidade);
+
+		void imprimirLogsEscrita();
 	
 };
 

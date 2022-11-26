@@ -104,10 +104,10 @@ void Empresa::adicionarFuncionario(Funcionario* funcionario)
     funcionario->admitir();
     funcionarios.push_back(funcionario);
     //printar funcionarios no vetor de funcionarios
-    for (unsigned int i = 0; i < funcionarios.size(); i++)
+    /*for (unsigned int i = 0; i < funcionarios.size(); i++)
     {
         std::cout <<"Funcao adicionarFuncionario "<< funcionarios[i]->getNome() << std::endl;
-    }
+    }*/
 }
 
 /**
@@ -125,10 +125,10 @@ void Empresa::removerFuncionario(Funcionario* funcionario)
             funcionarios.erase(funcionarios.begin() + i);
         }
     }
-    for (unsigned int i = 0; i < funcionarios.size(); i++)
+    /*for (unsigned int i = 0; i < funcionarios.size(); i++)
     {
         std::cout <<"Funcao removerFuncionario "<< funcionarios[i]->getNome() << std::endl;
-    }
+    }*/
 }
 
 /**
@@ -403,3 +403,50 @@ void Empresa::logar(UsuarioLogado *usuarioLogado){
 void Empresa::deslogar(){
     this->usuarioLogado = NULL;
 }
+
+void Empresa::gerarLogEscrita(std::string entidade, std::string atributoAlterado){
+    LogEscrita *logEscrita = new LogEscrita();
+    //criar um vector de atributos alterados
+    std::vector <std::string> atributosAlterados;
+    atributosAlterados.push_back(atributoAlterado);
+    std::string nome = usuarioLogado->getNome();
+    //Data *data = new Data();
+    Data data = Data();
+    
+    logEscrita->setEntidade(entidade);
+    logEscrita->setAtributosAnteriores(atributosAlterados);
+    logEscrita->setUsuario(usuarioLogado);
+    logEscrita->setData(data.dateNow());
+    adicionarLogEscrita(logEscrita);
+}
+/*
+void Empresa::gerarLogLeitura(std::string entidade, std::string informacao){
+    LogLeitura *logLeitura = new LogLeitura();
+    logLeitura->setEntidade(entidade);
+    logLeitura->setInformacao(informacao);
+    logLeitura->setUsuario(usuarioLogado->nome);
+    logLeitura->setDataHora();
+    adicionarLogLeitura(logLeitura);
+}
+
+void Empresa::gerarLogExcecao(std::string entidade, std::string funcionalidade){
+    LogExcecao *logExcecao = new LogExcecao();
+    logExcecao->setEntidade(entidade);
+    logExcecao->setFuncionalidade(funcionalidade);
+    logExcecao->setUsuario(usuarioLogado->nome);
+    logExcecao->setDataHora();
+    adicionarLogExcecao(logExcecao);
+}
+*/
+
+//função para imprimir todos os logs de escrita
+/*void Empresa::imprimirLogsEscrita(){
+    for (unsigned int i = 0; i < logsEscrita.size(); i++)
+    {
+        std::cout << "Entidade: " << logsEscrita[i]->getEntidade() << std::endl;
+        std::cout << "Atributo Alterado: " << logsEscrita[i]->getAtributoAlterado() << std::endl;
+        std::cout << "Usuario: " << logsEscrita[i]->getUsuario() << std::endl;
+        std::cout << "Data e Hora: " << logsEscrita[i]->getDataHora() << std::endl;
+        std::cout << "--------------------------------------------" << std::endl;
+    }
+}*/

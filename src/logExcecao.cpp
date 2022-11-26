@@ -10,10 +10,11 @@
  * @param entidade
  * @param funcionalidade
  */
+/*
 LogExcecao::LogExcecao(Usuario usuario, Data data, std::string entidade, std::string funcionalidade) : Logs(usuario, data, entidade)
 {
     this->funcionalidade = funcionalidade;
-}
+}*/
 
 /**
  * @brief Construct a new Log Excecao:: Log Excecao object

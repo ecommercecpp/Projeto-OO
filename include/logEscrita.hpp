@@ -21,8 +21,9 @@ class LogEscrita: public Logs
     public:
     LogEscrita();
     ~LogEscrita();
-    LogEscrita(Usuario, Data, std::string, std::vector<std::string>);
+    //LogEscrita(Usuario, Data, std::string, std::vector<std::string>);
     //std::string getLog();
+
     void setInformacoesAnteriores(std::map<std::string, std::string>);
     std::map<std::string, std::string> getInformacoesAnteriores();
     void setInformacoesNovas(std::map<std::string, std::string>);

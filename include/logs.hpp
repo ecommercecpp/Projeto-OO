@@ -5,23 +5,23 @@
 #include <vector>
 
 #include "Data.h"
-#include "usuario.hpp"
+#include "usuarioLogado.hpp"
 #include "exceptions.hpp"
 
 class Logs
 {
 	protected:
-    Usuario usuario;
+    UsuarioLogado *usuario;
 		Data data;
     std::string entidade;
 
 	public:
     Logs();
     ~Logs();
-    Logs(Usuario, Data, std::string);
+    //Logs(UsuarioLogado*, Data, std::string);
 
-    void setUsuario(Usuario);
-    Usuario getUsuario();
+    void setUsuario(UsuarioLogado*);
+    UsuarioLogado* getUsuario();
     void setData(Data);
     Data getData();
     void setEntidade(std::string);

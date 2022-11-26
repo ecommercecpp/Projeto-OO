@@ -17,7 +17,7 @@ class LogExcecao: public Logs
     public:
         LogExcecao();
         ~LogExcecao();
-        LogExcecao(Usuario, Data, std::string, std::string);
+        //LogExcecao(Usuario, Data, std::string, std::string);
         //std::string getLog();
         void setHistoricoLogExcecao(std::vector<std::string>);
         std::vector<std::string> getHistoricoLogExcecao();

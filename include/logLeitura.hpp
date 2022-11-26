@@ -16,7 +16,7 @@ class LogLeitura: public Logs
     public:
         LogLeitura();
         ~LogLeitura();
-        LogLeitura(Usuario, Data, std::string, std::string);
+       //LogLeitura(Usuario, Data, std::string, std::string);
         //std::string getLog();
         void setHistoricoLogLeitura(std::vector<std::string>);
         std::vector<std::string> getHistoricoLogLeitura();

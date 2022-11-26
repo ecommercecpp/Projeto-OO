@@ -41,7 +41,8 @@ Pessoa::Pessoa(std::string nome, std::string cpf_cnpj, std::string endereco, std
 		this->tipo = tipo;
 	}
 	//gerar log de escrita com a permissao de cadastrarPessoa
-
+	LogEscrita logEscrita;
+	
 }
 
 /**

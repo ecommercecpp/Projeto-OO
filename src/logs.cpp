@@ -19,23 +19,24 @@ Logs::~Logs()
 /**
  * @brief Construct a new Logs:: Logs object
  * 
- * @param usuario 
+ * @param usuarioLogado 
  * @param data 
  * @param entidade 
  */
-Logs::Logs(Usuario usuario, Data data, std::string entidade)
+/*
+Logs::Logs(UsuarioLogado usuario, Data data, std::string entidade)
 {
     this->usuario = usuario;
     this->data = data;
     this->entidade = entidade;
 }
-
+*/
 /**
  * @brief Seta o usuario do log
  * 
  * @param usuario 
  */
-void Logs::setUsuario(Usuario usuario)
+void Logs::setUsuario(UsuarioLogado* usuario)
 {
     this->usuario = usuario;
 }
@@ -45,7 +46,7 @@ void Logs::setUsuario(Usuario usuario)
  * 
  * @return Usuario 
  */
-Usuario Logs::getUsuario()
+UsuarioLogado* Logs::getUsuario()
 {
     return this->usuario;
 }

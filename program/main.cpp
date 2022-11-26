@@ -67,9 +67,7 @@ std::vector<string> permissao() {
 	permissoes.push_back("cadastrarTelefoneCliente");
 	permissoes.push_back("cadastrarCliente");
 
-
   return permissoes;
-
 }
 
 void testUserSingleton(){
