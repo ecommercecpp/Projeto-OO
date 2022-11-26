@@ -29,14 +29,7 @@ Pessoa::Pessoa(std::string nome, std::string cpf_cnpj, std::string endereco, std
 {
 	//criar uma string com a permissao de cadastrarPessoa
 	std::string permissao = "cadastrarPessoa";
-	//printar a permissao
-	std::cout <<"a permissao ai(pessoa) -> "<< permissao << std::endl;
-
-	//printa o nome do usuario logado
-//	std::cout << "nome do usuario logado -> " << Empresa::getEmpresa()->getNomeUsuarioLogado() << std::endl;
-
-	//utiliza o ponteiro de usuarioLogado para verificar se o usuario logado tem a permissao de cadastrarPessoa
-	
+		
 	//UsuarioLogado::verificaPermissao(permissao)
 	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
 		throw AcessDeniedException();
