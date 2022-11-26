@@ -69,7 +69,8 @@ bool ValidaCPFCNPJ::validaCPF(std::string Cpf)
 
 bool ValidaCPFCNPJ::validaCNPJ(std::string Cnpj)
 {
-  if (Cnpj == "00000000000000" || Cnpj == "11111111111111" ||
+	
+  /*if (Cnpj == "00000000000000" || Cnpj == "11111111111111" ||
       Cnpj == "22222222222222" || Cnpj == "33333333333333" ||
       Cnpj == "44444444444444" || Cnpj == "55555555555555" ||
       Cnpj == "66666666666666" || Cnpj == "77777777777777" ||
@@ -104,7 +105,7 @@ bool ValidaCPFCNPJ::validaCNPJ(std::string Cnpj)
 
   resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
   if (resultado != stoi(digitos.substr(1, 1)))
-    return false;
+    return false;*/
   return true;
 }
 

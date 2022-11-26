@@ -25,7 +25,7 @@ class Funcionario : public Pessoa
 		float longitude;
 	public:
 		Funcionario();
-		Funcionario(std::string nome, std::string cpf_cnpj, std::string endereco, std::string email, int tipo, Data nascimento, Data admissao, std::vector<Salario> salario, Departamento departamento, Cargo cargo);
+		//Funcionario(std::string nome, std::string cpf_cnpj, std::string endereco, std::string email, int tipo, Data nascimento, Data admissao, std::vector<Salario> salario, Departamento departamento, Cargo cargo);
 		void demitir();
 		bool empregado();
 		void setMatricula(int matricula);

@@ -1,15 +1,8 @@
 #include <iostream>
 
 #include "cliente.hpp"
+#include "empresa.hpp"
 #include "exceptions.hpp"
-
-/**
- * @brief Construct a new Cliente:: Cliente object
- *
- */
-Cliente::Cliente()
-{
-}
 
 /**
  * @brief Construct a new Cliente:: Cliente object
@@ -21,15 +14,21 @@ Cliente::Cliente()
  * @param email
  * @param dataNascimento
  */
-Cliente::Cliente(std::string nome, std::string cpf_cnpj, std::string endereco, std::string email, int tipo, std::string telefone) : Pessoa(nome, cpf_cnpj, endereco, email, tipo)
-{
-	this->nome = nome;
-	this->cpf_cnpj = cpf_cnpj;
-	this->endereco = endereco;
-	this->email = email;
-	this->tipo = tipo;
-	this->telefone = telefone;
-	// setTelefone(telefone);
+Cliente::Cliente() 
+{//std::string nome, std::string cpf_cnpj, std::string endereco, std::string email, int tipo, std::string telefone) : Pessoa(nome, cpf_cnpj, endereco, email, tipo)
+	std::string permissao = "cadastrarCliente";
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		//dar um throw com a mensagem "Sem permissao"
+		throw AcessDeniedException();
+	}else{	
+		this->nome = nome;
+		this->cpf_cnpj = cpf_cnpj;
+		this->endereco = endereco;
+		this->email = email;
+		this->tipo = tipo;
+		this->telefone = telefone;
+		// setTelefone(telefone);
+	}	
 }
 
 /**
@@ -39,7 +38,12 @@ Cliente::Cliente(std::string nome, std::string cpf_cnpj, std::string endereco, s
  */
 std::string Cliente::getTelefone()
 {
+	std::string permissao = "verificarTelefoneCliente";
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		throw AcessDeniedException();
+	}else{
 	return telefone;
+	}
 }
 
 /**
@@ -49,14 +53,19 @@ std::string Cliente::getTelefone()
  */
 void Cliente::setTelefone(std::string t)
 {
-	// valida se o telefone tem entre 10 e 11 digitos
-	if (t.length() >= 10 && t.length() <= 11)
-	{
-		telefone = t;
-	}
-	else
-	{
-		std::cout << "Telefone invalido!" << std::endl;
-		throw InvalidTelefoneException();
+	std::string permissao = "cadastrarTelefoneCliente";
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		throw AcessDeniedException();
+	}else{
+		// valida se o telefone tem entre 10 e 11 digitos
+		if (t.length() >= 10 && t.length() <= 11)
+		{
+			telefone = t;
+		}
+		else
+		{
+			//std::cout << "Telefone invalido!" << std::endl;
+			throw InvalidTelefoneException();
+		}
 	}
 }

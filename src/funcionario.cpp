@@ -16,7 +16,7 @@
  * @param departamento
  * @param cargo
  */
-Funcionario::Funcionario(std::string nome, std::string cpf_cnpj, std::string endereco, std::string email, int tipo, Data nascimento, Data admissao, std::vector<Salario> salario, Departamento departamento, Cargo cargo) : Pessoa(nome, cpf_cnpj, endereco, email, tipo)
+Funcionario::Funcionario()//std::string nome, std::string cpf_cnpj, std::string endereco, std::string email, int tipo, Data nascimento, Data admissao, std::vector<Salario> salario, Departamento departamento, Cargo cargo) : Pessoa(nome, cpf_cnpj, endereco, email, tipo)
 {
 	std::string permissao = "cadastrarFuncionario";
 	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){

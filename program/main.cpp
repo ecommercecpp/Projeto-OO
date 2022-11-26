@@ -8,6 +8,31 @@
 #include "empresa.hpp"
 #include "Data.h"
 
+std::vector<string> permissao() {
+  vector<string> permissoes;
+	permissoes.push_back("cadastrarEmailPessoa");
+	permissoes.push_back("cadastrarTipoPessoa");
+	permissoes.push_back("verificarNomePessoa");
+	permissoes.push_back("verificarDocumentoPessoa");
+	permissoes.push_back("verificarEnderecoPessoa");
+	permissoes.push_back("verificarEmailPessoa");
+	permissoes.push_back("verificarTipoPessoa");
+	permissoes.push_back("cadastrarNomePessoa");
+	permissoes.push_back("cadastrarEnderecoPessoa");
+	permissoes.push_back("cadastrarPessoa");
+	permissoes.push_back("cadastrarDocumentoPessoa");
+
+	permissoes.push_back("cadastrarFuncionario");
+
+	permissoes.push_back("verificarTelefoneCliente");
+	permissoes.push_back("cadastrarTelefoneCliente");
+	permissoes.push_back("cadastrarCliente");
+
+
+  return permissoes;
+
+}
+
 void testUserSingleton(){
 	std::cout << "-----------------" << std::endl;
 	UsuarioLogado *U = UsuarioLogado::GetInstance();
@@ -28,11 +53,48 @@ void testUserSingleton(){
 }
 
 void testaCliente(){
-
-	Cliente lojao2("Lojao", "123456789", "Rua 1", "jao@jao.jao",1,"987654321");
 	//c.setTipo(0);// 0 - Física, 1 - Jurídica
 
-	std::cout << "Nome: " << lojao2.getNome() << std::endl;
+	Empresa *e = Empresa::getEmpresa();
+	//criar um usuarioLogado
+	UsuarioLogado *U = UsuarioLogado::GetInstance();
+	U->setNome("UsuarioCliente");
+	U->setSenha("123");
+	U->setTipo(0);
+	U->setcpf_cnpj("19169517711");
+	U->setEmail("user@user.com");
+	
+	U->setPermissoes(permissao());
+	/*for (unsigned int i = 0; i < U->getPermissoes().size(); i++)
+	{
+		std::cout << "Permissoes(TestaPessoa) -> " << U->getPermissoes()[i] << std::endl;
+	}*/
+
+	//logar usuario na empresa
+	e->logar(U);
+
+	std::cout << "Nome do usuario logado(TestaCliente): " << U->getNome() << std::endl;
+	std::cout <<"Quantidade de Permissoes no vetor de permissoes do usuario Logado: "<< U->getPermissoes().size() << std::endl;
+	
+
+	std::cout<<"-------Gerando a Cliente----------"<<std::endl;
+	Cliente cFisico;//"Lojao", "123456789", "Rua 1", "jao@jao.jao",1,"987654321"
+	Cliente cJuridico;
+	cFisico.setNome("Jorge");
+	cFisico.setcpf_cnpj("12345678901");
+	cFisico.setEndereco("Rua 5");
+	cFisico.setEmail("jorge@email.com");
+	cFisico.setTipo(0); // 0 - Física, 1 - Jurídica
+	cFisico.setTelefone("9876543210");
+	cJuridico.setNome("Sergio");
+	cJuridico.setcpf_cnpj("12345678901232");
+	cJuridico.setEndereco("Rua 6");
+	cJuridico.setEmail("sergio@email.com");
+	cJuridico.setTipo(1); // 0 - Física, 1 - Jurídica
+	cJuridico.setTelefone("9876543290");
+
+	std::cout << "Nome do Cliente Fisico criado: " << cFisico.getNome() << " | Documento: " << cFisico.getCpf_cnpj() << std::endl;
+	std::cout << "Nome do Cliente Juridico criado: " << cJuridico.getNome() << " | Documento: " << cJuridico.getCpf_cnpj() << std::endl;
 }
 
 void testaFuncionario()
@@ -45,10 +107,7 @@ void testaFuncionario()
 	U->setcpf_cnpj("19169517711");
 	U->setEmail("user1@user.com");
 
-	std::vector<std::string> permissoes;
-	permissoes.push_back("cadastrarFuncionario");
-	permissoes.push_back("cadastrarPessoa");
-	U->setPermissoes(permissoes);
+	U->setPermissoes(permissao());
 	for (unsigned int i = 0; i < U->getPermissoes().size(); i++)
 	{
 		std::cout << "Permissoes(TestaFuncionario) -> " << U->getPermissoes()[i] << std::endl;
@@ -66,7 +125,7 @@ void testaFuncionario()
 	Cargo gerente("Gerente");
 	Data nascimento(1990, 1, 1); 
 	Data admissao(2010, 1, 1); 
-	Funcionario f("Joao", "12345678912", "Rua 1", "joao@joao.com",0, nascimento, admissao, salario, adm, gerente);
+	Funcionario f;//"Joao", "12345678912", "Rua 1", "joao@joao.com",0, nascimento, admissao, salario, adm, gerente
 	f.setNome("Joaozinho");
 	f.setTipo(0);
 	f.setcpf_cnpj("12345678912");
@@ -89,18 +148,15 @@ void testaPessoa()
 	Empresa *e = Empresa::getEmpresa();
 	//criar um usuarioLogado
 	UsuarioLogado *U = UsuarioLogado::GetInstance();
+	std::vector<std::string> permissoes;
+	
+	U->setPermissoes(permissao());
 	U->setNome("Usuario funciona pfvr");
 	U->setSenha("123");
 	U->setTipo(0);
 	U->setcpf_cnpj("19169517711");
 	U->setEmail("user@user.com");
 
-	std::vector<std::string> permissoes;
-	
-	permissoes.push_back("cadastrarPessoa");
-	permissoes.push_back("cadastrarCachorro");
-	permissoes.push_back("cadastrarFuncionario");
-	U->setPermissoes(permissoes);
 	/*for (unsigned int i = 0; i < U->getPermissoes().size(); i++)
 	{
 		std::cout << "Permissoes(TestaPessoa) -> " << U->getPermissoes()[i] << std::endl;
@@ -110,11 +166,11 @@ void testaPessoa()
 	e->logar(U);
 
 	std::cout << "Nome do usuario logado(TestaPessoa): " << U->getNome() << std::endl;
-	std::cout <<"Quantidade de Permissoes no vetor de permissões do usuário Logado: "<< U->getPermissoes().size() << std::endl;
+	std::cout <<"Quantidade de Permissoes no vetor de permissoes do usuario Logado: "<< U->getPermissoes().size() << std::endl;
 	
 
 	std::cout<<"-------Gerando a pessoa----------"<<std::endl;
-	Pessoa p("Joao", "1234567891", "Rua 1", "email@email.com", 0);
+	Pessoa p("Joao", "12345678911", "Rua 1", "email@email.com", 0);
 	p.setNome("Joao");
 	p.setcpf_cnpj("12345678911");
 	p.setEndereco("Rua 1");

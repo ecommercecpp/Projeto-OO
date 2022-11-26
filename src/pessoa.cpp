@@ -29,7 +29,7 @@ Pessoa::Pessoa(std::string nome, std::string cpf_cnpj, std::string endereco, std
 {
 	//criar uma string com a permissao de cadastrarPessoa
 	std::string permissao = "cadastrarPessoa";
-		
+
 	//UsuarioLogado::verificaPermissao(permissao)
 	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
 		throw AcessDeniedException();
@@ -51,31 +51,44 @@ Pessoa::Pessoa(std::string nome, std::string cpf_cnpj, std::string endereco, std
  */
 void Pessoa::setcpf_cnpj(std::string cpf_cnpj)
 {
-	if ( cpf_cnpj.length() == 11)
+	std::string permissao = "cadastrarDocumentoPessoa";
+
+	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
 	{
-		if (ValidaCPFCNPJ::validaCPF(cpf_cnpj))//Concertar 
+		throw AcessDeniedException();
+	}
+	else
+	{
+		if (cpf_cnpj.length() == 11)
 		{
-			this->cpf_cnpj = cpf_cnpj;
+			tipo = 0;
+			if (ValidaCPFCNPJ::validaCPF(cpf_cnpj)) // Concertar
+			{
+				this->cpf_cnpj = cpf_cnpj;
+			}
+			else
+			{
+				throw InvalidCPFException();
+			}
+		}
+		else if (cpf_cnpj.length() == 14)
+		{
+			tipo = 1;
+			if (ValidaCPFCNPJ::validaCNPJ(cpf_cnpj))
+			{
+				this->cpf_cnpj = cpf_cnpj;
+			}
+			else
+			{
+				std::cout << "CPF ou CNPJ invalido" << cpf_cnpj.length() << " <- o tamain | o numero -> " << cpf_cnpj << std::endl;
+				throw InvalidCNPJException();
+			}
 		}
 		else
 		{
+			std::cout << "CPF ou CNPJ invalido" << cpf_cnpj.length() << " <- o tamain | o numero -> " << cpf_cnpj << std::endl;
 			throw InvalidCPFException();
 		}
-	}
-	else if (cpf_cnpj.length() == 14)
-	{
-		if (ValidaCPFCNPJ::validaCNPJ(cpf_cnpj))
-		{
-			this->cpf_cnpj = cpf_cnpj;
-		}
-		else
-		{
-			throw InvalidCNPJException();
-			//std::cout << "CNPJ invalido"<< cpf_cnpj << std::endl;
-		}
-	} else{
-		std::cout << "CPF ou CNPJ invalido" << cpf_cnpj.length() << " <- o tamain | o numero -> " << cpf_cnpj << std::endl;
-		throw InvalidCPFException();
 	}
 }
 
@@ -86,14 +99,15 @@ void Pessoa::setcpf_cnpj(std::string cpf_cnpj)
  */
 void Pessoa::setEmail(std::string email)
 {
-	//if (email.find("@") != std::string::npos)
-	//{
+	std::string permissao = "cadastrarEmailPessoa";
+	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+	{
+		throw AcessDeniedException();
+	}
+	else
+	{
 		this->email = email;
-	//}
-	//else
-	//{
-		//throw InvalidEmailException();
-	//}
+	}
 }
 
 /**
@@ -103,15 +117,23 @@ void Pessoa::setEmail(std::string email)
  */
 void Pessoa::setTipo(int tipo)
 {
-	// nao permite tipos que não sejam 0 ou 1
-	if (tipo == 0 || tipo == 1)
+	std::string permissao = "cadastrarTipoPessoa";
+	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
 	{
-		this->tipo = tipo;
+		throw AcessDeniedException();
 	}
 	else
 	{
-		std::cout << "Tipo e esse: "<< tipo << std::endl;
-		throw InvalidTypeException();
+		// nao permite tipos que não sejam 0 ou 1
+		if (tipo == 0 || tipo == 1)
+		{
+			this->tipo = tipo;
+		}
+		else
+		{
+			throw InvalidTypeException();
+		}
+
 	}
 }
 
@@ -122,7 +144,15 @@ void Pessoa::setTipo(int tipo)
  */
 std::string Pessoa::getNome()
 {
-	return nome;
+	std::string permissao = "verificarNomePessoa";
+	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+	{
+		throw AcessDeniedException();
+	}
+	else
+	{
+		return nome;
+	}
 }
 
 /**
@@ -132,7 +162,15 @@ std::string Pessoa::getNome()
  */
 std::string Pessoa::getCpf_cnpj()
 {
+	std::string permissao = "verificarDocumentoPessoa";
+	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+	{
+		throw AcessDeniedException();
+	}
+	else
+	{
 	return cpf_cnpj;
+	}
 }
 
 /**
@@ -142,7 +180,15 @@ std::string Pessoa::getCpf_cnpj()
  */
 std::string Pessoa::getEndereco()
 {
+	std::string permissao = "verificarEnderecoPessoa";
+	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+	{
+		throw AcessDeniedException();
+	}
+	else
+	{
 	return endereco;
+	}
 }
 
 /**
@@ -152,7 +198,15 @@ std::string Pessoa::getEndereco()
  */
 std::string Pessoa::getEmail()
 {
+	std::string permissao = "verificarEmailPessoa";
+	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+	{
+		throw AcessDeniedException();
+	}
+	else
+	{
 	return email;
+	}
 }
 
 /**
@@ -162,8 +216,17 @@ std::string Pessoa::getEmail()
  */
 int Pessoa::getTipo()
 {
+	std::string permissao = "verificarTipoPessoa";
+	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+	{
+		throw AcessDeniedException();
+	}
+	else
+	{
 	return tipo;
+	}
 }
+
 
 /**
  * @brief Seta o nome da pessoa
@@ -172,7 +235,15 @@ int Pessoa::getTipo()
  */
 void Pessoa::setNome(std::string nome)
 {
-	this->nome = nome;
+	std::string permissao = "cadastrarNomePessoa";
+	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+	{
+		throw AcessDeniedException();
+	}
+	else
+	{
+		this->nome = nome;
+	}
 }
 
 /**
@@ -182,5 +253,13 @@ void Pessoa::setNome(std::string nome)
  */
 void Pessoa::setEndereco(std::string endereco)
 {
-	this->endereco = endereco;
+	std::string permissao = "cadastrarEnderecoPessoa";
+	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+	{
+		throw AcessDeniedException();
+	}
+	else
+	{
+		this->endereco = endereco;
+	}
 }

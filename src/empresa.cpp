@@ -355,18 +355,18 @@ void Empresa::removerLogExcecao(LogExcecao *logExcecao)
 }
 
 bool Empresa::verificaPermissao(std::string valor){
-    std::cout << "Tamanho do vetor de permissoes de usuario logado(classe empresa): " << usuarioLogado->getPermissoes().size() << std::endl;
+   // std::cout << "Tamanho do vetor de permissoes de usuario logado(classe empresa): " << usuarioLogado->getPermissoes().size() << std::endl;
     int cont = 0;
     for (unsigned int i = 0; i < usuarioLogado->getPermissoes().size(); i++)
     {
         //usuarioLogado->getPermissoes()[i]
         if (usuarioLogado->getPermissoes()[i] == valor)
         {
-            std::cout << "Mostra as permissoes(classe empresa) TRUE" << usuarioLogado->getPermissoes()[i] << std::endl;
+            //std::cout << "Mostra as permissoes(classe empresa) TRUE" << usuarioLogado->getPermissoes()[i] << std::endl;
             cont++;
-        }else{
+        }/*else{
             std::cout << "Mostra as permissoes(classe empresa) FALSE" << usuarioLogado->getPermissoes()[i] << std::endl;
-        }
+        }*/
     }
     if(cont > 0){
         return true;
