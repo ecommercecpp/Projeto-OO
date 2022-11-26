@@ -8,7 +8,7 @@
 
 class Usuario : public Pessoa
 {
-	private:
+	protected:
 		std::string login;
 		std::string senha;
 		std::vector<std::string> permissoes;

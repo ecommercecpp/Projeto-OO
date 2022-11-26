@@ -57,7 +57,6 @@ Usuario *UsuarioLogado::getUsuario()
 std::string UsuarioLogado::getNome()
 {
     //retorna o nome da pessoa logada
-
     return this->nome;
 }
 
@@ -68,7 +67,7 @@ std::string UsuarioLogado::getNome()
  */
 std::string UsuarioLogado::getCpf_cnpj()
 {
-    return this->usuario->getCpf_cnpj();
+    return this->cpf_cnpj;
 }
 
 /**
@@ -78,7 +77,7 @@ std::string UsuarioLogado::getCpf_cnpj()
  */
 std::string UsuarioLogado::getEndereco()
 {
-    return this->usuario->getEndereco();
+    return this->endereco;
 }
 
 /**
@@ -88,7 +87,7 @@ std::string UsuarioLogado::getEndereco()
  */
 std::string UsuarioLogado::getEmail()
 {
-    return this->usuario->getEmail();
+    return this->email;
 }
 
 /**
@@ -98,7 +97,7 @@ std::string UsuarioLogado::getEmail()
  */
 int UsuarioLogado::getTipo()
 {
-    return this->usuario->getTipo();
+    return this->tipo;
 }
 
 /**
@@ -108,7 +107,7 @@ int UsuarioLogado::getTipo()
  */
 std::string UsuarioLogado::getLogin()
 {
-    return this->usuario->getLogin();
+    return this->login;
 }
 
 /**
@@ -118,7 +117,7 @@ std::string UsuarioLogado::getLogin()
  */
 std::string UsuarioLogado::getSenha()
 {
-    return this->usuario->getSenha();
+    return this->senha;
 }
 
 /**
@@ -128,7 +127,7 @@ std::string UsuarioLogado::getSenha()
  */
 std::vector<std::string> UsuarioLogado::getPermissoes()
 {
-    return this->usuario->getPermissoes();
+    return this->permissoes;
 }
 
 /**
