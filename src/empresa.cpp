@@ -355,9 +355,11 @@ bool Empresa::verificaPermissao(std::string valor){
         for (unsigned int i = 0; i < usuarioLogado->getPermissoes().size(); i++)
         {
            std::cout << "Mostra aqui tamem: " << usuarioLogado->getPermissoes()[i] << std::endl;
+           return true;
         }
 
-        std::cout << "Valor passado: " << valor << std::endl;
+        std::cout << "Valor passado: AQUI " << valor << std::endl;
+        return false;
 
     //verificar se o valor passado esta contido no vetor de permissoes do usuario logado
     /*for (unsigned int i = 0; i < usuarioLogado->getPermissoes().size(); i++)

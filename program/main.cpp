@@ -89,18 +89,33 @@ void testaPessoa()
 	//criar um usuarioLogado
 	UsuarioLogado *U = UsuarioLogado::GetInstance();
 	U->setNome("Usuario funciona pfvr");
+	//percorre e imprime o vetor de permissoes do usuarioLogado
+	std::cout << "Permissoes do usuario logado: " << std::endl;
+	for (unsigned int i = 0; i < U->getPermissoes().size(); i++)
+	{
+		std::cout << "aqui oh 1 -> " << U->getPermissoes()[i] << std::endl;
+	}
 	std::cout << "Nome do usuario logado: " << U->getNome() << std::endl;
 
 	std::vector<std::string> permissoes;
 	permissoes.push_back("cadastrarPessoa");
 	U->setPermissoes(permissoes);
+		for (unsigned int i = 0; i < U->getPermissoes().size(); i++)
+	{
+		std::cout << "aqui oh 2 -> " << U->getPermissoes()[i] << std::endl;
+	}
+	
 	//criar um usuario e adicionar a permissao cadastrarPessoa no vetor de permissões
 	Empresa *e = Empresa::getEmpresa();
 	
 	//logar usuario na empresa
 	e->logar(U);
+	for (unsigned int i = 0; i < U->getPermissoes().size(); i++)
+	{
+		std::cout << "aqui oh 3 -> " << U->getPermissoes()[i] << std::endl;
+	}
 
-	U->setNome("Usuario funciona pfvr");
+	U->setNome("Usuario funciona pfvr2");
 	U->setSenha("123");
 	U->setTipo(0);
 	U->setcpf_cnpj("19169517711");

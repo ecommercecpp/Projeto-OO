@@ -137,12 +137,13 @@ std::vector<std::string> UsuarioLogado::getPermissoes()
  */
 void UsuarioLogado::setPermissoes(std::vector<std::string> valor)
 {
-    this->usuario->setPermissoes(valor);
+    this->permissoes = valor;
 }
 
 //remover a permissao passada no parametro do vector de permissoes de usuario
 void UsuarioLogado::removePermissao(std::string valor)
 {
     //remover a permissao passada no parametro do vector de permissoes da classe pai (usuario)
+    
     this->usuario->removePermissao(valor);
 }
