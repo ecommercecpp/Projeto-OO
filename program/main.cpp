@@ -37,20 +37,28 @@ void testaCliente(){
 
 void testaFuncionario()
 {
+	Empresa *e = Empresa::getEmpresa();
 	UsuarioLogado *U = UsuarioLogado::GetInstance();
+	U->setNome("User 1");
+	U->setSenha("123");
+	U->setTipo(0);
+	U->setcpf_cnpj("19169517711");
+	U->setEmail("user1@user.com");
 
-	std::cout << "Permissoes do usuario logado: " << std::endl;
-	//imprimir getPermissoes
-
-	std::cout<< "Permissoes do usuario na main: " << U->getPermissoes().size() << std::endl;
-	
+	std::vector<std::string> permissoes;
+	permissoes.push_back("cadastrarFuncionario");
+	permissoes.push_back("cadastrarPessoa");
+	U->setPermissoes(permissoes);
 	for (unsigned int i = 0; i < U->getPermissoes().size(); i++)
 	{
-		std::cout << "aqui oh -> " << U->getPermissoes()[i] << std::endl;
+		std::cout << "Permissoes(TestaFuncionario) -> " << U->getPermissoes()[i] << std::endl;
 	}
+	//logar usuario na empresa
+	e->logar(U);
 
+	std::cout << "-----------------" << std::endl;
+	std::cout << "Gerando Funcionario" << std::endl;
 
-	//		Funcionario(std::string nome, std::string cpf_cnpj, std::string endereco, std::string email, Data nascimento, Data admissao, std::vector<Salario> salario, Departamento departamento, Cargo cargo);
 	std::vector <Salario> salario;
 	Salario s(10000.00, true, 1);
 	salario.push_back(s);
@@ -58,33 +66,27 @@ void testaFuncionario()
 	Cargo gerente("Gerente");
 	Data nascimento(1990, 1, 1); 
 	Data admissao(2010, 1, 1); 
-	Funcionario f("Joao", "1234567891", "Rua 1", "joao@joao.com",nascimento, admissao, salario, adm, gerente);
+	Funcionario f("Joao", "12345678912", "Rua 1", "joao@joao.com",0, nascimento, admissao, salario, adm, gerente);
 	f.setNome("Joaozinho");
 	f.setTipo(0);
+	f.setcpf_cnpj("12345678912");
+	f.setEndereco("Rua 1");
+	f.setEmail("joao@joao.com");
+	f.setNascimento(nascimento);
+	f.setAdmissao(admissao);
+	f.setSalario(salario);
+	f.setDepartamento(adm);
+	f.setCargo(gerente);
 
-	std::cout << "Nome do funcionario: " << f.getNome() << std::endl;
-	Cargo c1, c2, c3, c4, c5;
-	c1.setNome("Chefao");
-	c2.setNome("Engenheiro");
-	c3.setNome("Pedreiro");
-	c4.setNome("ADM");
-	c5.setNome("Analista");
-	std::vector<Cargo> cargos1;
-	std::vector<Cargo> cargos2;
-	cargos2.push_back(c1);
-	cargos1.push_back(c2);
-	cargos1.push_back(c3);
-	cargos2.push_back(c4);
-	cargos2.push_back(c5);
-	std::cout<<"-------teste mil----------"<<std::endl;
+	std::cout << "Nome do funcionario:(TestaFuncionario) " << f.getNome() << std::endl;
 
-
+	//destroi as instancias
+	/*U->~UsuarioLogado();
+	e->~Empresa();*/
 }
 void testaPessoa()
 {
-		//criar um usuario e adicionar a permissao cadastrarPessoa no vetor de permissões
 	Empresa *e = Empresa::getEmpresa();
-	
 	//criar um usuarioLogado
 	UsuarioLogado *U = UsuarioLogado::GetInstance();
 	U->setNome("Usuario funciona pfvr");
@@ -94,15 +96,18 @@ void testaPessoa()
 	U->setEmail("user@user.com");
 
 	std::vector<std::string> permissoes;
+	
 	permissoes.push_back("cadastrarPessoa");
+	permissoes.push_back("cadastrarCachorro");
+	permissoes.push_back("cadastrarFuncionario");
 	U->setPermissoes(permissoes);
-		for (unsigned int i = 0; i < U->getPermissoes().size(); i++)
+	/*for (unsigned int i = 0; i < U->getPermissoes().size(); i++)
 	{
 		std::cout << "Permissoes(TestaPessoa) -> " << U->getPermissoes()[i] << std::endl;
-	}
+	}*/
 
 	//logar usuario na empresa
-	//e->logar(U);
+	e->logar(U);
 
 	std::cout << "Nome do usuario logado(TestaPessoa): " << U->getNome() << std::endl;
 	std::cout <<"Quantidade de Permissoes no vetor de permissões do usuário Logado: "<< U->getPermissoes().size() << std::endl;
@@ -117,6 +122,7 @@ void testaPessoa()
 	p.setTipo(0);
 
 	std::cout << "Nome do Funcionario criado: " << p.getNome() << std::endl;
+	
 }	
 
 int main()

@@ -57,7 +57,7 @@ class Empresa
 		Empresa(Empresa &other) = delete;
 		//void operator=(const Empresa &) = delete;
 		static Empresa* getEmpresa();
-		
+		~Empresa();
 		
 		//Usuario* getUsuarioLogado();
 		//void setUsuarioLogado(Usuario* usuario);

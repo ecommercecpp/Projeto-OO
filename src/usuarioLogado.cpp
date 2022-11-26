@@ -40,6 +40,14 @@ UsuarioLogado* UsuarioLogado::GetInstance()
 }
 
 /**
+ * @brief Destroi a instancia do usuario logado
+ *
+ */
+UsuarioLogado::~UsuarioLogado(){
+    delete usuario;
+}
+
+/**
  * @brief Retorna o usuario logado
  *
  * @return Usuario*
@@ -127,6 +135,10 @@ std::string UsuarioLogado::getSenha()
  */
 std::vector<std::string> UsuarioLogado::getPermissoes()
 {
+    //printa as permissoes do usuario logado
+    /*for(unsigned int i = 0; i < this->permissoes.size(); i++){
+        std::cout << this->permissoes[i] << std::endl;
+    }*/
     return this->permissoes;
 }
 

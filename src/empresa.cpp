@@ -34,6 +34,15 @@ Empresa *Empresa::getEmpresa()
 }
 
 /**
+ * @brief Destroi a instancia da empresa
+ *
+ */
+Empresa::~Empresa()
+{
+    delete empresa;
+}
+
+/**
  * @brief Adiciona um departamento a empresa
  *
  * @param departamento
@@ -347,22 +356,23 @@ void Empresa::removerLogExcecao(LogExcecao *logExcecao)
 
 bool Empresa::verificaPermissao(std::string valor){
     std::cout << "Tamanho do vetor de permissoes de usuario logado(classe empresa): " << usuarioLogado->getPermissoes().size() << std::endl;
-
+    int cont = 0;
     for (unsigned int i = 0; i < usuarioLogado->getPermissoes().size(); i++)
     {
+        //usuarioLogado->getPermissoes()[i]
         if (usuarioLogado->getPermissoes()[i] == valor)
         {
             std::cout << "Mostra as permissoes(classe empresa) TRUE" << usuarioLogado->getPermissoes()[i] << std::endl;
-            return true;
+            cont++;
         }else{
             std::cout << "Mostra as permissoes(classe empresa) FALSE" << usuarioLogado->getPermissoes()[i] << std::endl;
-            return false;
         }
     }
-
-    //std::cout << "Caso falso Valor passado: AQUI " << valor << std::endl;
-    return false;
-        
+    if(cont > 0){
+        return true;
+    }else{
+        return false;
+    }
 
 }
 

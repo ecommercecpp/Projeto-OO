@@ -16,6 +16,8 @@ class UsuarioLogado : public Usuario
     	UsuarioLogado(UsuarioLogado &other) = delete;
 		void operator=(const UsuarioLogado &) = delete;
 		static UsuarioLogado *GetInstance();
+		//criar um destrutor para liberar a memoria
+		~UsuarioLogado();
 		//bool getAcesso(std::string valor);
 		Usuario* getUsuario();
 		std::string getNome();
