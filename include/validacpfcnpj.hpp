@@ -1,10 +1,7 @@
 #ifndef _VALIDA_CPF_
 #define _VALIDA_CPF_
 
-#include <iostream>
 #include <string>
-
-using namespace std;
 
 class ValidaCPFCNPJ
 {
@@ -33,80 +30,72 @@ ValidaCPFCNPJ *ValidaCPFCNPJ::GetInstance()
     return validacpfcnpj;
 }
 
-bool ValidaCPFCNPJ::validaCPF(std::string Cpf)
+bool ValidaCPFCNPJ::validaCPF(std::string cpf)
 {
-		if (Cpf == "00000000000" || Cpf == "11111111111" || Cpf == "22222222222" ||
-			Cpf == "33333333333" || Cpf == "44444444444" || Cpf == "55555555555" ||
-			Cpf == "66666666666" || Cpf == "77777777777" || Cpf == "88888888888" ||
-			Cpf == "99999999999")
-			return false;
-
-		int i, digito1, digito2, resto, soma;
-		string nDigResult;
-		soma = 0;
-		digito1 = 0;
-		digito2 = 0;
+	// verifica se o cpf tem 11 digitos
+	if (cpf.length() != 11)
+		return false;
+	
+	// verifica se o cpf é composto por digitos iguais
+	if (cpf == "00000000000" || cpf == "11111111111" || cpf == "22222222222" || cpf == "33333333333" || cpf == "44444444444" || cpf == "55555555555" || cpf == "66666666666" || cpf == "77777777777" || cpf == "88888888888" || cpf == "99999999999")
+		return false;
+	
+	// verifica o primeiro digito verificador
+	int soma = 0;
+	for(int i = 0; i < 9; i++)
+		soma += (cpf[i] - '0') * (10 - i);
+	
+	int resto = (soma * 10) % 11;
+	if (resto == 10 || resto == 11)
 		resto = 0;
-		for (i = 1; i <= 9; i++)
-			soma = soma + (stoi(Cpf.substr(i - 1, 1)) * (11 - i));
-		resto = (soma * 10) % 11;
-		if ((resto == 10) || (resto == 11))
-			resto = 0;
-		digito1 = resto;
-		soma = 0;
-		for (i = 1; i <= 10; i++)
-			soma = soma + (stoi(Cpf.substr(i - 1, 1)) * (12 - i));
-		resto = (soma * 10) % 11;
-		if ((resto == 10) || (resto == 11))
-			resto = 0;
-		digito2 = resto;
-		nDigResult = Cpf.substr(9, 2);
-		if ((nDigResult == to_string(digito1) + to_string(digito2)))
-			return true;
-		else
-			return true;
+	
+	// se o digito verificador não bate com o primeiro digito verificador do cpf
+	if (resto != (cpf[9] - '0'))
+		return false;
+
+	// verifica o segundo digito verificador
+	soma = 0;
+	for(int i = 0; i < 10; i++)
+		soma += (cpf[i] - '0') * (11 - i);
+	
+	resto = (soma * 10) % 11;
+
+	if (resto == 10 || resto == 11)
+		resto = 0;
+
+	// se o digito verificador não bate com o segundo digito verificador do cpf
+	if (resto != (cpf[10] - '0'))
+		return false;
+
+	return true;
 }
 
-bool ValidaCPFCNPJ::validaCNPJ(std::string Cnpj)
+bool ValidaCPFCNPJ::validaCNPJ(std::string cnpj)
 {
-	
-  /*if (Cnpj == "00000000000000" || Cnpj == "11111111111111" ||
-      Cnpj == "22222222222222" || Cnpj == "33333333333333" ||
-      Cnpj == "44444444444444" || Cnpj == "55555555555555" ||
-      Cnpj == "66666666666666" || Cnpj == "77777777777777" ||
-      Cnpj == "88888888888888" || Cnpj == "99999999999999")
-    return false;
+	// verifica se o cnpj tem 14 digitos
+	if (cnpj.length() != 14)
+		return false;
 
-  int tamanho = Cnpj.length() - 2;
-  string numeros = Cnpj.substr(0, tamanho);
-  string digitos = Cnpj.substr(tamanho);
-  int soma = 0;
-  int pos = tamanho - 7;
+	// verifica se o cnpj é composto por digitos iguais
+	if (cnpj == "00000000000000" || cnpj == "11111111111111" || cnpj == "22222222222222" || cnpj == "33333333333333" || cnpj == "44444444444444" || cnpj == "55555555555555" || cnpj == "66666666666666" || cnpj == "77777777777777" || cnpj == "88888888888888" || cnpj == "99999999999999")
+		return false;
 
-  for (int i = tamanho; i >= 1; i--) {
-    soma += stoi(numeros.substr(tamanho - i, 1)) * pos--;
-    if (pos < 2)
-      pos = 9;
-  }
+	int soma1 = 0, soma2 = 0;
+	for(int i = 0, j = 5, k = 6; i < 13; i++, j--, k--)
+	{
+		j = j == 1 ? 9 : j;
+		k = k == 1 ? 9 : k;
 
-  int resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
-  if (resultado != stoi(digitos.substr(0, 1)))
-    return false;
+		soma2 += (cnpj[i] - '0') * k;
 
-  tamanho = tamanho + 1;
-  numeros = Cnpj.substr(0, tamanho);
-  soma = 0;
-  pos = tamanho - 7;
-  for (int i = tamanho; i >= 1; i--) {
-    soma += stoi(numeros.substr(tamanho - i, 1)) * pos--;
-    if (pos < 2)
-      pos = 9;
-  }
+		if (i < 12)
+			soma1 += (cnpj[i] - '0') * j;
+	}
 
-  resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
-  if (resultado != stoi(digitos.substr(1, 1)))
-    return false;*/
-  return true;
+	int digito1 = soma1 % 11 < 2 ? 0 : 11 - soma1 % 11;
+	int digito2 = soma2 % 11 < 2 ? 0 : 11 - soma2 % 11;
+
+	return digito1 == (cnpj[12] - '0') && digito2 == (cnpj[13] - '0');
 }
 
 #endif

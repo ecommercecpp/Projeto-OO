@@ -412,9 +412,9 @@ void Empresa::gerarLogEscrita(std::string entidade, std::string atributoAlterado
     std::vector <std::string> atributosAlterados;
     atributosAlterados.push_back(atributoAlterado);
     std::string nome = usuarioLogado->getNome();
-    std::cout << "Nome do usuario logado:(log escrita) " << nome << std::endl;
+    //std::cout << "Nome do usuario logado:(log escrita) " << nome << std::endl;
     //imprimir a entidade
-    std::cout << "Entidade:(log escrita) " << entidade << std::endl;
+    //std::cout << "Entidade:(log escrita) " << entidade << std::endl;
     Data data = Data();
     // Declaring argument for time()
     time_t tt;
@@ -452,9 +452,9 @@ void Empresa::gerarLogLeitura(std::string entidade, std::string informacaoLida){
     this->logsLeitura.push_back(logLeitura);
 
     std::string nome = usuarioLogado->getNome();
-    std::cout << "Nome do usuario logado:(log leitura) " << nome << std::endl;
+   // std::cout << "Nome do usuario logado:(log leitura) " << nome << std::endl;
     //imprimir a entidade
-    std::cout << "Entidade:(log leitura) " << entidade << std::endl;
+    //std::cout << "Entidade:(log leitura) " << entidade << std::endl;
     Data data = Data();
     // Declaring argument for time()
     time_t tt;
@@ -492,9 +492,9 @@ void Empresa::gerarLogExcecao(std::string entidade, std::string funcionalidade){
     this->logsExcecao.push_back(logExcecao);
 
     std::string nome = usuarioLogado->getNome();
-    std::cout << "Nome do usuario logado:(log excecao) " << nome << std::endl;
+    //std::cout << "Nome do usuario logado:(log excecao) " << nome << std::endl;
     //imprimir a entidade
-    std::cout << "Entidade:(log excecao) " << entidade << std::endl;
+    //std::cout << "Entidade:(log excecao) " << entidade << std::endl;
     Data data = Data();
     // Declaring argument for time()
     time_t tt;
