@@ -155,7 +155,7 @@ std::string Pessoa::getNome()
 	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
 	{
 		Empresa::getEmpresa()->gerarLogExcecao(entidade, funcionalidade);
-		Empresa::getEmpresa()->imprimirLogsExcecao();
+		//Empresa::getEmpresa()->imprimirLogsExcecao();
 		throw AcessDeniedException();
 	}
 	else

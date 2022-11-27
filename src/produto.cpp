@@ -21,6 +21,7 @@ Produto::Produto()
  * @param categoria
  * @param estoqueMinimo
  */
+/*
 Produto::Produto(std::string nome, int codigo, double valorDeVenda, int tamanhoDoLoteMinimo, Categoria *categoria, int estoqueMinimo)
 {
     setNome(nome);
@@ -30,7 +31,7 @@ Produto::Produto(std::string nome, int codigo, double valorDeVenda, int tamanhoD
     setCategoria(categoria);
     setEstoqueMinimo(estoqueMinimo);
 }
-
+*/
 /**
  * @brief Destroy the Produto:: Produto object
  *

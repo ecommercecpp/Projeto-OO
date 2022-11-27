@@ -8,8 +8,8 @@
 #include "empresa.hpp"
 #include "Data.h"
 
-std::vector<string> permissao() {
-  vector<string> permissoes;
+std::vector<std::string> permissao() {
+  std::vector<std::string> permissoes;
 	permissoes.push_back("cadastrarEmailPessoa");
 	permissoes.push_back("cadastrarTipoPessoa");
 	permissoes.push_back("verificarNomePessoa");
@@ -70,23 +70,20 @@ std::vector<string> permissao() {
   return permissoes;
 }
 
-void testUserSingleton(){
-	std::cout << "-----------------" << std::endl;
-	UsuarioLogado *U = UsuarioLogado::GetInstance();
-
-	U->setNome("User 1");
-	U->setSenha("123");
-	U->setTipo(0);
-	U->setcpf_cnpj("19169517711");
-	U->setEmail("email1@gmail.com");
-	
-	std::cout << "Nome do singleton (teste): " << U->getNome() << "aaaaaa ;-;" << std::endl;
-	std::cout << "Carregando classe UsuarioLogado" << std::endl;
-	
-	// Criando outro usuário pra ver se quando chama o singleton ele não cria outro
-	UsuarioLogado *usuarioLogado = UsuarioLogado::GetInstance();
-	std::cout << usuarioLogado->getNome() << std::endl;
-	std::cout << "-----------------" << std::endl;
+void testaProduto() {
+  std::cout << "Testando Produto" << std::endl;
+  Produto *produto = new Produto();
+  produto->setNome("Produto 1");
+  //produto->setPreco(10.0);
+  //produto->setQuantidade(10);
+  //produto->setDescricao("Produto 1");
+  produto->setCodigo(1);
+  std::cout << "Nome: " << produto->getNome() << std::endl;
+  //std::cout << "Preco: " << produto->getPreco() << std::endl;
+  //std::cout << "Quantidade: " << produto->getQuantidade() << std::endl;
+  //std::cout << "Descricao: " << produto->getDescricao() << std::endl;
+  std::cout << "Codigo: " << produto->getCodigo() << std::endl;
+  delete produto;
 }
 
 void testaCliente(){
@@ -102,10 +99,6 @@ void testaCliente(){
 	U->setEmail("user@user.com");
 	
 	U->setPermissoes(permissao());
-	/*for (unsigned int i = 0; i < U->getPermissoes().size(); i++)
-	{
-		std::cout << "Permissoes(TestaPessoa) -> " << U->getPermissoes()[i] << std::endl;
-	}*/
 
 	//logar usuario na empresa
 	e->logar(U);
@@ -145,10 +138,7 @@ void testaFuncionario()
 	U->setEmail("user1@user.com");
 
 	U->setPermissoes(permissao());
-	/*for (unsigned int i = 0; i < U->getPermissoes().size(); i++)
-	{
-		std::cout << "Permissoes(TestaFuncionario) -> " << U->getPermissoes()[i] << std::endl;
-	}*/
+
 	//logar usuario na empresa
 	e->logar(U);
 
@@ -250,18 +240,16 @@ void testaPessoa()
 
 int main()
 {
-	std::cout << "testando a pessoa" << std::endl;
-
-	testaPessoa();
-
-	//std::cout << "testando usuarioLogado singleton" << std::endl;
-	//testUserSingleton();
 	int a = 0;
 	std::cout << "+-----------------+"<<std::endl;
-	std::cout<<"Bem vindo ao sistema de testes do sistema CEFIMl(eh so as iniciais dos nomes dos integrantes do grupo!)"<<std::endl;
-	std::cout<<"Digite 1 para funcionario e 2 para cliente: "<<std::endl;
+	std::cout<<"Bem vindo ao sistema de testes do sistema CEFIMl(eh so as iniciais dos nomes dos integrantes do grupo!)\n"<<std::endl;
+	std::cout << "Acesse nosso repositorio no Github pelo link: https://github.com/ecommercecpp/Projeto-OO"<<std::endl;
+	std::cout << "Acesse nossa documentacao pelo link: https://ecommercecpp.github.io/Projeto-OO/md__c___users_felip__one_drive__documentos__git_hub_poo__r_e_a_d_m_e.html"<<std::endl;	
+	std::cout<<"\nDigite 1 para funcionario e 2 para cliente: "<<std::endl;
 	std::cin>>a;
 	std::cout << "+-----------------+"<<std::endl;
+	std::cout << "Testando a pessoa" << std::endl;
+	testaPessoa();
 	switch (a)
 	{
 	case 1:

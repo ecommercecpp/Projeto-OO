@@ -25,11 +25,12 @@ class Produto
 		int estoqueMinimo;
 		int qtdEstoque;
 		OrdemProducao* ordem;
+		std::vector<MateriaPrima*> materiaPrimaLista;
 		//std::map<int,MateriaPrima>
 		void atualizarEstoque();
 	public:
 		Produto();
-		Produto(std::string nome, int codigo, double valorDeVenda, int tamanhoDoLoteMinimo, Categoria* categoria, int estoqueMinimo);
+		//Produto(std::string nome, int codigo, double valorDeVenda, int tamanhoDoLoteMinimo, Categoria* categoria, int estoqueMinimo);
 		~Produto();
 		void setNome(std::string nome);
 		void setCodigo(int codigo);
