@@ -3,12 +3,9 @@
 # Projeto POO
 
 > O Projeto POO é uma abstração de um sistema.
+
 > Diagrama abaixo:
 ![UML_IndustriaRenovada](https://user-images.githubusercontent.com/60450622/204118300-39153786-1032-4fde-9ee1-824a87d568c6.png)
-
->Link do repositório no Replit: [tem mais naum rsrs](https://replit.com/join/mfgueahaau-fileppevoleso)
-
->Token para push no github: asdasda
 
 <!-- TABLE OF CONTENTS -->
 <details>
