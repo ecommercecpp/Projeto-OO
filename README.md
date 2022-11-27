@@ -5,6 +5,8 @@
 > O Projeto POO é uma abstração de um sistema.
 > Diagrama: https://lucid.app/lucidspark/67d84e7a-1928-4db6-8f41-c2cf7df4773a/edit?viewport_loc=-6913%2C-3823%2C13960%2C6849%2C0_0&invitationId=inv_f02af824-5850-4265-b7ef-f0f2c010a1d1
 
+![UML_IndustriaRenovada](https://user-images.githubusercontent.com/60450622/204118300-39153786-1032-4fde-9ee1-824a87d568c6.png)
+
 >Link do repositório no Replit: [tem mais naum rsrs](https://replit.com/join/mfgueahaau-fileppevoleso)
 
 >Token para push no github: asdasda
@@ -12,7 +14,7 @@
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Diagrama UML do projeto</summary>
-![UML_Industria](https://user-images.githubusercontent.com/60450622/193287026-3a6453bf-dd3d-429b-bbf8-1eab0e6ee964.png)
+![UML_IndustriaRenovada](https://user-images.githubusercontent.com/60450622/204118279-ea30f1bb-38de-498e-b591-e1b957f17345.png)
 </details>
 
 [![Contributors][contributors-shield]][contributors-url]
