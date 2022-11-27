@@ -10,6 +10,9 @@
 #include "materiaPrima.hpp"
 #include "lote.hpp"
 #include "orcamento.hpp"
+#include "pedidoDeCompra.hpp"
+#include "credito.hpp"
+#include "boleto.hpp"
 
 std::vector<std::string> permissao() {
   std::vector<std::string> permissoes;
@@ -203,6 +206,13 @@ void testaCliente(){
 	//fazendo o orcamento pedido nos testes
 	o->gerarOrcamento(&cJuridico, 10, produtos);
 	o->imprimeOrcamento(&cJuridico, produtos);
+
+	PedidoDeCompra *p = new PedidoDeCompra();
+	Credito *credito = new Credito();
+	Boleto *boleto = new Boleto();
+	//p->gerarPedidoDeCompra(&cJuridico, 10, produtos);
+	p->selecionaMetodo(credito,boleto);
+
 }
 
 void testaFuncionario()

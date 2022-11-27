@@ -10,13 +10,14 @@
 
 class PedidoDeCompra
 {
-	private:
+private:
         int id;
         Data data;
         std::vector<Venda> historicoVendas;
         bool status;
         std::string registroAtual;
-	public:
+
+public:
         PedidoDeCompra();
         PedidoDeCompra(int id, Data data, std::vector<Venda> historicoVendas, bool status, std::string registroAtual);
         int getId();
@@ -29,7 +30,8 @@ class PedidoDeCompra
         void setStatus(bool status);
         std::string getRegistroAtual();
         void setRegistroAtual(std::string registroAtual);
-        void selecionaMetodo(Credito*, Boleto*);
+        void selecionaMetodo(Credito *, Boleto *);
+        void gerarPedidoDeCompra();
 };
 
 #endif
