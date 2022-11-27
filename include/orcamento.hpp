@@ -17,13 +17,15 @@ class Orcamento
 
 	public:
         Orcamento();
-        Orcamento(std::map<int, Produto> produtos, Cliente *cliente, double valorTotal);
+        //Orcamento(std::map<int, Produto> produtos, Cliente *cliente, double valorTotal);
         std::map<int, Produto> getProdutos();
         void setProdutos(std::map<int, Produto> produtos);
         Cliente *getCliente();
         void setCliente(Cliente *cliente);
         double getValorTotal();
         void setValorTotal(double valorTotal);
+
+        void imprimeOrcamento();
         
 		
 };

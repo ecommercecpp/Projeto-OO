@@ -20,13 +20,14 @@ Orcamento::Orcamento()
  * @param cliente
  * @param valorTotal
  */
+/*
 Orcamento::Orcamento(std::map<int, Produto> produtos, Cliente *cliente, double valorTotal)
 {
     this->produtos = produtos;
     this->cliente = cliente;
     this->valorTotal = valorTotal;
 }
-
+*/
 /**
  * @brief Retorna os produtos do orçamento
  *
@@ -85,4 +86,19 @@ double Orcamento::getValorTotal()
 void Orcamento::setValorTotal(double valorTotal)
 {
     this->valorTotal = valorTotal;
+}
+
+/**
+ * @brief Imprime o orçamento
+ *
+ */
+void Orcamento::imprimeOrcamento()
+{
+    std::cout << "Cliente: " << this->cliente->getNome() << std::endl;
+    std::cout << "Valor total: " << this->valorTotal << std::endl;
+    std::cout << "Produtos: " << std::endl;
+    for (auto it = this->produtos.begin(); it != this->produtos.end(); it++)
+    {
+        std::cout << it->second.getNome() << std::endl;
+    }
 }

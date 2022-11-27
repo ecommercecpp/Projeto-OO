@@ -307,6 +307,8 @@ void testaPessoa()
 	p.setTipo(0);
 
 	std::cout << "Nome do Funcionario criado: " << p.getNome() << std::endl;
+
+	e->imprimirLogs();
 	
 }	
 

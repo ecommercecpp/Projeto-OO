@@ -517,7 +517,7 @@ void Empresa::gerarLogExcecao(std::string entidade, std::string funcionalidade){
 
 //função para imprimir o vetor logs de excecao
 void Empresa::imprimirLogsExcecao(){
-    std::cout << "tamanho do vetor de logsExcecao: "<< logsExcecao.size() << std::endl;
+    //std::cout << "tamanho do vetor de logsExcecao: "<< logsExcecao.size() << std::endl;
     for (unsigned int i = 0; i < logsExcecao.size(); i++)
     {
         std::cout << "Entidade: " << logsExcecao[i]->getEntidade() << std::endl;
@@ -529,7 +529,7 @@ void Empresa::imprimirLogsExcecao(){
 
 //função para imprimir todos os logs
 void Empresa::imprimirLogs(){
-    std::cout << "Exibindo os logs de todas as operações realizadas" << std::endl;
+    std::cout << "Exibindo os logs de todas as operaçoes realizadas" << std::endl;
     std::cout << "-----------------" << std::endl;
     std::cout<<"Imprimindo logs de escrita: "<<std::endl;
     imprimirLogsEscrita();
