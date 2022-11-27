@@ -100,7 +100,7 @@ void testaCliente(){
 	U->setNome("UsuarioCliente");
 	U->setSenha("123");
 	U->setTipo(0);
-	U->setcpf_cnpj("19169517711");
+	U->setcpf_cnpj("08167486669");
 	U->setEmail("user@user.com");
 	
 	U->setPermissoes(permissao());

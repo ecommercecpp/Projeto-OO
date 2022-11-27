@@ -29,7 +29,6 @@ Pessoa::Pessoa(std::string nome, std::string cpf_cnpj, std::string endereco, std
 {
 	//criar uma string com a permissao de cadastrarPessoa
 	std::string permissao = "cadastrarPessoa";
-
 	//UsuarioLogado::verificaPermissao(permissao)
 	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
 		throw AcessDeniedException();
@@ -54,9 +53,10 @@ Pessoa::Pessoa(std::string nome, std::string cpf_cnpj, std::string endereco, std
 void Pessoa::setcpf_cnpj(std::string cpf_cnpj)
 {
 	std::string permissao = "cadastrarDocumentoPessoa";
-
+	Empresa::getEmpresa()->gerarLogEscrita("pessoa", "cpf_cnpj");
 	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
 	{
+		Empresa::getEmpresa()->gerarLogExcecao("pessoa", "setcpf_cnpj");
 		throw AcessDeniedException();
 	}
 	else
