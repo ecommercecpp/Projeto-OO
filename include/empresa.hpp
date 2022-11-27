@@ -33,6 +33,7 @@ class Empresa
 		UsuarioLogado* usuarioLogado;
 		Usuario* usuario;
 		Funcionario* funcionario;
+		//LogEscrita *logEscrita;
 
 		std::vector<Produto*> produtos;
 		std::vector<Categoria*> categorias;

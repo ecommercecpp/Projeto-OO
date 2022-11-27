@@ -40,9 +40,12 @@ Pessoa::Pessoa(std::string nome, std::string cpf_cnpj, std::string endereco, std
 		this->email = email;
 		this->tipo = tipo;
 	}
+	std::string atributos = "nome: " + nome + " cpf_cnpj: " + cpf_cnpj + " endereco: " + endereco + " email: " + email + " tipo: " + std::to_string(tipo);
 	//gerar log de escrita com a permissao de cadastrarPessoa
-	LogEscrita logEscrita;
+	//LogEscrita logEscrita;
+	Empresa::getEmpresa()->gerarLogEscrita("pessoa", atributos);
 	
+	//Empresa::getEmpresa()->imprimirLogsEscrita();
 }
 
 /**

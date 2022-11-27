@@ -1,3 +1,4 @@
+#include <iostream>
 #include "logs.hpp"
 
 /**
@@ -78,6 +79,8 @@ Data Logs::getData()
  */
 void Logs::setEntidade(std::string entidade)
 {
+    //printar entidade
+    std::cout<<"A ENTEDADE: "<<entidade<<std::endl;
     this->entidade = entidade;
 }
 

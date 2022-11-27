@@ -10,10 +10,12 @@
  * @param entidade
  * @param atributosAnteriores
  */
-/*LogEscrita::LogEscrita(Usuario usuario, Data data, std::string entidade, std::vector<std::string> atributosAnteriores) : Logs(usuario, data, entidade)
+/*
+LogEscrita::LogEscrita(UsuarioLogado* usuario, Data data, std::string entidade, std::vector<std::string> atributosAnteriores) : Logs(usuario, data, entidade)
 {
     this->atributosAnteriores = atributosAnteriores;
-}*/
+}
+*/
 
 /**
  * @brief Construct a new Log Escrita:: Log Escrita object

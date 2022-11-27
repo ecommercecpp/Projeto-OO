@@ -8,6 +8,7 @@
 #include "Data.h"
 #include "exceptions.hpp"
 #include "logs.hpp"
+#include "usuarioLogado.hpp"
 
 class LogEscrita: public Logs
 {
@@ -21,8 +22,7 @@ class LogEscrita: public Logs
     public:
     LogEscrita();
     ~LogEscrita();
-    //LogEscrita(Usuario, Data, std::string, std::vector<std::string>);
-    //std::string getLog();
+    //LogEscrita(UsuarioLogado*, Data, std::string, std::vector<std::string>);
 
     void setInformacoesAnteriores(std::map<std::string, std::string>);
     std::map<std::string, std::string> getInformacoesAnteriores();
@@ -30,8 +30,7 @@ class LogEscrita: public Logs
     std::map<std::string, std::string> getInformacoesNovas();
     void setAtributosAnteriores(std::vector<std::string>);
     std::vector<std::string> getAtributosAnteriores();
-    
-    std::string getLog();
+   
 };
 
 #endif

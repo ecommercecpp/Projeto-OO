@@ -405,12 +405,16 @@ void Empresa::deslogar(){
 }
 
 void Empresa::gerarLogEscrita(std::string entidade, std::string atributoAlterado){
-    LogEscrita *logEscrita = new LogEscrita();
     //criar um vector de atributos alterados
+    LogEscrita *logEscrita = new LogEscrita();
+    this->logsEscrita.push_back(logEscrita);
+
     std::vector <std::string> atributosAlterados;
     atributosAlterados.push_back(atributoAlterado);
     std::string nome = usuarioLogado->getNome();
-    //Data *data = new Data();
+    std::cout << "Nome do usuario logado:(log escrita) " << nome << std::endl;
+    //imprimir a entidade
+    std::cout << "Entidade:(log escrita) " << entidade << std::endl;
     Data data = Data();
     
     logEscrita->setEntidade(entidade);
@@ -418,6 +422,16 @@ void Empresa::gerarLogEscrita(std::string entidade, std::string atributoAlterado
     logEscrita->setUsuario(usuarioLogado);
     logEscrita->setData(data.dateNow());
     adicionarLogEscrita(logEscrita);
+}
+//imprimir logs de escrita no vetor de logs de escrita da empresa
+void Empresa::imprimirLogsEscrita(){
+    for (unsigned int i = 0; i < logsEscrita.size(); i++)
+    {
+        std::cout << "Entidade: " << logsEscrita[i]->getEntidade() << std::endl;
+        //std::cout << "Atributos alterados: " << logsEscrita[i]->getAtributosAnteriores()[0] << std::endl;
+        std::cout << "Usuario: " << logsEscrita[i]->getUsuario()->getNome() << std::endl;
+        //std::cout << "Data: " << logsEscrita[i]->getData() << std::endl;
+    }
 }
 /*
 void Empresa::gerarLogLeitura(std::string entidade, std::string informacao){
