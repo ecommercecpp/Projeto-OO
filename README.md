@@ -2,10 +2,7 @@
 
 # Projeto POO
 
-> O Projeto POO é uma abstração de um sistema.
-
-> Diagrama abaixo:
-![UML_IndustriaRenovada](https://user-images.githubusercontent.com/60450622/204118300-39153786-1032-4fde-9ee1-824a87d568c6.png)
+> O Projeto POO é uma abstração de um sistema de uma indústria implementado de forma incremental a cada semana contendo 7 sprints definidas ao longo do segundo semestre de 2022.
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -49,6 +46,11 @@
 ## Começando 🚀
 
 > [![Documentação Doxygen][documentacao-shield]][documentacao-url]
+
+### Diagrama UML
+
+> Imagem do diagrama de classes usado como abstração para o projeto
+![UML_IndustriaRenovada](https://user-images.githubusercontent.com/60450622/204118300-39153786-1032-4fde-9ee1-824a87d568c6.png)
 
 Para começar a utilizar o repositório, você precisa cumprir todos os requisitos abaixo:
 
