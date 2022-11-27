@@ -235,7 +235,7 @@ void testaPessoa()
 	U->setNome("Usuario funciona pfvr");
 	U->setSenha("123");
 	U->setTipo(0);
-	U->setcpf_cnpj("19169517711");
+	U->setcpf_cnpj("09169507600");
 	U->setEmail("user@user.com");
 
 	/*for (unsigned int i = 0; i < U->getPermissoes().size(); i++)

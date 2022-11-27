@@ -54,6 +54,9 @@ void Pessoa::setcpf_cnpj(std::string cpf_cnpj)
 {
 	std::string permissao = "cadastrarDocumentoPessoa";
 	Empresa::getEmpresa()->gerarLogEscrita("pessoa", "cpf_cnpj");
+	//criar uma instancia de validacpfcnpj
+	//ValidaCPFCNPJ *valida = new ValidaCPFCNPJ();
+	
 	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
 	{
 		Empresa::getEmpresa()->gerarLogExcecao("pessoa", "setcpf_cnpj");
@@ -61,29 +64,31 @@ void Pessoa::setcpf_cnpj(std::string cpf_cnpj)
 	}
 	else
 	{
-		if (cpf_cnpj.length() == 11)
+		if (cpf_cnpj.length() >= 11 && cpf_cnpj.length() <= 13)
 		{
 			tipo = 0;
-			if (ValidaCPFCNPJ::validaCPF(cpf_cnpj)) // Concertar
+
+			if (!ValidaCPFCNPJ::GetInstance()->validaCPF(cpf_cnpj)) // Concertar
 			{
-				this->cpf_cnpj = cpf_cnpj;
-			}
-			else
-			{
+				std::cout << "CPF invalido (valida) -> " << cpf_cnpj.length() << std::endl;
 				throw InvalidCPFException();
 			}
-		}
-		else if (cpf_cnpj.length() == 14)
-		{
-			tipo = 1;
-			if (ValidaCPFCNPJ::validaCNPJ(cpf_cnpj))
+			else
 			{
 				this->cpf_cnpj = cpf_cnpj;
 			}
+		}
+		else if (cpf_cnpj.length() >= 14 && cpf_cnpj.length() <= 15)
+		{
+			tipo = 1;
+			if (!ValidaCPFCNPJ::GetInstance()->validaCNPJ(cpf_cnpj))
+			{
+				std::cout << "CMNPJ invalido (valida)" << std::endl;
+				throw InvalidCNPJException();
+			}
 			else
 			{
-				std::cout << "CPF ou CNPJ invalido" << cpf_cnpj.length() << " <- o tamain | o numero -> " << cpf_cnpj << std::endl;
-				throw InvalidCNPJException();
+				this->cpf_cnpj = cpf_cnpj;
 			}
 		}
 		else

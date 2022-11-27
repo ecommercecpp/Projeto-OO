@@ -1,6 +1,7 @@
 #ifndef _VALIDA_CPF_
 #define _VALIDA_CPF_
 
+#include <iostream>
 #include <string>
 
 class ValidaCPFCNPJ
@@ -32,6 +33,7 @@ ValidaCPFCNPJ *ValidaCPFCNPJ::GetInstance()
 
 bool ValidaCPFCNPJ::validaCPF(std::string cpf)
 {
+	std::cout<<"Validando CP aqui na classe bugadaF"<<std::endl;
 	// verifica se o cpf tem 11 digitos
 	if (cpf.length() != 11)
 		return false;
@@ -39,7 +41,7 @@ bool ValidaCPFCNPJ::validaCPF(std::string cpf)
 	// verifica se o cpf é composto por digitos iguais
 	if (cpf == "00000000000" || cpf == "11111111111" || cpf == "22222222222" || cpf == "33333333333" || cpf == "44444444444" || cpf == "55555555555" || cpf == "66666666666" || cpf == "77777777777" || cpf == "88888888888" || cpf == "99999999999")
 		return false;
-	
+
 	// verifica o primeiro digito verificador
 	int soma = 0;
 	for(int i = 0; i < 9; i++)
@@ -50,8 +52,8 @@ bool ValidaCPFCNPJ::validaCPF(std::string cpf)
 		resto = 0;
 	
 	// se o digito verificador não bate com o primeiro digito verificador do cpf
-	if (resto != (cpf[9] - '0'))
-		return false;
+	/*if (resto != (cpf[9] - '0'))
+		return false;*/
 
 	// verifica o segundo digito verificador
 	soma = 0;
@@ -64,14 +66,15 @@ bool ValidaCPFCNPJ::validaCPF(std::string cpf)
 		resto = 0;
 
 	// se o digito verificador não bate com o segundo digito verificador do cpf
-	if (resto != (cpf[10] - '0'))
-		return false;
+	/*if (resto != (cpf[10] - '0'))
+		return false;*/
 
 	return true;
 }
 
 bool ValidaCPFCNPJ::validaCNPJ(std::string cnpj)
 {
+	std::cout<<"Validando CNP3 aqui na classe bugadaF"<<std::endl;
 	// verifica se o cnpj tem 14 digitos
 	if (cnpj.length() != 14)
 		return false;
@@ -95,7 +98,8 @@ bool ValidaCPFCNPJ::validaCNPJ(std::string cnpj)
 	int digito1 = soma1 % 11 < 2 ? 0 : 11 - soma1 % 11;
 	int digito2 = soma2 % 11 < 2 ? 0 : 11 - soma2 % 11;
 
-	return digito1 == (cnpj[12] - '0') && digito2 == (cnpj[13] - '0');
+	//return digito1 == (cnpj[12] - '0') && digito2 == (cnpj[13] - '0');
+	return true;
 }
 
 #endif
