@@ -210,8 +210,9 @@ void testaCliente(){
 	PedidoDeCompra *p = new PedidoDeCompra();
 	Credito *credito = new Credito();
 	Boleto *boleto = new Boleto();
-	//p->gerarPedidoDeCompra(&cJuridico, 10, produtos);
-	p->selecionaMetodo(credito,boleto);
+	p->setId(1);
+	p->gerarPedidoDeCompra();
+	p->selecionaMetodo(&cJuridico,credito,boleto);
 
 }
 

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <ctime>
 
 #include "pedidoDeCompra.hpp"
 
@@ -128,13 +129,14 @@ void PedidoDeCompra::setRegistroAtual(std::string registroAtual)
     this->registroAtual = registroAtual;
 }
 
+
 /**
  * @brief Recebe os dados do usuário para selecionar e executar o método de pagamento
  * 
  * @param credito 
  * @param boleto 
  */
-void PedidoDeCompra::selecionaMetodo(Credito* credito, Boleto* boleto)
+void PedidoDeCompra::selecionaMetodo(Cliente* cliente,Credito* credito, Boleto* boleto)
 {
     std::cout << "Selecione o metodo de pagamento: " << std::endl;
     std::cout << "1 - Credito" << std::endl;
@@ -149,10 +151,8 @@ void PedidoDeCompra::selecionaMetodo(Credito* credito, Boleto* boleto)
             std::string numeroDoCartao;
             std::cin >> numeroDoCartao;
             credito->setNumeroDoCartao(numeroDoCartao);
-            std::cout << "Digite o nome do titular: ";
-            std::string nomeDoTitular;
-            std::cin >> nomeDoTitular;
-            credito->setNomeDoTitular(nomeDoTitular);
+            std::cout << "Nome do titular: " << cliente->getNome() << std::endl;
+            credito->setNomeDoTitular(cliente->getNome());
             std::cout << "Digite a data de validade: ";
             Data dataDeValidade;
             credito->setDataDeVencimento(dataDeValidade);
@@ -160,6 +160,7 @@ void PedidoDeCompra::selecionaMetodo(Credito* credito, Boleto* boleto)
             std::string codigoDeSeguranca;
             std::cin >> codigoDeSeguranca;
             credito->setCodigoDeSeguranca(codigoDeSeguranca);
+            std::cout<< "***Compra finalizada com sucesso*** "<< std::endl;
             break;
         }
     case 2:
@@ -168,10 +169,8 @@ void PedidoDeCompra::selecionaMetodo(Credito* credito, Boleto* boleto)
             int codigoDeBarras;
             std::cin >> codigoDeBarras;
             boleto->setCodigoDeBarras(codigoDeBarras);
-            std::cout << "Digite o nome do pagador: ";
-            std::string nomeDoPagador;
-            std::cin >> nomeDoPagador;
-            boleto->setNomeDoPagador(nomeDoPagador);
+            std::cout << "Nome do pagador: "<< cliente->getNome() << std::endl;
+            boleto->setNomeDoPagador(cliente->getNome());
             std::cout << "Digite a data de vencimento: ";
             Data dataDeVencimento;
             boleto->setDataDeVencimento(dataDeVencimento);
@@ -179,10 +178,40 @@ void PedidoDeCompra::selecionaMetodo(Credito* credito, Boleto* boleto)
             int prazoDePagamento;
             std::cin >> prazoDePagamento;
             boleto->setPrazoDePagamento(prazoDePagamento);
+            std::cout<< "***Compra finalizada com sucesso*** "<< std::endl;
             break;            
         }
     default:
         std::cout << "Opcao invalida!" << std::endl;
         break;
     }
+}
+
+void PedidoDeCompra::setDataString(std::string data)
+{
+    this->dataString = data;
+}
+
+std::string PedidoDeCompra::getDataString()
+{
+    return this->dataString;
+}
+
+void PedidoDeCompra::gerarPedidoDeCompra(){
+    //printar o id do pedido de compra
+    Data data;
+    time_t tt;
+    struct tm * ti;
+    time (&tt);
+    ti = localtime(&tt);
+
+    this->id = this->getId();  
+    this->data = data.dateNow();
+    this->dataString = asctime(ti);
+}
+
+void PedidoDeCompra::imprimePedidoDeCompra(){
+    std::cout << "------Imprimindo o pedido de compra------" << std::endl;
+    std::cout << "Id: " << this->getId() << std::endl;
+    std::cout << "Data: " << this->getDataString() << std::endl;
 }

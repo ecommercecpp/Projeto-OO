@@ -4,9 +4,11 @@
 #include <string>
 #include <vector>
 
+#include "Data.h"
 #include "venda.hpp"
 #include "credito.hpp"
 #include "boleto.hpp"
+#include "cliente.hpp"
 
 class PedidoDeCompra
 {
@@ -16,6 +18,7 @@ private:
         std::vector<Venda> historicoVendas;
         bool status;
         std::string registroAtual;
+        std::string dataString;
 
 public:
         PedidoDeCompra();
@@ -30,8 +33,11 @@ public:
         void setStatus(bool status);
         std::string getRegistroAtual();
         void setRegistroAtual(std::string registroAtual);
-        void selecionaMetodo(Credito *, Boleto *);
+        void selecionaMetodo(Cliente *, Credito *, Boleto *);
+        void setDataString(std::string dataString);
+        std::string getDataString();
         void gerarPedidoDeCompra();
+        void imprimePedidoDeCompra();
 };
 
 #endif
