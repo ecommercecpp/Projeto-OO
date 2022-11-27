@@ -1,4 +1,6 @@
 #include <iostream>
+#include <string>
+#include <ctime>
 
 #include "lote.hpp"
 
@@ -18,6 +20,7 @@ Lote::Lote()
  * @param nmrLote
  * @param codigoProduto
  */
+/*
 Lote::Lote(int quantidade, int quantidadeMinima, int nmrLote, int codigoProduto)
 {
     setQuantidade(quantidade);
@@ -25,7 +28,7 @@ Lote::Lote(int quantidade, int quantidadeMinima, int nmrLote, int codigoProduto)
     setNmrLote(nmrLote);
     setCodigoProduto(codigoProduto);
 }
-
+*/
 /**
  * @brief Destroy the Lote:: Lote object
  *
@@ -153,3 +156,29 @@ std::string Lote::getProduto()
 {
     return produto;
 }
+
+/**
+ * @brief Função que produz a quantidade de produtos passadas no parametro
+ *
+ * @param produto
+ * @param quantidade
+ */
+void Lote::produzir(Produto* produtoLote, int quantidade)
+{
+    Data data;
+    time_t tt;
+    struct tm * ti;
+    time (&tt);
+    ti = localtime(&tt);
+
+    //this->dataDeProducao = asctime(ti);
+    this->dataDeProducao = data.dateNow();
+    this->produto = produtoLote->getNome();
+    std::cout<<"Nome do produto em LOTE: " << produtoLote->getNome() << std::endl;
+    this->codigoProduto = produtoLote->getCodigo();
+    this->nmrLote = nmrLote+1;
+    produtoLote->setQtdEstoque(produtoLote->getQtdEstoque() + quantidade);
+}
+
+//fazer o produtoLote receber o valor do produto passado no parametro
+

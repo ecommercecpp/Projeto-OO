@@ -107,18 +107,18 @@ void Produto::setEstoqueMinimo(int estoqueMinimo)
  */
 void Produto::setQtdEstoque(int qtdEstoque)
 {
-    this->qtdEstoque = qtdEstoque;
+    //this->qtdEstoque = qtdEstoque;
 }
 
 /**
  * @brief Seta a ordem de produção do produto
  *
  * @param ordem
- */
+ *//*
 void Produto::setOrdem(OrdemProducao *ordem)
 {
     this->ordem = ordem;
-}
+}*/
 
 /**
  * @brief Retorna o nome do produto
@@ -195,10 +195,11 @@ int Produto::getQtdEstoque()
  *
  * @return OrdemProducao*
  */
+/*
 OrdemProducao *Produto::getOrdem()
 {
     return ordem;
-}
+}*/
 
 /**
  * @brief Adiciona uma quantidade do de estoque ao produto
@@ -243,7 +244,7 @@ bool Produto::verificarEstoque()
  *
  * @return true
  * @return false
- */
+ *//*
 bool Produto::verificarOrdem()
 {
     if (ordem == NULL)
@@ -254,7 +255,7 @@ bool Produto::verificarOrdem()
     {
         return false; // trocar pra uma exceção
     }
-}
+}*/
 /*
 void Produto::criarOrdem()
 {
@@ -298,14 +299,14 @@ void Produto::imprimir()
     std::cout << "Categoria: " << categoria->getNome() << std::endl;
     std::cout << "Estoque minimo: " << estoqueMinimo << std::endl;
     std::cout << "Quantidade em estoque: " << qtdEstoque << std::endl;
-    if (ordem != NULL)
+   /* if (ordem != NULL)
     {
         std::cout << "Ordem de producao: " << ordem->getCodigo() << std::endl;
     }
     else
     {
         std::cout << "Ordem de producao: Nao ha ordem de producao" << std::endl;
-    }
+    }*/
 }
 
 void Produto::adicionarMateriaPrima(MateriaPrima* materiaPrima)

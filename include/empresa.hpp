@@ -23,6 +23,7 @@
 #include "logEscrita.hpp"
 #include "logLeitura.hpp"
 #include "logExcecao.hpp"
+#include "ordemProducao.hpp"
 
 #include "usuario.hpp"
 #include "usuarioLogado.hpp"

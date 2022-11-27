@@ -4,9 +4,9 @@
 #include <vector>
 #include <string>
 
-#include "lote.hpp"
+//#include "lote.hpp"
 #include "categoria.hpp"
-#include "ordemProducao.hpp"
+//#include "ordemProducao.hpp"
 #include "materiaPrima.hpp"
 
 class Produto
@@ -16,12 +16,12 @@ class Produto
 		int codigo;
 		double valorDeVenda;
 		//std::map<int, Lote, std::less<int>> lotes; Comentei por nao saber como trabalhar com esse tipo de map
-		std::vector<Lote*> lotes;
+		//std::vector<Lote*> lotes;
 		int tamanhoDoLoteMinimo;
 		Categoria* categoria;
 		int estoqueMinimo;
 		int qtdEstoque;
-		OrdemProducao* ordem;
+		//OrdemProducao* ordem;
 		std::vector<MateriaPrima*> materiaPrimaLista;
 		//std::map<int,MateriaPrima>
 		void atualizarEstoque();
@@ -35,8 +35,9 @@ class Produto
 		void setTamanhoDoLoteMinimo(int tamanhoDoLoteMinimo);
 		void setCategoria(Categoria* categoria);
 		void setEstoqueMinimo(int estoqueMinimo);
+		// setar quantidade do estoque com base no lote
 		void setQtdEstoque(int qtdEstoque);
-		void setOrdem(OrdemProducao* ordem);
+		//void setOrdem(OrdemProducao* ordem);
 		std::string getNome();
 		int getCodigo();
 		double getValorDeVenda();
@@ -44,9 +45,9 @@ class Produto
 		Categoria* getCategoria();
 		int getEstoqueMinimo();
 		int getQtdEstoque();
-		OrdemProducao* getOrdem();
-		void adicionarLote(Lote* lote);
-		void removerLote(Lote* lote);
+		//OrdemProducao* getOrdem();
+		//void adicionarLote(Lote* lote);
+		//void removerLote(Lote* lote);
 		void adicionarEstoque(int qtd);
 		void removerEstoque(int qtd);
 		bool verificarEstoque();
@@ -54,8 +55,8 @@ class Produto
 		void criarOrdem();
 		void removerOrdem();
 		bool verificarOrdem();
-		void adicionarOrdem(OrdemProducao* ordem);
-		void removerOrdem(OrdemProducao* ordem);
+		//void adicionarOrdem(OrdemProducao* ordem);
+		//void removerOrdem(OrdemProducao* ordem);
 		void adicionarMateriaPrima(MateriaPrima* materiaPrima);
 		void removerMateriaPrima(MateriaPrima* materiaPrima);
 		//função para imprimir o vetor de materia prima
@@ -65,7 +66,7 @@ class Produto
 		void atualizarTamanhoDoLoteMinimo(int qtd);
 		void atualizarValorDeVenda(double valor);
 		void atualizarCategoria(Categoria* categoria);
-		void atualizarOrdem(OrdemProducao* ordem);
+		//void atualizarOrdem(OrdemProducao* ordem);
 		void atualizarMateriaPrima(MateriaPrima* materiaPrima);
 		void imprimir();
 

@@ -2,6 +2,7 @@
 #define _LOTE_HPP_
 
 #include "Data.h"
+#include "produto.hpp"
 #include <string>
 
 class Lote
@@ -10,10 +11,11 @@ class Lote
 		Data dataDeProducao;
 		int quantidade, quantidadeMinima, nmrLote, codigoProduto;
         std::string produto;
+        //Produto *produtoLote;
 		//void setQuantidade(int quantidade);
 	public:
 		Lote();
-		Lote(int quantidade, int quantidadeMinima, int nmrLote, int codigoProduto);
+		//Lote(int quantidade, int quantidadeMinima, int nmrLote, int codigoProduto);
         ~Lote();
         void setQuantidade(int quantidade);
         void setQuantidadeMinima(int quantidadeMinima);
@@ -27,6 +29,9 @@ class Lote
         int getCodigoProduto();
         Data getDataDeProducao();
         std::string getProduto();
+        //função que produz a quantidade de produtos passadas no parametro
+        void produzir(Produto*,int quantidade);
+
         /*
 		int getCodigoLote();
 		int getQuantidade();

@@ -8,6 +8,7 @@
 #include "empresa.hpp"
 #include "Data.h"
 #include "materiaPrima.hpp"
+#include "lote.hpp"
 
 std::vector<std::string> permissao() {
   std::vector<std::string> permissoes;
@@ -73,17 +74,20 @@ std::vector<std::string> permissao() {
 
 void testaProduto() {
   std::cout << "Testando Produto" << std::endl;
+  Lote *lote = new Lote();
   Produto *produto = new Produto();
+
 
   produto->setNome("Mesa");
   produto->setCodigo(1);
   produto->setValorDeVenda(30.0);
   produto->setEstoqueMinimo(20);
-  produto->setTamanhoDoLoteMinimo(10);//definir certo
+  produto->setTamanhoDoLoteMinimo(20);//definir certo
   Categoria *categoria = new Categoria();
   categoria->setNome("Moveis");
   produto->setCategoria(categoria);
 
+  lote->produzir(produto, produto->getEstoqueMinimo());
   //criar materia prima e adicionar ao produto
   MateriaPrima *materiaPrima = new MateriaPrima();
   MateriaPrima *materiaPrima2 = new MateriaPrima();
@@ -131,6 +135,7 @@ void testaProduto() {
   delete materiaPrima2;
   delete materiaPrima3;
   delete materiaPrima4;
+  delete lote;
   delete produto;
 }
 
