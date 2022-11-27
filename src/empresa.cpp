@@ -526,3 +526,50 @@ void Empresa::imprimirLogsExcecao(){
         std::cout << "Data: " << logsExcecao[i]->getHorario() << std::endl;
     }
 }
+
+//função para imprimir todos os logs
+void Empresa::imprimirLogs(){
+    std::cout << "Exibindo os logs de todas as operações realizadas" << std::endl;
+    std::cout << "-----------------" << std::endl;
+    std::cout<<"Imprimindo logs de escrita: "<<std::endl;
+    imprimirLogsEscrita();
+    std::cout << "-----------------" << std::endl;
+    std::cout<<"Imprimindo logs de leitura: "<<std::endl;
+    imprimirLogsLeitura();
+    std::cout << "-----------------" << std::endl;
+    std::cout<<"Imprimindo logs de excecao: "<<std::endl;
+    imprimirLogsExcecao();
+}
+
+//função para salvar todos os logs em um arquivo
+void Empresa::salvarLogs(){
+    std::ofstream arquivo;
+    arquivo.open("logs.txt");
+    if(arquivo.is_open()){
+        for (unsigned int i = 0; i < logsEscrita.size(); i++)
+        {
+            arquivo << "Entidade: " << logsEscrita[i]->getEntidade() << std::endl;
+            arquivo << "Informacao escrita: " << logsEscrita[i]->getAtributosAnteriores()[0] << std::endl;
+            arquivo << "Usuario: " << logsEscrita[i]->getUsuario()->getNome() << std::endl;
+            arquivo << "Data: " << logsEscrita[i]->getHorario() << std::endl;
+            arquivo << "-----------------" << std::endl;
+        }
+        for (unsigned int i = 0; i < logsLeitura.size(); i++)
+        {
+            arquivo << "Entidade: " << logsLeitura[i]->getEntidade() << std::endl;
+            arquivo << "Informacao lida: " << logsLeitura[i]->getInformacao() << std::endl;
+            arquivo << "Usuario: " << logsLeitura[i]->getUsuario()->getNome() << std::endl;
+            arquivo << "Data: " << logsLeitura[i]->getHorario() << std::endl;
+            arquivo << "-----------------" << std::endl;
+        }
+        for (unsigned int i = 0; i < logsExcecao.size(); i++)
+        {
+            arquivo << "Entidade: " << logsExcecao[i]->getEntidade() << std::endl;
+            arquivo << "Funcionalidade: " << logsExcecao[i]->getFuncionalidade() << std::endl;
+            arquivo << "Usuario: " << logsExcecao[i]->getUsuario()->getNome() << std::endl;
+            arquivo << "Data: " << logsExcecao[i]->getHorario() << std::endl;
+            arquivo << "-----------------" << std::endl;
+        }
+    }
+    arquivo.close();
+}

@@ -117,6 +117,9 @@ class Empresa
 		void imprimirLogsEscrita();
 		void imprimirLogsLeitura();
 		void imprimirLogsExcecao();
+
+		void imprimirLogs();
+		void salvarLogs();
 };
 
 #endif
