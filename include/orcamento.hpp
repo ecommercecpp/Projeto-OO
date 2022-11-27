@@ -41,9 +41,7 @@ class Orcamento
 
         void gerarOrcamento(Cliente *cliente, int qtd, std::vector<Produto*> produtos);
 
-        void imprimeOrcamento();
-        
-		
+        void imprimeOrcamento(Cliente *cliente, std::vector<Produto*> produtos);	
 };
 
 

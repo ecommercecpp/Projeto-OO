@@ -153,9 +153,10 @@ void Orcamento::setOrdemProducao(OrdemProducao ordemProducao)
  * @brief Imprime o orçamento
  *
  */
-void Orcamento::imprimeOrcamento()
+void Orcamento::imprimeOrcamento(Cliente *cliente, std::vector<Produto*> produtos)
 {
     std::cout << "-------Imprimindo o Orcamento--------" << std::endl;
+    /*
     std::cout << "Cliente: " << this->cliente->getNome() << std::endl;
     std::cout << "Valor total: " << this->valorTotal << std::endl;
     //std::cout << "Produtos: " << std::endl;
@@ -164,16 +165,20 @@ void Orcamento::imprimeOrcamento()
         std::cout << "Produto: " << this->produtos[i]->getNome() << std::endl;
         std::cout << "Valor: " << this->produtos[i]->getValorDeVenda() << std::endl;
     }
-    std::cout << "Data: " << this->dataString << std::endl;
+    std::cout << "Data: " << this->dataString << std::endl;*/
 }
+/*
+void Orcamento::verificaAdicao(){
 
+}
+*/
 /**
  * @brief Gera o orçamento
  *
  * @param cliente
  * @param produtos
  */
-void Orcamento::gerarOrcamento(Cliente *cliente, int qtd ,std::vector<Produto*> produtos)
+void Orcamento::gerarOrcamento(Cliente *clienteO, int qtd ,std::vector<Produto*> produtos)
 {
     Data data;
     time_t tt;
@@ -182,18 +187,30 @@ void Orcamento::gerarOrcamento(Cliente *cliente, int qtd ,std::vector<Produto*> 
     ti = localtime(&tt);
   
     this->qtd = qtd;
-    this->cliente = cliente;
+    this->cliente = clienteO;
     this->produtos = produtos;
     this->data = data.dateNow();
     this->dataString = asctime(ti);
     this->valorTotal = 0;
-    for (unsigned int i = 0; i < this->produtos.size(); i++)
+    std::cout<<"tamanho do vetor de produtos: "<<produtos.size()<<std::endl;
+    for (unsigned int i = 0; i <= this->produtos.size(); i++)
     {
-        if(this->qtd < this->produtos[i]->getEstoqueMinimo()){
-        //gerar ordem de producao
-        this->ordemProducao.gerarOrdemProducao(this->produtos[i], this->produtos[i]->getEstoqueMinimo());
-        }
         this->valorTotal += this->produtos[i]->getValorDeVenda();
+        if(this->produtos[i]->getQtdEstoque() <= this->produtos[i]->getEstoqueMinimo()){
+            std::cout << "getQtdEstoque: " << this->produtos[i]->getQtdEstoque() << std::endl;
+            std::cout << "getEstoqueMinimo: " << this->produtos[i]->getEstoqueMinimo() << std::endl;
+            std::cout << "qtd " << this->qtd << std::endl;
+            std::cout << "Valor de venda do produto antes do orcamento: " << this->produtos[i]->getValorDeVenda() << std::endl;
+            //gerar ordem de producao
+            this->ordemProducao.gerarOrdemProducao(this->produtos[i], this->produtos[i]->getEstoqueMinimo());
+            //audicionar ao valor de venda do produto 5% do valor de compra
+            this->produtos[i]->setValorDeVenda(this->produtos[i]->getValorDeVenda() * 1.05);
+            std::cout << "Valor de venda do produto apos orcamento: " << this->produtos[i]->getValorDeVenda() << std::endl;
+            std::cout<<"um teste"<<std::endl;
+        }
+            
+        std::cout<<"um outro teste"<<std::endl;
     }
+
     //se depois do orcamento a qtd de produtos for menos que a qtd minima gera uma ordem de producao
 }

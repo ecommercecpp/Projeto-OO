@@ -128,7 +128,7 @@ void OrdemProducao::setDataString(std::string dataString)
  */
 void OrdemProducao::imprimeOrdem()
 {
-    std::cout << "Ordem de produção: " << std::endl;
+    std::cout << "Ordem de producao: " << std::endl;
     std::cout << "Lote: " << getLote().getNmrLote() << std::endl;
     std::cout << "Data: " << getDataString() << std::endl;
     //std::cout << "Data: " << getData().getDia() << "/" << getData().getMes() << "/" << getData().getAno() << std::endl;
@@ -165,6 +165,6 @@ void OrdemProducao::gerarOrdemProducao(Produto* produto, int quantidade)
     setData(data.dateNow());
     setDataString(asctime(ti));
     setQuantidade(quantidade);
-    std::cout<<"Ordem de produção gerada com sucesso!"<<std::endl;
+    std::cout<<"Ordem de producao gerada com sucesso!"<<std::endl;
     imprimeOrdem();
 }

@@ -9,6 +9,7 @@
  */
 Produto::Produto()
 {
+    //this-> qtdEstoque = 0;
 }
 
 /**
@@ -107,7 +108,7 @@ void Produto::setEstoqueMinimo(int estoqueMinimo)
  */
 void Produto::setQtdEstoque(int qtdEstoque)
 {
-    //this->qtdEstoque = qtdEstoque;
+    this->qtdEstoque = qtdEstoque;
 }
 
 /**
@@ -280,7 +281,7 @@ void Produto::removerOrdem()
 
 void Produto::imprimirMateriaPrima(){
     std::cout << "\nMateria Prima: " << std::endl;
-    for (int i = 0; i < materiaPrimaLista.size(); i++)
+    for (unsigned int i = 0; i < materiaPrimaLista.size(); i++)
     {
         std::cout << materiaPrimaLista[i]->getNome() << std::endl;
     }

@@ -189,6 +189,7 @@ void testaCliente(){
 	produto->setCodigo(1);
 	produto->setValorDeVenda(30.0);
 	produto->setEstoqueMinimo(20);
+	produto->setQtdEstoque(20);
 	produto->setTamanhoDoLoteMinimo(20);//definir certo
 	Categoria *categoria = new Categoria();
 	categoria->setNome("Moveis");
@@ -201,7 +202,7 @@ void testaCliente(){
 
 	//fazendo o orcamento pedido nos testes
 	o->gerarOrcamento(&cJuridico, 10, produtos);
-	o->imprimeOrcamento();
+	o->imprimeOrcamento(&cJuridico, produtos);
 }
 
 void testaFuncionario()
