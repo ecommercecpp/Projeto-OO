@@ -75,19 +75,36 @@ void testaProduto() {
   std::cout << "Testando Produto" << std::endl;
   Produto *produto = new Produto();
   produto->setNome("Produto 1");
+  produto->setCodigo(1);
+  produto->setValorDeVenda(30.0);
+  produto->setEstoqueMinimo(20);
+  produto->setTamanhoDoLoteMinimo(10);//definir certo
+  Categoria *categoria = new Categoria();
+  categoria->setNome("Moveis");
+  produto->setCategoria(categoria);
+
+
   //criar materia prima e adicionar ao produto
   MateriaPrima *materiaPrima = new MateriaPrima();
-  materiaPrima->setNome("Materia Prima 1");
+  materiaPrima->setNome("Madeira");
+  materiaPrima->setQuantidade(450);
+  materiaPrima->setUnidadeMedida("g");
+  materiaPrima->setEstoquemin(1000);
+  materiaPrima->setEstoqueTotal(1500);
   produto->adicionarMateriaPrima(materiaPrima);
   //produto->setPreco(10.0);
   //produto->setQuantidade(10);
   //produto->setDescricao("Produto 1");
   produto->setCodigo(1);
   std::cout << "Nome: " << produto->getNome() << std::endl;
-  //std::cout << "Preco: " << produto->getPreco() << std::endl;
-  //std::cout << "Quantidade: " << produto->getQuantidade() << std::endl;
-  //std::cout << "Descricao: " << produto->getDescricao() << std::endl;
+  std::cout << "Preco: " << produto->getValorDeVenda() << std::endl;
+  std::cout << "Quantidade estoque min: " << produto->getEstoqueMinimo() << std::endl;
   std::cout << "Codigo: " << produto->getCodigo() << std::endl;
+  std::cout << "Estoque depois de efetuar a compra: " << materiaPrima->getEstoqueDisponivel() << " "<< materiaPrima->getUnidadeMedida() << std::endl;
+
+  produto->imprimirMateriaPrima();
+  
+  delete categoria;
   delete produto;
 }
 
@@ -274,6 +291,9 @@ int main()
 	std::cout << "+-----------------+"<<std::endl;
 	std::cout << "Testando a pessoa" << std::endl;
 	testaPessoa();
+	std::cout << "+-----------------+"<<std::endl;
+	std::cout << "Testando o produto" << std::endl;
+	testaProduto();
 	switch (a)
 	{
 	case 1:

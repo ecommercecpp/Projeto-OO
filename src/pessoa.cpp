@@ -70,7 +70,7 @@ void Pessoa::setcpf_cnpj(std::string cpf_cnpj)
 
 			if (!ValidaCPFCNPJ::GetInstance()->validaCPF(cpf_cnpj)) // Concertar
 			{
-				std::cout << "CPF invalido (valida) -> " << cpf_cnpj.length() << std::endl;
+				//std::cout << "CPF invalido (valida) -> " << cpf_cnpj.length() << std::endl;
 				throw InvalidCPFException();
 			}
 			else
@@ -83,7 +83,7 @@ void Pessoa::setcpf_cnpj(std::string cpf_cnpj)
 			tipo = 1;
 			if (!ValidaCPFCNPJ::GetInstance()->validaCNPJ(cpf_cnpj))
 			{
-				std::cout << "CMNPJ invalido (valida)" << std::endl;
+				//std::cout << "CMNPJ invalido (valida)" << std::endl;
 				throw InvalidCNPJException();
 			}
 			else

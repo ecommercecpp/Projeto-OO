@@ -58,6 +58,8 @@ class Produto
 		void removerOrdem(OrdemProducao* ordem);
 		void adicionarMateriaPrima(MateriaPrima* materiaPrima);
 		void removerMateriaPrima(MateriaPrima* materiaPrima);
+		//função para imprimir o vetor de materia prima
+		void imprimirMateriaPrima();
 		void atualizarEstoque(int qtd);
 		void atualizarEstoqueMinimo(int qtd);
 		void atualizarTamanhoDoLoteMinimo(int qtd);

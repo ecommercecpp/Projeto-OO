@@ -16,6 +16,8 @@ class MateriaPrima
         int quantidade; 
         int estoquemin;
         std::string unidadeMedida;
+        int estoqueDisponivel;
+        int estoqueTotal;
         //std::vector<Fornecedor> fornecedores;
         //std::map<int, Fornecedor> fornecedores; 
 
@@ -30,10 +32,13 @@ class MateriaPrima
         std::string getNome();
         int getEstoquemin();
         std::string getUnidadeMedida();
+        
         void setNome(std::string nome);
         void setQuantidade(int quantidade);
         void setEstoquemin(int estoquemin);
         void setUnidadeMedida(std::string unidadeMedida);
+        int getEstoqueDisponivel();//retorna o estoque depois da compra
+        void setEstoqueTotal(int estoqueTotal);
 };
 
 

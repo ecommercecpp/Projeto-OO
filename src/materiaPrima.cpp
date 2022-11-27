@@ -138,3 +138,25 @@ std::string MateriaPrima::getUnidadeMedida()
 {
     return unidadeMedida;
 }
+
+
+/**
+ * @brief Define o estoque disponivel da materia prima
+ *
+ * @param estoqueTotal
+ */
+void MateriaPrima::setEstoqueTotal(int estoqueTotal){
+    this->estoqueTotal = estoqueTotal;
+}
+
+/**
+ * @brief Retorna o estoque disponivel da materia prima
+ *
+ * @return int
+ */
+int MateriaPrima::getEstoqueDisponivel()
+{
+    estoqueDisponivel = this->estoqueTotal - this->quantidade;
+    return estoqueDisponivel;
+}
+

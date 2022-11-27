@@ -33,7 +33,7 @@ ValidaCPFCNPJ *ValidaCPFCNPJ::GetInstance()
 
 bool ValidaCPFCNPJ::validaCPF(std::string cpf)
 {
-	std::cout<<"Validando CP aqui na classe bugadaF"<<std::endl;
+	//std::cout<<"Validando CP aqui na classe bugadaF"<<std::endl;
 	// verifica se o cpf tem 11 digitos
 	if (cpf.length() != 11)
 		return false;
@@ -74,7 +74,7 @@ bool ValidaCPFCNPJ::validaCPF(std::string cpf)
 
 bool ValidaCPFCNPJ::validaCNPJ(std::string cnpj)
 {
-	std::cout<<"Validando CNP3 aqui na classe bugadaF"<<std::endl;
+	//std::cout<<"Validando CNP3 aqui na classe bugadaF"<<std::endl;
 	// verifica se o cnpj tem 14 digitos
 	if (cnpj.length() != 14)
 		return false;

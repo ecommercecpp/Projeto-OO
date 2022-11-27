@@ -277,6 +277,14 @@ void Produto::removerOrdem()
 }
 */
 
+void Produto::imprimirMateriaPrima(){
+    std::cout << "\nMateria Prima: " << std::endl;
+    for (int i = 0; i < materiaPrimaLista.size(); i++)
+    {
+        std::cout << materiaPrimaLista[i]->getNome() << std::endl;
+    }
+}
+
 /**
  * @brief Imprime todas as informações sobre o produto
  *
