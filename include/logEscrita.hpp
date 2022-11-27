@@ -30,7 +30,6 @@ class LogEscrita: public Logs
     std::map<std::string, std::string> getInformacoesNovas();
     void setAtributosAnteriores(std::vector<std::string>);
     std::vector<std::string> getAtributosAnteriores();
-   
 };
 
 #endif

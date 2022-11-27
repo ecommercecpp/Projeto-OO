@@ -148,6 +148,9 @@ void Pessoa::setTipo(int tipo)
  */
 std::string Pessoa::getNome()
 {
+	std::string informacao = "nome: " + nome;
+
+	Empresa::getEmpresa()->gerarLogLeitura("pessoa", informacao);
 	std::string permissao = "verificarNomePessoa";
 	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
 	{
@@ -167,6 +170,8 @@ std::string Pessoa::getNome()
 std::string Pessoa::getCpf_cnpj()
 {
 	std::string permissao = "verificarDocumentoPessoa";
+	//gerar log de leitura
+
 	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
 	{
 		throw AcessDeniedException();

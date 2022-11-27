@@ -433,34 +433,22 @@ void Empresa::imprimirLogsEscrita(){
         //std::cout << "Data: " << logsEscrita[i]->getData() << std::endl;
     }
 }
-/*
-void Empresa::gerarLogLeitura(std::string entidade, std::string informacao){
+
+void Empresa::gerarLogLeitura(std::string entidade, std::string informacaoLida){
     LogLeitura *logLeitura = new LogLeitura();
+    this->logsLeitura.push_back(logLeitura);
+
+    std::string nome = usuarioLogado->getNome();
+    std::cout << "Nome do usuario logado:(log leitura) " << nome << std::endl;
+    //imprimir a entidade
+    std::cout << "Entidade:(log leitura) " << entidade << std::endl;
+    Data data = Data();
+    
     logLeitura->setEntidade(entidade);
-    logLeitura->setInformacao(informacao);
-    logLeitura->setUsuario(usuarioLogado->nome);
-    logLeitura->setDataHora();
+    logLeitura->setUsuario(usuarioLogado);
+    logLeitura->setData(data.dateNow());
+    logLeitura->setInformacao(informacaoLida);
     adicionarLogLeitura(logLeitura);
 }
 
-void Empresa::gerarLogExcecao(std::string entidade, std::string funcionalidade){
-    LogExcecao *logExcecao = new LogExcecao();
-    logExcecao->setEntidade(entidade);
-    logExcecao->setFuncionalidade(funcionalidade);
-    logExcecao->setUsuario(usuarioLogado->nome);
-    logExcecao->setDataHora();
-    adicionarLogExcecao(logExcecao);
-}
-*/
-
-//função para imprimir todos os logs de escrita
-/*void Empresa::imprimirLogsEscrita(){
-    for (unsigned int i = 0; i < logsEscrita.size(); i++)
-    {
-        std::cout << "Entidade: " << logsEscrita[i]->getEntidade() << std::endl;
-        std::cout << "Atributo Alterado: " << logsEscrita[i]->getAtributoAlterado() << std::endl;
-        std::cout << "Usuario: " << logsEscrita[i]->getUsuario() << std::endl;
-        std::cout << "Data e Hora: " << logsEscrita[i]->getDataHora() << std::endl;
-        std::cout << "--------------------------------------------" << std::endl;
-    }
-}*/
+//função para imprimir o vetor logs de leitura
