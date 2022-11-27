@@ -6,7 +6,7 @@
 #include <map>
 #include <numeric>
 
-#include "fornecedores.hpp"
+#include "fornecedor.hpp"
 
 
 class MateriaPrima
@@ -16,17 +16,24 @@ class MateriaPrima
         int quantidade; 
         int estoquemin;
         std::string unidadeMedida;
-        std::map<int, Fornecedor> fornecedores; 
+        //std::vector<Fornecedor> fornecedores;
+        //std::map<int, Fornecedor> fornecedores; 
 
 	public:
-        MateriaPrima(std::string nome, int quantidade, std::string unidadeMedida,int estoqueminimo);
+        //MateriaPrima(std::string nome, int quantidade, std::string unidadeMedida,int estoqueminimo);
         MateriaPrima();
-        void setFornecedores(int valorDoMaterial, Fornecedor fornecedor);
-        std::map<int, Fornecedor> retornaMenorValor();
+        ~MateriaPrima();
+        //void setFornecedores(int valorDoMaterial, Fornecedor fornecedor);
+        //std::map<int, Fornecedor> retornaMenorValor();
         void atualizaQuantidade(int valor);
-        int GetQuantidade();
-        std::string GetNome();
-        int GetEstoquemin()
+        int getQuantidade();
+        std::string getNome();
+        int getEstoquemin();
+        std::string getUnidadeMedida();
+        void setNome(std::string nome);
+        void setQuantidade(int quantidade);
+        void setEstoquemin(int estoquemin);
+        void setUnidadeMedida(std::string unidadeMedida);
 };
 
 

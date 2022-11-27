@@ -7,6 +7,7 @@
 #include "salario.hpp"
 #include "empresa.hpp"
 #include "Data.h"
+#include "materiaPrima.hpp"
 
 std::vector<std::string> permissao() {
   std::vector<std::string> permissoes;
@@ -74,6 +75,10 @@ void testaProduto() {
   std::cout << "Testando Produto" << std::endl;
   Produto *produto = new Produto();
   produto->setNome("Produto 1");
+  //criar materia prima e adicionar ao produto
+  MateriaPrima *materiaPrima = new MateriaPrima();
+  materiaPrima->setNome("Materia Prima 1");
+  produto->adicionarMateriaPrima(materiaPrima);
   //produto->setPreco(10.0);
   //produto->setQuantidade(10);
   //produto->setDescricao("Produto 1");
@@ -149,6 +154,8 @@ void testaFuncionario()
 	Salario s(10000.00, true, 1);
 	salario.push_back(s);
 	Departamento adm("Departamento de ADM");
+	Departamento vendas("Departamento de Vendas");
+	Cargo vendedor("Vendedor");
 	Cargo gerente("Gerente");
 	Data nascimento(1990, 1, 1); 
 	Data admissao(2010, 1, 1); 
@@ -176,18 +183,35 @@ void testaFuncionario()
 	f2.setDepartamento(adm);
 	f2.setCargo(gerente);
 
+	Funcionario f3;
+	f3.setNome("Joaozinho3");
+	f3.setTipo(0);
+	f3.setcpf_cnpj("12345678912");
+	f3.setEndereco("Rua 1");
+	f3.setEmail("j3@joao.com");
+	f3.setNascimento(nascimento);
+	f3.setAdmissao(admissao);
+	f3.setSalario(salario);
+	f3.setDepartamento(vendas);
+	f3.setCargo(vendedor);
+
+
 	//imprime nome dos funcionarios
 	std::cout << "Nome dos Funcionarios atuais da empresa: " << std::endl;
 
 	std::cout << "Nome do funcionario 1: " << f.getNome() << std::endl;
 	std::cout << "Nome do funcionario 2: " << f2.getNome() << std::endl;
+	std::cout << "Nome do funcionario 3: " << f3.getNome() << std::endl;
 
 	e->adicionarFuncionario(&f);
 	e->adicionarFuncionario(&f2);
+	e->adicionarFuncionario(&f3);
 
 	e->removerFuncionario(&f);
 
-	if(f.empregado()){
+	//imprimir status dos funcionarios
+	//std::cout << "Status dos Funcionarios atuais da empresa: " << std::endl;
+	/*if(f.empregado()){
 		std::cout << "Funcionario empregado: " << f.getNome() << std::endl;
 	}else{
 		std::cout << "Funcionario desempregado: " << f.getNome() << std::endl;
@@ -197,7 +221,7 @@ void testaFuncionario()
 		std::cout << "Funcionario empregado: " << f2.getNome() << std::endl;
 	}else{
 		std::cout << "Funcionario desempregado: " << f2.getNome() << std::endl;
-	}
+	}*/
 
 }
 void testaPessoa()

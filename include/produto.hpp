@@ -7,10 +7,7 @@
 #include "lote.hpp"
 #include "categoria.hpp"
 #include "ordemProducao.hpp"
-
-
-class MateriaPrima{
-};
+#include "materiaPrima.hpp"
 
 class Produto
 {

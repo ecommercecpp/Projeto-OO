@@ -299,3 +299,14 @@ void Produto::imprimir()
         std::cout << "Ordem de producao: Nao ha ordem de producao" << std::endl;
     }
 }
+
+void Produto::adicionarMateriaPrima(MateriaPrima* materiaPrima)
+{
+    //materiaPrima->adicionarProduto(this);
+    this->materiaPrimaLista.push_back(materiaPrima);
+}
+
+void Produto::removerMateriaPrima(MateriaPrima* materiaPrima){
+    //materiaPrima->removerProduto(this);
+    //this->materiaPrimaLista.remove(materiaPrima);
+}
