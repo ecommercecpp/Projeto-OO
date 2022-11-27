@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <ctime>
 
 #include "Data.h"
 
@@ -114,7 +115,8 @@ class Empresa
 		void gerarLogExcecao(std::string entidade, std::string funcionalidade);
 
 		void imprimirLogsEscrita();
-	
+		void imprimirLogsLeitura();
+		void imprimirLogsExcecao();
 };
 
 #endif

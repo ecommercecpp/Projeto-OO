@@ -41,10 +41,8 @@ Pessoa::Pessoa(std::string nome, std::string cpf_cnpj, std::string endereco, std
 		this->tipo = tipo;
 	}
 	std::string atributos = "nome: " + nome + " cpf_cnpj: " + cpf_cnpj + " endereco: " + endereco + " email: " + email + " tipo: " + std::to_string(tipo);
-	//gerar log de escrita com a permissao de cadastrarPessoa
-	//LogEscrita logEscrita;
+
 	Empresa::getEmpresa()->gerarLogEscrita("pessoa", atributos);
-	
 	//Empresa::getEmpresa()->imprimirLogsEscrita();
 }
 
@@ -149,11 +147,15 @@ void Pessoa::setTipo(int tipo)
 std::string Pessoa::getNome()
 {
 	std::string informacao = "nome: " + nome;
-
-	Empresa::getEmpresa()->gerarLogLeitura("pessoa", informacao);
+	std::string entidade = "pessoa";
+	std::string funcionalidade = "getNome";
+	Empresa::getEmpresa()->gerarLogLeitura(entidade, informacao);
+	//Empresa::getEmpresa()->imprimirLogsLeitura();
 	std::string permissao = "verificarNomePessoa";
 	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
 	{
+		Empresa::getEmpresa()->gerarLogExcecao(entidade, funcionalidade);
+		Empresa::getEmpresa()->imprimirLogsExcecao();
 		throw AcessDeniedException();
 	}
 	else

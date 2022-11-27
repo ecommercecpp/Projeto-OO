@@ -416,21 +416,34 @@ void Empresa::gerarLogEscrita(std::string entidade, std::string atributoAlterado
     //imprimir a entidade
     std::cout << "Entidade:(log escrita) " << entidade << std::endl;
     Data data = Data();
-    
+    // Declaring argument for time()
+    time_t tt;
+    // Declaring variable to store return value of
+    // localtime()
+    struct tm * ti;
+    // Applying time()
+    time (&tt);
+    // Using localtime()
+    ti = localtime(&tt);
+  
+    //std::cout << "Current Day, Date and Time is = " << asctime(ti);
+    logEscrita->setHorario(asctime(ti));
     logEscrita->setEntidade(entidade);
     logEscrita->setAtributosAnteriores(atributosAlterados);
     logEscrita->setUsuario(usuarioLogado);
     logEscrita->setData(data.dateNow());
+    //std::cout << "Data:(log escrita) " << data.printData() << std::endl;
     adicionarLogEscrita(logEscrita);
 }
 //imprimir logs de escrita no vetor de logs de escrita da empresa
 void Empresa::imprimirLogsEscrita(){
+    std::cout << "tamanho do vetor de logsEscrita: "<< logsEscrita.size() << std::endl;
     for (unsigned int i = 0; i < logsEscrita.size(); i++)
     {
         std::cout << "Entidade: " << logsEscrita[i]->getEntidade() << std::endl;
-        //std::cout << "Atributos alterados: " << logsEscrita[i]->getAtributosAnteriores()[0] << std::endl;
+        std::cout << "Atributos alterados: " << logsEscrita[i]->getAtributosAnteriores()[0] << std::endl;
         std::cout << "Usuario: " << logsEscrita[i]->getUsuario()->getNome() << std::endl;
-        //std::cout << "Data: " << logsEscrita[i]->getData() << std::endl;
+        std::cout << "Data: " << logsEscrita[i]->getHorario() << std::endl;
     }
 }
 
@@ -443,7 +456,18 @@ void Empresa::gerarLogLeitura(std::string entidade, std::string informacaoLida){
     //imprimir a entidade
     std::cout << "Entidade:(log leitura) " << entidade << std::endl;
     Data data = Data();
-    
+    // Declaring argument for time()
+    time_t tt;
+    // Declaring variable to store return value of
+    // localtime()
+    struct tm * ti;
+    // Applying time()
+    time (&tt);
+    // Using localtime()
+    ti = localtime(&tt);
+  
+    //std::cout << "Current Day, Date and Time is = " << asctime(ti);
+    logLeitura->setHorario(asctime(ti));
     logLeitura->setEntidade(entidade);
     logLeitura->setUsuario(usuarioLogado);
     logLeitura->setData(data.dateNow());
@@ -452,3 +476,53 @@ void Empresa::gerarLogLeitura(std::string entidade, std::string informacaoLida){
 }
 
 //função para imprimir o vetor logs de leitura
+void Empresa::imprimirLogsLeitura(){
+    std::cout << "tamanho do vetor de logsLeitura: "<< logsLeitura.size() << std::endl;
+    for (unsigned int i = 0; i < logsLeitura.size(); i++)
+    {
+        std::cout << "Entidade: " << logsLeitura[i]->getEntidade() << std::endl;
+        std::cout << "Informacao lida: " << logsLeitura[i]->getInformacao() << std::endl;
+        std::cout << "Usuario: " << logsLeitura[i]->getUsuario()->getNome() << std::endl;
+        std::cout << "Data: " << logsLeitura[i]->getHorario() << std::endl;
+    }
+}
+
+void Empresa::gerarLogExcecao(std::string entidade, std::string funcionalidade){
+    LogExcecao *logExcecao = new LogExcecao();
+    this->logsExcecao.push_back(logExcecao);
+
+    std::string nome = usuarioLogado->getNome();
+    std::cout << "Nome do usuario logado:(log excecao) " << nome << std::endl;
+    //imprimir a entidade
+    std::cout << "Entidade:(log excecao) " << entidade << std::endl;
+    Data data = Data();
+    // Declaring argument for time()
+    time_t tt;
+    // Declaring variable to store return value of
+    // localtime()
+    struct tm * ti;
+    // Applying time()
+    time (&tt);
+    // Using localtime()
+    ti = localtime(&tt);
+  
+    //std::cout << "Current Day, Date and Time is = " << asctime(ti);
+    logExcecao->setHorario(asctime(ti));
+    logExcecao->setEntidade(entidade);
+    logExcecao->setUsuario(usuarioLogado);
+    logExcecao->setData(data.dateNow());
+    logExcecao->setFuncionalidade(funcionalidade);
+    adicionarLogExcecao(logExcecao);
+}
+
+//função para imprimir o vetor logs de excecao
+void Empresa::imprimirLogsExcecao(){
+    std::cout << "tamanho do vetor de logsExcecao: "<< logsExcecao.size() << std::endl;
+    for (unsigned int i = 0; i < logsExcecao.size(); i++)
+    {
+        std::cout << "Entidade: " << logsExcecao[i]->getEntidade() << std::endl;
+        std::cout << "Funcionalidade: " << logsExcecao[i]->getFuncionalidade() << std::endl;
+        std::cout << "Usuario: " << logsExcecao[i]->getUsuario()->getNome() << std::endl;
+        std::cout << "Data: " << logsExcecao[i]->getHorario() << std::endl;
+    }
+}

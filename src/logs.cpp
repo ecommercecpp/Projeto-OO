@@ -93,3 +93,23 @@ std::string Logs::getEntidade()
 {
     return this->entidade;
 }
+
+/**
+ * @brief Seta o horario do log
+ * 
+ * @param horario 
+ */
+void Logs::setHorario(std::string horario)
+{
+    this->horario = horario;
+}
+
+/**
+ * @brief Retorna o horario do log
+ * 
+ * @return std::string 
+ */
+std::string Logs::getHorario()
+{
+    return this->horario;
+}

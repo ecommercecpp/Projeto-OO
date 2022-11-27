@@ -14,6 +14,7 @@ class Logs
     UsuarioLogado *usuario;
 		Data data;
     std::string entidade;
+    std::string horario;
 
 	public:
     Logs();
@@ -27,7 +28,8 @@ class Logs
     void setEntidade(std::string);
     std::string getEntidade();
 
-//    virtual std::string getLog() = 0;
+    void setHorario(std::string);
+    std::string getHorario();
     
 };
 
