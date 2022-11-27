@@ -184,3 +184,12 @@ void Lote::atualizarEstoque(Produto* produtoLote, int quantidade)
 {
     produtoLote->setQtdEstoque(produtoLote->getQtdEstoque() + quantidade);
 }
+
+bool verificarEstoqueMinimo(Produto* produto){
+    if(produto->getQtdEstoque() <= produto->getEstoqueMinimo()){
+        //gerar ordem de producao
+        return true;
+    }else{
+        return false;
+    }
+}

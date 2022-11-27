@@ -9,6 +9,7 @@
 #include "Data.h"
 #include "materiaPrima.hpp"
 #include "lote.hpp"
+#include "orcamento.hpp"
 
 std::vector<std::string> permissao() {
   std::vector<std::string> permissoes;
@@ -178,6 +179,29 @@ void testaCliente(){
 
 	std::cout << "Nome do Cliente Fisico criado: " << cFisico.getNome() << " | Documento: " << cFisico.getCpf_cnpj() << std::endl;
 	std::cout << "Nome do Cliente Juridico criado: " << cJuridico.getNome() << " | Documento: " << cJuridico.getCpf_cnpj() << std::endl;
+
+	//criar  um orcamento 
+	Orcamento *o = new Orcamento();
+
+	Produto *produto = new Produto();
+
+	produto->setNome("Mesa");
+	produto->setCodigo(1);
+	produto->setValorDeVenda(30.0);
+	produto->setEstoqueMinimo(20);
+	produto->setTamanhoDoLoteMinimo(20);//definir certo
+	Categoria *categoria = new Categoria();
+	categoria->setNome("Moveis");
+	produto->setCategoria(categoria);
+
+	//criar vetor de produtos
+	std::vector<Produto*> produtos;
+	//adicionar produtos ao vetor
+	produtos.push_back(produto);
+
+	//fazendo o orcamento pedido nos testes
+	o->gerarOrcamento(&cJuridico, 10, produtos);
+	o->imprimeOrcamento();
 }
 
 void testaFuncionario()

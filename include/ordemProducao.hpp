@@ -31,7 +31,7 @@ class OrdemProducao
 		void setDataString(std::string dataString);
 		std::string getDataString();
 
-		void gerarOrdemProducao(Produto*, int quantidade);
+		void gerarOrdemProducao(Produto*, int);
 };
 
 #endif

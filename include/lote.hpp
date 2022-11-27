@@ -36,6 +36,8 @@ class Lote
 
         //funcao para adicionar produto e quantidade do lote no estoque
         void atualizarEstoque(Produto*, int quantidade);
+        //funcao para verificar se o estoque de produto esta abaixo do minimo
+        bool verificarEstoqueMinimo(Produto*, int quantidade);
 
         /*
 		int getCodigoLote();

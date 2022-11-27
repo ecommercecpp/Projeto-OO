@@ -437,7 +437,7 @@ void Empresa::gerarLogEscrita(std::string entidade, std::string atributoAlterado
 }
 //imprimir logs de escrita no vetor de logs de escrita da empresa
 void Empresa::imprimirLogsEscrita(){
-    std::cout << "tamanho do vetor de logsEscrita: "<< logsEscrita.size() << std::endl;
+    //std::cout << "tamanho do vetor de logsEscrita: "<< logsEscrita.size() << std::endl;
     for (unsigned int i = 0; i < logsEscrita.size(); i++)
     {
         std::cout << "Entidade: " << logsEscrita[i]->getEntidade() << std::endl;
@@ -477,7 +477,7 @@ void Empresa::gerarLogLeitura(std::string entidade, std::string informacaoLida){
 
 //função para imprimir o vetor logs de leitura
 void Empresa::imprimirLogsLeitura(){
-    std::cout << "tamanho do vetor de logsLeitura: "<< logsLeitura.size() << std::endl;
+    //std::cout << "tamanho do vetor de logsLeitura: "<< logsLeitura.size() << std::endl;
     for (unsigned int i = 0; i < logsLeitura.size(); i++)
     {
         std::cout << "Entidade: " << logsLeitura[i]->getEntidade() << std::endl;
@@ -529,7 +529,7 @@ void Empresa::imprimirLogsExcecao(){
 
 //função para imprimir todos os logs
 void Empresa::imprimirLogs(){
-    std::cout << "Exibindo os logs de todas as operaçoes realizadas" << std::endl;
+    std::cout << "Exibindo os logs de todas as operacoes realizadas" << std::endl;
     std::cout << "-----------------" << std::endl;
     std::cout<<"Imprimindo logs de escrita: "<<std::endl;
     imprimirLogsEscrita();
