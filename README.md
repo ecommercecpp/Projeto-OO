@@ -6,6 +6,12 @@
 
 <!-- TABLE OF CONTENTS -->
 <details>
+  <summary>Detalhamento do Projeto e Instruções das Sprints </summary>
+[TP - Projeto OO - TTECS (1).pdf](https://github.com/ecommercecpp/Projeto-OO/files/10097498/TP.-.Projeto.OO.-.TTECS.1.pdf)
+</details>
+
+<!-- TABLE OF CONTENTS -->
+<details>
   <summary>Diagrama UML do projeto</summary>
 ![UML_IndustriaRenovada](https://user-images.githubusercontent.com/60450622/204118279-ea30f1bb-38de-498e-b591-e1b957f17345.png)
 </details>
