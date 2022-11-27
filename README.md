@@ -2,7 +2,13 @@
 
 # Projeto POO
 
-> O Projeto POO é uma abstração de um sistema de uma indústria implementado de forma incremental a cada semana contendo 7 sprints definidas ao longo do segundo semestre de 2022.
+> O Projeto POO é uma abstração de um sistema de uma indústria implementado de forma incremental a cada semana contendo 8 sprints definidas ao longo do segundo semestre de 2022.
+
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Detalhamento do Projeto e Instruções das Sprints </summary>
+[TP - Projeto OO - TTECS (1).pdf](https://github.com/ecommercecpp/Projeto-OO/files/10097498/TP.-.Projeto.OO.-.TTECS.1.pdf)
+</details>
 
 <!-- TABLE OF CONTENTS -->
 <details>
