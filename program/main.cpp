@@ -74,7 +74,8 @@ std::vector<std::string> permissao() {
 void testaProduto() {
   std::cout << "Testando Produto" << std::endl;
   Produto *produto = new Produto();
-  produto->setNome("Produto 1");
+
+  produto->setNome("Mesa");
   produto->setCodigo(1);
   produto->setValorDeVenda(30.0);
   produto->setEstoqueMinimo(20);
@@ -83,28 +84,53 @@ void testaProduto() {
   categoria->setNome("Moveis");
   produto->setCategoria(categoria);
 
-
   //criar materia prima e adicionar ao produto
   MateriaPrima *materiaPrima = new MateriaPrima();
+  MateriaPrima *materiaPrima2 = new MateriaPrima();
+  MateriaPrima *materiaPrima3 = new MateriaPrima();
+  MateriaPrima *materiaPrima4 = new MateriaPrima();
+
   materiaPrima->setNome("Madeira");
   materiaPrima->setQuantidade(450);
   materiaPrima->setUnidadeMedida("g");
   materiaPrima->setEstoquemin(1000);
   materiaPrima->setEstoqueTotal(1500);
   produto->adicionarMateriaPrima(materiaPrima);
-  //produto->setPreco(10.0);
-  //produto->setQuantidade(10);
-  //produto->setDescricao("Produto 1");
-  produto->setCodigo(1);
+
+  materiaPrima2->setNome("Plastico");
+  materiaPrima2->setQuantidade(150);
+  materiaPrima2->setUnidadeMedida("g");
+  materiaPrima2->setEstoquemin(1000);
+  materiaPrima2->setEstoqueTotal(1500);
+  produto->adicionarMateriaPrima(materiaPrima2);
+
+  materiaPrima3->setNome("Aluminio");
+  materiaPrima3->setQuantidade(100);
+  materiaPrima3->setUnidadeMedida("g");
+  materiaPrima3->setEstoquemin(1000);
+  materiaPrima3->setEstoqueTotal(1500);
+  produto->adicionarMateriaPrima(materiaPrima3);
+
+  materiaPrima4->setNome("Parafusos");
+  materiaPrima4->setQuantidade(8);
+  materiaPrima4->setUnidadeMedida("un");
+  materiaPrima4->setEstoquemin(20);
+  materiaPrima4->setEstoqueTotal(30);
+  produto->adicionarMateriaPrima(materiaPrima4);
+
   std::cout << "Nome: " << produto->getNome() << std::endl;
   std::cout << "Preco: " << produto->getValorDeVenda() << std::endl;
   std::cout << "Quantidade estoque min: " << produto->getEstoqueMinimo() << std::endl;
   std::cout << "Codigo: " << produto->getCodigo() << std::endl;
-  std::cout << "Estoque depois de efetuar a compra: " << materiaPrima->getEstoqueDisponivel() << " "<< materiaPrima->getUnidadeMedida() << std::endl;
+  //std::cout << "Estoque depois de efetuar a compra: " << materiaPrima->getEstoqueDisponivel() << " "<< materiaPrima->getUnidadeMedida() << std::endl;
 
   produto->imprimirMateriaPrima();
   
   delete categoria;
+  delete materiaPrima;
+  delete materiaPrima2;
+  delete materiaPrima3;
+  delete materiaPrima4;
   delete produto;
 }
 
