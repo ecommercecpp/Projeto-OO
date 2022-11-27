@@ -163,8 +163,10 @@ std::vector<int> Venda::getLotesVenda()
  * @brief Efetua a venda
  *
  */
-void Venda::realizaVenda()
+void Venda::realizaVenda(Produto* produto)
 {
+    Estoque *estoque = Estoque::getEstoque();
+    int venda = produto->getQtdEstoque() - this->quantidade;
+    estoque->atualizaEstoque(produto->getCodigo(), venda);
     // this->atualizaLote();
-    // this->atualizaEstoque();
 }

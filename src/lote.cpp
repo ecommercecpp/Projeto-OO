@@ -180,5 +180,7 @@ void Lote::produzir(Produto* produtoLote, int quantidade)
     produtoLote->setQtdEstoque(produtoLote->getQtdEstoque() + quantidade);
 }
 
-//fazer o produtoLote receber o valor do produto passado no parametro
-
+void Lote::atualizarEstoque(Produto* produtoLote, int quantidade)
+{
+    produtoLote->setQtdEstoque(produtoLote->getQtdEstoque() + quantidade);
+}

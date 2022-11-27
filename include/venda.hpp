@@ -3,6 +3,7 @@
 // Equivalente ao registro de vendas
 #include "produto.hpp"
 #include "cliente.hpp"
+#include "estoque.hpp"
 #include "Data.h"
 #include <string>
 
@@ -37,7 +38,7 @@ class Venda
                 //void atualizaLote();
                 //void atualizaEstoque();
 
-                void realizaVenda();
+                void realizaVenda(Produto*);
     
 };
 

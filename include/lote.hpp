@@ -3,6 +3,8 @@
 
 #include "Data.h"
 #include "produto.hpp"
+#include "estoque.hpp"
+//#include "ordemProducao.hpp"
 #include <string>
 
 class Lote
@@ -31,6 +33,9 @@ class Lote
         std::string getProduto();
         //função que produz a quantidade de produtos passadas no parametro
         void produzir(Produto*,int quantidade);
+
+        //funcao para adicionar produto e quantidade do lote no estoque
+        void atualizarEstoque(Produto*, int quantidade);
 
         /*
 		int getCodigoLote();

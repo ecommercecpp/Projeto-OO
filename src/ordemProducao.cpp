@@ -1,4 +1,5 @@
 #include <iostream>
+#include <ctime>
 
 #include "ordemProducao.hpp"
 
@@ -17,13 +18,14 @@ OrdemProducao::OrdemProducao()
  * @param data
  * @param quantidade
  */
+/*
 OrdemProducao::OrdemProducao(Lote lote, Data data, int quantidade)
 {
     setLote(lote);
     setData(data);
     setQuantidade(quantidade);
 }
-
+*/
 /**
  * @brief Destroy the Ordem Producao:: Ordem Producao object
  *
@@ -111,6 +113,14 @@ void OrdemProducao::setQuantidade(int quantidade)
 {
     this->quantidade = quantidade;
 }
+/**
+ * @brief Seta a data em string
+ *
+ */
+void OrdemProducao::setDataString(std::string dataString)
+{
+    this->dataString = dataString;
+}
 
 /**
  * @brief Imprime na tela os dados da ordem de produção
@@ -120,6 +130,41 @@ void OrdemProducao::imprimeOrdem()
 {
     std::cout << "Ordem de produção: " << std::endl;
     std::cout << "Lote: " << getLote().getNmrLote() << std::endl;
-    std::cout << "Data: " << getData().getDia() << "/" << getData().getMes() << "/" << getData().getAno() << std::endl;
+    std::cout << "Data: " << getDataString() << std::endl;
+    //std::cout << "Data: " << getData().getDia() << "/" << getData().getMes() << "/" << getData().getAno() << std::endl;
     std::cout << "Quantidade: " << getQuantidade() << std::endl;
+}
+
+/**
+ * @brief Retorna a data em string
+ *
+ * @return std::string
+ */
+std::string OrdemProducao::getDataString()
+{
+    return dataString;
+}
+
+/**
+ * @brief Gera a ordem de produção
+ *
+ * @param produto
+ * @param quantidade
+ */
+void OrdemProducao::gerarOrdemProducao(Produto* produto, int quantidade)
+{
+    Lote lote;
+    Data data;
+    time_t tt;
+    struct tm * ti;
+    time (&tt);
+    ti = localtime(&tt);
+    lote.setNmrLote(produto->getCodigo());
+
+    setLote(lote);
+    setData(data.dateNow());
+    setDataString(asctime(ti));
+    setQuantidade(quantidade);
+    std::cout<<"Ordem de produção gerada com sucesso!"<<std::endl;
+    imprimeOrdem();
 }

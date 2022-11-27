@@ -4,12 +4,14 @@
 #include "produto.hpp"
 #include <string>
 #include <map>
+#include <vector>
 
 class Estoque
 {
     protected:
         static Estoque* estoque;
         std::map<int, Produto> produtos;
+        //std::vector<Produto*> produtos;
     public:
         Estoque();
         Estoque(Estoque &other) = delete;
