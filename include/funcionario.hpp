@@ -23,6 +23,8 @@ class Funcionario : public Pessoa
 		Cargo cargo;
 		float latitude;
 		float longitude;
+		float turno;
+		float distancia;
 	public:
 		Funcionario();
 		//Funcionario(std::string nome, std::string cpf_cnpj, std::string endereco, std::string email, int tipo, Data nascimento, Data admissao, std::vector<Salario> salario, Departamento departamento, Cargo cargo);
@@ -49,6 +51,12 @@ class Funcionario : public Pessoa
 		float getLatitude();
 		void setLongitude(float longitude);
 		float getLongitude();
+
+		void setTurno(float turno);
+		float getTurno();
+
+		void setDistancia(float distancia);
+		float getDistancia();
 		
 };
 

@@ -13,6 +13,26 @@ class UserOfflineException : public std::exception
 		}
 };
 
+class InvalidTimeException : public std::exception
+{
+	public:
+		InvalidTimeException() {}
+		const char* what() const throw()
+		{
+			return "Nao existe esse turno!";
+		}
+};
+
+class VeiculoCheioException : public std::exception
+{
+	public:
+		VeiculoCheioException() {}
+		const char* what() const throw()
+		{
+			return "O busao ta lotado!";
+		}
+};
+
 class PrazoErradoException : public std::exception
 {
 	public:

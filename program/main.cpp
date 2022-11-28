@@ -13,6 +13,8 @@
 #include "pedidoDeCompra.hpp"
 #include "credito.hpp"
 #include "boleto.hpp"
+#include "rota.hpp"
+#include "veiculo.hpp"
 
 std::vector<std::string> permissao() {
   std::vector<std::string> permissoes;
@@ -51,6 +53,10 @@ std::vector<std::string> permissao() {
 	permissoes.push_back("verificarLatitudeFuncionario");
 	permissoes.push_back("cadastrarLongitudeFuncionario");
 	permissoes.push_back("verificarLongitudeFuncionario");
+	permissoes.push_back("cadastrarTurnoFuncionario");
+	permissoes.push_back("verificarTurnoFuncionario");
+	permissoes.push_back("cadastrarDistanciaFuncionario");
+	permissoes.push_back("verificarDistanciaFuncionario");
 
 	permissoes.push_back("cadastrarSalario");
 	permissoes.push_back("verificarSalario");
@@ -228,8 +234,24 @@ std::vector<std::string> permissao() {
 	permissoes.push_back("verificarTipoVeiculo");
 	permissoes.push_back("retornarTipoVeiculo");
 	permissoes.push_back("alterarHorarioVeiculo");
-	
+	permissoes.push_back("verificarCargaVeiculo");
+	permissoes.push_back("removerCargaVeiculo");
+	permissoes.push_back("adicionarCargaVeiculo");
+	permissoes.push_back("setarCapacidadeVeiculo");
+	permissoes.push_back("verificarCapacidadeVeiculo");
+	permissoes.push_back("verificarVeiculoCheio");
 
+	permissoes.push_back("setarFuncionarioRota");
+	permissoes.push_back("verificarFuncionarioRota");
+	permissoes.push_back("setarIdRota");
+	permissoes.push_back("verificarIdRota");
+	permissoes.push_back("calcularDistanciaFuncionarios");
+	permissoes.push_back("imprimirOrdemRotas");
+	permissoes.push_back("calcularTempoViagem");
+	permissoes.push_back("imprimirTempoViagem");
+	permissoes.push_back("calcularHorarioChegada");
+
+	
   return permissoes;
 }
 
@@ -395,6 +417,9 @@ void testaFuncionario()
 	f.setSalario(salario);
 	f.setDepartamento(adm);
 	f.setCargo(gerente);
+	f.setLatitude(-19.7760268);
+	f.setLongitude(-43.9312126);
+	f.setTurno(8.00);
 
 	Funcionario f2;
 	f2.setNome("Joaozinho2");
@@ -407,6 +432,9 @@ void testaFuncionario()
 	f2.setSalario(salario);
 	f2.setDepartamento(adm);
 	f2.setCargo(gerente);
+	f2.setLatitude(-19.7922814);
+	f2.setLongitude(-43.9479072);
+	f2.setTurno(8.00);
 
 	Funcionario f3;
 	f3.setNome("Joaozinho3");
@@ -419,7 +447,9 @@ void testaFuncionario()
 	f3.setSalario(salario);
 	f3.setDepartamento(vendas);
 	f3.setCargo(vendedor);
-
+	f3.setLatitude(-19.7655718);
+	f3.setLongitude(-43.8280941);
+	f3.setTurno(8.00);
 
 	//imprime nome dos funcionarios
 	std::cout << "Nome dos Funcionarios atuais da empresa: " << std::endl;
@@ -431,6 +461,36 @@ void testaFuncionario()
 	e->adicionarFuncionario(&f);
 	e->adicionarFuncionario(&f2);
 	e->adicionarFuncionario(&f3);
+
+	//criar um veiculo
+	std::cout<<"-----------------"<<std::endl;
+	std::cout<<"Gerando Veiculo"<<std::endl;
+	Veiculo *v = new Veiculo();
+	v->setTipo(1);
+	std::cout<<"Tipo do veiculo: "<<v->retornaTipoVeiculo()<<std::endl;
+	v->setCapacidade(20);
+	v->addCarga(&f);
+	v->addCarga(&f2);
+	v->addCarga(&f3);
+	v->verificaVeiculoCheio();
+
+	//criar uma rota
+	std::cout<<"-----------------"<<std::endl;
+	std::cout<<"Gerando Rota"<<std::endl;
+	Rota *r = new Rota();
+	r->setId(1);
+
+	//criar vetor de funcionarios para passar na funcao de rota calculaDistanciaEntreFuncionarios
+	std::vector <Funcionario*> funcionarios;
+	funcionarios.push_back(&f);
+	funcionarios.push_back(&f2);
+	funcionarios.push_back(&f3);
+
+	r->calculaDistanciaEntreFuncionarios(funcionarios);
+
+	r->calculaTempoViagem();
+
+	r->calculaHorarioChegada();
 
 	//imprimindo os logs antes de sair devido a excecao de remover funcionario
 	int opcao = 0;
@@ -446,7 +506,7 @@ void testaFuncionario()
 	}
 
 	e->salvarLogs();
-	e->removerFuncionario(&f);
+	e->removerFuncionario(&f);//vai exibir a excecao de acesso negado devido ao pedido na sprint 8
 }
 
 void inicializaTestes()

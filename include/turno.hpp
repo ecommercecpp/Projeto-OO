@@ -1,4 +1,4 @@
-#ifndef _TURNO_HPP_
+/*#ifndef _TURNO_HPP_
 #define _TURNO_HPP_
 
 #include <string>
@@ -27,4 +27,4 @@ class Turno
         void setId(int id); 
      
 };
-#endif
+#endif*/

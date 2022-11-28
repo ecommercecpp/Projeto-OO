@@ -87,15 +87,29 @@ class Empresa
 		void adicionarVenda(Venda* venda);
 		void removerVenda(Venda* venda);
 		void adicionarLogEscrita(LogEscrita* logEscrita);
-		void removerLogEscrita(LogEscrita* logEscrita);
-		void adicionarLogLeitura(LogLeitura* logLeitura);
-		void removerLogLeitura(LogLeitura* logLeitura);
-		void adicionarLogExcecao(LogExcecao* logExcecao);
-		void removerLogExcecao(LogExcecao* logExcecao);
-		//void adicionarVeiculo(Veiculo* veiculo);
-		//void removerVeiculo(Veiculo* veiculo);
-		//void adicionarMateriaPrima(MateriaPrima* materiaPrima);
-		//void removerMateriaPrima(MateriaPrima* materiaPrima);
+		void removerLogEscrita(LogEscrita *logEscrita);
+		void adicionarLogLeitura(LogLeitura *logLeitura);
+		void removerLogLeitura(LogLeitura *logLeitura);
+		void adicionarLogExcecao(LogExcecao *logExcecao);
+		void removerLogExcecao(LogExcecao *logExcecao);
+		/*void adicionarVeiculo(Veiculo *veiculo)
+		{
+			veiculos.push_back(veiculo);
+		}
+
+		void removerVeiculo(Veiculo *veiculo)
+		{
+			for (unsigned int i = 0; i < veiculos.size(); i++)
+			{
+				if (veiculos[i] == veiculo)
+				{
+					veiculos.erase(veiculos.begin() + i);
+				}
+			}
+		}*/
+		
+		// void adicionarMateriaPrima(MateriaPrima* materiaPrima);
+		// void removerMateriaPrima(MateriaPrima* materiaPrima);
 		void adicionarProduto(Produto* produto);
 		void removerProduto(Produto* produto);
 		void adicionarCategoria(Categoria* categoria);

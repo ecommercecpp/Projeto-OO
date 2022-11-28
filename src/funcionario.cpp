@@ -396,3 +396,56 @@ float Funcionario::getLongitude()
 		return this->longitude;
 	}
 }
+
+
+void Funcionario::setTurno(float turno)
+{
+	std::string permissao = "cadastrarTurnoFuncionario";
+	std::string atributos = "turno: " ;//+ turno;
+	Empresa::getEmpresa()->gerarLogEscrita("funcionario", atributos);
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		Empresa::getEmpresa()->gerarLogExcecao("funcionario", "setTurno");
+		throw AcessDeniedException();
+	}else{
+		this->turno = turno;
+	}
+}
+
+float Funcionario::getTurno()
+{
+	std::string permissao = "verificarTurnoFuncionario";
+	std::string atributos = "void" ;
+	Empresa::getEmpresa()->gerarLogEscrita("funcionario", atributos);
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		Empresa::getEmpresa()->gerarLogExcecao("funcionario", "getTurno");
+		throw AcessDeniedException();
+	}else{
+		return this->turno;
+	}
+}
+
+void Funcionario::setDistancia(float distancia)
+{
+	std::string permissao = "cadastrarDistanciaFuncionario";
+	std::string atributos = "distancia: " ;//+ distancia;
+	Empresa::getEmpresa()->gerarLogEscrita("funcionario", atributos);
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		Empresa::getEmpresa()->gerarLogExcecao("funcionario", "setDistancia");
+		throw AcessDeniedException();
+	}else{
+		this->distancia = distancia;
+	}
+}
+
+float Funcionario::getDistancia()
+{
+	std::string permissao = "verificarDistanciaFuncionario";
+	std::string atributos = "void" ;
+	Empresa::getEmpresa()->gerarLogEscrita("funcionario", atributos);
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		Empresa::getEmpresa()->gerarLogExcecao("funcionario", "getDistancia");
+		throw AcessDeniedException();
+	}else{
+		return this->distancia;
+	}
+}
