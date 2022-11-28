@@ -1,6 +1,7 @@
 #include <iostream>
 #include <ctime>
 
+#include "empresa.hpp"
 #include "orcamento.hpp"
 
 /**
@@ -9,26 +10,19 @@
  */
 Orcamento::Orcamento()
 {
-    this->produtos = std::vector<Produto*>();
-    this->cliente = new Cliente();
-    this->valorTotal = 0;
+    std::string permissao = "cadastrarOrcamento";
+    std::string atributos = "produtos, valorTotal, data";
+    Empresa::getEmpresa()->gerarLogEscrita("orcamento", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("orcamento", "Orcamento");
+        throw AcessDeniedException();
+    }else{
+        this->produtos = std::vector<Produto*>();
+        this->cliente = new Cliente();
+        this->valorTotal = 0;
+    }
 }
 
-/**
- * @brief Construct a new Orcamento:: Orcamento object
- *
- * @param produtos
- * @param cliente
- * @param valorTotal
- */
-/*
-Orcamento::Orcamento(std::map<int, Produto> produtos, Cliente *cliente, double valorTotal)
-{
-    this->produtos = produtos;
-    this->cliente = cliente;
-    this->valorTotal = valorTotal;
-}
-*/
 /**
  * @brief Retorna os produtos do orçamento
  *
@@ -36,7 +30,15 @@ Orcamento::Orcamento(std::map<int, Produto> produtos, Cliente *cliente, double v
  */
 std::vector<Produto*> Orcamento::getProdutos()
 {
-    return this->produtos;
+    std::string permissao = "verificarProdutosOrcamento";
+    std::string atributos = "produtos";
+    Empresa::getEmpresa()->gerarLogLeitura("orcamento", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("orcamento", "getProdutos");
+        throw AcessDeniedException();
+    }else{
+        return this->produtos;
+    }
 }
 
 /**
@@ -46,7 +48,15 @@ std::vector<Produto*> Orcamento::getProdutos()
  */
 void Orcamento::setProdutos(std::vector<Produto*> produtos)
 {
-    this->produtos = produtos;
+    std::string permissao = "cadastrarProdutosOrcamento";
+    std::string atributos = "produtos";
+    Empresa::getEmpresa()->gerarLogEscrita("orcamento", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("orcamento", "setProdutos");
+        throw AcessDeniedException();
+    }else{
+        this->produtos = produtos;
+    }
 }
 
 /**
@@ -56,7 +66,15 @@ void Orcamento::setProdutos(std::vector<Produto*> produtos)
  */
 Cliente *Orcamento::getCliente()
 {
-    return this->cliente;
+    std::string permissao = "verificarClienteOrcamento";
+    std::string atributos = "cliente";
+    Empresa::getEmpresa()->gerarLogLeitura("orcamento", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("orcamento", "getCliente");
+        throw AcessDeniedException();
+    }else{
+        return this->cliente;
+    }
 }
 
 /**
@@ -66,7 +84,15 @@ Cliente *Orcamento::getCliente()
  */
 void Orcamento::setCliente(Cliente *cliente)
 {
-    this->cliente = cliente;
+    std::string permissao = "cadastrarClienteOrcamento";
+    std::string atributos = "cliente";
+    Empresa::getEmpresa()->gerarLogEscrita("orcamento", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("orcamento", "setCliente");
+        throw AcessDeniedException();
+    }else{
+        this->cliente = cliente;
+    }
 }
 
 /**
@@ -76,7 +102,15 @@ void Orcamento::setCliente(Cliente *cliente)
  */
 double Orcamento::getValorTotal()
 {
-    return this->valorTotal;
+    std::string permissao = "verificarValorTotalOrcamento";
+    std::string atributos = "valorTotal";
+    Empresa::getEmpresa()->gerarLogLeitura("orcamento", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("orcamento", "getValorTotal");
+        throw AcessDeniedException();
+    }else{
+        return this->valorTotal;
+    }
 }
 
 /**
@@ -86,7 +120,15 @@ double Orcamento::getValorTotal()
  */
 void Orcamento::setValorTotal(double valorTotal)
 {
-    this->valorTotal = valorTotal;
+    std::string permissao = "cadastrarValorTotalOrcamento";
+    std::string atributos = "valorTotal";
+    Empresa::getEmpresa()->gerarLogEscrita("orcamento", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("orcamento", "setValorTotal");
+        throw AcessDeniedException();
+    }else{
+        this->valorTotal = valorTotal;
+    }
 }
 
 /**
@@ -96,7 +138,15 @@ void Orcamento::setValorTotal(double valorTotal)
  */
 Data Orcamento::getData()
 {
-    return this->data;
+    std::string permissao = "verificarDataOrcamento";
+    std::string atributos = "data";
+    Empresa::getEmpresa()->gerarLogLeitura("orcamento", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("orcamento", "getData");
+        throw AcessDeniedException();
+    }else{
+        return this->data;
+    }
 }
 
 /**
@@ -106,7 +156,15 @@ Data Orcamento::getData()
  */
 void Orcamento::setData(Data data)
 {
-    this->data = data;
+    std::string permissao = "cadastrarDataOrcamento";
+    std::string atributos = "data";
+    Empresa::getEmpresa()->gerarLogEscrita("orcamento", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("orcamento", "setData");
+        throw AcessDeniedException();
+    }else{
+        this->data = data;
+    }
 }
 
 /**
@@ -116,7 +174,15 @@ void Orcamento::setData(Data data)
  */
 void Orcamento::setDataString(std::string dataString)
 {
-    this->dataString = dataString;
+    std::string permissao = "cadastrarDataStringOrcamento";
+    std::string atributos = "data";
+    Empresa::getEmpresa()->gerarLogEscrita("orcamento", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("orcamento", "setDataString");
+        throw AcessDeniedException();
+    }else{
+        this->data = Data(dataString);
+    }
 }
 
 /**
@@ -126,7 +192,15 @@ void Orcamento::setDataString(std::string dataString)
  */
 std::string Orcamento::getDataString()
 {
-    return this->dataString;
+    std::string permissao = "verificarDataStringOrcamento";
+    std::string atributos = "data";
+    Empresa::getEmpresa()->gerarLogLeitura("orcamento", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("orcamento", "getDataString");
+        throw AcessDeniedException();
+    }else{
+        return this->dataString;
+    }
 }
 
 /**
@@ -136,7 +210,15 @@ std::string Orcamento::getDataString()
  */
 OrdemProducao Orcamento::getOrdemProducao()
 {
-    return this->ordemProducao;
+    std::string permissao = "verificarOrdemProducaoOrcamento";
+    std::string atributos = "ordemProducao";
+    Empresa::getEmpresa()->gerarLogLeitura("orcamento", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("orcamento", "getOrdemProducao");
+        throw AcessDeniedException();
+    }else{
+        return this->ordemProducao;
+    }
 }
 
 /**
@@ -146,7 +228,15 @@ OrdemProducao Orcamento::getOrdemProducao()
  */
 void Orcamento::setOrdemProducao(OrdemProducao ordemProducao)
 {
-    this->ordemProducao = ordemProducao;
+    std::string permissao = "cadastrarOrdemProducaoOrcamento";
+    std::string atributos = "ordemProducao";
+    Empresa::getEmpresa()->gerarLogEscrita("orcamento", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("orcamento", "setOrdemProducao");
+        throw AcessDeniedException();
+    }else{
+        this->ordemProducao = ordemProducao;
+    }
 }
 
 /**
@@ -155,56 +245,61 @@ void Orcamento::setOrdemProducao(OrdemProducao ordemProducao)
  */
 void Orcamento::imprimeOrcamento(Cliente *cliente, std::vector<Produto*> produtos)
 {
+    std::string permissao = "imprimirOrcamento";
+    std::string atributos = "imprimirOrcamento";
+    Empresa::getEmpresa()->gerarLogEscrita("orcamento", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("orcamento", "imprimeOrcamento");
+        throw AcessDeniedException();
+    }else{
     std::cout << "-------Imprimindo o Orcamento--------" << std::endl;
     
     std::cout << "Cliente: " << this->cliente->getNome() << std::endl;
-    //std::cout << "Valor total: " << this->valorTotal << std::endl;
-    //std::cout << "Produtos: " << std::endl;
     for (unsigned int i = 0; i < this->produtos.size(); i++)
     {
         std::cout << "Produto: " << this->produtos[i]->getNome() << std::endl;
         std::cout << "Valor: " << this->produtos[i]->getValorDeVenda() << std::endl;
     }
     std::cout << "Data: " << this->dataString << std::endl;
+    }
 }
-/*
-void Orcamento::verificaAdicao(){
 
-}
-*/
 /**
  * @brief Gera o orçamento
  *
  * @param cliente
  * @param produtos
  */
-void Orcamento::gerarOrcamento(Cliente *clienteO, int qtd ,std::vector<Produto*> produtos)
+void Orcamento::gerarOrcamento(Cliente *clienteO, int qtd, std::vector<Produto *> produtos)
 {
-    Data data;
-    time_t tt;
-    struct tm * ti;
-    time (&tt);
-    ti = localtime(&tt);
-  
-    this->qtd = qtd;
-    this->cliente = clienteO;
-    this->produtos = produtos;
-    this->data = data.dateNow();
-    this->dataString = asctime(ti);
-    //this->valorTotal = ;
-    //std::cout<<"tamanho do vetor de produtos: "<<produtos.size()<<std::endl;
-    //percorrer vetor de produtos 
-    for (unsigned int i = 0; i < produtos.size(); i++)
+    std::string permissao = "gerarOrcamento";
+    std::string atributos = "gerarOrcamento";
+    Empresa::getEmpresa()->gerarLogEscrita("orcamento", atributos);
+    if (!Empresa::getEmpresa()->verificaPermissao(permissao))
     {
-        //std::cout << "Valor de venda do produto antes do orcamento: " << produtos[i]->getValorDeVenda() << std::endl;
-        //std::cout<<"produto: "<<produtos[i]->getNome()<<std::endl;
-        //std::cout<<"valor: "<<produtos[i]->getValorDeVenda()<<std::endl;
-        this->valorTotal += produtos[i]->getValorDeVenda();
-        if(produtos[i]->getQtdEstoque() <= produtos[i]->getEstoqueMinimo()){
-            //std::cout<<"Produto: "<<produtos[i]->getNome()<<" com estoque baixo"<<std::endl;
-            produtos[i]->setValorDeVenda(produtos[i]->getValorDeVenda() * 1.05);
-           // std::cout << "Valor de venda do produto depois do orcamento: " << produtos[i]->getValorDeVenda() << std::endl;
+        Empresa::getEmpresa()->gerarLogExcecao("orcamento", "gerarOrcamento");
+        throw AcessDeniedException();
+    }
+    else
+    {
+        Data data;
+        time_t tt;
+        struct tm *ti;
+        time(&tt);
+        ti = localtime(&tt);
+
+        this->qtd = qtd;
+        this->cliente = clienteO;
+        this->produtos = produtos;
+        this->data = data.dateNow();
+        this->dataString = asctime(ti);
+
+        for (unsigned int i = 0; i < produtos.size(); i++)
+        {
+            this->valorTotal += produtos[i]->getValorDeVenda();
+            if (produtos[i]->getQtdEstoque() <= produtos[i]->getEstoqueMinimo())
+            {
+                produtos[i]->setValorDeVenda(produtos[i]->getValorDeVenda() * 1.05);            }
         }
     }
-
 }

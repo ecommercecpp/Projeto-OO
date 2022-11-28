@@ -542,7 +542,8 @@ void Empresa::imprimirLogs(){
 }
 
 //função para salvar todos os logs em um arquivo
-void Empresa::salvarLogs(){
+void Empresa::salvarLogs()
+{
     std::ofstream arquivo;
     arquivo.open("logs.txt");
     if(arquivo.is_open()){
@@ -572,4 +573,5 @@ void Empresa::salvarLogs(){
         }
     }
     arquivo.close();
+    std::cout << "Logs salvos em ./bin/logs.txt" << std::endl;
 }

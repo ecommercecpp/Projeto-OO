@@ -109,6 +109,26 @@ std::vector<std::string> permissao() {
 
 	permissoes.push_back("instanciarUsuarioLogado");
 
+	permissoes.push_back("cadastrarOrcamento");
+	permissoes.push_back("verificarProdutosOrcamento");
+	permissoes.push_back("cadastrarProdutosOrcamento");
+	permissoes.push_back("verificarClienteOrcamento");
+	permissoes.push_back("cadastrarClienteOrcamento");
+	permissoes.push_back("verificarValorTotalOrcamento");
+	permissoes.push_back("cadastrarValorTotalOrcamento");
+	permissoes.push_back("verificarDataOrcamento");
+	permissoes.push_back("cadastrarDataOrcamento");
+	permissoes.push_back("cadastrarDataStringOrcamento");
+	permissoes.push_back("verificarDataStringOrcamento");
+	permissoes.push_back("verificarOrdemProducaoOrcamento");
+	permissoes.push_back("cadastrarOrdemProducaoOrcamento");
+	permissoes.push_back("imprimirOrcamento");
+	permissoes.push_back("gerarOrcamento");
+
+	permissoes.push_back("cadastrarCategoria");
+	permissoes.push_back("verificarNomeCategoria");
+	permissoes.push_back("cadastrarNomeCategoria");
+
   return permissoes;
 }
 
@@ -227,7 +247,7 @@ void testaCliente(){
 	p->selecionaMetodo(&cJuridico,credito,boleto);
 
 	e->imprimirLogs();
-
+	e->salvarLogs();
 }
 
 void testaFuncionario()
@@ -308,6 +328,7 @@ void testaFuncionario()
 	//imprimindo os logs antes de sair devido a excecao de remover funcionario
 	e->imprimirLogs();
 
+	e->salvarLogs();
 	e->removerFuncionario(&f);
 }
 
@@ -342,6 +363,9 @@ int main()
 	std::cout<<"Bem vindo ao sistema de testes do sistema CEFIMl(eh so as iniciais dos nomes dos integrantes do grupo!)\n"<<std::endl;
 	std::cout << "Acesse nosso repositorio no Github pelo link: https://github.com/ecommercecpp/Projeto-OO"<<std::endl;
 	std::cout << "Acesse nossa documentacao pelo link: https://ecommercecpp.github.io/Projeto-OO/md__c___users_felip__one_drive__documentos__git_hub_poo__r_e_a_d_m_e.html"<<std::endl;	
+	std::cout << "+-----------------+"<<std::endl;
+	std::cout<<"\nDecidimos separar os testes em TestaFuncionario e TestaCliente para uma melhor organizacao do trabalho e para \nevitar que o programa se encerre desnecessariamente ao chamar a excecao de acesso negado solicitada em um dos testes.\n"<<std::endl;
+	std::cout << "+-----------------+"<<std::endl;
 	std::cout<<"\nDigite 1 para funcionario e 2 para cliente: "<<std::endl;
 	std::cin>>a;
 	inicializaTestes();

@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "categoria.hpp"
+#include "empresa.hpp"
 
 /**
  * @brief Construct a new Categoria::Categoria object
@@ -17,7 +18,15 @@ Categoria::Categoria()
  */
 Categoria::Categoria(std::string nome)
 {
-    setNome(nome);
+	std::string permissao = "cadastrarCategoria";
+	std::string atributos = "nome: " + nome;
+	Empresa::getEmpresa()->gerarLogEscrita("categoria", atributos);
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		Empresa::getEmpresa()->gerarLogExcecao("categoria", "Categoria");
+		throw AcessDeniedException();
+	}else{    
+        setNome(nome);
+    }
 }
 
 /**
@@ -35,7 +44,15 @@ Categoria::~Categoria()
  */
 std::string Categoria::getNome()
 {
-    return nome;
+    std::string permissao = "verificarNomeCategoria";
+    std::string atributos = "nome: " + nome;
+    Empresa::getEmpresa()->gerarLogEscrita("categoria", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("categoria", "getNome");
+        throw AcessDeniedException();
+    }else{    
+        return this->nome;
+    }
 }
 
 /**
@@ -45,5 +62,13 @@ std::string Categoria::getNome()
  */
 void Categoria::setNome(std::string nome)
 {
-    this->nome = nome;
+    std::string permissao = "cadastrarNomeCategoria";
+    std::string atributos = "nome: " + nome;
+    Empresa::getEmpresa()->gerarLogEscrita("categoria", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("categoria", "setNome");
+        throw AcessDeniedException();
+    }else{    
+        this->nome = nome;
+    }
 }
