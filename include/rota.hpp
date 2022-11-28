@@ -306,12 +306,23 @@ public:
         else
         {
             //printar ordemFuncionarios.size
-            std::cout<< this->ordemFuncionarios.size()<<std::endl;
-            for (unsigned int i = 0; i < this->ordemFuncionarios.size(); i++)
+            //std::cout<< this->ordemFuncionarios.size()<<std::endl;
+            //excluir valores repetidos do vetor de ordemFuncionarios
+            for (unsigned int i = 0; i < ordemFuncionarios.size(); i++)
+            {
+                for (unsigned int j = i + 1; j < ordemFuncionarios.size(); j++)
+                {
+                    if (ordemFuncionarios[i] == ordemFuncionarios[j])
+                    {
+                        ordemFuncionarios.erase(ordemFuncionarios.begin() + j);
+                    }
+                }
+            }
+            for (unsigned int i = 0; i < ordemFuncionarios.size(); i++)
             {
                 if (ordemFuncionarios[i]->getTurno() == 8.00)
                 {
-                    std::cout<<"testando"<<std::endl;
+        
                     float horarioChegada = 8 - tempoViagens[i];
                     std::cout << "Horario de embarque de: " << ordemFuncionarios[i]->getNome() << " = " << horarioChegada << " hrs"<< std::endl;
                     //horarioChegadas.push_back(horarioChegada);
