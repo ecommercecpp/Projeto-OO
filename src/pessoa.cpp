@@ -71,6 +71,7 @@ void Pessoa::setcpf_cnpj(std::string cpf_cnpj)
 			if (!ValidaCPFCNPJ::GetInstance()->validaCPF(cpf_cnpj)) // Concertar
 			{
 				//std::cout << "CPF invalido (valida) -> " << cpf_cnpj.length() << std::endl;
+				Empresa::getEmpresa()->gerarLogExcecao("pessoa", "setcpf_cnpj");
 				throw InvalidCPFException();
 			}
 			else
@@ -84,6 +85,7 @@ void Pessoa::setcpf_cnpj(std::string cpf_cnpj)
 			if (!ValidaCPFCNPJ::GetInstance()->validaCNPJ(cpf_cnpj))
 			{
 				//std::cout << "CMNPJ invalido (valida)" << std::endl;
+				Empresa::getEmpresa()->gerarLogExcecao("pessoa", "setcpf_cnpj");
 				throw InvalidCNPJException();
 			}
 			else
@@ -93,7 +95,8 @@ void Pessoa::setcpf_cnpj(std::string cpf_cnpj)
 		}
 		else
 		{
-			std::cout << "CPF ou CNPJ invalido" << cpf_cnpj.length() << " <- o tamain | o numero -> " << cpf_cnpj << std::endl;
+			//std::cout << "CPF ou CNPJ invalido" << cpf_cnpj.length() << " <- o tamain | o numero -> " << cpf_cnpj << std::endl;
+			Empresa::getEmpresa()->gerarLogExcecao("pessoa", "setcpf_cnpj");
 			throw InvalidCPFException();
 		}
 	}
@@ -107,8 +110,10 @@ void Pessoa::setcpf_cnpj(std::string cpf_cnpj)
 void Pessoa::setEmail(std::string email)
 {
 	std::string permissao = "cadastrarEmailPessoa";
+	Empresa::getEmpresa()->gerarLogEscrita("pessoa", "email");
 	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
 	{
+		Empresa::getEmpresa()->gerarLogExcecao("pessoa", "setEmail");
 		throw AcessDeniedException();
 	}
 	else
@@ -125,8 +130,10 @@ void Pessoa::setEmail(std::string email)
 void Pessoa::setTipo(int tipo)
 {
 	std::string permissao = "cadastrarTipoPessoa";
+	Empresa::getEmpresa()->gerarLogEscrita("pessoa", "tipo");
 	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
 	{
+		Empresa::getEmpresa()->gerarLogExcecao("pessoa", "setTipo");
 		throw AcessDeniedException();
 	}
 	else
@@ -138,6 +145,7 @@ void Pessoa::setTipo(int tipo)
 		}
 		else
 		{
+			Empresa::getEmpresa()->gerarLogExcecao("pessoa", "setTipo");
 			throw InvalidTypeException();
 		}
 
@@ -176,11 +184,16 @@ std::string Pessoa::getNome()
  */
 std::string Pessoa::getCpf_cnpj()
 {
+	std::string informacao = "getCpf_Cnpj: " + cpf_cnpj;
+	std::string entidade = "cpf_cnpj";
+	std::string funcionalidade = "getCpf_cnpj";
+	Empresa::getEmpresa()->gerarLogLeitura(entidade, informacao);
 	std::string permissao = "verificarDocumentoPessoa";
 	//gerar log de leitura
 
 	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
 	{
+		Empresa::getEmpresa()->gerarLogExcecao(entidade, funcionalidade);
 		throw AcessDeniedException();
 	}
 	else
@@ -196,9 +209,12 @@ std::string Pessoa::getCpf_cnpj()
  */
 std::string Pessoa::getEndereco()
 {
+	std::string informacao = "getEndereco: " + endereco;
+	Empresa::getEmpresa()->gerarLogLeitura("endereco", informacao);
 	std::string permissao = "verificarEnderecoPessoa";
 	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
 	{
+		Empresa::getEmpresa()->gerarLogExcecao("endereco", "getEndereco");
 		throw AcessDeniedException();
 	}
 	else
@@ -214,9 +230,12 @@ std::string Pessoa::getEndereco()
  */
 std::string Pessoa::getEmail()
 {
+	std::string informacao = "getEmail: " + email;
+	Empresa::getEmpresa()->gerarLogLeitura("email", informacao);
 	std::string permissao = "verificarEmailPessoa";
 	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
 	{
+		Empresa::getEmpresa()->gerarLogExcecao("email", "getEmail");
 		throw AcessDeniedException();
 	}
 	else
@@ -225,16 +244,19 @@ std::string Pessoa::getEmail()
 	}
 }
 
+
 /**
  * @brief Retorna o tipo da pessoa
  *
  * @return int
  */
-int Pessoa::getTipo()
-{
+int Pessoa::getTipo(){
+	std::string informacao = "getTipo: " + std::to_string(tipo);
+	Empresa::getEmpresa()->gerarLogLeitura("tipo", informacao);
 	std::string permissao = "verificarTipoPessoa";
 	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
 	{
+		Empresa::getEmpresa()->gerarLogExcecao("tipo", "getTipo");
 		throw AcessDeniedException();
 	}
 	else
@@ -242,7 +264,6 @@ int Pessoa::getTipo()
 	return tipo;
 	}
 }
-
 
 /**
  * @brief Seta o nome da pessoa
@@ -252,8 +273,10 @@ int Pessoa::getTipo()
 void Pessoa::setNome(std::string nome)
 {
 	std::string permissao = "cadastrarNomePessoa";
+	Empresa::getEmpresa()->gerarLogEscrita("pessoa", "nome");
 	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
 	{
+		Empresa::getEmpresa()->gerarLogExcecao("pessoa", "setNome");
 		throw AcessDeniedException();
 	}
 	else
@@ -270,8 +293,10 @@ void Pessoa::setNome(std::string nome)
 void Pessoa::setEndereco(std::string endereco)
 {
 	std::string permissao = "cadastrarEnderecoPessoa";
+	Empresa::getEmpresa()->gerarLogEscrita("pessoa", "endereco");
 	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
 	{
+		Empresa::getEmpresa()->gerarLogExcecao("pessoa", "setEndereco");
 		throw AcessDeniedException();
 	}
 	else

@@ -17,8 +17,8 @@ class OrdemCompra
 		std::string dataString;
 		int quantidade;
 	public:
-		OrdemCompra(){};
-		~OrdemCompra(){};
+		OrdemCompra(){}
+		~OrdemCompra(){}
 		void gerarOrdemCompra(MateriaPrima* mp, int quantidade){
                 Lote lote;
                 Data data;
