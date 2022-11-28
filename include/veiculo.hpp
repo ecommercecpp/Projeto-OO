@@ -11,8 +11,9 @@
 class Veiculo
 {
     private:
+        int tipo;
         int capacidade;
-        std::string placa;
+        //std::string placa;
         std::vector <Funcionario> rotas;
 
     public:
@@ -20,13 +21,14 @@ class Veiculo
         Veiculo(Veiculo &other) = delete;
         Veiculo& operator=(Veiculo &other) = delete;
         ~Veiculo();
-        void alteraHorario(string horario);
+        void alteraHorario(std::string horario);
         int getCapacidade();
-        std::string getPlaca();
-        std:: vector<Funcionario> getRotas();
+        //std::vector<Funcionario*> getRotas();
         void setCapacidade(int capacidade);
-        void setPlaca(std::string placa);
-        void setRotas(std::vector<Funcionario>); 
+        //void setRotas(std::vector<Funcionario*>); 
+        void setTipo(int tipo);
+        int getTipo();
+        std::string retornaTipoVeiculo();
      
 };
 

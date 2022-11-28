@@ -223,6 +223,11 @@ std::vector<std::string> permissao() {
 	permissoes.push_back("gerarOrdemCompra");
 
 	permissoes.push_back("gerarOrcamentoMP");
+
+	permissoes.push_back("setarTipoVeiculo");
+	permissoes.push_back("verificarTipoVeiculo");
+	permissoes.push_back("retornarTipoVeiculo");
+	permissoes.push_back("alterarHorarioVeiculo");
 	
 
   return permissoes;
