@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "metodoPagamento.hpp"
+#include "empresa.hpp"
 
 /**
  * @brief Construct a new Metodo Pagamento:: Metodo Pagamento object
@@ -19,9 +20,20 @@ MetodoPagamento::MetodoPagamento()
  */
 MetodoPagamento::MetodoPagamento(std::string codigo, std::string nome, Data dataDeVencimento)
 {
-    this->codigo = codigo;
-    this->nome = nome;
-    this->dataDeVencimento = dataDeVencimento;
+    std::string permissao = "cadastrarMetodoPagamento";
+    std::string atributos = "codigo: " + codigo + " nome: " + nome + " dataDeVencimento";
+    Empresa::getEmpresa()->gerarLogEscrita("metodoPagamento", atributos);
+    if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+    {
+        Empresa::getEmpresa()->gerarLogExcecao("metodoPagamento", "MetodoPagamento");
+        throw AcessDeniedException();
+    }
+    else
+    {
+        this->codigo = codigo;
+        this->nome = nome;
+        this->dataDeVencimento = dataDeVencimento;
+    }
 }
 
 /**
@@ -31,7 +43,18 @@ MetodoPagamento::MetodoPagamento(std::string codigo, std::string nome, Data data
  */
 std::string MetodoPagamento::getCodigo()
 {
-    return this->codigo;
+    std::string permissao = "verificarCodigoMetodoPagamento";
+    std::string atributos = "codigo: " + codigo;
+    Empresa::getEmpresa()->gerarLogEscrita("metodoPagamento", atributos);
+    if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+    {
+        Empresa::getEmpresa()->gerarLogExcecao("metodoPagamento", "getCodigo");
+        throw AcessDeniedException();
+    }
+    else
+    {
+        return this->codigo;
+    }
 }
 
 /**
@@ -41,7 +64,18 @@ std::string MetodoPagamento::getCodigo()
  */
 void MetodoPagamento::setCodigo(std::string codigo)
 {
-    this->codigo = codigo;
+    std::string permissao = "alterarCodigoMetodoPagamento";
+    std::string atributos = "codigo: " + codigo;
+    Empresa::getEmpresa()->gerarLogEscrita("metodoPagamento", atributos);
+    if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+    {
+        Empresa::getEmpresa()->gerarLogExcecao("metodoPagamento", "setCodigo");
+        throw AcessDeniedException();
+    }
+    else
+    {
+        this->codigo = codigo;
+    }
 }
 
 /**
@@ -51,7 +85,18 @@ void MetodoPagamento::setCodigo(std::string codigo)
  */
 std::string MetodoPagamento::getNome()
 {
-    return this->nome;
+    std::string permissao = "verificarNomeMetodoPagamento";
+    std::string atributos = "nome: " + nome;
+    Empresa::getEmpresa()->gerarLogEscrita("metodoPagamento", atributos);
+    if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+    {
+        Empresa::getEmpresa()->gerarLogExcecao("metodoPagamento", "getNome");
+        throw AcessDeniedException();
+    }
+    else
+    {
+        return this->nome;
+    }
 }
 
 /**
@@ -61,7 +106,18 @@ std::string MetodoPagamento::getNome()
  */
 void MetodoPagamento::setNome(std::string nome)
 {
-    this->nome = nome;
+    std::string permissao = "alterarNomeMetodoPagamento";
+    std::string atributos = "nome: " + nome;
+    Empresa::getEmpresa()->gerarLogEscrita("metodoPagamento", atributos);
+    if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+    {
+        Empresa::getEmpresa()->gerarLogExcecao("metodoPagamento", "setNome");
+        throw AcessDeniedException();
+    }
+    else
+    {
+        this->nome = nome;
+    }
 }
 
 /**
@@ -71,7 +127,18 @@ void MetodoPagamento::setNome(std::string nome)
  */
 Data MetodoPagamento::getDataDeVencimento()
 {
-    return this->dataDeVencimento;
+    std::string permissao = "verificarDataDeVencimentoMetodoPagamento";
+    std::string atributos = "dataDeVencimento: " + dataDeVencimento.getData();
+    Empresa::getEmpresa()->gerarLogEscrita("metodoPagamento", atributos);
+    if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+    {
+        Empresa::getEmpresa()->gerarLogExcecao("metodoPagamento", "getDataDeVencimento");
+        throw AcessDeniedException();
+    }
+    else
+    {
+        return this->dataDeVencimento;
+    }
 }
 
 /**
@@ -81,5 +148,16 @@ Data MetodoPagamento::getDataDeVencimento()
  */
 void MetodoPagamento::setDataDeVencimento(Data dataDeVencimento)
 {
-    this->dataDeVencimento = dataDeVencimento;
+    std::string permissao = "alterarDataDeVencimentoMetodoPagamento";
+    std::string atributos = "dataDeVencimento: " + dataDeVencimento.getData();
+    Empresa::getEmpresa()->gerarLogEscrita("metodoPagamento", atributos);
+    if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+    {
+        Empresa::getEmpresa()->gerarLogExcecao("metodoPagamento", "setDataDeVencimento");
+        throw AcessDeniedException();
+    }
+    else
+    {
+        this->dataDeVencimento = dataDeVencimento;
+    }
 }

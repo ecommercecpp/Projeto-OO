@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "boleto.hpp"
+#include "empresa.hpp"
 
 /**
  * @brief Construct a new Boleto:: Boleto object
@@ -20,10 +21,21 @@ Boleto::Boleto()
  */
 Boleto::Boleto(int codigoDeBarras, std::string nomeDoPagador, Data dataDeVencimento, int prazoDePagamento)
 {
-    this->codigoDeBarras = codigoDeBarras;
-    this->nomeDoPagador = nomeDoPagador;
-    this->dataDeVencimento = dataDeVencimento;
-    this->prazoDePagamento = prazoDePagamento;
+    std::string permissao = "cadastrarBoleto";
+    std::string atributos = "codigoDeBarras: " + std::to_string(codigoDeBarras) + ", nomeDoPagador: " + nomeDoPagador + ", dataDeVencimento: " + ", prazoDePagamento: " + std::to_string(prazoDePagamento);
+    Empresa::getEmpresa()->gerarLogEscrita("boleto", atributos);
+    if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+    {
+        Empresa::getEmpresa()->gerarLogExcecao("boleto", "Boleto");
+        throw AcessDeniedException();
+    }
+    else
+    {
+        this->codigoDeBarras = codigoDeBarras;
+        this->nomeDoPagador = nomeDoPagador;
+        this->dataDeVencimento = dataDeVencimento;
+        this->prazoDePagamento = prazoDePagamento;
+    }
 }
 
 /**
@@ -33,7 +45,18 @@ Boleto::Boleto(int codigoDeBarras, std::string nomeDoPagador, Data dataDeVencime
  */
 int Boleto::getCodigoDeBarras()
 {
-    return this->codigoDeBarras;
+    std::string permissao = "verificarCodigoDeBarrasBoleto";
+    std::string atributos = "codigoDeBarras: " + std::to_string(codigoDeBarras);
+    Empresa::getEmpresa()->gerarLogLeitura("boleto", atributos);
+    if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+    {
+        Empresa::getEmpresa()->gerarLogExcecao("boleto", "getCodigoDeBarras");
+        throw AcessDeniedException();
+    }
+    else
+    {
+        return this->codigoDeBarras;
+    }
 }
 
 /**
@@ -43,7 +66,18 @@ int Boleto::getCodigoDeBarras()
  */
 void Boleto::setCodigoDeBarras(int codigoDeBarras)
 {
-    this->codigoDeBarras = codigoDeBarras;
+    std::string permissao = "alterarCodigoDeBarrasBoleto";
+    std::string atributos = "codigoDeBarras: " + std::to_string(codigoDeBarras);
+    Empresa::getEmpresa()->gerarLogEscrita("boleto", atributos);
+    if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+    {
+        Empresa::getEmpresa()->gerarLogExcecao("boleto", "setCodigoDeBarras");
+        throw AcessDeniedException();
+    }
+    else
+    {
+        this->codigoDeBarras = codigoDeBarras;
+    }
 }
 
 /**
@@ -53,7 +87,18 @@ void Boleto::setCodigoDeBarras(int codigoDeBarras)
  */
 std::string Boleto::getNomeDoPagador()
 {
-    return this->nomeDoPagador;
+    std::string permissao = "verificarNomeDoPagadorBoleto";
+    std::string atributos = "nomeDoPagador: " + nomeDoPagador;
+    Empresa::getEmpresa()->gerarLogLeitura("boleto", atributos);
+    if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+    {
+        Empresa::getEmpresa()->gerarLogExcecao("boleto", "getNomeDoPagador");
+        throw AcessDeniedException();
+    }
+    else
+    {
+        return this->nomeDoPagador;
+    }
 }
 
 /**
@@ -63,7 +108,18 @@ std::string Boleto::getNomeDoPagador()
  */
 void Boleto::setNomeDoPagador(std::string nomeDoPagador)
 {
-    this->nomeDoPagador = nomeDoPagador;
+    std::string permissao = "alterarNomeDoPagadorBoleto";
+    std::string atributos = "nomeDoPagador: " + nomeDoPagador;
+    Empresa::getEmpresa()->gerarLogEscrita("boleto", atributos);
+    if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+    {
+        Empresa::getEmpresa()->gerarLogExcecao("boleto", "setNomeDoPagador");
+        throw AcessDeniedException();
+    }
+    else
+    {
+        this->nomeDoPagador = nomeDoPagador;
+    }
 }
 
 /**
@@ -73,7 +129,18 @@ void Boleto::setNomeDoPagador(std::string nomeDoPagador)
  */
 Data Boleto::getDataDeVencimento()
 {
-    return this->dataDeVencimento;
+    std::string permissao = "verificarDataDeVencimentoBoleto";
+    std::string atributos = "dataDeVencimento: " + dataDeVencimento.getData();
+    Empresa::getEmpresa()->gerarLogLeitura("boleto", atributos);
+    if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+    {
+        Empresa::getEmpresa()->gerarLogExcecao("boleto", "getDataDeVencimento");
+        throw AcessDeniedException();
+    }
+    else
+    {
+        return this->dataDeVencimento;
+    }
 }
 
 /**
@@ -83,7 +150,18 @@ Data Boleto::getDataDeVencimento()
  */
 void Boleto::setDataDeVencimento(Data dataDeVencimento)
 {
-    this->dataDeVencimento = dataDeVencimento;
+    std::string permissao = "alterarDataDeVencimentoBoleto";
+    std::string atributos = "dataDeVencimento: " + dataDeVencimento.getData();
+    Empresa::getEmpresa()->gerarLogEscrita("boleto", atributos);
+    if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+    {
+        Empresa::getEmpresa()->gerarLogExcecao("boleto", "setDataDeVencimento");
+        throw AcessDeniedException();
+    }
+    else
+    {
+        this->dataDeVencimento = dataDeVencimento;
+    }
 }
 
 /**
@@ -93,7 +171,18 @@ void Boleto::setDataDeVencimento(Data dataDeVencimento)
  */
 int Boleto::getPrazoDePagamento()
 {
-    return this->prazoDePagamento;
+    std::string permissao = "verificarPrazoDePagamentoBoleto";
+    std::string atributos = "prazoDePagamento: " + std::to_string(prazoDePagamento);
+    Empresa::getEmpresa()->gerarLogLeitura("boleto", atributos);
+    if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+    {
+        Empresa::getEmpresa()->gerarLogExcecao("boleto", "getPrazoDePagamento");
+        throw AcessDeniedException();
+    }
+    else
+    {
+        return this->prazoDePagamento;
+    }
 }
 
 /**
@@ -103,5 +192,16 @@ int Boleto::getPrazoDePagamento()
  */
 void Boleto::setPrazoDePagamento(int prazoDePagamento)
 {
-    this->prazoDePagamento = prazoDePagamento;
+    std::string permissao = "alterarPrazoDePagamentoBoleto";
+    std::string atributos = "prazoDePagamento: " + std::to_string(prazoDePagamento);
+    Empresa::getEmpresa()->gerarLogEscrita("boleto", atributos);
+    if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+    {
+        Empresa::getEmpresa()->gerarLogExcecao("boleto", "setPrazoDePagamento");
+        throw AcessDeniedException();
+    }
+    else
+    {
+        this->prazoDePagamento = prazoDePagamento;
+    }
 }

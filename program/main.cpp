@@ -158,9 +158,35 @@ std::vector<std::string> permissao() {
 	permissoes.push_back("exibirDataPedidoDeCompra");
 	permissoes.push_back("gerarPedidoDeCompra");
 	permissoes.push_back("imprimirPedidoDeCompra");
+
+	permissoes.push_back("cadastrarMetodoPagamento");
+	permissoes.push_back("verificarCodigoMetodoPagamento");
+	permissoes.push_back("alterarCodigoMetodoPagamento");
+	permissoes.push_back("verificarNomeMetodoPagamento");
+	permissoes.push_back("alterarNomeMetodoPagamento");
+	permissoes.push_back("verificarDataDeVencimentoMetodoPagamento");
+	permissoes.push_back("alterarDataDeVencimentoMetodoPagamento");
+
+	permissoes.push_back("cadastrarCredito");
+	permissoes.push_back("verificarCodigoDeSegurancaCredito");
+	permissoes.push_back("alterarCodigoDeSegurancaCredito");
+	permissoes.push_back("verificarNomeDoTitularCredito");
+	permissoes.push_back("alterarNomeDoTitularCredito");
+	permissoes.push_back("verificarDataDeVencimentoCredito");
+	permissoes.push_back("alterarDataDeVencimentoCredito");
+	permissoes.push_back("verificarNumeroDoCartaoCredito");
+	permissoes.push_back("alterarNumeroDoCartaoCredito");
 	
-
-
+	permissoes.push_back("cadastrarBoleto");
+	permissoes.push_back("verificarCodigoDeBarrasBoleto");
+	permissoes.push_back("alterarCodigoDeBarrasBoleto");
+	permissoes.push_back("verificarNomeDoPagadorBoleto");
+	permissoes.push_back("alterarNomeDoPagadorBoleto");
+	permissoes.push_back("verificarDataDeVencimentoBoleto");
+	permissoes.push_back("alterarDataDeVencimentoBoleto");
+	permissoes.push_back("verificarPrazoDePagamentoBoleto");
+	permissoes.push_back("alterarPrazoDePagamentoBoleto");
+	permissoes.push_back("verificarValorBoleto");
 
   return permissoes;
 }
@@ -188,13 +214,13 @@ void testaCliente(){
 	Cliente cFisico;
 	Cliente cJuridico;
 	cFisico.setNome("Jorge");
-	cFisico.setcpf_cnpj("12345678901");
+	cFisico.setcpf_cnpj("37063436066");
 	cFisico.setEndereco("Rua 5");
 	cFisico.setEmail("jorge@email.com");
 	cFisico.setTipo(0); // 0 - Física, 1 - Jurídica
 	cFisico.setTelefone("9876543210");
 	cJuridico.setNome("Sergio");
-	cJuridico.setcpf_cnpj("12345678901232");
+	cJuridico.setcpf_cnpj("57304164000120");
 	cJuridico.setEndereco("Rua 6");
 	cJuridico.setEmail("sergio@email.com");
 	cJuridico.setTipo(1); // 0 - Física, 1 - Jurídica

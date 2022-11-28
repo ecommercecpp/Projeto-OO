@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "credito.hpp"
+#include "empresa.hpp"
 
 /**
  * @brief Construct a new Credito::Credito object
@@ -20,10 +21,21 @@ Credito::Credito()
  */
 Credito::Credito(std::string codigoDeSeguranca, std::string nomeDoTitular, Data dataDeVencimento, std::string numeroDoCartao)
 {
-    this->codigoDeSeguranca = codigoDeSeguranca;
-    this->nomeDoTitular = nomeDoTitular;
-    this->dataDeVencimento = dataDeVencimento;
-    this->numeroDoCartao = numeroDoCartao;
+    std::string permissao = "cadastrarCredito";
+    std::string atributos = "codigoDeSeguranca: " + codigoDeSeguranca + ", nomeDoTitular: " + nomeDoTitular + ", dataDeVencimento" + ", numeroDoCartao: " + numeroDoCartao;
+    Empresa::getEmpresa()->gerarLogEscrita("credito", atributos);
+    if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+    {
+        Empresa::getEmpresa()->gerarLogExcecao("credito", "Credito");
+        throw AcessDeniedException();
+    }
+    else
+    {
+        this->codigoDeSeguranca = codigoDeSeguranca;
+        this->nomeDoTitular = nomeDoTitular;
+        this->dataDeVencimento = dataDeVencimento;
+        this->numeroDoCartao = numeroDoCartao;
+    }
 }
 
 /**
@@ -33,7 +45,18 @@ Credito::Credito(std::string codigoDeSeguranca, std::string nomeDoTitular, Data 
  */
 std::string Credito::getCodigoDeSeguranca()
 {
-    return this->codigoDeSeguranca;
+    std::string permissao = "verificarCodigoDeSegurancaCredito";
+    std::string atributos = "codigoDeSeguranca: " + codigoDeSeguranca;
+    Empresa::getEmpresa()->gerarLogLeitura("credito", atributos);
+    if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+    {
+        Empresa::getEmpresa()->gerarLogExcecao("credito", "getCodigoDeSeguranca");
+        throw AcessDeniedException();
+    }
+    else
+    {
+        return this->codigoDeSeguranca;
+    }
 }
 
 /**
@@ -43,7 +66,18 @@ std::string Credito::getCodigoDeSeguranca()
  */
 void Credito::setCodigoDeSeguranca(std::string codigoDeSeguranca)
 {
-    this->codigoDeSeguranca = codigoDeSeguranca;
+    std::string permissao = "alterarCodigoDeSegurancaCredito";
+    std::string atributos = "codigoDeSeguranca: " + codigoDeSeguranca;
+    Empresa::getEmpresa()->gerarLogEscrita("credito", atributos);
+    if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+    {
+        Empresa::getEmpresa()->gerarLogExcecao("credito", "setCodigoDeSeguranca");
+        throw AcessDeniedException();
+    }
+    else
+    {
+        this->codigoDeSeguranca = codigoDeSeguranca;
+    }
 }
 
 /**
@@ -53,7 +87,18 @@ void Credito::setCodigoDeSeguranca(std::string codigoDeSeguranca)
  */
 std::string Credito::getNomeDoTitular()
 {
-    return this->nomeDoTitular;
+    std::string permissao = "verificarNomeDoTitularCredito";
+    std::string atributos = "nomeDoTitular: " + nomeDoTitular;
+    Empresa::getEmpresa()->gerarLogLeitura("credito", atributos);
+    if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+    {
+        Empresa::getEmpresa()->gerarLogExcecao("credito", "getNomeDoTitular");
+        throw AcessDeniedException();
+    }
+    else
+    {
+        return this->nomeDoTitular;
+    }
 }
 
 /**
@@ -63,7 +108,18 @@ std::string Credito::getNomeDoTitular()
  */
 void Credito::setNomeDoTitular(std::string nomeDoTitular)
 {
-    this->nomeDoTitular = nomeDoTitular;
+    std::string permissao = "alterarNomeDoTitularCredito";
+    std::string atributos = "nomeDoTitular: " + nomeDoTitular;
+    Empresa::getEmpresa()->gerarLogEscrita("credito", atributos);
+    if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+    {
+        Empresa::getEmpresa()->gerarLogExcecao("credito", "setNomeDoTitular");
+        throw AcessDeniedException();
+    }
+    else
+    {
+        this->nomeDoTitular = nomeDoTitular;
+    }
 }
 
 /**
@@ -73,7 +129,18 @@ void Credito::setNomeDoTitular(std::string nomeDoTitular)
  */
 Data Credito::getDataDeVencimento()
 {
-    return this->dataDeVencimento;
+    std::string permissao = "verificarDataDeVencimentoCredito";
+    std::string atributos = "dataDeVencimento: " + dataDeVencimento.getData();
+    Empresa::getEmpresa()->gerarLogLeitura("credito", atributos);
+    if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+    {
+        Empresa::getEmpresa()->gerarLogExcecao("credito", "getDataDeVencimento");
+        throw AcessDeniedException();
+    }
+    else
+    {
+        return this->dataDeVencimento;
+    }
 }
 
 /**
@@ -83,7 +150,18 @@ Data Credito::getDataDeVencimento()
  */
 void Credito::setDataDeVencimento(Data dataDeVencimento)
 {
-    this->dataDeVencimento = dataDeVencimento;
+    std::string permissao = "alterarDataDeVencimentoCredito";
+    std::string atributos = "dataDeVencimento: " + dataDeVencimento.getData();
+    Empresa::getEmpresa()->gerarLogEscrita("credito", atributos);
+    if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+    {
+        Empresa::getEmpresa()->gerarLogExcecao("credito", "setDataDeVencimento");
+        throw AcessDeniedException();
+    }
+    else
+    {
+        this->dataDeVencimento = dataDeVencimento;
+    }
 }
 
 /**
@@ -93,7 +171,18 @@ void Credito::setDataDeVencimento(Data dataDeVencimento)
  */
 std::string Credito::getNumeroDoCartao()
 {
-    return this->numeroDoCartao;
+    std::string permissao = "verificarNumeroDoCartaoCredito";
+    std::string atributos = "numeroDoCartao: " + numeroDoCartao;
+    Empresa::getEmpresa()->gerarLogLeitura("credito", atributos);
+    if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+    {
+        Empresa::getEmpresa()->gerarLogExcecao("credito", "getNumeroDoCartao");
+        throw AcessDeniedException();
+    }
+    else
+    {
+        return this->numeroDoCartao;
+    }
 }
 
 /**
@@ -103,5 +192,16 @@ std::string Credito::getNumeroDoCartao()
  */
 void Credito::setNumeroDoCartao(std::string numeroDoCartao)
 {
-    this->numeroDoCartao = numeroDoCartao;
+    std::string permissao = "alterarNumeroDoCartaoCredito";
+    std::string atributos = "numeroDoCartao: " + numeroDoCartao;
+    Empresa::getEmpresa()->gerarLogEscrita("credito", atributos);
+    if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+    {
+        Empresa::getEmpresa()->gerarLogExcecao("credito", "setNumeroDoCartao");
+        throw AcessDeniedException();
+    }
+    else
+    {
+        this->numeroDoCartao = numeroDoCartao;
+    }
 }
