@@ -112,175 +112,252 @@ std::vector<std::string> permissao() {
   return permissoes;
 }
 
+void testaCliente(){
+	//c.setTipo(0);// 0 - Física, 1 - Jurídica
+
+	Empresa *e = Empresa::getEmpresa();
+	//criar um usuarioLogado
+	UsuarioLogado *U = UsuarioLogado::GetInstance();
+	U->setNome("UsuarioCliente");
+	U->setSenha("123");
+	U->setTipo(0);
+	U->setcpf_cnpj("08167486669");
+	U->setEmail("user@user.com");
+	
+	U->setPermissoes(permissao());
+
+	//logar usuario na empresa
+	e->logar(U);
+
+	std::cout << "Nome do usuario logado(TestaCliente): " << U->getNome() << std::endl;
+	std::cout <<"Quantidade de Permissoes no vetor de permissoes do usuario Logado: "<< U->getPermissoes().size() << std::endl;
+	
+
+	std::cout<<"-------Gerando a Cliente----------"<<std::endl;
+	Cliente cFisico;//"Lojao", "123456789", "Rua 1", "jao@jao.jao",1,"987654321"
+	Cliente cJuridico;
+	cFisico.setNome("Jorge");
+	cFisico.setcpf_cnpj("12345678901");
+	cFisico.setEndereco("Rua 5");
+	cFisico.setEmail("jorge@email.com");
+	cFisico.setTipo(0); // 0 - Física, 1 - Jurídica
+	cFisico.setTelefone("9876543210");
+	cJuridico.setNome("Sergio");
+	cJuridico.setcpf_cnpj("12345678901232");
+	cJuridico.setEndereco("Rua 6");
+	cJuridico.setEmail("sergio@email.com");
+	cJuridico.setTipo(1); // 0 - Física, 1 - Jurídica
+	cJuridico.setTelefone("9876543290");
+
+	std::cout << "Nome do Cliente Fisico criado: " << cFisico.getNome() << " | Documento: " << cFisico.getCpf_cnpj() << std::endl;
+	std::cout << "Nome do Cliente Juridico criado: " << cJuridico.getNome() << " | Documento: " << cJuridico.getCpf_cnpj() << std::endl;
+
+	// criar  um orcamento
+	Orcamento *o = new Orcamento();
+	Lote *lote = new Lote();
+	Produto *produto = new Produto();
+
+	produto->setNome("Mesa");
+	produto->setCodigo(1);
+	produto->setValorDeVenda(30.0);
+	produto->setEstoqueMinimo(20);
+	produto->setQtdEstoque(20);
+	produto->setTamanhoDoLoteMinimo(20); // definir certo
+	Categoria *categoria = new Categoria();
+	categoria->setNome("Moveis");
+	produto->setCategoria(categoria);
+
+	lote->produzir(produto, produto->getEstoqueMinimo());
+	// criar materia prima e adicionar ao produto
+	MateriaPrima *materiaPrima = new MateriaPrima();
+	MateriaPrima *materiaPrima2 = new MateriaPrima();
+	MateriaPrima *materiaPrima3 = new MateriaPrima();
+	MateriaPrima *materiaPrima4 = new MateriaPrima();
+
+	materiaPrima->setNome("Madeira");
+	materiaPrima->setQuantidade(450);
+	materiaPrima->setUnidadeMedida("g");
+	materiaPrima->setEstoquemin(1000);
+	materiaPrima->setEstoqueTotal(1500);
+	produto->adicionarMateriaPrima(materiaPrima);
+
+	materiaPrima2->setNome("Plastico");
+	materiaPrima2->setQuantidade(150);
+	materiaPrima2->setUnidadeMedida("g");
+	materiaPrima2->setEstoquemin(1000);
+	materiaPrima2->setEstoqueTotal(1500);
+	produto->adicionarMateriaPrima(materiaPrima2);
+
+	materiaPrima3->setNome("Aluminio");
+	materiaPrima3->setQuantidade(100);
+	materiaPrima3->setUnidadeMedida("g");
+	materiaPrima3->setEstoquemin(1000);
+	materiaPrima3->setEstoqueTotal(1500);
+	produto->adicionarMateriaPrima(materiaPrima3);
+
+	materiaPrima4->setNome("Parafusos");
+	materiaPrima4->setQuantidade(8);
+	materiaPrima4->setUnidadeMedida("un");
+	materiaPrima4->setEstoquemin(20);
+	materiaPrima4->setEstoqueTotal(30);
+	produto->adicionarMateriaPrima(materiaPrima4);
+
+	std::cout << "Nome: " << produto->getNome() << std::endl;
+	std::cout << "Preco: " << produto->getValorDeVenda() << std::endl;
+	std::cout << "Quantidade estoque min: " << produto->getEstoqueMinimo() << std::endl;
+	std::cout << "Codigo: " << produto->getCodigo() << std::endl;
+	// std::cout << "Estoque depois de efetuar a compra: " << materiaPrima->getEstoqueDisponivel() << " "<< materiaPrima->getUnidadeMedida() << std::endl;
+
+	produto->imprimirMateriaPrima();
+
+	// criar vetor de produtos
+	std::vector<Produto *> produtos;
+	// adicionar produtos ao vetor
+	produtos.push_back(produto);
+
+	//fazendo o orcamento pedido nos testes
+	o->gerarOrcamento(&cJuridico, 10, produtos);
+	o->imprimeOrcamento(&cJuridico, produtos);
+
+	PedidoDeCompra *p = new PedidoDeCompra();
+	Credito *credito = new Credito();
+	Boleto *boleto = new Boleto();
+	p->setId(1);
+	p->gerarPedidoDeCompra();
+	p->selecionaMetodo(&cJuridico,credito,boleto);
+
+	e->imprimirLogs();
+
+}
+
+void testaFuncionario()
+{
+	Empresa *e = Empresa::getEmpresa();
+	UsuarioLogado *U = UsuarioLogado::GetInstance();
+	U->setNome("User 1");
+	U->setSenha("123");
+	U->setTipo(0);
+	U->setcpf_cnpj("19169517711");
+	U->setEmail("user1@user.com");
+
+	U->setPermissoes(permissao());
+
+	//logar usuario na empresa
+	e->logar(U);
+
+	std::cout << "-----------------" << std::endl;
+	std::cout << "Gerando Funcionario" << std::endl;
+
+	std::vector <Salario> salario;
+	Salario s(10000.00, true, 1);
+	salario.push_back(s);
+	Departamento adm("Departamento de ADM");
+	Departamento vendas("Departamento de Vendas");
+	Cargo vendedor("Vendedor");
+	Cargo gerente("Gerente");
+	Data nascimento(1990, 1, 1); 
+	Data admissao(2010, 1, 1); 
+	Funcionario f;//"Joao", "12345678912", "Rua 1", "joao@joao.com",0, nascimento, admissao, salario, adm, gerente
+	f.setNome("Joaozinho");
+	f.setTipo(0);
+	f.setcpf_cnpj("12345678912");
+	f.setEndereco("Rua 1");
+	f.setEmail("joao@joao.com");
+	f.setNascimento(nascimento);
+	f.setAdmissao(admissao);
+	f.setSalario(salario);
+	f.setDepartamento(adm);
+	f.setCargo(gerente);
+
+	Funcionario f2;
+	f2.setNome("Joaozinho2");
+	f2.setTipo(0);
+	f2.setcpf_cnpj("12345678912");
+	f2.setEndereco("Rua 1");
+	f2.setEmail("j2@joao.com");
+	f2.setNascimento(nascimento);
+	f2.setAdmissao(admissao);
+	f2.setSalario(salario);
+	f2.setDepartamento(adm);
+	f2.setCargo(gerente);
+
+	Funcionario f3;
+	f3.setNome("Joaozinho3");
+	f3.setTipo(0);
+	f3.setcpf_cnpj("12345678912");
+	f3.setEndereco("Rua 1");
+	f3.setEmail("j3@joao.com");
+	f3.setNascimento(nascimento);
+	f3.setAdmissao(admissao);
+	f3.setSalario(salario);
+	f3.setDepartamento(vendas);
+	f3.setCargo(vendedor);
+
+
+	//imprime nome dos funcionarios
+	std::cout << "Nome dos Funcionarios atuais da empresa: " << std::endl;
+
+	std::cout << "Nome do funcionario 1: " << f.getNome() << std::endl;
+	std::cout << "Nome do funcionario 2: " << f2.getNome() << std::endl;
+	std::cout << "Nome do funcionario 3: " << f3.getNome() << std::endl;
+
+	e->adicionarFuncionario(&f);
+	e->adicionarFuncionario(&f2);
+	e->adicionarFuncionario(&f3);
+
+	//imprimindo os logs antes de sair devido a excecao de remover funcionario
+	e->imprimirLogs();
+
+	e->removerFuncionario(&f);
+}
+
+void inicializaTestes()
+{
+	Empresa *e = Empresa::getEmpresa();
+	UsuarioLogado *U = UsuarioLogado::GetInstance();
+	std::vector<std::string> permissoes;
+	
+	U->setPermissoes(permissao());
+	U->setNome("Usuario funciona pfvr");
+	U->setSenha("123");
+	U->setTipo(0);
+	U->setcpf_cnpj("09169507600");
+	U->setEmail("user@user.com");
+	e->logar(U);
+
+	Pessoa p("Joao", "12345678911", "Rua 1", "email@email.com", 0);
+	p.setNome("Joao");
+	p.setcpf_cnpj("12345678911");
+	p.setEndereco("Rua 1");
+	p.setEmail("email@email.com");
+	p.setTipo(0);
+	
+}	
+
+
 int main()
 {
-	std::cout << "+-----------------+" << std::endl;
-	std::cout << "Bem vindo ao sistema de testes do sistema CEFIMl(eh so as iniciais dos nomes dos integrantes do grupo!)\n"
-			  << std::endl;
-	std::cout << "Acesse nosso repositorio no Github pelo link: https://github.com/ecommercecpp/Projeto-OO" << std::endl;
-	std::cout << "Acesse nossa documentacao pelo link: https://ecommercecpp.github.io/Projeto-OO/md__c___users_felip__one_drive__documentos__git_hub_poo__r_e_a_d_m_e.html" << std::endl;
-	std::cout << "Descomente a linha 271 para testar a permissao negada para exclusao do funcionario" << std::endl;
-
-		Empresa *e = Empresa::getEmpresa();
-		UsuarioLogado *U = UsuarioLogado::GetInstance();
-		U->setNome("User 1");
-		U->setSenha("123");
-		U->setTipo(0);
-		U->setcpf_cnpj("19169517711");
-		U->setEmail("user1@user.com");
-
-		U->setPermissoes(permissao());
-
-		// logar usuario na empresa
-		e->logar(U);
-
-		std::cout << "-----------------" << std::endl;
-		std::cout << "Gerando Funcionario" << std::endl;
-
-		std::vector<Salario> salario;
-		Salario s(10000.00, true, 1);
-		salario.push_back(s);
-		Departamento adm("Departamento de ADM");
-		Departamento vendas("Departamento de Vendas");
-		Cargo vendedor("Vendedor");
-		Cargo gerente("Gerente");
-		Data nascimento(1990, 1, 1);
-		Data admissao(2010, 1, 1);
-		Funcionario f; //"Joao", "12345678912", "Rua 1", "joao@joao.com",0, nascimento, admissao, salario, adm, gerente
-		f.setNome("Joaozinho");
-		f.setTipo(0);
-		f.setcpf_cnpj("12345678912");
-		f.setEndereco("Rua 1");
-		f.setEmail("joao@joao.com");
-		f.setNascimento(nascimento);
-		f.setAdmissao(admissao);
-		f.setSalario(salario);
-		f.setDepartamento(adm);
-		f.setCargo(gerente);
-
-		Funcionario f2;
-		f2.setNome("Joaozinho2");
-		f2.setTipo(0);
-		f2.setcpf_cnpj("12345678912");
-		f2.setEndereco("Rua 1");
-		f2.setEmail("j2@joao.com");
-		f2.setNascimento(nascimento);
-		f2.setAdmissao(admissao);
-		f2.setSalario(salario);
-		f2.setDepartamento(adm);
-		f2.setCargo(gerente);
-
-		Funcionario f3;
-		f3.setNome("Joaozinho3");
-		f3.setTipo(0);
-		f3.setcpf_cnpj("12345678912");
-		f3.setEndereco("Rua 1");
-		f3.setEmail("j3@joao.com");
-		f3.setNascimento(nascimento);
-		f3.setAdmissao(admissao);
-		f3.setSalario(salario);
-		f3.setDepartamento(vendas);
-		f3.setCargo(vendedor);
-		// imprime nome dos funcionarios
-		std::cout << "Nome dos Funcionarios atuais da empresa: " << std::endl;
-
-		std::cout << "Nome do funcionario 1: " << f.getNome() << std::endl;
-		std::cout << "Nome do funcionario 2: " << f2.getNome() << std::endl;
-		std::cout << "Nome do funcionario 3: " << f3.getNome() << std::endl;
-
-		std::cout << "-------Gerando a Cliente----------" << std::endl;
-		Cliente cFisico; //"Lojao", "123456789", "Rua 1", "jao@jao.jao",1,"987654321"
-		Cliente cJuridico;
-		cFisico.setNome("Jorge");
-		cFisico.setcpf_cnpj("12345678901");
-		cFisico.setEndereco("Rua 5");
-		cFisico.setEmail("jorge@email.com");
-		cFisico.setTipo(0); // 0 - Física, 1 - Jurídica
-		cFisico.setTelefone("9876543210");
-		cJuridico.setNome("Sergio");
-		cJuridico.setcpf_cnpj("12345678901232");
-		cJuridico.setEndereco("Rua 6");
-		cJuridico.setEmail("sergio@email.com");
-		cJuridico.setTipo(1); // 0 - Física, 1 - Jurídica
-		cJuridico.setTelefone("9876543290");
-
-		std::cout << "Nome do Cliente Fisico criado: " << cFisico.getNome() << " | Documento: " << cFisico.getCpf_cnpj() << std::endl;
-		std::cout << "Nome do Cliente Juridico criado: " << cJuridico.getNome() << " | Documento: " << cJuridico.getCpf_cnpj() << std::endl;
-
-		// criar  um orcamento
-		Orcamento *o = new Orcamento();
-		Lote *lote = new Lote();
-		Produto *produto = new Produto();
-
-		produto->setNome("Mesa");
-		produto->setCodigo(1);
-		produto->setValorDeVenda(30.0);
-		produto->setEstoqueMinimo(20);
-		produto->setQtdEstoque(20);
-		produto->setTamanhoDoLoteMinimo(20); // definir certo
-		Categoria *categoria = new Categoria();
-		categoria->setNome("Moveis");
-		produto->setCategoria(categoria);
-
-		lote->produzir(produto, produto->getEstoqueMinimo());
-		// criar materia prima e adicionar ao produto
-		MateriaPrima *materiaPrima = new MateriaPrima();
-		MateriaPrima *materiaPrima2 = new MateriaPrima();
-		MateriaPrima *materiaPrima3 = new MateriaPrima();
-		MateriaPrima *materiaPrima4 = new MateriaPrima();
-
-		materiaPrima->setNome("Madeira");
-		materiaPrima->setQuantidade(450);
-		materiaPrima->setUnidadeMedida("g");
-		materiaPrima->setEstoquemin(1000);
-		materiaPrima->setEstoqueTotal(1500);
-		produto->adicionarMateriaPrima(materiaPrima);
-
-		materiaPrima2->setNome("Plastico");
-		materiaPrima2->setQuantidade(150);
-		materiaPrima2->setUnidadeMedida("g");
-		materiaPrima2->setEstoquemin(1000);
-		materiaPrima2->setEstoqueTotal(1500);
-		produto->adicionarMateriaPrima(materiaPrima2);
-
-		materiaPrima3->setNome("Aluminio");
-		materiaPrima3->setQuantidade(100);
-		materiaPrima3->setUnidadeMedida("g");
-		materiaPrima3->setEstoquemin(1000);
-		materiaPrima3->setEstoqueTotal(1500);
-		produto->adicionarMateriaPrima(materiaPrima3);
-
-		materiaPrima4->setNome("Parafusos");
-		materiaPrima4->setQuantidade(8);
-		materiaPrima4->setUnidadeMedida("un");
-		materiaPrima4->setEstoquemin(20);
-		materiaPrima4->setEstoqueTotal(30);
-		produto->adicionarMateriaPrima(materiaPrima4);
-
-		std::cout << "Nome: " << produto->getNome() << std::endl;
-		std::cout << "Preco: " << produto->getValorDeVenda() << std::endl;
-		std::cout << "Quantidade estoque min: " << produto->getEstoqueMinimo() << std::endl;
-		std::cout << "Codigo: " << produto->getCodigo() << std::endl;
-
-		// criar vetor de produtos
-		std::vector<Produto *> produtos;
-		// adicionar produtos ao vetor
-		produtos.push_back(produto);
-
-		//tentando excluir um funcionario cadastrado no sistema e acionando a excecao de acesso negado
-		//e->removerFuncionario(&f);
-		//Aqui nao excluo o funcionario pois ele esta cadastrado no sistema
-
-		// fazendo o orcamento pedido nos testes
-		o->gerarOrcamento(&cJuridico, 10, produtos);
-		o->imprimeOrcamento(&cJuridico, produtos);
-
-		PedidoDeCompra *p = new PedidoDeCompra();
-		Credito *credito = new Credito();
-		Boleto *boleto = new Boleto();
-		p->setId(1);
-		p->gerarPedidoDeCompra();
-		p->selecionaMetodo(&cJuridico, credito, boleto);
-
-		e->imprimirLogs();
+	int a = 0;
+	std::cout << "+-----------------+"<<std::endl;
+	std::cout<<"Bem vindo ao sistema de testes do sistema CEFIMl(eh so as iniciais dos nomes dos integrantes do grupo!)\n"<<std::endl;
+	std::cout << "Acesse nosso repositorio no Github pelo link: https://github.com/ecommercecpp/Projeto-OO"<<std::endl;
+	std::cout << "Acesse nossa documentacao pelo link: https://ecommercecpp.github.io/Projeto-OO/md__c___users_felip__one_drive__documentos__git_hub_poo__r_e_a_d_m_e.html"<<std::endl;	
+	std::cout<<"\nDigite 1 para funcionario e 2 para cliente: "<<std::endl;
+	std::cin>>a;
+	inicializaTestes();
+	std::cout << "+-----------------+"<<std::endl;
+	switch (a)
+	{
+	case 1:
+		testaFuncionario();
+		break;
+	case 2:
+		testaCliente();
+		break;		
+	default:
+		std::cout<<"Opcao invalida"<<std::endl;
+		break;
+	}							
+	
+	return 0;
 }
