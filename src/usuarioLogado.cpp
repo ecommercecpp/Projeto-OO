@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "exceptions.hpp"
+#include "empresa.hpp"
 #include "usuarioLogado.hpp"
 
 UsuarioLogado *UsuarioLogado::usuario = nullptr;
@@ -28,15 +29,24 @@ UsuarioLogado::UsuarioLogado()
 
 UsuarioLogado* UsuarioLogado::GetInstance()
 {
-    if (usuario == nullptr)
-    {
-       usuario = new UsuarioLogado;
-       std::cout << "Usuario logado criado" << std::endl;
-       // usuario = new UsuarioLogado("aaa", "09169507600", "Endereco", "email", 0, "admin", "admin", {"admin"});
-        
-    }
-    //return (UsuarioLogado *)usuario;
-    return usuario;
+   /* std::string permissao = "instanciarUsuarioLogado";
+	std::string atributos = "usuarioLogado* ";
+	Empresa::getEmpresa()->gerarLogEscrita("usuarioLogado", atributos);
+	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		Empresa::getEmpresa()->gerarLogExcecao("usuarioLogado", "GetInstance");
+		throw AcessDeniedException();
+	}else{
+        */
+        if (usuario == nullptr)
+        {
+        usuario = new UsuarioLogado;
+        std::cout << "Usuario logado criado" << std::endl;
+        // usuario = new UsuarioLogado("aaa", "09169507600", "Endereco", "email", 0, "admin", "admin", {"admin"});
+            
+        }
+        //return (UsuarioLogado *)usuario;
+        return usuario;
+   // }
 }
 
 /**

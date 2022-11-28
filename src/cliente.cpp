@@ -17,8 +17,11 @@
 Cliente::Cliente() 
 {//std::string nome, std::string cpf_cnpj, std::string endereco, std::string email, int tipo, std::string telefone) : Pessoa(nome, cpf_cnpj, endereco, email, tipo)
 	std::string permissao = "cadastrarCliente";
+	std::string atributos = "nome, cpf_cnpj, endereco, email, tipo, telefone";
+	Empresa::getEmpresa()->gerarLogEscrita("cliente", atributos);
 	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
 		//dar um throw com a mensagem "Sem permissao"
+		Empresa::getEmpresa()->gerarLogExcecao("cliente", "Cliente");
 		throw AcessDeniedException();
 	}else{	
 		this->nome = nome;
@@ -39,10 +42,14 @@ Cliente::Cliente()
 std::string Cliente::getTelefone()
 {
 	std::string permissao = "verificarTelefoneCliente";
+	std::string atributos = "telefone";
+	Empresa::getEmpresa()->gerarLogLeitura("cliente", atributos);
 	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		//dar um throw com a mensagem "Sem permissao"
+		Empresa::getEmpresa()->gerarLogExcecao("cliente", "getTelefone");
 		throw AcessDeniedException();
 	}else{
-	return telefone;
+		return telefone;
 	}
 }
 
@@ -54,18 +61,13 @@ std::string Cliente::getTelefone()
 void Cliente::setTelefone(std::string t)
 {
 	std::string permissao = "cadastrarTelefoneCliente";
+	std::string atributos = "telefone";
+	Empresa::getEmpresa()->gerarLogEscrita("cliente", atributos);
 	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		//dar um throw com a mensagem "Sem permissao"
+		Empresa::getEmpresa()->gerarLogExcecao("cliente", "setTelefone");
 		throw AcessDeniedException();
 	}else{
-		// valida se o telefone tem entre 10 e 11 digitos
-		if (t.length() >= 10 && t.length() <= 11)
-		{
-			telefone = t;
-		}
-		else
-		{
-			//std::cout << "Telefone invalido!" << std::endl;
-			throw InvalidTelefoneException();
-		}
+		telefone = t;
 	}
 }

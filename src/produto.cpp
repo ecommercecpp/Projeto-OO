@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "produto.hpp"
+#include "empresa.hpp"
 #include "Data.h"
 
 /**
@@ -12,27 +13,6 @@ Produto::Produto()
     //this-> qtdEstoque = 0;
 }
 
-/**
- * @brief Construct a new Produto:: Produto object
- *
- * @param nome
- * @param codigo
- * @param valorDeVenda
- * @param tamanhoDoLoteMinimo
- * @param categoria
- * @param estoqueMinimo
- */
-/*
-Produto::Produto(std::string nome, int codigo, double valorDeVenda, int tamanhoDoLoteMinimo, Categoria *categoria, int estoqueMinimo)
-{
-    setNome(nome);
-    setCodigo(codigo);
-    setValorDeVenda(valorDeVenda);
-    setTamanhoDoLoteMinimo(tamanhoDoLoteMinimo);
-    setCategoria(categoria);
-    setEstoqueMinimo(estoqueMinimo);
-}
-*/
 /**
  * @brief Destroy the Produto:: Produto object
  *
@@ -48,7 +28,15 @@ Produto::~Produto()
  */
 void Produto::setNome(std::string nome)
 {
-    this->nome = nome;
+    std::string permissao = "setNomeProduto";
+    std::string atributos = "nome: " + nome;
+    Empresa::getEmpresa()->gerarLogEscrita("produto", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("produto", "setNome");
+        throw AcessDeniedException();
+    }else{
+        this->nome = nome;
+    }
 }
 
 /**
@@ -58,7 +46,15 @@ void Produto::setNome(std::string nome)
  */
 void Produto::setCodigo(int codigo)
 {
-    this->codigo = codigo;
+    std::string permissao = "setCodigoProduto";
+    std::string atributos = "codigo: " + std::to_string(codigo);
+    Empresa::getEmpresa()->gerarLogEscrita("produto", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("produto", "setCodigo");
+        throw AcessDeniedException();
+    }else{
+        this->codigo = codigo;
+    }
 }
 
 /**
@@ -68,7 +64,15 @@ void Produto::setCodigo(int codigo)
  */
 void Produto::setValorDeVenda(double valorDeVenda)
 {
-    this->valorDeVenda = valorDeVenda;
+    std::string permissao = "setValorDeVendaProduto";
+    std::string atributos = "valorDeVenda: " + std::to_string(valorDeVenda);
+    Empresa::getEmpresa()->gerarLogEscrita("produto", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("produto", "setValorDeVenda");
+        throw AcessDeniedException();
+    }else{
+        this->valorDeVenda = valorDeVenda;
+    }
 }
 
 /**
@@ -78,7 +82,15 @@ void Produto::setValorDeVenda(double valorDeVenda)
  */
 void Produto::setTamanhoDoLoteMinimo(int tamanhoDoLoteMinimo)
 {
-    this->tamanhoDoLoteMinimo = tamanhoDoLoteMinimo;
+    std::string permissao = "setTamanhoDoLoteMinimoProduto";
+    std::string atributos = "tamanhoDoLoteMinimo: " + std::to_string(tamanhoDoLoteMinimo);
+    Empresa::getEmpresa()->gerarLogEscrita("produto", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("produto", "setTamanhoDoLoteMinimo");
+        throw AcessDeniedException();
+    }else{
+        this->tamanhoDoLoteMinimo = tamanhoDoLoteMinimo;
+    }
 }
 
 /**
@@ -88,7 +100,15 @@ void Produto::setTamanhoDoLoteMinimo(int tamanhoDoLoteMinimo)
  */
 void Produto::setCategoria(Categoria *categoria)
 {
-    this->categoria = categoria;
+    std::string permissao = "setCategoriaProduto";
+    std::string atributos = "categoria: " + categoria->getNome();
+    Empresa::getEmpresa()->gerarLogEscrita("produto", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("produto", "setCategoria");
+        throw AcessDeniedException();
+    }else{
+        this->categoria = categoria;
+    }
 }
 
 /**
@@ -98,7 +118,15 @@ void Produto::setCategoria(Categoria *categoria)
  */
 void Produto::setEstoqueMinimo(int estoqueMinimo)
 {
-    this->estoqueMinimo = estoqueMinimo;
+    std::string permissao = "setEstoqueMinimoProduto";
+    std::string atributos = "estoqueMinimo: " + std::to_string(estoqueMinimo);
+    Empresa::getEmpresa()->gerarLogEscrita("produto", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("produto", "setEstoqueMinimo");
+        throw AcessDeniedException();
+    }else{
+        this->estoqueMinimo = estoqueMinimo;
+    }
 }
 
 /**
@@ -108,18 +136,16 @@ void Produto::setEstoqueMinimo(int estoqueMinimo)
  */
 void Produto::setQtdEstoque(int qtdEstoque)
 {
-    this->qtdEstoque = qtdEstoque;
+    std::string permissao = "setQtdEstoqueProduto";
+    std::string atributos = "qtdEstoque: " + std::to_string(qtdEstoque);
+    Empresa::getEmpresa()->gerarLogEscrita("produto", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("produto", "setQtdEstoque");
+        throw AcessDeniedException();
+    }else{
+        this->qtdEstoque = qtdEstoque;
+    }
 }
-
-/**
- * @brief Seta a ordem de produção do produto
- *
- * @param ordem
- *//*
-void Produto::setOrdem(OrdemProducao *ordem)
-{
-    this->ordem = ordem;
-}*/
 
 /**
  * @brief Retorna o nome do produto
@@ -128,7 +154,15 @@ void Produto::setOrdem(OrdemProducao *ordem)
  */
 std::string Produto::getNome()
 {
-    return nome;
+    std::string permissao = "getNomeProduto";
+    std::string atributos = "nome: " + this->nome;
+    Empresa::getEmpresa()->gerarLogLeitura("produto", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("produto", "getNome");
+        throw AcessDeniedException();
+    }else{
+        return this->nome;
+    }
 }
 
 /**
@@ -138,7 +172,15 @@ std::string Produto::getNome()
  */
 int Produto::getCodigo()
 {
-    return codigo;
+    std::string permissao = "getCodigoProduto";
+    std::string atributos = "codigo: " + std::to_string(this->codigo);
+    Empresa::getEmpresa()->gerarLogLeitura("produto", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("produto", "getCodigo");
+        throw AcessDeniedException();
+    }else{
+        return this->codigo;
+    }
 }
 
 /**
@@ -148,7 +190,15 @@ int Produto::getCodigo()
  */
 double Produto::getValorDeVenda()
 {
-    return valorDeVenda;
+    std::string permissao = "getValorDeVendaProduto";
+    std::string atributos = "valorDeVenda: " + std::to_string(this->valorDeVenda);
+    Empresa::getEmpresa()->gerarLogLeitura("produto", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("produto", "getValorDeVenda");
+        throw AcessDeniedException();
+    }else{
+        return this->valorDeVenda;
+    }
 }
 
 /**
@@ -158,7 +208,15 @@ double Produto::getValorDeVenda()
  */
 int Produto::getTamanhoDoLoteMinimo()
 {
-    return tamanhoDoLoteMinimo;
+    std::string permissao = "getTamanhoDoLoteMinimoProduto";
+    std::string atributos = "tamanhoDoLoteMinimo: " + std::to_string(this->tamanhoDoLoteMinimo);
+    Empresa::getEmpresa()->gerarLogLeitura("produto", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("produto", "getTamanhoDoLoteMinimo");
+        throw AcessDeniedException();
+    }else{
+        return this->tamanhoDoLoteMinimo;
+    }
 }
 
 /**
@@ -168,7 +226,15 @@ int Produto::getTamanhoDoLoteMinimo()
  */
 Categoria *Produto::getCategoria()
 {
-    return categoria;
+    std::string permissao = "getCategoriaProduto";
+    std::string atributos = "categoria: " + this->categoria->getNome();
+    Empresa::getEmpresa()->gerarLogLeitura("produto", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("produto", "getCategoria");
+        throw AcessDeniedException();
+    }else{
+        return this->categoria;
+    }
 }
 
 /**
@@ -178,7 +244,15 @@ Categoria *Produto::getCategoria()
  */
 int Produto::getEstoqueMinimo()
 {
-    return estoqueMinimo;
+    std::string permissao = "getEstoqueMinimoProduto";
+    std::string atributos = "estoqueMinimo: " + std::to_string(this->estoqueMinimo);
+    Empresa::getEmpresa()->gerarLogLeitura("produto", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("produto", "getEstoqueMinimo");
+        throw AcessDeniedException();
+    }else{
+        return this->estoqueMinimo;
+    }
 }
 
 /**
@@ -188,19 +262,16 @@ int Produto::getEstoqueMinimo()
  */
 int Produto::getQtdEstoque()
 {
-    return qtdEstoque;
+    std::string permissao = "getQtdEstoqueProduto";
+    std::string atributos = "qtdEstoque: " + std::to_string(this->qtdEstoque);
+    Empresa::getEmpresa()->gerarLogLeitura("produto", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("produto", "getQtdEstoque");
+        throw AcessDeniedException();
+    }else{
+        return this->qtdEstoque;
+    }
 }
-
-/**
- * @brief Retorna a ordem de produção do produto
- *
- * @return OrdemProducao*
- */
-/*
-OrdemProducao *Produto::getOrdem()
-{
-    return ordem;
-}*/
 
 /**
  * @brief Adiciona uma quantidade do de estoque ao produto
@@ -209,7 +280,15 @@ OrdemProducao *Produto::getOrdem()
  */
 void Produto::adicionarEstoque(int qtd)
 {
-    qtdEstoque += qtd;
+    std::string permissao = "adicionarEstoqueProduto";
+    std::string atributos = "qtd: " + std::to_string(qtd);
+    Empresa::getEmpresa()->gerarLogEscrita("produto", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("produto", "adicionarEstoque");
+        throw AcessDeniedException();
+    }else{
+        this->qtdEstoque += qtd;
+    }
 }
 
 /**
@@ -219,7 +298,15 @@ void Produto::adicionarEstoque(int qtd)
  */
 void Produto::removerEstoque(int qtd)
 {
-    qtdEstoque -= qtd;
+    std::string permissao = "removerEstoqueProduto";
+    std::string atributos = "qtd: " + std::to_string(qtd);
+    Empresa::getEmpresa()->gerarLogEscrita("produto", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("produto", "removerEstoque");
+        throw AcessDeniedException();
+    }else{
+        this->qtdEstoque -= qtd;
+    }
 }
 
 /**
@@ -230,60 +317,35 @@ void Produto::removerEstoque(int qtd)
  */
 bool Produto::verificarEstoque()
 {
-    if (qtdEstoque < estoqueMinimo)
-    {
-        return true;
-    }
-    else
-    {
-        return false; // trocar pra uma exceção
+    std::string permissao = "verificarEstoqueProduto";
+    std::string atributos = "estoqueMinimo: " + std::to_string(this->estoqueMinimo) + " qtdEstoque: " + std::to_string(this->qtdEstoque);
+    Empresa::getEmpresa()->gerarLogLeitura("produto", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("produto", "verificarEstoque");
+        throw AcessDeniedException();
+    }else{
+        if(this->qtdEstoque < this->estoqueMinimo){
+            return false;
+        }else{
+            return true;
+        }
     }
 }
 
-/**
- * @brief Retorna se a ordem está correta
- *
- * @return true
- * @return false
- *//*
-bool Produto::verificarOrdem()
+void Produto::imprimirMateriaPrima()
 {
-    if (ordem == NULL)
-    {
-        return true;
-    }
-    else
-    {
-        return false; // trocar pra uma exceção
-    }
-}*/
-/*
-void Produto::criarOrdem()
-{
-    if (verificarOrdem())
-    {
-        Data data;
-        ordem = new OrdemProducao(this, data, tamanhoDoLoteMinimo);
-    }
-    else
-    {
-        std::cout << "Já existe uma ordem de produção para este produto" << std::endl;//criar excecaopra isso
-    }
-    ordem = new OrdemProducao(this, data, tamanhoDoLoteMinimo);
-}
-
-void Produto::removerOrdem()
-{
-    delete ordem;
-    ordem = NULL;
-}
-*/
-
-void Produto::imprimirMateriaPrima(){
-    std::cout << "\nMateria Prima: " << std::endl;
-    for (unsigned int i = 0; i < materiaPrimaLista.size(); i++)
-    {
-        std::cout << materiaPrimaLista[i]->getNome() << std::endl;
+    std::string permissao = "imprimirMateriaPrimaProduto";
+    std::string atributos = "materiaPrima: " ;//+ this->materiaPrima->getNome();
+    Empresa::getEmpresa()->gerarLogLeitura("produto", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("produto", "imprimirMateriaPrima");
+        throw AcessDeniedException();
+    }else{
+        std::cout << "\nMateria Prima: " << std::endl;
+        for (unsigned int i = 0; i < materiaPrimaLista.size(); i++)
+        {
+            std::cout << materiaPrimaLista[i]->getNome() << std::endl;
+        }    
     }
 }
 
@@ -293,30 +355,32 @@ void Produto::imprimirMateriaPrima(){
  */
 void Produto::imprimir()
 {
-    std::cout << "Nome: " << nome << std::endl;
-    std::cout << "Codigo: " << codigo << std::endl;
-    std::cout << "Valor de venda: " << valorDeVenda << std::endl;
-    std::cout << "Tamanho do lote minimo: " << tamanhoDoLoteMinimo << std::endl;
-    std::cout << "Categoria: " << categoria->getNome() << std::endl;
-    std::cout << "Estoque minimo: " << estoqueMinimo << std::endl;
-    std::cout << "Quantidade em estoque: " << qtdEstoque << std::endl;
-   /* if (ordem != NULL)
-    {
-        std::cout << "Ordem de producao: " << ordem->getCodigo() << std::endl;
+    std::string permissao = "imprimirProduto";
+    std::string atributos = "nome: " + nome + " descricao preco: " + " estoqueMinimo: " + std::to_string(this->estoqueMinimo) + " qtdEstoque: " + std::to_string(this->qtdEstoque);
+    Empresa::getEmpresa()->gerarLogLeitura("produto", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("produto", "imprimir");
+        throw AcessDeniedException();
+    }else{
+        std::cout << "Nome: " << nome << std::endl;
+        std::cout << "Codigo: " << codigo << std::endl;
+        std::cout << "Valor de venda: " << valorDeVenda << std::endl;
+        std::cout << "Tamanho do lote minimo: " << tamanhoDoLoteMinimo << std::endl;
+        std::cout << "Categoria: " << categoria->getNome() << std::endl;
+        std::cout << "Estoque minimo: " << estoqueMinimo << std::endl;
+        std::cout << "Quantidade em estoque: " << qtdEstoque << std::endl;
     }
-    else
-    {
-        std::cout << "Ordem de producao: Nao ha ordem de producao" << std::endl;
-    }*/
 }
 
 void Produto::adicionarMateriaPrima(MateriaPrima* materiaPrima)
 {
-    //materiaPrima->adicionarProduto(this);
-    this->materiaPrimaLista.push_back(materiaPrima);
-}
-
-void Produto::removerMateriaPrima(MateriaPrima* materiaPrima){
-    //materiaPrima->removerProduto(this);
-    //this->materiaPrimaLista.remove(materiaPrima);
+    std::string permissao = "adicionarMateriaPrimaProduto";
+    std::string atributos = "materiaPrima: " ;
+    Empresa::getEmpresa()->gerarLogEscrita("produto", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("produto", "adicionarMateriaPrima");
+        throw AcessDeniedException();
+    }else{
+        materiaPrimaLista.push_back(materiaPrima);
+    }
 }
