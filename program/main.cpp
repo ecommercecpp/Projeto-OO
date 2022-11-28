@@ -188,6 +188,43 @@ std::vector<std::string> permissao() {
 	permissoes.push_back("alterarPrazoDePagamentoBoleto");
 	permissoes.push_back("verificarValorBoleto");
 
+	permissoes.push_back("adicionarProduto");
+	permissoes.push_back("removerProduto");
+	permissoes.push_back("verificarProduto");
+	permissoes.push_back("verificarProdutos");
+	permissoes.push_back("setarProduto");
+	permissoes.push_back("validarEstoqueMinimo");
+	permissoes.push_back("atualizarEstoque");
+	permissoes.push_back("verificarDisponibilidade");
+	permissoes.push_back("verificarEstoque");
+
+	permissoes.push_back("adicionarProduto");
+	permissoes.push_back("removerProduto");
+	permissoes.push_back("verificarProduto");
+	permissoes.push_back("verificarProdutos");
+	permissoes.push_back("setarProdutos");
+	permissoes.push_back("validarEstoqueMinimo");
+	permissoes.push_back("atualizarEstoque");
+	permissoes.push_back("verificarDisponibilidade");
+	permissoes.push_back("verificarEstoque");
+
+	permissoes.push_back("setarNomeMateriaPrima");
+	permissoes.push_back("setarQuantidadeMateriaPrima");
+	permissoes.push_back("setarEstoqueMinimoMateriaPrima");
+	permissoes.push_back("setarUnidadeMedidaMateriaPrima");
+	permissoes.push_back("atualizarQuantidadeMateriaPrima");
+	permissoes.push_back("getQuantidadeMateriaPrima");
+	permissoes.push_back("getNomeMateriaPrima");
+	permissoes.push_back("getEstoqueMinimoMateriaPrima");
+	permissoes.push_back("getUnidadeMedidaMateriaPrima");
+	permissoes.push_back("setarEstoqueTotalMateriaPrima");
+	permissoes.push_back("getEstoqueDisponivelMateriaPrima");
+
+	permissoes.push_back("gerarOrdemCompra");
+
+	permissoes.push_back("gerarOrcamentoMP");
+	
+
   return permissoes;
 }
 

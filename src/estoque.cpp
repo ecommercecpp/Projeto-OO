@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "estoque.hpp"
+#include "empresa.hpp"
 
 /**
  * @brief Construct a new Estoque:: Estoque object
@@ -39,7 +40,18 @@ Estoque *Estoque::getEstoque()
  */
 void Estoque::addProduto(Produto produto)
 {
-    produtos[produto.getCodigo()] = produto;
+    std::string permissao = "adicionarProduto";
+    std::string atributos = "produto: " + produto.getNome();
+    Empresa::getEmpresa()->gerarLogEscrita("estoque", atributos);
+    if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+    {
+        Empresa::getEmpresa()->gerarLogExcecao("estoque", "addProduto");
+        throw AcessDeniedException();
+    }
+    else
+    {
+        produtos[produto.getCodigo()] = produto;
+    }
 }
 
 /**
@@ -49,7 +61,18 @@ void Estoque::addProduto(Produto produto)
  */
 void Estoque::removeProduto(int codigo)
 {
-    produtos.erase(codigo);
+    std::string permissao = "removerProduto";
+    std::string atributos = "codigo: " + std::to_string(codigo);
+    Empresa::getEmpresa()->gerarLogEscrita("estoque", atributos);
+    if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+    {
+        Empresa::getEmpresa()->gerarLogExcecao("estoque", "removeProduto");
+        throw AcessDeniedException();
+    }
+    else
+    {
+        produtos.erase(codigo);
+    }
 }
 
 /**
@@ -60,7 +83,18 @@ void Estoque::removeProduto(int codigo)
  */
 Produto Estoque::getProduto(int codigo)
 {
-    return produtos[codigo];
+    std::string permissao = "verificarProduto";
+    std::string atributos = "codigo: " + std::to_string(codigo);
+    Empresa::getEmpresa()->gerarLogEscrita("estoque", atributos);
+    if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+    {
+        Empresa::getEmpresa()->gerarLogExcecao("estoque", "getProduto");
+        throw AcessDeniedException();
+    }
+    else
+    {
+        return produtos[codigo];
+    }
 }
 
 /**
@@ -70,7 +104,18 @@ Produto Estoque::getProduto(int codigo)
  */
 std::map<int, Produto> Estoque::getProdutos()
 {
-    return produtos;
+    std::string permissao = "verificarProdutos";
+    std::string atributos = "estoque";
+    Empresa::getEmpresa()->gerarLogEscrita("estoque", atributos);
+    if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+    {
+        Empresa::getEmpresa()->gerarLogExcecao("estoque", "getProdutos");
+        throw AcessDeniedException();
+    }
+    else
+    {
+        return produtos;
+    }
 }
 
 /**
@@ -80,7 +125,18 @@ std::map<int, Produto> Estoque::getProdutos()
  */
 void Estoque::setProdutos(std::map<int, Produto> produtos)
 {
-    this->produtos = produtos;
+    std::string permissao = "setarProdutos";
+    std::string atributos = "estoque";
+    Empresa::getEmpresa()->gerarLogEscrita("estoque", atributos);
+    if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+    {
+        Empresa::getEmpresa()->gerarLogExcecao("estoque", "setProdutos");
+        throw AcessDeniedException();
+    }
+    else
+    {
+        this->produtos = produtos;
+    }
 }
 
 /**
@@ -90,9 +146,20 @@ void Estoque::setProdutos(std::map<int, Produto> produtos)
  */
 void Estoque::validaEstoqueMinimo(int codigo)
 {
-    if (produtos[codigo].getQtdEstoque() < produtos[codigo].getEstoqueMinimo())
+    std::string permissao = "validarEstoqueMinimo";
+    std::string atributos = "codigo: " + std::to_string(codigo);
+    Empresa::getEmpresa()->gerarLogEscrita("estoque", atributos);
+    if (!Empresa::getEmpresa()->verificaPermissao(permissao))
     {
-        std::cout << "Estoque minimo atingido" << std::endl; // lancar uma excecao aqui
+        Empresa::getEmpresa()->gerarLogExcecao("estoque", "validaEstoqueMinimo");
+        throw AcessDeniedException();
+    }
+    else
+    {
+        if (produtos[codigo].getQtdEstoque() < produtos[codigo].getEstoqueMinimo())
+        {
+            std::cout << "Estoque minimo atingido" << std::endl;
+        }
     }
 }
 
@@ -104,7 +171,18 @@ void Estoque::validaEstoqueMinimo(int codigo)
  */
 void Estoque::atualizaEstoque(int codigo, int quantidade)
 {
-    produtos[codigo].setQtdEstoque(produtos[codigo].getQtdEstoque() + quantidade);
+    std::string permissao = "atualizarEstoque";
+    std::string atributos = "codigo: " + std::to_string(codigo) + " quantidade: " + std::to_string(quantidade);
+    Empresa::getEmpresa()->gerarLogEscrita("estoque", atributos);
+    if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+    {
+        Empresa::getEmpresa()->gerarLogExcecao("estoque", "atualizaEstoque");
+        throw AcessDeniedException();
+    }
+    else
+    {
+        produtos[codigo].setQtdEstoque(produtos[codigo].getQtdEstoque() + quantidade);
+    }
 }
 
 /**
@@ -117,13 +195,24 @@ void Estoque::atualizaEstoque(int codigo, int quantidade)
  */
 bool Estoque::disponivel(int codigo, int quantidade)
 {
-    if (produtos[codigo].getQtdEstoque() >= quantidade)
+    std::string permissao = "verificarDisponibilidade";
+    std::string atributos = "codigo: " + std::to_string(codigo) + " quantidade: " + std::to_string(quantidade);
+    Empresa::getEmpresa()->gerarLogEscrita("estoque", atributos);
+    if (!Empresa::getEmpresa()->verificaPermissao(permissao))
     {
-        return true;
+        Empresa::getEmpresa()->gerarLogExcecao("estoque", "disponivel");
+        throw AcessDeniedException();
     }
     else
     {
-        return false; // lancar excecao aqui
+        if (produtos[codigo].getQtdEstoque() >= quantidade)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
 
