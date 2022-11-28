@@ -129,32 +129,63 @@ std::vector<std::string> permissao() {
 	permissoes.push_back("verificarNomeCategoria");
 	permissoes.push_back("cadastrarNomeCategoria");
 
+	permissoes.push_back("setCodigoOrdemProducao");
+	permissoes.push_back("getCodigoOrdemProducao");
+	permissoes.push_back("setLoteOrdemProducao");
+	permissoes.push_back("setDataOrdemProducao");
+	permissoes.push_back("getLoteOrdemProducao");
+	permissoes.push_back("getDataOrdemProducao");
+	permissoes.push_back("getQuantidadeOrdemProducao");
+	permissoes.push_back("setQuantidadeOrdemProducao");
+	permissoes.push_back("setDataStringOrdemProducao");
+	permissoes.push_back("getDataStringOrdemProducao");
+	permissoes.push_back("imprimeOrdemProducao");
+	permissoes.push_back("gerarOrdemProducao");
+
+	permissoes.push_back("cadastrarPedidoDeCompra");
+	permissoes.push_back("verificarIdPedidoDeCompra");
+	permissoes.push_back("alterarIdPedidoDeCompra");
+	permissoes.push_back("verificarDataPedidoDeCompra");
+	permissoes.push_back("alterarDataPedidoDeCompra");
+	permissoes.push_back("verificarHistoricoVendasPedidoDeCompra");
+	permissoes.push_back("alterarHistoricoVendasPedidoDeCompra");
+	permissoes.push_back("verificarStatusPedidoDeCompra");
+	permissoes.push_back("alterarStatusPedidoDeCompra");
+	permissoes.push_back("verificarRegistroAtualPedidoDeCompra");
+	permissoes.push_back("alterarRegistroAtualPedidoDeCompra");
+	permissoes.push_back("selecionarMetodoPagamentoPedidoDeCompra");
+	permissoes.push_back("alterarDataPedidoDeCompra");
+	permissoes.push_back("exibirDataPedidoDeCompra");
+	permissoes.push_back("gerarPedidoDeCompra");
+	permissoes.push_back("imprimirPedidoDeCompra");
+	
+
+
+
   return permissoes;
 }
 
 void testaCliente(){
-	//c.setTipo(0);// 0 - Física, 1 - Jurídica
-
+	//Instanciar um objeto da classe Empresa.
 	Empresa *e = Empresa::getEmpresa();
-	//criar um usuarioLogado
+	//Instanciar um objeto de um usuário logado
 	UsuarioLogado *U = UsuarioLogado::GetInstance();
 	U->setNome("UsuarioCliente");
 	U->setSenha("123");
-	U->setTipo(0);
+	U->setTipo(0);// 0 - Física, 1 - Jurídica
 	U->setcpf_cnpj("08167486669");
 	U->setEmail("user@user.com");
-	
+	//Todas as permissoes foram adicionadas ao vetor, exceto ao metodo que permite a exclusao de um funcionario da empresa
 	U->setPermissoes(permissao());
 
-	//logar usuario na empresa
+	//logando usuario na empresa
 	e->logar(U);
 
 	std::cout << "Nome do usuario logado(TestaCliente): " << U->getNome() << std::endl;
 	std::cout <<"Quantidade de Permissoes no vetor de permissoes do usuario Logado: "<< U->getPermissoes().size() << std::endl;
 	
-
 	std::cout<<"-------Gerando a Cliente----------"<<std::endl;
-	Cliente cFisico;//"Lojao", "123456789", "Rua 1", "jao@jao.jao",1,"987654321"
+	Cliente cFisico;
 	Cliente cJuridico;
 	cFisico.setNome("Jorge");
 	cFisico.setcpf_cnpj("12345678901");
@@ -226,13 +257,11 @@ void testaCliente(){
 	std::cout << "Preco: " << produto->getValorDeVenda() << std::endl;
 	std::cout << "Quantidade estoque min: " << produto->getEstoqueMinimo() << std::endl;
 	std::cout << "Codigo: " << produto->getCodigo() << std::endl;
-	// std::cout << "Estoque depois de efetuar a compra: " << materiaPrima->getEstoqueDisponivel() << " "<< materiaPrima->getUnidadeMedida() << std::endl;
+	std::cout << "Estoque depois de efetuar a compra: " << materiaPrima->getEstoqueDisponivel() << " "<< materiaPrima->getUnidadeMedida() << std::endl;
 
 	produto->imprimirMateriaPrima();
 
-	// criar vetor de produtos
 	std::vector<Produto *> produtos;
-	// adicionar produtos ao vetor
 	produtos.push_back(produto);
 
 	//fazendo o orcamento pedido nos testes
@@ -246,7 +275,17 @@ void testaCliente(){
 	p->gerarPedidoDeCompra();
 	p->selecionaMetodo(&cJuridico,credito,boleto);
 
-	e->imprimirLogs();
+	int opcao = 0;
+	std::cout << "Deseja imprimir os logs?\n1 - Sim\n2 - Nao" << std::endl;
+	std::cin >> opcao;
+	if (opcao == 1)
+	{
+		e->imprimirLogs();
+	}else if(opcao == 2){
+		std::cout << "Ok, nao vamos imprimir os logs!" << std::endl;
+	}else{
+		std::cout << "Opcao invalida" << std::endl;
+	}
 	e->salvarLogs();
 }
 
@@ -326,7 +365,17 @@ void testaFuncionario()
 	e->adicionarFuncionario(&f3);
 
 	//imprimindo os logs antes de sair devido a excecao de remover funcionario
-	e->imprimirLogs();
+	int opcao = 0;
+	std::cout << "Deseja imprimir os logs?\n1 - Sim\n2 - Nao" << std::endl;
+	std::cin >> opcao;
+	if (opcao == 1)
+	{
+		e->imprimirLogs();
+	}else if(opcao == 2){
+		std::cout << "Ok, nao vamos imprimir os logs!" << std::endl;
+	}else{
+		std::cout << "Opcao invalida" << std::endl;
+	}
 
 	e->salvarLogs();
 	e->removerFuncionario(&f);
@@ -354,7 +403,6 @@ void inicializaTestes()
 	p.setTipo(0);
 	
 }	
-
 
 int main()
 {

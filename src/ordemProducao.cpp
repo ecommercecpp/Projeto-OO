@@ -2,6 +2,7 @@
 #include <ctime>
 
 #include "ordemProducao.hpp"
+#include "empresa.hpp"
 
 /**
  * @brief Construct a new Ordem Producao:: Ordem Producao object
@@ -11,21 +12,6 @@ OrdemProducao::OrdemProducao()
 {
 }
 
-/**
- * @brief Construct a new Ordem Producao:: Ordem Producao object
- *
- * @param lote
- * @param data
- * @param quantidade
- */
-/*
-OrdemProducao::OrdemProducao(Lote lote, Data data, int quantidade)
-{
-    setLote(lote);
-    setData(data);
-    setQuantidade(quantidade);
-}
-*/
 /**
  * @brief Destroy the Ordem Producao:: Ordem Producao object
  *
@@ -41,7 +27,15 @@ OrdemProducao::~OrdemProducao()
  */
 void OrdemProducao::setCodigo(int codigo)
 {
-    this->codigo = codigo;
+    std::string permissao = "setCodigoOrdemProducao";
+    std::string atributos = "codigo: " ;//+ std::to_string(codigo);
+    Empresa::getEmpresa()->gerarLogEscrita("ordemProducao", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("ordemProducao", "setCodigo");
+        throw AcessDeniedException();
+    }else{    
+        this->codigo = codigo;
+    }
 }
 
 /**
@@ -51,7 +45,15 @@ void OrdemProducao::setCodigo(int codigo)
  */
 int OrdemProducao::getCodigo()
 {
-    return codigo;
+    std::string permissao = "getCodigoOrdemProducao";
+    std::string atributos = "codigo: " ;//+ std::to_string(codigo);
+    Empresa::getEmpresa()->gerarLogEscrita("ordemProducao", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("ordemProducao", "getCodigo");
+        throw AcessDeniedException();
+    }else{    
+        return this->codigo;
+    }
 }
 
 /**
@@ -61,7 +63,15 @@ int OrdemProducao::getCodigo()
  */
 void OrdemProducao::setLote(Lote lote)
 {
-    this->lote = lote;
+    std::string permissao = "setLoteOrdemProducao";
+    std::string atributos = "lote: " ;//+ lote.getNome();
+    Empresa::getEmpresa()->gerarLogEscrita("ordemProducao", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("ordemProducao", "setLote");
+        throw AcessDeniedException();
+    }else{    
+        this->lote = lote;
+    }
 }
 
 /**
@@ -71,7 +81,15 @@ void OrdemProducao::setLote(Lote lote)
  */
 void OrdemProducao::setData(Data data)
 {
-    this->dataDaOrdem = data;
+    std::string permissao = "setDataOrdemProducao";
+    std::string atributos = "data: " ;//+ data.getData();
+    Empresa::getEmpresa()->gerarLogEscrita("ordemProducao", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("ordemProducao", "setData");
+        throw AcessDeniedException();
+    }else{    
+        this->dataDaOrdem = data;
+    }
 }
 
 /**
@@ -81,7 +99,15 @@ void OrdemProducao::setData(Data data)
  */
 Lote OrdemProducao::getLote()
 {
-    return lote;
+    std::string permissao = "getLoteOrdemProducao";
+    std::string atributos = "lote: " ;//+ lote.getNome();
+    Empresa::getEmpresa()->gerarLogEscrita("ordemProducao", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("ordemProducao", "getLote");
+        throw AcessDeniedException();
+    }else{    
+        return this->lote;
+    }
 }
 
 /**
@@ -91,7 +117,15 @@ Lote OrdemProducao::getLote()
  */
 Data OrdemProducao::getData()
 {
-    return dataDaOrdem;
+    std::string permissao = "getDataOrdemProducao";
+    std::string atributos = "data: " ;//+ data.getData();
+    Empresa::getEmpresa()->gerarLogEscrita("ordemProducao", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("ordemProducao", "getData");
+        throw AcessDeniedException();
+    }else{    
+        return dataDaOrdem;
+    }
 }
 
 /**
@@ -101,7 +135,15 @@ Data OrdemProducao::getData()
  */
 int OrdemProducao::getQuantidade()
 {
-    return quantidade;
+    std::string permissao = "getQuantidadeOrdemProducao";
+    std::string atributos = "quantidade: " ;//+ std::to_string(quantidade);
+    Empresa::getEmpresa()->gerarLogEscrita("ordemProducao", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("ordemProducao", "getQuantidade");
+        throw AcessDeniedException();
+    }else{    
+        return quantidade;
+    }
 }
 
 /**
@@ -111,15 +153,32 @@ int OrdemProducao::getQuantidade()
  */
 void OrdemProducao::setQuantidade(int quantidade)
 {
-    this->quantidade = quantidade;
+    std::string permissao = "setQuantidadeOrdemProducao";
+    std::string atributos = "quantidade: " ;//+ std::to_string(quantidade);
+    Empresa::getEmpresa()->gerarLogEscrita("ordemProducao", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("ordemProducao", "setQuantidade");
+        throw AcessDeniedException();
+    }else{    
+        this->quantidade = quantidade;
+    }
 }
+
 /**
  * @brief Seta a data em string
  *
  */
 void OrdemProducao::setDataString(std::string dataString)
 {
-    this->dataString = dataString;
+    std::string permissao = "setDataStringOrdemProducao";
+    std::string atributos = "dataString: " + dataString;
+    Empresa::getEmpresa()->gerarLogEscrita("ordemProducao", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("ordemProducao", "setDataString");
+        throw AcessDeniedException();
+    }else{    
+        this->dataString = dataString;
+    }
 }
 
 /**
@@ -128,11 +187,18 @@ void OrdemProducao::setDataString(std::string dataString)
  */
 void OrdemProducao::imprimeOrdem()
 {
+    std::string permissao = "imprimeOrdemProducao";
+    std::string atributos = "codigo: " ;//+ std::to_string(codigo) + " lote: " + lote.getNome() + " data: " + data.getData() + " quantidade: " + std::to_string(quantidade);
+    Empresa::getEmpresa()->gerarLogEscrita("ordemProducao", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("ordemProducao", "imprimeOrdem");
+        throw AcessDeniedException();
+    }else{    
     std::cout << "Ordem de producao: " << std::endl;
     std::cout << "Lote: " << getLote().getNmrLote() << std::endl;
     std::cout << "Data: " << getDataString() << std::endl;
-    //std::cout << "Data: " << getData().getDia() << "/" << getData().getMes() << "/" << getData().getAno() << std::endl;
     std::cout << "Quantidade: " << getQuantidade() << std::endl;
+    }
 }
 
 /**
@@ -142,7 +208,15 @@ void OrdemProducao::imprimeOrdem()
  */
 std::string OrdemProducao::getDataString()
 {
-    return dataString;
+    std::string permissao = "getDataStringOrdemProducao";
+    std::string atributos = "dataString: ";// + dataString;
+    Empresa::getEmpresa()->gerarLogEscrita("ordemProducao", atributos);
+    if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+        Empresa::getEmpresa()->gerarLogExcecao("ordemProducao", "getDataString");
+        throw AcessDeniedException();
+    }else{    
+        return dataString;
+    }
 }
 
 /**
@@ -151,20 +225,31 @@ std::string OrdemProducao::getDataString()
  * @param produto
  * @param quantidade
  */
-void OrdemProducao::gerarOrdemProducao(Produto* produto, int quantidade)
+void OrdemProducao::gerarOrdemProducao(Produto *produto, int quantidade)
 {
-    Lote lote;
-    Data data;
-    time_t tt;
-    struct tm * ti;
-    time (&tt);
-    ti = localtime(&tt);
-    lote.setNmrLote(produto->getCodigo());
+    std::string permissao = "gerarOrdemProducao";
+    std::string atributos = "produto: " ;//+ produto->getNome() + " quantidade: " + std::to_string(quantidade);
+    Empresa::getEmpresa()->gerarLogEscrita("ordemProducao", atributos);
+    if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+    {
+        Empresa::getEmpresa()->gerarLogExcecao("ordemProducao", "gerarOrdemProducao");
+        throw AcessDeniedException();
+    }
+    else
+    {
+        Lote lote;
+        Data data;
+        time_t tt;
+        struct tm *ti;
+        time(&tt);
+        ti = localtime(&tt);
+        lote.setNmrLote(produto->getCodigo());
 
-    setLote(lote);
-    setData(data.dateNow());
-    setDataString(asctime(ti));
-    setQuantidade(quantidade);
-    std::cout<<"Ordem de producao gerada com sucesso!"<<std::endl;
-    imprimeOrdem();
+        setLote(lote);
+        setData(data.dateNow());
+        setDataString(asctime(ti));
+        setQuantidade(quantidade);
+        std::cout << "Ordem de producao gerada com sucesso!" << std::endl;
+        imprimeOrdem();
+    }
 }
