@@ -135,6 +135,11 @@ public:
     //usar a calculaDistancia para calcular a distancia entre as latitudes e longitudes de todos os funcionarios no vetor
     void calculaDistanciaEntreFuncionarios(std::vector<Funcionario*> f)
     {
+        //printa o vetor de funcionarios
+        /*for (int i = 0; i < f.size(); i++)
+        {
+            std::cout << f[i]->getNome() << std::endl;
+        }*/
         std::string permissao = "calcularDistanciaFuncionarios";
         std::string atributos = "funcionario";
         Empresa::getEmpresa()->gerarLogEscrita("rota", atributos);
@@ -167,7 +172,11 @@ public:
                         //fazer o vetor de ordemRotas receber o vetor auxiliar
                         this->ordemRotas = aux;
                         //printar nome dos funcionarios em ordem crescente de distancia
-                        for (unsigned int i = 0; i < aux.size(); i++)
+                        //colocar vetor de funcionarios em ordem crescente de distancia
+                        aux2.push_back(f[j]);
+                        //fazer o vetor de funcionarios receber o vetor auxiliar
+    
+                       /* for (unsigned int i = 0; i < aux.size(); i++)
                         {
                             for (unsigned int j = 0; j < f.size(); j++)
                             {
@@ -186,12 +195,25 @@ public:
                                     this->ordemFuncionarios = aux2;
                                 }
                             }
-                        }
+                        }*/
                     }
                 }
             }
             this->ordemRotas = aux;
             this->ordemFuncionarios = aux2;
+            //imprimir o vetor de ordemRotas
+            for (unsigned int i = 0; i < aux.size(); i++)
+            {
+                std::cout<<"ruiti"<<std::endl;
+                std::cout << ordemRotas[i] << std::endl;
+            }
+            //imprimir o vetor de ordemFuncionarios
+            for (unsigned int i = 0; i < aux2.size(); i++)
+            {
+                std::cout<<"asdas"<<std::endl;
+                std::cout << aux2[i]->getNome() << std::endl;
+            }
+
         }
     }
 
@@ -291,20 +313,21 @@ public:
                 {
                     std::cout<<"testando"<<std::endl;
                     float horarioChegada = 8 - tempoViagens[i];
-                    std::cout << "Horario de embarque de: " << ordemFuncionarios[i]->getNome() << " = " << horarioChegada << std::endl;
+                    std::cout << "Horario de embarque de: " << ordemFuncionarios[i]->getNome() << " = " << horarioChegada << " hrs"<< std::endl;
                     //horarioChegadas.push_back(horarioChegada);
                 }
                 else if (ordemFuncionarios[i]->getTurno() == 12.00)
                 {
                     float horarioChegada = 12 - tempoViagens[i];
                     //imprimir o nome do funcionario e o horario de chegada
-                    std::cout << "Horario de embarque de: " << ordemFuncionarios[i]->getNome() << " = " << horarioChegada << std::endl;
+
+                    std::cout << "Horario de embarque de: " << ordemFuncionarios[i]->getNome() << " = " << horarioChegada << " hrs"<< std::endl;
                     //horarioChegadas.push_back(horarioChegada);
                 }
                 else if (ordemFuncionarios[i]->getTurno() == 18.00)
                 {
                     float horarioChegada = 18 - tempoViagens[i];
-                    std::cout << "Horario de embarque de: " << ordemFuncionarios[i]->getNome() << " = " << horarioChegada << std::endl;
+                    std::cout << "Horario de embarque de: " << ordemFuncionarios[i]->getNome() << " = " << horarioChegada << " hrs"<< std::endl;
                     //horarioChegadas.push_back(horarioChegada);
                 }else{
                     throw InvalidTimeException();
