@@ -31,6 +31,7 @@ std::vector<std::string> permissao() {
 	permissoes.push_back("cadastrarFuncionario");
 	permissoes.push_back("admitirFuncionario");
 	permissoes.push_back("demitirFuncionario");
+	permissoes.push_back("empregadoFuncionario");
 	permissoes.push_back("verificarStatusFuncionario");
 	permissoes.push_back("cadastrarMatriculaFuncionario");
 	permissoes.push_back("verificarMatriculaFuncionario");
@@ -58,6 +59,8 @@ std::vector<std::string> permissao() {
 	permissoes.push_back("verificarMotivoSalario");
 	permissoes.push_back("cadastrarStatusSalario");
 	permissoes.push_back("verificarDataSalario");
+	permissoes.push_back("verificarValorSalario");
+	permissoes.push_back("verificarStatusSalario");
 
 	permissoes.push_back("cadastrarDepartamento");
 	permissoes.push_back("verificarIdDepartamento");
@@ -72,6 +75,14 @@ std::vector<std::string> permissao() {
 	permissoes.push_back("verificarTelefoneCliente");
 	permissoes.push_back("cadastrarTelefoneCliente");
 	permissoes.push_back("cadastrarCliente");
+
+	permissoes.push_back("cadastrarUsuario");
+	permissoes.push_back("verificarLoginUsuario");
+	permissoes.push_back("cadastrarLoginUsuario");
+	permissoes.push_back("verificarSenhaUsuario");
+	permissoes.push_back("cadastrarSenhaUsuario");
+	permissoes.push_back("verificarPermissoesUsuario");
+	permissoes.push_back("cadastrarPermissoesUsuario");
 
   return permissoes;
 }

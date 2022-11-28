@@ -13,6 +13,16 @@ class UserOfflineException : public std::exception
 		}
 };
 
+class PrazoErradoException : public std::exception
+{
+	public:
+		PrazoErradoException() {}
+		const char* what() const throw()
+		{
+			return "Opcao invalida, porfavor escolha uma opcao valida...";
+		}
+};
+
 class AcessDeniedException : public std::exception
 {
 	public:

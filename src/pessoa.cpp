@@ -31,6 +31,7 @@ Pessoa::Pessoa(std::string nome, std::string cpf_cnpj, std::string endereco, std
 	std::string permissao = "cadastrarPessoa";
 	//UsuarioLogado::verificaPermissao(permissao)
 	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		Empresa::getEmpresa()->gerarLogExcecao("pessoa", "Pessoa");
 		throw AcessDeniedException();
 	}else{
 		this->nome = nome;

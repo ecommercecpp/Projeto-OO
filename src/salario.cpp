@@ -22,8 +22,11 @@ Salario::Salario()
 Salario::Salario(double valor, bool status, int motivo)
 {
 	std::string permissao = "cadastrarSalario";
+	std::string atributos = "valor, status, motivo";
+	Empresa::getEmpresa()->gerarLogEscrita("funcionario", atributos);
 	if(!Empresa::getEmpresa()->verificaPermissao(permissao))
 	{
+		Empresa::getEmpresa()->gerarLogExcecao("salario", "Salario");
 		throw AcessDeniedException();
 	}else
 	{
@@ -50,19 +53,14 @@ Salario::Salario(double valor, bool status, int motivo)
 void Salario::setMotivo(int motivo)
 {
 	std::string permissao = "cadastrarMotivoSalario";
+	Empresa::getEmpresa()->gerarLogEscrita("funcionario", "motivo");
 	if(!Empresa::getEmpresa()->verificaPermissao(permissao))
 	{
+		Empresa::getEmpresa()->gerarLogExcecao("salario", "setMotivo");
 		throw AcessDeniedException();
 	}else
 	{
-		if (motivo != 1 && motivo != 2)
-		{
-			throw InvalidSalarioException();
-		}
-		else
-		{
-			this->motivo = motivo;
-		}
+		this->motivo = motivo;
 	}
 }
 
@@ -74,19 +72,14 @@ void Salario::setMotivo(int motivo)
 void Salario::setValor(double valor)
 {
 	std::string permissao = "cadastrarValorSalario";
+	Empresa::getEmpresa()->gerarLogEscrita("funcionario", "valor");
 	if(!Empresa::getEmpresa()->verificaPermissao(permissao))
 	{
+		Empresa::getEmpresa()->gerarLogExcecao("salario", "setValor");
 		throw AcessDeniedException();
 	}else
 	{
-		if (valor < 0)
-		{
-			throw InvalidSalarioException();
-		}
-		else
-		{
-			this->valor = valor;
-		}
+		this->valor = valor;
 	}
 }
 
@@ -97,9 +90,11 @@ void Salario::setValor(double valor)
  */
 double Salario::getValor()
 {
-	std::string permissao = "cadastrarValorSalario";
+	std::string permissao = "verificarValorSalario";
+	std::string atributos = "valor" ;
 	if(!Empresa::getEmpresa()->verificaPermissao(permissao))
 	{
+		Empresa::getEmpresa()->gerarLogExcecao("salario", "getLatitude");
 		throw AcessDeniedException();
 	}else
 	{
@@ -114,9 +109,11 @@ double Salario::getValor()
  */
 bool Salario::getStatus()
 {
-	std::string permissao = "cadastrarStatusSalario";
+	std::string permissao = "verificarStatusSalario";
+	std::string atributos = "status" ;
 	if(!Empresa::getEmpresa()->verificaPermissao(permissao))
 	{
+		Empresa::getEmpresa()->gerarLogExcecao("salario", "getStatus");
 		throw AcessDeniedException();
 	}else
 	{
@@ -133,8 +130,10 @@ bool Salario::getStatus()
 int Salario::getMotivo()
 {
 	std::string permissao = "verificarMotivoSalario";
+	std::string atributos = "motivo" ;
 	if(!Empresa::getEmpresa()->verificaPermissao(permissao))
 	{
+		Empresa::getEmpresa()->gerarLogExcecao("salario", "getMotivo");
 		throw AcessDeniedException();
 	}else
 	{
@@ -150,8 +149,10 @@ int Salario::getMotivo()
 Data Salario::getDataAlteracao()
 {
 	std::string permissao = "verificarDataSalario";
+	std::string atributos = "dataAlteracao" ;
 	if(!Empresa::getEmpresa()->verificaPermissao(permissao))
 	{
+		Empresa::getEmpresa()->gerarLogExcecao("salario", "getDataAlteracao");
 		throw AcessDeniedException();
 	}else
 	{

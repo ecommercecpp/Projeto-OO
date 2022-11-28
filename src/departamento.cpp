@@ -19,7 +19,10 @@ Departamento::Departamento() : id(++current_id) {}
 Departamento::Departamento(std::string nome)
 {
 	std::string permissao = "cadastrarDepartamento";
+	std::string atributos = "nome: " + nome;
+	Empresa::getEmpresa()->gerarLogEscrita("departamento", atributos);
 	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		Empresa::getEmpresa()->gerarLogExcecao("departamento", "Departamento");
 		throw AcessDeniedException();
 	}else{
 		this->nome = nome;
@@ -33,8 +36,10 @@ Departamento::Departamento(std::string nome)
  */
 int Departamento::getId()
 {
+	Empresa::getEmpresa()->gerarLogLeitura("departamento", "id");
 	std::string permissao = "verificarIdDepartamento";
 	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		Empresa::getEmpresa()->gerarLogExcecao("departamento", "getId");
 		throw AcessDeniedException();
 	}else{	
 		return this->id;
@@ -48,8 +53,10 @@ int Departamento::getId()
  */
 std::string Departamento::getNome()
 {
+	Empresa::getEmpresa()->gerarLogLeitura("departamento", "nome");
 	std::string permissao = "verificarNomeDepartamento";
 	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		Empresa::getEmpresa()->gerarLogExcecao("departamento", "getNome");
 		throw AcessDeniedException();
 	}else{	
 		return this->nome;
@@ -64,9 +71,12 @@ std::string Departamento::getNome()
 void Departamento::setNome(std::string nome)
 {
 	std::string permissao = "cadastrarNomeDepartamento";
+	std::string atributos = "nome: " + nome;
+	Empresa::getEmpresa()->gerarLogEscrita("departamento", atributos);
 	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		Empresa::getEmpresa()->gerarLogExcecao("departamento", "setNome");
 		throw AcessDeniedException();
-	}else{	
+	}else{
 		this->nome = nome;
 	}
 }

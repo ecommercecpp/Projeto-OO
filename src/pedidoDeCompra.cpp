@@ -2,6 +2,8 @@
 #include <ctime>
 
 #include "pedidoDeCompra.hpp"
+#include "exceptions.hpp"
+
 
 /**
  * @brief Construct a new Pedido De Compra:: Pedido De Compra object
@@ -177,6 +179,21 @@ void PedidoDeCompra::selecionaMetodo(Cliente* cliente,Credito* credito, Boleto* 
             std::cout << "Digite o prazo de pagamento: 1 - 30d, 2 - 60d, 3 - 90d: ";
             int prazoDePagamento;
             std::cin >> prazoDePagamento;
+            if(prazoDePagamento == 1)
+            {
+                boleto->setPrazoDePagamento(30);
+            }
+            else if(prazoDePagamento == 2)
+            {
+                boleto->setPrazoDePagamento(60);
+            }
+            else if(prazoDePagamento == 3)
+            {
+                boleto->setPrazoDePagamento(90);
+            }else{
+                std::cout << "Opcao invalida" << std::endl;
+                throw PrazoErradoException();
+            }
             boleto->setPrazoDePagamento(prazoDePagamento);
             std::cout<< "***Compra finalizada com sucesso*** "<< std::endl;
             break;            

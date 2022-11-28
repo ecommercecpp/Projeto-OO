@@ -28,7 +28,10 @@ Cargo::Cargo(std::string nome) : id(++current_id), nome(nome) {}
 std::string Cargo::getNome()
 {
 	std::string permissao = "verificarNomeCargo";
+	std::string atributos = "nome: " + nome;
+	Empresa::getEmpresa()->gerarLogEscrita("cargo", atributos);
 	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		Empresa::getEmpresa()->gerarLogExcecao("cargo", "getNome");
 		throw AcessDeniedException();
 	}else{	
 		return this->nome;
@@ -43,7 +46,10 @@ std::string Cargo::getNome()
 int Cargo::getId()
 {
 	std::string permissao = "verificarIdCargo";
+
+	Empresa::getEmpresa()->gerarLogLeitura("cargo", "id");
 	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		Empresa::getEmpresa()->gerarLogExcecao("cargo", "getId");
 		throw AcessDeniedException();
 	}else{	
 		return this->id;
@@ -58,7 +64,10 @@ int Cargo::getId()
 void Cargo::setNome(std::string nome)
 {
 	std::string permissao = "cadastrarNomeCargo";
+	std::string atributos = "nome: " + nome;
+	Empresa::getEmpresa()->gerarLogEscrita("cargo", atributos);
 	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		Empresa::getEmpresa()->gerarLogExcecao("cargo", "setNome");
 		throw AcessDeniedException();
 	}else{	
 		this->nome = nome;
@@ -73,7 +82,10 @@ void Cargo::setNome(std::string nome)
 void Cargo::setId(int id)
 {
 	std::string permissao = "cadastrarIdCargo";
+	std::string atributos = "id: " + std::to_string(id);
+	Empresa::getEmpresa()->gerarLogEscrita("cargo", atributos);
 	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+		Empresa::getEmpresa()->gerarLogExcecao("cargo", "setId");
 		throw AcessDeniedException();
 	}else{	
 		this->id = id;
