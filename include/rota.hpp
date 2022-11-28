@@ -202,7 +202,7 @@ public:
             this->ordemRotas = aux;
             this->ordemFuncionarios = aux2;
             //imprimir o vetor de ordemRotas
-            for (unsigned int i = 0; i < aux.size(); i++)
+            /*for (unsigned int i = 0; i < aux.size(); i++)
             {
                 std::cout<<"ruiti"<<std::endl;
                 std::cout << ordemRotas[i] << std::endl;
@@ -212,7 +212,7 @@ public:
             {
                 std::cout<<"asdas"<<std::endl;
                 std::cout << aux2[i]->getNome() << std::endl;
-            }
+            }*/
 
         }
     }
