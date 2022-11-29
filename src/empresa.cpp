@@ -1,5 +1,5 @@
 #include <iostream>
-#include <algorithm>  // std::find
+#include <algorithm> // std::find
 
 #include "Data.h"
 #include "empresa.hpp"
@@ -27,7 +27,8 @@ Empresa::Empresa()
  */
 Empresa *Empresa::getEmpresa()
 {
-    if(empresa == nullptr){
+    if (empresa == nullptr)
+    {
         empresa = new Empresa;
     }
     return empresa;
@@ -99,11 +100,11 @@ void Empresa::removerCargo(Cargo *cargo)
  *
  * @param funcionario
  */
-void Empresa::adicionarFuncionario(Funcionario* funcionario)
+void Empresa::adicionarFuncionario(Funcionario *funcionario)
 {
     funcionario->admitir();
     funcionarios.push_back(funcionario);
-    //printar funcionarios no vetor de funcionarios
+    // printar funcionarios no vetor de funcionarios
     /*for (unsigned int i = 0; i < funcionarios.size(); i++)
     {
         std::cout <<"Funcao adicionarFuncionario "<< funcionarios[i]->getNome() << std::endl;
@@ -115,8 +116,8 @@ void Empresa::adicionarFuncionario(Funcionario* funcionario)
  *
  * @param funcionario
  */
-void Empresa::removerFuncionario(Funcionario* funcionario)
-{  
+void Empresa::removerFuncionario(Funcionario *funcionario)
+{
     funcionario->demitir();
     for (unsigned int i = 0; i < funcionarios.size(); i++)
     {
@@ -365,79 +366,123 @@ void Empresa::removerLogExcecao(LogExcecao *logExcecao)
     }
 }
 
-bool Empresa::verificaPermissao(std::string valor){
-   // std::cout << "Tamanho do vetor de permissoes de usuario logado(classe empresa): " << usuarioLogado->getPermissoes().size() << std::endl;
+/**
+ * @brief Verifica aquele tipo de permissão
+ *
+ * @param valor
+ * @return true
+ * @return false
+ */
+bool Empresa::verificaPermissao(std::string valor)
+{
+    // std::cout << "Tamanho do vetor de permissoes de usuario logado(classe empresa): " << usuarioLogado->getPermissoes().size() << std::endl;
     int cont = 0;
     for (unsigned int i = 0; i < usuarioLogado->getPermissoes().size(); i++)
     {
-        //usuarioLogado->getPermissoes()[i]
+        // usuarioLogado->getPermissoes()[i]
         if (usuarioLogado->getPermissoes()[i] == valor)
         {
-            //std::cout << "Mostra as permissoes(classe empresa) TRUE" << usuarioLogado->getPermissoes()[i] << std::endl;
+            // std::cout << "Mostra as permissoes(classe empresa) TRUE" << usuarioLogado->getPermissoes()[i] << std::endl;
             cont++;
-        }/*else{
-            std::cout << "Mostra as permissoes(classe empresa) FALSE" << usuarioLogado->getPermissoes()[i] << std::endl;
-        }*/
+        } /*else{
+             std::cout << "Mostra as permissoes(classe empresa) FALSE" << usuarioLogado->getPermissoes()[i] << std::endl;
+         }*/
     }
-    if(cont > 0){
+    if (cont > 0)
+    {
         return true;
-    }else{
+    }
+    else
+    {
         return false;
     }
-
 }
 
-std::vector<std::string> Empresa::getPermissoesUsuarioLogado(){
+/**
+ * @brief Retorna as permissões que o usuário logado possui
+ *
+ * @return std::vector<std::string>
+ */
+std::vector<std::string> Empresa::getPermissoesUsuarioLogado()
+{
     return usuarioLogado->getPermissoes();
 }
 
-//criar uma função que retorna o nome do usuario logado
-std::string Empresa::getNomeUsuarioLogado(){
+/**
+ * @brief Retorna o nome do usuario logado
+ *
+ * @return std::string
+ */
+std::string Empresa::getNomeUsuarioLogado()
+{
     return usuarioLogado->getNome();
 }
 
-void Empresa::logar(UsuarioLogado *usuarioLogado){
+/**
+ * @brief Loga o usuário
+ *
+ * @param usuarioLogado
+ */
+void Empresa::logar(UsuarioLogado *usuarioLogado)
+{
     this->usuarioLogado = usuarioLogado;
 }
 
-void Empresa::deslogar(){
+/**
+ * @brief Desloga o usuário
+ *
+ */
+void Empresa::deslogar()
+{
     this->usuarioLogado = NULL;
 }
 
-void Empresa::gerarLogEscrita(std::string entidade, std::string atributoAlterado){
-    //criar um vector de atributos alterados
+/**
+ * @brief Gera um log escrito
+ *
+ * @param entidade
+ * @param atributoAlterado
+ */
+void Empresa::gerarLogEscrita(std::string entidade, std::string atributoAlterado)
+{
+    // criar um vector de atributos alterados
     LogEscrita *logEscrita = new LogEscrita();
     this->logsEscrita.push_back(logEscrita);
 
-    std::vector <std::string> atributosAlterados;
+    std::vector<std::string> atributosAlterados;
     atributosAlterados.push_back(atributoAlterado);
     std::string nome = usuarioLogado->getNome();
-    //std::cout << "Nome do usuario logado:(log escrita) " << nome << std::endl;
-    //imprimir a entidade
-    //std::cout << "Entidade:(log escrita) " << entidade << std::endl;
+    // std::cout << "Nome do usuario logado:(log escrita) " << nome << std::endl;
+    // imprimir a entidade
+    // std::cout << "Entidade:(log escrita) " << entidade << std::endl;
     Data data = Data();
     // Declaring argument for time()
     time_t tt;
     // Declaring variable to store return value of
     // localtime()
-    struct tm * ti;
+    struct tm *ti;
     // Applying time()
-    time (&tt);
+    time(&tt);
     // Using localtime()
     ti = localtime(&tt);
-  
-    //std::cout << "Current Day, Date and Time is = " << asctime(ti);
+
+    // std::cout << "Current Day, Date and Time is = " << asctime(ti);
     logEscrita->setHorario(asctime(ti));
     logEscrita->setEntidade(entidade);
     logEscrita->setAtributosAnteriores(atributosAlterados);
     logEscrita->setUsuario(usuarioLogado);
     logEscrita->setData(data.dateNow());
-    //std::cout << "Data:(log escrita) " << data.printData() << std::endl;
+    // std::cout << "Data:(log escrita) " << data.printData() << std::endl;
     adicionarLogEscrita(logEscrita);
 }
-//imprimir logs de escrita no vetor de logs de escrita da empresa
-void Empresa::imprimirLogsEscrita(){
-    //std::cout << "tamanho do vetor de logsEscrita: "<< logsEscrita.size() << std::endl;
+// imprimir logs de escrita no vetor de logs de escrita da empresa
+/**
+ * @brief Imprime os logs de escrita
+ *
+ */
+void Empresa::imprimirLogsEscrita()
+{
+    // std::cout << "tamanho do vetor de logsEscrita: "<< logsEscrita.size() << std::endl;
     for (unsigned int i = 0; i < logsEscrita.size(); i++)
     {
         std::cout << "Entidade: " << logsEscrita[i]->getEntidade() << std::endl;
@@ -447,26 +492,33 @@ void Empresa::imprimirLogsEscrita(){
     }
 }
 
-void Empresa::gerarLogLeitura(std::string entidade, std::string informacaoLida){
+/**
+ * @brief Gera um log de leitura
+ *
+ * @param entidade
+ * @param informacaoLida
+ */
+void Empresa::gerarLogLeitura(std::string entidade, std::string informacaoLida)
+{
     LogLeitura *logLeitura = new LogLeitura();
     this->logsLeitura.push_back(logLeitura);
 
     std::string nome = usuarioLogado->getNome();
-   // std::cout << "Nome do usuario logado:(log leitura) " << nome << std::endl;
-    //imprimir a entidade
-    //std::cout << "Entidade:(log leitura) " << entidade << std::endl;
+    // std::cout << "Nome do usuario logado:(log leitura) " << nome << std::endl;
+    // imprimir a entidade
+    // std::cout << "Entidade:(log leitura) " << entidade << std::endl;
     Data data = Data();
     // Declaring argument for time()
     time_t tt;
     // Declaring variable to store return value of
     // localtime()
-    struct tm * ti;
+    struct tm *ti;
     // Applying time()
-    time (&tt);
+    time(&tt);
     // Using localtime()
     ti = localtime(&tt);
-  
-    //std::cout << "Current Day, Date and Time is = " << asctime(ti);
+
+    // std::cout << "Current Day, Date and Time is = " << asctime(ti);
     logLeitura->setHorario(asctime(ti));
     logLeitura->setEntidade(entidade);
     logLeitura->setUsuario(usuarioLogado);
@@ -475,9 +527,14 @@ void Empresa::gerarLogLeitura(std::string entidade, std::string informacaoLida){
     adicionarLogLeitura(logLeitura);
 }
 
-//função para imprimir o vetor logs de leitura
-void Empresa::imprimirLogsLeitura(){
-    //std::cout << "tamanho do vetor de logsLeitura: "<< logsLeitura.size() << std::endl;
+// função para imprimir o vetor logs de leitura
+/**
+ * @brief Imprime os logs de leitura
+ *
+ */
+void Empresa::imprimirLogsLeitura()
+{
+    // std::cout << "tamanho do vetor de logsLeitura: "<< logsLeitura.size() << std::endl;
     for (unsigned int i = 0; i < logsLeitura.size(); i++)
     {
         std::cout << "Entidade: " << logsLeitura[i]->getEntidade() << std::endl;
@@ -487,26 +544,33 @@ void Empresa::imprimirLogsLeitura(){
     }
 }
 
-void Empresa::gerarLogExcecao(std::string entidade, std::string funcionalidade){
+/**
+ * @brief Gera um log de excecao
+ *
+ * @param entidade
+ * @param funcionalidade
+ */
+void Empresa::gerarLogExcecao(std::string entidade, std::string funcionalidade)
+{
     LogExcecao *logExcecao = new LogExcecao();
     this->logsExcecao.push_back(logExcecao);
 
     std::string nome = usuarioLogado->getNome();
-    //std::cout << "Nome do usuario logado:(log excecao) " << nome << std::endl;
-    //imprimir a entidade
-    //std::cout << "Entidade:(log excecao) " << entidade << std::endl;
+    // std::cout << "Nome do usuario logado:(log excecao) " << nome << std::endl;
+    // imprimir a entidade
+    // std::cout << "Entidade:(log excecao) " << entidade << std::endl;
     Data data = Data();
     // Declaring argument for time()
     time_t tt;
     // Declaring variable to store return value of
     // localtime()
-    struct tm * ti;
+    struct tm *ti;
     // Applying time()
-    time (&tt);
+    time(&tt);
     // Using localtime()
     ti = localtime(&tt);
-  
-    //std::cout << "Current Day, Date and Time is = " << asctime(ti);
+
+    // std::cout << "Current Day, Date and Time is = " << asctime(ti);
     logExcecao->setHorario(asctime(ti));
     logExcecao->setEntidade(entidade);
     logExcecao->setUsuario(usuarioLogado);
@@ -515,9 +579,14 @@ void Empresa::gerarLogExcecao(std::string entidade, std::string funcionalidade){
     adicionarLogExcecao(logExcecao);
 }
 
-//função para imprimir o vetor logs de excecao
-void Empresa::imprimirLogsExcecao(){
-    //std::cout << "tamanho do vetor de logsExcecao: "<< logsExcecao.size() << std::endl;
+// função para imprimir o vetor logs de excecao
+/**
+ * @brief Imprime os logs de excecao
+ *
+ */
+void Empresa::imprimirLogsExcecao()
+{
+    // std::cout << "tamanho do vetor de logsExcecao: "<< logsExcecao.size() << std::endl;
     for (unsigned int i = 0; i < logsExcecao.size(); i++)
     {
         std::cout << "Entidade: " << logsExcecao[i]->getEntidade() << std::endl;
@@ -527,26 +596,36 @@ void Empresa::imprimirLogsExcecao(){
     }
 }
 
-//função para imprimir todos os logs
-void Empresa::imprimirLogs(){
+// função para imprimir todos os logs
+/**
+ * @brief Imprime os logs de todos os tipos
+ *
+ */
+void Empresa::imprimirLogs()
+{
     std::cout << "Exibindo os logs de todas as operacoes realizadas" << std::endl;
     std::cout << "-----------------" << std::endl;
-    std::cout<<"Imprimindo logs de escrita: "<<std::endl;
+    std::cout << "Imprimindo logs de escrita: " << std::endl;
     imprimirLogsEscrita();
     std::cout << "-----------------" << std::endl;
-    std::cout<<"Imprimindo logs de leitura: "<<std::endl;
+    std::cout << "Imprimindo logs de leitura: " << std::endl;
     imprimirLogsLeitura();
     std::cout << "-----------------" << std::endl;
-    std::cout<<"Imprimindo logs de excecao: "<<std::endl;
+    std::cout << "Imprimindo logs de excecao: " << std::endl;
     imprimirLogsExcecao();
 }
 
-//função para salvar todos os logs em um arquivo
+// função para salvar todos os logs em um arquivo
+/**
+ * @brief Salva os logs de todos os tipos em um arquivo
+ *
+ */
 void Empresa::salvarLogs()
 {
     std::ofstream arquivo;
     arquivo.open("logs.txt");
-    if(arquivo.is_open()){
+    if (arquivo.is_open())
+    {
         for (unsigned int i = 0; i < logsEscrita.size(); i++)
         {
             arquivo << "Entidade: " << logsEscrita[i]->getEntidade() << std::endl;

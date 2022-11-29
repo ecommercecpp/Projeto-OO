@@ -16,15 +16,18 @@
  * @param departamento
  * @param cargo
  */
-Funcionario::Funcionario()//std::string nome, std::string cpf_cnpj, std::string endereco, std::string email, int tipo, Data nascimento, Data admissao, std::vector<Salario> salario, Departamento departamento, Cargo cargo) : Pessoa(nome, cpf_cnpj, endereco, email, tipo)
+Funcionario::Funcionario() // std::string nome, std::string cpf_cnpj, std::string endereco, std::string email, int tipo, Data nascimento, Data admissao, std::vector<Salario> salario, Departamento departamento, Cargo cargo) : Pessoa(nome, cpf_cnpj, endereco, email, tipo)
 {
 	std::string permissao = "cadastrarFuncionario";
 	std::string atributos = "nome: " + nome + " cpf_cnpj: " + cpf_cnpj + " endereco: " + endereco + " email: " + email + " tipo: " + std::to_string(tipo);
 	Empresa::getEmpresa()->gerarLogEscrita("funcionario", atributos);
-	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+	{
 		Empresa::getEmpresa()->gerarLogExcecao("funcionario", "Funcionario");
 		throw AcessDeniedException();
-	}else{
+	}
+	else
+	{
 		this->status = true;
 		this->nome = nome;
 		this->cpf_cnpj = cpf_cnpj;
@@ -46,12 +49,15 @@ Funcionario::Funcionario()//std::string nome, std::string cpf_cnpj, std::string 
 void Funcionario::admitir()
 {
 	std::string permissao = "admitirFuncionario";
-	std::string atributos = "void" ;
+	std::string atributos = "void";
 	Empresa::getEmpresa()->gerarLogEscrita("funcionario", atributos);
-	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+	{
 		Empresa::getEmpresa()->gerarLogExcecao("funcionario", "admitir");
 		throw AcessDeniedException();
-	}else{
+	}
+	else
+	{
 		this->status = true;
 	}
 }
@@ -63,12 +69,15 @@ void Funcionario::admitir()
 void Funcionario::demitir()
 {
 	std::string permissao = "demitirFuncionario";
-	std::string atributos = "void" ;
+	std::string atributos = "void";
 	Empresa::getEmpresa()->gerarLogEscrita("funcionario", atributos);
-	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+	{
 		Empresa::getEmpresa()->gerarLogExcecao("funcionario", "demitir");
 		throw AcessDeniedException();
-	}else{
+	}
+	else
+	{
 		this->status = false;
 	}
 }
@@ -82,12 +91,15 @@ void Funcionario::demitir()
 bool Funcionario::empregado()
 {
 	std::string permissao = "empregadoFuncionario";
-	std::string atributos = "void" ;
+	std::string atributos = "void";
 	Empresa::getEmpresa()->gerarLogEscrita("funcionario", atributos);
-	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+	{
 		Empresa::getEmpresa()->gerarLogExcecao("funcionario", "empregado");
 		throw AcessDeniedException();
-	}else{
+	}
+	else
+	{
 		return this->status;
 	}
 }
@@ -102,10 +114,13 @@ void Funcionario::setMatricula(int matricula)
 	std::string permissao = "cadastrarMatriculaFuncionario";
 	std::string atributos = "matricula: " + std::to_string(matricula);
 	Empresa::getEmpresa()->gerarLogEscrita("funcionario", atributos);
-	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+	{
 		Empresa::getEmpresa()->gerarLogExcecao("funcionario", "setMatricula");
 		throw AcessDeniedException();
-	}else{
+	}
+	else
+	{
 		this->matricula = matricula;
 	}
 }
@@ -120,14 +135,16 @@ int Funcionario::getMatricula()
 	std::string permissao = "verificarMatriculaFuncionario";
 	std::string atributos = "matricula: " + std::to_string(matricula);
 	Empresa::getEmpresa()->gerarLogEscrita("funcionario", atributos);
-	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+	{
 		Empresa::getEmpresa()->gerarLogExcecao("funcionario", "getMatricula");
 		throw AcessDeniedException();
-	}else{
+	}
+	else
+	{
 		return this->matricula;
 	}
 }
-
 
 /**
  * @brief Seta a data de nascimento do funcionário
@@ -139,10 +156,13 @@ void Funcionario::setNascimento(Data nascimento)
 	std::string permissao = "cadastrarNascimentoFuncionario";
 	std::string atributos = "nascimento: " + nascimento.getData();
 	Empresa::getEmpresa()->gerarLogEscrita("funcionario", atributos);
-	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+	{
 		Empresa::getEmpresa()->gerarLogExcecao("funcionario", "setNascimento");
 		throw AcessDeniedException();
-	}else{
+	}
+	else
+	{
 		this->nascimento = nascimento;
 	}
 }
@@ -157,10 +177,13 @@ Data Funcionario::getNascimento()
 	std::string permissao = "verificarNascimentoFuncionario";
 
 	Empresa::getEmpresa()->gerarLogLeitura("funcionario", "nascimento");
-	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+	{
 		Empresa::getEmpresa()->gerarLogExcecao("funcionario", "getNascimento");
 		throw AcessDeniedException();
-	}else{
+	}
+	else
+	{
 		return this->nascimento;
 	}
 }
@@ -175,10 +198,13 @@ void Funcionario::setAdmissao(Data admissao)
 	std::string permissao = "cadastrarAdmissaoFuncionario";
 	std::string atributos = "admissao: " + admissao.getData();
 	Empresa::getEmpresa()->gerarLogEscrita("funcionario", atributos);
-	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+	{
 		Empresa::getEmpresa()->gerarLogExcecao("funcionario", "setAdmissao");
 		throw AcessDeniedException();
-	}else{
+	}
+	else
+	{
 		this->admissao = admissao;
 	}
 }
@@ -191,12 +217,15 @@ void Funcionario::setAdmissao(Data admissao)
 Data Funcionario::getAdmissao()
 {
 	std::string permissao = "verificarAdmissaoFuncionario";
-	std::string atributos = "void" ;
+	std::string atributos = "void";
 	Empresa::getEmpresa()->gerarLogEscrita("funcionario", atributos);
-	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+	{
 		Empresa::getEmpresa()->gerarLogExcecao("funcionario", "getAdmissao");
 		throw AcessDeniedException();
-	}else{
+	}
+	else
+	{
 		return this->admissao;
 	}
 }
@@ -211,10 +240,13 @@ void Funcionario::setDemissao(Data demissao)
 	std::string permissao = "cadastrarDemissaoFuncionario";
 	std::string atributos = "demissao: " + demissao.getData();
 	Empresa::getEmpresa()->gerarLogEscrita("funcionario", atributos);
-	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+	{
 		Empresa::getEmpresa()->gerarLogExcecao("funcionario", "setDemissao");
 		throw AcessDeniedException();
-	}else{
+	}
+	else
+	{
 		this->demissao = demissao;
 	}
 }
@@ -227,12 +259,15 @@ void Funcionario::setDemissao(Data demissao)
 Data Funcionario::getDemissao()
 {
 	std::string permissao = "verificarDemissaoFuncionario";
-	std::string atributos = "void" ;
+	std::string atributos = "void";
 	Empresa::getEmpresa()->gerarLogEscrita("funcionario", atributos);
-	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+	{
 		Empresa::getEmpresa()->gerarLogExcecao("funcionario", "getDemissao");
 		throw AcessDeniedException();
-	}else{
+	}
+	else
+	{
 		return this->demissao;
 	}
 }
@@ -245,12 +280,15 @@ Data Funcionario::getDemissao()
 void Funcionario::setSalario(std::vector<Salario> salario)
 {
 	std::string permissao = "cadastrarSalarioFuncionario";
-	std::string atributos = "salario: " ;//+ salario[0].getSalario();
+	std::string atributos = "salario: "; //+ salario[0].getSalario();
 	Empresa::getEmpresa()->gerarLogEscrita("funcionario", atributos);
-	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+	{
 		Empresa::getEmpresa()->gerarLogExcecao("funcionario", "setSalario");
 		throw AcessDeniedException();
-	}else{
+	}
+	else
+	{
 		this->salario = salario;
 	}
 }
@@ -263,12 +301,15 @@ void Funcionario::setSalario(std::vector<Salario> salario)
 std::vector<Salario> Funcionario::getSalario()
 {
 	std::string permissao = "verificarSalarioFuncionario";
-	std::string atributos = "void" ;
+	std::string atributos = "void";
 	Empresa::getEmpresa()->gerarLogEscrita("funcionario", atributos);
-	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+	{
 		Empresa::getEmpresa()->gerarLogExcecao("funcionario", "getSalario");
 		throw AcessDeniedException();
-	}else{
+	}
+	else
+	{
 		return this->salario;
 	}
 }
@@ -283,10 +324,13 @@ void Funcionario::setDepartamento(Departamento departamento)
 	std::string permissao = "cadastrarDepartamentoFuncionario";
 	std::string atributos = "departamento: " + departamento.getNome();
 	Empresa::getEmpresa()->gerarLogEscrita("funcionario", atributos);
-	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+	{
 		Empresa::getEmpresa()->gerarLogExcecao("funcionario", "setDepartamento");
 		throw AcessDeniedException();
-	}else{
+	}
+	else
+	{
 		this->departamento = departamento;
 	}
 }
@@ -299,12 +343,15 @@ void Funcionario::setDepartamento(Departamento departamento)
 Departamento Funcionario::getDepartamento()
 {
 	std::string permissao = "verificarDepartamentoFuncionario";
-	std::string atributos = "void" ;
+	std::string atributos = "void";
 	Empresa::getEmpresa()->gerarLogEscrita("funcionario", atributos);
-	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+	{
 		Empresa::getEmpresa()->gerarLogExcecao("funcionario", "getDepartamento");
 		throw AcessDeniedException();
-	}else{
+	}
+	else
+	{
 		return this->departamento;
 	}
 }
@@ -319,10 +366,13 @@ void Funcionario::setCargo(Cargo cargo)
 	std::string permissao = "cadastrarCargoFuncionario";
 	std::string atributos = "cargo: " + cargo.getNome();
 	Empresa::getEmpresa()->gerarLogEscrita("funcionario", atributos);
-	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+	{
 		Empresa::getEmpresa()->gerarLogExcecao("funcionario", "setCargo");
 		throw AcessDeniedException();
-	}else{
+	}
+	else
+	{
 		this->cargo = cargo;
 	}
 }
@@ -335,117 +385,183 @@ void Funcionario::setCargo(Cargo cargo)
 Cargo Funcionario::getCargo()
 {
 	std::string permissao = "verificarCargoFuncionario";
-	std::string atributos = "void" ;
+	std::string atributos = "void";
 	Empresa::getEmpresa()->gerarLogEscrita("funcionario", atributos);
-	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+	{
 		Empresa::getEmpresa()->gerarLogExcecao("funcionario", "getCargo");
 		throw AcessDeniedException();
-	}else{
+	}
+	else
+	{
 		return this->cargo;
 	}
 }
 
+/**
+ * @brief Seta o endereço do funcionário (endereço em latitude)
+ *
+ * @param latitude
+ */
 void Funcionario::setLatitude(float latitude)
 {
 	std::string permissao = "cadastrarLatitudeFuncionario";
-	std::string atributos = "latitude: " ;//+ latitude;
+	std::string atributos = "latitude: "; //+ latitude;
 	Empresa::getEmpresa()->gerarLogEscrita("funcionario", atributos);
-	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+	{
 		Empresa::getEmpresa()->gerarLogExcecao("funcionario", "setLatitude");
 		throw AcessDeniedException();
-	}else{
+	}
+	else
+	{
 		this->latitude = latitude;
 	}
 }
 
+/**
+ * @brief Retorna a latitude do funcionário
+ *
+ * @return float
+ */
 float Funcionario::getLatitude()
 {
 	std::string permissao = "verificarLatitudeFuncionario";
-	std::string atributos = "void" ;
+	std::string atributos = "void";
 	Empresa::getEmpresa()->gerarLogEscrita("funcionario", atributos);
-	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+	{
 		Empresa::getEmpresa()->gerarLogExcecao("funcionario", "getLatitude");
 		throw AcessDeniedException();
-	}else{
+	}
+	else
+	{
 		return this->latitude;
 	}
 }
 
+/**
+ * @brief Seta o endereço do funcionário (endereço em longitude)
+ *
+ * @param longitude
+ */
 void Funcionario::setLongitude(float longitude)
 {
 	std::string permissao = "cadastrarLongitudeFuncionario";
-	std::string atributos = "longitude: " ;//+ longitude;
+	std::string atributos = "longitude: "; //+ longitude;
 	Empresa::getEmpresa()->gerarLogEscrita("funcionario", atributos);
-	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+	{
 		Empresa::getEmpresa()->gerarLogExcecao("funcionario", "setLongitude");
 		throw AcessDeniedException();
-	}else{
+	}
+	else
+	{
 		this->longitude = longitude;
 	}
 }
 
+/**
+ * @brief Retorna a longitude do funcionário
+ *
+ * @return float
+ */
 float Funcionario::getLongitude()
 {
 	std::string permissao = "verificarLongitudeFuncionario";
-	std::string atributos = "void" ;
+	std::string atributos = "void";
 	Empresa::getEmpresa()->gerarLogEscrita("funcionario", atributos);
-	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+	{
 		Empresa::getEmpresa()->gerarLogExcecao("funcionario", "getLongitude");
 		throw AcessDeniedException();
-	}else{
+	}
+	else
+	{
 		return this->longitude;
 	}
 }
 
-
+/**
+ * @brief Seta o turno que funcionário trabalha
+ *
+ * @param turno
+ */
 void Funcionario::setTurno(float turno)
 {
 	std::string permissao = "cadastrarTurnoFuncionario";
-	std::string atributos = "turno: " ;//+ turno;
+	std::string atributos = "turno: "; //+ turno;
 	Empresa::getEmpresa()->gerarLogEscrita("funcionario", atributos);
-	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+	{
 		Empresa::getEmpresa()->gerarLogExcecao("funcionario", "setTurno");
 		throw AcessDeniedException();
-	}else{
+	}
+	else
+	{
 		this->turno = turno;
 	}
 }
 
+/**
+ * @brief Retorna o turno que o funcionário trabalha
+ *
+ * @return float
+ */
 float Funcionario::getTurno()
 {
 	std::string permissao = "verificarTurnoFuncionario";
-	std::string atributos = "void" ;
+	std::string atributos = "void";
 	Empresa::getEmpresa()->gerarLogEscrita("funcionario", atributos);
-	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+	{
 		Empresa::getEmpresa()->gerarLogExcecao("funcionario", "getTurno");
 		throw AcessDeniedException();
-	}else{
+	}
+	else
+	{
 		return this->turno;
 	}
 }
 
+/**
+ * @brief Seta a distância entre funcionarios
+ *
+ * @param distancia
+ */
 void Funcionario::setDistancia(float distancia)
 {
 	std::string permissao = "cadastrarDistanciaFuncionario";
-	std::string atributos = "distancia: " ;//+ distancia;
+	std::string atributos = "distancia: "; //+ distancia;
 	Empresa::getEmpresa()->gerarLogEscrita("funcionario", atributos);
-	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+	{
 		Empresa::getEmpresa()->gerarLogExcecao("funcionario", "setDistancia");
 		throw AcessDeniedException();
-	}else{
+	}
+	else
+	{
 		this->distancia = distancia;
 	}
 }
 
+/**
+ * @brief Retorna a distância entre funcionarios
+ *
+ * @return float
+ */
 float Funcionario::getDistancia()
 {
 	std::string permissao = "verificarDistanciaFuncionario";
-	std::string atributos = "void" ;
+	std::string atributos = "void";
 	Empresa::getEmpresa()->gerarLogEscrita("funcionario", atributos);
-	if(!Empresa::getEmpresa()->verificaPermissao(permissao)){
+	if (!Empresa::getEmpresa()->verificaPermissao(permissao))
+	{
 		Empresa::getEmpresa()->gerarLogExcecao("funcionario", "getDistancia");
 		throw AcessDeniedException();
-	}else{
+	}
+	else
+	{
 		return this->distancia;
 	}
 }
