@@ -152,6 +152,7 @@ public:
         {
             std::vector<float> aux;
             std::vector<Funcionario*> aux2;
+        
             for (unsigned int i = 0; i < f.size(); i++)
             {
                 for (unsigned int j = 0; j < f.size(); j++)
@@ -167,8 +168,11 @@ public:
 
                         //adicionar as distancias em ordem crescente no vetor de ordemRotas
                         aux.push_back(distancia);
+                        //std::cout<<"Distancia aqui = "<<distancia<<std::endl;
                         //coloca o vetor de ordemRotas em ordem crescente
                         std::sort(aux.begin(), aux.end());
+                        //adicionar distancia final no vetor de ordemRotas
+
                         //fazer o vetor de ordemRotas receber o vetor auxiliar
                         this->ordemRotas = aux;
                         //printar nome dos funcionarios em ordem crescente de distancia
@@ -268,7 +272,17 @@ public:
             for (unsigned int i = 0; i < ordemRotas.size(); i++)
             {
                 float tempoViagem = ordemRotas[i] / 18;
+                //printar tempoViagem
+                //std::cout << tempoViagem << " horas ok ta jae" << std::endl;
                 this->tempoViagens.push_back(tempoViagem);
+                //tirar valores repetidos do vetor de tempoViagens
+                std::sort(tempoViagens.begin(), tempoViagens.end());
+                tempoViagens.erase(std::unique(tempoViagens.begin(), tempoViagens.end()), tempoViagens.end());
+                //printar o vetor de tempoViagens
+                /*for (unsigned int i = 0; i < tempoViagens.size(); i++)
+                {
+                    std::cout<< "Tempo de viagens vida nova: " << tempoViagens[i] << std::endl;
+                }*/
             }
         }
     }
@@ -296,6 +310,16 @@ public:
                 
                 //verificar qual o turno de cada funcionario e subtrair o tempo de viagem do tempo de trabalho do respectivo turno
             }
+            //excluir valores repetidos de tempoViagens
+            std::vector<float> aux;
+            for (unsigned int i = 0; i < tempoViagens.size(); i++)
+            {
+                if (std::find(aux.begin(), aux.end(), tempoViagens[i]) == aux.end())
+                {
+                    aux.push_back(tempoViagens[i]);
+                    std::cout << "Novos tempos VIagens: " <<tempoViagens[i] << std::endl;
+                }
+            }
         }
     }
     /**
@@ -304,7 +328,7 @@ public:
      * @param void
      */
     //funcao para calcular de acordo com o turno e o tempo de viagem quando o funcionario deve chegar no trabalho
-    void calculaHorarioChegada()
+    void calculaHorarioChegada(Empresa *e)
     {
         std::cout<< "Horario de embarque dos funcionarios: " << std::endl;
         std::string permissao = "calcularHorarioChegada";
@@ -330,12 +354,18 @@ public:
                     }
                 }
             }
+            //pegar a latitude e longitude do primeiro funcionario do vetor de ordemFuncionarios e calcular a distancia dele para o primeiro ponto de parada
+            
+            
+            float distancia = calculaDistancia(ordemFuncionarios[0]->getLatitude(), ordemFuncionarios[0]->getLongitude(), e->getLatitudeE(), e->getLongitudeE());// Latitude e longitude da empresa
+            //converter a distancia em tempo de viagem
+            float tempoViagem = distancia / 18;
+            //pegar o tempo de viagem do primeiro funcionario do vetor de ordemFuncionarios e subtrair 
             for (unsigned int i = 0; i < ordemFuncionarios.size(); i++)
             {
                 if (ordemFuncionarios[i]->getTurno() == 8.00)
                 {
-        
-                    float horarioChegada = 8 - tempoViagens[i];
+                    float horarioChegada = 8.00 - (tempoViagens[i] + tempoViagens[i - 1]) - tempoViagem;
                     //converte o horario de chegada para o formato hh:mm
                     int hora = horarioChegada;
                     int minuto = (horarioChegada - hora) * 60;

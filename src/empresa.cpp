@@ -654,3 +654,4 @@ void Empresa::salvarLogs()
     arquivo.close();
     std::cout << "Logs salvos em ./bin/logs.txt" << std::endl;
 }
+

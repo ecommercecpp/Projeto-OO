@@ -490,7 +490,10 @@ void testaFuncionario()
 
 	r->calculaTempoViagem();
 
-	r->calculaHorarioChegada();
+	e->setLatitudeE(-19.9278119);
+	e->setLongitudeE(-43.9341283);
+
+	r->calculaHorarioChegada(e);
 
 	//imprimindo os logs antes de sair devido a excecao de remover funcionario
 	int opcao = 0;

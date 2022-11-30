@@ -51,6 +51,8 @@ class Empresa
 		std::vector <LogEscrita*> logsEscrita;
     	std::vector <LogLeitura*> logsLeitura;
 		std::vector <LogExcecao*> logsExcecao;
+		float latitudeE;
+		float longitudeE;
 		//std::vector <Veiculo*> veiculos; 
 		//std::vector <MateriaPrima*> materiaPrimaLista;
 
@@ -64,7 +66,19 @@ class Empresa
 		//void operator=(const Empresa &) = delete;
 		static Empresa* getEmpresa();
 		~Empresa();
-		
+		//criar get e set latitude e longitude
+		void setLatitudeE(float latitudeE){
+			this->latitudeE = latitudeE;
+		}
+		float getLatitudeE(){
+			return latitudeE;
+		}
+		void setLongitudeE(float longitudeE){
+			this->longitudeE = longitudeE;
+		}
+		float getLongitudeE(){
+			return longitudeE;
+		}
 		//Usuario* getUsuarioLogado();
 		//void setUsuarioLogado(Usuario* usuario);
 		//void adicionarPermissao(Cliente* cliente, Permissao permissao);
