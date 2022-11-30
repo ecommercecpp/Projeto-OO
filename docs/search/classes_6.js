@@ -8,5 +8,6 @@ var searchData=
   ['invalidquantidadeloteexception_5',['InvalidQuantidadeLoteException',['../class_invalid_quantidade_lote_exception.html',1,'']]],
   ['invalidsalarioexception_6',['InvalidSalarioException',['../class_invalid_salario_exception.html',1,'']]],
   ['invalidtelefoneexception_7',['InvalidTelefoneException',['../class_invalid_telefone_exception.html',1,'']]],
-  ['invalidtypeexception_8',['InvalidTypeException',['../class_invalid_type_exception.html',1,'']]]
+  ['invalidtimeexception_8',['InvalidTimeException',['../class_invalid_time_exception.html',1,'']]],
+  ['invalidtypeexception_9',['InvalidTypeException',['../class_invalid_type_exception.html',1,'']]]
 ];

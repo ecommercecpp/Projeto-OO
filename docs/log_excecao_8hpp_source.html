@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Sistema de Gerenciamento de uma Indústria: Código-Fonte de C:/Users/felip/OneDrive/Documentos/GitHub/poo/include/logExcecao.hpp</title>
+<title>Sistema de Gerenciamento de uma Indústria: Código-Fonte de include/logExcecao.hpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Sistema de Gerenciamento de uma Indústria<span id="projectnumber">&#160;2.0</span>
+   <div id="projectname">Sistema de Gerenciamento de uma Indústria<span id="projectnumber">&#160;3.0</span>
    </div>
    <div id="projectbrief">Trabalho Prático POO | UFMG</div>
   </td>
@@ -97,7 +97,7 @@ $(function() {
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <a class="code hl_function" href="class_log_excecao.html#a42a9bd955f353feb63d6a04eda4a5ce9">LogExcecao</a>();</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <a class="code hl_function" href="class_log_excecao.html#a4a9bc874ca5402d3926a346a3b06da53">~LogExcecao</a>();</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <a class="code hl_function" href="class_log_excecao.html#a42a9bd955f353feb63d6a04eda4a5ce9">LogExcecao</a>(<a class="code hl_class" href="class_usuario.html">Usuario</a>, <a class="code hl_class" href="class_data.html">Data</a>, std::string, std::string);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="comment">//LogExcecao(Usuario, Data, std::string, std::string);</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="comment">//std::string getLog();</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_log_excecao.html#a64d3a3c7e3c90b3d8181b9d585d0c77c">setHistoricoLogExcecao</a>(std::vector&lt;std::string&gt;);</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        std::vector&lt;std::string&gt; <a class="code hl_function" href="class_log_excecao.html#a0e4eda680f350154d85fcbbbc74cd1ff">getHistoricoLogExcecao</a>();</div>
@@ -107,18 +107,16 @@ $(function() {
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>};</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclass_data_html"><div class="ttname"><a href="class_data.html">Data</a></div><div class="ttdef"><b>Definition:</b> Data.h:16</div></div>
 <div class="ttc" id="aclass_log_excecao_html"><div class="ttname"><a href="class_log_excecao.html">LogExcecao</a></div><div class="ttdef"><b>Definition:</b> logExcecao.hpp:12</div></div>
-<div class="ttc" id="aclass_log_excecao_html_a0e4eda680f350154d85fcbbbc74cd1ff"><div class="ttname"><a href="class_log_excecao.html#a0e4eda680f350154d85fcbbbc74cd1ff">LogExcecao::getHistoricoLogExcecao</a></div><div class="ttdeci">std::vector&lt; std::string &gt; getHistoricoLogExcecao()</div><div class="ttdoc">Retorna o historico do log de exceção.</div><div class="ttdef"><b>Definition:</b> logExcecao.cpp:55</div></div>
-<div class="ttc" id="aclass_log_excecao_html_a42a9bd955f353feb63d6a04eda4a5ce9"><div class="ttname"><a href="class_log_excecao.html#a42a9bd955f353feb63d6a04eda4a5ce9">LogExcecao::LogExcecao</a></div><div class="ttdeci">LogExcecao()</div><div class="ttdoc">Construct a new Log Excecao:: Log Excecao object.</div><div class="ttdef"><b>Definition:</b> logExcecao.cpp:22</div></div>
-<div class="ttc" id="aclass_log_excecao_html_a4a9bc874ca5402d3926a346a3b06da53"><div class="ttname"><a href="class_log_excecao.html#a4a9bc874ca5402d3926a346a3b06da53">LogExcecao::~LogExcecao</a></div><div class="ttdeci">~LogExcecao()</div><div class="ttdoc">Destroy the Log Excecao:: Log Excecao object.</div><div class="ttdef"><b>Definition:</b> logExcecao.cpp:30</div></div>
+<div class="ttc" id="aclass_log_excecao_html_a0e4eda680f350154d85fcbbbc74cd1ff"><div class="ttname"><a href="class_log_excecao.html#a0e4eda680f350154d85fcbbbc74cd1ff">LogExcecao::getHistoricoLogExcecao</a></div><div class="ttdeci">std::vector&lt; std::string &gt; getHistoricoLogExcecao()</div><div class="ttdoc">Retorna o historico do log de exceção.</div><div class="ttdef"><b>Definition:</b> logExcecao.cpp:56</div></div>
+<div class="ttc" id="aclass_log_excecao_html_a42a9bd955f353feb63d6a04eda4a5ce9"><div class="ttname"><a href="class_log_excecao.html#a42a9bd955f353feb63d6a04eda4a5ce9">LogExcecao::LogExcecao</a></div><div class="ttdeci">LogExcecao()</div><div class="ttdoc">Construct a new Log Excecao:: Log Excecao object.</div><div class="ttdef"><b>Definition:</b> logExcecao.cpp:23</div></div>
+<div class="ttc" id="aclass_log_excecao_html_a4a9bc874ca5402d3926a346a3b06da53"><div class="ttname"><a href="class_log_excecao.html#a4a9bc874ca5402d3926a346a3b06da53">LogExcecao::~LogExcecao</a></div><div class="ttdeci">~LogExcecao()</div><div class="ttdoc">Destroy the Log Excecao:: Log Excecao object.</div><div class="ttdef"><b>Definition:</b> logExcecao.cpp:31</div></div>
 <div class="ttc" id="aclass_log_excecao_html_a4ffffe278c8f8cdc702ef5d5f63903a3"><div class="ttname"><a href="class_log_excecao.html#a4ffffe278c8f8cdc702ef5d5f63903a3">LogExcecao::historicoLogExcecao</a></div><div class="ttdeci">std::vector&lt; std::string &gt; historicoLogExcecao</div><div class="ttdef"><b>Definition:</b> logExcecao.hpp:15</div></div>
-<div class="ttc" id="aclass_log_excecao_html_a64d3a3c7e3c90b3d8181b9d585d0c77c"><div class="ttname"><a href="class_log_excecao.html#a64d3a3c7e3c90b3d8181b9d585d0c77c">LogExcecao::setHistoricoLogExcecao</a></div><div class="ttdeci">void setHistoricoLogExcecao(std::vector&lt; std::string &gt;)</div><div class="ttdoc">Seta o historico do log de exceção.</div><div class="ttdef"><b>Definition:</b> logExcecao.cpp:45</div></div>
-<div class="ttc" id="aclass_log_excecao_html_a81d92477fdb27bd75e88357f5edc73f5"><div class="ttname"><a href="class_log_excecao.html#a81d92477fdb27bd75e88357f5edc73f5">LogExcecao::setFuncionalidade</a></div><div class="ttdeci">void setFuncionalidade(std::string)</div><div class="ttdoc">Seta a funcionalidade da exceção.</div><div class="ttdef"><b>Definition:</b> logExcecao.cpp:65</div></div>
+<div class="ttc" id="aclass_log_excecao_html_a64d3a3c7e3c90b3d8181b9d585d0c77c"><div class="ttname"><a href="class_log_excecao.html#a64d3a3c7e3c90b3d8181b9d585d0c77c">LogExcecao::setHistoricoLogExcecao</a></div><div class="ttdeci">void setHistoricoLogExcecao(std::vector&lt; std::string &gt;)</div><div class="ttdoc">Seta o historico do log de exceção.</div><div class="ttdef"><b>Definition:</b> logExcecao.cpp:46</div></div>
+<div class="ttc" id="aclass_log_excecao_html_a81d92477fdb27bd75e88357f5edc73f5"><div class="ttname"><a href="class_log_excecao.html#a81d92477fdb27bd75e88357f5edc73f5">LogExcecao::setFuncionalidade</a></div><div class="ttdeci">void setFuncionalidade(std::string)</div><div class="ttdoc">Seta a funcionalidade da exceção.</div><div class="ttdef"><b>Definition:</b> logExcecao.cpp:66</div></div>
 <div class="ttc" id="aclass_log_excecao_html_ab421bcf40ad17f297d641b43564f24b3"><div class="ttname"><a href="class_log_excecao.html#ab421bcf40ad17f297d641b43564f24b3">LogExcecao::funcionalidade</a></div><div class="ttdeci">std::string funcionalidade</div><div class="ttdef"><b>Definition:</b> logExcecao.hpp:14</div></div>
-<div class="ttc" id="aclass_log_excecao_html_afc1317c7ec76d559b83621e119892007"><div class="ttname"><a href="class_log_excecao.html#afc1317c7ec76d559b83621e119892007">LogExcecao::getFuncionalidade</a></div><div class="ttdeci">std::string getFuncionalidade()</div><div class="ttdoc">Retorna a funcionalidade da exceção.</div><div class="ttdef"><b>Definition:</b> logExcecao.cpp:75</div></div>
-<div class="ttc" id="aclass_logs_html"><div class="ttname"><a href="class_logs.html">Logs</a></div><div class="ttdef"><b>Definition:</b> logs.hpp:14</div></div>
-<div class="ttc" id="aclass_usuario_html"><div class="ttname"><a href="class_usuario.html">Usuario</a></div><div class="ttdef"><b>Definition:</b> logs.hpp:11</div></div>
+<div class="ttc" id="aclass_log_excecao_html_afc1317c7ec76d559b83621e119892007"><div class="ttname"><a href="class_log_excecao.html#afc1317c7ec76d559b83621e119892007">LogExcecao::getFuncionalidade</a></div><div class="ttdeci">std::string getFuncionalidade()</div><div class="ttdoc">Retorna a funcionalidade da exceção.</div><div class="ttdef"><b>Definition:</b> logExcecao.cpp:76</div></div>
+<div class="ttc" id="aclass_logs_html"><div class="ttname"><a href="class_logs.html">Logs</a></div><div class="ttdef"><b>Definition:</b> logs.hpp:12</div></div>
 <div class="ttc" id="aexceptions_8hpp_html"><div class="ttname"><a href="exceptions_8hpp.html">exceptions.hpp</a></div></div>
 <div class="ttc" id="alogs_8hpp_html"><div class="ttname"><a href="logs_8hpp.html">logs.hpp</a></div></div>
 <div class="ttc" id="athird__party_2_classe_01_data_2_data_8h_html"><div class="ttname"><a href="third__party_2_classe_01_data_2_data_8h.html">Data.h</a></div></div>

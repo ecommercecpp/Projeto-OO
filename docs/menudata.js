@@ -94,7 +94,17 @@ var menudata={children:[
 {text:"Arquivos",url:"files.html",children:[
 {text:"Lista de Arquivos",url:"files.html"},
 {text:"Membros dos Arquivos",url:"globals.html",children:[
-{text:"Todos",url:"globals.html"},
+{text:"Todos",url:"globals.html",children:[
+{text:"b",url:"globals.html#index_b"},
+{text:"d",url:"globals.html#index_d"},
+{text:"h",url:"globals.html#index_h"},
+{text:"i",url:"globals.html#index_i"},
+{text:"m",url:"globals.html#index_m"},
+{text:"p",url:"globals.html#index_p"},
+{text:"t",url:"globals.html#index_t"},
+{text:"v",url:"globals.html#index_v"},
+{text:"y",url:"globals.html#index_y"},
+{text:"�",url:"globals.html#index_a0xac"}]},
 {text:"Funções",url:"globals_func.html"},
 {text:"Variáveis",url:"globals_vars.html"},
 {text:"Definições e Macros",url:"globals_defs.html"}]}]}]}

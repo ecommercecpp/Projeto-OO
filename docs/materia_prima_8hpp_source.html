@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Sistema de Gerenciamento de uma Indústria: Código-Fonte de C:/Users/felip/OneDrive/Documentos/GitHub/poo/include/materiaPrima.hpp</title>
+<title>Sistema de Gerenciamento de uma Indústria: Código-Fonte de include/materiaPrima.hpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Sistema de Gerenciamento de uma Indústria<span id="projectnumber">&#160;2.0</span>
+   <div id="projectname">Sistema de Gerenciamento de uma Indústria<span id="projectnumber">&#160;3.0</span>
    </div>
    <div id="projectbrief">Trabalho Prático POO | UFMG</div>
   </td>
@@ -78,7 +78,67 @@ $(function() {
   <div class="headertitle"><div class="title">materiaPrima.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="materia_prima_8hpp.html">Vá para a documentação desse arquivo.</a><div class="fragment"></div><!-- fragment --></div><!-- contents -->
+<a href="materia_prima_8hpp.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef _MATERIAPRIMA_HPP_</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define _MATERIAPRIMA_HPP_</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;numeric&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="fornecedor_8hpp.html">fornecedor.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_materia_prima.html">   12</a></span><span class="keyword">class </span><a class="code hl_class" href="class_materia_prima.html">MateriaPrima</a></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        std::string nome; </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keywordtype">int</span> quantidade; </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keywordtype">int</span> estoquemin;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        std::string unidadeMedida;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keywordtype">int</span> estoqueDisponivel;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keywordtype">int</span> estoqueTotal;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="comment">//std::vector&lt;Fornecedor&gt; fornecedores;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="comment">//std::map&lt;int, Fornecedor&gt; fornecedores; </span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="comment">//MateriaPrima(std::string nome, int quantidade, std::string unidadeMedida,int estoqueminimo);</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <a class="code hl_function" href="class_materia_prima.html#a20b7a0910b909eaeb2d3ed30a7884a4e">MateriaPrima</a>();</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <a class="code hl_function" href="class_materia_prima.html#a254a87895948d5cfc8d5c9231707d0d5">~MateriaPrima</a>();</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="comment">//void setFornecedores(int valorDoMaterial, Fornecedor fornecedor);</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="comment">//std::map&lt;int, Fornecedor&gt; retornaMenorValor();</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_materia_prima.html#afa60848e9dd81cc8c970846cb652ab6c">atualizaQuantidade</a>(<span class="keywordtype">int</span> valor);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordtype">int</span> <a class="code hl_function" href="class_materia_prima.html#ad28a2481b485d4634a54e540444193e9">getQuantidade</a>();</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        std::string <a class="code hl_function" href="class_materia_prima.html#a1bde359386876474cb9b76deecf71734">getNome</a>();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordtype">int</span> <a class="code hl_function" href="class_materia_prima.html#ae9462b8228eff12f29bd4ea38f8c9f0b">getEstoquemin</a>();</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        std::string <a class="code hl_function" href="class_materia_prima.html#a25f6aa1f06f0e22b11ff8a9471a69ca9">getUnidadeMedida</a>();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_materia_prima.html#a643929527bb90e49b0cd58c4e51bfb6f">setNome</a>(std::string nome);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_materia_prima.html#a2715af1d1ac47d4ac2a086e17e5d0a10">setQuantidade</a>(<span class="keywordtype">int</span> quantidade);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_materia_prima.html#a94039f5b2a72b455f05797a1b8f7629a">setEstoquemin</a>(<span class="keywordtype">int</span> estoquemin);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_materia_prima.html#a1676ee87c0eebe4df982eeac0b9c83d8">setUnidadeMedida</a>(std::string unidadeMedida);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordtype">int</span> <a class="code hl_function" href="class_materia_prima.html#aa5dd36528ff43e47ec4862821e5f70ff">getEstoqueDisponivel</a>();<span class="comment">//retorna o estoque depois da compra</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_materia_prima.html#a9aa3b6f8e4c67e8eece04d6aa7d44d57">setEstoqueTotal</a>(<span class="keywordtype">int</span> estoqueTotal);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>};</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_materia_prima_html"><div class="ttname"><a href="class_materia_prima.html">MateriaPrima</a></div><div class="ttdef"><b>Definition:</b> materiaPrima.hpp:13</div></div>
+<div class="ttc" id="aclass_materia_prima_html_a1676ee87c0eebe4df982eeac0b9c83d8"><div class="ttname"><a href="class_materia_prima.html#a1676ee87c0eebe4df982eeac0b9c83d8">MateriaPrima::setUnidadeMedida</a></div><div class="ttdeci">void setUnidadeMedida(std::string unidadeMedida)</div><div class="ttdoc">Seta a unidade de medida da materia prima.</div><div class="ttdef"><b>Definition:</b> materiaPrima.cpp:90</div></div>
+<div class="ttc" id="aclass_materia_prima_html_a1bde359386876474cb9b76deecf71734"><div class="ttname"><a href="class_materia_prima.html#a1bde359386876474cb9b76deecf71734">MateriaPrima::getNome</a></div><div class="ttdeci">std::string getNome()</div><div class="ttdoc">Retorna o nome da materia prima.</div><div class="ttdef"><b>Definition:</b> materiaPrima.cpp:153</div></div>
+<div class="ttc" id="aclass_materia_prima_html_a20b7a0910b909eaeb2d3ed30a7884a4e"><div class="ttname"><a href="class_materia_prima.html#a20b7a0910b909eaeb2d3ed30a7884a4e">MateriaPrima::MateriaPrima</a></div><div class="ttdeci">MateriaPrima()</div><div class="ttdoc">Construct a new Materia Prima:: Materia Prima object.</div><div class="ttdef"><b>Definition:</b> materiaPrima.cpp:10</div></div>
+<div class="ttc" id="aclass_materia_prima_html_a254a87895948d5cfc8d5c9231707d0d5"><div class="ttname"><a href="class_materia_prima.html#a254a87895948d5cfc8d5c9231707d0d5">MateriaPrima::~MateriaPrima</a></div><div class="ttdeci">~MateriaPrima()</div><div class="ttdoc">Destroy the Materia Prima:: Materia Prima object.</div><div class="ttdef"><b>Definition:</b> materiaPrima.cpp:18</div></div>
+<div class="ttc" id="aclass_materia_prima_html_a25f6aa1f06f0e22b11ff8a9471a69ca9"><div class="ttname"><a href="class_materia_prima.html#a25f6aa1f06f0e22b11ff8a9471a69ca9">MateriaPrima::getUnidadeMedida</a></div><div class="ttdeci">std::string getUnidadeMedida()</div><div class="ttdoc">Retorna a unidade de medida da materia prima.</div><div class="ttdef"><b>Definition:</b> materiaPrima.cpp:195</div></div>
+<div class="ttc" id="aclass_materia_prima_html_a2715af1d1ac47d4ac2a086e17e5d0a10"><div class="ttname"><a href="class_materia_prima.html#a2715af1d1ac47d4ac2a086e17e5d0a10">MateriaPrima::setQuantidade</a></div><div class="ttdeci">void setQuantidade(int quantidade)</div><div class="ttdoc">Seta a quantidade da materia prima.</div><div class="ttdef"><b>Definition:</b> materiaPrima.cpp:48</div></div>
+<div class="ttc" id="aclass_materia_prima_html_a643929527bb90e49b0cd58c4e51bfb6f"><div class="ttname"><a href="class_materia_prima.html#a643929527bb90e49b0cd58c4e51bfb6f">MateriaPrima::setNome</a></div><div class="ttdeci">void setNome(std::string nome)</div><div class="ttdoc">Seta o nome da materia prima.</div><div class="ttdef"><b>Definition:</b> materiaPrima.cpp:27</div></div>
+<div class="ttc" id="aclass_materia_prima_html_a94039f5b2a72b455f05797a1b8f7629a"><div class="ttname"><a href="class_materia_prima.html#a94039f5b2a72b455f05797a1b8f7629a">MateriaPrima::setEstoquemin</a></div><div class="ttdeci">void setEstoquemin(int estoquemin)</div><div class="ttdoc">Seta o estoque minimo da materia prima.</div><div class="ttdef"><b>Definition:</b> materiaPrima.cpp:69</div></div>
+<div class="ttc" id="aclass_materia_prima_html_a9aa3b6f8e4c67e8eece04d6aa7d44d57"><div class="ttname"><a href="class_materia_prima.html#a9aa3b6f8e4c67e8eece04d6aa7d44d57">MateriaPrima::setEstoqueTotal</a></div><div class="ttdeci">void setEstoqueTotal(int estoqueTotal)</div><div class="ttdoc">Define o estoque disponivel da materia prima.</div><div class="ttdef"><b>Definition:</b> materiaPrima.cpp:217</div></div>
+<div class="ttc" id="aclass_materia_prima_html_aa5dd36528ff43e47ec4862821e5f70ff"><div class="ttname"><a href="class_materia_prima.html#aa5dd36528ff43e47ec4862821e5f70ff">MateriaPrima::getEstoqueDisponivel</a></div><div class="ttdeci">int getEstoqueDisponivel()</div><div class="ttdoc">Retorna o estoque disponivel da materia prima.</div><div class="ttdef"><b>Definition:</b> materiaPrima.cpp:238</div></div>
+<div class="ttc" id="aclass_materia_prima_html_ad28a2481b485d4634a54e540444193e9"><div class="ttname"><a href="class_materia_prima.html#ad28a2481b485d4634a54e540444193e9">MateriaPrima::getQuantidade</a></div><div class="ttdeci">int getQuantidade()</div><div class="ttdoc">Retorna a quantidade da materia prima.</div><div class="ttdef"><b>Definition:</b> materiaPrima.cpp:132</div></div>
+<div class="ttc" id="aclass_materia_prima_html_ae9462b8228eff12f29bd4ea38f8c9f0b"><div class="ttname"><a href="class_materia_prima.html#ae9462b8228eff12f29bd4ea38f8c9f0b">MateriaPrima::getEstoquemin</a></div><div class="ttdeci">int getEstoquemin()</div><div class="ttdoc">Retorna o estoque minimo da materia prima.</div><div class="ttdef"><b>Definition:</b> materiaPrima.cpp:174</div></div>
+<div class="ttc" id="aclass_materia_prima_html_afa60848e9dd81cc8c970846cb652ab6c"><div class="ttname"><a href="class_materia_prima.html#afa60848e9dd81cc8c970846cb652ab6c">MateriaPrima::atualizaQuantidade</a></div><div class="ttdeci">void atualizaQuantidade(int valor)</div><div class="ttdoc">Atualiza a quantidade da materia prima.</div><div class="ttdef"><b>Definition:</b> materiaPrima.cpp:111</div></div>
+<div class="ttc" id="afornecedor_8hpp_html"><div class="ttname"><a href="fornecedor_8hpp.html">fornecedor.hpp</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5

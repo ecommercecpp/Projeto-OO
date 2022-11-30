@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['editapermissao_0',['editaPermissao',['../class_permissao.html#ae248e88664dfc3fe15f36f0985578b3e',1,'Permissao::editaPermissao(std::string, bool)'],['../class_permissao.html#acd24ea4ba5a9ca996827a0164db680b2',1,'Permissao::editaPermissao(std::map&lt; std::string, bool &gt;)']]],
+  ['editapermissao_0',['editaPermissao',['../class_permissao.html#ae248e88664dfc3fe15f36f0985578b3e',1,'Permissao::editaPermissao(std::string, bool)'],['../class_permissao.html#a55fefa99257c995abd5a009dea3538ce',1,'Permissao::editaPermissao(std::vector&lt; std::string &gt;)']]],
   ['email_1',['email',['../class_pessoa.html#a4aae0b05d45c839f21a6fc3e9e8c71e6',1,'Pessoa']]],
   ['empregado_2',['empregado',['../class_funcionario.html#ab980e3293f2915f504f4da7d0f5744e4',1,'Funcionario']]],
   ['empresa_3',['Empresa',['../class_empresa.html',1,'Empresa'],['../class_empresa.html#a324546458f6c3bd52213873389816bfb',1,'Empresa::Empresa()']]],
@@ -12,8 +12,9 @@ var searchData=
   ['estoque_9',['estoque',['../class_estoque.html#ab45b18045957f2eb50622a196e36c85c',1,'Estoque']]],
   ['estoque_2ecpp_10',['estoque.cpp',['../estoque_8cpp.html',1,'']]],
   ['estoque_2ehpp_11',['estoque.hpp',['../estoque_8hpp.html',1,'']]],
-  ['estoquemateriaprima_2ehpp_12',['estoqueMateriaPrima.hpp',['../estoque_materia_prima_8hpp.html',1,'']]],
-  ['exceptions_2ehpp_13',['exceptions.hpp',['../exceptions_8hpp.html',1,'']]],
-  ['execaocustomizada_14',['ExecaoCustomizada',['../class_execao_customizada.html',1,'ExecaoCustomizada'],['../class_execao_customizada.html#afd21b247adf9d6f5d4693ff17a0fb4a8',1,'ExecaoCustomizada::ExecaoCustomizada(char *e)'],['../class_execao_customizada.html#afd21b247adf9d6f5d4693ff17a0fb4a8',1,'ExecaoCustomizada::ExecaoCustomizada(char *e)']]],
-  ['execaocustomizada_2eh_15',['ExecaoCustomizada.h',['../include_2_execao_customizada_8h.html',1,'(<em>Namespace</em> global)'],['../third__party_2_classe_01_data_2_execao_customizada_8h.html',1,'(<em>Namespace</em> global)']]]
+  ['estoquemateriaprima_12',['EstoqueMateriaPrima',['../class_estoque_materia_prima.html',1,'EstoqueMateriaPrima'],['../class_estoque_materia_prima.html#aeb6b409f94e5d046f3b2b2e242e13763',1,'EstoqueMateriaPrima::EstoqueMateriaPrima()']]],
+  ['estoquemateriaprima_2ehpp_13',['estoqueMateriaPrima.hpp',['../estoque_materia_prima_8hpp.html',1,'']]],
+  ['exceptions_2ehpp_14',['exceptions.hpp',['../exceptions_8hpp.html',1,'']]],
+  ['execaocustomizada_15',['ExecaoCustomizada',['../class_execao_customizada.html',1,'ExecaoCustomizada'],['../class_execao_customizada.html#afd21b247adf9d6f5d4693ff17a0fb4a8',1,'ExecaoCustomizada::ExecaoCustomizada(char *e)'],['../class_execao_customizada.html#afd21b247adf9d6f5d4693ff17a0fb4a8',1,'ExecaoCustomizada::ExecaoCustomizada(char *e)']]],
+  ['execaocustomizada_2eh_16',['ExecaoCustomizada.h',['../include_2_execao_customizada_8h.html',1,'(<em>Namespace</em> global)'],['../third__party_2_classe_01_data_2_execao_customizada_8h.html',1,'(<em>Namespace</em> global)']]]
 ];

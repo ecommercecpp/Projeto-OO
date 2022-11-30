@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Sistema de Gerenciamento de uma Indústria<span id="projectnumber">&#160;2.0</span>
+   <div id="projectname">Sistema de Gerenciamento de uma Indústria<span id="projectnumber">&#160;3.0</span>
    </div>
    <div id="projectbrief">Trabalho Prático POO | UFMG</div>
   </td>
@@ -164,8 +164,8 @@ Membros Públicos</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Construct a new <a class="el" href="class_boleto.html">Boleto</a>:: <a class="el" href="class_boleto.html">Boleto</a> object. </p>
-<div class="fragment"><div class="line"><span class="lineno">   10</span>{</div>
-<div class="line"><span class="lineno">   11</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">   11</span>{</div>
+<div class="line"><span class="lineno">   12</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -217,12 +217,28 @@ Membros Públicos</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><span class="lineno">   22</span>{</div>
-<div class="line"><span class="lineno">   23</span>    this-&gt;codigoDeBarras = codigoDeBarras;</div>
-<div class="line"><span class="lineno">   24</span>    this-&gt;nomeDoPagador = nomeDoPagador;</div>
-<div class="line"><span class="lineno">   25</span>    this-&gt;dataDeVencimento = dataDeVencimento;</div>
-<div class="line"><span class="lineno">   26</span>    this-&gt;prazoDePagamento = prazoDePagamento;</div>
-<div class="line"><span class="lineno">   27</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">   23</span>{</div>
+<div class="line"><span class="lineno">   24</span>    std::string <a class="code hl_function" href="program_2main_8cpp.html#a5508132d195a8c51fedc92e81340701a">permissao</a> = <span class="stringliteral">&quot;cadastrarBoleto&quot;</span>;</div>
+<div class="line"><span class="lineno">   25</span>    std::string atributos = <span class="stringliteral">&quot;codigoDeBarras: &quot;</span> + std::to_string(codigoDeBarras) + <span class="stringliteral">&quot;, nomeDoPagador: &quot;</span> + nomeDoPagador + <span class="stringliteral">&quot;, dataDeVencimento: &quot;</span> + <span class="stringliteral">&quot;, prazoDePagamento: &quot;</span> + std::to_string(prazoDePagamento);</div>
+<div class="line"><span class="lineno">   26</span>    <a class="code hl_function" href="class_empresa.html#a31cee3bedc17ae907f3859ba959ec10a">Empresa::getEmpresa</a>()-&gt;<a class="code hl_function" href="class_empresa.html#a7e2cb32cce91296eecd7bc991fcca63d">gerarLogEscrita</a>(<span class="stringliteral">&quot;boleto&quot;</span>, atributos);</div>
+<div class="line"><span class="lineno">   27</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="class_empresa.html#a31cee3bedc17ae907f3859ba959ec10a">Empresa::getEmpresa</a>()-&gt;verificaPermissao(<a class="code hl_function" href="program_2main_8cpp.html#a5508132d195a8c51fedc92e81340701a">permissao</a>))</div>
+<div class="line"><span class="lineno">   28</span>    {</div>
+<div class="line"><span class="lineno">   29</span>        <a class="code hl_function" href="class_empresa.html#a31cee3bedc17ae907f3859ba959ec10a">Empresa::getEmpresa</a>()-&gt;<a class="code hl_function" href="class_empresa.html#a2904a8814b34c3d5830001509626abb3">gerarLogExcecao</a>(<span class="stringliteral">&quot;boleto&quot;</span>, <span class="stringliteral">&quot;Boleto&quot;</span>);</div>
+<div class="line"><span class="lineno">   30</span>        <span class="keywordflow">throw</span> <a class="code hl_class" href="class_acess_denied_exception.html">AcessDeniedException</a>();</div>
+<div class="line"><span class="lineno">   31</span>    }</div>
+<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   33</span>    {</div>
+<div class="line"><span class="lineno">   34</span>        this-&gt;codigoDeBarras = codigoDeBarras;</div>
+<div class="line"><span class="lineno">   35</span>        this-&gt;nomeDoPagador = nomeDoPagador;</div>
+<div class="line"><span class="lineno">   36</span>        this-&gt;dataDeVencimento = dataDeVencimento;</div>
+<div class="line"><span class="lineno">   37</span>        this-&gt;prazoDePagamento = prazoDePagamento;</div>
+<div class="line"><span class="lineno">   38</span>    }</div>
+<div class="line"><span class="lineno">   39</span>}</div>
+<div class="ttc" id="aclass_acess_denied_exception_html"><div class="ttname"><a href="class_acess_denied_exception.html">AcessDeniedException</a></div><div class="ttdef"><b>Definition:</b> exceptions.hpp:47</div></div>
+<div class="ttc" id="aclass_empresa_html_a2904a8814b34c3d5830001509626abb3"><div class="ttname"><a href="class_empresa.html#a2904a8814b34c3d5830001509626abb3">Empresa::gerarLogExcecao</a></div><div class="ttdeci">void gerarLogExcecao(std::string entidade, std::string funcionalidade)</div><div class="ttdoc">Gera um log de excecao.</div><div class="ttdef"><b>Definition:</b> empresa.cpp:553</div></div>
+<div class="ttc" id="aclass_empresa_html_a31cee3bedc17ae907f3859ba959ec10a"><div class="ttname"><a href="class_empresa.html#a31cee3bedc17ae907f3859ba959ec10a">Empresa::getEmpresa</a></div><div class="ttdeci">static Empresa * getEmpresa()</div><div class="ttdoc">Retorna a instancia da empresa.</div><div class="ttdef"><b>Definition:</b> empresa.cpp:28</div></div>
+<div class="ttc" id="aclass_empresa_html_a7e2cb32cce91296eecd7bc991fcca63d"><div class="ttname"><a href="class_empresa.html#a7e2cb32cce91296eecd7bc991fcca63d">Empresa::gerarLogEscrita</a></div><div class="ttdeci">void gerarLogEscrita(std::string entidade, std::string atributoAlterado)</div><div class="ttdoc">Gera um log escrito.</div><div class="ttdef"><b>Definition:</b> empresa.cpp:446</div></div>
+<div class="ttc" id="aprogram_2main_8cpp_html_a5508132d195a8c51fedc92e81340701a"><div class="ttname"><a href="program_2main_8cpp.html#a5508132d195a8c51fedc92e81340701a">permissao</a></div><div class="ttdeci">std::vector&lt; std::string &gt; permissao()</div><div class="ttdef"><b>Definition:</b> main.cpp:19</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -244,9 +260,21 @@ Membros Públicos</h2></td></tr>
 
 <p>Retorna o codigo de barras do boleto. </p>
 <dl class="section return"><dt>Retorna</dt><dd>int </dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">   35</span>{</div>
-<div class="line"><span class="lineno">   36</span>    <span class="keywordflow">return</span> this-&gt;codigoDeBarras;</div>
-<div class="line"><span class="lineno">   37</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">   47</span>{</div>
+<div class="line"><span class="lineno">   48</span>    std::string <a class="code hl_function" href="program_2main_8cpp.html#a5508132d195a8c51fedc92e81340701a">permissao</a> = <span class="stringliteral">&quot;verificarCodigoDeBarrasBoleto&quot;</span>;</div>
+<div class="line"><span class="lineno">   49</span>    std::string atributos = <span class="stringliteral">&quot;codigoDeBarras: &quot;</span> + std::to_string(codigoDeBarras);</div>
+<div class="line"><span class="lineno">   50</span>    <a class="code hl_function" href="class_empresa.html#a31cee3bedc17ae907f3859ba959ec10a">Empresa::getEmpresa</a>()-&gt;<a class="code hl_function" href="class_empresa.html#a18e2ae5d0cbe5a3b793ce9fdb1c7290e">gerarLogLeitura</a>(<span class="stringliteral">&quot;boleto&quot;</span>, atributos);</div>
+<div class="line"><span class="lineno">   51</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="class_empresa.html#a31cee3bedc17ae907f3859ba959ec10a">Empresa::getEmpresa</a>()-&gt;verificaPermissao(<a class="code hl_function" href="program_2main_8cpp.html#a5508132d195a8c51fedc92e81340701a">permissao</a>))</div>
+<div class="line"><span class="lineno">   52</span>    {</div>
+<div class="line"><span class="lineno">   53</span>        <a class="code hl_function" href="class_empresa.html#a31cee3bedc17ae907f3859ba959ec10a">Empresa::getEmpresa</a>()-&gt;<a class="code hl_function" href="class_empresa.html#a2904a8814b34c3d5830001509626abb3">gerarLogExcecao</a>(<span class="stringliteral">&quot;boleto&quot;</span>, <span class="stringliteral">&quot;getCodigoDeBarras&quot;</span>);</div>
+<div class="line"><span class="lineno">   54</span>        <span class="keywordflow">throw</span> <a class="code hl_class" href="class_acess_denied_exception.html">AcessDeniedException</a>();</div>
+<div class="line"><span class="lineno">   55</span>    }</div>
+<div class="line"><span class="lineno">   56</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   57</span>    {</div>
+<div class="line"><span class="lineno">   58</span>        <span class="keywordflow">return</span> this-&gt;codigoDeBarras;</div>
+<div class="line"><span class="lineno">   59</span>    }</div>
+<div class="line"><span class="lineno">   60</span>}</div>
+<div class="ttc" id="aclass_empresa_html_a18e2ae5d0cbe5a3b793ce9fdb1c7290e"><div class="ttname"><a href="class_empresa.html#a18e2ae5d0cbe5a3b793ce9fdb1c7290e">Empresa::gerarLogLeitura</a></div><div class="ttdeci">void gerarLogLeitura(std::string entidade, std::string informacao)</div><div class="ttdoc">Gera um log de leitura.</div><div class="ttdef"><b>Definition:</b> empresa.cpp:501</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -267,9 +295,21 @@ Membros Públicos</h2></td></tr>
 
 <p>Retorna a data de vencimento do boleto. </p>
 <dl class="section return"><dt>Retorna</dt><dd><a class="el" href="class_data.html">Data</a> </dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">   75</span>{</div>
-<div class="line"><span class="lineno">   76</span>    <span class="keywordflow">return</span> this-&gt;dataDeVencimento;</div>
-<div class="line"><span class="lineno">   77</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">  131</span>{</div>
+<div class="line"><span class="lineno">  132</span>    std::string <a class="code hl_function" href="program_2main_8cpp.html#a5508132d195a8c51fedc92e81340701a">permissao</a> = <span class="stringliteral">&quot;verificarDataDeVencimentoBoleto&quot;</span>;</div>
+<div class="line"><span class="lineno">  133</span>    std::string atributos = <span class="stringliteral">&quot;dataDeVencimento: &quot;</span> + dataDeVencimento.<a class="code hl_function" href="class_data.html#afc7b15a5e81334858e48709b2f45cdc3">getData</a>();</div>
+<div class="line"><span class="lineno">  134</span>    <a class="code hl_function" href="class_empresa.html#a31cee3bedc17ae907f3859ba959ec10a">Empresa::getEmpresa</a>()-&gt;<a class="code hl_function" href="class_empresa.html#a18e2ae5d0cbe5a3b793ce9fdb1c7290e">gerarLogLeitura</a>(<span class="stringliteral">&quot;boleto&quot;</span>, atributos);</div>
+<div class="line"><span class="lineno">  135</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="class_empresa.html#a31cee3bedc17ae907f3859ba959ec10a">Empresa::getEmpresa</a>()-&gt;verificaPermissao(<a class="code hl_function" href="program_2main_8cpp.html#a5508132d195a8c51fedc92e81340701a">permissao</a>))</div>
+<div class="line"><span class="lineno">  136</span>    {</div>
+<div class="line"><span class="lineno">  137</span>        <a class="code hl_function" href="class_empresa.html#a31cee3bedc17ae907f3859ba959ec10a">Empresa::getEmpresa</a>()-&gt;<a class="code hl_function" href="class_empresa.html#a2904a8814b34c3d5830001509626abb3">gerarLogExcecao</a>(<span class="stringliteral">&quot;boleto&quot;</span>, <span class="stringliteral">&quot;getDataDeVencimento&quot;</span>);</div>
+<div class="line"><span class="lineno">  138</span>        <span class="keywordflow">throw</span> <a class="code hl_class" href="class_acess_denied_exception.html">AcessDeniedException</a>();</div>
+<div class="line"><span class="lineno">  139</span>    }</div>
+<div class="line"><span class="lineno">  140</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  141</span>    {</div>
+<div class="line"><span class="lineno">  142</span>        <span class="keywordflow">return</span> this-&gt;dataDeVencimento;</div>
+<div class="line"><span class="lineno">  143</span>    }</div>
+<div class="line"><span class="lineno">  144</span>}</div>
+<div class="ttc" id="aclass_data_html_afc7b15a5e81334858e48709b2f45cdc3"><div class="ttname"><a href="class_data.html#afc7b15a5e81334858e48709b2f45cdc3">Data::getData</a></div><div class="ttdeci">string getData()</div><div class="ttdef"><b>Definition:</b> Data.cpp:327</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -290,9 +330,20 @@ Membros Públicos</h2></td></tr>
 
 <p>Retorna o nome do pagador do boleto. </p>
 <dl class="section return"><dt>Retorna</dt><dd>std::string </dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">   55</span>{</div>
-<div class="line"><span class="lineno">   56</span>    <span class="keywordflow">return</span> this-&gt;nomeDoPagador;</div>
-<div class="line"><span class="lineno">   57</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">   89</span>{</div>
+<div class="line"><span class="lineno">   90</span>    std::string <a class="code hl_function" href="program_2main_8cpp.html#a5508132d195a8c51fedc92e81340701a">permissao</a> = <span class="stringliteral">&quot;verificarNomeDoPagadorBoleto&quot;</span>;</div>
+<div class="line"><span class="lineno">   91</span>    std::string atributos = <span class="stringliteral">&quot;nomeDoPagador: &quot;</span> + nomeDoPagador;</div>
+<div class="line"><span class="lineno">   92</span>    <a class="code hl_function" href="class_empresa.html#a31cee3bedc17ae907f3859ba959ec10a">Empresa::getEmpresa</a>()-&gt;<a class="code hl_function" href="class_empresa.html#a18e2ae5d0cbe5a3b793ce9fdb1c7290e">gerarLogLeitura</a>(<span class="stringliteral">&quot;boleto&quot;</span>, atributos);</div>
+<div class="line"><span class="lineno">   93</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="class_empresa.html#a31cee3bedc17ae907f3859ba959ec10a">Empresa::getEmpresa</a>()-&gt;verificaPermissao(<a class="code hl_function" href="program_2main_8cpp.html#a5508132d195a8c51fedc92e81340701a">permissao</a>))</div>
+<div class="line"><span class="lineno">   94</span>    {</div>
+<div class="line"><span class="lineno">   95</span>        <a class="code hl_function" href="class_empresa.html#a31cee3bedc17ae907f3859ba959ec10a">Empresa::getEmpresa</a>()-&gt;<a class="code hl_function" href="class_empresa.html#a2904a8814b34c3d5830001509626abb3">gerarLogExcecao</a>(<span class="stringliteral">&quot;boleto&quot;</span>, <span class="stringliteral">&quot;getNomeDoPagador&quot;</span>);</div>
+<div class="line"><span class="lineno">   96</span>        <span class="keywordflow">throw</span> <a class="code hl_class" href="class_acess_denied_exception.html">AcessDeniedException</a>();</div>
+<div class="line"><span class="lineno">   97</span>    }</div>
+<div class="line"><span class="lineno">   98</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   99</span>    {</div>
+<div class="line"><span class="lineno">  100</span>        <span class="keywordflow">return</span> this-&gt;nomeDoPagador;</div>
+<div class="line"><span class="lineno">  101</span>    }</div>
+<div class="line"><span class="lineno">  102</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -313,9 +364,20 @@ Membros Públicos</h2></td></tr>
 
 <p>Retorna o prazo de pagamento do boleto. </p>
 <dl class="section return"><dt>Retorna</dt><dd>int </dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">   95</span>{</div>
-<div class="line"><span class="lineno">   96</span>    <span class="keywordflow">return</span> this-&gt;prazoDePagamento;</div>
-<div class="line"><span class="lineno">   97</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">  173</span>{</div>
+<div class="line"><span class="lineno">  174</span>    std::string <a class="code hl_function" href="program_2main_8cpp.html#a5508132d195a8c51fedc92e81340701a">permissao</a> = <span class="stringliteral">&quot;verificarPrazoDePagamentoBoleto&quot;</span>;</div>
+<div class="line"><span class="lineno">  175</span>    std::string atributos = <span class="stringliteral">&quot;prazoDePagamento: &quot;</span> + std::to_string(prazoDePagamento);</div>
+<div class="line"><span class="lineno">  176</span>    <a class="code hl_function" href="class_empresa.html#a31cee3bedc17ae907f3859ba959ec10a">Empresa::getEmpresa</a>()-&gt;<a class="code hl_function" href="class_empresa.html#a18e2ae5d0cbe5a3b793ce9fdb1c7290e">gerarLogLeitura</a>(<span class="stringliteral">&quot;boleto&quot;</span>, atributos);</div>
+<div class="line"><span class="lineno">  177</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="class_empresa.html#a31cee3bedc17ae907f3859ba959ec10a">Empresa::getEmpresa</a>()-&gt;verificaPermissao(<a class="code hl_function" href="program_2main_8cpp.html#a5508132d195a8c51fedc92e81340701a">permissao</a>))</div>
+<div class="line"><span class="lineno">  178</span>    {</div>
+<div class="line"><span class="lineno">  179</span>        <a class="code hl_function" href="class_empresa.html#a31cee3bedc17ae907f3859ba959ec10a">Empresa::getEmpresa</a>()-&gt;<a class="code hl_function" href="class_empresa.html#a2904a8814b34c3d5830001509626abb3">gerarLogExcecao</a>(<span class="stringliteral">&quot;boleto&quot;</span>, <span class="stringliteral">&quot;getPrazoDePagamento&quot;</span>);</div>
+<div class="line"><span class="lineno">  180</span>        <span class="keywordflow">throw</span> <a class="code hl_class" href="class_acess_denied_exception.html">AcessDeniedException</a>();</div>
+<div class="line"><span class="lineno">  181</span>    }</div>
+<div class="line"><span class="lineno">  182</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  183</span>    {</div>
+<div class="line"><span class="lineno">  184</span>        <span class="keywordflow">return</span> this-&gt;prazoDePagamento;</div>
+<div class="line"><span class="lineno">  185</span>    }</div>
+<div class="line"><span class="lineno">  186</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -342,9 +404,20 @@ Membros Públicos</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><span class="lineno">   45</span>{</div>
-<div class="line"><span class="lineno">   46</span>    this-&gt;codigoDeBarras = codigoDeBarras;</div>
-<div class="line"><span class="lineno">   47</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">   68</span>{</div>
+<div class="line"><span class="lineno">   69</span>    std::string <a class="code hl_function" href="program_2main_8cpp.html#a5508132d195a8c51fedc92e81340701a">permissao</a> = <span class="stringliteral">&quot;alterarCodigoDeBarrasBoleto&quot;</span>;</div>
+<div class="line"><span class="lineno">   70</span>    std::string atributos = <span class="stringliteral">&quot;codigoDeBarras: &quot;</span> + std::to_string(codigoDeBarras);</div>
+<div class="line"><span class="lineno">   71</span>    <a class="code hl_function" href="class_empresa.html#a31cee3bedc17ae907f3859ba959ec10a">Empresa::getEmpresa</a>()-&gt;<a class="code hl_function" href="class_empresa.html#a7e2cb32cce91296eecd7bc991fcca63d">gerarLogEscrita</a>(<span class="stringliteral">&quot;boleto&quot;</span>, atributos);</div>
+<div class="line"><span class="lineno">   72</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="class_empresa.html#a31cee3bedc17ae907f3859ba959ec10a">Empresa::getEmpresa</a>()-&gt;verificaPermissao(<a class="code hl_function" href="program_2main_8cpp.html#a5508132d195a8c51fedc92e81340701a">permissao</a>))</div>
+<div class="line"><span class="lineno">   73</span>    {</div>
+<div class="line"><span class="lineno">   74</span>        <a class="code hl_function" href="class_empresa.html#a31cee3bedc17ae907f3859ba959ec10a">Empresa::getEmpresa</a>()-&gt;<a class="code hl_function" href="class_empresa.html#a2904a8814b34c3d5830001509626abb3">gerarLogExcecao</a>(<span class="stringliteral">&quot;boleto&quot;</span>, <span class="stringliteral">&quot;setCodigoDeBarras&quot;</span>);</div>
+<div class="line"><span class="lineno">   75</span>        <span class="keywordflow">throw</span> <a class="code hl_class" href="class_acess_denied_exception.html">AcessDeniedException</a>();</div>
+<div class="line"><span class="lineno">   76</span>    }</div>
+<div class="line"><span class="lineno">   77</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   78</span>    {</div>
+<div class="line"><span class="lineno">   79</span>        this-&gt;codigoDeBarras = codigoDeBarras;</div>
+<div class="line"><span class="lineno">   80</span>    }</div>
+<div class="line"><span class="lineno">   81</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -371,9 +444,20 @@ Membros Públicos</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><span class="lineno">   85</span>{</div>
-<div class="line"><span class="lineno">   86</span>    this-&gt;dataDeVencimento = dataDeVencimento;</div>
-<div class="line"><span class="lineno">   87</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">  152</span>{</div>
+<div class="line"><span class="lineno">  153</span>    std::string <a class="code hl_function" href="program_2main_8cpp.html#a5508132d195a8c51fedc92e81340701a">permissao</a> = <span class="stringliteral">&quot;alterarDataDeVencimentoBoleto&quot;</span>;</div>
+<div class="line"><span class="lineno">  154</span>    std::string atributos = <span class="stringliteral">&quot;dataDeVencimento: &quot;</span> + dataDeVencimento.<a class="code hl_function" href="class_data.html#afc7b15a5e81334858e48709b2f45cdc3">getData</a>();</div>
+<div class="line"><span class="lineno">  155</span>    <a class="code hl_function" href="class_empresa.html#a31cee3bedc17ae907f3859ba959ec10a">Empresa::getEmpresa</a>()-&gt;<a class="code hl_function" href="class_empresa.html#a7e2cb32cce91296eecd7bc991fcca63d">gerarLogEscrita</a>(<span class="stringliteral">&quot;boleto&quot;</span>, atributos);</div>
+<div class="line"><span class="lineno">  156</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="class_empresa.html#a31cee3bedc17ae907f3859ba959ec10a">Empresa::getEmpresa</a>()-&gt;verificaPermissao(<a class="code hl_function" href="program_2main_8cpp.html#a5508132d195a8c51fedc92e81340701a">permissao</a>))</div>
+<div class="line"><span class="lineno">  157</span>    {</div>
+<div class="line"><span class="lineno">  158</span>        <a class="code hl_function" href="class_empresa.html#a31cee3bedc17ae907f3859ba959ec10a">Empresa::getEmpresa</a>()-&gt;<a class="code hl_function" href="class_empresa.html#a2904a8814b34c3d5830001509626abb3">gerarLogExcecao</a>(<span class="stringliteral">&quot;boleto&quot;</span>, <span class="stringliteral">&quot;setDataDeVencimento&quot;</span>);</div>
+<div class="line"><span class="lineno">  159</span>        <span class="keywordflow">throw</span> <a class="code hl_class" href="class_acess_denied_exception.html">AcessDeniedException</a>();</div>
+<div class="line"><span class="lineno">  160</span>    }</div>
+<div class="line"><span class="lineno">  161</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  162</span>    {</div>
+<div class="line"><span class="lineno">  163</span>        this-&gt;dataDeVencimento = dataDeVencimento;</div>
+<div class="line"><span class="lineno">  164</span>    }</div>
+<div class="line"><span class="lineno">  165</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -400,9 +484,20 @@ Membros Públicos</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><span class="lineno">   65</span>{</div>
-<div class="line"><span class="lineno">   66</span>    this-&gt;nomeDoPagador = nomeDoPagador;</div>
-<div class="line"><span class="lineno">   67</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">  110</span>{</div>
+<div class="line"><span class="lineno">  111</span>    std::string <a class="code hl_function" href="program_2main_8cpp.html#a5508132d195a8c51fedc92e81340701a">permissao</a> = <span class="stringliteral">&quot;alterarNomeDoPagadorBoleto&quot;</span>;</div>
+<div class="line"><span class="lineno">  112</span>    std::string atributos = <span class="stringliteral">&quot;nomeDoPagador: &quot;</span> + nomeDoPagador;</div>
+<div class="line"><span class="lineno">  113</span>    <a class="code hl_function" href="class_empresa.html#a31cee3bedc17ae907f3859ba959ec10a">Empresa::getEmpresa</a>()-&gt;<a class="code hl_function" href="class_empresa.html#a7e2cb32cce91296eecd7bc991fcca63d">gerarLogEscrita</a>(<span class="stringliteral">&quot;boleto&quot;</span>, atributos);</div>
+<div class="line"><span class="lineno">  114</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="class_empresa.html#a31cee3bedc17ae907f3859ba959ec10a">Empresa::getEmpresa</a>()-&gt;verificaPermissao(<a class="code hl_function" href="program_2main_8cpp.html#a5508132d195a8c51fedc92e81340701a">permissao</a>))</div>
+<div class="line"><span class="lineno">  115</span>    {</div>
+<div class="line"><span class="lineno">  116</span>        <a class="code hl_function" href="class_empresa.html#a31cee3bedc17ae907f3859ba959ec10a">Empresa::getEmpresa</a>()-&gt;<a class="code hl_function" href="class_empresa.html#a2904a8814b34c3d5830001509626abb3">gerarLogExcecao</a>(<span class="stringliteral">&quot;boleto&quot;</span>, <span class="stringliteral">&quot;setNomeDoPagador&quot;</span>);</div>
+<div class="line"><span class="lineno">  117</span>        <span class="keywordflow">throw</span> <a class="code hl_class" href="class_acess_denied_exception.html">AcessDeniedException</a>();</div>
+<div class="line"><span class="lineno">  118</span>    }</div>
+<div class="line"><span class="lineno">  119</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  120</span>    {</div>
+<div class="line"><span class="lineno">  121</span>        this-&gt;nomeDoPagador = nomeDoPagador;</div>
+<div class="line"><span class="lineno">  122</span>    }</div>
+<div class="line"><span class="lineno">  123</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -429,15 +524,26 @@ Membros Públicos</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><span class="lineno">  105</span>{</div>
-<div class="line"><span class="lineno">  106</span>    this-&gt;prazoDePagamento = prazoDePagamento;</div>
-<div class="line"><span class="lineno">  107</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">  194</span>{</div>
+<div class="line"><span class="lineno">  195</span>    std::string <a class="code hl_function" href="program_2main_8cpp.html#a5508132d195a8c51fedc92e81340701a">permissao</a> = <span class="stringliteral">&quot;alterarPrazoDePagamentoBoleto&quot;</span>;</div>
+<div class="line"><span class="lineno">  196</span>    std::string atributos = <span class="stringliteral">&quot;prazoDePagamento: &quot;</span> + std::to_string(prazoDePagamento);</div>
+<div class="line"><span class="lineno">  197</span>    <a class="code hl_function" href="class_empresa.html#a31cee3bedc17ae907f3859ba959ec10a">Empresa::getEmpresa</a>()-&gt;<a class="code hl_function" href="class_empresa.html#a7e2cb32cce91296eecd7bc991fcca63d">gerarLogEscrita</a>(<span class="stringliteral">&quot;boleto&quot;</span>, atributos);</div>
+<div class="line"><span class="lineno">  198</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="class_empresa.html#a31cee3bedc17ae907f3859ba959ec10a">Empresa::getEmpresa</a>()-&gt;verificaPermissao(<a class="code hl_function" href="program_2main_8cpp.html#a5508132d195a8c51fedc92e81340701a">permissao</a>))</div>
+<div class="line"><span class="lineno">  199</span>    {</div>
+<div class="line"><span class="lineno">  200</span>        <a class="code hl_function" href="class_empresa.html#a31cee3bedc17ae907f3859ba959ec10a">Empresa::getEmpresa</a>()-&gt;<a class="code hl_function" href="class_empresa.html#a2904a8814b34c3d5830001509626abb3">gerarLogExcecao</a>(<span class="stringliteral">&quot;boleto&quot;</span>, <span class="stringliteral">&quot;setPrazoDePagamento&quot;</span>);</div>
+<div class="line"><span class="lineno">  201</span>        <span class="keywordflow">throw</span> <a class="code hl_class" href="class_acess_denied_exception.html">AcessDeniedException</a>();</div>
+<div class="line"><span class="lineno">  202</span>    }</div>
+<div class="line"><span class="lineno">  203</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  204</span>    {</div>
+<div class="line"><span class="lineno">  205</span>        this-&gt;prazoDePagamento = prazoDePagamento;</div>
+<div class="line"><span class="lineno">  206</span>    }</div>
+<div class="line"><span class="lineno">  207</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
 <hr/>A documentação para essa classe foi gerada a partir dos seguintes arquivos:<ul>
-<li>C:/Users/felip/OneDrive/Documentos/GitHub/poo/include/<a class="el" href="boleto_8hpp_source.html">boleto.hpp</a></li>
-<li>C:/Users/felip/OneDrive/Documentos/GitHub/poo/src/<a class="el" href="boleto_8cpp.html">boleto.cpp</a></li>
+<li>include/<a class="el" href="boleto_8hpp_source.html">boleto.hpp</a></li>
+<li>src/<a class="el" href="boleto_8cpp.html">boleto.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

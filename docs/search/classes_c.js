@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['salario_0',['Salario',['../class_salario.html',1,'']]]
+  ['rota_0',['Rota',['../class_rota.html',1,'']]]
 ];

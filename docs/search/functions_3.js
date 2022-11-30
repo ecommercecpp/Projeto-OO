@@ -4,6 +4,7 @@ var searchData=
   ['datenow_1',['dateNow',['../class_data.html#abdc8f9d7f8f676769bed29d42bc6cae4',1,'Data::dateNow()'],['../class_data.html#aad74d70c721e017919f111590de6e552',1,'Data::dateNow()']]],
   ['demitir_2',['demitir',['../class_funcionario.html#aa62d8a45648d355c1868732aa6d5ce59',1,'Funcionario']]],
   ['departamento_3',['Departamento',['../class_departamento.html#a845432a7287478a3c110d2cebdb83580',1,'Departamento::Departamento()'],['../class_departamento.html#a5a57713d3a363ff23444fa494cc72e78',1,'Departamento::Departamento(std::string nome)']]],
-  ['diffdata_4',['diffData',['../class_data.html#ade05a40b4b75f2c66291446397576647',1,'Data::diffData(Data)'],['../class_data.html#ade05a40b4b75f2c66291446397576647',1,'Data::diffData(Data)']]],
-  ['disponivel_5',['disponivel',['../class_estoque.html#a14f2054cab31fe30bb7b2ac02db98d13',1,'Estoque']]]
+  ['deslogar_4',['deslogar',['../class_empresa.html#ac8b66515ab1609313baa1310108f9ee7',1,'Empresa']]],
+  ['diffdata_5',['diffData',['../class_data.html#ade05a40b4b75f2c66291446397576647',1,'Data::diffData(Data)'],['../class_data.html#ade05a40b4b75f2c66291446397576647',1,'Data::diffData(Data)']]],
+  ['disponivel_6',['disponivel',['../class_estoque.html#a14f2054cab31fe30bb7b2ac02db98d13',1,'Estoque']]]
 ];

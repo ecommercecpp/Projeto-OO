@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Sistema de Gerenciamento de uma Indústria: Referência do Arquivo C:/Users/felip/OneDrive/Documentos/GitHub/poo/src/pessoa.cpp</title>
+<title>Sistema de Gerenciamento de uma Indústria: Referência do Arquivo src/pessoa.cpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Sistema de Gerenciamento de uma Indústria<span id="projectnumber">&#160;2.0</span>
+   <div id="projectname">Sistema de Gerenciamento de uma Indústria<span id="projectnumber">&#160;3.0</span>
    </div>
    <div id="projectbrief">Trabalho Prático POO | UFMG</div>
   </td>
@@ -75,13 +75,138 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Funções</a>  </div>
   <div class="headertitle"><div class="title">Referência do Arquivo pessoa.cpp</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="pessoa_8hpp_source.html">pessoa.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="empresa_8hpp_source.html">empresa.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="usuario_8hpp_source.html">usuario.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="usuario_logado_8hpp_source.html">usuarioLogado.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="exceptions_8hpp_source.html">exceptions.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="log_escrita_8hpp_source.html">logEscrita.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="validacpfcnpj_8hpp_source.html">validacpfcnpj.hpp</a>&quot;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
-</div></div><!-- contents -->
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:aa7f61685191b84dff534d5f2bbb06318"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="src_2pessoa_8cpp.html#aa7f61685191b84dff534d5f2bbb06318">validaCPF</a> (string Cpf)</td></tr>
+<tr class="separator:aa7f61685191b84dff534d5f2bbb06318"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cca9a06ade47c7176c24bd3da905c41"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="src_2pessoa_8cpp.html#a9cca9a06ade47c7176c24bd3da905c41">validaCNPJ</a> (string Cnpj)</td></tr>
+<tr class="separator:a9cca9a06ade47c7176c24bd3da905c41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Funções</h2>
+<a id="a9cca9a06ade47c7176c24bd3da905c41" name="a9cca9a06ade47c7176c24bd3da905c41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cca9a06ade47c7176c24bd3da905c41">&#9670;&#160;</a></span>validaCNPJ()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool validaCNPJ </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>Cnpj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">   48</span>{</div>
+<div class="line"><span class="lineno">   49</span>  <span class="keywordflow">if</span> (Cnpj == <span class="stringliteral">&quot;00000000000000&quot;</span> || Cnpj == <span class="stringliteral">&quot;11111111111111&quot;</span> ||</div>
+<div class="line"><span class="lineno">   50</span>      Cnpj == <span class="stringliteral">&quot;22222222222222&quot;</span> || Cnpj == <span class="stringliteral">&quot;33333333333333&quot;</span> ||</div>
+<div class="line"><span class="lineno">   51</span>      Cnpj == <span class="stringliteral">&quot;44444444444444&quot;</span> || Cnpj == <span class="stringliteral">&quot;55555555555555&quot;</span> ||</div>
+<div class="line"><span class="lineno">   52</span>      Cnpj == <span class="stringliteral">&quot;66666666666666&quot;</span> || Cnpj == <span class="stringliteral">&quot;77777777777777&quot;</span> ||</div>
+<div class="line"><span class="lineno">   53</span>      Cnpj == <span class="stringliteral">&quot;88888888888888&quot;</span> || Cnpj == <span class="stringliteral">&quot;99999999999999&quot;</span>)</div>
+<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span>  <span class="keywordtype">int</span> tamanho = Cnpj.length() - 2;</div>
+<div class="line"><span class="lineno">   57</span>  <span class="keywordtype">string</span> numeros = Cnpj.substr(0, tamanho);</div>
+<div class="line"><span class="lineno">   58</span>  <span class="keywordtype">string</span> digitos = Cnpj.substr(tamanho);</div>
+<div class="line"><span class="lineno">   59</span>  <span class="keywordtype">int</span> soma = 0;</div>
+<div class="line"><span class="lineno">   60</span>  <span class="keywordtype">int</span> pos = tamanho - 7;</div>
+<div class="line"><span class="lineno">   61</span> </div>
+<div class="line"><span class="lineno">   62</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = tamanho; i &gt;= 1; i--)</div>
+<div class="line"><span class="lineno">   63</span>  {</div>
+<div class="line"><span class="lineno">   64</span>    soma += stoi(numeros.substr(tamanho - i, 1)) * pos--;</div>
+<div class="line"><span class="lineno">   65</span>    <span class="keywordflow">if</span> (pos &lt; 2)</div>
+<div class="line"><span class="lineno">   66</span>      pos = 9;</div>
+<div class="line"><span class="lineno">   67</span>  }</div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span>  <span class="keywordtype">int</span> resultado = soma % 11 &lt; 2 ? 0 : 11 - soma % 11;</div>
+<div class="line"><span class="lineno">   70</span>  <span class="keywordflow">if</span> (resultado != stoi(digitos.substr(0, 1)))</div>
+<div class="line"><span class="lineno">   71</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   72</span> </div>
+<div class="line"><span class="lineno">   73</span>  tamanho = tamanho + 1;</div>
+<div class="line"><span class="lineno">   74</span>  numeros = Cnpj.substr(0, tamanho);</div>
+<div class="line"><span class="lineno">   75</span>  soma = 0;</div>
+<div class="line"><span class="lineno">   76</span>  pos = tamanho - 7;</div>
+<div class="line"><span class="lineno">   77</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = tamanho; i &gt;= 1; i--)</div>
+<div class="line"><span class="lineno">   78</span>  {</div>
+<div class="line"><span class="lineno">   79</span>    soma += stoi(numeros.substr(tamanho - i, 1)) * pos--;</div>
+<div class="line"><span class="lineno">   80</span>    <span class="keywordflow">if</span> (pos &lt; 2)</div>
+<div class="line"><span class="lineno">   81</span>      pos = 9;</div>
+<div class="line"><span class="lineno">   82</span>  }</div>
+<div class="line"><span class="lineno">   83</span> </div>
+<div class="line"><span class="lineno">   84</span>  resultado = soma % 11 &lt; 2 ? 0 : 11 - soma % 11;</div>
+<div class="line"><span class="lineno">   85</span>  <span class="keywordflow">if</span> (resultado != stoi(digitos.substr(1, 1)))</div>
+<div class="line"><span class="lineno">   86</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   87</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   88</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa7f61685191b84dff534d5f2bbb06318" name="aa7f61685191b84dff534d5f2bbb06318"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7f61685191b84dff534d5f2bbb06318">&#9670;&#160;</a></span>validaCPF()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool validaCPF </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>Cpf</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">   14</span>{</div>
+<div class="line"><span class="lineno">   15</span>  <span class="keywordflow">if</span> (Cpf == <span class="stringliteral">&quot;00000000000&quot;</span> || Cpf == <span class="stringliteral">&quot;11111111111&quot;</span> || Cpf == <span class="stringliteral">&quot;22222222222&quot;</span> ||</div>
+<div class="line"><span class="lineno">   16</span>      Cpf == <span class="stringliteral">&quot;33333333333&quot;</span> || Cpf == <span class="stringliteral">&quot;44444444444&quot;</span> || Cpf == <span class="stringliteral">&quot;55555555555&quot;</span> ||</div>
+<div class="line"><span class="lineno">   17</span>      Cpf == <span class="stringliteral">&quot;66666666666&quot;</span> || Cpf == <span class="stringliteral">&quot;77777777777&quot;</span> || Cpf == <span class="stringliteral">&quot;88888888888&quot;</span> ||</div>
+<div class="line"><span class="lineno">   18</span>      Cpf == <span class="stringliteral">&quot;99999999999&quot;</span>)</div>
+<div class="line"><span class="lineno">   19</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   20</span> </div>
+<div class="line"><span class="lineno">   21</span>  <span class="keywordtype">int</span> i, digito1, digito2, resto, soma;</div>
+<div class="line"><span class="lineno">   22</span>  <span class="keywordtype">string</span> nDigResult;</div>
+<div class="line"><span class="lineno">   23</span>  soma = 0;</div>
+<div class="line"><span class="lineno">   24</span>  digito1 = 0;</div>
+<div class="line"><span class="lineno">   25</span>  digito2 = 0;</div>
+<div class="line"><span class="lineno">   26</span>  resto = 0;</div>
+<div class="line"><span class="lineno">   27</span>  <span class="keywordflow">for</span> (i = 1; i &lt;= 9; i++)</div>
+<div class="line"><span class="lineno">   28</span>    soma = soma + (stoi(Cpf.substr(i - 1, 1)) * (11 - i));</div>
+<div class="line"><span class="lineno">   29</span>  resto = (soma * 10) % 11;</div>
+<div class="line"><span class="lineno">   30</span>  <span class="keywordflow">if</span> ((resto == 10) || (resto == 11))</div>
+<div class="line"><span class="lineno">   31</span>    resto = 0;</div>
+<div class="line"><span class="lineno">   32</span>  digito1 = resto;</div>
+<div class="line"><span class="lineno">   33</span>  soma = 0;</div>
+<div class="line"><span class="lineno">   34</span>  <span class="keywordflow">for</span> (i = 1; i &lt;= 10; i++)</div>
+<div class="line"><span class="lineno">   35</span>    soma = soma + (stoi(Cpf.substr(i - 1, 1)) * (12 - i));</div>
+<div class="line"><span class="lineno">   36</span>  resto = (soma * 10) % 11;</div>
+<div class="line"><span class="lineno">   37</span>  <span class="keywordflow">if</span> ((resto == 10) || (resto == 11))</div>
+<div class="line"><span class="lineno">   38</span>    resto = 0;</div>
+<div class="line"><span class="lineno">   39</span>  digito2 = resto;</div>
+<div class="line"><span class="lineno">   40</span>  nDigResult = Cpf.substr(9, 2);</div>
+<div class="line"><span class="lineno">   41</span>  <span class="keywordflow">if</span> ((nDigResult == to_string(digito1) + to_string(digito2)))</div>
+<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   43</span>  <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   45</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5

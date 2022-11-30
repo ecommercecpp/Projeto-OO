@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Sistema de Gerenciamento de uma Indústria<span id="projectnumber">&#160;2.0</span>
+   <div id="projectname">Sistema de Gerenciamento de uma Indústria<span id="projectnumber">&#160;3.0</span>
    </div>
    <div id="projectbrief">Trabalho Prático POO | UFMG</div>
   </td>
@@ -77,14 +77,21 @@ $(function() {
 
 <p>Esta é a lista de todos os membros de <a class="el" href="class_orcamento.html">Orcamento</a>, incluindo os membros herdados.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="class_orcamento.html#a3b4598fac843d1ed637d8da162ae3c94">getCliente</a>()</td><td class="entry"><a class="el" href="class_orcamento.html">Orcamento</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_orcamento.html#a18bc54aaadbd91d463559dfd1201bbab">getProdutos</a>()</td><td class="entry"><a class="el" href="class_orcamento.html">Orcamento</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_orcamento.html#ae16c512c561daca8b339de9a3db65b80">gerarOrcamento</a>(Cliente *cliente, int qtd, std::vector&lt; Produto * &gt; produtos)</td><td class="entry"><a class="el" href="class_orcamento.html">Orcamento</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_orcamento.html#a3b4598fac843d1ed637d8da162ae3c94">getCliente</a>()</td><td class="entry"><a class="el" href="class_orcamento.html">Orcamento</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_orcamento.html#a770212c7b00af6a96e1043cb10ace026">getData</a>()</td><td class="entry"><a class="el" href="class_orcamento.html">Orcamento</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_orcamento.html#a2a094494531c9c409cdec0c5d5746b40">getDataString</a>()</td><td class="entry"><a class="el" href="class_orcamento.html">Orcamento</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_orcamento.html#a16d3c63128c46c08a261f4573d142903">getOrdemProducao</a>()</td><td class="entry"><a class="el" href="class_orcamento.html">Orcamento</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_orcamento.html#a785e9c76f82575044fb5be37556658a9">getProdutos</a>()</td><td class="entry"><a class="el" href="class_orcamento.html">Orcamento</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_orcamento.html#aec0b3a858e476f7528dc005dababf02b">getValorTotal</a>()</td><td class="entry"><a class="el" href="class_orcamento.html">Orcamento</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_orcamento.html#ad499422bbe74fd0c2b4ca52916906d06">Orcamento</a>()</td><td class="entry"><a class="el" href="class_orcamento.html">Orcamento</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_orcamento.html#a8ed1da3c50eb38da9fd4bfbbd8cedf60">Orcamento</a>(std::map&lt; int, Produto &gt; produtos, Cliente *cliente, double valorTotal)</td><td class="entry"><a class="el" href="class_orcamento.html">Orcamento</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_orcamento.html#a38eaa552b1080a6c5001e64f28eb4c05">imprimeOrcamento</a>(Cliente *cliente, std::vector&lt; Produto * &gt; produtos)</td><td class="entry"><a class="el" href="class_orcamento.html">Orcamento</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_orcamento.html#ad499422bbe74fd0c2b4ca52916906d06">Orcamento</a>()</td><td class="entry"><a class="el" href="class_orcamento.html">Orcamento</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_orcamento.html#aa3477cd035d168a5d147d199082e59ee">setCliente</a>(Cliente *cliente)</td><td class="entry"><a class="el" href="class_orcamento.html">Orcamento</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_orcamento.html#aa3149bac10c9cc779e374f6d7e70aaaf">setProdutos</a>(std::map&lt; int, Produto &gt; produtos)</td><td class="entry"><a class="el" href="class_orcamento.html">Orcamento</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_orcamento.html#a04119ec886d363725530b8df09760375">setValorTotal</a>(double valorTotal)</td><td class="entry"><a class="el" href="class_orcamento.html">Orcamento</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_orcamento.html#a871d7255e4309d41484150d7eebe60c6">setData</a>(Data data)</td><td class="entry"><a class="el" href="class_orcamento.html">Orcamento</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_orcamento.html#af27e04a4fd191ddd2ded587579a0ccd7">setDataString</a>(std::string dataString)</td><td class="entry"><a class="el" href="class_orcamento.html">Orcamento</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_orcamento.html#aa6f46b50842830c0d3f2e3d4efd99b25">setOrdemProducao</a>(OrdemProducao ordemProducao)</td><td class="entry"><a class="el" href="class_orcamento.html">Orcamento</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_orcamento.html#a13f29604a6b4cd716117bec88c3e57ed">setProdutos</a>(std::vector&lt; Produto * &gt; produtos)</td><td class="entry"><a class="el" href="class_orcamento.html">Orcamento</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_orcamento.html#a04119ec886d363725530b8df09760375">setValorTotal</a>(double valorTotal)</td><td class="entry"><a class="el" href="class_orcamento.html">Orcamento</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

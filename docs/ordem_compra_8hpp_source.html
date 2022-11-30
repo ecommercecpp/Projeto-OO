@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Sistema de Gerenciamento de uma Indústria: Código-Fonte de C:/Users/felip/OneDrive/Documentos/GitHub/poo/include/ordemCompra.hpp</title>
+<title>Sistema de Gerenciamento de uma Indústria: Código-Fonte de include/ordemCompra.hpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Sistema de Gerenciamento de uma Indústria<span id="projectnumber">&#160;2.0</span>
+   <div id="projectname">Sistema de Gerenciamento de uma Indústria<span id="projectnumber">&#160;3.0</span>
    </div>
    <div id="projectbrief">Trabalho Prático POO | UFMG</div>
   </td>
@@ -78,7 +78,78 @@ $(function() {
   <div class="headertitle"><div class="title">ordemCompra.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="ordem_compra_8hpp.html">Vá para a documentação desse arquivo.</a><div class="fragment"></div><!-- fragment --></div><!-- contents -->
+<a href="ordem_compra_8hpp.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef _ORDEM_COMPRA_HPP_</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define _ORDEM_COMPRA_HPP_</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;ctime&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="third__party_2_classe_01_data_2_data_8h.html">Data.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="lote_8hpp.html">lote.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="materia_prima_8hpp.html">materiaPrima.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="empresa_8hpp.html">empresa.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_ordem_compra.html">   13</a></span><span class="keyword">class </span><a class="code hl_class" href="class_ordem_compra.html">OrdemCompra</a></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        std::string nomeMP;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <a class="code hl_class" href="class_data.html">Data</a> dataDaOrdem;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        std::string dataString;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keywordtype">int</span> quantidade;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_ordem_compra.html#a70fe1913bc6cc52b5f7b1933e9f4b87b">   22</a></span>        <a class="code hl_function" href="class_ordem_compra.html#a70fe1913bc6cc52b5f7b1933e9f4b87b">OrdemCompra</a>() {}</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_ordem_compra.html#a7ebef76528177d4b5ee39ab62a590bff">   23</a></span>        <a class="code hl_function" href="class_ordem_compra.html#a7ebef76528177d4b5ee39ab62a590bff">~OrdemCompra</a>() {}</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_ordem_compra.html#a979371f09da33dca244cfe742e3b8449">   24</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_ordem_compra.html#a979371f09da33dca244cfe742e3b8449">gerarOrdemCompra</a>(<a class="code hl_class" href="class_materia_prima.html">MateriaPrima</a> *mp, <span class="keywordtype">int</span> quantidade)</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                std::string <a class="code hl_function" href="program_2main_8cpp.html#a5508132d195a8c51fedc92e81340701a">permissao</a> = <span class="stringliteral">&quot;gerarOrdemCompra&quot;</span>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                std::string atributos = <span class="stringliteral">&quot;nomeMp e quantidade&quot;</span>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                <a class="code hl_function" href="class_empresa.html#a31cee3bedc17ae907f3859ba959ec10a">Empresa::getEmpresa</a>()-&gt;<a class="code hl_function" href="class_empresa.html#a7e2cb32cce91296eecd7bc991fcca63d">gerarLogEscrita</a>(<span class="stringliteral">&quot;ordemCompra&quot;</span>, atributos);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                <span class="keywordflow">if</span> (!<a class="code hl_function" href="class_empresa.html#a31cee3bedc17ae907f3859ba959ec10a">Empresa::getEmpresa</a>()-&gt;verificaPermissao(<a class="code hl_function" href="program_2main_8cpp.html#a5508132d195a8c51fedc92e81340701a">permissao</a>))</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                        <a class="code hl_function" href="class_empresa.html#a31cee3bedc17ae907f3859ba959ec10a">Empresa::getEmpresa</a>()-&gt;<a class="code hl_function" href="class_empresa.html#a2904a8814b34c3d5830001509626abb3">gerarLogExcecao</a>(<span class="stringliteral">&quot;ordemCompra&quot;</span>, <span class="stringliteral">&quot;gerarOrdemCompra&quot;</span>);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>                        <span class="keywordflow">throw</span> <a class="code hl_class" href="class_acess_denied_exception.html">AcessDeniedException</a>();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>                }</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                        <a class="code hl_class" href="class_lote.html">Lote</a> lote;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>                        <a class="code hl_class" href="class_data.html">Data</a> data;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>                        time_t tt;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                        <span class="keyword">struct </span>tm *ti;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                        time(&amp;tt);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                        ti = localtime(&amp;tt);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                        std::cout &lt;&lt; <span class="stringliteral">&quot;Ordem de compra: &quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                        this-&gt;nomeMP = mp-&gt;<a class="code hl_function" href="class_materia_prima.html#a1bde359386876474cb9b76deecf71734">getNome</a>();</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                        this-&gt;quantidade = quantidade;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                        this-&gt;dataDaOrdem = data.<a class="code hl_function" href="class_data.html#abdc8f9d7f8f676769bed29d42bc6cae4">dateNow</a>();</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                        this-&gt;dataString = asctime(ti);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                        std::cout &lt;&lt; <span class="stringliteral">&quot;Ordem de compra gerada com sucesso!&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>};</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_acess_denied_exception_html"><div class="ttname"><a href="class_acess_denied_exception.html">AcessDeniedException</a></div><div class="ttdef"><b>Definition:</b> exceptions.hpp:47</div></div>
+<div class="ttc" id="aclass_data_html"><div class="ttname"><a href="class_data.html">Data</a></div><div class="ttdef"><b>Definition:</b> Data.h:16</div></div>
+<div class="ttc" id="aclass_data_html_abdc8f9d7f8f676769bed29d42bc6cae4"><div class="ttname"><a href="class_data.html#abdc8f9d7f8f676769bed29d42bc6cae4">Data::dateNow</a></div><div class="ttdeci">static Data dateNow()</div><div class="ttdef"><b>Definition:</b> Data.cpp:301</div></div>
+<div class="ttc" id="aclass_empresa_html_a2904a8814b34c3d5830001509626abb3"><div class="ttname"><a href="class_empresa.html#a2904a8814b34c3d5830001509626abb3">Empresa::gerarLogExcecao</a></div><div class="ttdeci">void gerarLogExcecao(std::string entidade, std::string funcionalidade)</div><div class="ttdoc">Gera um log de excecao.</div><div class="ttdef"><b>Definition:</b> empresa.cpp:553</div></div>
+<div class="ttc" id="aclass_empresa_html_a31cee3bedc17ae907f3859ba959ec10a"><div class="ttname"><a href="class_empresa.html#a31cee3bedc17ae907f3859ba959ec10a">Empresa::getEmpresa</a></div><div class="ttdeci">static Empresa * getEmpresa()</div><div class="ttdoc">Retorna a instancia da empresa.</div><div class="ttdef"><b>Definition:</b> empresa.cpp:28</div></div>
+<div class="ttc" id="aclass_empresa_html_a7e2cb32cce91296eecd7bc991fcca63d"><div class="ttname"><a href="class_empresa.html#a7e2cb32cce91296eecd7bc991fcca63d">Empresa::gerarLogEscrita</a></div><div class="ttdeci">void gerarLogEscrita(std::string entidade, std::string atributoAlterado)</div><div class="ttdoc">Gera um log escrito.</div><div class="ttdef"><b>Definition:</b> empresa.cpp:446</div></div>
+<div class="ttc" id="aclass_lote_html"><div class="ttname"><a href="class_lote.html">Lote</a></div><div class="ttdef"><b>Definition:</b> lote.hpp:11</div></div>
+<div class="ttc" id="aclass_materia_prima_html"><div class="ttname"><a href="class_materia_prima.html">MateriaPrima</a></div><div class="ttdef"><b>Definition:</b> materiaPrima.hpp:13</div></div>
+<div class="ttc" id="aclass_materia_prima_html_a1bde359386876474cb9b76deecf71734"><div class="ttname"><a href="class_materia_prima.html#a1bde359386876474cb9b76deecf71734">MateriaPrima::getNome</a></div><div class="ttdeci">std::string getNome()</div><div class="ttdoc">Retorna o nome da materia prima.</div><div class="ttdef"><b>Definition:</b> materiaPrima.cpp:153</div></div>
+<div class="ttc" id="aclass_ordem_compra_html"><div class="ttname"><a href="class_ordem_compra.html">OrdemCompra</a></div><div class="ttdef"><b>Definition:</b> ordemCompra.hpp:14</div></div>
+<div class="ttc" id="aclass_ordem_compra_html_a70fe1913bc6cc52b5f7b1933e9f4b87b"><div class="ttname"><a href="class_ordem_compra.html#a70fe1913bc6cc52b5f7b1933e9f4b87b">OrdemCompra::OrdemCompra</a></div><div class="ttdeci">OrdemCompra()</div><div class="ttdef"><b>Definition:</b> ordemCompra.hpp:22</div></div>
+<div class="ttc" id="aclass_ordem_compra_html_a7ebef76528177d4b5ee39ab62a590bff"><div class="ttname"><a href="class_ordem_compra.html#a7ebef76528177d4b5ee39ab62a590bff">OrdemCompra::~OrdemCompra</a></div><div class="ttdeci">~OrdemCompra()</div><div class="ttdef"><b>Definition:</b> ordemCompra.hpp:23</div></div>
+<div class="ttc" id="aclass_ordem_compra_html_a979371f09da33dca244cfe742e3b8449"><div class="ttname"><a href="class_ordem_compra.html#a979371f09da33dca244cfe742e3b8449">OrdemCompra::gerarOrdemCompra</a></div><div class="ttdeci">void gerarOrdemCompra(MateriaPrima *mp, int quantidade)</div><div class="ttdef"><b>Definition:</b> ordemCompra.hpp:24</div></div>
+<div class="ttc" id="aempresa_8hpp_html"><div class="ttname"><a href="empresa_8hpp.html">empresa.hpp</a></div></div>
+<div class="ttc" id="alote_8hpp_html"><div class="ttname"><a href="lote_8hpp.html">lote.hpp</a></div></div>
+<div class="ttc" id="amateria_prima_8hpp_html"><div class="ttname"><a href="materia_prima_8hpp.html">materiaPrima.hpp</a></div></div>
+<div class="ttc" id="aprogram_2main_8cpp_html_a5508132d195a8c51fedc92e81340701a"><div class="ttname"><a href="program_2main_8cpp.html#a5508132d195a8c51fedc92e81340701a">permissao</a></div><div class="ttdeci">std::vector&lt; std::string &gt; permissao()</div><div class="ttdef"><b>Definition:</b> main.cpp:19</div></div>
+<div class="ttc" id="athird__party_2_classe_01_data_2_data_8h_html"><div class="ttname"><a href="third__party_2_classe_01_data_2_data_8h.html">Data.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5

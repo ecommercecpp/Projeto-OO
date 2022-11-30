@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Sistema de Gerenciamento de uma Indústria<span id="projectnumber">&#160;2.0</span>
+   <div id="projectname">Sistema de Gerenciamento de uma Indústria<span id="projectnumber">&#160;3.0</span>
    </div>
    <div id="projectbrief">Trabalho Prático POO | UFMG</div>
   </td>
@@ -88,17 +88,23 @@ $(function() {
   <tr class="even"><td class="entry"><a class="el" href="class_usuario.html#a0cd6bcd8b4e59b9c7cf7b660c616dcaf">getPermissoes</a>()</td><td class="entry"><a class="el" href="class_usuario.html">Usuario</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_usuario.html#afe5b8e2b50dcf24b109357fda3716f7f">getSenha</a>()</td><td class="entry"><a class="el" href="class_usuario.html">Usuario</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_pessoa.html#acaea63c7a743a3628fe3a89083f5c8d7">getTipo</a>()</td><td class="entry"><a class="el" href="class_pessoa.html">Pessoa</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_pessoa.html#a3d7ee683889ed031031beba721aa8470">nome</a></td><td class="entry"><a class="el" href="class_pessoa.html">Pessoa</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_usuario.html#aac9671ec9586c994e2246ceceacfea94">login</a></td><td class="entry"><a class="el" href="class_usuario.html">Usuario</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_pessoa.html#a3d7ee683889ed031031beba721aa8470">nome</a></td><td class="entry"><a class="el" href="class_pessoa.html">Pessoa</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_usuario.html#a3bba1c433796f3f2b516d2683831cc07">permissoes</a></td><td class="entry"><a class="el" href="class_usuario.html">Usuario</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_pessoa.html#a22563fe1f53faa9b1d8d10d28ae0c650">Pessoa</a>()</td><td class="entry"><a class="el" href="class_pessoa.html">Pessoa</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_pessoa.html#a780db720c2bf3a632cc4047206b26e52">Pessoa</a>(std::string nome, std::string cpf_cnpj, std::string endereco, std::string email, int tipo)</td><td class="entry"><a class="el" href="class_pessoa.html">Pessoa</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_pessoa.html#a6057a4b9db542a586d3248fb9a37a61e">setEndereco</a>(std::string endereco)</td><td class="entry"><a class="el" href="class_pessoa.html">Pessoa</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_usuario.html#af467cee861412f12882b67baf4b7481b">setLogin</a>(std::string login)</td><td class="entry"><a class="el" href="class_usuario.html">Usuario</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_pessoa.html#a26074576a426b510ff59165b05031f57">setNome</a>(std::string nome)</td><td class="entry"><a class="el" href="class_pessoa.html">Pessoa</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_usuario.html#ab7317ea01c967280107335d8ad74ebc6">setPermissoes</a>(std::vector&lt; std::string &gt; permissoes)</td><td class="entry"><a class="el" href="class_usuario.html">Usuario</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_usuario.html#a28efaec1398906b6f43b12877bf59db7">setSenha</a>(std::string senha)</td><td class="entry"><a class="el" href="class_usuario.html">Usuario</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_usuario.html#a5f324af32e988e55160d5f3651b5d2b1">senha</a></td><td class="entry"><a class="el" href="class_usuario.html">Usuario</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_pessoa.html#adf2d0723061c7eb72d4c73218a0b8f18">setcpf_cnpj</a>(std::string cpf_cnpj)</td><td class="entry"><a class="el" href="class_pessoa.html">Pessoa</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_pessoa.html#a2585aacb5b71f0b14a1ce3f695dae614">setEmail</a>(std::string email)</td><td class="entry"><a class="el" href="class_pessoa.html">Pessoa</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_pessoa.html#a6057a4b9db542a586d3248fb9a37a61e">setEndereco</a>(std::string endereco)</td><td class="entry"><a class="el" href="class_pessoa.html">Pessoa</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_usuario.html#af467cee861412f12882b67baf4b7481b">setLogin</a>(std::string login)</td><td class="entry"><a class="el" href="class_usuario.html">Usuario</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_pessoa.html#a26074576a426b510ff59165b05031f57">setNome</a>(std::string nome)</td><td class="entry"><a class="el" href="class_pessoa.html">Pessoa</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_usuario.html#ab7317ea01c967280107335d8ad74ebc6">setPermissoes</a>(std::vector&lt; std::string &gt; permissoes)</td><td class="entry"><a class="el" href="class_usuario.html">Usuario</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_usuario.html#a28efaec1398906b6f43b12877bf59db7">setSenha</a>(std::string senha)</td><td class="entry"><a class="el" href="class_usuario.html">Usuario</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_pessoa.html#a6127bb3998bba636dc75d03c02c02cc1">setTipo</a>(int tipo)</td><td class="entry"><a class="el" href="class_pessoa.html">Pessoa</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_pessoa.html#a8fb96e6244f2f005366e751bdb8aa0a4">tipo</a></td><td class="entry"><a class="el" href="class_pessoa.html">Pessoa</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_usuario.html#aa85a5371a098dfba5449140d9b8a472f">Usuario</a>()</td><td class="entry"><a class="el" href="class_usuario.html">Usuario</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_usuario.html#a2cb7a482fd51f60611e1ac5b02f237fd">Usuario</a>(std::string nome, std::string cpf_cnpj, std::string endereco, std::string email, int tipo, std::string login, std::string senha)</td><td class="entry"><a class="el" href="class_usuario.html">Usuario</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_usuario.html#ad0889d5f4399a6d5d97ee4bcc6be8611">Usuario</a>(std::string nome, std::string cpf_cnpj, std::string endereco, std::string email, int tipo, std::string login, std::string senha, std::vector&lt; std::string &gt; permissoes)</td><td class="entry"><a class="el" href="class_usuario.html">Usuario</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

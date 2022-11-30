@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['validacpfcnpj_0',['ValidaCPFCNPJ',['../class_valida_c_p_f_c_n_p_j.html',1,'']]],
-  ['venda_1',['Venda',['../class_venda.html',1,'']]]
+  ['userofflineexception_0',['UserOfflineException',['../class_user_offline_exception.html',1,'']]],
+  ['usuario_1',['Usuario',['../class_usuario.html',1,'']]],
+  ['usuariologado_2',['UsuarioLogado',['../class_usuario_logado.html',1,'']]]
 ];

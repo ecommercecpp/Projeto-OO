@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Sistema de Gerenciamento de uma Indústria: Código-Fonte de C:/Users/felip/OneDrive/Documentos/GitHub/poo/include/cliente.hpp</title>
+<title>Sistema de Gerenciamento de uma Indústria: Código-Fonte de include/cliente.hpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Sistema de Gerenciamento de uma Indústria<span id="projectnumber">&#160;2.0</span>
+   <div id="projectname">Sistema de Gerenciamento de uma Indústria<span id="projectnumber">&#160;3.0</span>
    </div>
    <div id="projectbrief">Trabalho Prático POO | UFMG</div>
   </td>
@@ -89,23 +89,19 @@ $(function() {
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keyword">private</span>:</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        std::string telefone;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keywordtype">void</span> setTelefone(std::string telefone);</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <a class="code hl_function" href="class_cliente.html#ab6a372f412692c12c4be4427b00a3f6e">Cliente</a>();</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <a class="code hl_function" href="class_cliente.html#ab6a372f412692c12c4be4427b00a3f6e">Cliente</a>(std::string <a class="code hl_variable" href="class_pessoa.html#a3d7ee683889ed031031beba721aa8470">nome</a>, std::string <a class="code hl_variable" href="class_pessoa.html#ac0ca58320930b185eea86cfee9e43033">cpf_cnpj</a>, std::string <a class="code hl_variable" href="class_pessoa.html#a5a6874bd941a396727a6424e4030f6bc">endereco</a>, std::string <a class="code hl_variable" href="class_pessoa.html#a4aae0b05d45c839f21a6fc3e9e8c71e6">email</a>, <span class="keywordtype">int</span> <a class="code hl_variable" href="class_pessoa.html#a8fb96e6244f2f005366e751bdb8aa0a4">tipo</a>, std::string telefone);</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        std::string <a class="code hl_function" href="class_cliente.html#ae9a7eee03e792d8a722ae865facfe7d8">getTelefone</a>();</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <a class="code hl_function" href="class_cliente.html#ab6a372f412692c12c4be4427b00a3f6e">Cliente</a>();</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="comment">//Cliente(std::string nome, std::string cpf_cnpj, std::string endereco, std::string email, int tipo, std::string telefone);</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        std::string <a class="code hl_function" href="class_cliente.html#ae9a7eee03e792d8a722ae865facfe7d8">getTelefone</a>();</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_cliente.html#abd48ff33d9e2370f9adcc5ece2093514">setTelefone</a>(std::string telefone);</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>};</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclass_cliente_html"><div class="ttname"><a href="class_cliente.html">Cliente</a></div><div class="ttdef"><b>Definition:</b> cliente.hpp:9</div></div>
-<div class="ttc" id="aclass_cliente_html_ab6a372f412692c12c4be4427b00a3f6e"><div class="ttname"><a href="class_cliente.html#ab6a372f412692c12c4be4427b00a3f6e">Cliente::Cliente</a></div><div class="ttdeci">Cliente()</div><div class="ttdoc">Construct a new Cliente:: Cliente object.</div><div class="ttdef"><b>Definition:</b> cliente.cpp:10</div></div>
-<div class="ttc" id="aclass_cliente_html_ae9a7eee03e792d8a722ae865facfe7d8"><div class="ttname"><a href="class_cliente.html#ae9a7eee03e792d8a722ae865facfe7d8">Cliente::getTelefone</a></div><div class="ttdeci">std::string getTelefone()</div><div class="ttdoc">Retorna o Telefone do cliente.</div><div class="ttdef"><b>Definition:</b> cliente.cpp:40</div></div>
+<div class="ttc" id="aclass_cliente_html_ab6a372f412692c12c4be4427b00a3f6e"><div class="ttname"><a href="class_cliente.html#ab6a372f412692c12c4be4427b00a3f6e">Cliente::Cliente</a></div><div class="ttdeci">Cliente()</div><div class="ttdoc">Construct a new Cliente:: Cliente object.</div><div class="ttdef"><b>Definition:</b> cliente.cpp:17</div></div>
+<div class="ttc" id="aclass_cliente_html_abd48ff33d9e2370f9adcc5ece2093514"><div class="ttname"><a href="class_cliente.html#abd48ff33d9e2370f9adcc5ece2093514">Cliente::setTelefone</a></div><div class="ttdeci">void setTelefone(std::string telefone)</div><div class="ttdoc">Seta o Telefone do cliente.</div><div class="ttdef"><b>Definition:</b> cliente.cpp:61</div></div>
+<div class="ttc" id="aclass_cliente_html_ae9a7eee03e792d8a722ae865facfe7d8"><div class="ttname"><a href="class_cliente.html#ae9a7eee03e792d8a722ae865facfe7d8">Cliente::getTelefone</a></div><div class="ttdeci">std::string getTelefone()</div><div class="ttdoc">Retorna o Telefone do cliente.</div><div class="ttdef"><b>Definition:</b> cliente.cpp:42</div></div>
 <div class="ttc" id="aclass_pessoa_html"><div class="ttname"><a href="class_pessoa.html">Pessoa</a></div><div class="ttdef"><b>Definition:</b> pessoa.hpp:9</div></div>
-<div class="ttc" id="aclass_pessoa_html_a3d7ee683889ed031031beba721aa8470"><div class="ttname"><a href="class_pessoa.html#a3d7ee683889ed031031beba721aa8470">Pessoa::nome</a></div><div class="ttdeci">std::string nome</div><div class="ttdef"><b>Definition:</b> pessoa.hpp:11</div></div>
-<div class="ttc" id="aclass_pessoa_html_a4aae0b05d45c839f21a6fc3e9e8c71e6"><div class="ttname"><a href="class_pessoa.html#a4aae0b05d45c839f21a6fc3e9e8c71e6">Pessoa::email</a></div><div class="ttdeci">std::string email</div><div class="ttdef"><b>Definition:</b> pessoa.hpp:11</div></div>
-<div class="ttc" id="aclass_pessoa_html_a5a6874bd941a396727a6424e4030f6bc"><div class="ttname"><a href="class_pessoa.html#a5a6874bd941a396727a6424e4030f6bc">Pessoa::endereco</a></div><div class="ttdeci">std::string endereco</div><div class="ttdef"><b>Definition:</b> pessoa.hpp:11</div></div>
-<div class="ttc" id="aclass_pessoa_html_a8fb96e6244f2f005366e751bdb8aa0a4"><div class="ttname"><a href="class_pessoa.html#a8fb96e6244f2f005366e751bdb8aa0a4">Pessoa::tipo</a></div><div class="ttdeci">int tipo</div><div class="ttdef"><b>Definition:</b> pessoa.hpp:12</div></div>
-<div class="ttc" id="aclass_pessoa_html_ac0ca58320930b185eea86cfee9e43033"><div class="ttname"><a href="class_pessoa.html#ac0ca58320930b185eea86cfee9e43033">Pessoa::cpf_cnpj</a></div><div class="ttdeci">std::string cpf_cnpj</div><div class="ttdef"><b>Definition:</b> pessoa.hpp:11</div></div>
 <div class="ttc" id="apessoa_8hpp_html"><div class="ttname"><a href="pessoa_8hpp.html">pessoa.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

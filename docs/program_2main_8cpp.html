@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Sistema de Gerenciamento de uma Indústria: Referência do Arquivo C:/Users/felip/OneDrive/Documentos/GitHub/poo/program/main.cpp</title>
+<title>Sistema de Gerenciamento de uma Indústria: Referência do Arquivo program/main.cpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Sistema de Gerenciamento de uma Indústria<span id="projectnumber">&#160;2.0</span>
+   <div id="projectname">Sistema de Gerenciamento de uma Indústria<span id="projectnumber">&#160;3.0</span>
    </div>
    <div id="projectbrief">Trabalho Prático POO | UFMG</div>
   </td>
@@ -81,18 +81,87 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br />
-<code>#include &quot;<a class="el" href="autoload_8hpp_source.html">autoload.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="veiculo_8hpp_source.html">veiculo.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="usuario_logado_8hpp_source.html">usuarioLogado.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="usuario_8hpp_source.html">usuario.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="cliente_8hpp_source.html">cliente.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="funcionario_8hpp_source.html">funcionario.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="salario_8hpp_source.html">salario.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="empresa_8hpp_source.html">empresa.hpp</a>&quot;</code><br />
+<code>#include &quot;Data.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="materia_prima_8hpp_source.html">materiaPrima.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lote_8hpp_source.html">lote.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="orcamento_8hpp_source.html">orcamento.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="pedido_de_compra_8hpp_source.html">pedidoDeCompra.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="credito_8hpp_source.html">credito.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="boleto_8hpp_source.html">boleto.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rota_8hpp_source.html">rota.hpp</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Funções</h2></td></tr>
+<tr class="memitem:a5508132d195a8c51fedc92e81340701a"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="program_2main_8cpp.html#a5508132d195a8c51fedc92e81340701a">permissao</a> ()</td></tr>
+<tr class="separator:a5508132d195a8c51fedc92e81340701a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f2ba2b0ad9483348a7604bdd622bf55"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="program_2main_8cpp.html#a8f2ba2b0ad9483348a7604bdd622bf55">testaCliente</a> ()</td></tr>
 <tr class="separator:a8f2ba2b0ad9483348a7604bdd622bf55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ad7176b62bb617496baa0fa141e175c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="program_2main_8cpp.html#a9ad7176b62bb617496baa0fa141e175c">testaFuncionario</a> ()</td></tr>
 <tr class="separator:a9ad7176b62bb617496baa0fa141e175c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36cbc59119c342770d0616e1d25a00df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="program_2main_8cpp.html#a36cbc59119c342770d0616e1d25a00df">inicializaTestes</a> ()</td></tr>
+<tr class="separator:a36cbc59119c342770d0616e1d25a00df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="program_2main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
 <tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Funções</h2>
+<a id="a36cbc59119c342770d0616e1d25a00df" name="a36cbc59119c342770d0616e1d25a00df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36cbc59119c342770d0616e1d25a00df">&#9670;&#160;</a></span>inicializaTestes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void inicializaTestes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">  516</span>{</div>
+<div class="line"><span class="lineno">  517</span>    <a class="code hl_class" href="class_empresa.html">Empresa</a> *e = <a class="code hl_function" href="class_empresa.html#a31cee3bedc17ae907f3859ba959ec10a">Empresa::getEmpresa</a>();</div>
+<div class="line"><span class="lineno">  518</span>    <a class="code hl_class" href="class_usuario_logado.html">UsuarioLogado</a> *U = <a class="code hl_function" href="class_usuario_logado.html#a6889d8d2d8700b1a7234575d092b2b5c">UsuarioLogado::GetInstance</a>();</div>
+<div class="line"><span class="lineno">  519</span>    std::vector&lt;std::string&gt; permissoes;</div>
+<div class="line"><span class="lineno">  520</span>    </div>
+<div class="line"><span class="lineno">  521</span>    U-&gt;<a class="code hl_function" href="class_usuario_logado.html#aad70a09bb5289a377d1c78f5987bdd99">setPermissoes</a>(<a class="code hl_function" href="program_2main_8cpp.html#a5508132d195a8c51fedc92e81340701a">permissao</a>());</div>
+<div class="line"><span class="lineno">  522</span>    U-&gt;<a class="code hl_function" href="class_pessoa.html#a26074576a426b510ff59165b05031f57">setNome</a>(<span class="stringliteral">&quot;Usuario funciona pfvr&quot;</span>);</div>
+<div class="line"><span class="lineno">  523</span>    U-&gt;<a class="code hl_function" href="class_usuario.html#a28efaec1398906b6f43b12877bf59db7">setSenha</a>(<span class="stringliteral">&quot;123&quot;</span>);</div>
+<div class="line"><span class="lineno">  524</span>    U-&gt;<a class="code hl_function" href="class_pessoa.html#a6127bb3998bba636dc75d03c02c02cc1">setTipo</a>(0);</div>
+<div class="line"><span class="lineno">  525</span>    U-&gt;<a class="code hl_function" href="class_pessoa.html#adf2d0723061c7eb72d4c73218a0b8f18">setcpf_cnpj</a>(<span class="stringliteral">&quot;09169507600&quot;</span>);</div>
+<div class="line"><span class="lineno">  526</span>    U-&gt;<a class="code hl_function" href="class_pessoa.html#a2585aacb5b71f0b14a1ce3f695dae614">setEmail</a>(<span class="stringliteral">&quot;user@user.com&quot;</span>);</div>
+<div class="line"><span class="lineno">  527</span>    e-&gt;<a class="code hl_function" href="class_empresa.html#aa56a789e28d26b09abe1fbb3e10192c1">logar</a>(U);</div>
+<div class="line"><span class="lineno">  528</span> </div>
+<div class="line"><span class="lineno">  529</span>    <a class="code hl_class" href="class_pessoa.html">Pessoa</a> p(<span class="stringliteral">&quot;Joao&quot;</span>, <span class="stringliteral">&quot;12345678911&quot;</span>, <span class="stringliteral">&quot;Rua 1&quot;</span>, <span class="stringliteral">&quot;email@email.com&quot;</span>, 0);</div>
+<div class="line"><span class="lineno">  530</span>    p.setNome(<span class="stringliteral">&quot;Joao&quot;</span>);</div>
+<div class="line"><span class="lineno">  531</span>    p.setcpf_cnpj(<span class="stringliteral">&quot;12345678911&quot;</span>);</div>
+<div class="line"><span class="lineno">  532</span>    p.setEndereco(<span class="stringliteral">&quot;Rua 1&quot;</span>);</div>
+<div class="line"><span class="lineno">  533</span>    p.setEmail(<span class="stringliteral">&quot;email@email.com&quot;</span>);</div>
+<div class="line"><span class="lineno">  534</span>    p.setTipo(0);</div>
+<div class="line"><span class="lineno">  535</span>    </div>
+<div class="line"><span class="lineno">  536</span>}   </div>
+<div class="ttc" id="aclass_empresa_html"><div class="ttname"><a href="class_empresa.html">Empresa</a></div><div class="ttdef"><b>Definition:</b> empresa.hpp:32</div></div>
+<div class="ttc" id="aclass_empresa_html_a31cee3bedc17ae907f3859ba959ec10a"><div class="ttname"><a href="class_empresa.html#a31cee3bedc17ae907f3859ba959ec10a">Empresa::getEmpresa</a></div><div class="ttdeci">static Empresa * getEmpresa()</div><div class="ttdoc">Retorna a instancia da empresa.</div><div class="ttdef"><b>Definition:</b> empresa.cpp:28</div></div>
+<div class="ttc" id="aclass_empresa_html_aa56a789e28d26b09abe1fbb3e10192c1"><div class="ttname"><a href="class_empresa.html#aa56a789e28d26b09abe1fbb3e10192c1">Empresa::logar</a></div><div class="ttdeci">void logar(UsuarioLogado *usuarioLogado)</div><div class="ttdoc">Loga o usuário.</div><div class="ttdef"><b>Definition:</b> empresa.cpp:426</div></div>
+<div class="ttc" id="aclass_pessoa_html"><div class="ttname"><a href="class_pessoa.html">Pessoa</a></div><div class="ttdef"><b>Definition:</b> pessoa.hpp:9</div></div>
+<div class="ttc" id="aclass_pessoa_html_a2585aacb5b71f0b14a1ce3f695dae614"><div class="ttname"><a href="class_pessoa.html#a2585aacb5b71f0b14a1ce3f695dae614">Pessoa::setEmail</a></div><div class="ttdeci">void setEmail(std::string email)</div><div class="ttdoc">Seta o email da pessoa.</div><div class="ttdef"><b>Definition:</b> pessoa.cpp:190</div></div>
+<div class="ttc" id="aclass_pessoa_html_a26074576a426b510ff59165b05031f57"><div class="ttname"><a href="class_pessoa.html#a26074576a426b510ff59165b05031f57">Pessoa::setNome</a></div><div class="ttdeci">void setNome(std::string nome)</div><div class="ttdoc">Seta o nome da pessoa.</div><div class="ttdef"><b>Definition:</b> pessoa.cpp:353</div></div>
+<div class="ttc" id="aclass_pessoa_html_a6127bb3998bba636dc75d03c02c02cc1"><div class="ttname"><a href="class_pessoa.html#a6127bb3998bba636dc75d03c02c02cc1">Pessoa::setTipo</a></div><div class="ttdeci">void setTipo(int tipo)</div><div class="ttdoc">Seta o tipo da pessoa.</div><div class="ttdef"><b>Definition:</b> pessoa.cpp:210</div></div>
+<div class="ttc" id="aclass_pessoa_html_adf2d0723061c7eb72d4c73218a0b8f18"><div class="ttname"><a href="class_pessoa.html#adf2d0723061c7eb72d4c73218a0b8f18">Pessoa::setcpf_cnpj</a></div><div class="ttdeci">void setcpf_cnpj(std::string cpf_cnpj)</div><div class="ttdoc">Seta o cpf ou cnpj da pessoa.</div><div class="ttdef"><b>Definition:</b> pessoa.cpp:133</div></div>
+<div class="ttc" id="aclass_usuario_html_a28efaec1398906b6f43b12877bf59db7"><div class="ttname"><a href="class_usuario.html#a28efaec1398906b6f43b12877bf59db7">Usuario::setSenha</a></div><div class="ttdeci">void setSenha(std::string senha)</div><div class="ttdoc">Seta a senha do usuário.</div><div class="ttdef"><b>Definition:</b> usuario.cpp:112</div></div>
+<div class="ttc" id="aclass_usuario_logado_html"><div class="ttname"><a href="class_usuario_logado.html">UsuarioLogado</a></div><div class="ttdef"><b>Definition:</b> usuarioLogado.hpp:9</div></div>
+<div class="ttc" id="aclass_usuario_logado_html_a6889d8d2d8700b1a7234575d092b2b5c"><div class="ttname"><a href="class_usuario_logado.html#a6889d8d2d8700b1a7234575d092b2b5c">UsuarioLogado::GetInstance</a></div><div class="ttdeci">static UsuarioLogado * GetInstance()</div><div class="ttdoc">Retorna a instancia do usuario que está logado (singleton)</div><div class="ttdef"><b>Definition:</b> usuarioLogado.cpp:30</div></div>
+<div class="ttc" id="aclass_usuario_logado_html_aad70a09bb5289a377d1c78f5987bdd99"><div class="ttname"><a href="class_usuario_logado.html#aad70a09bb5289a377d1c78f5987bdd99">UsuarioLogado::setPermissoes</a></div><div class="ttdeci">void setPermissoes(std::vector&lt; std::string &gt; permissoes)</div><div class="ttdoc">Adiciona uma permissao ao usuario logado.</div><div class="ttdef"><b>Definition:</b> usuarioLogado.cpp:160</div></div>
+<div class="ttc" id="aprogram_2main_8cpp_html_a5508132d195a8c51fedc92e81340701a"><div class="ttname"><a href="program_2main_8cpp.html#a5508132d195a8c51fedc92e81340701a">permissao</a></div><div class="ttdeci">std::vector&lt; std::string &gt; permissao()</div><div class="ttdef"><b>Definition:</b> main.cpp:19</div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="ae66f6b31b5ad750f1fe042a706a4e3d4" name="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&#160;</a></span>main()</h2>
 
@@ -107,31 +176,292 @@ Funções</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   35</span>{</div>
-<div class="line"><span class="lineno">   36</span> </div>
-<div class="line"><span class="lineno">   37</span>    <span class="keywordtype">int</span> a = 0;</div>
-<div class="line"><span class="lineno">   38</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;+-----------------+&quot;</span>&lt;&lt;std::endl;</div>
-<div class="line"><span class="lineno">   39</span>    std::cout&lt;&lt;<span class="stringliteral">&quot;Bem vindo ao sistema de testes do sistema CEFIMl(eh so as iniciais dos nomes dos integrantes do grupo!)&quot;</span>&lt;&lt;std::endl;</div>
-<div class="line"><span class="lineno">   40</span>    std::cout&lt;&lt;<span class="stringliteral">&quot;Digite 1 para funcionario e 2 para cliente: &quot;</span>&lt;&lt;std::endl;</div>
-<div class="line"><span class="lineno">   41</span>    std::cin&gt;&gt;a;</div>
-<div class="line"><span class="lineno">   42</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;+-----------------+&quot;</span>&lt;&lt;std::endl;</div>
-<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">switch</span> (a)</div>
-<div class="line"><span class="lineno">   44</span>    {</div>
-<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">case</span> 1:</div>
-<div class="line"><span class="lineno">   46</span>        <a class="code hl_function" href="program_2main_8cpp.html#a9ad7176b62bb617496baa0fa141e175c">testaFuncionario</a>();</div>
-<div class="line"><span class="lineno">   47</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   48</span>    <span class="keywordflow">case</span> 2:</div>
-<div class="line"><span class="lineno">   49</span>        <a class="code hl_function" href="program_2main_8cpp.html#a8f2ba2b0ad9483348a7604bdd622bf55">testaCliente</a>();</div>
-<div class="line"><span class="lineno">   50</span>        <span class="keywordflow">break</span>;      </div>
-<div class="line"><span class="lineno">   51</span>    <span class="keywordflow">default</span>:</div>
-<div class="line"><span class="lineno">   52</span>        std::cout&lt;&lt;<span class="stringliteral">&quot;Opcao invalida&quot;</span>&lt;&lt;std::endl;</div>
-<div class="line"><span class="lineno">   53</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   54</span>    }                           </div>
-<div class="line"><span class="lineno">   55</span>    </div>
-<div class="line"><span class="lineno">   56</span>    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">   57</span>}</div>
-<div class="ttc" id="aprogram_2main_8cpp_html_a8f2ba2b0ad9483348a7604bdd622bf55"><div class="ttname"><a href="program_2main_8cpp.html#a8f2ba2b0ad9483348a7604bdd622bf55">testaCliente</a></div><div class="ttdeci">void testaCliente()</div><div class="ttdef"><b>Definition:</b> main.cpp:5</div></div>
-<div class="ttc" id="aprogram_2main_8cpp_html_a9ad7176b62bb617496baa0fa141e175c"><div class="ttname"><a href="program_2main_8cpp.html#a9ad7176b62bb617496baa0fa141e175c">testaFuncionario</a></div><div class="ttdeci">void testaFuncionario()</div><div class="ttdef"><b>Definition:</b> main.cpp:13</div></div>
+<div class="fragment"><div class="line"><span class="lineno">  539</span>{</div>
+<div class="line"><span class="lineno">  540</span>    <span class="keywordtype">int</span> a = 0;</div>
+<div class="line"><span class="lineno">  541</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;+-----------------+&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><span class="lineno">  542</span>    std::cout&lt;&lt;<span class="stringliteral">&quot;Bem vindo ao sistema de testes do sistema CEFIMl(eh so as iniciais dos nomes dos integrantes do grupo!)\n&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><span class="lineno">  543</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Acesse nosso repositorio no Github pelo link: https://github.com/ecommercecpp/Projeto-OO&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><span class="lineno">  544</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Acesse nossa documentacao pelo link: https://ecommercecpp.github.io/Projeto-OO/md__c___users_felip__one_drive__documentos__git_hub_poo__r_e_a_d_m_e.html&quot;</span>&lt;&lt;std::endl; </div>
+<div class="line"><span class="lineno">  545</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;+-----------------+&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><span class="lineno">  546</span>    std::cout&lt;&lt;<span class="stringliteral">&quot;\nDecidimos separar os testes em TestaFuncionario e TestaCliente para uma melhor organizacao do trabalho e para \nevitar que o programa se encerre desnecessariamente ao chamar a excecao de acesso negado solicitada em um dos testes.\n&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><span class="lineno">  547</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;+-----------------+&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><span class="lineno">  548</span>    std::cout&lt;&lt;<span class="stringliteral">&quot;\nDigite 1 para funcionario e 2 para cliente: &quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><span class="lineno">  549</span>    std::cin&gt;&gt;a;</div>
+<div class="line"><span class="lineno">  550</span>    <a class="code hl_function" href="program_2main_8cpp.html#a36cbc59119c342770d0616e1d25a00df">inicializaTestes</a>();</div>
+<div class="line"><span class="lineno">  551</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;+-----------------+&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><span class="lineno">  552</span>    <span class="keywordflow">switch</span> (a)</div>
+<div class="line"><span class="lineno">  553</span>    {</div>
+<div class="line"><span class="lineno">  554</span>    <span class="keywordflow">case</span> 1:</div>
+<div class="line"><span class="lineno">  555</span>        <a class="code hl_function" href="program_2main_8cpp.html#a9ad7176b62bb617496baa0fa141e175c">testaFuncionario</a>();</div>
+<div class="line"><span class="lineno">  556</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  557</span>    <span class="keywordflow">case</span> 2:</div>
+<div class="line"><span class="lineno">  558</span>        <a class="code hl_function" href="program_2main_8cpp.html#a8f2ba2b0ad9483348a7604bdd622bf55">testaCliente</a>();</div>
+<div class="line"><span class="lineno">  559</span>        <span class="keywordflow">break</span>;      </div>
+<div class="line"><span class="lineno">  560</span>    <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  561</span>        std::cout&lt;&lt;<span class="stringliteral">&quot;Opcao invalida&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><span class="lineno">  562</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  563</span>    }                           </div>
+<div class="line"><span class="lineno">  564</span>    </div>
+<div class="line"><span class="lineno">  565</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  566</span>}</div>
+<div class="ttc" id="aprogram_2main_8cpp_html_a36cbc59119c342770d0616e1d25a00df"><div class="ttname"><a href="program_2main_8cpp.html#a36cbc59119c342770d0616e1d25a00df">inicializaTestes</a></div><div class="ttdeci">void inicializaTestes()</div><div class="ttdef"><b>Definition:</b> main.cpp:515</div></div>
+<div class="ttc" id="aprogram_2main_8cpp_html_a8f2ba2b0ad9483348a7604bdd622bf55"><div class="ttname"><a href="program_2main_8cpp.html#a8f2ba2b0ad9483348a7604bdd622bf55">testaCliente</a></div><div class="ttdeci">void testaCliente()</div><div class="ttdef"><b>Definition:</b> main.cpp:258</div></div>
+<div class="ttc" id="aprogram_2main_8cpp_html_a9ad7176b62bb617496baa0fa141e175c"><div class="ttname"><a href="program_2main_8cpp.html#a9ad7176b62bb617496baa0fa141e175c">testaFuncionario</a></div><div class="ttdeci">void testaFuncionario()</div><div class="ttdef"><b>Definition:</b> main.cpp:382</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a5508132d195a8c51fedc92e81340701a" name="a5508132d195a8c51fedc92e81340701a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5508132d195a8c51fedc92e81340701a">&#9670;&#160;</a></span>permissao()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::string &gt; permissao </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">   19</span>                                 {</div>
+<div class="line"><span class="lineno">   20</span>  std::vector&lt;std::string&gt; permissoes;</div>
+<div class="line"><span class="lineno">   21</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarEmailPessoa&quot;</span>);</div>
+<div class="line"><span class="lineno">   22</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarTipoPessoa&quot;</span>);</div>
+<div class="line"><span class="lineno">   23</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarNomePessoa&quot;</span>);</div>
+<div class="line"><span class="lineno">   24</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarDocumentoPessoa&quot;</span>);</div>
+<div class="line"><span class="lineno">   25</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarEnderecoPessoa&quot;</span>);</div>
+<div class="line"><span class="lineno">   26</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarEmailPessoa&quot;</span>);</div>
+<div class="line"><span class="lineno">   27</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarTipoPessoa&quot;</span>);</div>
+<div class="line"><span class="lineno">   28</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarNomePessoa&quot;</span>);</div>
+<div class="line"><span class="lineno">   29</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarEnderecoPessoa&quot;</span>);</div>
+<div class="line"><span class="lineno">   30</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarPessoa&quot;</span>);</div>
+<div class="line"><span class="lineno">   31</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarDocumentoPessoa&quot;</span>);</div>
+<div class="line"><span class="lineno">   32</span> </div>
+<div class="line"><span class="lineno">   33</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarFuncionario&quot;</span>);</div>
+<div class="line"><span class="lineno">   34</span>    permissoes.push_back(<span class="stringliteral">&quot;admitirFuncionario&quot;</span>);</div>
+<div class="line"><span class="lineno">   35</span>    <span class="comment">//permissoes.push_back(&quot;demitirFuncionario&quot;);</span></div>
+<div class="line"><span class="lineno">   36</span>    permissoes.push_back(<span class="stringliteral">&quot;empregadoFuncionario&quot;</span>);</div>
+<div class="line"><span class="lineno">   37</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarStatusFuncionario&quot;</span>);</div>
+<div class="line"><span class="lineno">   38</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarMatriculaFuncionario&quot;</span>);</div>
+<div class="line"><span class="lineno">   39</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarMatriculaFuncionario&quot;</span>);</div>
+<div class="line"><span class="lineno">   40</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarNascimentoFuncionario&quot;</span>);</div>
+<div class="line"><span class="lineno">   41</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarNascimentoFuncionario&quot;</span>);</div>
+<div class="line"><span class="lineno">   42</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarAdmissaoFuncionario&quot;</span>);</div>
+<div class="line"><span class="lineno">   43</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarAdmissaoFuncionario&quot;</span>);</div>
+<div class="line"><span class="lineno">   44</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarDemissaoFuncionario&quot;</span>);</div>
+<div class="line"><span class="lineno">   45</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarDemissaoFuncionario&quot;</span>);</div>
+<div class="line"><span class="lineno">   46</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarSalarioFuncionario&quot;</span>);</div>
+<div class="line"><span class="lineno">   47</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarSalarioFuncionario&quot;</span>);</div>
+<div class="line"><span class="lineno">   48</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarDepartamentoFuncionario&quot;</span>);</div>
+<div class="line"><span class="lineno">   49</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarDepartamentoFuncionario&quot;</span>);</div>
+<div class="line"><span class="lineno">   50</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarCargoFuncionario&quot;</span>);</div>
+<div class="line"><span class="lineno">   51</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarCargoFuncionario&quot;</span>);</div>
+<div class="line"><span class="lineno">   52</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarLatitudeFuncionario&quot;</span>);</div>
+<div class="line"><span class="lineno">   53</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarLatitudeFuncionario&quot;</span>);</div>
+<div class="line"><span class="lineno">   54</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarLongitudeFuncionario&quot;</span>);</div>
+<div class="line"><span class="lineno">   55</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarLongitudeFuncionario&quot;</span>);</div>
+<div class="line"><span class="lineno">   56</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarTurnoFuncionario&quot;</span>);</div>
+<div class="line"><span class="lineno">   57</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarTurnoFuncionario&quot;</span>);</div>
+<div class="line"><span class="lineno">   58</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarDistanciaFuncionario&quot;</span>);</div>
+<div class="line"><span class="lineno">   59</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarDistanciaFuncionario&quot;</span>);</div>
+<div class="line"><span class="lineno">   60</span> </div>
+<div class="line"><span class="lineno">   61</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarSalario&quot;</span>);</div>
+<div class="line"><span class="lineno">   62</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarSalario&quot;</span>);</div>
+<div class="line"><span class="lineno">   63</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarValorSalario&quot;</span>);</div>
+<div class="line"><span class="lineno">   64</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarMotivoSalario&quot;</span>);</div>
+<div class="line"><span class="lineno">   65</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarMotivoSalario&quot;</span>);</div>
+<div class="line"><span class="lineno">   66</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarStatusSalario&quot;</span>);</div>
+<div class="line"><span class="lineno">   67</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarDataSalario&quot;</span>);</div>
+<div class="line"><span class="lineno">   68</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarValorSalario&quot;</span>);</div>
+<div class="line"><span class="lineno">   69</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarStatusSalario&quot;</span>);</div>
+<div class="line"><span class="lineno">   70</span> </div>
+<div class="line"><span class="lineno">   71</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarDepartamento&quot;</span>);</div>
+<div class="line"><span class="lineno">   72</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarIdDepartamento&quot;</span>);</div>
+<div class="line"><span class="lineno">   73</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarNomeDepartamento&quot;</span>);</div>
+<div class="line"><span class="lineno">   74</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarNomeDepartamento&quot;</span>);</div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarNomeCargo&quot;</span>);</div>
+<div class="line"><span class="lineno">   77</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarIdCargo&quot;</span>);</div>
+<div class="line"><span class="lineno">   78</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarNomeCargo&quot;</span>);</div>
+<div class="line"><span class="lineno">   79</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarIdCargo&quot;</span>);</div>
+<div class="line"><span class="lineno">   80</span> </div>
+<div class="line"><span class="lineno">   81</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarTelefoneCliente&quot;</span>);</div>
+<div class="line"><span class="lineno">   82</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarTelefoneCliente&quot;</span>);</div>
+<div class="line"><span class="lineno">   83</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarCliente&quot;</span>);</div>
+<div class="line"><span class="lineno">   84</span> </div>
+<div class="line"><span class="lineno">   85</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarUsuario&quot;</span>);</div>
+<div class="line"><span class="lineno">   86</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarLoginUsuario&quot;</span>);</div>
+<div class="line"><span class="lineno">   87</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarLoginUsuario&quot;</span>);</div>
+<div class="line"><span class="lineno">   88</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarSenhaUsuario&quot;</span>);</div>
+<div class="line"><span class="lineno">   89</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarSenhaUsuario&quot;</span>);</div>
+<div class="line"><span class="lineno">   90</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarPermissoesUsuario&quot;</span>);</div>
+<div class="line"><span class="lineno">   91</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarPermissoesUsuario&quot;</span>);</div>
+<div class="line"><span class="lineno">   92</span> </div>
+<div class="line"><span class="lineno">   93</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarUsuarioLogado&quot;</span>);</div>
+<div class="line"><span class="lineno">   94</span> </div>
+<div class="line"><span class="lineno">   95</span>    permissoes.push_back(<span class="stringliteral">&quot;setNomeProduto&quot;</span>);</div>
+<div class="line"><span class="lineno">   96</span>    permissoes.push_back(<span class="stringliteral">&quot;setCodigoProduto&quot;</span>);</div>
+<div class="line"><span class="lineno">   97</span>    permissoes.push_back(<span class="stringliteral">&quot;setValorDeVendaProduto&quot;</span>);</div>
+<div class="line"><span class="lineno">   98</span>    permissoes.push_back(<span class="stringliteral">&quot;setTamanhoDoLoteMinimoProduto&quot;</span>);</div>
+<div class="line"><span class="lineno">   99</span>    permissoes.push_back(<span class="stringliteral">&quot;setCategoriaProduto&quot;</span>);</div>
+<div class="line"><span class="lineno">  100</span>    permissoes.push_back(<span class="stringliteral">&quot;setEstoqueMinimoProduto&quot;</span>);</div>
+<div class="line"><span class="lineno">  101</span>    permissoes.push_back(<span class="stringliteral">&quot;setQtdEstoqueProduto&quot;</span>);</div>
+<div class="line"><span class="lineno">  102</span>    permissoes.push_back(<span class="stringliteral">&quot;getNomeProduto&quot;</span>);</div>
+<div class="line"><span class="lineno">  103</span>    permissoes.push_back(<span class="stringliteral">&quot;getCodigoProduto&quot;</span>);</div>
+<div class="line"><span class="lineno">  104</span>    permissoes.push_back(<span class="stringliteral">&quot;getValorDeVendaProduto&quot;</span>);</div>
+<div class="line"><span class="lineno">  105</span>    permissoes.push_back(<span class="stringliteral">&quot;getTamanhoDoLoteMinimoProduto&quot;</span>);</div>
+<div class="line"><span class="lineno">  106</span>    permissoes.push_back(<span class="stringliteral">&quot;getCategoriaProduto&quot;</span>);</div>
+<div class="line"><span class="lineno">  107</span>    permissoes.push_back(<span class="stringliteral">&quot;getEstoqueMinimoProduto&quot;</span>);</div>
+<div class="line"><span class="lineno">  108</span>    permissoes.push_back(<span class="stringliteral">&quot;getQtdEstoqueProduto&quot;</span>);</div>
+<div class="line"><span class="lineno">  109</span>    permissoes.push_back(<span class="stringliteral">&quot;adicionarEstoqueProduto&quot;</span>);</div>
+<div class="line"><span class="lineno">  110</span>    permissoes.push_back(<span class="stringliteral">&quot;removerEstoqueProduto&quot;</span>);</div>
+<div class="line"><span class="lineno">  111</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarEstoqueProduto&quot;</span>);</div>
+<div class="line"><span class="lineno">  112</span>    permissoes.push_back(<span class="stringliteral">&quot;imprimirMateriaPrimaProduto&quot;</span>);</div>
+<div class="line"><span class="lineno">  113</span>    permissoes.push_back(<span class="stringliteral">&quot;imprimirProduto&quot;</span>);</div>
+<div class="line"><span class="lineno">  114</span>    permissoes.push_back(<span class="stringliteral">&quot;adicionarMateriaPrimaProduto&quot;</span>);</div>
+<div class="line"><span class="lineno">  115</span> </div>
+<div class="line"><span class="lineno">  116</span>    permissoes.push_back(<span class="stringliteral">&quot;instanciarUsuarioLogado&quot;</span>);</div>
+<div class="line"><span class="lineno">  117</span> </div>
+<div class="line"><span class="lineno">  118</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarOrcamento&quot;</span>);</div>
+<div class="line"><span class="lineno">  119</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarProdutosOrcamento&quot;</span>);</div>
+<div class="line"><span class="lineno">  120</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarProdutosOrcamento&quot;</span>);</div>
+<div class="line"><span class="lineno">  121</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarClienteOrcamento&quot;</span>);</div>
+<div class="line"><span class="lineno">  122</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarClienteOrcamento&quot;</span>);</div>
+<div class="line"><span class="lineno">  123</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarValorTotalOrcamento&quot;</span>);</div>
+<div class="line"><span class="lineno">  124</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarValorTotalOrcamento&quot;</span>);</div>
+<div class="line"><span class="lineno">  125</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarDataOrcamento&quot;</span>);</div>
+<div class="line"><span class="lineno">  126</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarDataOrcamento&quot;</span>);</div>
+<div class="line"><span class="lineno">  127</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarDataStringOrcamento&quot;</span>);</div>
+<div class="line"><span class="lineno">  128</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarDataStringOrcamento&quot;</span>);</div>
+<div class="line"><span class="lineno">  129</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarOrdemProducaoOrcamento&quot;</span>);</div>
+<div class="line"><span class="lineno">  130</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarOrdemProducaoOrcamento&quot;</span>);</div>
+<div class="line"><span class="lineno">  131</span>    permissoes.push_back(<span class="stringliteral">&quot;imprimirOrcamento&quot;</span>);</div>
+<div class="line"><span class="lineno">  132</span>    permissoes.push_back(<span class="stringliteral">&quot;gerarOrcamento&quot;</span>);</div>
+<div class="line"><span class="lineno">  133</span> </div>
+<div class="line"><span class="lineno">  134</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarCategoria&quot;</span>);</div>
+<div class="line"><span class="lineno">  135</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarNomeCategoria&quot;</span>);</div>
+<div class="line"><span class="lineno">  136</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarNomeCategoria&quot;</span>);</div>
+<div class="line"><span class="lineno">  137</span> </div>
+<div class="line"><span class="lineno">  138</span>    permissoes.push_back(<span class="stringliteral">&quot;setCodigoOrdemProducao&quot;</span>);</div>
+<div class="line"><span class="lineno">  139</span>    permissoes.push_back(<span class="stringliteral">&quot;getCodigoOrdemProducao&quot;</span>);</div>
+<div class="line"><span class="lineno">  140</span>    permissoes.push_back(<span class="stringliteral">&quot;setLoteOrdemProducao&quot;</span>);</div>
+<div class="line"><span class="lineno">  141</span>    permissoes.push_back(<span class="stringliteral">&quot;setDataOrdemProducao&quot;</span>);</div>
+<div class="line"><span class="lineno">  142</span>    permissoes.push_back(<span class="stringliteral">&quot;getLoteOrdemProducao&quot;</span>);</div>
+<div class="line"><span class="lineno">  143</span>    permissoes.push_back(<span class="stringliteral">&quot;getDataOrdemProducao&quot;</span>);</div>
+<div class="line"><span class="lineno">  144</span>    permissoes.push_back(<span class="stringliteral">&quot;getQuantidadeOrdemProducao&quot;</span>);</div>
+<div class="line"><span class="lineno">  145</span>    permissoes.push_back(<span class="stringliteral">&quot;setQuantidadeOrdemProducao&quot;</span>);</div>
+<div class="line"><span class="lineno">  146</span>    permissoes.push_back(<span class="stringliteral">&quot;setDataStringOrdemProducao&quot;</span>);</div>
+<div class="line"><span class="lineno">  147</span>    permissoes.push_back(<span class="stringliteral">&quot;getDataStringOrdemProducao&quot;</span>);</div>
+<div class="line"><span class="lineno">  148</span>    permissoes.push_back(<span class="stringliteral">&quot;imprimeOrdemProducao&quot;</span>);</div>
+<div class="line"><span class="lineno">  149</span>    permissoes.push_back(<span class="stringliteral">&quot;gerarOrdemProducao&quot;</span>);</div>
+<div class="line"><span class="lineno">  150</span> </div>
+<div class="line"><span class="lineno">  151</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarPedidoDeCompra&quot;</span>);</div>
+<div class="line"><span class="lineno">  152</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarIdPedidoDeCompra&quot;</span>);</div>
+<div class="line"><span class="lineno">  153</span>    permissoes.push_back(<span class="stringliteral">&quot;alterarIdPedidoDeCompra&quot;</span>);</div>
+<div class="line"><span class="lineno">  154</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarDataPedidoDeCompra&quot;</span>);</div>
+<div class="line"><span class="lineno">  155</span>    permissoes.push_back(<span class="stringliteral">&quot;alterarDataPedidoDeCompra&quot;</span>);</div>
+<div class="line"><span class="lineno">  156</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarHistoricoVendasPedidoDeCompra&quot;</span>);</div>
+<div class="line"><span class="lineno">  157</span>    permissoes.push_back(<span class="stringliteral">&quot;alterarHistoricoVendasPedidoDeCompra&quot;</span>);</div>
+<div class="line"><span class="lineno">  158</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarStatusPedidoDeCompra&quot;</span>);</div>
+<div class="line"><span class="lineno">  159</span>    permissoes.push_back(<span class="stringliteral">&quot;alterarStatusPedidoDeCompra&quot;</span>);</div>
+<div class="line"><span class="lineno">  160</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarRegistroAtualPedidoDeCompra&quot;</span>);</div>
+<div class="line"><span class="lineno">  161</span>    permissoes.push_back(<span class="stringliteral">&quot;alterarRegistroAtualPedidoDeCompra&quot;</span>);</div>
+<div class="line"><span class="lineno">  162</span>    permissoes.push_back(<span class="stringliteral">&quot;selecionarMetodoPagamentoPedidoDeCompra&quot;</span>);</div>
+<div class="line"><span class="lineno">  163</span>    permissoes.push_back(<span class="stringliteral">&quot;alterarDataPedidoDeCompra&quot;</span>);</div>
+<div class="line"><span class="lineno">  164</span>    permissoes.push_back(<span class="stringliteral">&quot;exibirDataPedidoDeCompra&quot;</span>);</div>
+<div class="line"><span class="lineno">  165</span>    permissoes.push_back(<span class="stringliteral">&quot;gerarPedidoDeCompra&quot;</span>);</div>
+<div class="line"><span class="lineno">  166</span>    permissoes.push_back(<span class="stringliteral">&quot;imprimirPedidoDeCompra&quot;</span>);</div>
+<div class="line"><span class="lineno">  167</span> </div>
+<div class="line"><span class="lineno">  168</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarMetodoPagamento&quot;</span>);</div>
+<div class="line"><span class="lineno">  169</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarCodigoMetodoPagamento&quot;</span>);</div>
+<div class="line"><span class="lineno">  170</span>    permissoes.push_back(<span class="stringliteral">&quot;alterarCodigoMetodoPagamento&quot;</span>);</div>
+<div class="line"><span class="lineno">  171</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarNomeMetodoPagamento&quot;</span>);</div>
+<div class="line"><span class="lineno">  172</span>    permissoes.push_back(<span class="stringliteral">&quot;alterarNomeMetodoPagamento&quot;</span>);</div>
+<div class="line"><span class="lineno">  173</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarDataDeVencimentoMetodoPagamento&quot;</span>);</div>
+<div class="line"><span class="lineno">  174</span>    permissoes.push_back(<span class="stringliteral">&quot;alterarDataDeVencimentoMetodoPagamento&quot;</span>);</div>
+<div class="line"><span class="lineno">  175</span> </div>
+<div class="line"><span class="lineno">  176</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarCredito&quot;</span>);</div>
+<div class="line"><span class="lineno">  177</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarCodigoDeSegurancaCredito&quot;</span>);</div>
+<div class="line"><span class="lineno">  178</span>    permissoes.push_back(<span class="stringliteral">&quot;alterarCodigoDeSegurancaCredito&quot;</span>);</div>
+<div class="line"><span class="lineno">  179</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarNomeDoTitularCredito&quot;</span>);</div>
+<div class="line"><span class="lineno">  180</span>    permissoes.push_back(<span class="stringliteral">&quot;alterarNomeDoTitularCredito&quot;</span>);</div>
+<div class="line"><span class="lineno">  181</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarDataDeVencimentoCredito&quot;</span>);</div>
+<div class="line"><span class="lineno">  182</span>    permissoes.push_back(<span class="stringliteral">&quot;alterarDataDeVencimentoCredito&quot;</span>);</div>
+<div class="line"><span class="lineno">  183</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarNumeroDoCartaoCredito&quot;</span>);</div>
+<div class="line"><span class="lineno">  184</span>    permissoes.push_back(<span class="stringliteral">&quot;alterarNumeroDoCartaoCredito&quot;</span>);</div>
+<div class="line"><span class="lineno">  185</span>    </div>
+<div class="line"><span class="lineno">  186</span>    permissoes.push_back(<span class="stringliteral">&quot;cadastrarBoleto&quot;</span>);</div>
+<div class="line"><span class="lineno">  187</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarCodigoDeBarrasBoleto&quot;</span>);</div>
+<div class="line"><span class="lineno">  188</span>    permissoes.push_back(<span class="stringliteral">&quot;alterarCodigoDeBarrasBoleto&quot;</span>);</div>
+<div class="line"><span class="lineno">  189</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarNomeDoPagadorBoleto&quot;</span>);</div>
+<div class="line"><span class="lineno">  190</span>    permissoes.push_back(<span class="stringliteral">&quot;alterarNomeDoPagadorBoleto&quot;</span>);</div>
+<div class="line"><span class="lineno">  191</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarDataDeVencimentoBoleto&quot;</span>);</div>
+<div class="line"><span class="lineno">  192</span>    permissoes.push_back(<span class="stringliteral">&quot;alterarDataDeVencimentoBoleto&quot;</span>);</div>
+<div class="line"><span class="lineno">  193</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarPrazoDePagamentoBoleto&quot;</span>);</div>
+<div class="line"><span class="lineno">  194</span>    permissoes.push_back(<span class="stringliteral">&quot;alterarPrazoDePagamentoBoleto&quot;</span>);</div>
+<div class="line"><span class="lineno">  195</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarValorBoleto&quot;</span>);</div>
+<div class="line"><span class="lineno">  196</span> </div>
+<div class="line"><span class="lineno">  197</span>    permissoes.push_back(<span class="stringliteral">&quot;adicionarProduto&quot;</span>);</div>
+<div class="line"><span class="lineno">  198</span>    permissoes.push_back(<span class="stringliteral">&quot;removerProduto&quot;</span>);</div>
+<div class="line"><span class="lineno">  199</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarProduto&quot;</span>);</div>
+<div class="line"><span class="lineno">  200</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarProdutos&quot;</span>);</div>
+<div class="line"><span class="lineno">  201</span>    permissoes.push_back(<span class="stringliteral">&quot;setarProduto&quot;</span>);</div>
+<div class="line"><span class="lineno">  202</span>    permissoes.push_back(<span class="stringliteral">&quot;validarEstoqueMinimo&quot;</span>);</div>
+<div class="line"><span class="lineno">  203</span>    permissoes.push_back(<span class="stringliteral">&quot;atualizarEstoque&quot;</span>);</div>
+<div class="line"><span class="lineno">  204</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarDisponibilidade&quot;</span>);</div>
+<div class="line"><span class="lineno">  205</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarEstoque&quot;</span>);</div>
+<div class="line"><span class="lineno">  206</span> </div>
+<div class="line"><span class="lineno">  207</span>    permissoes.push_back(<span class="stringliteral">&quot;adicionarProduto&quot;</span>);</div>
+<div class="line"><span class="lineno">  208</span>    permissoes.push_back(<span class="stringliteral">&quot;removerProduto&quot;</span>);</div>
+<div class="line"><span class="lineno">  209</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarProduto&quot;</span>);</div>
+<div class="line"><span class="lineno">  210</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarProdutos&quot;</span>);</div>
+<div class="line"><span class="lineno">  211</span>    permissoes.push_back(<span class="stringliteral">&quot;setarProdutos&quot;</span>);</div>
+<div class="line"><span class="lineno">  212</span>    permissoes.push_back(<span class="stringliteral">&quot;validarEstoqueMinimo&quot;</span>);</div>
+<div class="line"><span class="lineno">  213</span>    permissoes.push_back(<span class="stringliteral">&quot;atualizarEstoque&quot;</span>);</div>
+<div class="line"><span class="lineno">  214</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarDisponibilidade&quot;</span>);</div>
+<div class="line"><span class="lineno">  215</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarEstoque&quot;</span>);</div>
+<div class="line"><span class="lineno">  216</span> </div>
+<div class="line"><span class="lineno">  217</span>    permissoes.push_back(<span class="stringliteral">&quot;setarNomeMateriaPrima&quot;</span>);</div>
+<div class="line"><span class="lineno">  218</span>    permissoes.push_back(<span class="stringliteral">&quot;setarQuantidadeMateriaPrima&quot;</span>);</div>
+<div class="line"><span class="lineno">  219</span>    permissoes.push_back(<span class="stringliteral">&quot;setarEstoqueMinimoMateriaPrima&quot;</span>);</div>
+<div class="line"><span class="lineno">  220</span>    permissoes.push_back(<span class="stringliteral">&quot;setarUnidadeMedidaMateriaPrima&quot;</span>);</div>
+<div class="line"><span class="lineno">  221</span>    permissoes.push_back(<span class="stringliteral">&quot;atualizarQuantidadeMateriaPrima&quot;</span>);</div>
+<div class="line"><span class="lineno">  222</span>    permissoes.push_back(<span class="stringliteral">&quot;getQuantidadeMateriaPrima&quot;</span>);</div>
+<div class="line"><span class="lineno">  223</span>    permissoes.push_back(<span class="stringliteral">&quot;getNomeMateriaPrima&quot;</span>);</div>
+<div class="line"><span class="lineno">  224</span>    permissoes.push_back(<span class="stringliteral">&quot;getEstoqueMinimoMateriaPrima&quot;</span>);</div>
+<div class="line"><span class="lineno">  225</span>    permissoes.push_back(<span class="stringliteral">&quot;getUnidadeMedidaMateriaPrima&quot;</span>);</div>
+<div class="line"><span class="lineno">  226</span>    permissoes.push_back(<span class="stringliteral">&quot;setarEstoqueTotalMateriaPrima&quot;</span>);</div>
+<div class="line"><span class="lineno">  227</span>    permissoes.push_back(<span class="stringliteral">&quot;getEstoqueDisponivelMateriaPrima&quot;</span>);</div>
+<div class="line"><span class="lineno">  228</span> </div>
+<div class="line"><span class="lineno">  229</span>    permissoes.push_back(<span class="stringliteral">&quot;gerarOrdemCompra&quot;</span>);</div>
+<div class="line"><span class="lineno">  230</span> </div>
+<div class="line"><span class="lineno">  231</span>    permissoes.push_back(<span class="stringliteral">&quot;gerarOrcamentoMP&quot;</span>);</div>
+<div class="line"><span class="lineno">  232</span> </div>
+<div class="line"><span class="lineno">  233</span>    permissoes.push_back(<span class="stringliteral">&quot;setarTipoVeiculo&quot;</span>);</div>
+<div class="line"><span class="lineno">  234</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarTipoVeiculo&quot;</span>);</div>
+<div class="line"><span class="lineno">  235</span>    permissoes.push_back(<span class="stringliteral">&quot;retornarTipoVeiculo&quot;</span>);</div>
+<div class="line"><span class="lineno">  236</span>    permissoes.push_back(<span class="stringliteral">&quot;alterarHorarioVeiculo&quot;</span>);</div>
+<div class="line"><span class="lineno">  237</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarCargaVeiculo&quot;</span>);</div>
+<div class="line"><span class="lineno">  238</span>    permissoes.push_back(<span class="stringliteral">&quot;removerCargaVeiculo&quot;</span>);</div>
+<div class="line"><span class="lineno">  239</span>    permissoes.push_back(<span class="stringliteral">&quot;adicionarCargaVeiculo&quot;</span>);</div>
+<div class="line"><span class="lineno">  240</span>    permissoes.push_back(<span class="stringliteral">&quot;setarCapacidadeVeiculo&quot;</span>);</div>
+<div class="line"><span class="lineno">  241</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarCapacidadeVeiculo&quot;</span>);</div>
+<div class="line"><span class="lineno">  242</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarVeiculoCheio&quot;</span>);</div>
+<div class="line"><span class="lineno">  243</span> </div>
+<div class="line"><span class="lineno">  244</span>    permissoes.push_back(<span class="stringliteral">&quot;setarFuncionarioRota&quot;</span>);</div>
+<div class="line"><span class="lineno">  245</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarFuncionarioRota&quot;</span>);</div>
+<div class="line"><span class="lineno">  246</span>    permissoes.push_back(<span class="stringliteral">&quot;setarIdRota&quot;</span>);</div>
+<div class="line"><span class="lineno">  247</span>    permissoes.push_back(<span class="stringliteral">&quot;verificarIdRota&quot;</span>);</div>
+<div class="line"><span class="lineno">  248</span>    permissoes.push_back(<span class="stringliteral">&quot;calcularDistanciaFuncionarios&quot;</span>);</div>
+<div class="line"><span class="lineno">  249</span>    permissoes.push_back(<span class="stringliteral">&quot;imprimirOrdemRotas&quot;</span>);</div>
+<div class="line"><span class="lineno">  250</span>    permissoes.push_back(<span class="stringliteral">&quot;calcularTempoViagem&quot;</span>);</div>
+<div class="line"><span class="lineno">  251</span>    permissoes.push_back(<span class="stringliteral">&quot;imprimirTempoViagem&quot;</span>);</div>
+<div class="line"><span class="lineno">  252</span>    permissoes.push_back(<span class="stringliteral">&quot;calcularHorarioChegada&quot;</span>);</div>
+<div class="line"><span class="lineno">  253</span> </div>
+<div class="line"><span class="lineno">  254</span>    </div>
+<div class="line"><span class="lineno">  255</span>  <span class="keywordflow">return</span> permissoes;</div>
+<div class="line"><span class="lineno">  256</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -149,14 +479,173 @@ Funções</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">    5</span>                   {</div>
-<div class="line"><span class="lineno">    6</span> </div>
-<div class="line"><span class="lineno">    7</span>    <a class="code hl_class" href="class_cliente.html">Cliente</a> lojao2(<span class="stringliteral">&quot;Lojao&quot;</span>, <span class="stringliteral">&quot;123456789&quot;</span>, <span class="stringliteral">&quot;Rua 1&quot;</span>, <span class="stringliteral">&quot;jao@jao.jao&quot;</span>,1,<span class="stringliteral">&quot;987654321&quot;</span>);</div>
-<div class="line"><span class="lineno">    8</span>    <span class="comment">//c.setTipo(0);// 0 - Física, 1 - Jurídica</span></div>
-<div class="line"><span class="lineno">    9</span> </div>
-<div class="line"><span class="lineno">   10</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Nome: &quot;</span> &lt;&lt; lojao2.getNome() &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   11</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">  258</span>                   {</div>
+<div class="line"><span class="lineno">  259</span>    <span class="comment">//Instanciar um objeto da classe Empresa.</span></div>
+<div class="line"><span class="lineno">  260</span>    <a class="code hl_class" href="class_empresa.html">Empresa</a> *e = <a class="code hl_function" href="class_empresa.html#a31cee3bedc17ae907f3859ba959ec10a">Empresa::getEmpresa</a>();</div>
+<div class="line"><span class="lineno">  261</span>    <span class="comment">//Instanciar um objeto de um usuário logado</span></div>
+<div class="line"><span class="lineno">  262</span>    <a class="code hl_class" href="class_usuario_logado.html">UsuarioLogado</a> *U = <a class="code hl_function" href="class_usuario_logado.html#a6889d8d2d8700b1a7234575d092b2b5c">UsuarioLogado::GetInstance</a>();</div>
+<div class="line"><span class="lineno">  263</span>    U-&gt;<a class="code hl_function" href="class_pessoa.html#a26074576a426b510ff59165b05031f57">setNome</a>(<span class="stringliteral">&quot;UsuarioCliente&quot;</span>);</div>
+<div class="line"><span class="lineno">  264</span>    U-&gt;<a class="code hl_function" href="class_usuario.html#a28efaec1398906b6f43b12877bf59db7">setSenha</a>(<span class="stringliteral">&quot;123&quot;</span>);</div>
+<div class="line"><span class="lineno">  265</span>    U-&gt;<a class="code hl_function" href="class_pessoa.html#a6127bb3998bba636dc75d03c02c02cc1">setTipo</a>(0);<span class="comment">// 0 - Física, 1 - Jurídica</span></div>
+<div class="line"><span class="lineno">  266</span>    U-&gt;<a class="code hl_function" href="class_pessoa.html#adf2d0723061c7eb72d4c73218a0b8f18">setcpf_cnpj</a>(<span class="stringliteral">&quot;08167486669&quot;</span>);</div>
+<div class="line"><span class="lineno">  267</span>    U-&gt;<a class="code hl_function" href="class_pessoa.html#a2585aacb5b71f0b14a1ce3f695dae614">setEmail</a>(<span class="stringliteral">&quot;user@user.com&quot;</span>);</div>
+<div class="line"><span class="lineno">  268</span>    <span class="comment">//Todas as permissoes foram adicionadas ao vetor, exceto ao metodo que permite a exclusao de um funcionario da empresa</span></div>
+<div class="line"><span class="lineno">  269</span>    U-&gt;<a class="code hl_function" href="class_usuario_logado.html#aad70a09bb5289a377d1c78f5987bdd99">setPermissoes</a>(<a class="code hl_function" href="program_2main_8cpp.html#a5508132d195a8c51fedc92e81340701a">permissao</a>());</div>
+<div class="line"><span class="lineno">  270</span> </div>
+<div class="line"><span class="lineno">  271</span>    <span class="comment">//logando usuario na empresa</span></div>
+<div class="line"><span class="lineno">  272</span>    e-&gt;<a class="code hl_function" href="class_empresa.html#aa56a789e28d26b09abe1fbb3e10192c1">logar</a>(U);</div>
+<div class="line"><span class="lineno">  273</span> </div>
+<div class="line"><span class="lineno">  274</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Nome do usuario logado(TestaCliente): &quot;</span> &lt;&lt; U-&gt;<a class="code hl_function" href="class_usuario_logado.html#ac994116091a6a01a4ed8be199b007e01">getNome</a>() &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  275</span>    std::cout &lt;&lt;<span class="stringliteral">&quot;Quantidade de Permissoes no vetor de permissoes do usuario Logado: &quot;</span>&lt;&lt; U-&gt;<a class="code hl_function" href="class_usuario_logado.html#ab3a018b03ab17dd5bc4c90d2bcdf7708">getPermissoes</a>().size() &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  276</span>    </div>
+<div class="line"><span class="lineno">  277</span>    std::cout&lt;&lt;<span class="stringliteral">&quot;-------Gerando a Cliente----------&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><span class="lineno">  278</span>    <a class="code hl_class" href="class_cliente.html">Cliente</a> cFisico;</div>
+<div class="line"><span class="lineno">  279</span>    <a class="code hl_class" href="class_cliente.html">Cliente</a> cJuridico;</div>
+<div class="line"><span class="lineno">  280</span>    cFisico.<a class="code hl_function" href="class_pessoa.html#a26074576a426b510ff59165b05031f57">setNome</a>(<span class="stringliteral">&quot;Jorge&quot;</span>);</div>
+<div class="line"><span class="lineno">  281</span>    cFisico.<a class="code hl_function" href="class_pessoa.html#adf2d0723061c7eb72d4c73218a0b8f18">setcpf_cnpj</a>(<span class="stringliteral">&quot;37063436066&quot;</span>);</div>
+<div class="line"><span class="lineno">  282</span>    cFisico.<a class="code hl_function" href="class_pessoa.html#a6057a4b9db542a586d3248fb9a37a61e">setEndereco</a>(<span class="stringliteral">&quot;Rua 5&quot;</span>);</div>
+<div class="line"><span class="lineno">  283</span>    cFisico.<a class="code hl_function" href="class_pessoa.html#a2585aacb5b71f0b14a1ce3f695dae614">setEmail</a>(<span class="stringliteral">&quot;jorge@email.com&quot;</span>);</div>
+<div class="line"><span class="lineno">  284</span>    cFisico.<a class="code hl_function" href="class_pessoa.html#a6127bb3998bba636dc75d03c02c02cc1">setTipo</a>(0); <span class="comment">// 0 - Física, 1 - Jurídica</span></div>
+<div class="line"><span class="lineno">  285</span>    cFisico.<a class="code hl_function" href="class_cliente.html#abd48ff33d9e2370f9adcc5ece2093514">setTelefone</a>(<span class="stringliteral">&quot;9876543210&quot;</span>);</div>
+<div class="line"><span class="lineno">  286</span>    cJuridico.<a class="code hl_function" href="class_pessoa.html#a26074576a426b510ff59165b05031f57">setNome</a>(<span class="stringliteral">&quot;Sergio&quot;</span>);</div>
+<div class="line"><span class="lineno">  287</span>    cJuridico.<a class="code hl_function" href="class_pessoa.html#adf2d0723061c7eb72d4c73218a0b8f18">setcpf_cnpj</a>(<span class="stringliteral">&quot;57304164000120&quot;</span>);</div>
+<div class="line"><span class="lineno">  288</span>    cJuridico.<a class="code hl_function" href="class_pessoa.html#a6057a4b9db542a586d3248fb9a37a61e">setEndereco</a>(<span class="stringliteral">&quot;Rua 6&quot;</span>);</div>
+<div class="line"><span class="lineno">  289</span>    cJuridico.<a class="code hl_function" href="class_pessoa.html#a2585aacb5b71f0b14a1ce3f695dae614">setEmail</a>(<span class="stringliteral">&quot;sergio@email.com&quot;</span>);</div>
+<div class="line"><span class="lineno">  290</span>    cJuridico.<a class="code hl_function" href="class_pessoa.html#a6127bb3998bba636dc75d03c02c02cc1">setTipo</a>(1); <span class="comment">// 0 - Física, 1 - Jurídica</span></div>
+<div class="line"><span class="lineno">  291</span>    cJuridico.<a class="code hl_function" href="class_cliente.html#abd48ff33d9e2370f9adcc5ece2093514">setTelefone</a>(<span class="stringliteral">&quot;9876543290&quot;</span>);</div>
+<div class="line"><span class="lineno">  292</span> </div>
+<div class="line"><span class="lineno">  293</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Nome do Cliente Fisico criado: &quot;</span> &lt;&lt; cFisico.<a class="code hl_function" href="class_pessoa.html#a5f4f2063d62eaea38673da5fd5283465">getNome</a>() &lt;&lt; <span class="stringliteral">&quot; | Documento: &quot;</span> &lt;&lt; cFisico.<a class="code hl_function" href="class_pessoa.html#a36ef75d88e700219eec4986269d12029">getCpf_cnpj</a>() &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  294</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Nome do Cliente Juridico criado: &quot;</span> &lt;&lt; cJuridico.<a class="code hl_function" href="class_pessoa.html#a5f4f2063d62eaea38673da5fd5283465">getNome</a>() &lt;&lt; <span class="stringliteral">&quot; | Documento: &quot;</span> &lt;&lt; cJuridico.<a class="code hl_function" href="class_pessoa.html#a36ef75d88e700219eec4986269d12029">getCpf_cnpj</a>() &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  295</span> </div>
+<div class="line"><span class="lineno">  296</span>    <span class="comment">// criar  um orcamento</span></div>
+<div class="line"><span class="lineno">  297</span>    <a class="code hl_class" href="class_orcamento.html">Orcamento</a> *o = <span class="keyword">new</span> <a class="code hl_class" href="class_orcamento.html">Orcamento</a>();</div>
+<div class="line"><span class="lineno">  298</span>    <a class="code hl_class" href="class_lote.html">Lote</a> *lote = <span class="keyword">new</span> <a class="code hl_class" href="class_lote.html">Lote</a>();</div>
+<div class="line"><span class="lineno">  299</span>    <a class="code hl_class" href="class_produto.html">Produto</a> *produto = <span class="keyword">new</span> <a class="code hl_class" href="class_produto.html">Produto</a>();</div>
+<div class="line"><span class="lineno">  300</span> </div>
+<div class="line"><span class="lineno">  301</span>    produto-&gt;<a class="code hl_function" href="class_produto.html#a5513a29009079af0954925220a760395">setNome</a>(<span class="stringliteral">&quot;Mesa&quot;</span>);</div>
+<div class="line"><span class="lineno">  302</span>    produto-&gt;<a class="code hl_function" href="class_produto.html#a962dd6a2b9b5c52eefdbda2e92ec67b6">setCodigo</a>(1);</div>
+<div class="line"><span class="lineno">  303</span>    produto-&gt;<a class="code hl_function" href="class_produto.html#a80801d273b3ddbb20844a1c8977e01c8">setValorDeVenda</a>(30.0);</div>
+<div class="line"><span class="lineno">  304</span>    produto-&gt;<a class="code hl_function" href="class_produto.html#a237cc2d0ded565d23c9b1e47af41072d">setEstoqueMinimo</a>(20);</div>
+<div class="line"><span class="lineno">  305</span>    produto-&gt;<a class="code hl_function" href="class_produto.html#ac53da7534279f3e1a6e629ebe150bbc0">setQtdEstoque</a>(20);</div>
+<div class="line"><span class="lineno">  306</span>    produto-&gt;<a class="code hl_function" href="class_produto.html#ae3a98b6fb676a14de2f63cd97ba2a67f">setTamanhoDoLoteMinimo</a>(20); <span class="comment">// definir certo</span></div>
+<div class="line"><span class="lineno">  307</span>    <a class="code hl_class" href="class_categoria.html">Categoria</a> *categoria = <span class="keyword">new</span> <a class="code hl_class" href="class_categoria.html">Categoria</a>();</div>
+<div class="line"><span class="lineno">  308</span>    categoria-&gt;<a class="code hl_function" href="class_categoria.html#aa0f3f3ef8583802dc287dc0e621ae897">setNome</a>(<span class="stringliteral">&quot;Moveis&quot;</span>);</div>
+<div class="line"><span class="lineno">  309</span>    produto-&gt;<a class="code hl_function" href="class_produto.html#a9caf756459a41955c1a43706cef7f429">setCategoria</a>(categoria);</div>
+<div class="line"><span class="lineno">  310</span> </div>
+<div class="line"><span class="lineno">  311</span>    lote-&gt;<a class="code hl_function" href="class_lote.html#aadac9aac0a5ca49e2f74e7dcb38bdcc8">produzir</a>(produto, produto-&gt;<a class="code hl_function" href="class_produto.html#ac328a1594a964cd2ee05546af117ccdb">getEstoqueMinimo</a>());</div>
+<div class="line"><span class="lineno">  312</span>    <span class="comment">// criar materia prima e adicionar ao produto</span></div>
+<div class="line"><span class="lineno">  313</span>    <a class="code hl_class" href="class_materia_prima.html">MateriaPrima</a> *materiaPrima = <span class="keyword">new</span> <a class="code hl_class" href="class_materia_prima.html">MateriaPrima</a>();</div>
+<div class="line"><span class="lineno">  314</span>    <a class="code hl_class" href="class_materia_prima.html">MateriaPrima</a> *materiaPrima2 = <span class="keyword">new</span> <a class="code hl_class" href="class_materia_prima.html">MateriaPrima</a>();</div>
+<div class="line"><span class="lineno">  315</span>    <a class="code hl_class" href="class_materia_prima.html">MateriaPrima</a> *materiaPrima3 = <span class="keyword">new</span> <a class="code hl_class" href="class_materia_prima.html">MateriaPrima</a>();</div>
+<div class="line"><span class="lineno">  316</span>    <a class="code hl_class" href="class_materia_prima.html">MateriaPrima</a> *materiaPrima4 = <span class="keyword">new</span> <a class="code hl_class" href="class_materia_prima.html">MateriaPrima</a>();</div>
+<div class="line"><span class="lineno">  317</span> </div>
+<div class="line"><span class="lineno">  318</span>    materiaPrima-&gt;<a class="code hl_function" href="class_materia_prima.html#a643929527bb90e49b0cd58c4e51bfb6f">setNome</a>(<span class="stringliteral">&quot;Madeira&quot;</span>);</div>
+<div class="line"><span class="lineno">  319</span>    materiaPrima-&gt;<a class="code hl_function" href="class_materia_prima.html#a2715af1d1ac47d4ac2a086e17e5d0a10">setQuantidade</a>(450);</div>
+<div class="line"><span class="lineno">  320</span>    materiaPrima-&gt;<a class="code hl_function" href="class_materia_prima.html#a1676ee87c0eebe4df982eeac0b9c83d8">setUnidadeMedida</a>(<span class="stringliteral">&quot;g&quot;</span>);</div>
+<div class="line"><span class="lineno">  321</span>    materiaPrima-&gt;<a class="code hl_function" href="class_materia_prima.html#a94039f5b2a72b455f05797a1b8f7629a">setEstoquemin</a>(1000);</div>
+<div class="line"><span class="lineno">  322</span>    materiaPrima-&gt;<a class="code hl_function" href="class_materia_prima.html#a9aa3b6f8e4c67e8eece04d6aa7d44d57">setEstoqueTotal</a>(1500);</div>
+<div class="line"><span class="lineno">  323</span>    produto-&gt;<a class="code hl_function" href="class_produto.html#a3f1de2b40a413e4f1b7dd461f17a18ae">adicionarMateriaPrima</a>(materiaPrima);</div>
+<div class="line"><span class="lineno">  324</span> </div>
+<div class="line"><span class="lineno">  325</span>    materiaPrima2-&gt;<a class="code hl_function" href="class_materia_prima.html#a643929527bb90e49b0cd58c4e51bfb6f">setNome</a>(<span class="stringliteral">&quot;Plastico&quot;</span>);</div>
+<div class="line"><span class="lineno">  326</span>    materiaPrima2-&gt;<a class="code hl_function" href="class_materia_prima.html#a2715af1d1ac47d4ac2a086e17e5d0a10">setQuantidade</a>(150);</div>
+<div class="line"><span class="lineno">  327</span>    materiaPrima2-&gt;<a class="code hl_function" href="class_materia_prima.html#a1676ee87c0eebe4df982eeac0b9c83d8">setUnidadeMedida</a>(<span class="stringliteral">&quot;g&quot;</span>);</div>
+<div class="line"><span class="lineno">  328</span>    materiaPrima2-&gt;<a class="code hl_function" href="class_materia_prima.html#a94039f5b2a72b455f05797a1b8f7629a">setEstoquemin</a>(1000);</div>
+<div class="line"><span class="lineno">  329</span>    materiaPrima2-&gt;<a class="code hl_function" href="class_materia_prima.html#a9aa3b6f8e4c67e8eece04d6aa7d44d57">setEstoqueTotal</a>(1500);</div>
+<div class="line"><span class="lineno">  330</span>    produto-&gt;<a class="code hl_function" href="class_produto.html#a3f1de2b40a413e4f1b7dd461f17a18ae">adicionarMateriaPrima</a>(materiaPrima2);</div>
+<div class="line"><span class="lineno">  331</span> </div>
+<div class="line"><span class="lineno">  332</span>    materiaPrima3-&gt;<a class="code hl_function" href="class_materia_prima.html#a643929527bb90e49b0cd58c4e51bfb6f">setNome</a>(<span class="stringliteral">&quot;Aluminio&quot;</span>);</div>
+<div class="line"><span class="lineno">  333</span>    materiaPrima3-&gt;<a class="code hl_function" href="class_materia_prima.html#a2715af1d1ac47d4ac2a086e17e5d0a10">setQuantidade</a>(100);</div>
+<div class="line"><span class="lineno">  334</span>    materiaPrima3-&gt;<a class="code hl_function" href="class_materia_prima.html#a1676ee87c0eebe4df982eeac0b9c83d8">setUnidadeMedida</a>(<span class="stringliteral">&quot;g&quot;</span>);</div>
+<div class="line"><span class="lineno">  335</span>    materiaPrima3-&gt;<a class="code hl_function" href="class_materia_prima.html#a94039f5b2a72b455f05797a1b8f7629a">setEstoquemin</a>(1000);</div>
+<div class="line"><span class="lineno">  336</span>    materiaPrima3-&gt;<a class="code hl_function" href="class_materia_prima.html#a9aa3b6f8e4c67e8eece04d6aa7d44d57">setEstoqueTotal</a>(1500);</div>
+<div class="line"><span class="lineno">  337</span>    produto-&gt;<a class="code hl_function" href="class_produto.html#a3f1de2b40a413e4f1b7dd461f17a18ae">adicionarMateriaPrima</a>(materiaPrima3);</div>
+<div class="line"><span class="lineno">  338</span> </div>
+<div class="line"><span class="lineno">  339</span>    materiaPrima4-&gt;<a class="code hl_function" href="class_materia_prima.html#a643929527bb90e49b0cd58c4e51bfb6f">setNome</a>(<span class="stringliteral">&quot;Parafusos&quot;</span>);</div>
+<div class="line"><span class="lineno">  340</span>    materiaPrima4-&gt;<a class="code hl_function" href="class_materia_prima.html#a2715af1d1ac47d4ac2a086e17e5d0a10">setQuantidade</a>(8);</div>
+<div class="line"><span class="lineno">  341</span>    materiaPrima4-&gt;<a class="code hl_function" href="class_materia_prima.html#a1676ee87c0eebe4df982eeac0b9c83d8">setUnidadeMedida</a>(<span class="stringliteral">&quot;un&quot;</span>);</div>
+<div class="line"><span class="lineno">  342</span>    materiaPrima4-&gt;<a class="code hl_function" href="class_materia_prima.html#a94039f5b2a72b455f05797a1b8f7629a">setEstoquemin</a>(20);</div>
+<div class="line"><span class="lineno">  343</span>    materiaPrima4-&gt;<a class="code hl_function" href="class_materia_prima.html#a9aa3b6f8e4c67e8eece04d6aa7d44d57">setEstoqueTotal</a>(30);</div>
+<div class="line"><span class="lineno">  344</span>    produto-&gt;<a class="code hl_function" href="class_produto.html#a3f1de2b40a413e4f1b7dd461f17a18ae">adicionarMateriaPrima</a>(materiaPrima4);</div>
+<div class="line"><span class="lineno">  345</span> </div>
+<div class="line"><span class="lineno">  346</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Nome: &quot;</span> &lt;&lt; produto-&gt;<a class="code hl_function" href="class_produto.html#a38b3347261d612e436233379af9831fd">getNome</a>() &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  347</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Preco: &quot;</span> &lt;&lt; produto-&gt;<a class="code hl_function" href="class_produto.html#a2df29430f94c2bac4ef802fb78a6564a">getValorDeVenda</a>() &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  348</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Quantidade estoque min: &quot;</span> &lt;&lt; produto-&gt;<a class="code hl_function" href="class_produto.html#ac328a1594a964cd2ee05546af117ccdb">getEstoqueMinimo</a>() &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  349</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Codigo: &quot;</span> &lt;&lt; produto-&gt;<a class="code hl_function" href="class_produto.html#a51aea266055a5718d8362b5c096976e7">getCodigo</a>() &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  350</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Estoque depois de efetuar a compra: &quot;</span> &lt;&lt; materiaPrima-&gt;<a class="code hl_function" href="class_materia_prima.html#aa5dd36528ff43e47ec4862821e5f70ff">getEstoqueDisponivel</a>() &lt;&lt; <span class="stringliteral">&quot; &quot;</span>&lt;&lt; materiaPrima-&gt;<a class="code hl_function" href="class_materia_prima.html#a25f6aa1f06f0e22b11ff8a9471a69ca9">getUnidadeMedida</a>() &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  351</span> </div>
+<div class="line"><span class="lineno">  352</span>    produto-&gt;<a class="code hl_function" href="class_produto.html#a8c4fc30566c8380ef4fee81918ac3d68">imprimirMateriaPrima</a>();</div>
+<div class="line"><span class="lineno">  353</span> </div>
+<div class="line"><span class="lineno">  354</span>    std::vector&lt;Produto *&gt; produtos;</div>
+<div class="line"><span class="lineno">  355</span>    produtos.push_back(produto);</div>
+<div class="line"><span class="lineno">  356</span> </div>
+<div class="line"><span class="lineno">  357</span>    <span class="comment">//fazendo o orcamento pedido nos testes</span></div>
+<div class="line"><span class="lineno">  358</span>    o-&gt;<a class="code hl_function" href="class_orcamento.html#ae16c512c561daca8b339de9a3db65b80">gerarOrcamento</a>(&amp;cJuridico, 10, produtos);</div>
+<div class="line"><span class="lineno">  359</span>    o-&gt;<a class="code hl_function" href="class_orcamento.html#a38eaa552b1080a6c5001e64f28eb4c05">imprimeOrcamento</a>(&amp;cJuridico, produtos);</div>
+<div class="line"><span class="lineno">  360</span> </div>
+<div class="line"><span class="lineno">  361</span>    <a class="code hl_class" href="class_pedido_de_compra.html">PedidoDeCompra</a> *p = <span class="keyword">new</span> <a class="code hl_class" href="class_pedido_de_compra.html">PedidoDeCompra</a>();</div>
+<div class="line"><span class="lineno">  362</span>    <a class="code hl_class" href="class_credito.html">Credito</a> *credito = <span class="keyword">new</span> <a class="code hl_class" href="class_credito.html">Credito</a>();</div>
+<div class="line"><span class="lineno">  363</span>    <a class="code hl_class" href="class_boleto.html">Boleto</a> *boleto = <span class="keyword">new</span> <a class="code hl_class" href="class_boleto.html">Boleto</a>();</div>
+<div class="line"><span class="lineno">  364</span>    p-&gt;<a class="code hl_function" href="class_pedido_de_compra.html#a0649e745cf2aa20200a3819c30058280">setId</a>(1);</div>
+<div class="line"><span class="lineno">  365</span>    p-&gt;<a class="code hl_function" href="class_pedido_de_compra.html#a821af5222d157168b376da365f117c76">gerarPedidoDeCompra</a>();</div>
+<div class="line"><span class="lineno">  366</span>    p-&gt;<a class="code hl_function" href="class_pedido_de_compra.html#a4d05174e0f31f4976922981106316fe6">selecionaMetodo</a>(&amp;cJuridico,credito,boleto);</div>
+<div class="line"><span class="lineno">  367</span> </div>
+<div class="line"><span class="lineno">  368</span>    <span class="keywordtype">int</span> opcao = 0;</div>
+<div class="line"><span class="lineno">  369</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Deseja imprimir os logs?\n1 - Sim\n2 - Nao&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  370</span>    std::cin &gt;&gt; opcao;</div>
+<div class="line"><span class="lineno">  371</span>    <span class="keywordflow">if</span> (opcao == 1)</div>
+<div class="line"><span class="lineno">  372</span>    {</div>
+<div class="line"><span class="lineno">  373</span>        e-&gt;<a class="code hl_function" href="class_empresa.html#afc82da0d05e644c598098ac700deb9f7">imprimirLogs</a>();</div>
+<div class="line"><span class="lineno">  374</span>    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(opcao == 2){</div>
+<div class="line"><span class="lineno">  375</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Ok, nao vamos imprimir os logs!&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  376</span>    }<span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  377</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Opcao invalida&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  378</span>    }</div>
+<div class="line"><span class="lineno">  379</span>    e-&gt;<a class="code hl_function" href="class_empresa.html#af167511c874963bd12a19cdb0e8bd108">salvarLogs</a>();</div>
+<div class="line"><span class="lineno">  380</span>}</div>
+<div class="ttc" id="aclass_boleto_html"><div class="ttname"><a href="class_boleto.html">Boleto</a></div><div class="ttdef"><b>Definition:</b> boleto.hpp:10</div></div>
+<div class="ttc" id="aclass_categoria_html"><div class="ttname"><a href="class_categoria.html">Categoria</a></div><div class="ttdef"><b>Definition:</b> categoria.hpp:7</div></div>
+<div class="ttc" id="aclass_categoria_html_aa0f3f3ef8583802dc287dc0e621ae897"><div class="ttname"><a href="class_categoria.html#aa0f3f3ef8583802dc287dc0e621ae897">Categoria::setNome</a></div><div class="ttdeci">void setNome(std::string name)</div><div class="ttdoc">Seta o nome da categoria.</div><div class="ttdef"><b>Definition:</b> categoria.cpp:63</div></div>
 <div class="ttc" id="aclass_cliente_html"><div class="ttname"><a href="class_cliente.html">Cliente</a></div><div class="ttdef"><b>Definition:</b> cliente.hpp:9</div></div>
+<div class="ttc" id="aclass_cliente_html_abd48ff33d9e2370f9adcc5ece2093514"><div class="ttname"><a href="class_cliente.html#abd48ff33d9e2370f9adcc5ece2093514">Cliente::setTelefone</a></div><div class="ttdeci">void setTelefone(std::string telefone)</div><div class="ttdoc">Seta o Telefone do cliente.</div><div class="ttdef"><b>Definition:</b> cliente.cpp:61</div></div>
+<div class="ttc" id="aclass_credito_html"><div class="ttname"><a href="class_credito.html">Credito</a></div><div class="ttdef"><b>Definition:</b> credito.hpp:10</div></div>
+<div class="ttc" id="aclass_empresa_html_af167511c874963bd12a19cdb0e8bd108"><div class="ttname"><a href="class_empresa.html#af167511c874963bd12a19cdb0e8bd108">Empresa::salvarLogs</a></div><div class="ttdeci">void salvarLogs()</div><div class="ttdoc">Salva os logs de todos os tipos em um arquivo.</div><div class="ttdef"><b>Definition:</b> empresa.cpp:623</div></div>
+<div class="ttc" id="aclass_empresa_html_afc82da0d05e644c598098ac700deb9f7"><div class="ttname"><a href="class_empresa.html#afc82da0d05e644c598098ac700deb9f7">Empresa::imprimirLogs</a></div><div class="ttdeci">void imprimirLogs()</div><div class="ttdoc">Imprime os logs de todos os tipos.</div><div class="ttdef"><b>Definition:</b> empresa.cpp:604</div></div>
+<div class="ttc" id="aclass_lote_html"><div class="ttname"><a href="class_lote.html">Lote</a></div><div class="ttdef"><b>Definition:</b> lote.hpp:11</div></div>
+<div class="ttc" id="aclass_lote_html_aadac9aac0a5ca49e2f74e7dcb38bdcc8"><div class="ttname"><a href="class_lote.html#aadac9aac0a5ca49e2f74e7dcb38bdcc8">Lote::produzir</a></div><div class="ttdeci">void produzir(Produto *, int quantidade)</div><div class="ttdoc">Função que produz a quantidade de produtos passadas no parametro.</div><div class="ttdef"><b>Definition:</b> lote.cpp:166</div></div>
+<div class="ttc" id="aclass_materia_prima_html"><div class="ttname"><a href="class_materia_prima.html">MateriaPrima</a></div><div class="ttdef"><b>Definition:</b> materiaPrima.hpp:13</div></div>
+<div class="ttc" id="aclass_materia_prima_html_a1676ee87c0eebe4df982eeac0b9c83d8"><div class="ttname"><a href="class_materia_prima.html#a1676ee87c0eebe4df982eeac0b9c83d8">MateriaPrima::setUnidadeMedida</a></div><div class="ttdeci">void setUnidadeMedida(std::string unidadeMedida)</div><div class="ttdoc">Seta a unidade de medida da materia prima.</div><div class="ttdef"><b>Definition:</b> materiaPrima.cpp:90</div></div>
+<div class="ttc" id="aclass_materia_prima_html_a25f6aa1f06f0e22b11ff8a9471a69ca9"><div class="ttname"><a href="class_materia_prima.html#a25f6aa1f06f0e22b11ff8a9471a69ca9">MateriaPrima::getUnidadeMedida</a></div><div class="ttdeci">std::string getUnidadeMedida()</div><div class="ttdoc">Retorna a unidade de medida da materia prima.</div><div class="ttdef"><b>Definition:</b> materiaPrima.cpp:195</div></div>
+<div class="ttc" id="aclass_materia_prima_html_a2715af1d1ac47d4ac2a086e17e5d0a10"><div class="ttname"><a href="class_materia_prima.html#a2715af1d1ac47d4ac2a086e17e5d0a10">MateriaPrima::setQuantidade</a></div><div class="ttdeci">void setQuantidade(int quantidade)</div><div class="ttdoc">Seta a quantidade da materia prima.</div><div class="ttdef"><b>Definition:</b> materiaPrima.cpp:48</div></div>
+<div class="ttc" id="aclass_materia_prima_html_a643929527bb90e49b0cd58c4e51bfb6f"><div class="ttname"><a href="class_materia_prima.html#a643929527bb90e49b0cd58c4e51bfb6f">MateriaPrima::setNome</a></div><div class="ttdeci">void setNome(std::string nome)</div><div class="ttdoc">Seta o nome da materia prima.</div><div class="ttdef"><b>Definition:</b> materiaPrima.cpp:27</div></div>
+<div class="ttc" id="aclass_materia_prima_html_a94039f5b2a72b455f05797a1b8f7629a"><div class="ttname"><a href="class_materia_prima.html#a94039f5b2a72b455f05797a1b8f7629a">MateriaPrima::setEstoquemin</a></div><div class="ttdeci">void setEstoquemin(int estoquemin)</div><div class="ttdoc">Seta o estoque minimo da materia prima.</div><div class="ttdef"><b>Definition:</b> materiaPrima.cpp:69</div></div>
+<div class="ttc" id="aclass_materia_prima_html_a9aa3b6f8e4c67e8eece04d6aa7d44d57"><div class="ttname"><a href="class_materia_prima.html#a9aa3b6f8e4c67e8eece04d6aa7d44d57">MateriaPrima::setEstoqueTotal</a></div><div class="ttdeci">void setEstoqueTotal(int estoqueTotal)</div><div class="ttdoc">Define o estoque disponivel da materia prima.</div><div class="ttdef"><b>Definition:</b> materiaPrima.cpp:217</div></div>
+<div class="ttc" id="aclass_materia_prima_html_aa5dd36528ff43e47ec4862821e5f70ff"><div class="ttname"><a href="class_materia_prima.html#aa5dd36528ff43e47ec4862821e5f70ff">MateriaPrima::getEstoqueDisponivel</a></div><div class="ttdeci">int getEstoqueDisponivel()</div><div class="ttdoc">Retorna o estoque disponivel da materia prima.</div><div class="ttdef"><b>Definition:</b> materiaPrima.cpp:238</div></div>
+<div class="ttc" id="aclass_orcamento_html"><div class="ttname"><a href="class_orcamento.html">Orcamento</a></div><div class="ttdef"><b>Definition:</b> orcamento.hpp:14</div></div>
+<div class="ttc" id="aclass_orcamento_html_a38eaa552b1080a6c5001e64f28eb4c05"><div class="ttname"><a href="class_orcamento.html#a38eaa552b1080a6c5001e64f28eb4c05">Orcamento::imprimeOrcamento</a></div><div class="ttdeci">void imprimeOrcamento(Cliente *cliente, std::vector&lt; Produto * &gt; produtos)</div><div class="ttdoc">Imprime o orçamento.</div><div class="ttdef"><b>Definition:</b> orcamento.cpp:246</div></div>
+<div class="ttc" id="aclass_orcamento_html_ae16c512c561daca8b339de9a3db65b80"><div class="ttname"><a href="class_orcamento.html#ae16c512c561daca8b339de9a3db65b80">Orcamento::gerarOrcamento</a></div><div class="ttdeci">void gerarOrcamento(Cliente *cliente, int qtd, std::vector&lt; Produto * &gt; produtos)</div><div class="ttdoc">Gera o orçamento.</div><div class="ttdef"><b>Definition:</b> orcamento.cpp:273</div></div>
+<div class="ttc" id="aclass_pedido_de_compra_html"><div class="ttname"><a href="class_pedido_de_compra.html">PedidoDeCompra</a></div><div class="ttdef"><b>Definition:</b> pedidoDeCompra.hpp:14</div></div>
+<div class="ttc" id="aclass_pedido_de_compra_html_a0649e745cf2aa20200a3819c30058280"><div class="ttname"><a href="class_pedido_de_compra.html#a0649e745cf2aa20200a3819c30058280">PedidoDeCompra::setId</a></div><div class="ttdeci">void setId(int id)</div><div class="ttdoc">Seta o id do pedido de compra.</div><div class="ttdef"><b>Definition:</b> pedidoDeCompra.cpp:65</div></div>
+<div class="ttc" id="aclass_pedido_de_compra_html_a4d05174e0f31f4976922981106316fe6"><div class="ttname"><a href="class_pedido_de_compra.html#a4d05174e0f31f4976922981106316fe6">PedidoDeCompra::selecionaMetodo</a></div><div class="ttdeci">void selecionaMetodo(Cliente *, Credito *, Boleto *)</div><div class="ttdoc">Recebe os dados do usuário para selecionar e executar o método de pagamento.</div><div class="ttdef"><b>Definition:</b> pedidoDeCompra.cpp:229</div></div>
+<div class="ttc" id="aclass_pedido_de_compra_html_a821af5222d157168b376da365f117c76"><div class="ttname"><a href="class_pedido_de_compra.html#a821af5222d157168b376da365f117c76">PedidoDeCompra::gerarPedidoDeCompra</a></div><div class="ttdeci">void gerarPedidoDeCompra()</div><div class="ttdoc">gera pedido de compra</div><div class="ttdef"><b>Definition:</b> pedidoDeCompra.cpp:349</div></div>
+<div class="ttc" id="aclass_pessoa_html_a36ef75d88e700219eec4986269d12029"><div class="ttname"><a href="class_pessoa.html#a36ef75d88e700219eec4986269d12029">Pessoa::getCpf_cnpj</a></div><div class="ttdeci">std::string getCpf_cnpj()</div><div class="ttdoc">Retorna o cpf ou cnpj da pessoa.</div><div class="ttdef"><b>Definition:</b> pessoa.cpp:265</div></div>
+<div class="ttc" id="aclass_pessoa_html_a5f4f2063d62eaea38673da5fd5283465"><div class="ttname"><a href="class_pessoa.html#a5f4f2063d62eaea38673da5fd5283465">Pessoa::getNome</a></div><div class="ttdeci">std::string getNome()</div><div class="ttdoc">Retorna o nome da pessoa.</div><div class="ttdef"><b>Definition:</b> pessoa.cpp:240</div></div>
+<div class="ttc" id="aclass_pessoa_html_a6057a4b9db542a586d3248fb9a37a61e"><div class="ttname"><a href="class_pessoa.html#a6057a4b9db542a586d3248fb9a37a61e">Pessoa::setEndereco</a></div><div class="ttdeci">void setEndereco(std::string endereco)</div><div class="ttdoc">Seta o endereco da pessoa.</div><div class="ttdef"><b>Definition:</b> pessoa.cpp:373</div></div>
+<div class="ttc" id="aclass_produto_html"><div class="ttname"><a href="class_produto.html">Produto</a></div><div class="ttdef"><b>Definition:</b> produto.hpp:13</div></div>
+<div class="ttc" id="aclass_produto_html_a237cc2d0ded565d23c9b1e47af41072d"><div class="ttname"><a href="class_produto.html#a237cc2d0ded565d23c9b1e47af41072d">Produto::setEstoqueMinimo</a></div><div class="ttdeci">void setEstoqueMinimo(int estoqueMinimo)</div><div class="ttdoc">Seta o estoque minimo do produto.</div><div class="ttdef"><b>Definition:</b> produto.cpp:119</div></div>
+<div class="ttc" id="aclass_produto_html_a2df29430f94c2bac4ef802fb78a6564a"><div class="ttname"><a href="class_produto.html#a2df29430f94c2bac4ef802fb78a6564a">Produto::getValorDeVenda</a></div><div class="ttdeci">double getValorDeVenda()</div><div class="ttdoc">Retorna o valor de venda do produto.</div><div class="ttdef"><b>Definition:</b> produto.cpp:191</div></div>
+<div class="ttc" id="aclass_produto_html_a38b3347261d612e436233379af9831fd"><div class="ttname"><a href="class_produto.html#a38b3347261d612e436233379af9831fd">Produto::getNome</a></div><div class="ttdeci">std::string getNome()</div><div class="ttdoc">Retorna o nome do produto.</div><div class="ttdef"><b>Definition:</b> produto.cpp:155</div></div>
+<div class="ttc" id="aclass_produto_html_a3f1de2b40a413e4f1b7dd461f17a18ae"><div class="ttname"><a href="class_produto.html#a3f1de2b40a413e4f1b7dd461f17a18ae">Produto::adicionarMateriaPrima</a></div><div class="ttdeci">void adicionarMateriaPrima(MateriaPrima *materiaPrima)</div><div class="ttdef"><b>Definition:</b> produto.cpp:375</div></div>
+<div class="ttc" id="aclass_produto_html_a51aea266055a5718d8362b5c096976e7"><div class="ttname"><a href="class_produto.html#a51aea266055a5718d8362b5c096976e7">Produto::getCodigo</a></div><div class="ttdeci">int getCodigo()</div><div class="ttdoc">Retorna o codigo do produto.</div><div class="ttdef"><b>Definition:</b> produto.cpp:173</div></div>
+<div class="ttc" id="aclass_produto_html_a5513a29009079af0954925220a760395"><div class="ttname"><a href="class_produto.html#a5513a29009079af0954925220a760395">Produto::setNome</a></div><div class="ttdeci">void setNome(std::string nome)</div><div class="ttdoc">Seta o nome do produto.</div><div class="ttdef"><b>Definition:</b> produto.cpp:29</div></div>
+<div class="ttc" id="aclass_produto_html_a80801d273b3ddbb20844a1c8977e01c8"><div class="ttname"><a href="class_produto.html#a80801d273b3ddbb20844a1c8977e01c8">Produto::setValorDeVenda</a></div><div class="ttdeci">void setValorDeVenda(double valorDeVenda)</div><div class="ttdoc">Seta o valor de venda do produto.</div><div class="ttdef"><b>Definition:</b> produto.cpp:65</div></div>
+<div class="ttc" id="aclass_produto_html_a8c4fc30566c8380ef4fee81918ac3d68"><div class="ttname"><a href="class_produto.html#a8c4fc30566c8380ef4fee81918ac3d68">Produto::imprimirMateriaPrima</a></div><div class="ttdeci">void imprimirMateriaPrima()</div><div class="ttdef"><b>Definition:</b> produto.cpp:335</div></div>
+<div class="ttc" id="aclass_produto_html_a962dd6a2b9b5c52eefdbda2e92ec67b6"><div class="ttname"><a href="class_produto.html#a962dd6a2b9b5c52eefdbda2e92ec67b6">Produto::setCodigo</a></div><div class="ttdeci">void setCodigo(int codigo)</div><div class="ttdoc">Seta o codigo do produto.</div><div class="ttdef"><b>Definition:</b> produto.cpp:47</div></div>
+<div class="ttc" id="aclass_produto_html_a9caf756459a41955c1a43706cef7f429"><div class="ttname"><a href="class_produto.html#a9caf756459a41955c1a43706cef7f429">Produto::setCategoria</a></div><div class="ttdeci">void setCategoria(Categoria *categoria)</div><div class="ttdoc">Seta a categoria do produto.</div><div class="ttdef"><b>Definition:</b> produto.cpp:101</div></div>
+<div class="ttc" id="aclass_produto_html_ac328a1594a964cd2ee05546af117ccdb"><div class="ttname"><a href="class_produto.html#ac328a1594a964cd2ee05546af117ccdb">Produto::getEstoqueMinimo</a></div><div class="ttdeci">int getEstoqueMinimo()</div><div class="ttdoc">Retorna o estoque minimo do produto.</div><div class="ttdef"><b>Definition:</b> produto.cpp:245</div></div>
+<div class="ttc" id="aclass_produto_html_ac53da7534279f3e1a6e629ebe150bbc0"><div class="ttname"><a href="class_produto.html#ac53da7534279f3e1a6e629ebe150bbc0">Produto::setQtdEstoque</a></div><div class="ttdeci">void setQtdEstoque(int qtdEstoque)</div><div class="ttdoc">Seta a quantidade do estoque do produto.</div><div class="ttdef"><b>Definition:</b> produto.cpp:137</div></div>
+<div class="ttc" id="aclass_produto_html_ae3a98b6fb676a14de2f63cd97ba2a67f"><div class="ttname"><a href="class_produto.html#ae3a98b6fb676a14de2f63cd97ba2a67f">Produto::setTamanhoDoLoteMinimo</a></div><div class="ttdeci">void setTamanhoDoLoteMinimo(int tamanhoDoLoteMinimo)</div><div class="ttdoc">Seta o tamanho do lote minimo do produto.</div><div class="ttdef"><b>Definition:</b> produto.cpp:83</div></div>
+<div class="ttc" id="aclass_usuario_logado_html_ab3a018b03ab17dd5bc4c90d2bcdf7708"><div class="ttname"><a href="class_usuario_logado.html#ab3a018b03ab17dd5bc4c90d2bcdf7708">UsuarioLogado::getPermissoes</a></div><div class="ttdeci">std::vector&lt; std::string &gt; getPermissoes()</div><div class="ttdoc">Retorna o vetor de permissoes do usuario logado.</div><div class="ttdef"><b>Definition:</b> usuarioLogado.cpp:146</div></div>
+<div class="ttc" id="aclass_usuario_logado_html_ac994116091a6a01a4ed8be199b007e01"><div class="ttname"><a href="class_usuario_logado.html#ac994116091a6a01a4ed8be199b007e01">UsuarioLogado::getNome</a></div><div class="ttdeci">std::string getNome()</div><div class="ttdoc">Retorna o nome do usuario logado.</div><div class="ttdef"><b>Definition:</b> usuarioLogado.cpp:75</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -174,28 +663,165 @@ Funções</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   14</span>{</div>
-<div class="line"><span class="lineno">   15</span>    <a class="code hl_class" href="class_cargo.html">Cargo</a> c1, c2, c3, c4, c5;</div>
-<div class="line"><span class="lineno">   16</span>    c1.<a class="code hl_function" href="class_cargo.html#a0a40589c8848e73b904b28a89b7bf74b">setNome</a>(<span class="stringliteral">&quot;Chefao&quot;</span>);</div>
-<div class="line"><span class="lineno">   17</span>    c2.<a class="code hl_function" href="class_cargo.html#a0a40589c8848e73b904b28a89b7bf74b">setNome</a>(<span class="stringliteral">&quot;Engenheiro&quot;</span>);</div>
-<div class="line"><span class="lineno">   18</span>    c3.<a class="code hl_function" href="class_cargo.html#a0a40589c8848e73b904b28a89b7bf74b">setNome</a>(<span class="stringliteral">&quot;Pedreiro&quot;</span>);</div>
-<div class="line"><span class="lineno">   19</span>    c4.<a class="code hl_function" href="class_cargo.html#a0a40589c8848e73b904b28a89b7bf74b">setNome</a>(<span class="stringliteral">&quot;ADM&quot;</span>);</div>
-<div class="line"><span class="lineno">   20</span>    c5.<a class="code hl_function" href="class_cargo.html#a0a40589c8848e73b904b28a89b7bf74b">setNome</a>(<span class="stringliteral">&quot;Analista&quot;</span>);</div>
-<div class="line"><span class="lineno">   21</span>    std::vector&lt;Cargo&gt; cargos1;</div>
-<div class="line"><span class="lineno">   22</span>    std::vector&lt;Cargo&gt; cargos2;</div>
-<div class="line"><span class="lineno">   23</span>    cargos2.push_back(c1);</div>
-<div class="line"><span class="lineno">   24</span>    cargos1.push_back(c2);</div>
-<div class="line"><span class="lineno">   25</span>    cargos1.push_back(c3);</div>
-<div class="line"><span class="lineno">   26</span>    cargos2.push_back(c4);</div>
-<div class="line"><span class="lineno">   27</span>    cargos2.push_back(c5);</div>
-<div class="line"><span class="lineno">   28</span>    <span class="comment">//Departamento construcao(&quot;Departamento de Construcao&quot;, cargos1);</span></div>
-<div class="line"><span class="lineno">   29</span>    <a class="code hl_class" href="class_departamento.html">Departamento</a> adm(<span class="stringliteral">&quot;Departamento de ADM&quot;</span>);</div>
-<div class="line"><span class="lineno">   30</span> </div>
-<div class="line"><span class="lineno">   31</span>    <span class="comment">//Funcionario f1(&quot;Joao&quot;, &quot;123456789&quot;, &quot;Rua 1&quot;, &quot;a@a.com&quot;);</span></div>
-<div class="line"><span class="lineno">   32</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">  383</span>{</div>
+<div class="line"><span class="lineno">  384</span>    <a class="code hl_class" href="class_empresa.html">Empresa</a> *e = <a class="code hl_function" href="class_empresa.html#a31cee3bedc17ae907f3859ba959ec10a">Empresa::getEmpresa</a>();</div>
+<div class="line"><span class="lineno">  385</span>    <a class="code hl_class" href="class_usuario_logado.html">UsuarioLogado</a> *U = <a class="code hl_function" href="class_usuario_logado.html#a6889d8d2d8700b1a7234575d092b2b5c">UsuarioLogado::GetInstance</a>();</div>
+<div class="line"><span class="lineno">  386</span>    U-&gt;<a class="code hl_function" href="class_pessoa.html#a26074576a426b510ff59165b05031f57">setNome</a>(<span class="stringliteral">&quot;User 1&quot;</span>);</div>
+<div class="line"><span class="lineno">  387</span>    U-&gt;<a class="code hl_function" href="class_usuario.html#a28efaec1398906b6f43b12877bf59db7">setSenha</a>(<span class="stringliteral">&quot;123&quot;</span>);</div>
+<div class="line"><span class="lineno">  388</span>    U-&gt;<a class="code hl_function" href="class_pessoa.html#a6127bb3998bba636dc75d03c02c02cc1">setTipo</a>(0);</div>
+<div class="line"><span class="lineno">  389</span>    U-&gt;<a class="code hl_function" href="class_pessoa.html#adf2d0723061c7eb72d4c73218a0b8f18">setcpf_cnpj</a>(<span class="stringliteral">&quot;19169517711&quot;</span>);</div>
+<div class="line"><span class="lineno">  390</span>    U-&gt;<a class="code hl_function" href="class_pessoa.html#a2585aacb5b71f0b14a1ce3f695dae614">setEmail</a>(<span class="stringliteral">&quot;user1@user.com&quot;</span>);</div>
+<div class="line"><span class="lineno">  391</span> </div>
+<div class="line"><span class="lineno">  392</span>    U-&gt;<a class="code hl_function" href="class_usuario_logado.html#aad70a09bb5289a377d1c78f5987bdd99">setPermissoes</a>(<a class="code hl_function" href="program_2main_8cpp.html#a5508132d195a8c51fedc92e81340701a">permissao</a>());</div>
+<div class="line"><span class="lineno">  393</span> </div>
+<div class="line"><span class="lineno">  394</span>    <span class="comment">//logar usuario na empresa</span></div>
+<div class="line"><span class="lineno">  395</span>    e-&gt;<a class="code hl_function" href="class_empresa.html#aa56a789e28d26b09abe1fbb3e10192c1">logar</a>(U);</div>
+<div class="line"><span class="lineno">  396</span> </div>
+<div class="line"><span class="lineno">  397</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;-----------------&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  398</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Gerando Funcionario&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  399</span> </div>
+<div class="line"><span class="lineno">  400</span>    std::vector &lt;Salario&gt; salario;</div>
+<div class="line"><span class="lineno">  401</span>    <a class="code hl_class" href="class_salario.html">Salario</a> s(10000.00, <span class="keyword">true</span>, 1);</div>
+<div class="line"><span class="lineno">  402</span>    salario.push_back(s);</div>
+<div class="line"><span class="lineno">  403</span>    <a class="code hl_class" href="class_departamento.html">Departamento</a> adm(<span class="stringliteral">&quot;Departamento de ADM&quot;</span>);</div>
+<div class="line"><span class="lineno">  404</span>    <a class="code hl_class" href="class_departamento.html">Departamento</a> vendas(<span class="stringliteral">&quot;Departamento de Vendas&quot;</span>);</div>
+<div class="line"><span class="lineno">  405</span>    <a class="code hl_class" href="class_cargo.html">Cargo</a> vendedor(<span class="stringliteral">&quot;Vendedor&quot;</span>);</div>
+<div class="line"><span class="lineno">  406</span>    <a class="code hl_class" href="class_cargo.html">Cargo</a> gerente(<span class="stringliteral">&quot;Gerente&quot;</span>);</div>
+<div class="line"><span class="lineno">  407</span>    <a class="code hl_class" href="class_data.html">Data</a> nascimento(1990, 1, 1); </div>
+<div class="line"><span class="lineno">  408</span>    <a class="code hl_class" href="class_data.html">Data</a> admissao(2010, 1, 1); </div>
+<div class="line"><span class="lineno">  409</span>    <a class="code hl_class" href="class_funcionario.html">Funcionario</a> f;<span class="comment">//&quot;Joao&quot;, &quot;12345678912&quot;, &quot;Rua 1&quot;, &quot;joao@joao.com&quot;,0, nascimento, admissao, salario, adm, gerente</span></div>
+<div class="line"><span class="lineno">  410</span>    f.<a class="code hl_function" href="class_pessoa.html#a26074576a426b510ff59165b05031f57">setNome</a>(<span class="stringliteral">&quot;Joaozinho&quot;</span>);</div>
+<div class="line"><span class="lineno">  411</span>    f.<a class="code hl_function" href="class_pessoa.html#a6127bb3998bba636dc75d03c02c02cc1">setTipo</a>(0);</div>
+<div class="line"><span class="lineno">  412</span>    f.<a class="code hl_function" href="class_pessoa.html#adf2d0723061c7eb72d4c73218a0b8f18">setcpf_cnpj</a>(<span class="stringliteral">&quot;12345678912&quot;</span>);</div>
+<div class="line"><span class="lineno">  413</span>    f.<a class="code hl_function" href="class_pessoa.html#a6057a4b9db542a586d3248fb9a37a61e">setEndereco</a>(<span class="stringliteral">&quot;Rua 1&quot;</span>);</div>
+<div class="line"><span class="lineno">  414</span>    f.<a class="code hl_function" href="class_pessoa.html#a2585aacb5b71f0b14a1ce3f695dae614">setEmail</a>(<span class="stringliteral">&quot;joao@joao.com&quot;</span>);</div>
+<div class="line"><span class="lineno">  415</span>    f.<a class="code hl_function" href="class_funcionario.html#a9211adc5e9d567fdbb68db64a9478e30">setNascimento</a>(nascimento);</div>
+<div class="line"><span class="lineno">  416</span>    f.<a class="code hl_function" href="class_funcionario.html#a07ae11e4d4b798a21d43f98fb83be994">setAdmissao</a>(admissao);</div>
+<div class="line"><span class="lineno">  417</span>    f.<a class="code hl_function" href="class_funcionario.html#a11c7c6981ccfc794b588202e290d5029">setSalario</a>(salario);</div>
+<div class="line"><span class="lineno">  418</span>    f.<a class="code hl_function" href="class_funcionario.html#aa1751f57bf2666cf15d6cf9240dca180">setDepartamento</a>(adm);</div>
+<div class="line"><span class="lineno">  419</span>    f.<a class="code hl_function" href="class_funcionario.html#aef9be2258e4e62765faee32b28ad1ac3">setCargo</a>(gerente);</div>
+<div class="line"><span class="lineno">  420</span>    f.<a class="code hl_function" href="class_funcionario.html#a1081465ae8bdf94e75dd8e65e1121642">setLatitude</a>(-19.7760268);</div>
+<div class="line"><span class="lineno">  421</span>    f.<a class="code hl_function" href="class_funcionario.html#a2911638f925e98c3f686e27f21beccd9">setLongitude</a>(-43.9312126);</div>
+<div class="line"><span class="lineno">  422</span>    f.<a class="code hl_function" href="class_funcionario.html#a7ec887b87e59a577f9005e1039dbb5bc">setTurno</a>(8.00);</div>
+<div class="line"><span class="lineno">  423</span> </div>
+<div class="line"><span class="lineno">  424</span>    <a class="code hl_class" href="class_funcionario.html">Funcionario</a> f2;</div>
+<div class="line"><span class="lineno">  425</span>    f2.<a class="code hl_function" href="class_pessoa.html#a26074576a426b510ff59165b05031f57">setNome</a>(<span class="stringliteral">&quot;Joaozinho2&quot;</span>);</div>
+<div class="line"><span class="lineno">  426</span>    f2.<a class="code hl_function" href="class_pessoa.html#a6127bb3998bba636dc75d03c02c02cc1">setTipo</a>(0);</div>
+<div class="line"><span class="lineno">  427</span>    f2.<a class="code hl_function" href="class_pessoa.html#adf2d0723061c7eb72d4c73218a0b8f18">setcpf_cnpj</a>(<span class="stringliteral">&quot;12345678912&quot;</span>);</div>
+<div class="line"><span class="lineno">  428</span>    f2.<a class="code hl_function" href="class_pessoa.html#a6057a4b9db542a586d3248fb9a37a61e">setEndereco</a>(<span class="stringliteral">&quot;Rua 1&quot;</span>);</div>
+<div class="line"><span class="lineno">  429</span>    f2.<a class="code hl_function" href="class_pessoa.html#a2585aacb5b71f0b14a1ce3f695dae614">setEmail</a>(<span class="stringliteral">&quot;j2@joao.com&quot;</span>);</div>
+<div class="line"><span class="lineno">  430</span>    f2.<a class="code hl_function" href="class_funcionario.html#a9211adc5e9d567fdbb68db64a9478e30">setNascimento</a>(nascimento);</div>
+<div class="line"><span class="lineno">  431</span>    f2.<a class="code hl_function" href="class_funcionario.html#a07ae11e4d4b798a21d43f98fb83be994">setAdmissao</a>(admissao);</div>
+<div class="line"><span class="lineno">  432</span>    f2.<a class="code hl_function" href="class_funcionario.html#a11c7c6981ccfc794b588202e290d5029">setSalario</a>(salario);</div>
+<div class="line"><span class="lineno">  433</span>    f2.<a class="code hl_function" href="class_funcionario.html#aa1751f57bf2666cf15d6cf9240dca180">setDepartamento</a>(adm);</div>
+<div class="line"><span class="lineno">  434</span>    f2.<a class="code hl_function" href="class_funcionario.html#aef9be2258e4e62765faee32b28ad1ac3">setCargo</a>(gerente);</div>
+<div class="line"><span class="lineno">  435</span>    f2.<a class="code hl_function" href="class_funcionario.html#a1081465ae8bdf94e75dd8e65e1121642">setLatitude</a>(-19.870682);</div>
+<div class="line"><span class="lineno">  436</span>    f2.<a class="code hl_function" href="class_funcionario.html#a2911638f925e98c3f686e27f21beccd9">setLongitude</a>(-43.9699246);</div>
+<div class="line"><span class="lineno">  437</span>    f2.<a class="code hl_function" href="class_funcionario.html#a7ec887b87e59a577f9005e1039dbb5bc">setTurno</a>(8.00);</div>
+<div class="line"><span class="lineno">  438</span> </div>
+<div class="line"><span class="lineno">  439</span>    <a class="code hl_class" href="class_funcionario.html">Funcionario</a> f3;</div>
+<div class="line"><span class="lineno">  440</span>    f3.<a class="code hl_function" href="class_pessoa.html#a26074576a426b510ff59165b05031f57">setNome</a>(<span class="stringliteral">&quot;Joaozinho3&quot;</span>);</div>
+<div class="line"><span class="lineno">  441</span>    f3.<a class="code hl_function" href="class_pessoa.html#a6127bb3998bba636dc75d03c02c02cc1">setTipo</a>(0);</div>
+<div class="line"><span class="lineno">  442</span>    f3.<a class="code hl_function" href="class_pessoa.html#adf2d0723061c7eb72d4c73218a0b8f18">setcpf_cnpj</a>(<span class="stringliteral">&quot;12345678912&quot;</span>);</div>
+<div class="line"><span class="lineno">  443</span>    f3.<a class="code hl_function" href="class_pessoa.html#a6057a4b9db542a586d3248fb9a37a61e">setEndereco</a>(<span class="stringliteral">&quot;Rua 1&quot;</span>);</div>
+<div class="line"><span class="lineno">  444</span>    f3.<a class="code hl_function" href="class_pessoa.html#a2585aacb5b71f0b14a1ce3f695dae614">setEmail</a>(<span class="stringliteral">&quot;j3@joao.com&quot;</span>);</div>
+<div class="line"><span class="lineno">  445</span>    f3.<a class="code hl_function" href="class_funcionario.html#a9211adc5e9d567fdbb68db64a9478e30">setNascimento</a>(nascimento);</div>
+<div class="line"><span class="lineno">  446</span>    f3.<a class="code hl_function" href="class_funcionario.html#a07ae11e4d4b798a21d43f98fb83be994">setAdmissao</a>(admissao);</div>
+<div class="line"><span class="lineno">  447</span>    f3.<a class="code hl_function" href="class_funcionario.html#a11c7c6981ccfc794b588202e290d5029">setSalario</a>(salario);</div>
+<div class="line"><span class="lineno">  448</span>    f3.<a class="code hl_function" href="class_funcionario.html#aa1751f57bf2666cf15d6cf9240dca180">setDepartamento</a>(vendas);</div>
+<div class="line"><span class="lineno">  449</span>    f3.<a class="code hl_function" href="class_funcionario.html#aef9be2258e4e62765faee32b28ad1ac3">setCargo</a>(vendedor);</div>
+<div class="line"><span class="lineno">  450</span>    f3.<a class="code hl_function" href="class_funcionario.html#a1081465ae8bdf94e75dd8e65e1121642">setLatitude</a>(-19.7655718);</div>
+<div class="line"><span class="lineno">  451</span>    f3.<a class="code hl_function" href="class_funcionario.html#a2911638f925e98c3f686e27f21beccd9">setLongitude</a>(-43.8280941);</div>
+<div class="line"><span class="lineno">  452</span>    f3.<a class="code hl_function" href="class_funcionario.html#a7ec887b87e59a577f9005e1039dbb5bc">setTurno</a>(8.00);</div>
+<div class="line"><span class="lineno">  453</span> </div>
+<div class="line"><span class="lineno">  454</span>    <span class="comment">//imprime nome dos funcionarios</span></div>
+<div class="line"><span class="lineno">  455</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Nome dos Funcionarios atuais da empresa: &quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  456</span> </div>
+<div class="line"><span class="lineno">  457</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Nome do funcionario 1: &quot;</span> &lt;&lt; f.<a class="code hl_function" href="class_pessoa.html#a5f4f2063d62eaea38673da5fd5283465">getNome</a>() &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  458</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Nome do funcionario 2: &quot;</span> &lt;&lt; f2.<a class="code hl_function" href="class_pessoa.html#a5f4f2063d62eaea38673da5fd5283465">getNome</a>() &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  459</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Nome do funcionario 3: &quot;</span> &lt;&lt; f3.<a class="code hl_function" href="class_pessoa.html#a5f4f2063d62eaea38673da5fd5283465">getNome</a>() &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  460</span> </div>
+<div class="line"><span class="lineno">  461</span>    e-&gt;<a class="code hl_function" href="class_empresa.html#ae7323c262b54a4049b56e6d79edd8805">adicionarFuncionario</a>(&amp;f);</div>
+<div class="line"><span class="lineno">  462</span>    e-&gt;<a class="code hl_function" href="class_empresa.html#ae7323c262b54a4049b56e6d79edd8805">adicionarFuncionario</a>(&amp;f2);</div>
+<div class="line"><span class="lineno">  463</span>    e-&gt;<a class="code hl_function" href="class_empresa.html#ae7323c262b54a4049b56e6d79edd8805">adicionarFuncionario</a>(&amp;f3);</div>
+<div class="line"><span class="lineno">  464</span> </div>
+<div class="line"><span class="lineno">  465</span>    <span class="comment">//criar um veiculo</span></div>
+<div class="line"><span class="lineno">  466</span>    std::cout&lt;&lt;<span class="stringliteral">&quot;-----------------&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><span class="lineno">  467</span>    std::cout&lt;&lt;<span class="stringliteral">&quot;Gerando Veiculo&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><span class="lineno">  468</span>    <a class="code hl_class" href="class_veiculo.html">Veiculo</a> *v = <span class="keyword">new</span> <a class="code hl_class" href="class_veiculo.html">Veiculo</a>();</div>
+<div class="line"><span class="lineno">  469</span>    v-&gt;<a class="code hl_function" href="class_veiculo.html#a12684596645a49a93dbbbe04cf44c244">setTipo</a>(1);</div>
+<div class="line"><span class="lineno">  470</span>    std::cout&lt;&lt;<span class="stringliteral">&quot;Tipo do veiculo: &quot;</span>&lt;&lt;v-&gt;<a class="code hl_function" href="class_veiculo.html#a4f012bf2ca87f3f875184e143ee8f767">retornaTipoVeiculo</a>()&lt;&lt;std::endl;</div>
+<div class="line"><span class="lineno">  471</span>    v-&gt;<a class="code hl_function" href="class_veiculo.html#a27b80f00fcd3ae2fb37db4574aa68d06">setCapacidade</a>(20);</div>
+<div class="line"><span class="lineno">  472</span>    v-&gt;<a class="code hl_function" href="class_veiculo.html#a5094b6f8e8c7c4d45158e7a68906ccac">addCarga</a>(&amp;f);</div>
+<div class="line"><span class="lineno">  473</span>    v-&gt;<a class="code hl_function" href="class_veiculo.html#a5094b6f8e8c7c4d45158e7a68906ccac">addCarga</a>(&amp;f2);</div>
+<div class="line"><span class="lineno">  474</span>    v-&gt;<a class="code hl_function" href="class_veiculo.html#a5094b6f8e8c7c4d45158e7a68906ccac">addCarga</a>(&amp;f3);</div>
+<div class="line"><span class="lineno">  475</span>    v-&gt;<a class="code hl_function" href="class_veiculo.html#a9177f22231574798d5834b840cc1ab4e">verificaVeiculoCheio</a>();</div>
+<div class="line"><span class="lineno">  476</span> </div>
+<div class="line"><span class="lineno">  477</span>    <span class="comment">//criar uma rota</span></div>
+<div class="line"><span class="lineno">  478</span>    std::cout&lt;&lt;<span class="stringliteral">&quot;-----------------&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><span class="lineno">  479</span>    std::cout&lt;&lt;<span class="stringliteral">&quot;Gerando Rota&quot;</span>&lt;&lt;std::endl;</div>
+<div class="line"><span class="lineno">  480</span>    <a class="code hl_class" href="class_rota.html">Rota</a> *r = <span class="keyword">new</span> <a class="code hl_class" href="class_rota.html">Rota</a>();</div>
+<div class="line"><span class="lineno">  481</span>    r-&gt;<a class="code hl_function" href="class_rota.html#ad38fc4060424e6c0b1674fd6e41d712d">setId</a>(1);</div>
+<div class="line"><span class="lineno">  482</span> </div>
+<div class="line"><span class="lineno">  483</span>    <span class="comment">//criar vetor de funcionarios para passar na funcao de rota calculaDistanciaEntreFuncionarios</span></div>
+<div class="line"><span class="lineno">  484</span>    std::vector &lt;Funcionario*&gt; funcionarios;</div>
+<div class="line"><span class="lineno">  485</span>    funcionarios.push_back(&amp;f);</div>
+<div class="line"><span class="lineno">  486</span>    funcionarios.push_back(&amp;f2);</div>
+<div class="line"><span class="lineno">  487</span>    funcionarios.push_back(&amp;f3);</div>
+<div class="line"><span class="lineno">  488</span> </div>
+<div class="line"><span class="lineno">  489</span>    r-&gt;<a class="code hl_function" href="class_rota.html#aef7bcb20e157a1bee5d3ebb6eeebd685">calculaDistanciaEntreFuncionarios</a>(funcionarios);</div>
+<div class="line"><span class="lineno">  490</span> </div>
+<div class="line"><span class="lineno">  491</span>    r-&gt;<a class="code hl_function" href="class_rota.html#a24bbac4556f2a4b4be2da6ea2340d601">calculaTempoViagem</a>();</div>
+<div class="line"><span class="lineno">  492</span> </div>
+<div class="line"><span class="lineno">  493</span>    e-&gt;<a class="code hl_function" href="class_empresa.html#a4febac6e4a0419a94456e30edd1f5899">setLatitudeE</a>(-19.9278119);</div>
+<div class="line"><span class="lineno">  494</span>    e-&gt;<a class="code hl_function" href="class_empresa.html#a9e02d800c6c749c19ed23ed7abdb4679">setLongitudeE</a>(-43.9341283);</div>
+<div class="line"><span class="lineno">  495</span> </div>
+<div class="line"><span class="lineno">  496</span>    r-&gt;<a class="code hl_function" href="class_rota.html#a4a7cf4cf855ab15c94db53472fc03b27">calculaHorarioChegada</a>(e);</div>
+<div class="line"><span class="lineno">  497</span> </div>
+<div class="line"><span class="lineno">  498</span>    <span class="comment">//imprimindo os logs antes de sair devido a excecao de remover funcionario</span></div>
+<div class="line"><span class="lineno">  499</span>    <span class="keywordtype">int</span> opcao = 0;</div>
+<div class="line"><span class="lineno">  500</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Deseja imprimir os logs?\n1 - Sim\n2 - Nao&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  501</span>    std::cin &gt;&gt; opcao;</div>
+<div class="line"><span class="lineno">  502</span>    <span class="keywordflow">if</span> (opcao == 1)</div>
+<div class="line"><span class="lineno">  503</span>    {</div>
+<div class="line"><span class="lineno">  504</span>        e-&gt;<a class="code hl_function" href="class_empresa.html#afc82da0d05e644c598098ac700deb9f7">imprimirLogs</a>();</div>
+<div class="line"><span class="lineno">  505</span>    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(opcao == 2){</div>
+<div class="line"><span class="lineno">  506</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Ok, nao vamos imprimir os logs!&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  507</span>    }<span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  508</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Opcao invalida&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  509</span>    }</div>
+<div class="line"><span class="lineno">  510</span> </div>
+<div class="line"><span class="lineno">  511</span>    e-&gt;<a class="code hl_function" href="class_empresa.html#af167511c874963bd12a19cdb0e8bd108">salvarLogs</a>();</div>
+<div class="line"><span class="lineno">  512</span>    e-&gt;<a class="code hl_function" href="class_empresa.html#a69a7bd7c7e37113ba051d12d057c03f4">removerFuncionario</a>(&amp;f);<span class="comment">//vai exibir a excecao de acesso negado devido ao pedido na sprint 8</span></div>
+<div class="line"><span class="lineno">  513</span>}</div>
 <div class="ttc" id="aclass_cargo_html"><div class="ttname"><a href="class_cargo.html">Cargo</a></div><div class="ttdef"><b>Definition:</b> cargo.hpp:7</div></div>
-<div class="ttc" id="aclass_cargo_html_a0a40589c8848e73b904b28a89b7bf74b"><div class="ttname"><a href="class_cargo.html#a0a40589c8848e73b904b28a89b7bf74b">Cargo::setNome</a></div><div class="ttdeci">void setNome(std::string nome)</div><div class="ttdoc">Seta o nome do cargo.</div><div class="ttdef"><b>Definition:</b> cargo.cpp:45</div></div>
+<div class="ttc" id="aclass_data_html"><div class="ttname"><a href="class_data.html">Data</a></div><div class="ttdef"><b>Definition:</b> Data.h:16</div></div>
 <div class="ttc" id="aclass_departamento_html"><div class="ttname"><a href="class_departamento.html">Departamento</a></div><div class="ttdef"><b>Definition:</b> departamento.hpp:7</div></div>
+<div class="ttc" id="aclass_empresa_html_a4febac6e4a0419a94456e30edd1f5899"><div class="ttname"><a href="class_empresa.html#a4febac6e4a0419a94456e30edd1f5899">Empresa::setLatitudeE</a></div><div class="ttdeci">void setLatitudeE(float latitudeE)</div><div class="ttdef"><b>Definition:</b> empresa.hpp:70</div></div>
+<div class="ttc" id="aclass_empresa_html_a69a7bd7c7e37113ba051d12d057c03f4"><div class="ttname"><a href="class_empresa.html#a69a7bd7c7e37113ba051d12d057c03f4">Empresa::removerFuncionario</a></div><div class="ttdeci">void removerFuncionario(Funcionario *funcionario)</div><div class="ttdoc">Remove um funcionario da empresa.</div><div class="ttdef"><b>Definition:</b> empresa.cpp:119</div></div>
+<div class="ttc" id="aclass_empresa_html_a9e02d800c6c749c19ed23ed7abdb4679"><div class="ttname"><a href="class_empresa.html#a9e02d800c6c749c19ed23ed7abdb4679">Empresa::setLongitudeE</a></div><div class="ttdeci">void setLongitudeE(float longitudeE)</div><div class="ttdef"><b>Definition:</b> empresa.hpp:76</div></div>
+<div class="ttc" id="aclass_empresa_html_ae7323c262b54a4049b56e6d79edd8805"><div class="ttname"><a href="class_empresa.html#ae7323c262b54a4049b56e6d79edd8805">Empresa::adicionarFuncionario</a></div><div class="ttdeci">void adicionarFuncionario(Funcionario *funcionario)</div><div class="ttdoc">Adiciona um funcionario a empresa.</div><div class="ttdef"><b>Definition:</b> empresa.cpp:103</div></div>
+<div class="ttc" id="aclass_funcionario_html"><div class="ttname"><a href="class_funcionario.html">Funcionario</a></div><div class="ttdef"><b>Definition:</b> funcionario.hpp:14</div></div>
+<div class="ttc" id="aclass_funcionario_html_a07ae11e4d4b798a21d43f98fb83be994"><div class="ttname"><a href="class_funcionario.html#a07ae11e4d4b798a21d43f98fb83be994">Funcionario::setAdmissao</a></div><div class="ttdeci">void setAdmissao(Data admissao)</div><div class="ttdoc">Seta a data de admissão do funcionário.</div><div class="ttdef"><b>Definition:</b> funcionario.cpp:196</div></div>
+<div class="ttc" id="aclass_funcionario_html_a1081465ae8bdf94e75dd8e65e1121642"><div class="ttname"><a href="class_funcionario.html#a1081465ae8bdf94e75dd8e65e1121642">Funcionario::setLatitude</a></div><div class="ttdeci">void setLatitude(float latitude)</div><div class="ttdoc">Seta o endereço do funcionário (endereço em latitude)</div><div class="ttdef"><b>Definition:</b> funcionario.cpp:406</div></div>
+<div class="ttc" id="aclass_funcionario_html_a11c7c6981ccfc794b588202e290d5029"><div class="ttname"><a href="class_funcionario.html#a11c7c6981ccfc794b588202e290d5029">Funcionario::setSalario</a></div><div class="ttdeci">void setSalario(std::vector&lt; Salario &gt; salario)</div><div class="ttdoc">Seta o salário do funcionário.</div><div class="ttdef"><b>Definition:</b> funcionario.cpp:280</div></div>
+<div class="ttc" id="aclass_funcionario_html_a2911638f925e98c3f686e27f21beccd9"><div class="ttname"><a href="class_funcionario.html#a2911638f925e98c3f686e27f21beccd9">Funcionario::setLongitude</a></div><div class="ttdeci">void setLongitude(float longitude)</div><div class="ttdoc">Seta o endereço do funcionário (endereço em longitude)</div><div class="ttdef"><b>Definition:</b> funcionario.cpp:448</div></div>
+<div class="ttc" id="aclass_funcionario_html_a7ec887b87e59a577f9005e1039dbb5bc"><div class="ttname"><a href="class_funcionario.html#a7ec887b87e59a577f9005e1039dbb5bc">Funcionario::setTurno</a></div><div class="ttdeci">void setTurno(float turno)</div><div class="ttdoc">Seta o turno que funcionário trabalha.</div><div class="ttdef"><b>Definition:</b> funcionario.cpp:490</div></div>
+<div class="ttc" id="aclass_funcionario_html_a9211adc5e9d567fdbb68db64a9478e30"><div class="ttname"><a href="class_funcionario.html#a9211adc5e9d567fdbb68db64a9478e30">Funcionario::setNascimento</a></div><div class="ttdeci">void setNascimento(Data nascimento)</div><div class="ttdoc">Seta a data de nascimento do funcionário.</div><div class="ttdef"><b>Definition:</b> funcionario.cpp:154</div></div>
+<div class="ttc" id="aclass_funcionario_html_aa1751f57bf2666cf15d6cf9240dca180"><div class="ttname"><a href="class_funcionario.html#aa1751f57bf2666cf15d6cf9240dca180">Funcionario::setDepartamento</a></div><div class="ttdeci">void setDepartamento(Departamento departamento)</div><div class="ttdoc">Seta o departamento do funcionário.</div><div class="ttdef"><b>Definition:</b> funcionario.cpp:322</div></div>
+<div class="ttc" id="aclass_funcionario_html_aef9be2258e4e62765faee32b28ad1ac3"><div class="ttname"><a href="class_funcionario.html#aef9be2258e4e62765faee32b28ad1ac3">Funcionario::setCargo</a></div><div class="ttdeci">void setCargo(Cargo cargo)</div><div class="ttdoc">Seta o cargo do funcionário.</div><div class="ttdef"><b>Definition:</b> funcionario.cpp:364</div></div>
+<div class="ttc" id="aclass_rota_html"><div class="ttname"><a href="class_rota.html">Rota</a></div><div class="ttdef"><b>Definition:</b> rota.hpp:16</div></div>
+<div class="ttc" id="aclass_rota_html_a24bbac4556f2a4b4be2da6ea2340d601"><div class="ttname"><a href="class_rota.html#a24bbac4556f2a4b4be2da6ea2340d601">Rota::calculaTempoViagem</a></div><div class="ttdeci">void calculaTempoViagem()</div><div class="ttdoc">Calcula o tempo de viagem de cada funcionario.</div><div class="ttdef"><b>Definition:</b> rota.hpp:254</div></div>
+<div class="ttc" id="aclass_rota_html_a4a7cf4cf855ab15c94db53472fc03b27"><div class="ttname"><a href="class_rota.html#a4a7cf4cf855ab15c94db53472fc03b27">Rota::calculaHorarioChegada</a></div><div class="ttdeci">void calculaHorarioChegada(Empresa *e)</div><div class="ttdoc">Calcula o horario de embarque de cada funcionario.</div><div class="ttdef"><b>Definition:</b> rota.hpp:331</div></div>
+<div class="ttc" id="aclass_rota_html_ad38fc4060424e6c0b1674fd6e41d712d"><div class="ttname"><a href="class_rota.html#ad38fc4060424e6c0b1674fd6e41d712d">Rota::setId</a></div><div class="ttdeci">void setId(int id)</div><div class="ttdoc">Seta o id da rota.</div><div class="ttdef"><b>Definition:</b> rota.hpp:93</div></div>
+<div class="ttc" id="aclass_rota_html_aef7bcb20e157a1bee5d3ebb6eeebd685"><div class="ttname"><a href="class_rota.html#aef7bcb20e157a1bee5d3ebb6eeebd685">Rota::calculaDistanciaEntreFuncionarios</a></div><div class="ttdeci">void calculaDistanciaEntreFuncionarios(std::vector&lt; Funcionario * &gt; f)</div><div class="ttdoc">Calcula distancia entre funcionarios e adiciona no vetor de ordem de rotas.</div><div class="ttdef"><b>Definition:</b> rota.hpp:136</div></div>
+<div class="ttc" id="aclass_salario_html"><div class="ttname"><a href="class_salario.html">Salario</a></div><div class="ttdef"><b>Definition:</b> salario.hpp:8</div></div>
+<div class="ttc" id="aclass_veiculo_html"><div class="ttname"><a href="class_veiculo.html">Veiculo</a></div><div class="ttdef"><b>Definition:</b> veiculo.hpp:12</div></div>
+<div class="ttc" id="aclass_veiculo_html_a12684596645a49a93dbbbe04cf44c244"><div class="ttname"><a href="class_veiculo.html#a12684596645a49a93dbbbe04cf44c244">Veiculo::setTipo</a></div><div class="ttdeci">void setTipo(int tipo)</div><div class="ttdoc">Seta o tipo do veiculo.</div><div class="ttdef"><b>Definition:</b> veiculo.hpp:37</div></div>
+<div class="ttc" id="aclass_veiculo_html_a27b80f00fcd3ae2fb37db4574aa68d06"><div class="ttname"><a href="class_veiculo.html#a27b80f00fcd3ae2fb37db4574aa68d06">Veiculo::setCapacidade</a></div><div class="ttdeci">void setCapacidade(int capacidade)</div><div class="ttdef"><b>Definition:</b> veiculo.hpp:139</div></div>
+<div class="ttc" id="aclass_veiculo_html_a4f012bf2ca87f3f875184e143ee8f767"><div class="ttname"><a href="class_veiculo.html#a4f012bf2ca87f3f875184e143ee8f767">Veiculo::retornaTipoVeiculo</a></div><div class="ttdeci">std::string retornaTipoVeiculo()</div><div class="ttdoc">retorna o tipo do veiculo (onibus ou micro-onibus)</div><div class="ttdef"><b>Definition:</b> veiculo.hpp:79</div></div>
+<div class="ttc" id="aclass_veiculo_html_a5094b6f8e8c7c4d45158e7a68906ccac"><div class="ttname"><a href="class_veiculo.html#a5094b6f8e8c7c4d45158e7a68906ccac">Veiculo::addCarga</a></div><div class="ttdeci">void addCarga(Funcionario *funcionario)</div><div class="ttdoc">Adiciona um funcionario na carga do veiculo.</div><div class="ttdef"><b>Definition:</b> veiculo.hpp:160</div></div>
+<div class="ttc" id="aclass_veiculo_html_a9177f22231574798d5834b840cc1ab4e"><div class="ttname"><a href="class_veiculo.html#a9177f22231574798d5834b840cc1ab4e">Veiculo::verificaVeiculoCheio</a></div><div class="ttdeci">bool verificaVeiculoCheio()</div><div class="ttdoc">Verifica se o veiculo esta cheio.</div><div class="ttdef"><b>Definition:</b> veiculo.hpp:230</div></div>
 </div><!-- fragment -->
 </div>
 </div>
