@@ -432,8 +432,8 @@ void testaFuncionario()
 	f2.setSalario(salario);
 	f2.setDepartamento(adm);
 	f2.setCargo(gerente);
-	f2.setLatitude(-19.7922814);
-	f2.setLongitude(-43.9479072);
+	f2.setLatitude(-19.870682);
+	f2.setLongitude(-43.9699246);
 	f2.setTurno(8.00);
 
 	Funcionario f3;

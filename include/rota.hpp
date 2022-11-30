@@ -241,7 +241,11 @@ public:
             }
         }
     }
-
+    /**
+     * @brief Calcula o tempo de viagem de cada funcionario
+     *
+     * @param void
+     */
     //funcao para calcular o tempo de viagem de acordo com cada distancia dentro do vetor de ordem de rotas
     void calculaTempoViagem()
     {
@@ -268,7 +272,11 @@ public:
             }
         }
     }
-
+    /**
+     * @brief Imprime o tempo de viagem de cada funcionario
+     *
+     * @param void
+     */
     //printar o tempo de viagem de cada funcionario em ordem crescente de distancia e seus respectivos nomes
     void imprimeTempoViagem()
     {
@@ -290,7 +298,11 @@ public:
             }
         }
     }
-
+    /**
+     * @brief Calcula o horario de embarque de cada funcionario
+     *
+     * @param void
+     */
     //funcao para calcular de acordo com o turno e o tempo de viagem quando o funcionario deve chegar no trabalho
     void calculaHorarioChegada()
     {
@@ -324,21 +336,30 @@ public:
                 {
         
                     float horarioChegada = 8 - tempoViagens[i];
-                    std::cout << "Horario de embarque de: " << ordemFuncionarios[i]->getNome() << " = " << horarioChegada << " hrs"<< std::endl;
+                    //converte o horario de chegada para o formato hh:mm
+                    int hora = horarioChegada;
+                    int minuto = (horarioChegada - hora) * 60;
+                    std::cout << "Horario de embarque de: " << ordemFuncionarios[i]->getNome() << " = " << hora << ":" << minuto << std::endl;
+                    //std::cout << "Horario de embarque de: " << ordemFuncionarios[i]->getNome() << " = " << horarioChegada << " hrs"<< std::endl;
                     //horarioChegadas.push_back(horarioChegada);
                 }
                 else if (ordemFuncionarios[i]->getTurno() == 12.00)
                 {
                     float horarioChegada = 12 - tempoViagens[i];
                     //imprimir o nome do funcionario e o horario de chegada
-
-                    std::cout << "Horario de embarque de: " << ordemFuncionarios[i]->getNome() << " = " << horarioChegada << " hrs"<< std::endl;
+                    int hora = horarioChegada;
+                    int minuto = (horarioChegada - hora) * 60;
+                    std::cout << "Horario de embarque de: " << ordemFuncionarios[i]->getNome() << " = " << hora << ":" << minuto << std::endl;
+                    //std::cout << "Horario de embarque de: " << ordemFuncionarios[i]->getNome() << " = " << horarioChegada << " hrs"<< std::endl;
                     //horarioChegadas.push_back(horarioChegada);
                 }
                 else if (ordemFuncionarios[i]->getTurno() == 18.00)
                 {
                     float horarioChegada = 18 - tempoViagens[i];
-                    std::cout << "Horario de embarque de: " << ordemFuncionarios[i]->getNome() << " = " << horarioChegada << " hrs"<< std::endl;
+                    int hora = horarioChegada;
+                    int minuto = (horarioChegada - hora) * 60;
+                    std::cout << "Horario de embarque de: " << ordemFuncionarios[i]->getNome() << " = " << hora << ":" << minuto << std::endl;
+                    //std::cout << "Horario de embarque de: " << ordemFuncionarios[i]->getNome() << " = " << horarioChegada << " hrs"<< std::endl;
                     //horarioChegadas.push_back(horarioChegada);
                 }else{
                     throw InvalidTimeException();
